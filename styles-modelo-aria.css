@@ -1,0 +1,285 @@
+/* ============================================================
+   Modelo ARIA — Estilos específicos de página
+   Carga después de styles.css / styles4.css / styles5.css / styles6.css
+   ============================================================ */
+
+/* ---- Hero de página interna ---- */
+.aria-hero {
+  padding: 180px 0 96px;
+}
+.aria-hero .hero__cta {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 64px;
+}
+
+/* Hero__cred con 4 columnas */
+.hero__cred--wide {
+  max-width: 860px;
+}
+
+/* ---- Nav: página activa ---- */
+.nav__links a.is-current {
+  color: var(--teal);
+}
+.nav__links a.is-current::after {
+  width: 100%;
+}
+
+/* ---- Nota explicativa en el rail ARIA ---- */
+.aria2__rail-note {
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.aria2__rail-note p {
+  font-size: 14px;
+  color: var(--carbon-70);
+  line-height: 1.6;
+}
+
+/* ---- Component tags (chips dentro de cada step) ---- */
+.step-components {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+.step-components .label {
+  display: block;
+  margin-bottom: 14px;
+}
+.comp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.comp-tag {
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 100px;
+  background: var(--platinum);
+  color: var(--carbon);
+  border: 1px solid var(--border);
+  transition: background 0.35s ease, border-color 0.35s ease, color 0.35s ease;
+}
+.aria2__step.active .comp-tag {
+  background: var(--teal-light);
+  border-color: rgba(46, 139, 118, 0.35);
+  color: var(--teal);
+}
+
+/* ---- Grupos ARIA: padding superior y lista más amplia ---- */
+.aria-group {
+  padding-top: 30px;
+}
+.aria-group .badge {
+  margin-bottom: 18px;
+}
+.aria-group ul {
+  gap: 11px;
+}
+.aria-group li {
+  font-size: 15px;
+}
+
+/* ---- Sprint timeline ---- */
+.sprint-timeline {
+  display: flex;
+  flex-direction: column;
+  margin-top: 52px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.sprint {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s ease;
+}
+.sprint:last-child {
+  border-bottom: none;
+}
+.sprint:hover {
+  background: rgba(46, 139, 118, 0.03);
+}
+.sprint--final {
+  background: rgba(46, 139, 118, 0.04);
+}
+.sprint--final:hover {
+  background: rgba(46, 139, 118, 0.07);
+}
+
+.sprint__num {
+  font-family: var(--display);
+  font-size: 28px;
+  color: var(--teal-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 0;
+  border-right: 1px solid var(--border);
+  transition: color 0.3s ease;
+  flex-shrink: 0;
+}
+.sprint:hover .sprint__num {
+  color: var(--teal);
+}
+.sprint__num.is-gold,
+.sprint--final .sprint__num {
+  color: var(--gold);
+}
+.sprint--final:hover .sprint__num {
+  color: var(--gold);
+}
+
+.sprint__content {
+  padding: 34px 40px;
+}
+.sprint__weeks {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--carbon-55);
+  margin-bottom: 10px;
+}
+.sprint__title {
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--carbon);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+.sprint__desc {
+  font-size: 15.5px;
+  color: var(--carbon-70);
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.sprint__output {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--carbon-70);
+  background: var(--platinum);
+  padding: 10px 18px;
+  border-radius: 6px;
+  line-height: 1.5;
+  flex-wrap: wrap;
+}
+.sprint__output .label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+}
+.sprint__output--gold {
+  background: rgba(164, 129, 17, 0.07);
+  border: 1px solid rgba(164, 129, 17, 0.22);
+  color: var(--carbon);
+}
+.sprint__output--gold .label {
+  color: var(--gold);
+}
+
+/* ---- Garantía block ---- */
+.garantia-block {
+  display: flex;
+  gap: 52px;
+  align-items: flex-start;
+  max-width: 940px;
+  margin: 0 auto;
+}
+.garantia-icon {
+  flex: none;
+  width: 76px;
+  height: 76px;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--white);
+}
+.garantia-icon svg {
+  width: 34px;
+  height: 34px;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .aria2__rail-note {
+    display: none;
+  }
+}
+
+@media (max-width: 880px) {
+  .aria-hero {
+    padding: 132px 0 64px;
+  }
+  .aria-hero .hero__cta {
+    flex-direction: column;
+    align-items: center;
+  }
+  .aria-hero .hero__cred--wide {
+    max-width: 100%;
+  }
+  .aria-hero .hero__cred div {
+    padding: 0 12px;
+  }
+
+  .sprint {
+    grid-template-columns: 60px 1fr;
+  }
+  .sprint__num {
+    font-size: 22px;
+    padding: 28px 0;
+  }
+  .sprint__content {
+    padding: 24px 20px;
+  }
+
+  .garantia-block {
+    flex-direction: column;
+    gap: 28px;
+  }
+  .garantia-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .garantia-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sprint {
+    grid-template-columns: 48px 1fr;
+  }
+  .sprint__num {
+    font-size: 18px;
+  }
+  .sprint__content {
+    padding: 20px 16px;
+  }
+  .sprint__output {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+/* ---- Reduced motion: asegurar visibilidad inmediata ---- */
+@media (prefers-reduced-motion: reduce) {
+  .comp-tag {
+    transition: none;
+  }
+  .sprint,
+  .sprint__num {
+    transition: none;
+  }
+}

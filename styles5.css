@@ -1,0 +1,63 @@
+/* ============================================================
+   v5 — Hardening de producción: a11y, contraste, responsive, robustez
+   (solo lo carga Homepage v5.html)
+   ============================================================ */
+
+/* Anclas no quedan ocultas tras el nav fijo */
+html { scroll-padding-top: 96px; }
+
+/* ---------- Foco visible accesible (teclado) ---------- */
+a:focus-visible,
+button:focus-visible,
+image-slot:focus-visible,
+.rung:focus-visible,
+.industries-grid a:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.bg-teal a:focus-visible,
+.bg-carbon a:focus-visible { outline-color: #fff; }
+
+/* ---------- Skip link ---------- */
+.skip-link {
+  position: fixed; top: 10px; left: 50%; transform: translateX(-50%) translateY(-150%);
+  z-index: 200; background: var(--carbon); color: #fff; padding: 12px 22px; border-radius: 6px;
+  font-size: 14px; font-weight: 600; text-decoration: none; transition: transform 0.2s ease;
+}
+.skip-link:focus { transform: translateX(-50%) translateY(0); }
+
+/* ---------- Contraste de texto pequeño (WCAG AA) ----------
+   Sube los grises de texto fino a ~5:1 sobre blanco. */
+.hero__cred span,
+.anchor__label,
+.insight__meta,
+.fullbleed__cap,
+.rung__scope,
+.aria2__stepper .s span { color: rgba(30,42,56,0.72); }
+
+.insight__meta .dotsep { background: rgba(30,42,56,0.6); }
+
+/* ---------- Breakpoint tablet / intermedio ---------- */
+@media (max-width: 1024px) {
+  :root { --section-pad: 92px; }
+  .aria2 { grid-template-columns: 1fr; gap: 36px; }
+  .aria2__rail { position: static; top: auto; }
+  .aria2__stepper { display: none; }
+  .aria2__step { min-height: 0; padding: 36px; }
+  .industries-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .insights { grid-template-columns: 1fr; }
+  .leaders { grid-template-columns: 1fr; }
+}
+
+/* ---------- Respeto a prefers-reduced-motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+  [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .hero h1 .line, .hero .chapeau, .hero__cta { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .fullbleed__frame image-slot { transform: none !important; }
+  .btn .arrow { transition: none !important; }
+}

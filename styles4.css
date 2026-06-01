@@ -1,0 +1,97 @@
+/* ============================================================
+   v4 — Modernidad y fluidez (scoped .v4)  ·  carga DESPUÉS de styles.css
+   ============================================================ */
+.v4 { --ease: cubic-bezier(0.22, 1, 0.36, 1); }
+
+/* Easing + profundidad global */
+.v4 [data-reveal] { transition: opacity 0.85s var(--ease), transform 0.85s var(--ease); transform: translateY(32px); }
+.v4 .card { transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease); }
+.v4 .card--hover:hover { transform: translateY(-6px); box-shadow: 0 22px 54px rgba(30,42,56,0.13); }
+.v4 .rung { transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease); }
+.v4 .rung:hover { transform: translateY(-5px); box-shadow: 0 22px 54px rgba(30,42,56,0.13); }
+.v4 .btn { transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), background 0.35s var(--ease), color 0.35s var(--ease); }
+.v4 .btn--primary:hover { box-shadow: 0 14px 34px rgba(46,139,118,0.34); transform: translateY(-2px); }
+.v4 .insight__img, .v4 .leader__photo { transition: transform 0.5s var(--ease); }
+.v4 .insight:hover .insight__img, .v4 .leader:hover .leader__photo { transform: translateY(-5px); }
+
+/* Revelado con máscara (clip) para titulares */
+.v4 [data-reveal="mask"] { clip-path: inset(0 0 100% 0); opacity: 1; transform: none; transition: clip-path 0.9s var(--ease); }
+.v4 [data-reveal="mask"].in { clip-path: inset(0 0 -10% 0); }
+
+/* Barra de progreso de lectura */
+.scroll-progress { position: fixed; top: 0; left: 0; height: 2px; width: 0; background: var(--teal); z-index: 120; transition: width 0.08s linear; }
+
+/* Nav: sección activa */
+.v4 .nav__links a.active { color: var(--teal); }
+.v4 .nav__links a.active::after { width: 100%; }
+
+/* Parallax */
+.v4 .fullbleed .imgph { will-change: transform; }
+
+/* ============================================================
+   DIAGRAMA-FIRMA — Del uso al impacto
+   ============================================================ */
+.bridge__viz { position: relative; max-width: 1000px; margin: 8px auto 0; }
+.bridge__svg { width: 100%; height: auto; display: block; overflow: visible; }
+.bridge__svg text { font-family: var(--body); }
+.bridge__svg .b-num { font-family: var(--display); }
+.bridge__legend { display: flex; justify-content: space-between; margin-top: 8px; gap: 24px; }
+.bridge__leg { max-width: 280px; }
+.bridge__leg .t { font-size: 12.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--carbon-55); margin-bottom: 8px; }
+.bridge__leg.is-impact { text-align: right; margin-left: auto; }
+.bridge__leg p { font-size: 15px; color: var(--carbon-70); }
+
+/* ============================================================
+   ARIA pinned — sticky rail + stepper
+   ============================================================ */
+.aria2 { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 64px; align-items: start; }
+.aria2__rail { position: sticky; top: 116px; align-self: start; }
+.aria2__rail h2 { margin: 16px 0 18px; }
+.aria2__rail .chapeau { font-size: 17px; }
+.aria2__stepper { list-style: none; margin-top: 34px; }
+.aria2__stepper li { display: flex; gap: 16px; align-items: baseline; padding: 18px 0; border-top: 1px solid var(--border); opacity: 0.4; transition: opacity 0.45s var(--ease); }
+.aria2__stepper li:last-child { border-bottom: 1px solid var(--border); }
+.aria2__stepper li.active { opacity: 1; }
+.aria2__stepper .n { font-family: var(--display); font-size: 19px; color: var(--teal); flex: none; width: 30px; }
+.aria2__stepper .s strong { display: block; font-weight: 600; font-size: 17px; }
+.aria2__stepper .s span { font-size: 13.5px; color: var(--carbon-70); }
+
+.aria2__steps { display: flex; flex-direction: column; gap: 28px; }
+.aria2__step {
+  background: var(--white); border: 1px solid var(--border); border-radius: 16px;
+  padding: 44px; box-shadow: 0 2px 14px rgba(30,42,56,0.05);
+  min-height: 60vh; display: flex; flex-direction: column; justify-content: center;
+  transition: box-shadow 0.5s var(--ease), border-color 0.5s var(--ease);
+}
+.aria2__step.active { border-color: var(--teal-light); box-shadow: 0 22px 54px rgba(30,42,56,0.10); }
+.aria2__step h3 { margin: 22px 0 12px; }
+.aria2__step p { color: var(--carbon-70); }
+.aria2__step ul { list-style: none; margin-top: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; }
+.aria2__step li { font-size: 14.5px; color: var(--carbon-70); padding-left: 18px; position: relative; }
+.aria2__step li::before { content: ""; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
+
+/* ============================================================
+   Slots de imagen arrastrables (image-slot)
+   ============================================================ */
+.fullbleed__frame { height: 480px; overflow: hidden; }
+.fullbleed__frame image-slot { display: block; width: 100%; height: 560px; will-change: transform; }
+
+image-slot.insight__img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 11; border: 1px solid var(--border); border-radius: 8px; }
+image-slot.leader__photo { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; border: 1px solid var(--border); border-radius: 8px; }
+image-slot.book__slot { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.12); }
+
+@media (max-width: 880px) {
+  .fullbleed__frame { height: 300px; }
+  .fullbleed__frame image-slot { height: 380px; }
+  .book__slot { max-width: 260px; margin: 0 auto; }
+}
+
+@media (max-width: 880px) {
+  .aria2 { grid-template-columns: 1fr; gap: 32px; }
+  .aria2__rail { position: static; top: auto; }
+  .aria2__stepper { display: none; }
+  .aria2__step { min-height: 0; padding: 30px 26px; }
+  .aria2__step ul { grid-template-columns: 1fr; }
+  .bridge__legend { flex-direction: column; gap: 14px; }
+  .bridge__leg.is-impact { text-align: left; margin-left: 0; }
+}
