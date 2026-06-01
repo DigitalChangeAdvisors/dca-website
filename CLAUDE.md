@@ -21,7 +21,7 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 |------|---------|-----------|--------|
 | `/` | `index.html` | Homepage — instalar categoría, capturar CEO en 8 segundos | ✅ Completo |
 | `/blog` | `blog.html` | Perspectivas — liderazgo de pensamiento | ✅ Completo |
-| `/modelo-aria` | `modelo-aria.html` | Autoridad intelectual: 14 componentes, 6 sprints, garantía | 🔄 Nav fix + QA visual pendiente |
+| `/modelo-aria` | `modelo-aria.html` | Autoridad intelectual: 14 componentes, 6 sprints, garantía | 🔄 QA visual pendiente (fine-tuning al final) |
 | `/returnai` | `returnai.html` | Escalera de valor completa, tabla vs. vendors | ⏳ Pendiente |
 | `/nosotros` | `nosotros.html` | DCA, fundadores, casos, partnerships | ⏳ Pendiente |
 | `/academia` | `academia.html` | Digital Change Academy: certificaciones | ⏳ Pendiente |
@@ -45,6 +45,13 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 - Logo v2.2 integrado como SVG inline en nav y footer
 - `image-slot.js` maneja los slots de imágenes arrastrables
 
+## Regla de Fine-Tuning (CANÓNICA)
+
+> Los placeholders de imágenes, textos pendientes (nombres, credenciales, fuentes) y la
+> validación de textos bajo Behavioral Economics se completan durante el **fine-tuning final
+> de cada página** — NO bloquean la construcción ni el avance al siguiente paso.
+> Construir primero, afinar al final.
+
 ## Estado del Proyecto
 
 ### Fase 0 — Fundamentos ✅
@@ -54,7 +61,7 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 
 - [x] Homepage (`index.html`)
 - [x] Perspectivas (`blog.html`)
-- [x] `/modelo-aria` — HTML completo (639 líneas, 9 secciones, CSS propio 285 líneas). **Pendiente: corregir nav + QA visual + deploy**
+- [x] `/modelo-aria` — v6 integrada (778 líneas), routing corregido, enhance-aria.js + enhance-v6.js. Fine-tuning al final.
 - [ ] `/returnai` — **SIGUIENTE EN COLA**
 - [ ] `/nosotros`
 - [ ] `/casos`
