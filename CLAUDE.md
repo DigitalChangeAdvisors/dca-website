@@ -46,19 +46,61 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 - Logo v2.2 integrado como SVG inline en nav y footer (no archivo externo)
 - `image-slot.js` solo para staging/autoría — reemplazar por `<img>` reales antes del dominio final
 
-## Decisiones de Copy Aplicadas en Homepage (fine-tuning 2026-06-02)
+## Datos y Decisiones Canónicas del Homepage — BLOQUEO DE PRODUCCIÓN
 
-Decisiones no obvias que deben mantenerse en todas las páginas:
+> `index.html` en producción es la referencia canónica para **todos** los datos numéricos, copies y decisiones estructurales del sitio. Ninguna página futura puede usar versiones diferentes de estos valores sin revisión explícita.
 
-- **Hero créditos:** `57+ Consultores certificados` (no "17 Países" — los 17 países van en la sección Validación con datos, no en el hero)
-- **Huella geográfica:** eliminada del footer — la operación real es Colombia + Panamá + México. "17 países" refiere a la comunidad LARIA (Skool), no a presencia de firma
-- **Modal "Leer un extracto":** abre popup con contraportada del libro. Cifra real del libro: `$891K en el P&L`. JS en `app.js`, CSS en `styles.css` (sección Modal)
+### Credenciales y datos en hero
+- `70+` Empresas intervenidas · `57+` Consultores certificados · `14` Componentes propietarios
+- **No usar** "17 Países" en el hero — va en la sección Validación con su label correcto
+
+### Diagrama-puente uso→impacto
+- Valor de inicio: **11%** (uso inicial) — no 19%
+- El bridgeKpi anima hasta el valor de impacto documentado
+- Aplica a homepage y cualquier otra página que reproduzca este diagrama
+
+### Method strip (debajo de Modelo ARIA)
+- `14` Componentes propietarios · `6` Dimensiones de medición del impacto · `7` Frameworks ágiles de transformación humana · `10` Obstáculos intervenidos en causa raíz
+- **No usar** el strip anterior: "6 Sprints / 120 Días / 70+ Intervenciones"
+
+### Herramientas del Modelo ARIA (ul items en cada fase)
+- **Diagnóstico:** Índice de Urgencia Global · AIMT · AILS · AICD · Plan de intervención a la medida
+- **Solución:** AINS · AIMC · AIIB · DAS · MATCH (Agile Model for Cultural and Human Transformation)
+- **Impacto:** LED (Digital Team Leadership) · AI Governance Canvas · Impact Validation Matrix · Talent Roadmap Strategy Map · Agency Activators · PATH (Human Transformation Assurance Plan)
+- Los identificadores MATCH / LED / PATH aparecen en el homepage en la lista técnica de herramientas de la metodología — esto es intencional y aprobado. No aplica la restricción de nombres internos en este contexto metodológico.
+
+### Modal "Leer un extracto" (novela ReturnAI)
+- Personaje: **Adalid Puentes** · Inversión: **$8,2 millones** · Adopción inicial: **11%** · Resultado: **$891K en el P&L**
+- Apertura modal: "El 95% de las empresas invierte en IA. Solo el **5%** genera retorno medible."
+- JS en `app.js`, CSS en `styles.css` (sección Modal)
+
+> **Distinción con el Caso Ancla real:** El caso de la novela (Adalid Puentes, $8.2M/11%→70%) es diferente del caso ancla documentado con cliente real (Gestora de inversiones, $3.2M → 19%→67%, +13 puntos). El homepage usa el caso de la novela. El caso real se usa en páginas de evidencia (`/casos`) y en argumentación con dato de negocio.
+
+### Sección Validación (stats bg-teal)
+- `70+` Empresas intervenidas · `57+` Consultores certificados DCA · `17` Países · Comunidad LARIA
+- Los 17 países = comunidad LARIA (Skool), **no** presencia de firma
+
+### Líderes en homepage
+- Solo 2: **César Lozano** (CEO) + **Ruth Jaramillo** (Directora — Digital Change Academy)
+- El tercer líder (si aplica) va en `/nosotros`, no en homepage
+
+### Bio Ruth Jaramillo (canónica)
+- "Ingeniera Industrial, MBA EAFIT. Coach Profesional certificada por el Neuroscience and Coaching Institute (USA). 20+ años como ejecutiva empresarial. Cocreadora de los Frameworks Ágiles que fundamentan el Modelo ARIA. Autora de «Sembrando Semillas de Vida» y co-autora del libro de divulgación científica «Mentalidad Digital»."
+- **No incluir** "Transformación Humana 4.0" — eliminado en fine-tuning
+
+### Garantía (copy canónico)
+- "Retorno documentado en 120 días. Si no se logra en ese plazo, continuamos hasta documentarlo."
+
+### Copy y estructura adicional
+- **H2 Problema:** "El 70% no puede demostrar retorno de su inversión en IA."
 - **Sección Problema H2:** "retorno de su inversión en IA" (no "ROI de IA")
 - **Label sección Libro:** "El libro" (no "Novela empresarial")
-- **Footer descriptor:** eslogan canónico del Brand Book — "De la inversión en IA al retorno que importa." (no usar "Convertimos…" — verbo no canónico; canónico es "Construimos")
-- **Footer tira de ciudades:** ELIMINADA. Operación real: Colombia + Panamá + México. Santiago, Madrid y Miami son presencia falsa — nunca reintroducir.
-- **CTA final nota:** "Sin compromiso · 25 minutos · Tu reporte es confidencial" (no "Sin costo" — heurístico precio-calidad invertido para C-Level)
-- **CTA cards 03-04:** card 03 añade "3 capacidades instaladas" (efecto dotación + loss aversion); card 04 usa "destrucción de valor" (loss aversion CFO/CEO)
+- **Footer descriptor:** "De la inversión en IA al retorno que importa." — nunca "Convertimos…"
+- **Footer tira de ciudades:** ELIMINADA. Nunca reintroducir Santiago, Madrid ni Miami.
+- **CTA final nota:** "Sin compromiso · 25 minutos · Tu reporte es confidencial" (no "Sin costo")
+- **CTA cards:** 01 IUG · 02 Arquetipo organizacional · 03 Mapa de calor (incluye "3 capacidades instaladas") · 04 Costo financiero (usa "destrucción de valor" — loss aversion CFO/CEO)
+- **Sección Industrias:** tira horizontal (`.industries-strip`) — no grid con links
+- **Diferenciación:** componente `versus2` con arco SVG del logo — no tabla `versus` simple
 
 ## Regla de Fine-Tuning (CANÓNICA)
 
@@ -76,8 +118,8 @@ Decisiones no obvias que deben mantenerse en todas las páginas:
 
 - [x] Homepage (`index.html`) — fine-tuning BE completo 14 secciones + modal libro
 - [x] Perspectivas (`blog.html`)
-- [x] `/modelo-aria` — v6 integrada. Fine-tuning pendiente: image-slots → img reales, textos líderes (placeholder), validación BE
-- [x] `/returnai` — v6 implementada, brand compliance aplicado, routing canónico. Fine-tuning al final.
+- [x] `/modelo-aria` — v6 integrada. Fine-tuning pendiente: image-slots → img reales, textos líderes (placeholder), validación BE, **bridge usa 19% (real case) — verificar si debe alinearse a 11% del homepage**
+- [x] `/returnai` — v6 implementada, brand compliance aplicado, routing canónico. Fine-tuning al final. **bridge usa 19% (real case) — verificar alineación con homepage (11%)**
 - [ ] `/nosotros` — **SIGUIENTE EN COLA**
 - [ ] `/casos`
 - [ ] 5 páginas restantes
