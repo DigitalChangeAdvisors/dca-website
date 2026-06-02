@@ -22,7 +22,7 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 | `/` | `index.html` | Homepage — instalar categoría, capturar CEO en 8 segundos | ✅ Completo |
 | `/blog` | `blog.html` | Perspectivas — liderazgo de pensamiento | ✅ Completo |
 | `/modelo-aria` | `modelo-aria.html` | Autoridad intelectual: 14 componentes, 6 sprints, garantía | ✅ Completa — desplegada en producción (fine-tuning al final) |
-| `/returnai` | `returnai.html` | Escalera de valor completa, tabla vs. vendors | ⏳ Pendiente |
+| `/returnai` | `returnai.html` | Vitrina comercial: sistema 8 soluciones ReturnAI, escalera de valor | 🔄 En progreso — copy v1.1 aprobado · brief Claude Design generado |
 | `/nosotros` | `nosotros.html` | DCA, fundadores, casos, partnerships | ⏳ Pendiente |
 | `/academia` | `academia.html` | Digital Change Academy: certificaciones | ⏳ Pendiente |
 | `/red-aria` | `red-aria.html` | Captación de nodos/socios por país | ⏳ Pendiente |
@@ -56,14 +56,14 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 
 ### Fase 0 — Fundamentos ✅
 ### Fase 1 — Diseño ✅
-### Fase 2 — Contenido ⏳ (copy de 9 páginas pendiente)
+### Fase 2 — Contenido 🔄 (copy `/returnai` ✅ aprobado · 8 páginas pendientes)
 ### Fase 3 — Construcción
 
 - [x] Homepage (`index.html`)
 - [x] Perspectivas (`blog.html`)
 - [x] `/modelo-aria` — v6 integrada (778 líneas), routing corregido, enhance-aria.js + enhance-v6.js. Desplegada. Fine-tuning al final.
-- [ ] `/returnai` — **SIGUIENTE EN COLA** — arrancar con `/behavioral-economics-c-level` → `/copy returnai` → `/construir returnai`
-- [ ] `/nosotros`
+- [ ] `/returnai` — 🔄 **Copy aprobado v1.1 · Brief Claude Design generado** → pendiente: diseño Claude Design (máx. 3 iter.) → `/construir returnai`
+- [ ] `/nosotros` — **SIGUIENTE EN COLA** tras completar `/returnai`
 - [ ] `/casos`
 - [ ] 5 páginas restantes
 

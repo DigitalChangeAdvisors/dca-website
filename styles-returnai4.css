@@ -1,0 +1,86 @@
+/* ============================================================
+   ReturnAI v4 — Experiencia y fluidez (scoped .rai4)
+   Carga DESPUÉS de styles-returnai3.css. Cierra la brecha de
+   "modernidad fluida" frente a QuantumBlack / BCG X / Stripe:
+   bridge en scrollytelling pinneado, micro-interacciones,
+   navegación de capítulo persistente, ritmo refinado.
+   ============================================================ */
+
+/* ---------- 1 · BRIDGE EN SCROLLYTELLING (pieza central) ---------- */
+.rai4-scrolly { background: var(--white); position: relative; padding: 0; }
+.rai4-scrolly__inner { height: 260vh; position: relative; }
+.rai4-scrolly__pin {
+  position: sticky; top: 60px; height: calc(100vh - 60px);
+  display: grid; align-content: center; overflow: hidden;
+}
+.rai4-scrolly .section-head { margin-bottom: 24px; }
+
+.rai4-bridge { position: relative; max-width: 760px; margin: 0 auto; width: 100%; }
+/* En la escena pinneada los beats narran; la leyenda duplicaría — se oculta */
+.rai4-scrolly .bridge__legend { display: none; }
+.rai4-scrolly .section-head { margin-bottom: 8px; }
+.rai4-scrolly .section-head .chapeau { max-width: 600px; margin-left: auto; margin-right: auto; }
+
+/* Beats: cross-fade narrativo sincronizado al scroll */
+.rai4-beats { position: relative; max-width: 720px; margin: 16px auto 0; min-height: 64px; }
+.rai4-beat {
+  position: absolute; inset: 0; text-align: center;
+  font-size: 16.5px; line-height: 1.55; color: var(--carbon-70);
+  opacity: 0; transform: translateY(10px); will-change: opacity, transform;
+}
+.rai4-beat b { color: var(--teal); font-weight: 600; }
+.rai4-beat .n {
+  display: inline-block; font-family: var(--display); font-size: 13px; color: var(--gold);
+  letter-spacing: 0.1em; margin-bottom: 8px;
+}
+.rai4-beat.active { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce), (max-width: 820px), (max-height: 720px) {
+  .rai4-scrolly__inner { height: auto; }
+  .rai4-scrolly__pin { position: static; height: auto; padding: var(--section-pad) 0; overflow: visible; }
+  .rai4-beats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; position: static; min-height: 0; }
+  .rai4-beat { position: static; opacity: 1; transform: none; text-align: left; }
+}
+@media (max-width: 600px) {
+  .rai4-beats { grid-template-columns: 1fr; }
+}
+
+/* ---------- 2 · NAV DE CAPÍTULO PERSISTENTE (consumibilidad) ---------- */
+/* La capa activa siempre muestra su etiqueta: el lector nunca se pierde. */
+.rai4 .section-nav a.active .lbl { opacity: 1; transform: translateX(0); }
+.rai4 .section-nav a.active .lbl { background: var(--carbon); color: #fff; border-color: var(--carbon); box-shadow: 0 8px 24px rgba(30,42,56,0.18); }
+.rai4 .section-nav.on-dark a.active .lbl { background: #fff; color: var(--carbon); }
+
+/* ---------- 3 · MICRO-INTERACCIONES REFINADAS ---------- */
+/* Tarjetas: lift con sombra teñida de teal (no gris plano) */
+.rai4 .sol-card { transition: transform 0.45s var(--ease, ease), box-shadow 0.45s var(--ease, ease), border-color 0.45s var(--ease, ease); }
+.rai4 .sol-card:hover { transform: translateY(-7px); box-shadow: 0 26px 60px rgba(46,139,118,0.14); border-color: var(--teal-light); }
+.rai4 .comp-card:hover { box-shadow: 0 26px 60px rgba(46,139,118,0.13); border-color: var(--teal-light); }
+.rai4 .stage { transition: transform 0.45s var(--ease, ease), box-shadow 0.45s var(--ease, ease); }
+.rai4 .stage:hover { transform: translateY(-5px); box-shadow: 0 22px 50px rgba(30,42,56,0.10); }
+
+/* Botón primario: brillo sutil al entrar el cursor */
+.rai4 .btn--primary { position: relative; overflow: hidden; }
+.rai4 .btn--primary::after {
+  content: ""; position: absolute; top: 0; left: -120%; width: 60%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: skewX(-18deg); transition: left 0.6s var(--ease, ease);
+}
+.rai4 .btn--primary:hover::after { left: 140%; }
+
+/* Enlaces de capítulo / flechas con desplazamiento fluido (ya heredan arrow) */
+.rai4 .sol-card__cta:hover .arrow,
+.rai4 .system-link a:hover .arrow,
+.rai4 .persp-all:hover .arrow { transform: translateX(6px); }
+
+/* ---------- 4 · RITMO Y ENTRADA ---------- */
+/* Reveals con leve sesgo direccional para sensación de profundidad */
+@media (prefers-reduced-motion: no-preference) {
+  .js .rai4 .sol-grid > [data-reveal] { transform: translateY(34px) scale(0.985); }
+  .js .rai4 .sol-grid > [data-reveal].in { transform: none; }
+  .js .rai4 .comp-cards > [data-reveal] { transform: translateY(40px); }
+  .js .rai4 .comp-cards > [data-reveal].in { transform: none; }
+}
+
+/* Figura del hero: profundidad con sombra editorial */
+.rai4 .hero-figure image-slot { box-shadow: 0 30px 70px rgba(30,42,56,0.16); }

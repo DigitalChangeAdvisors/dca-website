@@ -1,0 +1,92 @@
+/* ============================================================
+   ReturnAI v2 — Overrides de auditoría (scoped .rai2)
+   Carga DESPUÉS de styles-returnai.css. Reencuadra la página
+   de "catálogo con precios" a "sistema con autoridad":
+   inversión atenuada, evidencia en claro, capital intelectual.
+   ============================================================ */
+
+/* ---------- Hero: 4 métricas, acento de categoría ---------- */
+.rai2 .hero__eyebrow .cat { color: var(--teal); font-weight: 600; }
+.rai2 .rai-hero__cta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 38px; }
+.rai2 .rai-hero__cta .arrow { color: inherit; }
+.rai2 .rai-hero__link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14.5px; font-weight: 600; color: var(--teal); text-decoration: none;
+}
+.rai2 .rai-hero__link .arrow { transition: transform 0.3s var(--ease, ease); }
+.rai2 .rai-hero__link:hover .arrow { transform: translateX(5px); }
+
+/* ---------- Fundamento (autoridad antes que oferta) ---------- */
+.rai2 .foundation { text-align: center; }
+.rai2 .foundation .foundation-thesis { margin-top: 6px; }
+.rai2 .foundation-frame {
+  margin: 40px auto 0; max-width: 760px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: #fff;
+}
+.rai2 .foundation-frame div { padding: 26px 24px; text-align: left; }
+.rai2 .foundation-frame div + div { border-left: 1px solid var(--border); }
+.rai2 .foundation-frame .fn-disc { font-size: 11px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
+.rai2 .foundation-frame .fn-txt { font-size: 14px; line-height: 1.5; color: var(--carbon-70); }
+@media (max-width: 760px) {
+  .rai2 .foundation-frame { grid-template-columns: 1fr; }
+  .rai2 .foundation-frame div + div { border-left: 0; border-top: 1px solid var(--border); }
+}
+
+/* ---------- Capital intelectual: nota de enlace al método ---------- */
+.rai2 .system-link { margin-top: 30px; }
+.rai2 .system-link a {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-size: 15px; font-weight: 600; color: var(--teal); text-decoration: none;
+}
+.rai2 .system-link a .arrow { transition: transform 0.3s var(--ease, ease); }
+.rai2 .system-link a:hover .arrow { transform: translateX(5px); }
+
+/* ---------- Evidencia: exhibit en claro ---------- */
+.rai2 .exhibit--light {
+  background: #fff; border: 1px solid var(--border); margin: 0 auto;
+  box-shadow: 0 2px 14px rgba(30,42,56,0.05);
+}
+.rai2 .exhibit--light .exhibit__title { color: rgba(30,42,56,0.6); }
+.rai2 .exhibit--light .exhibit__lbl { color: var(--carbon-70); }
+.rai2 .exhibit--light .exhibit__track { background: var(--platinum); }
+.rai2 .exhibit--light .exhibit__fill--base { background: rgba(30,42,56,0.20); }
+.rai2 .exhibit--light .exhibit__fill--post { background: var(--teal); }
+.rai2 .exhibit--light .exhibit__val { color: var(--carbon); }
+.rai2 .exhibit--light .exhibit__val.teal { color: var(--teal); }
+.rai2 .evidence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.rai2 .evidence-prov .source-note { margin-top: 22px; }
+@media (max-width: 900px) {
+  .rai2 .evidence-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+
+/* ---------- Soluciones: inversión ATENUADA (anti-"vendor") ---------- */
+/* La cifra deja de ser protagonista: pasa a meta-línea sobria al pie. */
+.rai2 .sol-card__name { margin-bottom: 14px; }
+.rai2 .sol-card__role { margin-top: 0; margin-bottom: 0; }
+.rai2 .sol-card__body { margin: 14px 0 0; }
+.rai2 .sol-invest {
+  margin: 24px 0 22px; padding-top: 18px; border-top: 1px solid var(--border);
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+}
+.rai2 .sol-invest__lbl { font-size: 11px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(30,42,56,0.5); }
+.rai2 .sol-invest__val { font-size: 14.5px; font-weight: 600; color: var(--carbon-70); white-space: nowrap; }
+.rai2 .sol-invest__val.free { color: var(--teal); }
+
+/* Nota de encuadre del grupo de soluciones */
+.rai2 .sol-frame-note {
+  max-width: 760px; margin: 0 0 8px; font-size: 14.5px; line-height: 1.6; color: var(--carbon-70);
+}
+.rai2 .sol-frame-note b { color: var(--carbon); font-weight: 600; }
+
+/* Flagship: inversión sobria, sin gritar */
+.rai2 .sol-flagship .sol-card__price-lbl { color: rgba(30,42,56,0.55); }
+.rai2 .sol-flagship .sol-invest-flag { margin-bottom: 6px; }
+.rai2 .sol-flagship .sol-invest-flag .v { font-family: var(--body); font-size: 20px; font-weight: 600; color: var(--carbon); }
+.rai2 .sol-flagship__aside .scope-note { font-size: 13px; color: var(--carbon-55); line-height: 1.55; margin: 14px 0 0; }
+
+/* ---------- Capital intelectual: la novela como artefacto, no SKU ---------- */
+.rai2 .book__meta { font-size: 13px; color: var(--carbon-55); letter-spacing: 0.04em; margin-top: 18px; }
+
+/* ---------- Aire entre secciones de autoridad ---------- */
+.rai2 .section--seam { border-top: 1px solid var(--border); }

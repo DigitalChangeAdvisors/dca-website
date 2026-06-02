@@ -1,0 +1,236 @@
+/* ============================================================
+   ReturnAI — CSS específico de página (vitrina de soluciones)
+   Carga DESPUÉS de styles.css / 4 / 5 / 6 / modelo-aria.
+   Solo componentes propios de esta página. Tokens, .btn, .nav,
+   .footer, .card, .label, .chapeau, .section, .wrap, .badge,
+   .section-nav, .fullbleed ya existen.
+   ============================================================ */
+
+/* ============================================================
+   S1 — HERO (2 columnas: copy 70 / métricas 30)
+   ============================================================ */
+/* Las etiquetas de botón nunca se parten en esta página */
+.rai .btn { white-space: nowrap; }
+
+.rai-hero { padding: 176px 0 104px; text-align: left; }
+.rai-hero .hero__inner { max-width: var(--maxw); padding: 0 40px; }
+.rai-hero__grid { display: grid; grid-template-columns: 1.55fr 0.9fr; gap: 72px; align-items: start; }
+.rai-hero .hero__eyebrow { margin-bottom: 24px; }
+.rai-hero h1 { margin: 0; }
+.rai-hero h1 .line { display: block; }
+.rai-hero .chapeau { text-align: left; max-width: 640px; margin: 30px 0 0; }
+
+/* Tarjeta de métricas (platino, separadores teal) */
+.rai-metrics {
+  background: var(--platinum);
+  border-radius: 16px;
+  padding: 14px 40px;
+  position: relative;
+}
+.rai-metrics::before {
+  content: ""; position: absolute; left: 0; top: 28px; bottom: 28px; width: 3px;
+  background: var(--teal); border-radius: 0 3px 3px 0;
+}
+.rai-metric { padding: 30px 0; border-top: 1px solid var(--teal-light); }
+.rai-metric:first-child { border-top: 0; }
+.rai-metric b {
+  display: block; font-family: var(--display); font-weight: 400; line-height: 1;
+  font-size: clamp(48px, 4.4vw, 60px); color: var(--teal);
+}
+.rai-metric b .suffix { color: var(--gold); }
+.rai-metric > span {
+  display: block; margin-top: 10px; font-size: 13px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; color: rgba(30,42,56,0.72);
+}
+
+@media (max-width: 980px) {
+  .rai-hero { padding: 128px 0 64px; }
+  .rai-hero__grid { grid-template-columns: 1fr; gap: 44px; }
+  .rai-metrics { padding: 8px 32px; }
+  .rai-metric { padding: 24px 0; }
+}
+
+/* Banda fotográfica con velo teal 10% */
+.rai-band .fullbleed__frame { position: relative; }
+.rai-band__veil {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: rgba(46,139,118,0.10);
+}
+
+/* ============================================================
+   S2 — LA LÓGICA DEL SISTEMA (3 etapas con conector)
+   ============================================================ */
+.logic { display: grid; grid-template-columns: 1fr 56px 1fr 56px 1fr; align-items: stretch; }
+.stage {
+  background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+  padding: 36px 34px; display: flex; flex-direction: column;
+  box-shadow: 0 2px 14px rgba(30,42,56,0.05);
+}
+.stage__top { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.stage__num { font-family: var(--display); font-size: 34px; line-height: 1; color: var(--teal-light); }
+.badge--carbon { background: #e7eaee; color: var(--carbon); border: 1px solid var(--carbon); }
+.stage h3 { font-family: var(--display); font-weight: 400; font-size: 23px; line-height: 1.3; margin-bottom: 14px; }
+.stage p { font-size: 15.5px; color: var(--carbon-70); }
+
+/* Conector animado (flecha que se dibuja) */
+.logic__arrow { display: grid; place-items: center; }
+.logic__arrow svg { width: 100%; height: 26px; overflow: visible; }
+.logic__arrow path { fill: none; stroke: var(--teal); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.logic__arrow .ln {
+  stroke-dasharray: 60; stroke-dashoffset: 60;
+  transition: stroke-dashoffset 0.7s var(--ease, ease) 0.15s;
+}
+.logic__arrow .hd {
+  stroke-dasharray: 16; stroke-dashoffset: 16;
+  transition: stroke-dashoffset 0.35s var(--ease, ease) 0.7s;
+}
+.logic.in .logic__arrow .ln,
+.logic.in .logic__arrow .hd { stroke-dashoffset: 0; }
+
+@media (max-width: 920px) {
+  .logic { grid-template-columns: 1fr; gap: 0; }
+  .logic__arrow { padding: 14px 0; }
+  .logic__arrow svg { width: 26px; height: 34px; transform: rotate(90deg); }
+}
+
+/* ============================================================
+   S3 — PORTAFOLIO DE SOLUCIONES (grupos + cards)
+   ============================================================ */
+.sol-group + .sol-group { margin-top: 64px; }
+.sol-group__head { display: flex; align-items: center; gap: 14px; margin-bottom: 30px; }
+.sol-group__head .label { margin: 0; }
+.sol-group__rule { flex: 1; height: 1px; background: var(--border); }
+
+.sol-grid { display: grid; gap: 24px; }
+.sol-grid--2 { grid-template-columns: 1fr 1fr; }
+.sol-grid--3 { grid-template-columns: repeat(3, 1fr); }
+
+.sol-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+  padding: 34px 34px 30px; display: flex; flex-direction: column;
+  box-shadow: 0 2px 14px rgba(30,42,56,0.05);
+  transition: transform 0.4s var(--ease, ease), box-shadow 0.4s var(--ease, ease), border-color 0.4s var(--ease, ease);
+}
+.sol-card:hover { transform: translateY(-6px); box-shadow: 0 22px 54px rgba(30,42,56,0.12); border-color: var(--teal-light); }
+.sol-card__name { font-family: var(--display); font-weight: 400; font-size: 26px; line-height: 1.25; margin-bottom: 16px; }
+.sol-card__price-lbl { font-size: 11.5px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(30,42,56,0.62); display: block; margin-bottom: 5px; }
+.sol-card__price { font-size: 21px; font-weight: 600; color: var(--carbon); line-height: 1.35; }
+.sol-card__price .sub { display: block; font-size: 13.5px; font-weight: 500; color: var(--carbon-55); letter-spacing: 0.01em; margin-top: 3px; }
+.sol-card__price.free { color: var(--teal); }
+.sol-card__role { font-style: italic; font-size: 15px; color: #5a6472; margin: 16px 0 0; }
+.sol-card__body { font-size: 15.5px; line-height: 1.6; color: var(--carbon-70); margin: 14px 0 26px; }
+.sol-card__cta {
+  margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; gap: 9px;
+  font-size: 14.5px; font-weight: 600; color: var(--teal); text-decoration: none; white-space: nowrap;
+}
+.sol-card__cta .arrow { transition: transform 0.3s var(--ease, ease); }
+.sol-card:hover .sol-card__cta .arrow { transform: translateX(5px); }
+
+/* Card flagship (Grupo 3 · oro) */
+.sol-flagship {
+  max-width: 920px; margin: 0 auto;
+  border: 3px solid var(--gold); border-radius: 16px;
+  background: var(--teal-05);
+  padding: 48px 52px;
+  display: grid; grid-template-columns: 1.35fr 1fr; gap: 48px; align-items: center;
+  box-shadow: 0 18px 50px rgba(30,42,56,0.08);
+}
+.sol-flagship .sol-card__name { font-size: 32px; margin-bottom: 18px; }
+.sol-flagship .sol-card__body { margin-bottom: 0; font-size: 16px; }
+.sol-flagship__aside { border-left: 1px solid var(--teal-light); padding-left: 44px; }
+.sol-flagship .sol-card__price { font-size: 26px; }
+.sol-flagship .btn { margin-top: 26px; }
+
+@media (max-width: 980px) {
+  .sol-grid--2, .sol-grid--3 { grid-template-columns: 1fr; }
+  .sol-flagship { grid-template-columns: 1fr; gap: 32px; padding: 38px 32px; }
+  .sol-flagship__aside { border-left: 0; border-top: 1px solid var(--teal-light); padding-left: 0; padding-top: 30px; }
+}
+
+/* ============================================================
+   S4 — BUQUE INSIGNIA · timeline de 6 sprints (spine animada)
+   ============================================================ */
+.rai-flagship-lead { max-width: 760px; }
+.rai-timeline { position: relative; max-width: 940px; margin: 8px 0 0; }
+.rai-timeline::before {
+  content: ""; position: absolute; left: 31px; top: 18px; bottom: 18px; width: 2px;
+  background: var(--teal-light);
+}
+.rai-timeline__fill {
+  position: absolute; left: 31px; top: 18px; width: 2px; height: calc(100% - 36px);
+  background: var(--teal); transform: scaleY(0); transform-origin: top;
+  transition: transform 1.5s var(--ease-smooth, cubic-bezier(0.4,0,0.2,1)) 0.1s;
+}
+.rai-timeline.in .rai-timeline__fill { transform: scaleY(1); }
+
+.tl-item { position: relative; display: grid; grid-template-columns: 64px 1fr; gap: 30px; padding: 0 0 46px; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-node {
+  position: relative; z-index: 1; width: 64px; height: 64px; border-radius: 50%;
+  display: grid; place-items: center; flex: none;
+  font-family: var(--display); font-size: 23px; color: var(--teal);
+  background: var(--white); border: 2px solid var(--teal-light);
+  box-shadow: 0 0 0 6px var(--white);
+}
+.tl-item.in .tl-node { border-color: var(--teal); }
+.tl-body { padding-top: 5px; }
+.tl-days {
+  display: inline-block; white-space: nowrap; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--teal);
+  padding: 5px 13px; border: 1px solid var(--teal-light); border-radius: 100px;
+  background: var(--teal-05); margin-bottom: 14px;
+}
+.tl-title { font-family: var(--display); font-weight: 400; font-size: clamp(22px, 2vw, 27px); line-height: 1.3; margin-bottom: 10px; }
+.tl-desc { font-size: 16px; line-height: 1.6; color: var(--carbon-70); max-width: 640px; }
+
+.rai-flagship-close {
+  margin-top: 44px; max-width: 760px; padding: 24px 28px;
+  border-left: 4px solid var(--gold); background: var(--teal-05); border-radius: 0 8px 8px 0;
+  font-size: 16.5px; line-height: 1.6; color: var(--carbon);
+}
+
+@media (max-width: 880px) {
+  .rai-timeline::before, .rai-timeline__fill { left: 26px; }
+  .tl-item { grid-template-columns: 52px 1fr; gap: 22px; padding-bottom: 38px; }
+  .tl-node { width: 52px; height: 52px; font-size: 19px; }
+}
+
+/* ============================================================
+   S5 — GARANTÍA (fondo carbón · stat cards)
+   ============================================================ */
+.bg-carbon .label.on-carbon { color: #6fc3ad; }
+.guarantee-body { max-width: 720px; }
+.guarantee-body p { color: rgba(255,255,255,0.85); font-size: 17.5px; line-height: 1.65; }
+.guarantee-body p + p { margin-top: 20px; }
+.guarantee-body b { color: #fff; font-weight: 600; }
+
+.guarantee-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 52px; }
+.gstat {
+  background: #243040; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px;
+  padding: 34px 32px;
+}
+.gstat__num { font-family: var(--display); font-weight: 400; line-height: 1; font-size: clamp(38px, 4vw, 54px); color: #fff; }
+.gstat__num .suffix { color: var(--gold); }
+.gstat__num.teal { color: #6fc3ad; }
+.gstat__lbl { margin-top: 14px; font-size: 14px; line-height: 1.5; color: rgba(255,255,255,0.7); }
+
+@media (max-width: 760px) {
+  .guarantee-stats { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* ============================================================
+   S6 — CTA FINAL
+   ============================================================ */
+.rai-cta { text-align: center; }
+.rai-cta .label { display: block; margin-bottom: 20px; }
+.rai-cta__wrap { max-width: 660px; margin: 0 auto; }
+.rai-cta h2 { margin-bottom: 24px; }
+.rai-cta__body { color: var(--carbon-70); font-size: 17px; max-width: 600px; margin: 0 auto 40px; }
+.rai-cta__note { margin-top: 20px; font-size: 14px; color: var(--carbon-55); }
+.rai-cta__alt { display: block; margin-top: 26px; font-size: 13.5px; color: #5a6472; text-decoration: none; }
+.rai-cta__alt:hover { color: var(--teal); }
+.rai-cta__alt .arrow { color: var(--teal); }
+
+@media (max-width: 560px) {
+  .rai-cta .btn--lg { width: 100%; justify-content: center; }
+}

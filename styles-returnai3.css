@@ -1,0 +1,48 @@
+/* ============================================================
+   ReturnAI v3 — Nivel "firma global" (scoped .rai3)
+   Carga DESPUÉS de styles-returnai2.css. Cierra la brecha con
+   Deloitte/Accenture/McKinsey/BCG/Bain: foto editorial, precio
+   MBB-puro (sin cifras), prueba sectorial, autoría, perspectivas.
+   ============================================================ */
+
+/* ---------- Hero editorial dividido: figura + cred inline ---------- */
+.rai3 .mra-hero--split .hero__cred { margin-top: 44px; }
+.rai3 .hero-figure__cap { background: rgba(30,42,56,0.66); }
+
+/* ---------- Precio MBB-puro: cero cifras, conversación ---------- */
+.rai3 .sol-invest { flex-direction: column; align-items: flex-start; gap: 4px; }
+.rai3 .sol-invest__lbl { color: rgba(30,42,56,0.5); }
+.rai3 .sol-invest__val { font-weight: 500; font-size: 14px; color: var(--carbon-70); white-space: normal; }
+.rai3 .sol-flagship .sol-invest-flag { display: none; }
+.rai3 .sol-flagship__aside .scope-note { margin-top: 0; }
+.rai3 .sol-frame-note b { color: var(--teal); }
+
+/* ---------- Banda de prueba sectorial ---------- */
+.rai3 .proof { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px; align-items: center; }
+.rai3 .proof__lead .label { display: block; margin-bottom: 16px; }
+.rai3 .proof__lead h3 { font-family: var(--display); font-weight: 400; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.25; }
+.rai3 .proof__lead p { margin-top: 14px; color: var(--carbon-70); font-size: 15.5px; max-width: 420px; }
+@media (max-width: 900px) { .rai3 .proof { grid-template-columns: 1fr; gap: 32px; } }
+
+/* ---------- Pull-quote editorial (punto de vista) ---------- */
+.rai3 .pov { max-width: 980px; margin: 0 auto; text-align: center; }
+.rai3 .pov__mark { font-family: var(--display); font-size: 64px; line-height: 0.4; color: var(--teal-light); display: block; }
+.rai3 .pov blockquote {
+  font-family: var(--display); font-weight: 400; font-size: clamp(26px, 3vw, 40px);
+  line-height: 1.32; color: var(--carbon); letter-spacing: -0.01em; margin: 18px 0 24px;
+}
+.rai3 .pov blockquote em { font-style: normal; color: var(--teal); }
+.rai3 .pov__by { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--carbon-55); }
+
+/* ---------- Perspectivas: encabezado con enlace "ver todas" ---------- */
+.rai3 .persp-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 44px; flex-wrap: wrap; }
+.rai3 .persp-head .section-head { margin-bottom: 0; }
+.rai3 .persp-all { font-size: 14.5px; font-weight: 600; color: var(--teal); text-decoration: none; display: inline-flex; gap: 8px; align-items: center; white-space: nowrap; padding-bottom: 6px; }
+.rai3 .persp-all .arrow { transition: transform 0.3s var(--ease, ease); }
+.rai3 .persp-all:hover .arrow { transform: translateX(5px); }
+
+/* ---------- Liderazgo: nota de autoría sobria ---------- */
+.rai3 .leaders-intro { max-width: 640px; }
+
+/* ---------- Costura entre secciones de autoridad ---------- */
+.rai3 .section--seam { border-top: 1px solid var(--border); }

@@ -1,0 +1,124 @@
+/* ============================================================
+   ReturnAI v6 — Capa de animación refinada (scoped .rai6)
+   Carga DESPUÉS de styles-returnai5.css. Añade micro-coreografía
+   que "ensambla" la página con intención: sobria, ágil, elegante.
+   Todo cuelga del hook .in (IntersectionObserver de app.js) y
+   degrada por completo con prefers-reduced-motion.
+   ============================================================ */
+
+.rai6 { --ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1); }
+
+/* ============================================================
+   1 · REGLA EDITORIAL EN EL EYEBROW (ritmo de capítulo)
+   Una línea de oro se dibuja junto a cada eyebrow al entrar:
+   marca el inicio de sección y aporta cadencia tipo informe.
+   ============================================================ */
+.rai6 .label { display: inline-flex; align-items: center; gap: 13px; }
+.rai6 .label::after {
+  content: ""; height: 1.5px; width: 0; background: var(--gold);
+  transition: width 0.7s var(--ease, ease) 0.2s;
+}
+.rai6 .in .label::after { width: 30px; }
+.rai6 .bg-carbon .label::after { background: var(--gold); }
+
+/* ============================================================
+   2 · LISTAS QUE CASCADEAN (las 14 herramientas cobran vida)
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  .js .rai6 .comp-list li {
+    opacity: 0; transform: translateY(8px);
+    transition: opacity 0.5s var(--ease, ease), transform 0.5s var(--ease, ease);
+  }
+  .js .rai6 .comp-card.in .comp-list li { opacity: 1; transform: none; }
+  .js .rai6 .comp-card.in .comp-list li:nth-child(1) { transition-delay: 0.10s; }
+  .js .rai6 .comp-card.in .comp-list li:nth-child(2) { transition-delay: 0.16s; }
+  .js .rai6 .comp-card.in .comp-list li:nth-child(3) { transition-delay: 0.22s; }
+  .js .rai6 .comp-card.in .comp-list li:nth-child(4) { transition-delay: 0.28s; }
+  .js .rai6 .comp-card.in .comp-list li:nth-child(5) { transition-delay: 0.34s; }
+  .js .rai6 .comp-card.in .comp-list li:nth-child(6) { transition-delay: 0.40s; }
+  .js .rai6 .comp-card.in .comp-list li:nth-child(7) { transition-delay: 0.46s; }
+
+  /* Marco de disciplinas (Fundamento) en cascada */
+  .js .rai6 .foundation-frame > div {
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 0.6s var(--ease, ease), transform 0.6s var(--ease, ease);
+  }
+  .js .rai6 .foundation-frame.in > div:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.05s; }
+  .js .rai6 .foundation-frame.in > div:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.16s; }
+  .js .rai6 .foundation-frame.in > div:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.27s; }
+}
+
+/* ============================================================
+   3 · TIMELINE DE 6 SPRINTS: nodos con resorte + día deslizante
+   El recorrido de 120 días se siente secuencial y vivo.
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  .js .rai6 .tl-node {
+    transform: scale(0.55); opacity: 0;
+    transition: transform 0.6s var(--ease-spring), opacity 0.4s ease;
+  }
+  .js .rai6 .tl-item.in .tl-node { transform: none; opacity: 1; }
+  .js .rai6 .tl-days {
+    opacity: 0; transform: translateX(-10px);
+    transition: opacity 0.5s var(--ease, ease) 0.12s, transform 0.5s var(--ease, ease) 0.12s;
+  }
+  .js .rai6 .tl-item.in .tl-days { opacity: 1; transform: none; }
+}
+
+/* ============================================================
+   4 · REVELADO EN CORTINA DE IMÁGENES EDITORIALES
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  .js .rai6 .book__slot,
+  .js .rai6 .persp-card image-slot {
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1s var(--ease, ease) 0.1s;
+  }
+  .js .rai6 .book__slot.in,
+  .js .rai6 .persp-card.in image-slot { clip-path: inset(0 0 0 0); }
+}
+
+/* ============================================================
+   5 · REGLAS DE GRUPO QUE SE TRAZAN (Soluciones)
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  .js .rai6 .sol-group__rule {
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.85s var(--ease, ease) 0.15s;
+  }
+  .js .rai6 .sol-group.in .sol-group__rule { transform: scaleX(1); }
+}
+
+/* ============================================================
+   6 · SUBRAYADO QUE BARRE EN ENLACES DE TEXTO (refinamiento)
+   ============================================================ */
+.rai6 .system-link a,
+.rai6 .persp-all,
+.rai6 .rai-hero__link,
+.rai6 .rai-cta__alt { position: relative; }
+.rai6 .system-link a::after,
+.rai6 .persp-all::after,
+.rai6 .rai-hero__link::after,
+.rai6 .rai-cta__alt::after {
+  content: ""; position: absolute; left: 0; right: 100%; bottom: -3px; height: 1.5px;
+  background: currentColor; opacity: 0.5;
+  transition: right 0.4s var(--ease, ease);
+}
+.rai6 .system-link a:hover::after,
+.rai6 .persp-all:hover::after,
+.rai6 .rai-hero__link:hover::after,
+.rai6 .rai-cta__alt:hover::after { right: 0; }
+
+/* ============================================================
+   REDUCED MOTION — estado final visible, sin movimiento
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .rai6 .label::after { width: 30px; transition: none; }
+  .rai6 .comp-list li,
+  .rai6 .foundation-frame > div,
+  .rai6 .tl-node,
+  .rai6 .tl-days { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .rai6 .book__slot,
+  .rai6 .persp-card image-slot { clip-path: none !important; }
+  .rai6 .sol-group__rule { transform: none !important; }
+}
