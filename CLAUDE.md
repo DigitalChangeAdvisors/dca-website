@@ -157,6 +157,74 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 
 ---
 
+## Decisiones Canónicas de `/modelo-aria` — Fine-Tuning (2026-06-03)
+
+> Fine-tuning activo. Los 3 puntos críticos se resuelven antes de cualquier otro ajuste.
+
+### Etapa conductual y mecanismos
+- **Etapa del visitante:** Solución — ya reconoció el problema en el home, evalúa si ARIA es el método correcto
+- **Mecanismo principal:** Autoridad cognitiva + Efecto ancla (profundidad metodológica)
+- **Mecanismo secundario:** Reciprocidad (dar detalle antes de pedir acción)
+- **Error a evitar:** Reactivar aversión a la pérdida (mecanismo del home) más de una vez en esta página
+
+### Elementos compartidos con el home (ya sincronizados)
+- Nav canónica: 4 ítems + CTA · clase `is-current` en "Modelo ARIA" ✅
+- Footer canónico: descriptor "De la inversión en IA al retorno que importa." · sin tira de ciudades · 4 columnas ✅
+- Logo SVG: `font-weight="400"` · `focusable="false"` · sin `role="img"` redundante ✅
+
+### Los 3 puntos críticos (prioridad de fine-tuning)
+
+**Punto 1 — Eliminar method-strip duplicado (S3)**
+- El bloque de 4 contadores (14 / 120 / 70+ / 17) en la sección Fundamento es idéntico al `hero__cred` del hero de esta misma página.
+- Acción: eliminar el `<div class="method-strip">` de S3. Reemplazar con los datos canónicos del método: `14 componentes · 6 dimensiones de medición · 7 frameworks ágiles · 10 obstáculos intervenidos` (misma tabla canónica que en el homepage).
+- El párrafo `evidence-cap` que sigue también puede eliminarse — queda absorbido por el fundamento.
+
+**Punto 2 — Transformar el diagrama-puente SVG (S2.5)**
+- El SVG bridge es la firma visual del homepage. Repetirlo en modelo-aria destruye su exclusividad.
+- Acción: reemplazar por una visualización que muestre los **3 grupos de componentes como infraestructura del puente**: 3 tramos (Diagnóstico / Solución / Impacto) con los 14 componentes distribuidos. Colores: teal para los tramos, oro para los marcadores de componentes.
+- El texto de la sección ("Del uso al impacto") puede conservarse — es el concepto; la visualización debe ser diferente.
+
+**Punto 3 — Reemplazar Liderazgo placeholders (S10)**
+- DCA tiene 2 fundadores reales: César Lozano y Ruth Jaramillo. No existe un tercer socio.
+- Acción: eliminar el tercer `.leader` div. Reemplazar los 2 restantes con los datos reales.
+- Framing diferente al home: aquí son "autores de la metodología", no "líderes de la firma".
+- César: "CEO · Digital Change Advisors — Autor de la metodología ARIA y del framework MATCH. Líder de más de 70 intervenciones de retorno de IA en LatAm."
+- Ruth: "Directora · Digital Change Academy — Cocreadora de los Frameworks Ágiles del Modelo ARIA. Ingeniera Industrial, MBA EAFIT, Coach certificada NCI."
+- Fotos: usar `<img src="img-leader-1.png">` y `<img src="img-leader-2.png">` (reales, ya en producción).
+
+### Inventario completo — decisiones de cada sección
+
+| Sección | Decisión | Razón |
+|---|---|---|
+| Hero S1 | ✅ Conservar | Copy distinto al home, correcto para etapa Solución |
+| El Problema S2 | 🟡 Reducir + reframe | Máximo 3 bullets; cambiar de "síntomas" a "indicadores de diagnóstico ARIA" |
+| Diagrama-Puente S2.5 | 🔴 **CRÍTICO** — Transformar | Mismo SVG que home; reemplazar por visualización de 3 tramos + 14 componentes |
+| Fundamento Intelectual S3 | 🔴 **CRÍTICO** — Eliminar method-strip | Contador 14/120/70+/17 duplica el hero__cred de esta misma página |
+| Las 3 Fases sticky rail S4 | 🟡 Diferenciar visualmente | Agregar duración por fase (sem. 1-3 / 4-10 / 11-17) y entregable clave no visible en home |
+| Los 14 Componentes S5 | ✅ Conservar íntegro | Único en toda la presencia web. Núcleo de autoridad intelectual |
+| Sprints MATCH S6 | ✅ Conservar íntegro | Único. Explica el *cómo* de la implementación |
+| Caso Ancla S7 | 🟡 Transformar perspectiva | Home muestra resultados; aquí mostrar componentes activados + modelo de medición |
+| Diferenciación S8 | ✅ Conservar | Framing diferente al home (ARIA vs. vendor tecnológico, no DCA vs. vendor genérico) |
+| Casos de Aplicación S9 | ✅ Conservar íntegro | Único. Auto-categorización del CEO en su escenario real |
+| Liderazgo S10 | 🔴 **CRÍTICO** — Reemplazar | 3 placeholders → 2 fundadores reales + fotos reales + framing como autores de ARIA |
+| FAQ Ejecutivo S11 | ✅ Conservar íntegro | Único. Reduce fricción cognitiva ante el comité de inversión |
+| Responsabilidad / Garantía | ✅ Conservar íntegro | Único. Risk reversal para el CFO en etapa de cierre |
+| Perspectivas S13 | 🟡 Asignar autores reales | Títulos correctos; eliminar `<p>` de "Títulos de muestra"; asignar César o Ruth como autor |
+| CTA Final | 🟡 Ajustar nota | Usar nota canónica: "Sin compromiso · 25 minutos · Tu reporte es confidencial" |
+
+### Datos canónicos de esta página
+- Stats del hero: `14` Componentes · `120` Días · `70+` Empresas · `17` Países (comunidad LARIA, no presencia de firma)
+- Caso ancla (S7): **$3.2M · 19%→67% · +13 puntos persistencia · payback 120 días** (caso real con NDA — mismo que `/nosotros`)
+- **PROHIBIDO** usar caso novela (Adalid Puentes · $8.2M) en esta página
+
+### Archivos de la página
+- HTML: `modelo-aria.html`
+- CSS: `styles.css` + `styles4.css` + `styles5.css` + `styles6.css` + `styles-modelo-aria.css`
+- JS: `app.js` + `enhance4.js` + `enhance6.js` + `enhance-aria.js` + `enhance-v6.js`
+- **`image-slot.js`** activo — reemplazar por `<img>` reales antes del dominio final
+
+---
+
 ## Regla de Fine-Tuning (CANÓNICA)
 
 > Los placeholders de imágenes, textos pendientes (nombres, credenciales, fuentes) y la
