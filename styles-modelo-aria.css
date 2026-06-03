@@ -638,3 +638,7 @@ html { scroll-padding-top: 96px; }
 @media (max-width: 880px) {
   .mra-hero--split .hero__cred b { font-size: 38px; }
 }
+
+/* Bridge legend — color diferenciado por polo */
+.bridge__leg.is-use .t    { color: var(--teal); }
+.bridge__leg.is-impact .t { color: var(--gold); }
