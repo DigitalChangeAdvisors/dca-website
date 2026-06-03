@@ -209,7 +209,7 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 | Sección | Decisión | Estado |
 |---|---|---|
 | Hero S1 | Conservar — copy correcto para etapa Solución | ✅ |
-| El Problema S2 | 3 bullets; título → "Indicadores que diagnosticamos antes de toda intervención ARIA" | ✅ |
+| El Problema S2 | Texto thesis + problem__bridge + indicator-cards (oro, clip-path stagger) — fine-tuning BE completo | ✅ |
 | Diagrama-Puente S2.5 | SVG 3 tramos Diagnóstico/Solución/Impacto (3+7+4) — no el arco del home | ✅ |
 | Fundamento Intelectual S3 | Method-strip → 14/6/7/10 (datos metodológicos, no duplicar hero__cred) | ✅ |
 | Las 3 Fases sticky rail S4 | Duración por fase (sem. 1-3 / 4-10 / 11-17) + entregable nominal por fase | ✅ |
@@ -226,9 +226,21 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 
 ### Ajustes 🟡 — Implementación (2026-06-03)
 
-**S2 El Problema:**
+**S2 El Problema — fine-tuning BE completo (2026-06-03):**
 - Título canónico: `"Indicadores que diagnosticamos antes de toda intervención ARIA"` (no "Tu comité ya está viendo esto")
-- 3 bullets canónicos: "Pilotos aprobados hace +12 meses sin veredicto financiero para la Junta" · "Licencias activas que no aparecen como valor en el P&L" · "Comité ejecutivo exigiendo el número de ROI de la estrategia de IA"
+- **Texto thesis (canónico):** "El **70% de las organizaciones** que han invertido en IA no puede documentar ROI ante su Junta. No es la tecnología lo que falla; es la ausencia de método para convertir **uso** en **impacto** económico auditable."
+  - Punto y coma: preserva el desplazamiento de hipótesis (antítesis) sin dos frases cortas — decisión BE justificada
+  - "uso" e "impacto" en negrita: contraste conceptual clave, sin mayúsculas sostenidas (registro C-Level, no redes sociales)
+- **Párrafo puente `problem__bridge` (canónico):** "DCA construye esa última milla. Para eso fue diseñado el **Modelo ARIA**: 14 componentes que convierten esa brecha en retorno auditable."
+  - Instala "Modelo ARIA" + "14 componentes" antes de que el visitante llegue a S3 (anclaje de solución propietaria)
+- **Fuente:** "síntesis DCA sobre retorno de inversiones en IA 2024–2025 y diagnósticos propios en 70+ organizaciones" (no "estudios de adopción empresarial")
+- **Indicadores — 3 tarjetas canónicas:**
+  1. "Pilotos aprobados hace +12 meses sin veredicto financiero para la Junta"
+  2. "Licencias activas que no aparecen como valor recuperado en el P&L" — "recuperado" (no "capturado": este es contexto P&L/contable, no estratégico)
+  3. "Comité ejecutivo exigiendo el número de ROI de la estrategia de IA"
+  - Sin punto final: sintagmas nominales, no oraciones completas — correcto tipográficamente
+- **Diseño indicator-card:** borde izquierdo oro 4px · border-radius 0/6px · fondo blanco · sombra base 2px · hover spring lift translateY(-4px)
+- **Animación reveal:** `@keyframes indicator-reveal` (clip-path desde derecha) disparado por `.indicator-stack.in` · stagger nth-child 0/120ms/240ms · `data-reveal` en el contenedor, NO en las cards individuales · título del aside sin `data-reveal` (evita desplazamiento visual sobre primera tarjeta)
 
 **S4 Las 3 Fases — duraciones y entregables canónicos:**
 | Fase | Semanas | Entregable nominal |
