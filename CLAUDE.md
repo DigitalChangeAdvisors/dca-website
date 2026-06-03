@@ -23,7 +23,7 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 | `/blog` | `blog.html` | Perspectivas — liderazgo de pensamiento | ✅ Completo y en producción |
 | `/modelo-aria` | `modelo-aria.html` | Autoridad intelectual: 14 componentes, 6 sprints, garantía | ✅ Desplegada — fine-tuning al final |
 | `/returnai` | `returnai.html` | Vitrina comercial: sistema ReturnAI, escalera de valor | ✅ Implementada — fine-tuning al final |
-| `/nosotros` | `nosotros.html` | DCA, fundadores, casos, partnerships | 🔄 **Implementada** — 13 secciones, rutas canónicas, JS/CSS integrados. Fine-tuning al final. |
+| `/nosotros` | `nosotros.html` | DCA, fundadores, casos, partnerships | ✅ **Deployada** — 13 secciones live. Deuda: fotos reales, og específica, JSON-LD LinkedIn |
 | `/academia` | `academia.html` | Digital Change Academy: certificaciones | ⏳ Pendiente |
 | `/red-aria` | `red-aria.html` | Captación de nodos/socios por país | ⏳ Pendiente |
 | `/casos` | `casos.html` | ROI documentado — caso ancla $3.2M | ⏳ Pendiente |
