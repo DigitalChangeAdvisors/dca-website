@@ -210,8 +210,8 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 |---|---|---|
 | Hero S1 | Conservar — copy correcto para etapa Solución | ✅ |
 | El Problema S2 | Texto thesis + problem__bridge + indicator-cards (oro, clip-path stagger) — fine-tuning BE completo | ✅ |
-| Diagrama-Puente S2.5 | SVG 3 tramos Diagnóstico/Solución/Impacto (3+7+4) — no el arco del home | ✅ |
-| Fundamento Intelectual S3 | Method-strip → 14/6/7/10 (datos metodológicos, no duplicar hero__cred) | ✅ |
+| Diagrama-Puente S2.5 | Title: "…puente del uso al impacto." · leyenda 3+7+4 teal / 120 días oro · "niveles" · max-width 320px — fine-tuning BE completo ✅ |
+| Fundamento Intelectual S3 | discipline-triad Capacidad→Intención→Rentabilidad · bg-platinum · íconos SVG stroke · synergy-close — fine-tuning BE completo ✅ |
 | Las 3 Fases sticky rail S4 | Duración por fase (sem. 1-3 / 4-10 / 11-17) + entregable nominal por fase | ✅ |
 | Los 14 Componentes S5 | Conservar íntegro — único en toda la presencia web | ✅ |
 | Sprints MATCH S6 | Conservar íntegro — explica el *cómo* de la implementación | ✅ |
@@ -241,6 +241,33 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
   - Sin punto final: sintagmas nominales, no oraciones completas — correcto tipográficamente
 - **Diseño indicator-card:** borde izquierdo oro 4px · border-radius 0/6px · fondo blanco · sombra base 2px · hover spring lift translateY(-4px)
 - **Animación reveal:** `@keyframes indicator-reveal` (clip-path desde derecha) disparado por `.indicator-stack.in` · stagger nth-child 0/120ms/240ms · `data-reveal` en el contenedor, NO en las cards individuales · título del aside sin `data-reveal` (evita desplazamiento visual sobre primera tarjeta)
+
+**S2.5 Diagrama-Puente — fine-tuning BE completo (2026-06-03):**
+- **H2 canónico:** "14 componentes construyen el puente del uso al impacto." — `<br>` forzado después de "el" para corte correcto en 2 líneas
+- **Chapeau:** antítesis con punto y coma: "El problema no es la intención; es la ausencia de estructura." (nunca punto seguido — mismo patrón que S2 thesis)
+- **"fases" → "niveles":** tanto en el chapeau como en la leyenda izquierda. Terminología canónica para toda la página.
+- **Leyenda izquierda — texto canónico:** "14 componentes propietarios en 3 niveles de intervención, diseñados para superar los obstáculos que impiden la rentabilización de la inversión en IA."
+- **Leyenda — colores:** `3 + 7 + 4` en teal · `120 días` en oro — espeja los polos del SVG (teal = inversión ya hecha, oro = KPI documentado)
+- **Leyenda max-width:** 320px (de 280px) — para igualar 4 líneas en ambas columnas
+
+**S3 Fundamento Intelectual — fine-tuning BE completo (2026-06-03):**
+- **Fondo:** `bg-platinum` — separación visual clara con S2.5 (blanco) y S4 (blanco)
+- **Subtítulo bajo H2:** `<p class="aria-expansion">Aceleración del Retorno de la IA</p>` — Montserrat 400, carbón-55. Sin letras destacadas (A/R/IA): registro C-Level, no juego tipográfico.
+- **Thesis:** "—Aceleración del Retorno de la IA—" eliminada del párrafo (estaba en el medio, interrumpía lectura). `<b>` en carbón, no teal — evita competencia visual con los `disc-outcome`. `max-width: 820px` en el contenedor.
+- **Texto thesis canónico (sin la expansión del acrónimo):** "…son los **factores humanos y organizacionales** que impiden que la IA convierta en retorno. Por eso ARIA no es un playbook genérico, sino un sistema de **14 componentes propietarios** en 3 grupos de intervención, construido sobre tres disciplinas y calibrado en intervención real."
+- **Foundation-roots y method-strip:** ELIMINADOS. Reemplazados por `.discipline-triad`.
+- **discipline-triad — secuencia causal (canónica):**
+  - Card 1: Neurociencias de la Adopción → **Capacidad** · ícono nodo neural · badge 01 · borde teal
+  - Card 2: Economía del Comportamiento → **Intención** · ícono bifurcación Y · badge 02 · borde teal
+  - Card 3: Arquitectura Sociotécnica → **Rentabilidad** · ícono círculos interlocking · badge 03 · borde oro
+  - "Arquitectura Sociotécnica" = nombre corto canónico aprobado (vs. "Arquitectura de Sistemas Sociotécnicos")
+  - Íconos: SVG stroke-only, `pathLength="100"`, animados con `stroke-dashoffset` al scroll (stagger 0.25/0.45/0.65s)
+  - Flechas: SVG inline, teal, 65% opacidad (no carácter →)
+- **synergy-close — texto canónico:** "La rentabilización de la IA no es gestión del cambio basada en suposiciones. Es **ingeniería organizacional** donde la capacidad operativa se diseña, se mide y se escala para convertir la inversión en **retorno auditable**."
+  - "ingeniería organizacional" en teal bold — reencuadre de categoría, escaneable
+  - "retorno auditable" en oro bold — espeja el polo KPI DOCUMENTADO del diagrama-puente
+- **Credencial:** "14 componentes · 70+ organizaciones" — 13px, separada por línea oro (evidence post-claim, no display marketing)
+- **BE rationale synergy:** El mensaje de sinergia agrega porque instala la conclusión de qué producen las tres disciplinas JUNTAS ("ingeniería organizacional"), no solo qué son por separado. Sin él, el triad queda como inputs sin output demostrado.
 
 **S4 Las 3 Fases — duraciones y entregables canónicos:**
 | Fase | Semanas | Entregable nominal |
