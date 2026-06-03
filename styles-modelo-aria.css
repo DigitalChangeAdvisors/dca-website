@@ -50,6 +50,9 @@
   color: var(--teal); margin-bottom: 22px;
 }
 .indicator-stack { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+/* El stack usa data-reveal solo para activar — sin fade ni translate en el contenedor */
+.indicator-stack[data-reveal] { opacity: 1; transform: none; transition: none; }
+
 .indicator-card {
   background: #ffffff;
   border-left: 4px solid var(--gold);
@@ -62,22 +65,26 @@
   transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1),
               box-shadow 0.28s cubic-bezier(0.34,1.56,0.64,1);
 }
+/* Estado inicial oculto — solo cuando hay JS */
+.js .indicator-card { clip-path: inset(0 100% 0 0); }
+/* Reveal staggered cuando el padre recibe .in */
+.js .indicator-stack.in .indicator-card {
+  animation: indicator-reveal 0.55s cubic-bezier(0.16,1,0.3,1) both;
+}
+.js .indicator-stack.in .indicator-card:nth-child(2) { animation-delay: 0.12s; }
+.js .indicator-stack.in .indicator-card:nth-child(3) { animation-delay: 0.24s; }
+@keyframes indicator-reveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}
 .indicator-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 20px rgba(164,129,17,0.12), 0 2px 8px rgba(30,42,56,0.06);
 }
-.indicator-card[data-reveal] {
-  opacity: 1;
-  transform: none;
-  clip-path: inset(0 100% 0 0);
-  transition: clip-path 0.55s cubic-bezier(0.16,1,0.3,1) var(--delay,0ms),
-              transform 0.28s cubic-bezier(0.34,1.56,0.64,1),
-              box-shadow 0.28s cubic-bezier(0.34,1.56,0.64,1);
-}
-.js .indicator-card[data-reveal].in { clip-path: inset(0 0% 0 0); }
 @media (prefers-reduced-motion: reduce) {
-  .indicator-card[data-reveal] { clip-path: none; }
-  .indicator-card:hover { transform: none; }
+  .js .indicator-card { clip-path: none; }
+  .js .indicator-stack.in .indicator-card { animation: none; }
+  .indicator-card:hover { transform: none; box-shadow: 0 2px 8px rgba(30,42,56,0.07); }
 }
 
 @media (max-width: 1024px) {
