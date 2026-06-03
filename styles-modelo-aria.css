@@ -739,9 +739,11 @@ html { scroll-padding-top: 96px; }
   margin-bottom: 0;
 }
 
-/* S3 — thesis: bold en carbón + contenedor más ancho */
+/* S3 — thesis: bold en carbón + contenedor centrado y más ancho */
 #fundamento .foundation-thesis b { color: var(--carbon); }
-#fundamento .center { max-width: 820px; }
+#fundamento .section-head { margin-bottom: 28px; }
+#fundamento .center { max-width: 960px; margin-left: auto; margin-right: auto; }
+#fundamento .foundation-thesis { max-width: 960px; font-size: clamp(17px, 1.6vw, 20px); }
 
 /* S3 — disc-col outcome variant + badge + icon */
 .disc-col.disc-col--outcome { border-top-color: var(--gold); }
