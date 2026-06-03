@@ -639,6 +639,7 @@ html { scroll-padding-top: 96px; }
   .mra-hero--split .hero__cred b { font-size: 38px; }
 }
 
-/* Bridge legend — color diferenciado por polo */
+/* Bridge legend — color diferenciado por polo + ancho ampliado hacia el centro */
+.bridge__leg              { max-width: 320px; }
 .bridge__leg.is-use .t    { color: var(--teal); }
 .bridge__leg.is-impact .t { color: var(--gold); }
