@@ -576,3 +576,15 @@ html { scroll-padding-top: 96px; }
 @media (min-width: 881px) and (max-width: 1100px) {
   .leaders { grid-template-columns: 1fr 1fr; max-width: 760px; }
 }
+
+/* — Hero credentials: peso visual aumentado para el layout split — */
+.mra-hero--split .hero__cred b {
+  font-size: clamp(28px, 2.8vw, 38px);
+  color: var(--carbon);
+}
+.mra-hero--split .hero__cred span {
+  color: var(--carbon-70);
+}
+@media (max-width: 880px) {
+  .mra-hero--split .hero__cred b { font-size: 26px; }
+}
