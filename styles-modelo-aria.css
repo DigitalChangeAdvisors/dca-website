@@ -500,3 +500,77 @@ html { scroll-padding-top: 96px; }
   .faq__a { transition: none !important; }
   .faq__chevron, .app-card, .sprint__num { transition: none !important; }
 }
+
+/* ============================================================
+   v7 (fine-tuning BE) — duración por fase, entregables, evidencia
+   metodológica en caso ancla, autores en perspectivas.
+   ============================================================ */
+
+/* Badge gold (variante de .badge para fase Impacto) */
+.badge--gold {
+  background: #fff8e8; color: var(--gold);
+  border: 1px solid var(--gold);
+}
+
+/* Duración por fase — pill teal bajo el h3 */
+.phase-dur {
+  display: inline-block; margin: 6px 0 16px;
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--teal); background: var(--teal-05); border: 1px solid var(--teal-light);
+  padding: 4px 13px; border-radius: 100px;
+}
+.phase-dur--gold { color: var(--gold); background: #fff8e8; border-color: var(--gold); }
+
+/* Entregable por fase — chip similar a sprint__deliverable */
+.phase-dlv {
+  display: flex; align-items: flex-start; gap: 9px; margin-top: 16px;
+  font-size: 13px; font-weight: 500; color: var(--carbon); line-height: 1.5;
+  padding: 10px 16px; background: var(--platinum); border: 1px solid var(--teal-light); border-radius: 8px;
+}
+.phase-dlv--gold { border-color: var(--gold); background: #fff8e8; }
+.phase-dlv .k {
+  flex: none; font-weight: 700; color: var(--teal); letter-spacing: 0.05em;
+  text-transform: uppercase; font-size: 9.5px; line-height: 1.7;
+}
+.phase-dlv--gold .k { color: var(--gold); }
+
+/* Caso ancla — bloque de componentes metodológicos (sobre fondo carbón) */
+.case__method {
+  margin-top: 36px; padding: 28px 32px;
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.10); border-radius: 12px;
+  max-width: 820px;
+}
+.case__method-label {
+  display: block; font-size: 10.5px; font-weight: 600; letter-spacing: 0.13em;
+  text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 22px;
+}
+.case__method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.case__method-grid .badge { margin-bottom: 12px; display: inline-block; }
+.case__method-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.case__method-list li {
+  font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.4;
+  padding-left: 14px; position: relative;
+}
+.case__method-list li::before {
+  content: ""; position: absolute; left: 0; top: 6px;
+  width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.28);
+}
+@media (max-width: 760px) {
+  .case__method { padding: 22px 20px; }
+  .case__method-grid { grid-template-columns: 1fr; gap: 20px; }
+}
+
+/* Perspectivas — línea de autor bajo el kicker */
+.persp-card__author {
+  display: block; font-size: 12px; font-weight: 600;
+  color: rgba(30,42,56,0.55); margin-bottom: 10px;
+}
+
+/* Liderazgo — 2 fundadores: grid de 2 columnas con ancho máximo centrado */
+.leaders {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 760px;
+}
+@media (min-width: 881px) and (max-width: 1100px) {
+  .leaders { grid-template-columns: 1fr 1fr; max-width: 760px; }
+}
