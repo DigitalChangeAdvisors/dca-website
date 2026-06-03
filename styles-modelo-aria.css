@@ -270,13 +270,15 @@
 .mra-hero--split .hero__eyebrow,
 .mra-hero--split h1,
 .mra-hero--split .chapeau { text-align: left; margin-left: 0; margin-right: 0; }
+.mra-hero--split h1 { font-size: clamp(30px, 3.4vw, 48px); }
 .mra-hero--split .chapeau { max-width: 540px; }
 .mra-hero--split .mra-hero__cta { justify-content: flex-start; }
 .mra-hero--split .hero__cred { max-width: none; justify-content: flex-start; gap: 0; }
 .mra-hero--split .hero__cred div:first-child { padding-left: 0; }
 
 .hero-figure { position: relative; }
-.hero-figure image-slot { display: block; width: 100%; height: 560px; }
+.hero-figure image-slot,
+.hero-figure img { display: block; width: 100%; height: 560px; object-fit: cover; border-radius: 16px; }
 .hero-figure__cap {
   position: absolute; left: 18px; bottom: 18px; z-index: 2;
   font-size: 11.5px; letter-spacing: 0.04em; color: #fff;
