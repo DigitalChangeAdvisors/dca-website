@@ -768,18 +768,21 @@ html { scroll-padding-top: 96px; }
 }
 .disc-col.disc-col--outcome .disc-icon { color: var(--gold); }
 
-/* Stroke draw animation — triggered by .in on discipline-triad */
+/* Stroke draw animation — icons visible by default; keyframe fires on .in */
+@keyframes discStrokeDraw {
+  from { stroke-dashoffset: 100; }
+  to   { stroke-dashoffset: 0; }
+}
 .disc-icon [pathLength] {
   stroke-dasharray: 100;
-  stroke-dashoffset: 100;
+  stroke-dashoffset: 0; /* visible sin JS o si .in nunca llega */
 }
 .discipline-triad.in .disc-icon [pathLength] {
-  stroke-dashoffset: 0;
-  transition: stroke-dashoffset 0.7s cubic-bezier(0.16,1,0.3,1);
+  animation: discStrokeDraw 0.7s cubic-bezier(0.16,1,0.3,1) both;
 }
-.discipline-triad.in .disc-col:nth-child(1) .disc-icon [pathLength] { transition-delay: 0.25s; }
-.discipline-triad.in .disc-col:nth-child(3) .disc-icon [pathLength] { transition-delay: 0.45s; }
-.discipline-triad.in .disc-col:nth-child(5) .disc-icon [pathLength] { transition-delay: 0.65s; }
+.discipline-triad.in .disc-col:nth-child(1) .disc-icon [pathLength] { animation-delay: 0.25s; }
+.discipline-triad.in .disc-col:nth-child(3) .disc-icon [pathLength] { animation-delay: 0.45s; }
+.discipline-triad.in .disc-col:nth-child(5) .disc-icon [pathLength] { animation-delay: 0.65s; }
 
 /* S3 — synergy quote color highlights */
 .sq-teal { color: var(--teal); font-weight: 600; }
@@ -795,8 +798,7 @@ html { scroll-padding-top: 96px; }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .disc-icon [pathLength] { stroke-dasharray: none; stroke-dashoffset: 0; }
-  .discipline-triad.in .disc-icon [pathLength] { transition: none; }
+  .discipline-triad.in .disc-icon [pathLength] { animation: none; }
 }
 
 /* Bridge legend — color diferenciado por polo + ancho ampliado hacia el centro */
