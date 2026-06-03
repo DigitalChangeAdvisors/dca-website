@@ -39,6 +39,18 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 - **Deploy desde MacBook (monorepo):** `git subtree push --prefix=website production-website main --force`
 - **⚠️ Nota de sincronización:** Si la producción tiene commits directos del iMac, usar `--force` tras integrar los cambios remotos en el monorepo.
 
+## Términos Vetados — Comunicación Externa (acumulativo)
+
+| Término prohibido | Sustituto | Criterio |
+|---|---|---|
+| "metodología" | "método", "modelo" o "sistema" | Cuando describe ARIA → "Modelo"; proceso → "método"; arquitectura → "sistema" |
+| "17 países" | Eliminar o "70+ organizaciones en Latinoamérica" | Solo en /comunidad con framing LARIA explícito |
+| "Gestión del cambio" | "Arquitectura de Sistemas Sociotécnicos" | Nombre canónico del tercer pilar del Modelo ARIA |
+| "Ciencia de la adopción" | "Neurociencias de la Adopción" | Nombre canónico del segundo pilar del Modelo ARIA |
+| "adopción" como FIN | "retorno" | "adopción" solo válido como MEDIO: el camino, no el destino |
+| "soluciones integrales" | — | Framing genérico de vendor |
+| "transformación digital" | — | Categoría anterior de DCA, no la actual |
+
 ## Decisiones Técnicas
 
 - Imágenes (`img-*.png`) residen en `website/` (misma carpeta que los HTML)
@@ -52,7 +64,7 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 
 ### Credenciales y datos en hero
 - `70+` Empresas intervenidas · `57+` Consultores certificados · `14` Componentes propietarios
-- **No usar** "17 Países" en el hero — va en la sección Validación con su label correcto
+- **No usar** "17 Países" en ninguna página ni landing page — eliminado permanentemente (2026-06-03). Solo en `/comunidad` con framing estricto de comunidad LARIA.
 
 ### Diagrama-puente uso→impacto
 - Valor de inicio: **11%** (uso inicial) — no 19%
@@ -159,7 +171,7 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 
 ## Decisiones Canónicas de `/modelo-aria` — Fine-Tuning (2026-06-03)
 
-> **Fine-tuning completado (2026-06-03).** Los 3 puntos críticos y los 5 ajustes del inventario 🟡 están en producción. Commit `4b4abe8`.
+> **Fine-tuning completado.** Los 3 puntos críticos y los 5 ajustes del inventario 🟡 están en producción (commit `4b4abe8`). Fine-tuning hero completado en sesión posterior (commits `f169561` → `72c7151`, 2026-06-03).
 
 ### Etapa conductual y mecanismos
 - **Etapa del visitante:** Solución — ya reconoció el problema en el home, evalúa si ARIA es el método correcto
@@ -187,8 +199,8 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 **Punto 3 — Reemplazar Liderazgo placeholders (S10)**
 - DCA tiene 2 fundadores reales: César Lozano y Ruth Jaramillo. No existe un tercer socio.
 - Acción: eliminar el tercer `.leader` div. Reemplazar los 2 restantes con los datos reales.
-- Framing diferente al home: aquí son "autores de la metodología", no "líderes de la firma".
-- César: "CEO · Digital Change Advisors — Autor de la metodología ARIA y del framework MATCH. Líder de más de 70 intervenciones de retorno de IA en LatAm."
+- Framing diferente al home: aquí son "autores del Modelo ARIA", no "líderes de la firma".
+- César: "CEO · Digital Change Advisors — Autor del Modelo ARIA y del framework MATCH. Líder de más de 70 intervenciones de retorno de IA en LatAm."
 - Ruth: "Directora · Digital Change Academy — Cocreadora de los Frameworks Ágiles del Modelo ARIA. Ingeniera Industrial, MBA EAFIT, Coach certificada NCI."
 - Fotos: usar `<img src="img-leader-1.png">` y `<img src="img-leader-2.png">` (reales, ya en producción).
 
@@ -242,8 +254,32 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 - `.badge--gold` — variante oro del badge (fondo `#fff8e8`, borde `var(--gold)`)
 - `.leaders` override → `repeat(2, 1fr)` + `max-width: 760px` (2 fundadores, no 3)
 
+### Fine-tuning Hero S1 — decisiones aprobadas (2026-06-03)
+
+**Eyebrow:** "Modelo Propietario · Digital Change Advisors" (antes: "Metodología propietaria")
+
+**H1 font-size:** override `.mra-hero--split h1 { font-size: clamp(30px,3.4vw,48px) }` — reduce de 62px base para layout split (texto largo en columna estrecha)
+
+**Chapeau (versión final aprobada — outcome-first):**
+> "14 componentes propietarios que construyen la evidencia de retorno auditable para tu Junta, fundados en Economía del Comportamiento, Neurociencias de la Adopción y Arquitectura de Sistemas Sociotécnicos. Validado en 70+ organizaciones en Latinoamérica."
+
+**Imagen hero:** `img-mra-hero.jpg` (960×1200px, 200KB, grade teal 7%) — `<image-slot>` reemplazado por `<img loading="eager">`
+
+**Hero credentials — 3 datos finales:** `14` Componentes · `120` Días · `70+` Empresas
+- "17 Países" eliminado permanentemente
+- "3 Niveles de intervención" probado y descartado
+- Fix técnico crítico: `.hero__cred span` del CSS base interceptaba el `<span data-count>` dentro del `<b>`, forzándolo a 12.5px. Fix: `.mra-hero--split .hero__cred b span { font-size: inherit }`
+- Escala final: `clamp(48px,5vw,68px)` teal · labels 13px carbon-70
+
+**S3 Fundamento — disciplinas con nombres canónicos:**
+- Antes: "Economía del comportamiento · Ciencia de la adopción · Gestión del cambio"
+- Después: "Economía del Comportamiento · Neurociencias de la Adopción · Arquitectura de Sistemas Sociotécnicos"
+- "Gestión del cambio" era término prohibido. "Ciencia de la adopción" era impreciso.
+
+**Marco conceptual canónico de las 3 disciplinas:** documentado en memoria (`project_aria_disciplines.md`). Aplica a todo el sitio y landing pages futuras.
+
 ### Datos canónicos de esta página
-- Stats del hero: `14` Componentes · `120` Días · `70+` Empresas · `17` Países (comunidad LARIA, no presencia de firma)
+- Stats del hero: `14` Componentes · `120` Días · `70+` Empresas — **3 datos finales**. "17 Países" eliminado permanentemente de todas las páginas (regla 2026-06-03).
 - Caso ancla (S7): **$3.2M · 19%→67% · +13 puntos persistencia · payback 120 días** (caso real con NDA — mismo que `/nosotros`)
 - **PROHIBIDO** usar caso novela (Adalid Puentes · $8.2M) en esta página
 
@@ -251,7 +287,7 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 - HTML: `modelo-aria.html`
 - CSS: `styles.css` + `styles4.css` + `styles5.css` + `styles6.css` + `styles-modelo-aria.css`
 - JS: `app.js` + `enhance4.js` + `enhance6.js` + `enhance-aria.js` + `enhance-v6.js`
-- **`image-slot.js`** activo — reemplazar por `<img>` reales antes del dominio final
+- **`image-slot.js`** activo — hero photo resuelto (`img-mra-hero.jpg` 960×1200px). Pendiente: `mra-persp-1/2/3` (Perspectivas) antes del dominio final.
 
 ---
 
