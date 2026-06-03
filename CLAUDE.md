@@ -23,7 +23,7 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 | `/blog` | `blog.html` | Perspectivas — liderazgo de pensamiento | ✅ Completo y en producción |
 | `/modelo-aria` | `modelo-aria.html` | Autoridad intelectual: 14 componentes, 6 sprints, garantía | ✅ Desplegada — fine-tuning al final |
 | `/returnai` | `returnai.html` | Vitrina comercial: sistema ReturnAI, escalera de valor | ✅ Implementada — fine-tuning al final |
-| `/nosotros` | `nosotros.html` | DCA, fundadores, casos, partnerships | ⏳ **SIGUIENTE EN COLA** |
+| `/nosotros` | `nosotros.html` | DCA, fundadores, casos, partnerships | 🔄 **Implementada** — 13 secciones, rutas canónicas, JS/CSS integrados. Fine-tuning al final. |
 | `/academia` | `academia.html` | Digital Change Academy: certificaciones | ⏳ Pendiente |
 | `/red-aria` | `red-aria.html` | Captación de nodos/socios por país | ⏳ Pendiente |
 | `/casos` | `casos.html` | ROI documentado — caso ancla $3.2M | ⏳ Pendiente |
@@ -102,6 +102,61 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 - **Sección Industrias:** tira horizontal (`.industries-strip`) — no grid con links
 - **Diferenciación:** componente `versus2` con arco SVG del logo — no tabla `versus` simple
 
+## Decisiones Canónicas de `/nosotros` — BLOQUEO DE PRODUCCIÓN
+
+> Implementación completada 2026-06-02. Copy aprobado por `/validar-marca` (91/100). Claude Design expandió el brief de 8 a 13 secciones — todas en producción.
+
+### Propósito y etapa conductual
+- **Etapa:** Validación — el prospecto ya conoce el método, ahora valida a las personas
+- **Mecanismo principal:** Prueba Social de Autoridad + Efecto Halo
+- **Mecanismo secundario:** Reciprocidad (insight propietario antes del CTA)
+- **CTA único:** `AI Return Test →` (→ `index.html#test`) — nunca un segundo botón de conversión
+
+### Estructura real — 13 secciones implementadas
+1. `#nosotros` — Hero + Ficha institucional (en cascada al scroll)
+2. `#proposito` — Por qué existimos (credo — abierto a BE tuning)
+3. `#puente` — Del uso al impacto — SVG animado · **bridge: 19%→67%** (caso real)
+4. `#la-firma` — La firma · H2: *"Una categoría que no existía antes de que la necesitáramos."*
+5. (sin id) — Banda editorial fullbleed · `image-slot #img-firma-banda` (pendiente foto real)
+6. `#liderazgo` — César Lozano · image-slot · cred-list
+7. (bg-platinum) — Ruth Jaramillo · image-slot espejado · cred-list extendida
+8. `#metodo` — Modelo ARIA stepper fijo (3 fases: Assessment / Intervención / Atestación)
+9. `#principios` — Cuatro principios (abierto a BE tuning)
+10. (bg-teal) — Validación de escala · count-up 70+/57+/17/14
+11. (sin id) — Perspectiva DCA · pullquote con cita de adopción canónica
+12. `#evidencia` — Evidencia de campo · $3.2M · count-up 19→67 · CTA → `casos.html`
+13. `#cta-final` — Diagnóstico ejecutivo · `AI Return Test →`
+
+### Archivos de la página
+- HTML: `nosotros.html`
+- CSS: `styles-nosotros.css` + `nosotros2.css` + `nosotros3.css` + `nosotros4.css` + `nosotros5.css` + `nosotros6.css`
+- JS específico: `enhance-nosotros4.js` (wayfinding dot-nav 7 anclas)
+- JS sistema: `app.js` + `enhance4.js` + `enhance6.js` (no duplicar)
+
+### Datos canónicos de la página
+- Stats display (solo en Sección 5, una vez): `70+` Empresas · `57+` Consultores · `17` Países · `14` Componentes
+- Caso ancla en Sección 7: **$3.2M · 19%→67% · +13 puntos · payback 120 días** (caso real, NDA)
+- **PROHIBIDO** mezclar con caso novela (Adalid Puentes · $8.2M · 11%→70% · $891K)
+
+### Términos y reglas específicas de esta página
+- "transformación digital" **NO aparece** — ni siquiera como negación. Reemplazado por: *"No somos un vendor de herramientas de IA. No somos una firma de gestión del cambio. No somos una agencia de capacitación."*
+- "adopción" aparece como medio en Sección 6: *"La adopción es el camino. El retorno es el destino."* — correcto y aprobado
+- Bio Ruth Jaramillo en esta página: versión extendida con credenciales completas (vs. versión corta en homepage)
+- "capacitación en IA" **prohibido** en contexto de Ruth — usar *"inversión en IA de tu organización"*
+- Tira de ciudades: **ELIMINADA**. Tercer líder: **NO aparece** en esta página
+
+### Foto de fundadores
+- César: retrato ejecutivo, 3/4 o perfil, overlay carbón 15%, aspect-ratio 4/5, placeholder `#f3f3f3`
+- Ruth: mismas especificaciones, imagen espejada (texto izquierda en Sección 3, texto derecha en Sección 4)
+- Hasta tener fotos reales: `image-slot.js` activo — reemplazar antes del dominio final
+
+### CTA canónico
+- Botón: `AI Return Test →` (teal `#2e8b76`, Montserrat 600)
+- Nota subordinada: *"25 minutos · Sin compromiso · Tu diagnóstico es confidencial"*
+- CTA secundario (texto-link): *"Ver el caso completo →"* enlaza a `/casos` — no compite con botón principal
+
+---
+
 ## Regla de Fine-Tuning (CANÓNICA)
 
 > Los placeholders de imágenes, textos pendientes (nombres, credenciales, fuentes) y la
@@ -120,7 +175,7 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 - [x] Perspectivas (`blog.html`)
 - [x] `/modelo-aria` — v6 integrada. Fine-tuning pendiente: image-slots → img reales, textos líderes (placeholder), validación BE, **bridge usa 19% (real case) — verificar si debe alinearse a 11% del homepage**
 - [x] `/returnai` — v6 implementada, brand compliance aplicado, routing canónico. Fine-tuning al final. **bridge usa 19% (real case) — verificar alineación con homepage (11%)**
-- [ ] `/nosotros` — **SIGUIENTE EN COLA**
+- [x] `/nosotros` — Implementada (13 secciones). Archivos: `nosotros.html` + `styles-nosotros*.css` (×6) + `enhance-nosotros4.js`. Deuda técnica: fotos reales pendientes (image-slot activo), `og-nosotros.png` específica pendiente, JSON-LD `sameAs` (LinkedIn) pendiente. Fine-tuning BE (secciones Propósito + Principios) al final.
 - [ ] `/casos`
 - [ ] 5 páginas restantes
 

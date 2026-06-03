@@ -1,0 +1,60 @@
+/* ============================================================
+   /nosotros v6 — refinamiento de movimiento (sobrio y elegante)
+   Carga DESPUÉS de styles-nosotros5.css. Reutiliza el motor del
+   sistema (app.js cuenta y añade .in; styles4 da la transición base).
+   Sin JS nuevo. Todo respeta prefers-reduced-motion y sin-JS.
+   NOTA: se evita clip-path (insets) por inconsistencias de motor;
+   los revelados usan opacity + transform, que nunca ocultan contenido.
+   ============================================================ */
+
+/* ---------- 1 · FICHA INSTITUCIONAL: cascada por fila en el hero ---------- */
+.facts { animation: none !important; opacity: 1 !important; transform: none !important; }
+.facts__head, .facts__row {
+  opacity: 0; transform: translateY(12px);
+  animation: heroIn 0.7s var(--ease) forwards;
+}
+.facts__head { animation-delay: 0.64s; }
+.facts__row:nth-of-type(1) { animation-delay: 0.74s; }
+.facts__row:nth-of-type(2) { animation-delay: 0.82s; }
+.facts__row:nth-of-type(3) { animation-delay: 0.90s; }
+.facts__row:nth-of-type(4) { animation-delay: 0.98s; }
+
+/* ---------- 2 · REVELADO EDITORIAL DE IMÁGENES (zoom-settle) ----------
+   Retratos y banda entran con una leve apertura de escala + fundido:
+   cinematográfico pero seguro (nunca deja la imagen oculta). */
+.v4 .founder__media[data-reveal],
+.v4 .fullbleed__frame[data-reveal] {
+  transform: scale(1.04);
+  transition: opacity 1s var(--ease), transform 1.1s var(--ease);
+}
+.v4 .founder__media[data-reveal].in,
+.v4 .fullbleed__frame[data-reveal].in { transform: none; }
+.fullbleed__frame[data-reveal] { will-change: transform; }
+
+/* La frase-credo: revelado un punto más lento y con más recorrido (énfasis) */
+.v4 .purpose__statement[data-reveal] {
+  transform: translateY(28px);
+  transition: opacity 1s var(--ease), transform 1s var(--ease);
+}
+.v4 .purpose__statement[data-reveal].in { transform: none; }
+
+/* ---------- 3 · ENLACES DE TEXTO: subrayado que crece ---------- */
+.evidence-card__cta { position: relative; }
+.evidence-card__cta::after {
+  content: ""; position: absolute; left: 0; bottom: -3px; height: 1.5px; width: 100%;
+  background: var(--teal); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.38s var(--ease);
+}
+.evidence-card__cta:hover::after,
+.evidence-card__cta:focus-visible::after { transform: scaleX(1); }
+
+/* ---------- 4 · CIFRAS DEL CASO: transición suave del color al asentar ---------- */
+.evidence-card .big { transition: color 0.4s var(--ease); }
+
+/* ---------- Robustez: reduced-motion no anima ni oculta ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .facts__head, .facts__row { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .v4 .founder__media[data-reveal],
+  .v4 .fullbleed__frame[data-reveal],
+  .v4 .purpose__statement[data-reveal] { transform: none !important; transition: none !important; }
+}
