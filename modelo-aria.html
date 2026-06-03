@@ -172,37 +172,59 @@
   </div>
 </section>
 
-<!-- ============================ S2.5 · PUENTE (del uso al impacto) ============================ -->
-<section class="section" id="puente" data-screen-label="Del uso al impacto">
+<!-- ============================ S2.5 · ARQUITECTURA DEL PUENTE ============================ -->
+<section class="section" id="puente" data-screen-label="Arquitectura del método">
   <div class="wrap">
     <div class="section-head center" data-reveal>
-      <span class="label">Del uso al impacto</span>
-      <h2>El puente entre la adopción y el KPI.</h2>
-      <p class="chapeau">La mayoría de las firmas entrega uso. El retorno aparece solo cuando ese uso se sostiene hasta mover el indicador que la Junta reconoce. Ese tramo es el método.</p>
+      <span class="label">Arquitectura del método</span>
+      <h2>14 componentes construyen el puente.</h2>
+      <p class="chapeau">El problema no es la intención. Es la ausencia de estructura. ARIA no promete el cruce — lo ingenia con 14 componentes distribuidos en tres fases de intervención, cada uno calibrado para destrabar un punto específico donde la inversión en IA no convierte en retorno.</p>
     </div>
 
     <div class="bridge__viz" data-reveal>
-      <svg class="bridge__svg" viewBox="0 0 1000 340" role="img" aria-label="Puente del uso al impacto">
-        <path id="bridgeTrack" d="M120,250 C 380,250 470,120 880,120" fill="none" stroke="#e8e8e8" stroke-width="3.5" stroke-linecap="round" />
-        <path id="bridgeFlow" d="M120,250 C 380,250 470,120 880,120" fill="none" stroke="#2e8b76" stroke-width="3.5" stroke-linecap="round" stroke-opacity="0.32" stroke-dasharray="2 14" />
-        <path id="bridgePath" d="M120,250 C 380,250 470,120 880,120" fill="none" stroke="#2e8b76" stroke-width="3.5" stroke-linecap="round" />
-        <circle cx="120" cy="250" r="9" fill="#ffffff" stroke="#1e2a38" stroke-width="2" />
-        <circle id="bridgeRing" cx="880" cy="120" r="13" fill="none" stroke="#a48111" stroke-width="2" />
-        <circle cx="880" cy="120" r="13" fill="#a48111" />
-        <circle id="bridgeDot" cx="120" cy="250" r="9" fill="#2e8b76" stroke="#ffffff" stroke-width="3" style="opacity:0" />
-        <text class="b-num" x="120" y="300" text-anchor="middle" font-size="26" fill="#1e2a38">19%</text>
-        <text x="120" y="322" text-anchor="middle" font-size="12" letter-spacing="1.6" fill="#8b94a0">USO INICIAL</text>
-        <text id="bridgeKpi" class="b-num" x="880" y="72" text-anchor="end" font-size="58" fill="#2e8b76">19%</text>
-        <text x="880" y="98" text-anchor="end" font-size="12" letter-spacing="1.6" fill="#8b94a0">IMPACTO EN KPI</text>
+      <svg class="bridge__svg" viewBox="0 0 900 260" role="img" aria-label="Modelo ARIA: 14 componentes en 3 fases — Diagnóstico (3), Solución (7), Impacto (4)">
+        <!-- Baseline -->
+        <line x1="80" y1="208" x2="820" y2="208" stroke="#e8e8e8" stroke-width="1" stroke-dasharray="4 8"/>
+        <!-- Phase 1 arc — Diagnóstico -->
+        <path d="M 80,208 C 140,208 210,82 295,74" fill="none" stroke="#2e8b76" stroke-width="3.5" stroke-linecap="round" opacity="0.55"/>
+        <!-- Phase 2 arc — Solución -->
+        <path d="M 295,74 C 360,60 540,60 605,74" fill="none" stroke="#2e8b76" stroke-width="3.5" stroke-linecap="round"/>
+        <!-- Phase 3 arc — Impacto -->
+        <path d="M 605,74 C 690,82 760,208 820,208" fill="none" stroke="#a48111" stroke-width="3.5" stroke-linecap="round" opacity="0.85"/>
+        <!-- Vertical dividers at transitions -->
+        <line x1="295" y1="74" x2="295" y2="208" stroke="#2e8b76" stroke-width="1" stroke-dasharray="3 6" opacity="0.28"/>
+        <line x1="605" y1="74" x2="605" y2="208" stroke="#a48111" stroke-width="1" stroke-dasharray="3 6" opacity="0.28"/>
+        <!-- Origin — investment already made -->
+        <circle cx="80" cy="208" r="9" fill="#2e8b76"/>
+        <!-- Phase junction circles -->
+        <circle cx="295" cy="74" r="5" fill="#ffffff" stroke="#2e8b76" stroke-width="2.5"/>
+        <circle cx="605" cy="74" r="5" fill="#ffffff" stroke="#a48111" stroke-width="2.5"/>
+        <!-- Destination — documented KPI -->
+        <circle cx="820" cy="208" r="12" fill="#a48111"/>
+        <!-- Phase 1 labels -->
+        <text x="187" y="34" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="600" font-size="9.5" fill="#2e8b76" letter-spacing="2">DIAGNÓSTICO</text>
+        <text x="187" y="54" text-anchor="middle" font-family="Marcellus,Georgia,serif" font-size="22" fill="#1e2a38">3</text>
+        <text x="187" y="68" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="9.5" fill="#8b94a0" letter-spacing="1">componentes</text>
+        <!-- Phase 2 labels -->
+        <text x="450" y="20" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="600" font-size="9.5" fill="#2e8b76" letter-spacing="2">SOLUCIÓN</text>
+        <text x="450" y="40" text-anchor="middle" font-family="Marcellus,Georgia,serif" font-size="22" fill="#1e2a38">7</text>
+        <text x="450" y="54" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="9.5" fill="#8b94a0" letter-spacing="1">componentes</text>
+        <!-- Phase 3 labels -->
+        <text x="713" y="34" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="600" font-size="9.5" fill="#a48111" letter-spacing="2">IMPACTO</text>
+        <text x="713" y="54" text-anchor="middle" font-family="Marcellus,Georgia,serif" font-size="22" fill="#1e2a38">4</text>
+        <text x="713" y="68" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="9.5" fill="#8b94a0" letter-spacing="1">componentes</text>
+        <!-- Bottom endpoint labels -->
+        <text x="80" y="230" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="9.5" fill="#8b94a0" letter-spacing="1.4">INVERSIÓN YA HECHA</text>
+        <text x="820" y="230" text-anchor="end" font-family="Montserrat,sans-serif" font-size="9.5" fill="#a48111" letter-spacing="1.4">KPI DOCUMENTADO</text>
       </svg>
       <div class="bridge__legend">
         <div class="bridge__leg is-use">
-          <div class="t">Uso</div>
-          <p>Adopción real de la herramienta — el punto donde la mayoría de las firmas se detiene.</p>
+          <div class="t">3 + 7 + 4</div>
+          <p>14 componentes propietarios distribuidos en tres fases. Cada uno diseñado para destrabar un obstáculo específico donde la inversión en IA no convierte en retorno.</p>
         </div>
         <div class="bridge__leg is-impact">
-          <div class="t">Impacto</div>
-          <p>Movimiento sostenido del KPI ancla — el número auditable que reconoce la Junta.</p>
+          <div class="t">120 días</div>
+          <p>El plazo comprometido por contrato para documentar el retorno en los KPIs que importan. Si no se logra, continuamos sin costo adicional.</p>
         </div>
       </div>
     </div>
@@ -224,11 +246,10 @@
 
     <div class="method-strip" data-reveal>
       <div><div class="ms-num"><span data-count="14">0</span></div><div class="ms-lbl">Componentes propietarios</div><div class="ms-line"></div></div>
-      <div><div class="ms-num"><span data-count="120">0</span></div><div class="ms-lbl">Días al retorno documentado</div><div class="ms-line"></div></div>
-      <div><div class="ms-num"><span data-count="70">0</span><span class="suffix">+</span></div><div class="ms-lbl">Organizaciones que lo validan</div><div class="ms-line"></div></div>
-      <div><div class="ms-num"><span data-count="17">0</span></div><div class="ms-lbl">Países donde se ha calibrado</div><div class="ms-line"></div></div>
+      <div><div class="ms-num"><span data-count="6">0</span></div><div class="ms-lbl">Dimensiones de medición del impacto</div><div class="ms-line"></div></div>
+      <div><div class="ms-num"><span data-count="7">0</span></div><div class="ms-lbl">Frameworks ágiles de transformación humana</div><div class="ms-line"></div></div>
+      <div><div class="ms-num"><span data-count="10">0</span></div><div class="ms-lbl">Obstáculos intervenidos en causa raíz</div><div class="ms-line"></div></div>
     </div>
-    <p class="evidence-cap center" data-reveal>No es un dato de marketing: es el cuerpo de evidencia acumulado a lo largo de más de 70 intervenciones en 17 países, sobre el que cada componente se ha refinado.</p>
   </div>
 </section>
 
@@ -528,36 +549,29 @@
   </div>
 </section>
 
-<!-- ============================ S10 · LIDERAZGO (autoría) ============================ -->
+<!-- ============================ S10 · LIDERAZGO (autoría del método) ============================ -->
 <section class="section" id="liderazgo" data-screen-label="Liderazgo">
   <div class="wrap">
     <div class="section-head" data-reveal>
-      <span class="label">Quién lo dirige</span>
+      <span class="label">Quién lo construyó</span>
       <h2>El método lo sostienen las personas que lo construyeron.</h2>
-      <p class="chapeau">El Modelo ARIA no es un producto licenciado: es el cuerpo de práctica de un equipo que ha calibrado cada componente en la sala con comités ejecutivos de más de 70 organizaciones.</p>
+      <p class="chapeau">El Modelo ARIA no es un producto licenciado ni un playbook adoptado: es el cuerpo de práctica de sus autores, calibrado componente a componente en más de 70 intervenciones con comités ejecutivos reales.</p>
     </div>
 
     <div class="leaders" data-stagger>
       <div class="leader" data-reveal>
-        <image-slot id="mra-leader-1" shape="rounded" radius="14" placeholder="Retrato socio/a — editorial, fondo neutro, grade desaturado"></image-slot>
-        <div class="leader__name">Nombre Apellido</div>
-        <div class="leader__role">Socio · Fundador</div>
-        <p class="leader__cred">Credencial pendiente — trayectoria, foco de práctica y publicaciones del socio.</p>
+        <img src="img-leader-1.png" alt="César Lozano — CEO Digital Change Advisors" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;background:#f3f3f3"/>
+        <div class="leader__name">César Lozano</div>
+        <div class="leader__role">CEO · Digital Change Advisors</div>
+        <p class="leader__cred">Autor de la metodología ARIA y del framework MATCH. Más de 70 intervenciones de retorno de IA lideradas en Latinoamérica. Autor del libro <em>ReturnAI</em> — el primer manual de gestión del retorno de la IA en el mercado de habla hispana.</p>
       </div>
       <div class="leader" data-reveal>
-        <image-slot id="mra-leader-2" shape="rounded" radius="14" placeholder="Retrato socio/a — editorial, fondo neutro, grade desaturado"></image-slot>
-        <div class="leader__name">Nombre Apellido</div>
-        <div class="leader__role">Socia · Adopción y cambio</div>
-        <p class="leader__cred">Credencial pendiente — trayectoria, foco de práctica y publicaciones del socio.</p>
-      </div>
-      <div class="leader" data-reveal>
-        <image-slot id="mra-leader-3" shape="rounded" radius="14" placeholder="Retrato socio/a — editorial, fondo neutro, grade desaturado"></image-slot>
-        <div class="leader__name">Nombre Apellido</div>
-        <div class="leader__role">Socio · Evidencia y ROI</div>
-        <p class="leader__cred">Credencial pendiente — trayectoria, foco de práctica y publicaciones del socio.</p>
+        <img src="img-leader-2.png" alt="Ruth Jaramillo — Directora Digital Change Academy" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;background:#f3f3f3"/>
+        <div class="leader__name">Ruth Jaramillo</div>
+        <div class="leader__role">Directora · Digital Change Academy</div>
+        <p class="leader__cred">Cocreadora de los Frameworks Ágiles que fundamentan el Modelo ARIA. Ingeniera Industrial, MBA EAFIT, Coach Profesional certificada por el Neuroscience and Coaching Institute (USA). 20+ años como ejecutiva empresarial.</p>
       </div>
     </div>
-    <p class="leaders-note">Contenido pendiente: nombres, credenciales y retratos reales de los socios.</p>
   </div>
 </section>
 
