@@ -577,22 +577,29 @@ html { scroll-padding-top: 96px; }
   .leaders { grid-template-columns: 1fr 1fr; max-width: 760px; }
 }
 
-/* — Hero credentials: jerarquía 3:1 número/label — */
+/* — Hero credentials: jerarquía tipográfica (fix cascade span) — */
 .mra-hero--split .hero__cred {
   padding-top: 36px;
   margin-top: 48px;
 }
 .mra-hero--split .hero__cred b {
-  font-size: clamp(40px, 4vw, 54px);
+  font-size: clamp(48px, 5vw, 68px);
   color: var(--teal);
   line-height: 1;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
-.mra-hero--split .hero__cred span {
+.mra-hero--split .hero__cred b span {
+  font-size: inherit;
+  color: inherit;
+}
+.mra-hero--split .hero__cred b .suffix {
+  color: var(--gold);
+}
+.mra-hero--split .hero__cred > div > span {
   color: var(--carbon-70);
-  font-size: 11px;
-  letter-spacing: 0.09em;
+  font-size: 13px;
+  letter-spacing: 0.07em;
 }
 @media (max-width: 880px) {
-  .mra-hero--split .hero__cred b { font-size: 34px; }
+  .mra-hero--split .hero__cred b { font-size: 38px; }
 }
