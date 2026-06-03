@@ -36,6 +36,15 @@
 .problem { display: grid; grid-template-columns: 1.5fr 1fr; gap: 64px; align-items: start; }
 .problem__thesis { font-size: clamp(19px, 1.7vw, 23px); line-height: 1.55; font-weight: 400; color: var(--carbon); max-width: 560px; }
 .problem__thesis b { color: var(--teal); font-weight: 500; }
+.problem__bridge {
+  margin-top: 20px;
+  font-size: clamp(17px, 1.5vw, 20px);
+  font-weight: 600;
+  color: var(--carbon);
+  max-width: 560px;
+  line-height: 1.4;
+}
+.problem__bridge b { color: var(--teal); font-weight: 700; }
 .problem__aside-title {
   font-size: 12.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--teal); margin-bottom: 22px;
