@@ -639,6 +639,93 @@ html { scroll-padding-top: 96px; }
   .mra-hero--split .hero__cred b { font-size: 38px; }
 }
 
+/* S3 — Discipline triad: secuencia causal Capacidad → Intención → Rentabilidad */
+.discipline-triad {
+  display: grid;
+  grid-template-columns: 1fr 44px 1fr 44px 1fr;
+  margin-top: 48px;
+}
+.disc-col {
+  background: #fff;
+  border: 1px solid rgba(30,42,56,0.1);
+  border-radius: 10px;
+  padding: 28px 22px 24px;
+  text-align: center;
+  align-self: stretch;
+}
+.disc-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.8em;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--carbon-55);
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+.disc-outcome {
+  font-family: 'Marcellus', Georgia, serif;
+  font-size: clamp(26px, 2.6vw, 34px);
+  color: var(--teal);
+  line-height: 1;
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+.disc-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--carbon-70);
+  margin: 0;
+  text-align: left;
+}
+.disc-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  font-size: 22px;
+  color: var(--teal);
+  opacity: 0.3;
+  user-select: none;
+}
+
+/* S3 — Synergy closing statement */
+.synergy-close {
+  margin-top: 44px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(46,139,118,0.18);
+  text-align: center;
+}
+.synergy-quote {
+  font-family: 'Marcellus', Georgia, serif;
+  font-size: clamp(17px, 1.65vw, 21px);
+  color: var(--carbon);
+  line-height: 1.55;
+  max-width: 720px;
+  margin: 0 auto 14px;
+}
+.synergy-cred {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--carbon-55);
+  margin: 0;
+}
+
+/* Mobile — discipline triad */
+@media (max-width: 860px) {
+  .discipline-triad { grid-template-columns: 1fr; gap: 10px; }
+  .disc-arrow { display: none; }
+  .disc-col { text-align: left; }
+  .disc-name { min-height: auto; justify-content: flex-start; }
+}
+
 /* Bridge legend — color diferenciado por polo + ancho ampliado hacia el centro */
 .bridge__leg              { max-width: 320px; }
 .bridge__leg.is-use .t    { color: var(--teal); }
