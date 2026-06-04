@@ -56,18 +56,15 @@ function updateBridge() {
 // ---------- ARIA sticky stepper ----------
 const steps = [...document.querySelectorAll('.aria2__step')];
 const railItems = [...document.querySelectorAll('.aria2__stepper li')];
-if (steps.length) {
-  const stepIO = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      const i = steps.indexOf(e.target);
-      steps.forEach(s => s.classList.remove('active'));
-      e.target.classList.add('active');
-      railItems.forEach((li, j) => li.classList.toggle('active', j === i));
-    });
-  }, { rootMargin: '-40% 0px -45% 0px' });
-  steps.forEach(s => stepIO.observe(s));
+function updateStepper() {
+  if (!steps.length) return;
+  const threshold = window.innerHeight * 0.5;
+  let active = 0;
+  steps.forEach((s, i) => { if (s.getBoundingClientRect().top < threshold) active = i; });
+  steps.forEach((s, i) => s.classList.toggle('active', i === active));
+  railItems.forEach((li, i) => li.classList.toggle('active', i === active));
 }
+updateStepper();
 
 // ---------- Parallax banda fotográfica ----------
 const para = document.querySelector('.fullbleed__frame image-slot');
@@ -80,6 +77,7 @@ function onScrollFx() {
     const h = document.documentElement.scrollHeight - window.innerHeight;
     progress.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
   }
+  updateStepper();
   updateBridge();
   if (para && paraFrame && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const r = paraFrame.getBoundingClientRect();
