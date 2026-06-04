@@ -53,21 +53,8 @@
     });
   }
 
-  // ---------- Íconos ARIA que se dibujan al activarse (y se quedan dibujados) ----------
-  const ariaSteps = document.querySelectorAll('.aria2__step');
-  ariaSteps.forEach(step => {
-    const paths = step.querySelectorAll('.iconbox svg path');
-    if (REDUCE) { paths.forEach(p => { p.style.strokeDashoffset = 0; }); return; }
-    paths.forEach(p => {
-      const len = p.getTotalLength();
-      p.style.strokeDasharray = len;
-      p.style.strokeDashoffset = step.classList.contains('active') ? 0 : len;
-    });
-    const mo = new MutationObserver(() => {
-      if (step.classList.contains('active')) paths.forEach(p => { p.style.strokeDashoffset = 0; });
-    });
-    mo.observe(step, { attributes: true, attributeFilter: ['class'] });
-  });
+  // Íconos ARIA: animación gestionada por CSS (@keyframes segDraw) + clase .drawn
+  // desde enhance4.js. No se aplica JS a las paths del iconbox.
 
   // ---------- Onda de llegada del puente ----------
   const bridgeSvg = document.querySelector('.bridge__svg');
