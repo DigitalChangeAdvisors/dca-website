@@ -212,7 +212,7 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 | El Problema S2 | Texto thesis + problem__bridge + indicator-cards (oro, clip-path stagger) — fine-tuning BE completo | ✅ |
 | Diagrama-Puente S2.5 | Title: "…puente del uso al impacto." · leyenda 3+7+4 teal / 120 días oro · "niveles" · max-width 320px — fine-tuning BE completo ✅ |
 | Fundamento Intelectual S3 | discipline-triad Capacidad→Intención→Rentabilidad · bg-platinum · íconos SVG stroke · synergy-close — fine-tuning BE completo ✅ |
-| Las 3 Fases sticky rail S4 | Duración por fase (sem. 1-3 / 4-10 / 11-17) + entregable nominal por fase | ✅ |
+| Las 3 Fases sticky rail S4 | H2 antítesis · toolkit vs. secuencia · cadena causal · 79 reactivos · 2 métricas · 17 sem. evidencia · nombres ARIA corregidos · animación stepper fixed — fine-tuning BE completo ✅ |
 | Los 14 Componentes S5 | Conservar íntegro — único en toda la presencia web | ✅ |
 | Sprints MATCH S6 | Conservar íntegro — explica el *cómo* de la implementación | ✅ |
 | Caso Ancla S7 | Bloque metodológico: componentes ARIA activados + evidencia de atribución | ✅ |
@@ -269,12 +269,54 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 - **Credencial:** "14 componentes · 70+ organizaciones" — 13px, separada por línea oro (evidence post-claim, no display marketing)
 - **BE rationale synergy:** El mensaje de sinergia agrega porque instala la conclusión de qué producen las tres disciplinas JUNTAS ("ingeniería organizacional"), no solo qué son por separado. Sin él, el triad queda como inputs sin output demostrado.
 
-**S4 Las 3 Fases — duraciones y entregables canónicos:**
-| Fase | Semanas | Entregable nominal |
+**S3 Fundamento Intelectual — correcciones CSS (2026-06-04):**
+- **Thesis paragraph:** `#fundamento .section-head { margin-bottom: 28px }` (de 56px) · contenedor `max-width: 960px; margin: auto` · `font-size: clamp(17px,1.6vw,20px)`
+- **Bug animación íconos en refresh:** replaced `stroke-dashoffset: 100` inicial + transition por `stroke-dashoffset: 0` (visible por defecto) + `@keyframes discStrokeDraw` (from 100 → to 0). Causa raíz: el browser restaura scroll position ANTES de que el IntersectionObserver disparara, dejando los íconos permanentemente invisibles.
+
+**S4 Las 3 Fases — fine-tuning BE completo (2026-06-04):**
+
+**Label canónico:** "Los 3 niveles del Modelo ARIA" (no "fases")
+
+**H2 canónico:** "El diagnóstico determina la / intervención. No al revés." — `<br>` forzado después de "la". Antítesis en dos líneas: primera instala el diferenciador, "No al revés." cierra el desplazamiento de hipótesis (mismo mecanismo BE que S2 thesis).
+
+**Chapeau canónico:** "El Modelo ARIA no sigue una secuencia de pasos iguales para todos: el Diagnóstico determina qué componentes se activan en los niveles 2 y 3, en qué combinación y en qué orden — descartando los que no generan impacto en tu contexto y usando solo los recursos que tu caso específico requiere."
+
+**Stepper subtexts canónicos:**
+- 01 Diagnóstico: "79 reactivos · Línea base auditable" ("reactivos" = término psicométrico del instrumento, más preciso que "variables")
+- 02 Solución: "Arquitectura a la medida" ("Arquitectura" activa diseño sistémico + autoridad; "a la medida" = señal bespoke)
+- 03 Impacto: "Quick Wins documentados · ROI Auditado" (wins → se convierten en evidencia formal en Fase 3; "Auditado" > "Documentado" para CEO que presenta ante Junta)
+
+**Rail-foot canónico:** "El método está probado; su aplicación se calibra con el diagnóstico — sin sobre-ejecución de recursos." (semicolon: rigor + personalización + argumento de eficiencia en una sola frase)
+
+**Insight estructural — toolkit vs. metodología secuencial:**
+ARIA NO es ADKAR ni similar. El diagnóstico de Fase 1 determina cuáles de los 7 aceleradores de Fase 2 se activan, en qué combinación y orden. No todos se usan en todos los casos. Este diferenciador debe aparecer en copy de esta página y landing pages futuras.
+
+**Las dos métricas que se definen al inicio de Fase 2 (insight de César Lozano, canónico):**
+1. Métrica de **comportamiento**: qué debe hacer el equipo de forma diferente para incorporar la IA en el flujo diario
+2. Métrica de **KPI de negocio**: qué indicador financiero debe moverse y cuánto
+Estas dos métricas se monitorizan sprint a sprint y alimentan el Reporte Ejecutivo de Fase 3. El Reporte es la CONSOLIDACIÓN de 17 semanas de evidencia — no una evaluación de último momento.
+
+**Nombres de componentes corregidos (7 errores):**
+| Nombre incorrecto (antes) | Nombre ARIA canónico |
+|---|---|
+| AI North Star (AINS) | AI Strategic Alignment Lab |
+| AI Mindset Canvas (AIMC) | AI Performance Mindset Lab |
+| AI Inspiration Board (AIIB) | AI Commitment Architecture |
+| Agile Solution Design (ASD) | AI Capability Architecture |
+| Impact Validation Matrix | AI ROI Validation Matrix |
+| Talent Roadmap Strategy Map | AI Workforce Strategy Routes |
+| Agency Activators | AI Execution Activators |
+
+**Duraciones y entregables canónicos:**
+| Nivel | Semanas | Entregable |
 |---|---|---|
-| Diagnóstico | 1–3 | Informe de Línea Base Auditable (LBA) |
-| Solución | 4–10 | Sprint Log semanal con evidencia de movimiento del KPI |
-| Impacto | 11–17 | Reporte Ejecutivo de Retorno para presentación ante el Comité de Inversión |
+| Diagnóstico | 1–3 | Informe de Línea Base Auditable (LBA) — referencia para medición antes/después de Fase 3 |
+| Solución | 4–10 | Sprint Log semanal con evidencia de movimiento en las dos métricas de transformación |
+| Impacto | 11–17 | Reporte Ejecutivo de Retorno — consolidación de 17 semanas de evidencia, estructurada para Comité de Inversión y área financiera |
+
+**Fix técnico — animación stepper (enhance4.js, afecta homepage y modelo-aria):**
+- **Problema:** `IntersectionObserver` con `rootMargin: '-40% 0px -45% 0px'` (ventana 15% del viewport) no disparaba correctamente para los steps altos de `/modelo-aria`
+- **Fix:** reemplazado por lógica scroll-based integrada en el bucle `rAF` existente (`onScrollFx`). Threshold: `window.innerHeight * 0.5`. El step activo = el último cuyo top cruzó el 50% del viewport. Funciona para cualquier altura de step.
 
 **S7 Caso Ancla — componentes metodológicos activados:**
 - Diagnóstico: AI Mindset Test (87 líderes) · AI Leadership Style (12 directores) · AI Culture Diagnostic (3 unidades de negocio)
