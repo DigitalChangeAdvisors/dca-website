@@ -807,35 +807,18 @@ html { scroll-padding-top: 96px; }
 .bridge__leg.is-impact .t { color: var(--gold); }
 
 /* ============================================================
-   S4 — ÍCONOS DE ARCO DE PROGRESO (3 nodos, iluminación progresiva)
+   S4 — ÍCONOS DE ARCO DE PROGRESO (4 nodos, 3 tramos)
    ============================================================ */
-.aria2__step .iconbox svg { overflow: visible; }
 
-.aria2__step .iconbox .arc-done,
-.aria2__step .iconbox .arc-pending,
-.aria2__step .iconbox .seg-progress {
-  fill: none;
-  stroke-linecap: round;
-  stroke-width: 2.5;
-}
-.aria2__step .iconbox .arc-done    { stroke: var(--teal); }
-.aria2__step .iconbox .arc-pending { stroke: #dfe3e1; stroke-width: 2; }
-
-.aria2__step .iconbox .node-done    { fill: var(--teal); stroke: none; }
-.aria2__step .iconbox .node-pending { fill: none; stroke: #dfe3e1; stroke-width: 2; }
-.aria2__step .iconbox .node-gold    { fill: var(--gold); stroke: none; }
-.aria2__step .iconbox .halo-gold    {
-  fill: none; stroke: var(--gold); stroke-width: 1.5;
-  opacity: 0; transform-origin: center;
-}
+/* Reset herencia de stroke del iconbox global — colores via style="" inline */
+.aria2__step .iconbox svg { stroke: none; overflow: visible; }
 
 /* Segmento de progreso: visible por defecto (refresh-safe) */
 .aria2__step .iconbox .seg-progress {
-  stroke: var(--teal);
   stroke-dasharray: 100;
   stroke-dashoffset: 0;
 }
-/* override styles6 transition — el keyframe controla solo */
+/* Override transition de styles6 — el @keyframes controla solo */
 .v6 .aria2__step .iconbox .seg-progress { transition: none; }
 
 @keyframes segDraw {
@@ -846,8 +829,11 @@ html { scroll-padding-top: 96px; }
   animation: segDraw 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+/* Halo dorado — Fase 3: invisible en reposo, se expande al activarse */
+.aria2__step .iconbox .halo-gold { opacity: 0; transform-origin: center; }
 @keyframes haloExpand {
-  0%   { opacity: 0.55; transform: scale(1); }
+  0%   { opacity: 0;    transform: scale(1); }
+  20%  { opacity: 0.5; }
   100% { opacity: 0;    transform: scale(1.85); }
 }
 .aria2__step.active .iconbox .halo-gold {
