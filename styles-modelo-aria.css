@@ -853,8 +853,10 @@ html { scroll-padding-top: 96px; }
    S5 · TABLA EDITORIAL — Los 14 Componentes
    ============================================================ */
 
+/* Reducir el gap section-head → tabla: 40px en lugar del estándar 56px */
+#componentes .section-head { margin-bottom: 40px; }
+
 .comp-table-wrap {
-  margin-top: 3rem;
   border-radius: 8px;
   border: 1px solid rgba(164,129,17,0.3);
   overflow: hidden;
