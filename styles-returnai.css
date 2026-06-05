@@ -344,3 +344,9 @@
 
 /* Hero credentials — números en oro (vs. teal en /modelo-aria) */
 .mra-hero .hero__cred b { color: var(--gold); }
+
+/* Hero /returnai — columna de texto más amplia + H1 mayor que /modelo-aria
+   La columna 1.25fr da ~710px a 1200px container; soporta las 36 chars
+   de la línea más larga a 34px sin quiebre. */
+#top .hero-split { grid-template-columns: 1.25fr 0.75fr; }
+#top h1 { font-size: clamp(24px, 2.6vw, 34px); }
