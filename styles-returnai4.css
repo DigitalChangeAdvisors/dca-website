@@ -11,18 +11,25 @@
 .rai4-scrolly__inner { height: 260vh; position: relative; }
 .rai4-scrolly__pin {
   position: sticky; top: 60px; height: calc(100vh - 60px);
-  display: grid; align-content: center; overflow: hidden;
+  display: grid; align-content: start; padding-top: 40px; overflow: hidden;
 }
 .rai4-scrolly .section-head { margin-bottom: 24px; }
+.rai4-scrolly .section-head h2 {
+  font-size: clamp(22px, 2.4vw, 32px);
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.rai4-scrolly .section-head h2 .line { display: block; }
 
 .rai4-bridge { position: relative; max-width: 760px; margin: 0 auto; width: 100%; }
 /* En la escena pinneada los beats narran; la leyenda duplicaría — se oculta */
 .rai4-scrolly .bridge__legend { display: none; }
-.rai4-scrolly .section-head { margin-bottom: 8px; }
+.rai4-scrolly .section-head { margin-bottom: 0; }
 .rai4-scrolly .section-head .chapeau { max-width: 640px; margin-left: auto; margin-right: auto; }
 
 /* Beats: cross-fade narrativo sincronizado al scroll */
-.rai4-beats { position: relative; max-width: 720px; margin: 16px auto 0; min-height: 64px; }
+.rai4-beats { position: relative; max-width: 720px; margin: 8px auto 0; min-height: 56px; }
 .rai4-beat {
   position: absolute; inset: 0; text-align: center;
   font-size: 16.5px; line-height: 1.55; color: var(--carbon-70);
@@ -37,7 +44,7 @@
 
 @media (prefers-reduced-motion: reduce), (max-width: 820px), (max-height: 720px) {
   .rai4-scrolly__inner { height: auto; }
-  .rai4-scrolly__pin { position: static; height: auto; padding: var(--section-pad) 0; overflow: visible; }
+  .rai4-scrolly__pin { position: static; height: auto; padding: 48px 0; overflow: visible; align-content: start; }
   .rai4-beats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; position: static; min-height: 0; }
   .rai4-beat { position: static; opacity: 1; transform: none; text-align: left; }
 }
