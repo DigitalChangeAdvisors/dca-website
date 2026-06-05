@@ -1,0 +1,536 @@
+/* =====================================================
+   ReturnAI Vitrina v7 — La Escalera de Valor + Los 6 Sprints
+   Optimizado para C-Level · Economía conductual aplicada
+   ===================================================== */
+
+/* ============================================================
+   VALUE LADDER — La Escalera de Valor
+   ============================================================ */
+
+.vl-group {
+  margin-bottom: 48px;
+}
+
+.vl-group__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid rgba(30,42,56,0.08);
+  margin-bottom: 0;
+  flex-wrap: wrap;
+}
+
+.vl-group__sub {
+  font-size: 13px;
+  color: var(--carbon-55, #8b94a0);
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+.vl-group__rule {
+  flex: 1;
+  min-width: 32px;
+}
+
+.vl-group__rule--gold {
+  height: 2px;
+  background: linear-gradient(90deg, rgba(164,129,17,0.35) 0%, transparent 100%);
+  border: none;
+}
+
+/* Table container */
+.vl-table {
+  border: 1px solid rgba(30,42,56,0.09);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Rows */
+.vl-row {
+  display: grid;
+  grid-template-columns: 210px 1fr 200px 130px;
+  gap: 0;
+  padding: 18px 24px;
+  border-bottom: 1px solid rgba(30,42,56,0.06);
+  align-items: start;
+  transition: background 0.18s;
+}
+
+.vl-row:last-child {
+  border-bottom: none;
+}
+
+.vl-row:hover {
+  background: rgba(46,139,118,0.03);
+}
+
+.vl-row--highlight {
+  background: rgba(46,139,118,0.04);
+}
+
+.vl-row--highlight:hover {
+  background: rgba(46,139,118,0.07);
+}
+
+/* Name + free badge */
+.vl-name {
+  font-weight: 600;
+  color: var(--carbon, #1e2a38);
+  font-size: 14.5px;
+  display: block;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.vl-row--highlight .vl-name {
+  color: var(--teal, #2e8b76);
+}
+
+.vl-badge-free {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--teal, #2e8b76);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(46,139,118,0.1);
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+
+/* Columns */
+.vl-row__desc {
+  font-size: 13.5px;
+  color: var(--carbon-70, #4a5568);
+  line-height: 1.55;
+  padding-right: 20px;
+}
+
+.vl-row__scope {
+  font-size: 12.5px;
+  color: var(--carbon-55, #8b94a0);
+  line-height: 1.5;
+  padding-right: 12px;
+}
+
+.vl-row__cta {
+  padding-top: 2px;
+}
+
+.vl-link {
+  font-size: 13px;
+  color: var(--teal, #2e8b76);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.vl-link:hover {
+  text-decoration: underline;
+}
+
+.vl-link:focus-visible {
+  outline: 2px solid var(--teal, #2e8b76);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ---- Flagship row (Nivel de Resultados Escalables) ---- */
+
+.vl-group--flagship .vl-group__head {
+  border-bottom-color: rgba(164,129,17,0.2);
+  margin-bottom: 0;
+}
+
+.vl-flagship-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  border: 2px solid var(--gold, #a48111);
+  border-radius: 12px;
+  padding: 32px;
+  background: rgba(164,129,17,0.04);
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.vl-flagship-row:hover {
+  background: rgba(164,129,17,0.07);
+}
+
+.vl-flagship__label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--gold, #a48111);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.vl-flagship__name {
+  font-family: var(--display, 'Marcellus', Georgia, serif);
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 400;
+  color: var(--carbon, #1e2a38);
+  margin: 0 0 14px;
+  line-height: 1.25;
+}
+
+.vl-flagship__desc {
+  font-size: 14.5px;
+  color: var(--carbon-70, #4a5568);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0;
+}
+
+.vl-flagship__aside {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  min-width: 200px;
+  text-align: center;
+}
+
+.vl-flagship__specs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.vl-flagship__specs span {
+  font-size: 13px;
+  color: var(--carbon-70, #4a5568);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.vl-flagship__specs span::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold, #a48111);
+  flex-shrink: 0;
+}
+
+.vl-flagship__cta-alt {
+  display: block;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--teal, #2e8b76);
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+}
+
+.vl-flagship__cta-alt:hover {
+  text-decoration: underline;
+}
+
+/* Footer note */
+.vl-note {
+  font-size: 13px;
+  color: var(--carbon-55, #8b94a0);
+  text-align: center;
+  padding-top: 32px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   LOS 6 SPRINTS — ReturnAI Solution completo
+   ============================================================ */
+
+.sprints.bg-carbon {
+  background: var(--carbon, #1e2a38);
+}
+
+.sprints .section-head h2 {
+  color: #fff;
+}
+
+.chapeau-dark {
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.65;
+  color: rgba(255,255,255,0.6);
+  max-width: 640px;
+  margin: 16px 0 0;
+}
+
+.sprints .label.on-carbon {
+  color: var(--teal, #2e8b76);
+}
+
+/* Timeline grid */
+.sprints__timeline {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 48px 0 40px;
+}
+
+/* Individual sprint card */
+.sprint {
+  padding: 28px 20px;
+  border-right: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sprint--last {
+  border-right: none;
+  background: rgba(164,129,17,0.07);
+}
+
+.sprint__header {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+
+.sprint__num {
+  font-family: var(--display, 'Marcellus', Georgia, serif);
+  font-size: 44px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.1);
+  line-height: 1;
+}
+
+.sprint__num--gold {
+  color: rgba(164,129,17,0.45);
+}
+
+.sprint__days {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--teal, #2e8b76);
+  text-transform: uppercase;
+}
+
+.sprint__name {
+  font-family: var(--display, 'Marcellus', Georgia, serif);
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 14px;
+  line-height: 1.3;
+}
+
+/* Tools list */
+.sprint__tools {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  flex: 1;
+}
+
+.sprint__tools li {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.45);
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  line-height: 1.45;
+}
+
+.sprint__tools li:last-child {
+  border-bottom: none;
+}
+
+/* Deliverable box */
+.sprint__deliver {
+  background: rgba(255,255,255,0.04);
+  border-radius: 7px;
+  padding: 12px;
+  border-left: 2px solid rgba(46,139,118,0.5);
+  margin-top: auto;
+}
+
+.sprint__deliver--gold {
+  border-left-color: var(--gold, #a48111);
+  background: rgba(164,129,17,0.1);
+}
+
+.sprint__deliver-lbl {
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  color: var(--teal, #2e8b76);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.sprint__deliver-lbl--gold {
+  color: var(--gold, #a48111);
+}
+
+.sprint__deliver p {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.sprint__deliver--gold p {
+  color: rgba(255,255,255,0.75);
+}
+
+.sprint__deliver--gold strong {
+  color: var(--gold, #a48111);
+}
+
+/* Footer claims */
+.sprints__footer {
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+  padding: 36px 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  flex-wrap: wrap;
+}
+
+.sprints__claim {
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.claim__icon {
+  color: var(--teal, #2e8b76);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1;
+}
+
+/* CTA */
+.sprints__cta {
+  text-align: center;
+  padding: 32px 0 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.sprints__note {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.35);
+  margin: 0;
+}
+
+/* Gold button (new) */
+.btn--gold {
+  background: var(--gold, #a48111);
+  color: #fff;
+  border: 2px solid var(--gold, #a48111);
+}
+
+.btn--gold:hover,
+.btn--gold:focus-visible {
+  background: #8a6c0e;
+  border-color: #8a6c0e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(164,129,17,0.35);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Value Ladder — tablet */
+@media (max-width: 1100px) {
+  .vl-row {
+    grid-template-columns: 190px 1fr 170px 110px;
+    padding: 16px 20px;
+  }
+  .vl-flagship-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .vl-flagship__specs {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+  }
+  .vl-flagship__aside {
+    align-items: flex-start;
+  }
+}
+
+/* Value Ladder — mobile */
+@media (max-width: 720px) {
+  .vl-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 16px 16px;
+  }
+  .vl-row__scope {
+    padding-right: 0;
+    padding-top: 2px;
+  }
+  .vl-row__cta {
+    padding-top: 6px;
+  }
+  .vl-flagship-row {
+    padding: 24px;
+  }
+}
+
+/* Sprints — 2 rows of 3 on tablet */
+@media (max-width: 1200px) {
+  .sprints__timeline {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .sprint:nth-child(3) { border-right: none; }
+  .sprint:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.07); }
+  .sprint:nth-child(6) { border-right: none; }
+  .sprint--last { border-right: none; }
+}
+
+/* Sprints — single column on mobile */
+@media (max-width: 700px) {
+  .sprints__timeline {
+    grid-template-columns: 1fr;
+    border-radius: 10px;
+  }
+  .sprint {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .sprint--last {
+    border-bottom: none;
+  }
+  /* Reset nth-child overrides */
+  .sprint:nth-child(3) { border-right: none; }
+  .sprint:nth-child(4) { border-top: none; }
+  .sprint:nth-child(6) { border-right: none; }
+  .sprints__footer {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 28px 0;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .sprint,
+  .vl-row,
+  .vl-flagship-row,
+  .btn--gold {
+    transition: none;
+  }
+}
