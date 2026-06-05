@@ -248,11 +248,15 @@
 }
 
 /* Footer note */
+.vl-group--flagship {
+  margin-bottom: 20px;
+}
+
 .vl-note {
   font-size: 13px;
   color: var(--carbon-55, #8b94a0);
   text-align: center;
-  padding-top: 32px;
+  padding-top: 16px;
   max-width: 560px;
   margin: 0 auto;
 }
