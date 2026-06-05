@@ -43,7 +43,7 @@
       dot.setAttribute('cy', pt.y);
     } catch (e) {}
     dot.style.opacity = p > 0.01 ? 1 : 0;
-    if (kpi) kpi.textContent = Math.round(19 + (67 - 19) * p) + '%';
+    if (kpi) { var v = Math.round(891 * p); kpi.textContent = '$' + v + 'K'; }
     setBeats(p);
   }
 

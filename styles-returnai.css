@@ -196,6 +196,34 @@
 }
 
 /* ============================================================
+   S5.5 — PRUEBA SECTORIAL con KPI ancla por industria
+   ============================================================ */
+.rai .industries-grid a {
+  display: flex; flex-direction: column; gap: 5px;
+  padding: 18px 20px; border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid rgba(30,42,56,0.08);
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  position: relative;
+}
+.rai .industries-grid a:hover {
+  border-color: var(--teal); background: rgba(46,139,118,0.04);
+  transform: translateY(-2px);
+}
+.ind-name {
+  font-size: 15px; font-weight: 600; color: var(--carbon);
+}
+.ind-kpi {
+  font-size: 12.5px; color: var(--carbon-55); line-height: 1.45;
+}
+.ind-arr {
+  position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+  color: var(--teal); font-size: 16px; opacity: 0;
+  transition: opacity 0.2s;
+}
+.rai .industries-grid a:hover .ind-arr { opacity: 1; }
+
+/* ============================================================
    S5 — GARANTÍA (fondo carbón · stat cards)
    ============================================================ */
 .bg-carbon .label.on-carbon { color: #6fc3ad; }
@@ -217,6 +245,85 @@
 @media (max-width: 760px) {
   .guarantee-stats { grid-template-columns: 1fr; gap: 16px; }
 }
+
+/* ============================================================
+   S3.5 — SIGNPOST (orientador 3 etapas antes de escalera de valor)
+   ============================================================ */
+.signpost {
+  display: flex; align-items: center; gap: 0;
+  justify-content: center; flex-wrap: wrap;
+}
+.signpost__item {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  gap: 14px; max-width: 260px; padding: 0 24px;
+}
+.signpost__num {
+  font-family: var(--display); font-size: 40px; font-weight: 400;
+  color: var(--platinum-dark, #d8d8d8); line-height: 1;
+}
+.signpost__item p {
+  font-size: 14.5px; color: var(--carbon-70); line-height: 1.55; margin: 0;
+}
+.signpost__arrow {
+  flex-shrink: 0; padding: 0 8px;
+}
+.signpost__arrow svg {
+  width: 48px; height: 22px; stroke: var(--teal); stroke-width: 1.5;
+  fill: none; stroke-linecap: round; opacity: 0.45;
+}
+.signpost__link {
+  text-align: center; margin-top: 40px;
+  font-size: 14px; color: var(--carbon-55);
+}
+.signpost__link a { color: var(--teal); text-decoration: none; font-weight: 500; }
+.signpost__link a:hover { text-decoration: underline; }
+
+@media (max-width: 720px) {
+  .signpost { flex-direction: column; gap: 24px; }
+  .signpost__arrow { transform: rotate(90deg); }
+  .signpost__item { max-width: 100%; padding: 0; }
+}
+
+/* ============================================================
+   S5 — ROI CASE (reemplaza exhibit de barras)
+   ============================================================ */
+.roi-case {
+  background: #fff; border: 1px solid rgba(30,42,56,0.09); border-radius: 14px;
+  padding: 36px 32px;
+}
+.roi-case__flow {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px 0;
+  justify-content: space-between; margin-bottom: 28px;
+}
+.roi-case__step { text-align: center; flex: 1 1 80px; }
+.roi-case__val {
+  font-family: var(--display); font-size: clamp(22px, 2.4vw, 30px); font-weight: 400;
+  line-height: 1; color: var(--carbon);
+}
+.roi-case__val.accent { color: var(--gold); }
+.roi-case__val.teal  { color: var(--teal); }
+.roi-case__step--dim .roi-case__val { opacity: 0.45; }
+.roi-case__cap { font-size: 12px; color: #8b94a0; letter-spacing: 0.06em; margin-top: 6px; }
+.roi-case__arrow { color: rgba(30,42,56,0.25); font-size: 18px; flex-shrink: 0; padding: 0 4px; }
+.roi-case__quote {
+  font-size: 16px; font-style: italic; color: var(--carbon-70);
+  border-left: 3px solid var(--teal); padding-left: 18px; margin: 0 0 10px;
+  line-height: 1.6;
+}
+.roi-case__cite { font-size: 13px; color: var(--carbon-55); }
+
+@media (max-width: 640px) {
+  .roi-case__flow { gap: 14px 0; justify-content: center; }
+  .roi-case__arrow { display: none; }
+  .roi-case__step { flex: 0 0 calc(50% - 8px); }
+}
+
+/* Entregable en comp-card */
+.comp-deliver {
+  margin-top: 14px; font-size: 13px; color: var(--carbon-55);
+  border-top: 1px solid rgba(30,42,56,0.09); padding-top: 12px;
+}
+.comp-deliver .k { font-weight: 600; color: var(--teal); margin-right: 6px; }
 
 /* ============================================================
    S6 — CTA FINAL
