@@ -277,11 +277,11 @@
    LOS 6 SPRINTS v2 — 2×3 grid, Apple Style
    ============================================================ */
 
-.sprints.bg-carbon {
+.s6-section.bg-carbon {
   background: var(--carbon, #1e2a38);
 }
 
-.sprints .section-head h2 {
+.s6-section .section-head h2 {
   color: #fff;
   max-width: 640px;
 }
@@ -294,7 +294,7 @@
   margin: 16px 0 0;
 }
 
-.sprints .label.on-carbon {
+.s6-section .label.on-carbon {
   color: var(--teal, #2e8b76);
 }
 
