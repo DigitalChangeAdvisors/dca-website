@@ -2,6 +2,17 @@
 
 > Las reglas de marca, sistema visual, tono, skills y flujo de producción están en `../CLAUDE.md` (raíz del workspace). Este archivo contiene solo lo específico del website principal.
 
+## ⚠️ Gate Obligatorio — Pre-audit ANTES de implementar (canónico 2026-06-05)
+
+TODA implementación, ajuste fino o nueva sección — en este website y en las 11 landing pages del proyecto — debe pasar por auditoría de dos skills **ANTES** de escribir código o desplegar:
+
+1. `/behavioral-economics-c-level` — valida que el mecanismo BE es correcto para la etapa del visitante
+2. `/ui-ux-pro-max` — valida que el patrón de interacción, layout y motion son apropiados para C-Level
+
+**Sin dictamen de ambas skills, no hay implementación.**
+
+Incidente que motivó la regla: S2 /returnai scrollytelling de 260vh — el usuario debía hacer scroll durante 2.5× la altura del viewport sin que la página avanzara visualmente. Trampa UX de alta gravedad implementada y desplegada sin audit previo (2026-06-05).
+
 ## Archivo de referencia canónico
 
 **`index.html`** es la homepage en producción. `Homepage v6.html` es histórico — no modificar, no deployar.
