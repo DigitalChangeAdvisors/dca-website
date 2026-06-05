@@ -246,6 +246,11 @@ p { text-wrap: pretty; }
 @keyframes heroIn { to { opacity: 1; transform: none; } }
 @keyframes heroPop { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
 
+/* Homepage hero — container y fuente calibrados para pirámide invertida de 3 líneas.
+   Col usable 1000-80=920px permite L1 de 44 chars a 42px sin quiebre. */
+#returnai .hero__inner { max-width: 1000px; }
+#returnai h1 { font-size: clamp(28px, 3.2vw, 42px); }
+
 /* ============================================================
    PROBLEMA (3 columnas)
    ============================================================ */
