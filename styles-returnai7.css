@@ -4,6 +4,15 @@
    ===================================================== */
 
 /* ============================================================
+   VALUE LADDER — Cabeza de sección scoped
+   ============================================================ */
+
+#sistema-returnai .section-head h2 { font-size: clamp(20px, 2.2vw, 30px); }
+#sistema-returnai .section-head { margin-bottom: 36px; }
+#sistema-returnai .section-head .chapeau { font-size: clamp(16px, 1.35vw, 18px); }
+#sistema-returnai .section-head .chapeau + .chapeau { margin-top: 14px; }
+
+/* ============================================================
    VALUE LADDER — La Escalera de Valor
    ============================================================ */
 
