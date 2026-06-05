@@ -22,28 +22,25 @@
 .rai4-bridge { position: relative; max-width: 760px; margin: 24px auto 0; width: 100%; }
 .rai4-scrolly .bridge__legend { display: none; }
 
-/* Beats: cross-fade narrativo sincronizado a la animación auto-play */
-.rai4-beats { position: relative; max-width: 720px; margin: 40px auto 0; min-height: 120px; }
+/* Beats: aparecen uno a uno sincronizados a la animación y se acumulan en columna */
+.rai4-beats { display: flex; flex-direction: column; gap: 20px; max-width: 720px; margin: 40px auto 0; }
 .rai4-beat {
-  position: absolute; inset: 0 0 auto 0; text-align: center;
-  font-size: 16.5px; line-height: 1.55; color: var(--carbon-70);
+  font-size: 16.5px; line-height: 1.55; color: var(--carbon-70); text-align: left;
   opacity: 0; transform: translateY(10px); will-change: opacity, transform;
+  transition: opacity 0.45s ease, transform 0.45s ease;
 }
 .rai4-beat b { color: var(--teal); font-weight: 600; }
 .rai4-beat .n {
-  display: inline-block; font-family: var(--display); font-size: 13px; color: var(--gold);
-  letter-spacing: 0.1em; margin-bottom: 8px;
+  display: block; font-family: var(--display); font-size: 13px; color: var(--gold);
+  letter-spacing: 0.1em; margin-bottom: 6px;
 }
-.rai4-beat.active { opacity: 1; transform: none; }
 
-/* Fallback sin animación: todos los beats estáticos en grid */
+/* Fallback: beats visibles estáticos sin transición */
 @media (prefers-reduced-motion: reduce) {
-  .rai4-beats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; position: static; min-height: 0; margin-top: 24px; }
-  .rai4-beat { position: static; opacity: 1; transform: none; text-align: left; inset: unset; }
+  .rai4-beat { transition: none; opacity: 1; transform: none; }
 }
 @media (max-width: 600px) {
-  .rai4-beats { display: grid; grid-template-columns: 1fr; gap: 16px; position: static; min-height: 0; margin-top: 20px; }
-  .rai4-beat { position: static; opacity: 1; transform: none; text-align: left; inset: unset; }
+  .rai4-beat { transition: none; opacity: 1; transform: none; }
 }
 
 /* ---------- 2 · NAV DE CAPÍTULO PERSISTENTE ---------- */

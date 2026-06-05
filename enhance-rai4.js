@@ -24,11 +24,10 @@
 
   function setBeats(p) {
     beats.forEach(function (b, i) {
-      var d = Math.abs(p - BANDS[i]);
-      var o = d < 0.15 ? 1 : (d < 0.27 ? (0.27 - d) / 0.12 : 0);
-      o = Math.max(0, Math.min(1, o));
-      b.style.opacity = o;
-      b.style.transform = 'translateY(' + (10 * (1 - o)) + 'px)';
+      if (p >= BANDS[i]) {
+        b.style.opacity = '1';
+        b.style.transform = 'none';
+      }
     });
   }
 
@@ -65,9 +64,9 @@
       requestAnimationFrame(animate);
     } else {
       playing = false;
-      /* Estado final: beat 03 al 100%, puente completo */
-      beats.forEach(function (b, i) {
-        b.style.opacity = i === 2 ? 1 : 0;
+      /* Estado final: los tres beats visibles, puente completo */
+      beats.forEach(function (b) {
+        b.style.opacity = '1';
         b.style.transform = 'none';
       });
     }
