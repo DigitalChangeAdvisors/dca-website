@@ -1023,7 +1023,11 @@ html { scroll-padding-top: 96px; }
   }
   .js .mra-v6 .sprint.in .sprint__deliverable { opacity: 1; transform: none; }
 
-  /* S7 — Evidencia: padding compacto (sección de transición, no capítulo) */
+  /* FAQ — padding y gap del section-head ajustados a contenido compacto */
+#faq { padding: 80px 0; }
+#faq .section-head { margin-bottom: 36px; }
+
+/* S7 — Evidencia: padding compacto (sección de transición, no capítulo) */
 #evidencia { padding: 72px 0; }
 #evidencia .label { display: block; margin-bottom: 14px; }
 
