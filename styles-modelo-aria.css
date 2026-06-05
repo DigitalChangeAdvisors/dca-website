@@ -1001,6 +1001,38 @@ html { scroll-padding-top: 96px; }
   .comp-table-legend { gap: 16px; }
 }
 
+/* ============================================================
+   v8 — Micro-animaciones S6 (MATCH) + S7 (Evidencia)
+   Scoped a .mra-v6 + .js para degradar sin JS o con reduced-motion.
+   ============================================================ */
+
+@media (prefers-reduced-motion: no-preference) {
+  /* S6 — Círculo numerado: spring pop al entrar en viewport */
+  .js .mra-v6 .sprint__num {
+    transform: scale(0.5);
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.12s;
+  }
+  .js .mra-v6 .sprint.in .sprint__num { transform: scale(1); }
+
+  /* S6 — Chip "Produce": desliza desde izquierda con retardo */
+  .js .mra-v6 .sprint__deliverable {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.36s,
+                transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.36s;
+  }
+  .js .mra-v6 .sprint.in .sprint__deliverable { opacity: 1; transform: none; }
+
+  /* S7 — Quote: borde oro se activa tras la revelación del bloque */
+  .js .mra-v6 .s7-quote {
+    border-left-color: transparent;
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                border-left-color 0.55s ease 0.5s;
+  }
+  .js .mra-v6 .s7-quote.in { border-left-color: var(--gold); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .comp-table__row { transition: none; }
 }
