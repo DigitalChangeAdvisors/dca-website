@@ -1023,6 +1023,10 @@ html { scroll-padding-top: 96px; }
   }
   .js .mra-v6 .sprint.in .sprint__deliverable { opacity: 1; transform: none; }
 
+  /* S7 — Evidencia: padding compacto (sección de transición, no capítulo) */
+#evidencia { padding: 72px 0; }
+#evidencia .label { display: block; margin-bottom: 14px; }
+
   /* S7 — Quote: borde oro se activa tras la revelación del bloque */
   .js .mra-v6 .s7-quote {
     border-left-color: transparent;
