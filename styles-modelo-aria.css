@@ -1023,7 +1023,16 @@ html { scroll-padding-top: 96px; }
   }
   .js .mra-v6 .sprint.in .sprint__deliverable { opacity: 1; transform: none; }
 
-  /* S11b — Responsabilidad: padding compacto */
+  /* S12 — CTA Final: teal sólido, ajuste de colores y espacios */
+#contacto { padding: 96px 0; }
+#contacto .label { color: rgba(255,255,255,0.65); }
+#contacto .mra-finalcta__note { color: rgba(255,255,255,0.55); }
+.mra-cta-bridge {
+  font-size: 16.5px; color: rgba(255,255,255,0.78);
+  max-width: 540px; margin: 0 auto 38px; line-height: 1.65;
+}
+
+/* S11b — Responsabilidad: padding compacto */
 #accountability { padding: 72px 0; }
 
 /* FAQ — padding y gap del section-head ajustados a contenido compacto */
@@ -1042,6 +1051,21 @@ html { scroll-padding-top: 96px; }
                 border-left-color 0.55s ease 0.5s;
   }
   .js .mra-v6 .s7-quote.in { border-left-color: var(--gold); }
+
+  /* S12 — Bridging line: fade-slide tras el H2 */
+  .js .mra-v6 #contacto .mra-cta-bridge {
+    opacity: 0; transform: translateY(10px);
+    transition: opacity 0.5s ease 0.3s,
+                transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+  }
+  .js .mra-v6 #contacto [data-reveal].in .mra-cta-bridge { opacity: 1; transform: none; }
+
+  /* S12 — Botón: spring lift, llega después del texto */
+  .js .mra-v6 #contacto .btn {
+    transform: translateY(18px);
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.55s;
+  }
+  .js .mra-v6 #contacto [data-reveal].in .btn { transform: translateY(0); }
 
   /* S11b — Barra oro se dibuja (semántica de firma/sello) */
   .js .mra-v6 .accountability {
