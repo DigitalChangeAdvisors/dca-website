@@ -97,7 +97,7 @@
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 72px;
-  align-items: center;
+  align-items: start;
 }
 /* Portada del libro: background-image, sin <img>, sin clip-path, sin IO */
 .s8-cover {
