@@ -314,11 +314,42 @@
   border-bottom: 1px solid rgba(255,255,255,0.07);
   display: flex;
   flex-direction: column;
+  background: rgba(255,255,255,0.06);
+  opacity: 0;
+  transition: background 0.22s ease;
 }
+
+.s6-card:hover { background: rgba(0,0,0,0.18); }
 
 .s6-card:nth-child(3n)   { border-right: none; }
 .s6-card:nth-child(n+4)  { border-bottom: none; }
-.s6-card--gold           { background: rgba(164,129,17,0.07); }
+.s6-card--gold           { background: rgba(164,129,17,0.10); }
+.s6-card--gold:hover     { background: rgba(164,129,17,0.04); }
+
+/* ---- Entrada staggered — desactivar reveal del grid, animar solo tarjetas ---- */
+
+.s6-grid[data-reveal],
+.s6-grid[data-reveal].in {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+@keyframes s6CardReveal {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.s6-grid.in .s6-card {
+  animation: s6CardReveal 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.s6-grid.in .s6-card:nth-child(1) { animation-delay: 0.06s; }
+.s6-grid.in .s6-card:nth-child(2) { animation-delay: 0.14s; }
+.s6-grid.in .s6-card:nth-child(3) { animation-delay: 0.22s; }
+.s6-grid.in .s6-card:nth-child(4) { animation-delay: 0.30s; }
+.s6-grid.in .s6-card:nth-child(5) { animation-delay: 0.38s; }
+.s6-grid.in .s6-card:nth-child(6) { animation-delay: 0.46s; }
 
 .s6-card__top  { margin-bottom: 4px; }
 
@@ -511,5 +542,12 @@
   .vl-flagship-row,
   .btn--gold {
     transition: none;
+  }
+  .s6-card,
+  .s6-grid.in .s6-card {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
