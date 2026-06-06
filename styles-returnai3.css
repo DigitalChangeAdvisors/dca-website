@@ -88,30 +88,71 @@
 /* ---------- Costura entre secciones de autoridad ---------- */
 .rai3 .section--seam { border-top: 1px solid var(--border); }
 
-/* ---------- S8: Novela sobre teal (inversión vs. home donde CTA es teal y libro es blanco) ---------- */
-.rai3 .section--book-teal { background: var(--teal); padding: 80px 0; }
-.rai3 .section--book-teal .book--inverted { grid-template-columns: 1.15fr 0.85fr; }
-/* Opción C: background-image evita todas las dependencias de <img> (lazy, IO, Shadow DOM, aspect-ratio) */
-.rai3 .book__slot--bg {
-  display: block;
+/* ---------- S8: Novela sobre teal — clases aisladas s8-* sin herencia de .book__slot ---------- */
+.s8-novela {
+  background: var(--teal);
+  padding: 80px 0;
+}
+.s8-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 72px;
+  align-items: center;
+}
+/* Portada del libro: background-image, sin <img>, sin clip-path, sin IO */
+.s8-cover {
   width: 100%;
   height: 500px;
   background-image: url('assets/rai2-book.png');
   background-size: cover;
   background-position: center top;
   border-radius: 8px;
-  flex-shrink: 0;
 }
-.book__label--light { color: rgba(255,255,255,0.65) !important; letter-spacing: 0.1em; }
-.book__label--light::after { height: 3px; border-radius: 2px; }
-.in .book__label--light::after { width: 52px; }
-.book__h2--light { color: #fff; font-family: var(--display); font-weight: 400; line-height: 1.28; font-size: clamp(20px, 2.2vw, 28px); text-wrap: unset; }
-.book__h2--light .line { display: block; }
-.book__body--light { color: rgba(255,255,255,0.82); font-size: 16px; line-height: 1.7; max-width: 520px; }
-.book__body--sub { color: rgba(255,255,255,0.6) !important; font-size: 14.5px; margin-top: -8px; }
-.book__meta--light { color: rgba(255,255,255,0.45); font-size: 13px; letter-spacing: 0.04em; margin-top: 18px; }
+/* Tipografía y elementos de texto */
+.s8-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 20px;
+  position: relative;
+}
+.s8-label::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0;
+  background: var(--gold);
+  border-radius: 2px;
+  margin-top: 8px;
+  transition: width 0.6s var(--ease, ease) 0.2s;
+}
+.s8-text.in .s8-label::after { width: 52px; }
+.s8-h2 {
+  color: #fff;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.28;
+  text-wrap: unset;
+  margin: 16px 0 20px;
+}
+.s8-h2 .line { display: block; }
+.s8-body {
+  color: rgba(255,255,255,0.82);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 16px;
+}
+.s8-body--sub {
+  color: rgba(255,255,255,0.6);
+  font-size: 14.5px;
+}
+.s8-cta { margin-top: 28px; }
 @media (max-width: 768px) {
-  .rai3 .section--book-teal .book--inverted { grid-template-columns: 1fr; }
-  .rai3 .section--book-teal .book--inverted > div:first-child { order: 1; }
-  .rai3 .book__slot--bg { order: 0; height: 360px; }
+  .s8-grid { grid-template-columns: 1fr; gap: 36px; }
+  .s8-cover { height: 360px; order: -1; }
 }
