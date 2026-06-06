@@ -346,6 +346,113 @@
 /* Hero credentials — números en oro (vs. teal en /modelo-aria) */
 .mra-hero .hero__cred b { color: var(--gold); }
 
+/* ============================================================
+   READING PANEL — Preludio de la novela ReturnAI
+   Slide-in desde la derecha. Fondo carbón, experiencia
+   de lectura nocturna ejecutiva.
+   ============================================================ */
+.preludio-panel {
+  position: fixed; inset: 0; z-index: 1200;
+  display: flex; justify-content: flex-end;
+  visibility: hidden; pointer-events: none;
+}
+.preludio-panel:not([hidden]) { visibility: visible; pointer-events: auto; }
+
+.preludio-panel__backdrop {
+  position: absolute; inset: 0;
+  background: rgba(30,42,56,0.65);
+  opacity: 0; transition: opacity 0.35s ease;
+}
+.preludio-panel.is-open .preludio-panel__backdrop { opacity: 1; }
+
+.preludio-panel__drawer {
+  position: relative; width: min(620px, 92vw);
+  background: var(--carbon); height: 100vh; overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex; flex-direction: column;
+  scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.15) transparent;
+}
+.preludio-panel.is-open .preludio-panel__drawer { transform: translateX(0); }
+
+.preludio-panel__close {
+  position: sticky; top: 0; align-self: flex-end;
+  background: transparent; border: none; cursor: pointer;
+  color: rgba(255,255,255,0.5); font-size: 28px; line-height: 1;
+  padding: 20px 24px 0; z-index: 10; transition: color 0.2s;
+}
+.preludio-panel__close:hover { color: #fff; }
+
+.preludio-panel__inner { padding: 0 48px 64px; }
+
+.preludio-panel__header { margin-bottom: 40px; }
+.preludio-panel__tag {
+  display: inline-block; font-family: var(--body); font-size: 11px;
+  font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--teal); border: 1px solid rgba(46,139,118,0.4);
+  border-radius: 4px; padding: 4px 10px; margin-bottom: 16px;
+}
+.preludio-panel__title {
+  font-family: var(--display); font-weight: 400;
+  font-size: clamp(22px, 2vw, 28px); color: #fff;
+  line-height: 1.25; margin: 0 0 12px;
+}
+.preludio-panel__date {
+  display: block; font-size: 13px; color: rgba(255,255,255,0.4);
+  letter-spacing: 0.04em;
+}
+
+.preludio-panel__body p {
+  font-family: var(--body); font-size: 15.5px; font-weight: 400;
+  color: rgba(255,255,255,0.78); line-height: 1.78; margin: 0 0 20px;
+}
+.preludio-panel__quote {
+  border-left: 3px solid var(--gold);
+  padding-left: 20px; margin-left: 0;
+  color: rgba(255,255,255,0.9) !important;
+  font-style: italic;
+}
+.preludio-panel__emphasis {
+  color: rgba(255,255,255,0.95) !important;
+  font-weight: 600 !important;
+}
+.preludio-panel__countdown {
+  font-family: var(--display) !important; font-size: 18px !important;
+  color: rgba(255,255,255,0.5) !important; line-height: 1.9 !important;
+  letter-spacing: 0.02em;
+}
+.preludio-panel__closing {
+  font-family: var(--display) !important; font-size: 19px !important;
+  color: #fff !important; line-height: 1.5 !important; margin-top: 32px !important;
+}
+.preludio-panel__closing strong { color: var(--gold); font-weight: 400; font-family: var(--display); }
+.preludio-panel__list {
+  padding-left: 20px; margin: 0 0 20px;
+}
+.preludio-panel__list li {
+  font-size: 15.5px; color: rgba(255,255,255,0.78);
+  line-height: 1.78; margin-bottom: 8px;
+}
+.preludio-panel__list li::marker { color: var(--teal); }
+
+.preludio-panel__cta {
+  margin-top: 48px; padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.preludio-panel__cta p {
+  font-size: 14.5px; color: rgba(255,255,255,0.6);
+  line-height: 1.65; margin-bottom: 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preludio-panel__drawer { transition: none; }
+  .preludio-panel__backdrop { transition: none; }
+}
+@media (max-width: 560px) {
+  .preludio-panel__inner { padding: 0 24px 48px; }
+  .preludio-panel__close { padding: 16px 16px 0; }
+}
+
 /* Hero /returnai — columna de texto más amplia + H1 mayor que /modelo-aria
    La columna 1.25fr da ~710px a 1200px container; soporta las 36 chars
    de la línea más larga a 34px sin quiebre. */

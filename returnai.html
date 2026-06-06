@@ -478,21 +478,22 @@
   </div>
 </section>
 
-<!-- ============================ S7 · LECTURA EJECUTIVA (la novela como artefacto) ============================ -->
-<section class="section section--seam" data-screen-label="Lectura ejecutiva — Novela ReturnAI">
+<!-- ============================ S8 · LECTURA EJECUTIVA (la novela como artefacto) ============================ -->
+<section class="section section--book-teal" data-screen-label="Lectura ejecutiva — Novela ReturnAI">
   <div class="wrap">
-    <div class="book">
-      <image-slot id="rai2-book" class="book__slot" data-reveal shape="rounded" radius="8" placeholder="Arrastra la portada de la Novela ReturnAI (3:4)"></image-slot>
+    <div class="book book--inverted">
       <div data-reveal>
-        <span class="label">El método en acción</span>
-        <h2 style="margin:14px 0 18px">Adalid Puentes tenía 120 días, $8.2M comprometidos y 11% de adopción real. Su Junta exigía el número.</h2>
-        <p class="chapeau" style="margin-bottom:16px">Lo que descubrió — y el sistema que lo resolvió — es exactamente lo que ReturnAI despliega en cada intervención real.</p>
-        <p style="color:var(--carbon-70);max-width:520px">250 páginas que narran los seis sprints del Modelo ARIA en acción. No es ficción empresarial: es el método documentado, escrito para el ejecutivo que debe responder ante su Junta por estas inversiones.</p>
+        <span class="label book__label--light">El método en 250 páginas</span>
+        <h2 class="book__h2--light" style="margin:16px 0 20px">Los seis sprints que acabas de leer ejecutados en una empresa real — con $8.2M en juego y 120 días de plazo.</h2>
+        <p class="book__body--light" style="margin-bottom:20px">Adalid Puentes era el Director de Transformación Digital de la aseguradora más tradicional del país. Los mismos obstáculos que bloquean tu retorno son los que él tuvo que resolver, sprint a sprint, con la Junta esperando el número.</p>
+        <p class="book__body--light book__body--sub">No es ficción empresarial: es la documentación narrativa del Modelo ARIA en acción. Escrita para el ejecutivo que debe responder ante su Junta por estas inversiones.</p>
         <div class="book__cta">
-          <a href="#" class="btn btn--secondary">Ver el método en acción <span class="arrow">&rarr;</span></a>
+          <a href="#" class="btn btn--ghost-light">Ver el método en acción <span class="arrow">&rarr;</span></a>
+          <button id="btn-preludio" class="btn btn--ghost">Leer el preludio <span class="arrow">&rarr;</span></button>
         </div>
-        <p class="book__meta">Disponible en Amazon — formato digital e impreso.</p>
+        <p class="book__meta book__meta--light">Disponible en Amazon — formato digital e impreso.</p>
       </div>
+      <image-slot id="rai2-book" class="book__slot" data-reveal shape="rounded" radius="8" placeholder="Arrastra la portada de la Novela ReturnAI (3:4)"></image-slot>
     </div>
   </div>
 </section>
@@ -510,6 +511,61 @@
     </div>
   </div>
 </section>
+
+<!-- ============================ READING PANEL — PRELUDIO ============================ -->
+<div id="preludio-panel" class="preludio-panel" role="dialog" aria-modal="true" aria-labelledby="preludio-panel-title" hidden>
+  <div class="preludio-panel__backdrop"></div>
+  <div class="preludio-panel__drawer">
+    <button class="preludio-panel__close" aria-label="Cerrar preludio">&times;</button>
+    <div class="preludio-panel__inner">
+      <div class="preludio-panel__header">
+        <span class="preludio-panel__tag">Preludio</span>
+        <h2 class="preludio-panel__title" id="preludio-panel-title">El momento en que todo cambió</h2>
+        <time class="preludio-panel__date">Miércoles, 15 de octubre · 10:07 p.m.</time>
+      </div>
+      <div class="preludio-panel__body">
+        <p>Adalid Puentes conducía por la autopista vacía con las manos aferradas al volante y una sola frase martillando su cabeza:</p>
+        <p class="preludio-panel__quote">«Tienes ciento veinte días».</p>
+        <p>La reunión de esa mañana había durado cuarenta y siete minutos. Pero sus palabras lo perseguirían durante los próximos cuatro meses.</p>
+        <p>Las luces de la ciudad se difuminaban a través del parabrisas. Adalid no recordaba haber tomado la salida hacia su casa. Su cerebro operaba en piloto automático mientras reproducía, una y otra vez, el momento exacto en que Ricardo Mendoza —su CEO— le había dado el ultimátum.</p>
+        <p>Adalid cambió de carril sin señalizar. Un claxon furioso lo devolvió al presente por tres segundos, antes de que su mente regresara a la sala de juntas.</p>
+        <p class="preludio-panel__quote">«Desembolsar ocho millones sin retorno no es una inversión, Adalid. Es un gasto que no puedo justificar».</p>
+        <p>Había dicho Ricardo con ese pragmatismo radical que solo un CFO que ha ascendido a CEO puede expresar.</p>
+        <p>Adalid apretó el volante hasta que sus nudillos se volvieron blancos.</p>
+        <p class="preludio-panel__emphasis">Dieciocho meses.</p>
+        <p>Dieciocho meses presentando al comité ejecutivo que «la transformación con IA iba según lo planeado». Dieciocho meses celebrando métricas de actividad que no movían un solo indicador de negocio. Dieciocho meses viviendo en una torre de marfil mientras su proyecto se desangraba en silencio.</p>
+        <p>Y lo peor no era el fracaso profesional.</p>
+        <p>Lo peor era que había estado tan ciego, que genuinamente creía estar teniendo éxito. Hasta esa mañana.</p>
+        <p>El semáforo en rojo lo detuvo a tres cuadras de su casa. Adalid miró su reflejo en el retrovisor.</p>
+        <p>Cuarenta y dos años. Ingeniero de Sistemas de Los Andes. Maestría en el MIT. Dieciocho meses como Director de Transformación Digital de la empresa de seguros más tradicional del país.</p>
+        <p class="preludio-panel__emphasis">Y en ciento veinte días podría estar desempleado.</p>
+        <p>No. Peor que desempleado. Podría ser el caso de estudio que los consultores usarían como ejemplo de «cómo destruir ocho millones de dólares con las mejores intenciones».</p>
+        <p>El semáforo cambió a verde. Adalid no se movió. Detrás de él, un camión de carga tocó el claxon con insistencia. Adalid levantó la mano en señal de disculpa y avanzó.</p>
+        <p>En tres cuadras llegaría a su casa. Laura estaría despierta —siempre lo estaba cuando él llegaba tarde. Y tendría esa mirada que decía más que mil palabras: <em>De nuevo elegiste el trabajo</em>.</p>
+        <p>Adalid no sabía cómo decirle que esta vez el trabajo lo había elegido a él.</p>
+        <p>Estacionó el coche en la entrada y apagó el motor. La casa estaba en silencio, pero la luz del estudio seguía encendida. Adalid cerró los ojos y exhaló lentamente.</p>
+        <p class="preludio-panel__emphasis">Ciento veinte días.</p>
+        <p>En ciento veinte días tendría que demostrar:</p>
+        <ul class="preludio-panel__list">
+          <li>Setenta por ciento de adopción real de IA en el flujo de trabajo diario.</li>
+          <li>Al menos un piloto en producción generando valor documentado.</li>
+          <li>ROI medible en algún KPI del negocio con impacto en el P&L.</li>
+        </ul>
+        <p>O su programa se cancelaría. Y posiblemente su empleo también.</p>
+        <p>Adalid abrió la puerta del coche y caminó hacia la entrada de su casa. Sus zapatos resonaban sobre el concreto con un ritmo que sonaba a cuenta regresiva.</p>
+        <p class="preludio-panel__countdown">Ciento veinte días.<br>Ciento diecinueve.<br>Ciento dieciocho.</p>
+        <p>Giró la llave en la cerradura.</p>
+        <p>Lo que Adalid no sabía esa noche —lo que descubriría en las siguientes semanas— era que su fracaso no era único. No era incompetencia personal. No era mala suerte. No eran errores aislados.</p>
+        <p class="preludio-panel__emphasis">Era un patrón sistémico documentado en más de trescientas empresas.</p>
+        <p class="preludio-panel__closing">Esta es su historia.<br><strong>Podría ser la tuya.</strong></p>
+      </div>
+      <div class="preludio-panel__cta">
+        <p>Lo que Adalid encontró en los siguientes 120 días es exactamente lo que ReturnAI despliega en cada intervención. El punto de partida siempre es el mismo.</p>
+        <a href="index.html#test" class="btn btn--primary">Tomar el AI Return Test <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</div>
 
 </main>
 
@@ -572,6 +628,7 @@
 
 <script src="app.js"></script>
 <script src="enhance4.js"></script>
+<script src="enhance-rai-preludio.js"></script>
 <script src="enhance6.js"></script>
 <script src="enhance-aria.js"></script>
 <script src="enhance-v6.js"></script>
