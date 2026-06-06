@@ -22,23 +22,47 @@
 .rai3 .proof__lead {
   background: var(--teal); border-radius: 12px 0 0 12px;
   padding: 56px 48px; position: relative; overflow: hidden;
-  display: flex; flex-direction: column; justify-content: center;
+  display: flex; flex-direction: column; justify-content: space-between;
 }
 .rai3 .proof__lead::before {
-  content: "6"; position: absolute; right: -12px; bottom: -24px;
+  content: "7"; position: absolute; right: -12px; bottom: -24px;
   font-family: var(--display); font-size: 200px; font-weight: 400; line-height: 1;
   color: rgba(255,255,255,0.07); pointer-events: none; user-select: none;
 }
 .rai3 .proof__lead .label { display: block; margin-bottom: 20px; color: rgba(255,255,255,0.65); letter-spacing: 0.1em; }
 .rai3 .proof__lead h2 { font-family: var(--display); font-weight: 400; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.3; color: #fff; }
 .rai3 .proof__lead p { margin-top: 14px; color: rgba(255,255,255,0.7); font-size: 15px; }
-.rai3 .proof__right { padding: 32px 0 32px 56px; display: flex; flex-direction: column; justify-content: center; }
-.rai3 .proof__footer { margin-top: 28px; }
+/* Footer migrado al panel teal */
+.rai3 .proof__footer {
+  margin-top: 0; display: flex; align-items: center; gap: 12px;
+  font-size: 13.5px; color: rgba(255,255,255,0.6);
+}
+.rai3 .proof__cta {
+  font-size: 13.5px; font-weight: 600; color: #fff;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+  transition: gap 0.2s;
+}
+.rai3 .proof__cta:hover { gap: 10px; }
+/* Columna derecha: sin padding vertical — el grid llena el 100% de la altura */
+.rai3 .proof__right { padding: 0 0 0 0; display: flex; flex-direction: column; height: 100%; }
+.rai3 .proof__right .industries-grid {
+  flex: 1; display: grid; grid-template-rows: repeat(7, 1fr); gap: 0; height: 100%;
+}
+.rai3 .proof__right .industries-grid div {
+  border-radius: 0; border: none;
+  border-bottom: 1px solid rgba(30,42,56,0.07);
+  padding: 0 24px 0 40px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.rai3 .proof__right .industries-grid div:last-child { border-bottom: none; }
+.rai3 .proof__right .industries-grid div:hover { background: rgba(46,139,118,0.04); border-left: 3px solid var(--teal); padding-left: 37px; }
 @media (max-width: 900px) {
   .rai3 .proof { grid-template-columns: 1fr; }
   .rai3 .proof__lead { border-radius: 12px 12px 0 0; padding: 40px 32px; }
   .rai3 .proof__lead::before { font-size: 140px; }
-  .rai3 .proof__right { padding: 32px 0 0 0; }
+  .rai3 .proof__right { height: auto; }
+  .rai3 .proof__right .industries-grid { grid-template-rows: none; height: auto; }
+  .rai3 .proof__right .industries-grid div { padding: 16px 20px; }
 }
 
 /* ---------- Pull-quote editorial (punto de vista) ---------- */
