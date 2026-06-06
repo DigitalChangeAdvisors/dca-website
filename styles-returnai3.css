@@ -22,7 +22,7 @@
 .rai3 .proof__lead {
   background: var(--teal); border-radius: 12px 0 0 12px;
   padding: 56px 48px; position: relative; overflow: hidden;
-  display: flex; flex-direction: column; justify-content: space-between;
+  display: flex; flex-direction: column; justify-content: flex-start; gap: 20px;
 }
 .rai3 .proof__lead::before {
   content: "7"; position: absolute; right: -12px; bottom: -24px;
@@ -72,8 +72,8 @@
 .rai3 .pov__by { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--carbon-55); }
 .rai3 .pov__rule { display: block; width: 40px; height: 2px; background: var(--gold); margin: 20px auto 0; }
 
-/* ---------- Prueba sectorial: fondo platino para diferencia de territorio ---------- */
-.rai3 .section--proof { background: var(--platinum, #f3f3f3); }
+/* ---------- Prueba sectorial: fondo platino, padding ajustado (72px vs 120px estándar) ---------- */
+.rai3 .section--proof { background: var(--platinum, #f3f3f3); padding: 72px 0; }
 
 /* ---------- Perspectivas: encabezado con enlace "ver todas" ---------- */
 .rai3 .persp-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 44px; flex-wrap: wrap; }
