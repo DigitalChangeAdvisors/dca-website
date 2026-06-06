@@ -35,6 +35,10 @@
 .rai3 .pov blockquote { text-wrap: unset; }
 .rai3 .pov blockquote .line { display: block; }
 .rai3 .pov__by { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--carbon-55); }
+.rai3 .pov__rule { display: block; width: 40px; height: 2px; background: var(--gold); margin: 20px auto 0; }
+
+/* ---------- Prueba sectorial: fondo platino para diferencia de territorio ---------- */
+.rai3 .section--proof { background: var(--platinum, #f3f3f3); }
 
 /* ---------- Perspectivas: encabezado con enlace "ver todas" ---------- */
 .rai3 .persp-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 44px; flex-wrap: wrap; }
