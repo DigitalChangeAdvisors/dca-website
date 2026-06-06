@@ -213,7 +213,16 @@
 .ind-kpi {
   font-size: 12.5px; color: var(--carbon-55); line-height: 1.45;
 }
-/* proof__footer y proof__cta gestionados en styles-returnai3.css (panel teal) */
+.proof__footer {
+  display: flex; align-items: center; gap: 14px;
+  font-size: 13.5px; color: var(--carbon-55);
+}
+.proof__cta {
+  font-size: 13.5px; font-weight: 600; color: var(--teal);
+  text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+  transition: gap 0.2s;
+}
+.proof__cta:hover { gap: 10px; }
 
 /* ============================================================
    S5 — GARANTÍA (fondo carbón · stat cards)
