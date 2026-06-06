@@ -54,6 +54,7 @@
   margin-left: 0;
   justify-content: flex-start;
   max-width: none;
+  border-top-color: var(--gold);
 }
 
 /* Word-reveal del H1 (sistema v6) */
