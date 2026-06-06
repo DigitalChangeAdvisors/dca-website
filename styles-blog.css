@@ -44,12 +44,11 @@
 .persp-head__inner { max-width: 860px; }
 .persp-head .label { display: block; margin-bottom: 20px; }
 .persp-head h1 {
-  font-size: clamp(38px, 4.6vw, 66px);
-  line-height: 1.04;
-  margin-bottom: 24px;
-  max-width: 16ch;
-  text-wrap: balance;
+  font-size: clamp(26px, 2.5vw, 36px);
+  line-height: 1.1;
+  margin-bottom: 28px;
 }
+.persp-head h1 .line { display: block; }
 .persp-head .chapeau { max-width: 600px; margin-bottom: 30px; text-wrap: pretty; }
 .persp-head .cred-strip {
   margin-left: 0;
@@ -90,6 +89,7 @@
   gap: 9px;
 }
 .cred-strip__item b { color: var(--carbon); font-weight: 700; }
+.persp-head .cred-strip__item b { color: var(--teal); font-size: 15px; }
 .cred-strip__dot {
   width: 3px; height: 3px; border-radius: 50%;
   background: var(--gold);
