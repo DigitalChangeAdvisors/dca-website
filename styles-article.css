@@ -207,6 +207,24 @@
   font-weight: 400;
 }
 
+/* ── CTA inline en cuerpo del artículo ───────────────────────── */
+.art-inline-cta {
+  display: inline-block;
+  color: var(--teal);
+  font-family: var(--body);
+  font-size: clamp(15px, 1.2vw, 17px);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--teal);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s cubic-bezier(0.34,1.56,0.64,1);
+}
+.art-inline-cta:hover {
+  color: #1f6657;
+  border-color: #1f6657;
+  transform: translateX(3px);
+}
+
 /* ── Lista con bullets oro ────────────────────────────────────── */
 .art-body ul {
   list-style: none;
