@@ -316,13 +316,16 @@
   position: relative;
   overflow: hidden;
 }
-.article-card__img-wrap image-slot {
+.article-card__img-wrap image-slot,
+.article-card__img-wrap img {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
+  object-fit: cover;
   transition: transform 0.5s var(--ease);
 }
-.article-card:hover .article-card__img-wrap image-slot { transform: scale(1.04); }
+.article-card:hover .article-card__img-wrap image-slot,
+.article-card:hover .article-card__img-wrap img { transform: scale(1.04); }
 
 /* Cuerpo */
 .article-card__body {
