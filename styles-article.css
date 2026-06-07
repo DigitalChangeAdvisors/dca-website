@@ -4,6 +4,18 @@
    Extiende styles.css (variables, nav, footer, btn ya definidos)
    ================================================================ */
 
+/* ── Fix: art-body demasiado alto para el threshold 0.18 del IO ──
+   El IntersectionObserver en app.js usa threshold:0.18 — requiere que
+   el 18% del elemento sea visible. Un cuerpo de artículo de 4000+ px
+   nunca supera ese ratio y se queda en opacity:0 indefinidamente.
+   Solución: forzar visibilidad en el wrapper del cuerpo del artículo. */
+.art-body[data-reveal],
+.art-body[data-reveal].in {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
 /* ── Utilidades de columna ────────────────────────────────────── */
 .art-inner {
   max-width: 720px;
