@@ -118,7 +118,7 @@
           <span class="art-byline__meta">
             <time datetime="2026-03-20">20 mar 2026</time>
             <span class="art-dot" aria-hidden="true"></span>
-            12 min de lectura
+            10 min de lectura
           </span>
         </div>
       </div>
@@ -138,75 +138,110 @@
       <div class="art-insights" role="note" aria-label="Puntos clave">
         <span class="art-insights__label">Puntos clave</span>
         <ul>
-          <li>El modelo de gobernanza dominante está diseñado para minimizar errores, no maximizar aprendizaje — con consecuencias financieras documentadas.</li>
-          <li>El patrón Boeing-Uber: gobernanza reactiva que castiga el error individual destruye la adopción antes de que el retorno aparezca.</li>
-          <li>La alternativa documentada — gobernanza basada en seguridad psicológica — genera tasas de adopción 2.4x superiores en 90 días.</li>
+          <li>Entre el 60% y el 70% de los problemas operativos con sistemas de IA son conocidos por quienes los detectan, pero no se reportan — el efecto del silencio técnico acumula pasivos hasta que escalan a una consecuencia que ya no puede contenerse.</li>
+          <li>El modelo de culpabilidad individual — el patrón que Uber y Boeing siguieron — tiene un costo documentado de más de $20.000 millones en consecuencias acumuladas, sin resolver las causas que garantizan que el problema se repita.</li>
+          <li>La fricción de governance es el Obstáculo 2 en la rentabilización de la IA: una política de acceso confusa convierte en cero la intención de uso, incluso cuando la herramienta ya está instalada y pagada.</li>
         </ul>
       </div>
 
-      <!-- Sección 1 -->
-      <h2>El modelo de gobernanza dominante y por qué falla</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      <!-- Intro -->
+      <p>Era una madrugada de marzo de 2018 en Tempe, Arizona. Un vehículo autónomo de Uber circulaba a velocidad normal cuando su sistema de detección de objetos clasificó incorrectamente a un peatón y no activó el freno de emergencia a tiempo. El resultado fue una muerte. La respuesta institucional fue predecible: la operadora fue procesada penalmente, Uber suspendió su programa de vehículos autónomos. La narrativa oficial cerró el caso señalando a una persona.</p>
+      <p>Si en tu organización la primera conversación cuando algo falla en un proceso de IA es "¿quién fue?", estás operando bajo el mismo modelo. Y ese modelo tiene un costo financiero documentado que pocas empresas han calculado con precisión antes de pagarlo.</p>
 
       <!-- Estadísticas -->
-      <div class="art-stats" aria-label="Datos clave del an&aacute;lisis">
+      <div class="art-stats" aria-label="Datos clave del análisis">
         <div class="art-stat">
-          <span class="art-stat__num">2.4x</span>
-          <span class="art-stat__label">mayor adopción con modelo de gobernanza de aprendizaje</span>
+          <span class="art-stat__num">$20B+</span>
+          <span class="art-stat__label">costo total documentado del modelo de culpabilidad &mdash; caso Boeing 737 MAX</span>
         </div>
         <div class="art-stat">
-          <span class="art-stat__num">90</span>
-          <span class="art-stat__label">días para observar diferencia documentada entre modelos</span>
+          <span class="art-stat__num">60&ndash;70%</span>
+          <span class="art-stat__label">problemas operativos con IA conocidos pero no reportados en organizaciones punitivas</span>
         </div>
         <div class="art-stat">
-          <span class="art-stat__num">3</span>
-          <span class="art-stat__label">niveles de gobernanza efectiva en el Modelo ARIA</span>
+          <span class="art-stat__num">+23%</span>
+          <span class="art-stat__label">incremento en tasas de apertura del piloto que la fricción de governance anuló</span>
         </div>
       </div>
 
-      <!-- Sección 2 -->
-      <h2>El costo documentado de la gobernanza punitiva</h2>
-      <h3>Marco de an&aacute;lisis</h3>
-      <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt.</p>
-      <ul>
-        <li>Ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</li>
-        <li>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</li>
-        <li>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.</li>
-        <li>Nam libero tempore cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</li>
-      </ul>
-      <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint molestiae non recusandae.</p>
+      <!-- H2 1 -->
+      <h2>El precio de encontrar culpables rápido</h2>
+      <p>El patrón se repitió en Boeing. Dos accidentes del 737 MAX en 2018 y 2019 mataron a 346 personas. El CEO Dennis Muilenburg fue destituido como respuesta visible ante los stakeholders. La promesa implícita fue que el problema estaba contenido. Cinco años después, en 2024, una puerta de emergencia se desprendió de un 737 MAX en pleno vuelo. Un nuevo CEO fue empujado a renunciar. La cultura que priorizaba velocidad de producción sobre rigor de prueba, con sistemas de reporte que desincentivaban las alertas internas, seguía operando. Nadie la había intervenido porque la narrativa oficial la había borrado señalando a una persona.</p>
+      <p>Ninguna de esas acciones abordó las decisiones de diseño que priorizaron velocidad de lanzamiento sobre rigor de prueba. Ninguna examinó los incentivos organizacionales que desincentivaban reportar señales de alerta temprana. La causa profunda del accidente no era una persona. Era un sistema &mdash; técnico, humano y organizacional &mdash; operando bajo condiciones que lo hacían predeciblemente frágil.</p>
+
+      <!-- Callout 1 -->
+      <div class="art-callout">
+        <span class="art-callout__label">Costo documentado del modelo de culpabilidad</span>
+        <p>El costo financiero de los accidentes del 737 MAX supera los $20.000 millones de dólares entre compensaciones, sanciones, pérdida de contratos y deterioro de la marca. Y ese número no incluye el costo de los fallos posteriores producidos por las mismas causas no intervenidas. En el contexto de la IA corporativa, el mismo mecanismo produce el mismo resultado &mdash; a menor escala, pero con la misma sistematicidad y el mismo impacto acumulado en el P&amp;L.</p>
+        <p>Desde la economía del comportamiento, el modelo de culpabilidad individual es una manifestación clásica de lo que Kahneman denomina Sistema 1 aplicado a la gestión de crisis: la mente busca, instintivamente, una causa simple y singular para problemas que son sistémicos y multivariables. Es cognitivamente económico, emocionalmente satisfactorio para los stakeholders, y estratégicamente destructivo para el retorno de largo plazo.</p>
+        <p>Los investigadores de MIT Sloan documentan el patrón con precisión: cuando una empresa se limita a destituir a un líder ante un fallo, raramente se resuelven las causas profundas y sistémicas &mdash; lo que produce la repetición de errores cuyo costo compuesto supera con creces el costo del incidente original.</p>
+      </div>
+
+      <!-- H2 2 -->
+      <h2>La paradoja del equipo que no usa lo que ya pagaron</h2>
+      <p>Imagine a un analista de marketing en una empresa financiera colombiana. Su organización ha invertido $1,2 millones de dólares en una plataforma de IA para personalización de comunicaciones con clientes. El piloto fue exitoso: un incremento del 23% en tasas de apertura y del 11% en conversión. Los números estaban documentados.</p>
+      <p>El resultado debería ser que el analista use la herramienta todos los días. No la usa.</p>
+      <p>Para generar una variante de copy con IA, necesita: leer un documento de política de 25 páginas para verificar que su caso de uso está permitido, llenar un formulario de solicitud con justificación de negocio, esperar entre 5 y 7 días para aprobación del área de tecnología, y enviar el copy a compliance antes de publicarlo. Total: dos semanas para lo que en el piloto tomó 20 minutos. El analista toma la decisión que cualquier cerebro toma cuando el costo de acción supera el beneficio percibido: no usa la herramienta. La organización sigue creyendo que tiene un proyecto de IA exitoso mientras el retorno de su inversión de $1,2 millones se acerca silenciosamente a cero.</p>
+
+      <!-- Callout 2 -->
+      <div class="art-callout">
+        <span class="art-callout__label">Obstáculo 2: Fricción de governance</span>
+        <p>Esto es lo que nuestra investigación &mdash; validada en campo en 70+ empresas de Hispanoamérica &mdash; identifica como el Obstáculo 2 en la rentabilización de la IA: la fricción de governance. Su mecanismo de daño es tan sutil como devastador: la tecnología está disponible, el presupuesto se pagó, los dashboards muestran acceso activo, y el retorno no aparece en el P&amp;L. La herramienta formalmente disponible no es la herramienta que genera impacto económico. Esa distinción es la brecha que ningún proveedor de la plataforma tiene incentivo para ayudarte a cerrar.</p>
+      </div>
 
       <!-- Pull quote -->
       <blockquote class="art-quote">
         <p>Una política de IA diseñada para que nadie se equivoque es una política diseñada para que nadie aprenda. Y una organización que no aprende no genera retorno.</p>
-        <cite>Ruth Jaramillo — Directora de Transformación Humana, Digital Change Advisors</cite>
+        <cite>Ruth Jaramillo &mdash; Directora de Transformación Humana, Digital Change Advisors</cite>
       </blockquote>
 
-      <!-- Sección 3 -->
-      <h2>El modelo alternativo: gobernanza que maximiza aprendizaje sin sacrificar control</h2>
+      <p>El problema se agrava cuando la arquitectura de decisiones está diseñada, implícitamente, para producir inacción. "Usen IA, es prioritario para nuestra estrategia" convive con "cualquier uso inadecuado será sancionado, no tomen riesgos que comprometan nuestra licencia." Ese par de mensajes no produce participación cuidadosa. Produce parálisis disfrazada de prudencia.</p>
+      <p>El resultado más perverso es que la organización no detecta el problema hasta que ya ha perdido millones en inversiones que se "adoptaron" en los dashboards pero nunca impactaron los KPIs del negocio.</p>
 
+      <!-- H2 3 -->
+      <h2>La gobernanza que aprende: tres movimientos que protegen el P&amp;L</h2>
+      <p>Los investigadores François-Xavier de Vaujany y Aurélie Vandelannoitte, en su trabajo publicado en MIS Quarterly, proponen un marco que redefine el accountability en la era de la IA: la responsabilidad narrativa. La idea central es disruptiva en su simplicidad: en lugar de buscar al culpable, construir la historia completa. Mapear no solo qué salió mal, sino cómo las presiones competitivas, los incentivos desalineados y las rutinas organizacionales crearon las condiciones para que el fallo ocurriera.</p>
+
+      <h3>Mapear la historia real, más allá de lo obvio</h3>
+      <p>Cuando Google lanzó Gemini en 2024 y el sistema generó imágenes históricamente inexactas, el CEO Sundar Pichai comprometió cambios estructurales en los procesos de lanzamiento y en los procesos de red-teaming. Una responsabilidad narrativa más completa habría surfaceado las presiones competitivas para lanzar rápido ante los avances de OpenAI, y cómo esas presiones influyeron en las decisiones de los equipos de prueba. Mapear eso no es señalar culpables adicionales; es construir el conocimiento organizacional que previene la siguiente versión del mismo problema.</p>
+
+      <h3>Distribuir la propiedad, no la culpa</h3>
+      <p>La industria de la aviación ofrece el modelo más sofisticado del mundo en esta materia. Aerolíneas como Air France y KLM, siguiendo los estándares de la EASA, convocan paneles multidisciplinarios después de cualquier incidente de automatización. Estos paneles &mdash; que reúnen pilotos, ingenieros, psicólogos de factores humanos y directivos operativos &mdash; no buscan al culpable. Buscan el patrón. El resultado medible: la aviación comercial es estadísticamente el medio de transporte más seguro del mundo, no a pesar de sus sistemas de automatización, sino gracias a una cultura de gobernanza que aprendió a gestionar la complejidad distribuida.</p>
+
+      <h3>Integrar la reflexión en la práctica diaria</h3>
+      <p>ING Bank no espera a que ocurra un incidente para activar su proceso de revisión. Después de cada sprint de desarrollo, el equipo dedica tiempo estructurado a tres preguntas: ¿Qué aprendimos? ¿Qué supuestos resultaron incorrectos? ¿Cómo nuestras acciones contribuyeron al resultado? Google hace lo mismo con su cultura de post-mortem documentada en Site Reliability Engineering: el análisis de incidentes es una rutina integrada en el ciclo de trabajo, no una reacción a una crisis.</p>
+
+      <!-- H2 4 -->
+      <h2>El AI Governance Canvas: de la política que paraliza a la habilitación que genera retorno</h2>
+      <p>El AI Governance Canvas &mdash; componente del Modelo ARIA &mdash; es la respuesta operativa directa al Obstáculo 2. No parte de los riesgos para construir restricciones; parte de los casos de uso para construir habilitaciones. La pregunta que responde no es "¿qué está prohibido?", sino: ¿qué puede hacer exactamente cada persona con la IA en su contexto específico, ahora mismo, sin pedir permiso? Lo que distingue al AI Governance Canvas de cualquier manual de compliance es su filosofía de diseño: elimina la sobrecarga cognitiva que produce la gobernanza tradicional sin sacrificar ningún nivel de control real.</p>
+
+      <h3>Eje 1 &mdash; Claridad de habilitación</h3>
+      <p>El Canvas mapea los casos de uso en tres vías de acción: vía verde (uso inmediato, sin aprobación, con las herramientas disponibles), vía amarilla (una verificación simple de tipo de dato antes de proceder), vía roja (aprobación formal con plazo máximo de respuesta predefinido &mdash; para evitar que la fricción burocrática se convierta en fricción infinita). De un documento de 40 páginas a tres preguntas: ¿Qué tarea? ¿Qué tipo de datos? ¿Uso interno o externo? El sistema responde exactamente qué puede hacer el colaborador. Esto elimina la confusión que produce la gobernanza tradicional y convierte la herramienta en algo que el equipo realmente usa.</p>
+
+      <h3>Eje 2 &mdash; Ownership del aprendizaje, no de la culpa</h3>
+      <p>Cada caso de uso no tiene un "responsable de compliance", sino un co-propietario de aprendizaje. La distinción es crítica: el responsable de compliance existe para castigar errores; el co-propietario de aprendizaje existe para capturar las lecciones que cada uso &mdash; exitoso o fallido &mdash; genera, y para mejorar la arquitectura de governance con base en esa evidencia. En la práctica, cada equipo tiene un governance champion cuya pregunta no es "¿hiciste algo mal?", sino "¿qué aprendimos de cómo usamos la IA esta semana y cómo podemos hacerlo mejor la siguiente?".</p>
+
+      <h3>Eje 3 &mdash; Gobernanza viva, no gobernanza congelada</h3>
+      <p>Cada 90 días, el equipo de governance revisa dos indicadores: el esfuerzo percibido de governance &mdash; qué tan fácil fue obtener claridad sobre qué puede hacer con IA &mdash; y el análisis de consultas repetidas. Si muchos colaboradores preguntan lo mismo, esa política genera fricción innecesaria sin agregar valor de control real. La regla interna es directa: cada trimestre se simplifica al menos una política de alta fricción. La gobernanza deja de ser un evento de lanzamiento y se convierte en una práctica que aprende a la misma velocidad que la tecnología que regula.</p>
+
+      <!-- Callout 3 -->
       <div class="art-callout">
-        <span class="art-callout__label">Implicaci&oacute;n pr&aacute;ctica</span>
-        <p>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. La intervenci&oacute;n estructurada sobre estos factores es el punto de partida del Modelo ARIA.</p>
+        <span class="art-callout__label">El activo más subestimado: seguridad psicológica</span>
+        <p>UCLA Health estableció una red de culture champions y comités de revisión de incidentes diseñados como espacios psicológicamente seguros &mdash; donde el personal puede reportar riesgos sin temor a represalias. El resultado: una mejora documentada en la velocidad de aprendizaje organizacional que se tradujo en procesos más eficientes. En nuestra investigación de campo, entre el 60% y el 70% de los problemas operativos con sistemas de IA son conocidos por los colaboradores que los detectan, pero no se reportan en organizaciones con governance punitiva. Eso no es prudencia. Es el efecto del silencio técnico: pasivos que se acumulan en silencio hasta que aparecen en el balance cuando ya es demasiado tarde para contenerlos.</p>
       </div>
 
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+      <!-- Cierre -->
+      <p>Existe una pregunta que, en nuestra experiencia de campo con 70+ organizaciones, separa con claridad a las empresas que construyen gobernanza de IA con retorno real de las que construyen compliance de IA con costo real: cuando algo falla en un proceso que involucra la IA, ¿la primera conversación es "¿quién fue?" o "¿qué aprendemos?"? Si la respuesta honesta es la primera, tu organización tiene un modelo de gobernanza que garantiza que los mismos fallos se repitan bajo distintos nombres y en distintos ciclos presupuestarios &mdash; porque las causas profundas siguen intactas.</p>
+      <p>El retorno de la inversión en IA no es solo función de la tecnología instalada. Es función del sistema organizacional que la rodea: las políticas que habilitan o paralizan su uso cotidiano, los incentivos que promueven o suprimen el reporte de anomalías, la cultura que convierte los errores en aprendizaje o en teatro de accountability. Saber exactamente en qué punto de ese sistema está el obstáculo que frena el retorno de tu inversión es el primer movimiento que ningún proveedor de tecnología hará por ti.</p>
 
-      <h3>Implicaciones para tu organizaci&oacute;n</h3>
-      <ol>
-        <li>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam.</li>
-        <li>Ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</li>
-        <li>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum dolorem eum fugiat.</li>
-      </ol>
-
-      <p>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+      <!-- CTA inline -->
+      <p><a href="ai-return-test.html" class="art-inline-cta">Diagnostica qué obstáculo frena el retorno de tu IA &rarr;</a></p>
 
       <hr class="art-divider" />
 
       <!-- Tags -->
       <div class="art-tags">
-        <span class="art-tag">Gobernanza de IA</span><span class="art-tag">Seguridad psicológica</span><span class="art-tag">Adopción</span><span class="art-tag">Junta</span><span class="art-tag">Modelo ARIA</span>
+        <span class="art-tag">Gobernanza de IA</span><span class="art-tag">Obstáculos organizacionales</span><span class="art-tag">Retorno de IA</span><span class="art-tag">Modelo ARIA</span><span class="art-tag">Junta</span>
       </div>
 
     </div>
@@ -220,7 +255,7 @@
         <div class="art-author__info">
           <span class="art-author__name">Ruth Jaramillo</span>
           <span class="art-author__role">Directora · Transformación humana &amp; IA</span>
-          <p class="art-author__bio">Ruth Jaramillo es Directora de Digital Change Advisors y líder de la práctica de Transformación Humana &amp; IA. Especialista en el componente neurobiología del cambio organizacional aplicado a entornos de adopción de IA en empresas medianas y grandes de Latinoamérica.</p>
+          <p class="art-author__bio">Ruth Jaramillo es Directora de Digital Change Advisors y especialista en la intersección de comportamiento organizacional, neurobiología del cambio y rentabilización de inversiones en IA. Desarrolló el componente de seguridad psicológica del AI Governance Canvas como parte del Modelo ARIA, validado en campo en 70+ empresas de Hispanoamérica.</p>
         </div>
       </div>
     </div>
