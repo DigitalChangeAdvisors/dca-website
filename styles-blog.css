@@ -272,7 +272,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-  padding: 0 0 64px;
+  padding: 0 0 40px;
 }
 
 .article-card {
@@ -955,9 +955,8 @@
    S4 PULL QUOTE EDITORIAL
    ============================================================ */
 .blog-quote {
-  padding: 80px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  background: var(--platinum);
+  padding: 72px 0;
 }
 .blog-quote__inner {
   max-width: 800px;
@@ -984,13 +983,11 @@
   font-weight: 600;
   color: var(--carbon);
 }
-.blog-quote__article {
-  font-size: 13px;
-  color: var(--teal);
-  text-decoration: none;
-  transition: opacity 0.2s ease;
+.blog-quote__role {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
 }
-.blog-quote__article:hover { opacity: 0.72; }
 
 /* ============================================================
    S5 INVESTIGACIÓN EN CURSO (ex Reporte insignia)
