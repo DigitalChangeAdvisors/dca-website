@@ -125,58 +125,72 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 - **Sección Industrias:** tira horizontal (`.industries-strip`) — no grid con links
 - **Diferenciación:** componente `versus2` con arco SVG del logo — no tabla `versus` simple
 
-## Decisiones Canónicas de `/nosotros` — BLOQUEO DE PRODUCCIÓN
+## Decisiones Canónicas de `/nosotros` — **FINE-TUNING CERRADO** (2026-06-08)
 
-> Implementación completada 2026-06-02. Copy aprobado por `/validar-marca` (91/100). Claude Design expandió el brief de 8 a 13 secciones — todas en producción.
+> Pre-audit ejecutado: `/behavioral-economics-c-level` + `/ui-ux-pro-max`. Etapa dictaminada: Validación. 11 secciones en producción. Fotos reales conectadas. Violaciones canónicas de "17 países" corregidas.
 
-### Propósito y etapa conductual
-- **Etapa:** Validación — el prospecto ya conoce el método, ahora valida a las personas
-- **Mecanismo principal:** Prueba Social de Autoridad + Efecto Halo
-- **Mecanismo secundario:** Reciprocidad (insight propietario antes del CTA)
+### Etapa conductual y mecanismos
+- **Etapa:** Validación — visitante evalúa si DCA es firma real, no activa el problema (ya lo sabe)
+- **Mecanismo principal:** Prueba social positiva + Reducción de fricción
+- **NO repetir:** aversión a pérdida del homepage — genera reactance en esta etapa
 - **CTA único:** `AI Return Test →` (→ `index.html#test`) — nunca un segundo botón de conversión
+- **Frame CTA:** posición competitiva relativa ("tu organización dentro del mapa de 70+ empresas"), nunca "sin costo"
 
-### Estructura real — 13 secciones implementadas
-1. `#nosotros` — Hero + Ficha institucional (en cascada al scroll)
-2. `#proposito` — Por qué existimos (credo — abierto a BE tuning)
-3. `#puente` — Del uso al impacto — SVG animado · **bridge: 19%→67%** (caso real)
-4. `#la-firma` — La firma · H2: *"Una categoría que no existía antes de que la necesitáramos."*
-5. (sin id) — Banda editorial fullbleed · `image-slot #img-firma-banda` (pendiente foto real)
-6. `#liderazgo` — César Lozano · image-slot · cred-list
-7. (bg-platinum) — Ruth Jaramillo · image-slot espejado · cred-list extendida
-8. `#metodo` — Modelo ARIA stepper fijo (3 fases: Assessment / Intervención / Atestación)
-9. `#principios` — Cuatro principios (abierto a BE tuning)
-10. (bg-teal) — Validación de escala · count-up 70+/57+/17/14
-11. (sin id) — Perspectiva DCA · pullquote con cita de adopción canónica
-12. `#evidencia` — Evidencia de campo · $3.2M · count-up 19→67 · CTA → `casos.html`
-13. `#cta-final` — Diagnóstico ejecutivo · `AI Return Test →`
+### Estructura — 11 secciones (canónica 2026-06-08)
+1. `#nosotros` — Hero + Ficha institucional · H1 pirámide 3L (32/18/14 chars) ✅
+2. `#proposito` — Por qué existimos (credo)
+3. `#la-firma` — La firma · H2: *"Una categoría que no existía antes..."*
+4. (sin id) — Banda editorial fullbleed · `image-slot #img-firma-banda` (pendiente foto real)
+5. `#liderazgo` — César Lozano · `src="assets/img-leader-1.png"` conectada ✅
+6. (bg-platinum) — Ruth Jaramillo · `src="assets/img-leader-2.png"` conectada ✅ · espejada
+7. `#metodo` — Modelo ARIA stepper fijo (Assessment / Intervención / Atestación)
+8. `#principios` — Cuatro principios
+9. (bg-teal) — Validación de escala · count-up `70+/57+/17/14`
+10. `#evidencia` — Evidencia de campo · $3.2M · count-up 19→67 · CTA → `casos.html`
+11. `#cta-final` — Diagnóstico ejecutivo · `AI Return Test →`
+
+**Secciones eliminadas (2026-06-08):**
+- ~~S3 Puente animado~~ — duplicaba el homepage, incompatible con etapa Validación
+- ~~S11 Perspectiva intelectual~~ — repetía mecanismo Diagnóstico ya activado en homepage
 
 ### Archivos de la página
 - HTML: `nosotros.html`
-- CSS: `styles-nosotros.css` + `nosotros2.css` + `nosotros3.css` + `nosotros4.css` + `nosotros5.css` + `nosotros6.css`
-- JS específico: `enhance-nosotros4.js` (wayfinding dot-nav 7 anclas)
-- JS sistema: `app.js` + `enhance4.js` + `enhance6.js` (no duplicar)
+- CSS: `styles-nosotros.css` → `nosotros6.css` + **`nosotros7.css`** (nuevo: `.scale-stat__laria`)
+- JS específico: `enhance-nosotros4.js` (wayfinding dot-nav — filtra IDs faltantes automáticamente)
+- JS sistema: `app.js` + `enhance4.js` + `enhance6.js`
 
 ### Datos canónicos de la página
-- Stats display (solo en Sección 5, una vez): `70+` Empresas · `57+` Consultores · `17` Países · `14` Componentes
-- Caso ancla en Sección 7: **$3.2M · 19%→67% · +13 puntos · payback 120 días** (caso real, NDA)
-- **PROHIBIDO** mezclar con caso novela (Adalid Puentes · $8.2M · 11%→70% · $891K)
+- Stats display (Sección 9, una vez): `70+` Empresas · `57+` Consultores · `17` Países · `14` Componentes
+- Label del stat 17: **"Países · Comunidad LARIA"** — nunca solo "Países" (viola regla canónica)
+- Caso ancla (Sección 10): **$3.2M · 19%→67% · +13 puntos · payback 120 días** (caso real, NDA)
+- **PROHIBIDO** mezclar con caso novela (Adalid Puentes · $891K)
 
-### Términos y reglas específicas de esta página
-- "transformación digital" **NO aparece** — ni siquiera como negación. Reemplazado por: *"No somos un vendor de herramientas de IA. No somos una firma de gestión del cambio. No somos una agencia de capacitación."*
-- "adopción" aparece como medio en Sección 6: *"La adopción es el camino. El retorno es el destino."* — correcto y aprobado
-- Bio Ruth Jaramillo en esta página: versión extendida con credenciales completas (vs. versión corta en homepage)
-- "capacitación en IA" **prohibido** en contexto de Ruth — usar *"inversión en IA de tu organización"*
-- Tira de ciudades: **ELIMINADA**. Tercer líder: **NO aparece** en esta página
+### Reglas canónicas — "17 países" en esta página
+- **NUNCA** como cobertura de firma: ni en meta description, ni en hero, ni en cred-lists, ni en body copy
+- Aparece **solo** en el stat de Validación de escala con sublabel "Comunidad LARIA"
+- Operación real de firma: **Colombia · Panamá · México** (en ficha institucional del hero)
 
-### Foto de fundadores
-- César: retrato ejecutivo, 3/4 o perfil, overlay carbón 15%, aspect-ratio 4/5, placeholder `#f3f3f3`
-- Ruth: mismas especificaciones, imagen espejada (texto izquierda en Sección 3, texto derecha en Sección 4)
-- Hasta tener fotos reales: `image-slot.js` activo — reemplazar antes del dominio final
+### Partnerships — decisión canónica (2026-06-08)
+- **No existe sección Partnerships en /nosotros** — DCA no tiene alianzas oficiales activas en el lanzamiento
+- `styles-nosotros7.css` contiene los estilos `.noso-partners` (CSS en repo pero sección removida del HTML)
+- Cuando existan alianzas reales: reactivar la sección entre Evidencia y CTA (dictamen UX: posición correcta)
+- **NUNCA** usar logos placeholder de Microsoft/Anthropic/AWS sin acuerdo formal — daño reputacional
+
+### Comunidad LARIA en /nosotros — regla permanente (2026-06-08)
+- **NO** aparece como sección dedicada en /nosotros — ni como "comunidad + cursos gratis" ni como "ecosistema"
+- "Cursos gratis" activa heurístico de plataforma EdTech — incompatible con posicionamiento advisory premium
+- LARIA tiene tres ubicaciones correctas: footer · stat "17 Países · Comunidad LARIA" · página `/comunidad`
+- `/comunidad` **no se despliega** hasta que sea parte del plan de lanzamiento
+
+### Términos y reglas específicas
+- "transformación digital" **NO aparece** — reemplazado por: *"No somos un vendor... no somos una firma de gestión del cambio..."*
+- "adopción" válido solo como medio: *"La adopción es el camino. El retorno es el destino."*
+- Bio Ruth: versión extendida con credenciales completas (vs. corta en homepage)
 
 ### CTA canónico
-- Botón: `AI Return Test →` (teal `#2e8b76`, Montserrat 600)
-- Nota subordinada: *"25 minutos · Sin compromiso · Tu diagnóstico es confidencial"*
-- CTA secundario (texto-link): *"Ver el caso completo →"* enlaza a `/casos` — no compite con botón principal
+- Botón: `AI Return Test →` (teal, Montserrat 600)
+- Nota: *"25 minutos · Sin compromiso · Tu diagnóstico es confidencial"*
+- CTA secundario texto-link: *"Ver el caso completo →"* → `casos.html`
 
 ---
 
@@ -401,9 +415,10 @@ Estas dos métricas se monitorizan sprint a sprint y alimentan el Reporte Ejecut
 - [x] Perspectivas (`blog.html`)
 - [x] `/modelo-aria` — Fine-tuning BE completo (8 puntos · commit `4b4abe8`). Pendiente: image-slots → img reales antes del dominio final
 - [x] `/returnai` — v6 implementada, brand compliance aplicado, routing canónico. Fine-tuning al final. **bridge usa 19% (real case) — verificar alineación con homepage (11%)**
-- [x] `/nosotros` — Implementada (13 secciones). Archivos: `nosotros.html` + `styles-nosotros*.css` (×6) + `enhance-nosotros4.js`. Deuda técnica: fotos reales pendientes (image-slot activo), `og-nosotros.png` específica pendiente, JSON-LD `sameAs` (LinkedIn) pendiente. Fine-tuning BE (secciones Propósito + Principios) al final.
+- [x] `/nosotros` — **FINE-TUNING CERRADO** (2026-06-08). 11 secciones. Fotos reales conectadas. Violaciones "17 países" corregidas. Partnerships eliminado (no existen aún). LARIA: solo en stat + footer. Ver decisiones canónicas.
 - [ ] `/casos`
 - [ ] 5 páginas restantes
+- [ ] Landing pages (siguiente fase — 11 landings)
 
 ### Fase 4 — Infraestructura ✅ (GitHub repos configurados)
 ### Fase 5 — Lanzamiento
