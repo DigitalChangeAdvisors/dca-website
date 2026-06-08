@@ -57,7 +57,7 @@
 /* ---------- H1 HERO — pirámide sin wrap en L1 (32 chars · col 760px) ---------- */
 /* clamp(34px,4vw,54px) wrapeaba L1 a 2 líneas. 44px = techo que cabe en 760px */
 .hero--decl .hero__say h1 {
-  font-size: clamp(30px, 3.5vw, 44px);
+  font-size: clamp(30px, 3.5vw, 48px);
 }
 
 /* ---------- SCALE STATS — aclaración LARIA ---------- */
