@@ -1109,18 +1109,15 @@
   gap: 28px;
   flex-wrap: wrap;
 }
-.field-study__ctas .btn--gold,
-.exit-cta__action .btn--gold {
-  background: var(--gold);
-  color: var(--white);
-  border-color: var(--gold);
+.btn--gold {
+  background: var(--gold) !important;
+  color: var(--white) !important;
+  border-color: var(--gold) !important;
 }
-.field-study__ctas .btn--gold:hover,
-.field-study__ctas .btn--gold:focus-visible,
-.exit-cta__action .btn--gold:hover,
-.exit-cta__action .btn--gold:focus-visible {
-  background: #8c6d0e;
-  border-color: #8c6d0e;
+.btn--gold:hover,
+.btn--gold:focus-visible {
+  background: #8c6d0e !important;
+  border-color: #8c6d0e !important;
   transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(164,129,17,0.40);
 }
