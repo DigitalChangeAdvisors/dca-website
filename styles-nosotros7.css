@@ -54,10 +54,22 @@
   margin-left: auto; margin-right: auto;
 }
 
-/* ---------- H1 HERO — pirámide sin wrap en L1 (32 chars · col 760px) ---------- */
-/* clamp(34px,4vw,54px) wrapeaba L1 a 2 líneas. 44px = techo que cabe en 760px */
+/* ---------- S1 HERO — H1 pyramid + reduce bottom gap ---------- */
 .hero--decl .hero__say h1 {
   font-size: clamp(30px, 3.5vw, 48px);
+}
+.hero--decl {
+  padding-bottom: 72px;
+}
+
+/* ---------- S2 PROPÓSITO — umbral oro + jerarquía tipográfica ---------- */
+#proposito {
+  border-top: 3px solid var(--gold);
+}
+.purpose__statement {
+  font-size: clamp(22px, 2.2vw, 30px);
+  max-width: 760px;
+  text-wrap: pretty;
 }
 
 /* ---------- SCALE STATS — aclaración LARIA ---------- */
