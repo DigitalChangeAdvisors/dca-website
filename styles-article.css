@@ -94,6 +94,7 @@
   margin: 0 0 24px;
   max-width: 20ch;
 }
+.art-title .line { display: block; }
 
 /* Lead paragraph */
 .art-lead {
