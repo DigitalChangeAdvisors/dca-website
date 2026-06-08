@@ -77,6 +77,31 @@
 .purpose__statement .line { display: block; }
 .purpose__body { margin-top: 20px; max-width: 760px; }
 
+/* ---------- S2 LA FIRMA — ajustes BE aprobados 2026-06-08 ---------- */
+/* Reducir gap H2 → cuerpo */
+#la-firma .section-head { margin-bottom: 32px; }
+
+/* Not-firm elevado a pull quote: Marcellus italic + borde oro */
+.not-firm {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(16px, 1.5vw, 19px);
+  color: var(--carbon);
+  border-left: 3px solid var(--gold);
+  padding-left: 24px;
+  max-width: 720px;
+  line-height: 1.55;
+}
+
+/* Cierre afirmativo tras las negaciones */
+.firm-affirm {
+  margin-top: 16px;
+  padding-left: 27px; /* alineado con el texto del not-firm */
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--teal);
+}
+
 /* ---------- SCALE STATS — aclaración LARIA ---------- */
 /* El stat de 17 países lleva un tag secundario bajo el label */
 .scale-stat__laria {
