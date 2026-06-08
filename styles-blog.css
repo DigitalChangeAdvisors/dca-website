@@ -841,8 +841,9 @@
    CTA DE SALIDA AL AI RETURN TEST
    ============================================================ */
 .blog-exit-cta {
-  padding: 96px 0;
-  border-top: 1px solid var(--border);
+  padding: 72px 0;
+  background: rgba(46, 139, 118, 0.04);
+  border-top: 3px solid var(--gold);
 }
 .exit-cta__inner {
   display: flex;
@@ -852,7 +853,13 @@
 }
 .exit-cta__text { max-width: 560px; }
 .exit-cta__text .label { display: block; margin-bottom: 18px; }
-.exit-cta__text h2 { margin-bottom: 18px; text-wrap: balance; }
+.exit-cta__text h2 {
+  font-size: clamp(26px, 2.6vw, 36px);
+  margin-bottom: 18px;
+  text-wrap: unset;
+  line-height: 1.2;
+}
+.exit-cta__text h2 .line { display: block; }
 .exit-cta__text .chapeau { text-wrap: pretty; }
 .exit-cta__action { flex: none; }
 
