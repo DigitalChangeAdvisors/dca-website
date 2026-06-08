@@ -146,7 +146,7 @@
 .firma-mark {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .firma-mark img {
   width: 260px;
