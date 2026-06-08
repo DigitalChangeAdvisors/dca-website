@@ -111,9 +111,30 @@
   text-transform: uppercase; color: rgba(255,255,255,0.55);
 }
 
+/* ---------- S2 — firma-split: prose + logosímbolo ---------- */
+.firma-split {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  gap: 72px;
+  align-items: center;
+}
+.firma-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.firma-mark img {
+  width: 260px;
+  height: auto;
+}
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
+@media (max-width: 1023px) {
+  .firma-split { grid-template-columns: 1fr; }
+  .firma-mark { display: none; }
+}
 @media (max-width: 760px) {
   .noso-partners { padding: 56px 0; }
   .noso-partners__logos { flex-direction: column; gap: 28px; }
