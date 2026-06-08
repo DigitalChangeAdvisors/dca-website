@@ -211,6 +211,7 @@
 
 /* ---------- S8 VALIDACIÓN — H2 alineado con jerarquía de secciones de apoyo ---------- */
 #validacion .section-head h2 { font-size: clamp(24px, 2.2vw, 30px); }
+#validacion .section-head h2 .line { display: block; }
 
 /* ---------- S7 PRINCIPIOS — inversión de paleta sobre fondo carbón ---------- */
 #principios .section-head .label { color: var(--teal); }
