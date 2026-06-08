@@ -1109,13 +1109,16 @@
   gap: 28px;
   flex-wrap: wrap;
 }
-.field-study__ctas .btn--gold {
+.field-study__ctas .btn--gold,
+.exit-cta__action .btn--gold {
   background: var(--gold);
   color: var(--white);
   border-color: var(--gold);
 }
 .field-study__ctas .btn--gold:hover,
-.field-study__ctas .btn--gold:focus-visible {
+.field-study__ctas .btn--gold:focus-visible,
+.exit-cta__action .btn--gold:hover,
+.exit-cta__action .btn--gold:focus-visible {
   background: #8c6d0e;
   border-color: #8c6d0e;
   transform: translateY(-2px);
