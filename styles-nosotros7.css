@@ -211,7 +211,7 @@
 /* ---------- S7 PRINCIPIOS — inversión de paleta sobre fondo carbón ---------- */
 #principios .section-head .label { color: var(--teal); }
 #principios .section-head h2 {
-  font-size: clamp(22px, 2vw, 28px);
+  font-size: clamp(24px, 2.2vw, 30px);
   color: var(--white);
 }
 #principios .chapeau { color: rgba(255,255,255,0.72); }
