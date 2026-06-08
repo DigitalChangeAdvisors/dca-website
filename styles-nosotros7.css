@@ -159,6 +159,9 @@
   height: auto;
 }
 
+/* ---------- METODO — H2 reducido: sección de apoyo ---------- */
+#metodo .section-head h2 { font-size: clamp(18px, 1.7vw, 24px); }
+
 /* ---------- METODO — grid 3 tarjetas estáticas ---------- */
 .metodo-grid {
   display: grid;
