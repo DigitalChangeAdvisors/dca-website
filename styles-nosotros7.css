@@ -115,14 +115,26 @@
 }
 
 /* ---------- PIRÁMIDE INVERTIDA — declaración de marca ---------- */
-/* div.p-pyramid evita el bug de block-in-inline que afecta <p> en algunos browsers */
+/* white-space:nowrap garantiza que cada span.line ocupa exactamente una línea visual.
+   font-size 15px asegura que L1 (70 chars) cabe en el contenedor de 620px. */
 .p-pyramid {
-  font-size: 17px;
-  line-height: 1.72;
-  color: var(--carbon-70);
+  display: flex;
+  flex-direction: column;
   margin: 0 0 22px;
 }
-.p-pyramid .line { display: block; }
+.p-pyramid .line {
+  display: block;
+  white-space: nowrap;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--carbon-70);
+}
+@media (max-width: 767px) {
+  .p-pyramid .line {
+    white-space: normal;
+    font-size: 14px;
+  }
+}
 
 /* ---------- S2 — firma-split: prose + logosímbolo ---------- */
 .firma-split {
