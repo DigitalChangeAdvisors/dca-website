@@ -207,6 +207,7 @@
 
 /* ---------- CTA FINAL — H2 reducido para armonizar con jerarquía de la página ---------- */
 #cta-final h2 { font-size: clamp(24px, 2.6vw, 34px); }
+#cta-final h2 .line { display: block; }
 
 /* ---------- S8 VALIDACIÓN — H2 alineado con jerarquía de secciones de apoyo ---------- */
 #validacion .section-head h2 { font-size: clamp(24px, 2.2vw, 30px); }
