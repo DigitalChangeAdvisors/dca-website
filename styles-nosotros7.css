@@ -205,6 +205,27 @@
   margin: 0;
 }
 
+/* ---------- S7 PRINCIPIOS — inversión de paleta sobre fondo carbón ---------- */
+#principios .section-head .label { color: rgba(255,255,255,0.6); }
+#principios .section-head h2 {
+  font-size: clamp(20px, 1.95vw, 26px);
+  color: var(--white);
+}
+#principios .chapeau { color: rgba(255,255,255,0.72); }
+#principios .principles {
+  border-top-color: rgba(255,255,255,0.12);
+  border-left-color: rgba(255,255,255,0.12);
+}
+#principios .principle {
+  border-right-color: rgba(255,255,255,0.12);
+  border-bottom-color: rgba(255,255,255,0.12);
+}
+#principios .principle__n { color: var(--gold); }
+#principios .principle h3 { color: var(--white); }
+#principios .principle p { color: rgba(255,255,255,0.68); }
+#principios .principle:hover { background: rgba(255,255,255,0.05); }
+#principios .principle:hover .principle__n { color: var(--gold); }
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
