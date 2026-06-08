@@ -159,12 +159,53 @@
   height: auto;
 }
 
+/* ---------- METODO — grid 3 tarjetas estáticas ---------- */
+.metodo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.metodo-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 28px;
+  background: var(--white);
+  transition: box-shadow 0.3s cubic-bezier(0.34,1.56,0.64,1), transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.metodo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(46,139,118,0.1), 0 2px 8px rgba(30,42,56,0.06);
+}
+.metodo-card__n {
+  display: block;
+  font-family: var(--display);
+  font-size: 13px;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  margin: 18px 0 8px;
+}
+.metodo-card h3 {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--carbon);
+  margin: 0 0 12px;
+}
+.metodo-card p {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--carbon-70);
+  margin: 0;
+}
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1023px) {
   .firma-split { grid-template-columns: 1fr; }
   .firma-mark { display: none; }
+  .metodo-grid { grid-template-columns: 1fr; gap: 16px; }
 }
 @media (max-width: 760px) {
   .noso-partners { padding: 56px 0; }
