@@ -742,6 +742,7 @@
 .newsletter-pulse {
   background: var(--teal-08);
   padding: 96px 0;
+  border-top: 3px solid var(--gold);
 }
 .pulse__inner {
   display: grid;
@@ -1092,7 +1093,7 @@
   color: var(--teal);
   line-height: 1.5;
   margin-top: 4px;
-  margin-bottom: 0;
+  margin-bottom: 28px;
 }
 
 .field-study__ctas {
