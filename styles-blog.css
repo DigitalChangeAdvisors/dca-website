@@ -1004,6 +1004,14 @@
   align-items: center;
 }
 .field-study__cover { perspective: 800px; }
+.field-study__cover img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  border-radius: 10px;
+  box-shadow: 0 32px 72px rgba(0, 0, 0, 0.35);
+  display: block;
+}
 .field-study__mock {
   aspect-ratio: 3 / 4;
   border-radius: 10px;
