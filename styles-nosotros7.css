@@ -1,0 +1,74 @@
+/* ============================================================
+   /nosotros v7 — sección Partnerships + ajustes de escala
+   Carga DESPUÉS de styles-nosotros6.css. Solo clases nuevas.
+   ============================================================ */
+
+/* ---------- PARTNERSHIPS — alianzas tecnológicas ---------- */
+.noso-partners {
+  border-top: 3px solid var(--gold);
+  padding: 72px 0;
+  background: var(--white);
+}
+
+.noso-partners__inner { text-align: center; }
+
+.noso-partners__label {
+  display: block;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--teal);
+  margin-bottom: 48px;
+}
+
+.noso-partners__logos {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; flex-wrap: wrap;
+}
+
+.noso-partners__item {
+  padding: 0 52px;
+  opacity: 0.52;
+  transition: opacity 0.22s ease;
+}
+.noso-partners__item:hover { opacity: 1; }
+
+/* separador vertical entre logos */
+.noso-partners__item + .noso-partners__item {
+  border-left: 1px solid var(--border);
+}
+
+/* nombre como wordmark: Montserrat Light, espacio corporativo */
+.noso-partners__name {
+  display: block;
+  font-family: var(--body);
+  font-size: 22px; font-weight: 300;
+  letter-spacing: 0.01em;
+  color: var(--carbon);
+  white-space: nowrap;
+}
+
+.noso-partners__note {
+  margin-top: 40px;
+  font-size: 14.5px; line-height: 1.68;
+  color: var(--carbon-70);
+  max-width: 560px;
+  margin-left: auto; margin-right: auto;
+}
+
+/* ---------- SCALE STATS — aclaración LARIA ---------- */
+/* El stat de 17 países lleva un tag secundario bajo el label */
+.scale-stat__laria {
+  display: block;
+  margin-top: 5px;
+  font-size: 10.5px; font-weight: 600; letter-spacing: 0.09em;
+  text-transform: uppercase; color: rgba(255,255,255,0.55);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 760px) {
+  .noso-partners { padding: 56px 0; }
+  .noso-partners__logos { flex-direction: column; gap: 28px; }
+  .noso-partners__item { padding: 0; border-left: none !important; }
+  .noso-partners__label { margin-bottom: 36px; }
+}
