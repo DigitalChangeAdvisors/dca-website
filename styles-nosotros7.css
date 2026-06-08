@@ -105,6 +105,12 @@
   color: var(--teal);
 }
 
+/* ---------- CRED-LIST — espacio etiqueta teal / línea divisoria ---------- */
+/* La etiqueta teal necesita más aire respecto al border-top del row anterior */
+.cred-list li {
+  padding: 22px 0 18px;
+}
+
 /* ---------- SCALE STATS — aclaración LARIA ---------- */
 /* El stat de 17 países lleva un tag secundario bajo el label */
 .scale-stat__laria {
