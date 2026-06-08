@@ -34,7 +34,7 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 | `/blog` | `blog.html` | Perspectivas — liderazgo de pensamiento | ✅ Completo y en producción |
 | `/modelo-aria` | `modelo-aria.html` | Autoridad intelectual: 14 componentes, 6 sprints, garantía | ✅ Fine-tuning BE completo |
 | `/returnai` | `returnai.html` | Vitrina comercial: sistema ReturnAI, escalera de valor | ✅ Implementada — fine-tuning al final |
-| `/nosotros` | `nosotros.html` | DCA, fundadores, casos, partnerships | ✅ **Deployada** — 13 secciones live. Deuda: fotos reales, og específica, JSON-LD LinkedIn |
+| `/nosotros` | `nosotros.html` | DCA, fundadores, casos, partnerships | ✅ **Deployada** — 10 secciones. S1+S2 fine-tuning cerrados. S3–S10 pendientes. |
 | `/academia` | `academia.html` | Digital Change Academy: certificaciones | ⏳ Pendiente |
 | `/red-aria` | `red-aria.html` | Captación de nodos/socios por país | ⏳ Pendiente |
 | `/casos` | `casos.html` | ROI documentado — caso ancla $3.2M | ⏳ Pendiente |
@@ -125,9 +125,9 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 - **Sección Industrias:** tira horizontal (`.industries-strip`) — no grid con links
 - **Diferenciación:** componente `versus2` con arco SVG del logo — no tabla `versus` simple
 
-## Decisiones Canónicas de `/nosotros` — **FINE-TUNING CERRADO** (2026-06-08)
+## Decisiones Canónicas de `/nosotros` — **FINE-TUNING EN CURSO** (2026-06-08)
 
-> Pre-audit ejecutado: `/behavioral-economics-c-level` + `/ui-ux-pro-max`. Etapa dictaminada: Validación. 11 secciones en producción. Fotos reales conectadas. Violaciones canónicas de "17 países" corregidas.
+> Pre-audit ejecutado: `/behavioral-economics-c-level` + `/ui-ux-pro-max`. Etapa dictaminada: Validación. 10 secciones (S2 Propósito fusionada en S1). S1 y S2 fine-tuning cerrados. S3–S10 pendientes.
 
 ### Etapa conductual y mecanismos
 - **Etapa:** Validación — visitante evalúa si DCA es firma real, no activa el problema (ya lo sabe)
@@ -136,61 +136,66 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 - **CTA único:** `AI Return Test →` (→ `index.html#test`) — nunca un segundo botón de conversión
 - **Frame CTA:** posición competitiva relativa ("tu organización dentro del mapa de 70+ empresas"), nunca "sin costo"
 
-### Estructura — 11 secciones (canónica 2026-06-08)
-1. `#nosotros` — Hero + Ficha institucional · H1 pirámide 3L (32/18/14 chars) ✅
-2. `#proposito` — Por qué existimos (credo)
-3. `#la-firma` — La firma · H2: *"Una categoría que no existía antes..."*
-4. (sin id) — Banda editorial fullbleed · `image-slot #img-firma-banda` (pendiente foto real)
-5. `#liderazgo` — César Lozano · `src="assets/img-leader-1.png"` conectada ✅
-6. (bg-platinum) — Ruth Jaramillo · `src="assets/img-leader-2.png"` conectada ✅ · espejada
-7. `#metodo` — Modelo ARIA stepper fijo (Assessment / Intervención / Atestación)
-8. `#principios` — Cuatro principios
-9. (bg-teal) — Validación de escala · count-up `70+/57+/17/14`
-10. `#evidencia` — Evidencia de campo · $3.2M · count-up 19→67 · CTA → `casos.html`
-11. `#cta-final` — Diagnóstico ejecutivo · `AI Return Test →`
+### Estructura — 10 secciones (canónica 2026-06-08)
+1. **S1** `#nosotros` — Hero + Ficha + Propósito fusionados · un solo bloque blanco continuo · **fine-tuning cerrado**
+2. **S2** `#la-firma` — La firma (bg-platinum) · **fine-tuning cerrado**
+3. (sin id) — Banda editorial fullbleed · `image-slot #img-firma-banda` (pendiente foto real)
+4. `#liderazgo` — César Lozano · `src="assets/img-leader-1.png"` conectada ✅
+5. (bg-platinum) — Ruth Jaramillo · `src="assets/img-leader-2.png"` conectada ✅ · espejada
+6. `#metodo` — Modelo ARIA stepper fijo (Assessment / Intervención / Atestación)
+7. `#principios` — Cuatro principios
+8. (bg-teal) — Validación de escala · count-up `70+/57+/17/14`
+9. `#evidencia` — Evidencia de campo · $3.2M · count-up 19→67 · CTA → `casos.html`
+10. `#cta-final` — Diagnóstico ejecutivo · `AI Return Test →`
 
-**Secciones eliminadas (2026-06-08):**
+**Secciones eliminadas/fusionadas:**
 - ~~S3 Puente animado~~ — duplicaba el homepage, incompatible con etapa Validación
 - ~~S11 Perspectiva intelectual~~ — repetía mecanismo Diagnóstico ya activado en homepage
+- ~~S2 Propósito independiente~~ — fusionada dentro del hero (mismo fondo blanco, mismo discurso)
+
+### S1 — Hero + Propósito (canónico 2026-06-08)
+- H1: 2 líneas — "Construimos la evidencia de que / tu inversión en IA tiene retorno." · font `clamp(30px,3.5vw,48px)`
+- Ficha: `align-items: center` · Operación: "Latinoamérica · España" / sub "Colombia · Panamá · México"
+- Chapeau: "...cierra esa brecha con la arquitectura de rentabilización que convierte la inversión en IA en retorno auditable — documentado en 120 días."
+- Propósito fusionado DENTRO del `<header>`, después del `hero__layout` · `margin-top:64px` sin border interno
+- `purpose__statement`: 3 líneas pirámide (65/60/27 chars) · `clamp(20px,1.8vw,24px)` · `max-width:940px`
+- Sin `purpose__rule`, sin scrollcue
+
+### S2 — La Firma (canónico 2026-06-08)
+- **P1**: origen de campo + prueba social: "DCA nació de una constatación de campo: ninguna firma estaba resolviendo la brecha... En 70+ organizaciones intervenidas, el patrón se repite sin excepción."
+- **P2** (`lead-assert`): "auditar" > "medir" · "en 120 días" como ancla temporal
+- **not-firm**: reordenado (gestión del cambio primero) · elevado a Marcellus italic + borde oro (pull quote)
+- **firm-affirm**: "Somos la firma que construye la evidencia. Eso es todo." · cierre en teal · resuelve tensión cognitiva de las 3 negaciones
+- **P4 ReturnAI**: sujeto de la frase · "metodología propietaria" > "marca paraguas" · "retorno auditable: documentado en el P&L en 120 días"
 
 ### Archivos de la página
 - HTML: `nosotros.html`
-- CSS: `styles-nosotros.css` → `nosotros6.css` + **`nosotros7.css`** (nuevo: `.scale-stat__laria`)
-- JS específico: `enhance-nosotros4.js` (wayfinding dot-nav — filtra IDs faltantes automáticamente)
+- CSS: `styles-nosotros.css` → `styles-nosotros7.css` (7 archivos)
+- JS específico: `enhance-nosotros4.js` (wayfinding dot-nav)
 - JS sistema: `app.js` + `enhance4.js` + `enhance6.js`
 
 ### Datos canónicos de la página
-- Stats display (Sección 9, una vez): `70+` Empresas · `57+` Consultores · `17` Países · `14` Componentes
-- Label del stat 17: **"Países · Comunidad LARIA"** — nunca solo "Países" (viola regla canónica)
-- Caso ancla (Sección 10): **$3.2M · 19%→67% · +13 puntos · payback 120 días** (caso real, NDA)
+- Stats display (S8, una vez): `70+` Empresas · `57+` Consultores · `17` Países · `14` Componentes
+- Label del stat 17: **"Países · Comunidad LARIA"** — nunca solo "Países"
+- Caso ancla (S9): **$3.2M · 19%→67% · +13 puntos · payback 120 días** (caso real, NDA)
 - **PROHIBIDO** mezclar con caso novela (Adalid Puentes · $891K)
 
-### Reglas canónicas — "17 países" en esta página
-- **NUNCA** como cobertura de firma: ni en meta description, ni en hero, ni en cred-lists, ni en body copy
-- Aparece **solo** en el stat de Validación de escala con sublabel "Comunidad LARIA"
-- Operación real de firma: **Colombia · Panamá · México** (en ficha institucional del hero)
+### Reglas canónicas — "17 países"
+- **NUNCA** como cobertura de firma en ninguna sección
+- Solo en stat S8 con sublabel "Comunidad LARIA"
+- Operación real: **Latinoamérica · España** / sub **Colombia · Panamá · México**
 
-### Partnerships — decisión canónica (2026-06-08)
-- **No existe sección Partnerships en /nosotros** — DCA no tiene alianzas oficiales activas en el lanzamiento
-- `styles-nosotros7.css` contiene los estilos `.noso-partners` (CSS en repo pero sección removida del HTML)
-- Cuando existan alianzas reales: reactivar la sección entre Evidencia y CTA (dictamen UX: posición correcta)
-- **NUNCA** usar logos placeholder de Microsoft/Anthropic/AWS sin acuerdo formal — daño reputacional
+### Partnerships
+- No existe sección — sin alianzas oficiales activas en el lanzamiento
+- CSS `.noso-partners` en `styles-nosotros7.css` · reactivar entre S9 y S10 cuando existan alianzas reales
+- **NUNCA** logos placeholder de Microsoft/Anthropic/AWS sin acuerdo formal
 
-### Comunidad LARIA en /nosotros — regla permanente (2026-06-08)
-- **NO** aparece como sección dedicada en /nosotros — ni como "comunidad + cursos gratis" ni como "ecosistema"
-- "Cursos gratis" activa heurístico de plataforma EdTech — incompatible con posicionamiento advisory premium
-- LARIA tiene tres ubicaciones correctas: footer · stat "17 Países · Comunidad LARIA" · página `/comunidad`
-- `/comunidad` **no se despliega** hasta que sea parte del plan de lanzamiento
-
-### Términos y reglas específicas
-- "transformación digital" **NO aparece** — reemplazado por: *"No somos un vendor... no somos una firma de gestión del cambio..."*
-- "adopción" válido solo como medio: *"La adopción es el camino. El retorno es el destino."*
-- Bio Ruth: versión extendida con credenciales completas (vs. corta en homepage)
+### Comunidad LARIA
+- NO como sección dedicada · LARIA = footer + stat S8 + `/comunidad` (no desplegar aún)
 
 ### CTA canónico
 - Botón: `AI Return Test →` (teal, Montserrat 600)
 - Nota: *"25 minutos · Sin compromiso · Tu diagnóstico es confidencial"*
-- CTA secundario texto-link: *"Ver el caso completo →"* → `casos.html`
 
 ---
 
@@ -415,7 +420,7 @@ Estas dos métricas se monitorizan sprint a sprint y alimentan el Reporte Ejecut
 - [x] Perspectivas (`blog.html`)
 - [x] `/modelo-aria` — Fine-tuning BE completo (8 puntos · commit `4b4abe8`). Pendiente: image-slots → img reales antes del dominio final
 - [x] `/returnai` — v6 implementada, brand compliance aplicado, routing canónico. Fine-tuning al final. **bridge usa 19% (real case) — verificar alineación con homepage (11%)**
-- [x] `/nosotros` — **FINE-TUNING CERRADO** (2026-06-08). 11 secciones. Fotos reales conectadas. Violaciones "17 países" corregidas. Partnerships eliminado (no existen aún). LARIA: solo en stat + footer. Ver decisiones canónicas.
+- [~] `/nosotros` — **FINE-TUNING EN CURSO** (2026-06-08). 10 secciones (Propósito fusionado en S1). S1 cerrado: H1 2L, ficha centrada, España, propósito integrado, pirámide 3L. S2 cerrado: copy BE (origen+70+, auditar, not-firm reordenado+Marcellus+oro, firm-affirm teal, ReturnAI como sujeto). S3–S10 pendientes.
 - [ ] `/casos`
 - [ ] 5 páginas restantes
 - [ ] Landing pages (siguiente fase — 11 landings)
