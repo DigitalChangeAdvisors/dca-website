@@ -711,9 +711,7 @@
   var success = document.getElementById('pulse-success');
   var re = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
-  // TODO: Reemplazar con la URL del Google Apps Script Web App tras el deploy
-  // Pasos: Extensions → Apps Script → Deploy → Web App → copiar URL
-  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbzNtgtdf4QYQP0BScLwN3UBRmjleH2z1rc9mi5kWsBBJZzZjb5qATczOuK_HuCNIggQ/exec';
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbwZaU3UD_HeREVZ5s48paNfxKym7_CjUQaYeZnVeKtqGa3ucAuOIs2nzGbJsIu42vEn/exec';
 
   input.addEventListener('input', function () {
     if (input.getAttribute('aria-invalid') === 'true' && re.test(input.value.trim())) {
