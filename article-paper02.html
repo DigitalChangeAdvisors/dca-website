@@ -241,6 +241,32 @@
   </div>
 
   <!-- ===== CTA ===== -->
+  <!-- AI Return Pulse — newsletter compacto post-artículo -->
+  <section class="art-pulse">
+    <div class="wrap">
+      <div class="art-pulse__inner">
+        <div class="art-pulse__text">
+          <span class="label">Newsletter quincenal</span>
+          <p class="art-pulse__title">AI Return Pulse</p>
+          <p class="art-pulse__desc">Análisis de campo sobre retorno de IA, métricas y gobierno — antes de tu próxima reunión de Junta.</p>
+        </div>
+        <div class="art-pulse__form-wrap">
+          <form id="art-pulse-form" novalidate>
+            <div class="art-pulse__row">
+              <input type="email" id="art-pulse-email" class="art-pulse__input" placeholder="nombre@empresa.com" autocomplete="email" required aria-label="Tu correo corporativo" aria-describedby="art-pulse-error" />
+              <button type="submit" class="btn btn--primary art-pulse__btn">Suscribirse <span class="arrow">&rarr;</span></button>
+            </div>
+            <p id="art-pulse-error" class="art-pulse__error" role="alert" hidden>Ingresa un correo corporativo válido.</p>
+          </form>
+          <div id="art-pulse-success" class="art-pulse__success" role="status" hidden>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Suscripción confirmada. Revisa tu bandeja de entrada.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="art-cta">
     <div class="art-inner" style="text-align:center">
       <span class="label" style="color:rgba(255,255,255,0.65);display:block;margin-bottom:16px">Diagn&oacute;stico ejecutivo</span>
@@ -358,6 +384,59 @@
 
 <script src="app.js"></script>
 <script src="enhance4.js"></script>
+
+
+<!-- AI Return Pulse — newsletter script -->
+<script>
+(function () {
+  var form    = document.getElementById('art-pulse-form');
+  var input   = document.getElementById('art-pulse-email');
+  var error   = document.getElementById('art-pulse-error');
+  var success = document.getElementById('art-pulse-success');
+  var re      = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbwZaU3UD_HeREVZ5s48paNfxKym7_CjUQaYeZnVeKtqGa3ucAuOIs2nzGbJsIu42vEn/exec';
+
+  input.addEventListener('input', function () {
+    if (input.getAttribute('aria-invalid') === 'true' && re.test(input.value.trim())) {
+      input.setAttribute('aria-invalid', 'false');
+      if (error) error.hidden = true;
+    }
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var val = input.value.trim();
+    if (!re.test(val)) {
+      input.setAttribute('aria-invalid', 'true');
+      if (error) error.hidden = false;
+      input.focus();
+      return;
+    }
+    input.setAttribute('aria-invalid', 'false');
+    if (error) error.hidden = true;
+
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) btn.disabled = true;
+
+    var source = window.location.pathname.replace(/.*\//, '').replace('.html', '') || 'article';
+
+    function showSuccess() {
+      form.hidden = true;
+      if (success) success.hidden = false;
+    }
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({ email: val, source: source })
+    })
+    .then(function () { showSuccess(); })
+    .catch(function () { showSuccess(); })
+    .finally(function () { if (btn) btn.disabled = false; });
+  });
+})();
+</script>
 
 </body>
 </html>
