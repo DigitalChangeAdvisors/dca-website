@@ -1,0 +1,2183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReturnAI — La novela · Digital Change Advisors</title>
+<meta name="description" content="La única novela construida sobre un caso real del Modelo ARIA. Adalid Puentes tenía $3.2M invertidos en IA sin retorno. Lo que ocurrió en los siguientes 120 días es exactamente lo que ReturnAI despliega en cada intervención.">
+<link rel="canonical" href="https://dca-returnai.github.io/dca-landings/novela-returnai-landing.html">
+<meta property="og:title" content="ReturnAI — La novela · Digital Change Advisors">
+<meta property="og:description" content="La metodología que convirtió $3.2M sin retorno en $891K en el P&L — narrada desde adentro.">
+<meta property="og:image" content="https://dca-returnai.github.io/dca-website/assets/og-returnai.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ─────────────────────────────────────────────
+   SISTEMA DE DISEÑO DCA 2026
+   ───────────────────────────────────────────── */
+:root {
+  --dca-teal:          #2e8b76;
+  --dca-gold:          #a48111;
+  --dca-carbon:        #1e2a38;
+  --dca-white:         #ffffff;
+  --dca-terracotta:    #c2593f;
+  --dca-platinum:      #dfe3e1;
+  --dca-platinum-bg:   #f3f3f3;
+  --dca-teal-subtle:   rgba(46,139,118,0.05);
+  --dca-teal-04:       rgba(46,139,118,0.04);
+  --font-display:      'Marcellus', Georgia, serif;
+  --font-body:         'Montserrat', 'Helvetica Neue', sans-serif;
+  --section-padding:   80px;
+  --text-max-width:    720px;
+  --layout-max-width:  1100px;
+}
+
+/* ─── RESET & BASE ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--dca-carbon);
+  background: var(--dca-white);
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+h1, h2 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+h1 { font-size: clamp(26px, 4vw, 42px); }
+h2 { font-size: clamp(22px, 3vw, 34px); }
+p  { line-height: 1.6; }
+
+/* Pirámide invertida */
+.hero-h1 .line,
+.cta-main-inner h2 .line,
+.novela-h1 .line,
+.metodo-intro h2 .line { display: block; }
+
+/* ─── LAYOUT ─── */
+.container {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section { padding: 48px 0; }
+@media (min-width: 768px) { section { padding: var(--section-padding) 0; } }
+
+/* ─── SECTION LABEL ─── */
+.section-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--dca-teal);
+  margin-bottom: 10px;
+}
+
+/* ─── BOTÓN PRIMARIO ─── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dca-teal);
+  color: var(--dca-white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 8px;
+  min-height: 52px;
+  padding: 16px 36px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.18s;
+}
+.btn-primary:hover { opacity: 0.88; }
+
+.btn-primary--gold {
+  background: var(--dca-gold);
+  color: var(--dca-white);
+}
+
+/* ─── BOTÓN OUTLINE ─── */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid var(--dca-teal);
+  color: var(--dca-teal);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 8px;
+  min-height: 48px;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+.btn-outline:hover { background: var(--dca-teal); color: var(--dca-white); }
+
+.btn-outline--white {
+  border-color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.85);
+}
+.btn-outline--white:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--dca-white);
+  border-color: var(--dca-white);
+}
+
+/* ─── CTA SUPPORT TEXT ─── */
+.cta-support {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 13px;
+  opacity: 0.65;
+  margin-top: 10px;
+  display: block;
+  text-align: center;
+}
+.cta-support--dark { color: rgba(255,255,255,0.55); opacity: 1; }
+
+/* ─── SECTION ACCENT LINE ─── */
+.section-accent {
+  width: 40px;
+  height: 3px;
+  background: var(--dca-gold);
+  border-radius: 2px;
+  margin: 16px auto 0;
+}
+
+/* ─── UTILITIES ─── */
+.text-center { text-align: center; }
+.mt-8  { margin-top: 8px; }
+.mt-12 { margin-top: 12px; }
+.mt-16 { margin-top: 16px; }
+.mt-20 { margin-top: 20px; }
+.mt-24 { margin-top: 24px; }
+.mt-28 { margin-top: 28px; }
+.mt-32 { margin-top: 32px; }
+.mt-40 { margin-top: 40px; }
+.mt-48 { margin-top: 48px; }
+.mb-8  { margin-bottom: 8px; }
+.mb-16 { margin-bottom: 16px; }
+.mb-24 { margin-bottom: 24px; }
+.mb-32 { margin-bottom: 32px; }
+
+/* ─── MOBILE FULL-WIDTH BUTTONS ─── */
+@media (max-width: 767px) {
+  .btn-primary,
+  .btn-outline { width: 100%; }
+}
+
+/* ═══════════════════════════════════════════
+   HEADER STICKY
+   ═══════════════════════════════════════════ */
+.site-header {
+  background: var(--dca-white);
+  border-bottom: 1px solid var(--dca-platinum);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+@media (max-width: 767px) { .site-header { position: static; } }
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  padding: 0 24px;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  gap: 16px;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.header-logo svg { display: block; }
+
+.header-cta {
+  flex-shrink: 0;
+  background: var(--dca-teal);
+  color: var(--dca-white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 0.18s;
+}
+.header-cta:hover { opacity: 0.88; }
+
+/* ═══════════════════════════════════════════
+   B1 — HERO
+   Blanco · Split 55/45 · Libro flotante
+   ═══════════════════════════════════════════ */
+.block-hero {
+  background: var(--dca-white);
+  padding: 64px 0 56px;
+}
+@media (min-width: 768px) { .block-hero { padding: 96px 0 80px; } }
+
+.hero-inner {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .hero-inner {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 72px;
+    align-items: stretch;
+  }
+}
+
+.hero-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--dca-teal);
+  margin-bottom: 16px;
+}
+
+.novela-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 40px);
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  color: var(--dca-carbon);
+  margin-bottom: 24px;
+}
+
+.hero-chapeau {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(30,42,56,0.75);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 32px;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+@media (max-width: 767px) {
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+}
+
+/* Libro flotante — presencia física, no e-commerce */
+.novela-cover-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.novela-cover {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  aspect-ratio: auto;
+  border-radius: 4px;
+  object-fit: contain;
+  display: block;
+  background: var(--dca-platinum-bg);
+  box-shadow:
+    0 28px 64px rgba(0,0,0,0.28),
+    0 4px 16px rgba(46,139,118,0.10);
+}
+
+@media (min-width: 768px) {
+  .novela-cover-wrap {
+    height: 100%;
+    align-items: center;
+  }
+  .novela-cover {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+/* Precio — solo como nota de soporte bajo el CTA */
+.price-note {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(30,42,56,0.52);
+  margin-top: 10px;
+  text-align: left;
+}
+@media (max-width: 767px) { .price-note { text-align: center; } }
+
+/* ═══════════════════════════════════════════
+   B2 — EL ESPEJO: ADALID COMO CEO VISITANTE
+   Platino · Caso ancla $891K
+   ═══════════════════════════════════════════ */
+.block-espejo {
+  background: var(--dca-platinum-bg);
+}
+
+.espejo-inner {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .espejo-inner {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 64px;
+  }
+}
+
+.espejo-visual {
+  order: 2;
+}
+@media (min-width: 768px) {
+  .espejo-visual { order: 1; }
+}
+
+.espejo-content {
+  order: 1;
+}
+@media (min-width: 768px) {
+  .espejo-content { order: 2; }
+}
+
+/* Ficha del caso ancla */
+.caso-card {
+  background: var(--dca-white);
+  border-radius: 12px;
+  border: 1px solid var(--dca-platinum);
+  box-shadow: 0 4px 20px rgba(30,42,56,0.07);
+  padding: 32px 28px;
+  max-width: 380px;
+}
+@media (max-width: 767px) { .caso-card { max-width: 100%; margin: 0 auto; } }
+
+.caso-card-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--dca-teal);
+  margin-bottom: 20px;
+}
+
+.caso-stat-row {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.caso-stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--dca-platinum);
+}
+.caso-stat:last-child { border-bottom: none; padding-bottom: 0; }
+
+.caso-stat-num {
+  font-family: var(--font-display);
+  font-size: 36px;
+  color: var(--dca-gold);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 80px;
+  opacity: 0;
+  transition: opacity 0.5s ease 0.25s;
+}
+.caso-stat.sr-in .caso-stat-num {
+  opacity: 1;
+}
+.caso-stat-num--sm {
+  font-size: 22px;
+  min-width: 90px;
+  letter-spacing: -0.5px;
+}
+
+.caso-stat-desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(30,42,56,0.65);
+  line-height: 1.4;
+}
+.caso-stat-desc strong {
+  font-weight: 600;
+  color: var(--dca-carbon);
+  display: block;
+  margin-bottom: 2px;
+  font-size: 14px;
+}
+
+.caso-card-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--dca-platinum);
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: rgba(30,42,56,0.40);
+  line-height: 1.5;
+}
+
+.espejo-content h2 {
+  font-size: clamp(20px, 2.2vw, 28px);
+  margin-bottom: 20px;
+  color: var(--dca-carbon);
+}
+
+.espejo-body {
+  font-size: 15px;
+  color: rgba(30,42,56,0.75);
+  line-height: 1.75;
+}
+.espejo-body p + p { margin-top: 14px; }
+
+.espejo-pull {
+  margin-top: 24px;
+  padding: 16px 20px;
+  border-left: 3px solid var(--dca-gold);
+  background: rgba(164,129,17,0.04);
+  border-radius: 0 6px 6px 0;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--dca-carbon);
+  line-height: 1.55;
+}
+.pull-attribution {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(30,42,56,0.5);
+  letter-spacing: 0.02em;
+}
+
+/* ═══════════════════════════════════════════
+   B3 — LEER EL PRELUDIO
+   Teal 4% · Borde oro arriba
+   ═══════════════════════════════════════════ */
+.block-preludio {
+  background: var(--dca-teal-04);
+  border-top: 3px solid var(--dca-gold);
+}
+
+.preludio-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+@media (min-width: 768px) {
+  .preludio-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+}
+
+.preludio-content {}
+
+.preludio-content h2 {
+  font-size: clamp(20px, 2.2vw, 26px);
+  margin-bottom: 16px;
+  color: var(--dca-carbon);
+}
+
+.preludio-body {
+  font-size: 15px;
+  color: rgba(30,42,56,0.72);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+/* Fragmento con blur — curiosity gap visual */
+.preludio-fragment {
+  position: relative;
+  overflow: hidden;
+}
+
+.preludio-fragment-text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(30,42,56,0.60);
+  line-height: 1.7;
+  padding: 16px 20px;
+  background: var(--dca-white);
+  border-radius: 8px;
+  border-left: 3px solid var(--dca-teal);
+  user-select: none;
+}
+
+.preludio-fragment-blur {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: linear-gradient(to bottom, transparent, var(--dca-teal-04));
+  pointer-events: none;
+}
+
+.preludio-fragment-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(30,42,56,0.38);
+  text-align: center;
+  margin-top: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════
+   B4 — LO QUE EL LIBRO REVELA
+   Blanco · Borde oro arriba
+   ═══════════════════════════════════════════ */
+.block-revela {
+  background: var(--dca-white);
+  border-top: 3px solid var(--dca-gold);
+}
+
+.revela-inner {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.revela-intro {
+  text-align: center;
+  max-width: var(--text-max-width);
+  margin: 0 auto 48px;
+}
+.revela-intro h2 { margin-bottom: 16px; }
+.revela-intro p {
+  font-size: 16px;
+  color: rgba(30,42,56,0.82);
+  line-height: 1.7;
+}
+
+.revela-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+@media (min-width: 600px) {
+  .revela-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.revela-card {
+  background: var(--dca-platinum-bg);
+  border-radius: 10px;
+  border: 1px solid var(--dca-platinum);
+  border-left: 3px solid var(--dca-gold);
+  padding: 28px 24px 28px 26px;
+  position: relative;
+}
+
+.revela-num {
+  font-family: var(--font-display);
+  font-size: 36px;
+  color: rgba(46,139,118,0.28);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.revela-question {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--dca-carbon);
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+.revela-desc {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: rgba(30,42,56,0.62);
+  line-height: 1.6;
+}
+
+.revela-connector {
+  text-align: center;
+  max-width: 600px;
+  margin: 40px auto 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: rgba(30,42,56,0.55);
+  line-height: 1.6;
+}
+.revela-connector strong {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--dca-teal);
+}
+
+/* ═══════════════════════════════════════════
+   B5 — LA METODOLOGÍA ES VERIFICABLE
+   Teal-subtle · Métricas ARIA
+   ═══════════════════════════════════════════ */
+.block-metodo {
+  background: var(--dca-teal-subtle);
+  border-top: 1px solid rgba(46,139,118,0.12);
+  border-bottom: 1px solid rgba(46,139,118,0.12);
+}
+
+.metodo-intro {
+  max-width: var(--text-max-width);
+  margin: 0 auto 48px;
+  text-align: center;
+}
+.metodo-intro h2 {
+  font-size: clamp(20px, 2.2vw, 28px);
+  margin-bottom: 20px;
+}
+.metodo-intro p {
+  font-size: 16px;
+  color: rgba(30,42,56,0.72);
+  line-height: 1.7;
+}
+.metodo-intro p + p { margin-top: 12px; }
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+@media (min-width: 768px) { .metrics-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.metric-item {
+  text-align: center;
+  padding: 28px 16px;
+  background: var(--dca-white);
+  border-radius: 10px;
+  border: 1px solid var(--dca-platinum);
+  box-shadow: 0 2px 8px rgba(30,42,56,0.04);
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.metric-item.metric-in { opacity: 1; transform: translateY(0); }
+.metric-item:nth-child(1) { transition-delay: 0ms; }
+.metric-item:nth-child(2) { transition-delay: 80ms; }
+.metric-item:nth-child(3) { transition-delay: 160ms; }
+.metric-item:nth-child(4) { transition-delay: 240ms; }
+.metric-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(30,42,56,0.10), 0 2px 8px rgba(46,139,118,0.07);
+  transition-delay: 0ms;
+}
+.metric-item.metric-in:hover { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .metric-item { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+.metric-number {
+  font-family: var(--font-display);
+  font-size: 40px;
+  color: var(--dca-gold);
+  line-height: 1;
+  display: block;
+  margin-bottom: 8px;
+}
+.metric-label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: rgba(30,42,56,0.55);
+  line-height: 1.3;
+}
+
+.metodo-footer {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.metodo-authorship {
+  font-size: 13px;
+  color: rgba(30,42,56,0.45);
+  margin-bottom: 14px;
+}
+.metodo-connector {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--dca-teal);
+  line-height: 1.5;
+  padding: 16px 20px;
+  background: rgba(46,139,118,0.06);
+  border-radius: 8px;
+  border: 1px solid rgba(46,139,118,0.15);
+}
+
+/* ═══════════════════════════════════════════
+   B6 — CTA PRIMARIO: OBTENER EL LIBRO
+   Carbón · Borde oro arriba · Dos opciones
+   ═══════════════════════════════════════════ */
+.block-cta-libro {
+  background: var(--dca-carbon);
+  border-top: 3px solid var(--dca-gold);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.cta-libro-inner {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.cta-libro-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.40);
+  margin-bottom: 20px;
+}
+
+.cta-libro-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.8vw, 34px);
+  color: var(--dca-white);
+  line-height: 1.25;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+.cta-libro-h2 .line { display: block; }
+
+.cta-libro-gold-line {
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--dca-gold);
+  border-radius: 2px;
+  margin: 0 auto 28px;
+}
+
+.cta-libro-body {
+  font-size: 15px;
+  color: rgba(255,255,255,0.62);
+  line-height: 1.65;
+  margin-bottom: 40px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Dos opciones de compra */
+.cta-libro-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 440px;
+  margin: 0 auto;
+}
+@media (max-width: 479px) {
+  .cta-libro-options { grid-template-columns: 1fr; max-width: 100%; }
+}
+
+.cta-libro-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  text-decoration: none;
+  background: var(--dca-gold);
+  color: var(--dca-white);
+  border-radius: 8px;
+  padding: 18px 20px 14px;
+  transition: opacity 0.18s, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: none;
+  cursor: pointer;
+}
+.cta-libro-option:hover { opacity: 0.90; transform: translateY(-2px); }
+
+.cta-libro-option--secondary {
+  background: transparent;
+  border: 2px solid var(--dca-gold);
+  color: var(--dca-gold);
+}
+.cta-libro-option--secondary:hover {
+  background: rgba(164,129,17,0.10);
+  opacity: 1;
+}
+
+.cta-libro-option-format {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.cta-libro-option-price {
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+.cta-libro-option-sub {
+  font-family: var(--font-body);
+  font-size: 11px;
+  opacity: 0.72;
+  font-weight: 500;
+}
+
+.cta-libro-amazon-note {
+  margin-top: 20px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.03em;
+}
+
+/* ═══════════════════════════════════════════
+   B7 — PARA QUIÉN ES ESTA LECTURA
+   Platino · Borde oro arriba
+   ═══════════════════════════════════════════ */
+.block-whom {
+  background: var(--dca-platinum-bg);
+  border-top: 3px solid var(--dca-gold);
+}
+
+.whom-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+.whom-header h2 { margin-bottom: 12px; }
+.whom-header p {
+  font-size: 15px;
+  color: rgba(30,42,56,0.60);
+}
+
+.whom-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) { .whom-grid { grid-template-columns: 1fr 1fr; } }
+
+.whom-col {
+  border-radius: 10px;
+  padding: 32px;
+}
+.whom-col--yes {
+  background: rgba(46,139,118,0.05);
+  border: 1px solid rgba(46,139,118,0.18);
+  border-left: 4px solid var(--dca-teal);
+}
+.whom-col--no {
+  background: rgba(194,89,63,0.03);
+  border: 1px solid rgba(194,89,63,0.12);
+  border-left: 4px solid rgba(194,89,63,0.35);
+}
+
+.whom-col-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 20px;
+}
+.whom-col--yes .whom-col-label { color: var(--dca-teal); }
+.whom-col--no  .whom-col-label { color: var(--dca-terracotta); }
+
+.whom-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.whom-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: rgba(30,42,56,0.80);
+  line-height: 1.5;
+}
+
+.whom-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+.whom-icon--yes { background: rgba(46,139,118,0.12); }
+.whom-icon--no  { background: rgba(194,89,63,0.10); }
+.whom-icon svg  { width: 11px; height: 11px; }
+
+/* ═══════════════════════════════════════════
+   B8 — AI RETURN TEST (CTA SECUNDARIO)
+   Teal 100% · Cierre de landing
+   ═══════════════════════════════════════════ */
+.block-art {
+  background: var(--dca-teal);
+}
+
+.art-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.block-art .section-label { color: rgba(255,255,255,0.72); }
+
+.art-inner h2 {
+  font-size: clamp(20px, 2.4vw, 28px);
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+.art-inner h2 .line { display: block; }
+
+.art-body {
+  font-size: 16px;
+  color: rgba(255,255,255,0.90);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.block-art .btn-primary--gold {
+  background: #ffffff;
+  color: var(--dca-teal);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.block-art .btn-primary--gold:hover {
+  background: rgba(255,255,255,0.92);
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER CONNECTORS + FOOTER BRAND
+   ═══════════════════════════════════════════ */
+.site-footer {
+  background: var(--dca-carbon);
+  color: rgba(255,255,255,0.75);
+}
+
+.footer-connectors {
+  background: var(--dca-platinum-bg);
+  border-bottom: 1px solid rgba(30,42,56,0.08);
+  padding: 56px 0;
+}
+
+.footer-connectors-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+@media (min-width: 768px) { .footer-connectors-grid { grid-template-columns: 1fr 1fr; } }
+
+.footer-connector {
+  padding: 28px;
+  border: 1px solid rgba(30,42,56,0.10);
+  border-radius: 10px;
+  background: var(--dca-white);
+}
+.footer-connector--primary {
+  border-color: rgba(46,139,118,0.25);
+  border-left: 3px solid var(--dca-teal);
+}
+
+.footer-connector-sublabel {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--dca-teal);
+  margin-bottom: 12px;
+}
+.footer-connector h3 {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--dca-carbon);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.footer-brand {
+  padding: 48px 24px;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+@media (min-width: 768px) {
+  .footer-brand { grid-template-columns: 1fr 1fr; align-items: center; }
+}
+
+.footer-logo { display: block; margin-bottom: 14px; }
+.footer-logo svg { display: block; }
+
+.footer-tagline {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+}
+
+.footer-legal { text-align: right; }
+@media (max-width: 767px) { .footer-legal { text-align: left; } }
+.footer-legal p { font-size: 12px; color: rgba(255,255,255,0.30); line-height: 1.7; }
+
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════
+   PANEL DEL PRELUDIO
+   Copiado de returnai.html — mismo sistema
+   ═══════════════════════════════════════════ */
+.preludio-panel {
+  position: fixed; inset: 0; z-index: 1200;
+  display: flex; justify-content: flex-end;
+  visibility: hidden; pointer-events: none;
+}
+.preludio-panel:not([hidden]) { visibility: visible; pointer-events: auto; }
+
+.preludio-panel__backdrop {
+  position: absolute; inset: 0;
+  background: rgba(30,42,56,0.65);
+  opacity: 0; transition: opacity 0.35s ease;
+}
+.preludio-panel.is-open .preludio-panel__backdrop { opacity: 1; }
+
+.preludio-panel__drawer {
+  position: relative; width: min(620px, 92vw);
+  background: var(--dca-carbon); height: 100vh; overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex; flex-direction: column;
+  scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.15) transparent;
+}
+.preludio-panel.is-open .preludio-panel__drawer { transform: translateX(0); }
+
+.preludio-panel__close {
+  position: sticky; top: 0; align-self: flex-end;
+  background: transparent; border: none; cursor: pointer;
+  color: rgba(255,255,255,0.5); font-size: 28px; line-height: 1;
+  padding: 20px 24px 0; z-index: 10; transition: color 0.2s;
+}
+.preludio-panel__close:hover { color: #fff; }
+
+.preludio-panel__inner { padding: 0 48px 64px; }
+.preludio-panel__header { margin-bottom: 40px; }
+
+.preludio-panel__tag {
+  display: inline-block; font-family: var(--font-body); font-size: 11px;
+  font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--dca-teal); border: 1px solid rgba(46,139,118,0.4);
+  border-radius: 4px; padding: 4px 10px; margin-bottom: 16px;
+}
+.preludio-panel__title {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: clamp(22px, 2vw, 28px); color: #fff;
+  line-height: 1.25; margin: 0 0 12px;
+}
+.preludio-panel__date {
+  display: block; font-size: 13px; color: rgba(255,255,255,0.4);
+  letter-spacing: 0.04em;
+}
+
+.preludio-panel__body p {
+  font-family: var(--font-body); font-size: 15.5px; font-weight: 400;
+  color: rgba(255,255,255,0.78); line-height: 1.78; margin: 0 0 20px;
+}
+.preludio-panel__quote {
+  border-left: 3px solid var(--dca-gold);
+  padding-left: 20px; margin-left: 0;
+  color: rgba(255,255,255,0.9) !important;
+  font-style: italic;
+}
+.preludio-panel__emphasis {
+  color: rgba(255,255,255,0.95) !important;
+  font-weight: 600 !important;
+}
+.preludio-panel__countdown {
+  font-family: var(--font-display) !important; font-size: 18px !important;
+  color: rgba(255,255,255,0.5) !important; line-height: 1.9 !important;
+  letter-spacing: 0.02em;
+}
+.preludio-panel__closing {
+  font-family: var(--font-display) !important; font-size: 19px !important;
+  color: #fff !important; line-height: 1.5 !important; margin-top: 32px !important;
+}
+.preludio-panel__closing strong {
+  color: var(--dca-gold); font-weight: 400; font-family: var(--font-display);
+}
+.preludio-panel__list { padding-left: 20px; margin: 0 0 20px; }
+.preludio-panel__list li {
+  font-size: 15.5px; color: rgba(255,255,255,0.78);
+  line-height: 1.78; margin-bottom: 8px;
+}
+.preludio-panel__list li::marker { color: var(--dca-teal); }
+
+/* Capítulo 1 — elementos narrativos adicionales */
+.preludio-panel__epigraph {
+  border-left: 2px solid rgba(164,129,17,0.4);
+  padding: 12px 20px; margin: 0 0 36px;
+  font-style: italic; font-size: 14.5px;
+  color: rgba(255,255,255,0.5); line-height: 1.65;
+}
+.preludio-panel__divider {
+  border: none; border-top: 1px solid rgba(255,255,255,0.08);
+  margin: 36px 0;
+}
+.preludio-panel__divider-text {
+  text-align: center !important;
+  color: rgba(255,255,255,0.22) !important;
+  font-size: 16px !important;
+  letter-spacing: 0.5em;
+  margin: 28px 0 !important;
+}
+.preludio-panel__note {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px; padding: 18px 22px; margin: 0 0 24px;
+}
+.preludio-panel__note p {
+  margin: 0 0 8px !important; font-size: 14px !important;
+  color: rgba(255,255,255,0.68) !important;
+}
+.preludio-panel__note p:last-child { margin-bottom: 0 !important; }
+.preludio-panel__bitacora {
+  border-left: 3px solid var(--dca-teal);
+  padding: 16px 20px; margin: 0 0 28px;
+  background: rgba(46,139,118,0.06);
+  border-radius: 0 6px 6px 0;
+}
+.preludio-panel__bitacora p {
+  font-style: italic !important;
+  color: rgba(255,255,255,0.8) !important;
+  font-size: 15px !important; margin: 0 0 14px !important;
+}
+.preludio-panel__bitacora p:last-child { margin-bottom: 0 !important; }
+.preludio-panel__body .preludio-panel__date {
+  margin-top: 36px; font-size: 12px !important;
+  text-transform: uppercase; letter-spacing: 0.08em;
+}
+/* Ebook — outline button en panel oscuro */
+.preludio-panel__cta .btn-preludio-ebook {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: transparent; color: rgba(255,255,255,0.85);
+  font-family: var(--font-body); font-weight: 600; font-size: 14px;
+  text-decoration: none; border-radius: 8px;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  min-height: 48px; padding: 14px 28px;
+  transition: border-color 0.18s, color 0.18s;
+}
+.preludio-panel__cta .btn-preludio-ebook:hover {
+  border-color: rgba(255,255,255,0.6); color: #fff;
+}
+
+.preludio-panel__cta {
+  margin-top: 48px; padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.preludio-panel__cta p {
+  font-size: 14.5px; color: rgba(255,255,255,0.6);
+  line-height: 1.65; margin-bottom: 24px;
+}
+/* CTA dentro del panel — botón teal sobre carbón */
+.preludio-panel__cta .btn-preludio-amazon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dca-gold);
+  color: var(--dca-white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 8px;
+  min-height: 48px;
+  padding: 14px 28px;
+  transition: opacity 0.18s;
+  margin-bottom: 12px;
+}
+.preludio-panel__cta .btn-preludio-amazon:hover { opacity: 0.88; }
+
+.preludio-panel__cta .btn-preludio-art {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--dca-teal);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(46,139,118,0.4);
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+.preludio-panel__cta .btn-preludio-art:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+
+.preludio-panel__cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preludio-panel__drawer { transition: none; }
+  .preludio-panel__backdrop { transition: none; }
+}
+@media (max-width: 560px) {
+  .preludio-panel__inner { padding: 0 24px 48px; }
+}
+
+/* ─── MOTION SYSTEM B1–B4 ───────────────────────────────────────────────── */
+@keyframes dca-fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes dca-cover-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* B1 — Hero: dispara al cargar, sin scroll */
+.hero-eyebrow   { opacity:0; animation: dca-fade-up 0.55s cubic-bezier(0.16,1,0.3,1)  60ms both; }
+.novela-h1      { opacity:0; animation: dca-fade-up 0.70s cubic-bezier(0.16,1,0.3,1) 160ms both; }
+.hero-chapeau   { opacity:0; animation: dca-fade-up 0.70s cubic-bezier(0.16,1,0.3,1) 300ms both; }
+.hero-cta-group { opacity:0; animation: dca-fade-up 0.65s cubic-bezier(0.16,1,0.3,1) 430ms both; }
+.novela-cover-wrap { opacity:0; animation: dca-cover-in 0.90s cubic-bezier(0.16,1,0.3,1) 190ms both; }
+
+/* Scroll-reveal: clase base — JS agrega .sr-in al entrar al viewport */
+.sr {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity  0.65s cubic-bezier(0.16,1,0.3,1),
+    transform 0.65s cubic-bezier(0.16,1,0.3,1);
+}
+.sr.sr-in { opacity: 1; transform: translateY(0); }
+
+/* B4 — card hover (spring) — anula .sr cuando .sr-in ya fue aplicado */
+.revela-card.sr-in:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(30,42,56,0.09);
+  transition:
+    transform  0.30s cubic-bezier(0.34,1.56,0.64,1),
+    box-shadow 0.30s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+/* Reduced motion: todo queda visible e inmóvil */
+@media (prefers-reduced-motion: reduce) {
+  .hero-eyebrow, .novela-h1, .hero-chapeau,
+  .hero-cta-group, .novela-cover-wrap {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+  .sr { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .revela-card.sr-in:hover { transform: none !important; box-shadow: none !important; }
+  .caso-stat-num { opacity: 1 !important; transition: none !important; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HEADER STICKY
+     ═══════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+
+    <a href="https://digitalchangeadvisors.com" target="_blank" rel="noopener" class="header-logo" aria-label="Digital Change Advisors — ReturnAI">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -8 400 88" width="220" height="48" aria-hidden="true" focusable="false">
+        <line x1="3" y1="73" x2="73" y2="73" stroke="#e4e4e4" stroke-width="1"/>
+        <path d="M 8 68 C 22 14, 55 8, 68 8" fill="none" stroke="#2e8b76" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="8" cy="68" r="5" fill="#2e8b76"/>
+        <circle cx="68" cy="8" r="12" fill="#a48111"/>
+        <line x1="90" y1="14" x2="90" y2="64" stroke="#1e2a38" stroke-width="1" opacity="0.12"/>
+        <text x="106" y="55" font-family="'Marcellus', Georgia, serif" font-weight="400" font-size="44" fill="#2e8b76" letter-spacing="-0.5">DCA</text>
+        <text x="109" y="70" font-family="'Montserrat', Helvetica, sans-serif" font-weight="600" font-size="10.5" fill="#1e2a38" opacity="0.80" letter-spacing="2.6">DIGITAL CHANGE ADVISORS</text>
+      </svg>
+    </a>
+
+    <!-- CTA header → Amazon directo (placeholder hasta tener URL) -->
+    <a href="#amazon-link" target="_blank" rel="noopener" class="header-cta">Obtener el libro →</a>
+
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════════
+     B1 · HERO
+     Blanco · Split 55/45 · Libro flotante
+     ═══════════════════════════════════════════ -->
+<section class="block-hero" id="inicio">
+  <div class="hero-inner">
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Modelo ARIA · Novela Ejecutiva · Digital Change Advisors</p>
+
+      <h1 class="novela-h1">
+        <span class="line">Adalid Puentes tenía $8.2M</span>
+        <span class="line">invertidos en IA.</span>
+        <span class="line">El P&amp;L no lo reflejaba.</span>
+      </h1>
+
+      <p class="hero-chapeau">
+        Esta es la única novela de negocios construida sobre un caso real del Modelo ARIA. En 120 días, Adalid pasó de un ultimátum de su CEO a $891K documentados en el P&amp;L. Lo que hizo diferente no fue la tecnología — fue entender por qué la IA que ya tenía no estaba generando retorno.
+      </p>
+
+      <div class="hero-cta-group">
+        <!-- CTA hero → Amazon: Impreso (activar con URL real) -->
+        <a href="#amazon-impreso" target="_blank" rel="noopener" class="btn-primary">Impreso — $29.97 en Amazon →</a>
+        <!-- CTA hero → Amazon: Ebook (activar con URL real) -->
+        <a href="#amazon-ebook" target="_blank" rel="noopener" class="btn-outline">Ebook — $19.97 en Amazon →</a>
+      </div>
+    </div>
+
+    <div class="novela-cover-wrap">
+      <img
+        src="images/novela-returnai-cover.png"
+        alt="Portada del libro ReturnAI — novela ejecutiva sobre Adalid Puentes y los 120 días que documentaron el retorno de la IA en Seguros Continental"
+        width="680"
+        height="906"
+        loading="eager"
+        class="novela-cover"
+      >
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     B2 · EL ESPEJO — ADALID Y EL CEO VISITANTE
+     Platino · Caso ancla $8.2M → $891K
+     ═══════════════════════════════════════════ -->
+<section class="block-espejo">
+  <div class="espejo-inner">
+
+    <div class="espejo-visual">
+      <div class="caso-card sr">
+        <p class="caso-card-label">El caso documentado en la novela</p>
+        <div class="caso-stat-row">
+
+          <div class="caso-stat sr">
+            <span class="caso-stat-num">$8.2M</span>
+            <div class="caso-stat-desc">
+              <strong>Inversión en IA sin retorno</strong>
+              18 meses de implementación con métricas de actividad que no movían el P&amp;L
+            </div>
+          </div>
+
+          <div class="caso-stat sr">
+            <span class="caso-stat-num">120</span>
+            <div class="caso-stat-desc">
+              <strong>Días de intervención</strong>
+              Tiempo entre el ultimátum del CEO y el retorno documentado ante la Junta
+            </div>
+          </div>
+
+          <div class="caso-stat sr">
+            <span class="caso-stat-num caso-stat-num--sm">11%→70%</span>
+            <div class="caso-stat-desc">
+              <strong>Tasa de adopción real</strong>
+              Del 11% inicial al 70%+ sostenido al cierre del programa
+            </div>
+          </div>
+
+          <div class="caso-stat sr">
+            <span class="caso-stat-num">$891K</span>
+            <div class="caso-stat-desc">
+              <strong>En el P&amp;L al cierre</strong>
+              Retorno medido en persistencia de clientes y reducción de costos operativos
+            </div>
+          </div>
+
+        </div>
+        <p class="caso-card-footer">Seguros Continental · Sector asegurador · Latinoamérica · Validado con el Modelo ARIA</p>
+      </div>
+    </div>
+
+    <div class="espejo-content sr">
+      <p class="section-label">Por qué esta historia importa</p>
+      <h2>Adalid no es un personaje de manual. Es el directivo que toma exactamente las mismas decisiones que tú — con una diferencia: en esta historia, la secuencia que desbloqueó el retorno está documentada paso a paso.</h2>
+
+      <div class="espejo-body">
+        <p>Ya tienes la tecnología. Los pilotos funcionan. Las métricas de uso van en verde. El problema que Adalid documentó es exactamente el que aparece cuando el CFO pregunta por el retorno — y la sala se queda en silencio.</p>
+        <p>La novela documenta exactamente ese momento — y los 120 días que siguieron. No como una historia de éxito corporativo, sino como un registro honesto de qué obstáculos bloqueaban el retorno y en qué orden los diagnosticó e intervino el Modelo ARIA.</p>
+        <p>Si llevas más de 12 meses con una inversión en IA sin poder documentar retorno ante tu Junta, la novela no te da una fórmula — te da la secuencia exacta de diagnóstico e intervención que Adalid aplicó: los 10 obstáculos que bloqueaban su P&amp;L, en el orden en que deben intervenirse.</p>
+      </div>
+
+      <div class="espejo-pull sr">
+        "No fue un problema de tecnología. Fue un problema de diez obstáculos humanos y organizacionales que ningún vendor diagnostica — y que el Modelo ARIA interviene en el orden exacto."
+        <footer class="pull-attribution">— César Lozano, CEO · Digital Change Advisors</footer>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     B3 · PRIMER CAPÍTULO
+     Teal 4% · Borde oro arriba · Panel slide-in
+     ═══════════════════════════════════════════ -->
+<section class="block-preludio">
+  <div class="preludio-inner">
+
+    <div class="preludio-content sr">
+      <p class="section-label">Primer capítulo</p>
+      <h2>Lee el primer capítulo antes de comprar el libro. Sin formulario, sin correo.</h2>
+      <p class="preludio-body">En cuarenta y siete minutos de reunión, el CEO de Adalid documentó en voz alta lo que dieciocho meses de implementación no habían producido. Lo que Adalid no supo responder en esa sala es la misma pregunta que aparece en toda revisión de Junta donde se evalúa el retorno de la IA.</p>
+
+      <button id="btn-preludio" class="btn-primary" aria-expanded="false" aria-controls="preludio-panel">
+        Leer el primer capítulo &rarr;
+      </button>
+    </div>
+
+    <div class="preludio-fragment sr" aria-hidden="true">
+      <div class="preludio-fragment-text">
+        <p style="margin:0 0 10px;font-style:inherit;">"Tienes ciento veinte días".</p>
+        <p style="margin:0 0 10px;font-style:inherit;">La reunión de esa mañana había durado cuarenta y siete minutos. Pero sus palabras lo perseguirían durante los próximos cuatro meses.</p>
+        <p style="margin:0;font-style:inherit;">Las luces de la ciudad se difuminaban a través del parabrisas. Adalid no recordaba haber tomado la salida hacia su casa...</p>
+      </div>
+      <div class="preludio-fragment-blur"></div>
+      <p class="preludio-fragment-label">Continúa en el primer capítulo</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     B4 · LO QUE EL LIBRO REVELA
+     Blanco · Borde oro arriba
+     ═══════════════════════════════════════════ -->
+<section class="block-revela">
+  <div class="revela-inner">
+
+    <div class="revela-intro sr">
+      <p class="section-label">La tesis de la novela</p>
+      <h2>Cuatro preguntas que el libro responde desde adentro del caso</h2>
+      <div class="section-accent"></div>
+      <p class="mt-20">No es un manual de metodología. Es la respuesta a las preguntas que ningún reporte de consultoría formula — porque hacerlo implicaría admitir que el problema nunca estuvo en la plataforma.</p>
+    </div>
+
+    <div class="revela-grid">
+
+      <div class="revela-card sr">
+        <div class="revela-num">01</div>
+        <p class="revela-question">¿Por qué el piloto funciona y el P&amp;L no lo refleja?</p>
+        <p class="revela-desc">Adalid tenía métricas de uso impecables. Los obstáculos que bloqueaban el retorno no estaban donde su equipo de TI los buscaba — y en la novela los verás antes de que él mismo sepa nombrarlos.</p>
+      </div>
+
+      <div class="revela-card sr">
+        <div class="revela-num">02</div>
+        <p class="revela-question">¿Cuáles de los 10 obstáculos estaban activos en tu empresa?</p>
+        <p class="revela-desc">El Modelo ARIA identifica 10 obstáculos humanos y organizacionales. La novela muestra cuáles estaban presentes en Seguros Continental y con qué intensidad.</p>
+      </div>
+
+      <div class="revela-card sr">
+        <div class="revela-num">03</div>
+        <p class="revela-question">¿Cómo se ve un diagnóstico del Modelo ARIA desde adentro?</p>
+        <p class="revela-desc">Los 14 instrumentos del Modelo ARIA aparecen en acción, no en una presentación. Adalid los vive como directivo, no como cliente de consultoría.</p>
+      </div>
+
+      <div class="revela-card sr">
+        <div class="revela-num">04</div>
+        <p class="revela-question">¿Qué hace que 120 días sea suficiente para evidenciar retorno?</p>
+        <p class="revela-desc">La secuencia de los 6 Sprints del Modelo ARIA no es arbitraria. La novela documenta por qué el orden importa y qué pasa cuando se altera.</p>
+      </div>
+
+    </div>
+
+    <p class="revela-connector sr">
+      La metodología que documenta la novela opera hoy en 70+ organizaciones.<br>
+      <strong>La ficción es el formato. La evidencia es real.</strong>
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     B5 · LA METODOLOGÍA ES VERIFICABLE
+     Teal-subtle · Métricas del Modelo ARIA
+     ═══════════════════════════════════════════ -->
+<section class="block-metodo">
+  <div class="container">
+
+    <div class="metodo-intro">
+      <p class="section-label">El Modelo ARIA</p>
+      <h2>
+        <span class="line">Lo que Adalid aplicó en la novela existe.</span>
+        <span class="line">Está validado en campo.</span>
+      </h2>
+      <div class="section-accent"></div>
+      <div class="mt-24">
+        <p>El Modelo ARIA fue construido para que el retorno sea medible, no estimado. Cada componente tiene un output específico en el P&L — no en métricas de actividad.</p>
+      </div>
+    </div>
+
+    <div class="metrics-grid">
+
+      <div class="metric-item">
+        <span class="metric-number" data-count="14" data-suffix="">14</span>
+        <span class="metric-label">Instrumentos del Modelo ARIA</span>
+      </div>
+
+      <div class="metric-item">
+        <span class="metric-number" data-count="70" data-suffix="+">70+</span>
+        <span class="metric-label">Empresas intervenidas en Latam</span>
+      </div>
+
+      <div class="metric-item">
+        <span class="metric-number" data-count="120" data-suffix="">120</span>
+        <span class="metric-label">Días para retorno documentado</span>
+      </div>
+
+      <div class="metric-item">
+        <span class="metric-number" data-count="6">6</span>
+        <span class="metric-label">Sprints en secuencia invariante</span>
+      </div>
+
+    </div>
+
+    <div class="metodo-footer">
+      <p class="metodo-authorship">Digital Change Advisors, LLC. · Firma registrada en EE.UU. · Operaciones en España, USA y Latam</p>
+      <p class="metodo-connector">El Modelo ARIA es la base de ReturnAI — la solución que Adalid implementa en la novela para documentar sus resultados. Lo que él vive en 120 días es exactamente lo que el Modelo produce en campo.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     B6 · CTA PRIMARIO — OBTENER EL LIBRO
+     Carbón · Borde oro · Dos opciones Amazon
+     ═══════════════════════════════════════════ -->
+<section class="block-cta-libro" id="obtener">
+  <div class="cta-libro-inner">
+
+    <p class="cta-libro-label">Tu próximo paso</p>
+
+    <h2 class="cta-libro-h2">
+      <span class="line">La historia es de Adalid.</span>
+      <span class="line">La solución es tuya.</span>
+    </h2>
+
+    <span class="cta-libro-gold-line"></span>
+
+    <p class="cta-libro-body">Elige el formato. El contenido es el mismo: el caso completo, los 120 días, los 10 obstáculos intervenidos y el retorno documentado ante la Junta.</p>
+
+    <div class="cta-libro-options">
+
+      <a href="#amazon-impreso" target="_blank" rel="noopener" class="cta-libro-option cta-libro-option--primary">
+        <span class="cta-libro-option-format">Impreso</span>
+        <span class="cta-libro-option-price">$29.97</span>
+        <span class="cta-libro-option-sub">El libro · Amazon Prime</span>
+      </a>
+
+      <a href="#amazon-ebook" target="_blank" rel="noopener" class="cta-libro-option cta-libro-option--secondary">
+        <span class="cta-libro-option-format">Ebook</span>
+        <span class="cta-libro-option-price">$19.97</span>
+        <span class="cta-libro-option-sub">Lectura inmediata</span>
+      </a>
+
+    </div>
+
+    <p class="cta-libro-amazon-note">Disponible en Amazon · Envío internacional</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     B7 · PARA QUIÉN ES ESTA LECTURA
+     Platino · Borde oro arriba
+     ═══════════════════════════════════════════ -->
+<section class="block-whom">
+  <div class="container">
+
+    <div class="whom-header">
+      <p class="section-label">Calificación</p>
+      <h2>ReturnAI es una lectura de directivo, no de entusiasta.</h2>
+      <p>El valor de la novela depende de que el lector reconozca en Adalid su propio diagnóstico.</p>
+    </div>
+
+    <div class="whom-grid">
+
+      <div class="whom-col whom-col--yes">
+        <p class="whom-col-label">Para quién es</p>
+        <div class="whom-list">
+
+          <div class="whom-item">
+            <div class="whom-icon whom-icon--yes">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#2e8b76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span>Directivo C-Level con inversión activa en IA que aún no produce retorno documentable ante su Junta</span>
+          </div>
+
+          <div class="whom-item">
+            <div class="whom-icon whom-icon--yes">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#2e8b76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span>Ejecutivo que quiere entender la metodología antes de comprometerse con una intervención completa</span>
+          </div>
+
+          <div class="whom-item">
+            <div class="whom-icon whom-icon--yes">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#2e8b76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span>Directivo que quiere ver el Modelo ARIA aplicado a un caso completo antes de comprometerse con una intervención</span>
+          </div>
+
+          <div class="whom-item">
+            <div class="whom-icon whom-icon--yes">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#2e8b76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span>Directivo que ya entiende que el problema no es la IA — es la organización — y quiere ver cómo se resuelve en 120 días</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="whom-col whom-col--no">
+        <p class="whom-col-label">Para quién no es</p>
+        <div class="whom-list">
+
+          <div class="whom-item">
+            <div class="whom-icon whom-icon--no">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M3 3L9 9M9 3L3 9" stroke="#c2593f" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <span>Organizaciones sin inversión activa en IA en los últimos 12 meses</span>
+          </div>
+
+          <div class="whom-item">
+            <div class="whom-icon whom-icon--no">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M3 3L9 9M9 3L3 9" stroke="#c2593f" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <span>Quienes buscan un manual técnico de IA — la novela trata de obstáculos humanos y organizacionales, no de código</span>
+          </div>
+
+          <div class="whom-item">
+            <div class="whom-icon whom-icon--no">
+              <svg viewBox="0 0 12 12" fill="none"><path d="M3 3L9 9M9 3L3 9" stroke="#c2593f" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <span>Directivos que ya tienen el ROI de su IA documentado y verificable ante la Junta</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     B8 · AI RETURN TEST — CTA SECUNDARIO
+     Teal 4% · Borde oro arriba
+     Para el lector de Amazon que busca el siguiente paso
+     ═══════════════════════════════════════════ -->
+<section class="block-art">
+  <div class="art-inner">
+
+    <p class="section-label">El diagnóstico que Adalid aplicó</p>
+
+    <h2>
+      <span class="line">Lo que Adalid aplicó en el Capítulo 3.</span>
+      <span class="line">Gratuito. 25 minutos.</span>
+    </h2>
+
+    <div class="section-accent" style="margin: 16px auto 28px;"></div>
+
+    <p class="art-body">
+      El instrumento que Adalid usó en el Capítulo 3 para establecer su línea base y alcanzar el retorno. En 25 minutos obtienes tu Índice de Urgencia Global, el mapa de los obstáculos activos en tu organización y tu arquetipo de rentabilización — el mismo punto de partida que el caso documentado en el libro.
+    </p>
+
+    <a href="https://tally.so/r/Np6e5W" target="_blank" rel="noopener" class="btn-primary btn-primary--gold">
+      Iniciar mi diagnóstico &rarr;
+    </a>
+    <span class="cta-support" style="color:rgba(255,255,255,0.60);">25 minutos · Tu reporte es confidencial · Sin compromiso</span>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER · CONNECTORS + BRAND
+     ═══════════════════════════════════════════ -->
+<footer class="site-footer">
+
+  <hr class="footer-divider">
+
+  <div class="footer-brand">
+
+    <div class="footer-logo-area">
+      <a href="https://digitalchangeadvisors.com" target="_blank" rel="noopener" class="footer-logo" aria-label="Digital Change Advisors — ReturnAI">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -8 400 88" width="220" height="48" aria-hidden="true" focusable="false">
+          <line x1="3" y1="73" x2="73" y2="73" stroke="#ffffff" stroke-width="1" opacity="0.15"/>
+          <path d="M 8 68 C 22 14, 55 8, 68 8" fill="none" stroke="#2e8b76" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="8" cy="68" r="5" fill="#2e8b76"/>
+          <circle cx="68" cy="8" r="12" fill="#a48111"/>
+          <line x1="90" y1="14" x2="90" y2="64" stroke="#ffffff" stroke-width="1" opacity="0.15"/>
+          <text x="106" y="55" font-family="'Marcellus', Georgia, serif" font-weight="400" font-size="44" fill="#ffffff" letter-spacing="-0.5">DCA</text>
+          <text x="109" y="70" font-family="'Montserrat', Helvetica, sans-serif" font-weight="600" font-size="10.5" fill="#ffffff" opacity="0.80" letter-spacing="2.6">DIGITAL CHANGE ADVISORS</text>
+        </svg>
+      </a>
+      <p class="footer-tagline">De la inversión en IA al retorno documentado.</p>
+    </div>
+
+    <div class="footer-legal">
+      <p>© 2026 Digital Change Advisors, LLC.<br>Todos los derechos reservados.</p>
+      <p style="margin-top:8px;">Modelo ARIA® es propiedad intelectual de Digital Change Advisors, LLC.</p>
+      <p style="margin-top:8px;">
+        <a href="https://dca-returnai.github.io/dca-website/privacy-policy.html" style="color:rgba(255,255,255,0.30);text-decoration:none;" target="_blank" rel="noopener">Política de privacidad</a>
+        &nbsp;·&nbsp;
+        <a href="https://dca-returnai.github.io/dca-website/terms-of-use.html" style="color:rgba(255,255,255,0.30);text-decoration:none;" target="_blank" rel="noopener">Términos de uso</a>
+      </p>
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- ═══════════════════════════════════════════
+     PANEL DEL PRELUDIO — Slide-in desde la derecha
+     Mismo contenido que en returnai.html
+     ═══════════════════════════════════════════ -->
+<div id="preludio-panel" class="preludio-panel" role="dialog" aria-modal="true" aria-labelledby="preludio-panel-title" hidden>
+  <div class="preludio-panel__backdrop"></div>
+  <div class="preludio-panel__drawer">
+    <button class="preludio-panel__close" aria-label="Cerrar primer capítulo">&times;</button>
+    <div class="preludio-panel__inner">
+      <div class="preludio-panel__header">
+        <span class="preludio-panel__tag">Capítulo 1</span>
+        <h2 class="preludio-panel__title" id="preludio-panel-title">El ultimátum de hierro</h2>
+        <time class="preludio-panel__date">Día 01 · Miércoles, 15 de octubre · 6:58 a.m.</time>
+      </div>
+      <div class="preludio-panel__body">
+        <p class="preludio-panel__epigraph">"En tiempos de cambio radical, el mayor peligro no es la turbulencia; es actuar con la lógica de ayer." — Peter Drucker</p>
+
+        <p class="preludio-panel__date">Día 01 · Miércoles 15 de octubre, 6:58 a.m. — Quince horas antes.</p>
+
+        <p>Adalid Puentes entró en la sala de juntas principal de Seguros Continental sosteniendo su laptop contra el pecho como escudo.</p>
+        <p>La mesa de nogal reflejaba la luz fría de la mañana que entraba por los ventanales del piso veintitrés.</p>
+        <p>Ricardo Mendoza ya estaba sentado en la cabecera, con las gafas puestas y dos carpetas físicas frente a él. No había café. No había pantallas encendidas. Solo silencio y madera pulida.</p>
+        <p>Adalid ocupó su lugar habitual, a tres sillas de distancia del CEO, y abrió su laptop con movimientos precisos.</p>
+        <p>La pantalla se iluminó mostrando un dashboard de métricas verdes: noventa y dos por ciento de empleados capacitados en IA, veintiún pilotos activos, certificaciones completadas en tiempo récord.</p>
+        <p>Se sintió seguro tras esas cifras.</p>
+        <p>Ricardo no levantó la vista.</p>
+        <p>—Buenos días, Adalid.<br>—Buenos días, Ricardo.</p>
+        <p>El CEO deslizó la primera carpeta hacia el centro de la mesa sin mirar a Adalid. El movimiento fue lento, deliberado, preciso.</p>
+        <p class="preludio-panel__quote">—Esta es la inversión acumulada en tu proyecto de Inteligencia Artificial durante los últimos dieciocho meses.</p>
+        <p>Adalid no necesitó abrir la carpeta. Conocía el número de memoria: 8,2 millones de dólares.</p>
+        <p>—Licencias empresariales de las plataformas de IA más avanzadas del mercado, capacitación certificada para mil seiscientos cincuenta y seis empleados, consultoría de implementación con tres firmas externas, infraestructura cloud escalable.</p>
+        <p>Ricardo hizo una pausa.</p>
+        <p class="preludio-panel__quote">—Ocho punto dos millones.</p>
+        <p>—Correcto. Y los resultados ya empiezan a verse: noventa y dos por ciento de la plantilla ya está capacitada. Veintiún pilotos en ejecución. Las métricas de actividad…</p>
+        <p>Ricardo levantó la mano.</p>
+        <p class="preludio-panel__quote">—Actividad —repitió la palabra como si fuera un diagnóstico médico—. Dime, Adalid, ¿cuántos de esos veintiún pilotos están generando retorno medible en el P&amp;L?</p>
+        <p>El aire en la sala cambió de temperatura.</p>
+        <p>Adalid sintió un chasquido seco en la mandíbula. Un reflejo que conocía bien: bruxismo. La tensión se instaló en sus maseteros como una prensa hidráulica invisible.</p>
+        <p>—Estamos midiendo indicadores tempranos. Adopción, engagement, tiempo de respuesta. La transformación digital es un proceso, Ricardo. No se mide en…</p>
+        <p class="preludio-panel__emphasis">—Cero.</p>
+        <p>La palabra cayó sobre la mesa como un mazo.</p>
+        <p>Ricardo abrió la segunda carpeta y giró una hoja impresa hacia Adalid. Era un análisis financiero preparado por el equipo del CFO. Tres columnas: Inversión Acumulada, Retorno Documentado, Delta. La tercera columna era un desierto de ceros rojos.</p>
+        <p class="preludio-panel__quote">—Cero dólares de retorno verificable en dieciocho meses, Adalid. Ni un solo KPI movido. Ni una línea del P&amp;L impactada.</p>
+        <p>Ricardo se quitó las gafas y lo miró directamente.</p>
+        <p class="preludio-panel__quote">—Desembolsar ocho millones sin retorno no es una inversión; es un gasto que no puedo justificar ante el Board.</p>
+        <p>Su mano derecha, oculta bajo la mesa de nogal, comenzó a temblar. Un temblor fino, eléctrico, que subía desde la muñeca hasta los dedos.</p>
+        <p>—Ricardo, las métricas de actividad son indicadores tempranos válidos. No puedes esperar ROI inmediato en…</p>
+        <p class="preludio-panel__quote">—Puedo. Y lo espero. Porque mientras tú mides engagement, la competencia ya está usando la IA para reducir tiempos de suscripción en un cuarenta por ciento y mejorar la retención de clientes en un veintidós. Eso no son indicadores tempranos. Es dinero real.</p>
+        <p>Ricardo cerró las carpetas y las apiló con exactitud milimétrica.</p>
+        <p class="preludio-panel__quote">—La Junta me dio ciento veinte días para ver ROI real o parar las iniciativas de IA en marcha.</p>
+        <p class="preludio-panel__emphasis">El número quedó suspendido en el aire como una sentencia.</p>
+        <p class="preludio-panel__quote">—Ciento veinte días para demostrar tres cosas. Uno: nivel de adopción real superior al setenta por ciento — personas usando la IA en su flujo de trabajo diario, no gente que completó un curso online. Dos: al menos uno de esos veintiún pilotos en producción generando valor documentado. Tres: ROI medible en al menos un KPI crítico del negocio con impacto directo en el P&amp;L.</p>
+        <p>Ricardo se puso de pie.</p>
+        <p class="preludio-panel__quote">—Si en ciento veinte días no se cumplen esos tres objetivos, el Board cancela el proyecto de IA. Y yo tendré que reconsiderar tu posición en la compañía.</p>
+        <p class="preludio-panel__quote">—Miércoles once de febrero del año entrante. Esa es tu fecha límite. No necesito más reportes con métricas optimistas. Necesito resultados.</p>
+        <p>El CEO salió de la sala sin despedirse.</p>
+        <p>Adalid se quedó sentado, inmóvil, con su laptop todavía abierta mostrando el dashboard de métricas verdes que ahora se sentían como una mentira en alta resolución.</p>
+        <p>Y por primera vez en dieciocho meses, Adalid Puentes entendió que no estaba liderando una transformación. Estaba al borde de un colapso profesional.</p>
+
+        <hr class="preludio-panel__divider">
+        <p class="preludio-panel__date">Miércoles 15 de octubre, 11:34 a.m. — Los diez obstáculos</p>
+
+        <p>Adalid llevaba casi cuatro horas frente a su computadora, revisando los veintiún pilotos con una nueva lente: la del fracaso inminente.</p>
+        <p><em>Piloto 4 (Scoring predictivo de leads):</em> dieciocho vendedores con acceso; tres usuarios activos en el último mes.</p>
+        <p><em>Piloto 7 (Automatización de reportes financieros):</em> sistema funcionando al cien por ciento; cero despliegue en producción por «falta de aprobación del comité de governance».</p>
+        <p><em>Piloto 12 (Chatbot de soporte interno):</em> dos mil quinientas interacciones en el primer mes; cuarenta y tres en el último trimestre.</p>
+        <p>Cada piloto era una variación del mismo patrón: infraestructura disponible, capacitación completada, adopción inexistente. No era un problema técnico. Era algo más profundo.</p>
+        <p>Adalid abrió una nueva pestaña y escribió en el buscador: <em>Why AI adoption fails?</em> Los primeros resultados eran exactamente lo que esperaba: McKinsey, Deloitte, Gartner, BCG. Los había leído todos.</p>
+        <p>Siguió bajando. Casi al final de la primera página, había una entrada que no encajaba con el resto. Un blog sin diseño corporativo. El autor: Alejandro Ríos, socio consultor con más de una década en transformación digital. El título era directo, casi descortés:</p>
+        <p class="preludio-panel__quote">«Your AI isn't failing. Your organization is.»</p>
+        <p>En el tercer párrafo, Ríos escribía:</p>
+        <p class="preludio-panel__quote">«En diez años trabajando con 35 empresas en México, Colombia, Perú, Chile y Argentina, documenté los mismos patrones de fracaso. Siempre los mismos. No en la tecnología. En las personas que se supone deben usarla.»</p>
+        <p>Y luego, sin preámbulo académico, venía la lista. Los diez obstáculos humanos y organizacionales que bloquean la adopción de la IA:</p>
+        <ul class="preludio-panel__list">
+          <li>Falta de claridad en la contribución de valor</li>
+          <li>Fricción de governance</li>
+          <li>Desalineación en políticas de talento</li>
+          <li>Silos culturales</li>
+          <li>Brecha generacional</li>
+          <li>Liderazgo desconectado</li>
+          <li>Creencias limitantes</li>
+          <li>Síndrome del impostor digital</li>
+          <li>Capacitación sin impacto</li>
+          <li>Miedo al desplazamiento</li>
+        </ul>
+        <p>Adalid leyó la lista tres veces. Al pie del artículo había siete comentarios. Cinco de ellos decían, con distintas palabras, prácticamente lo mismo: «Esto describe con precisión lo que vivimos en nuestra empresa.» Eran directivos anónimos que habían reconocido su propio fracaso en el texto de un desconocido.</p>
+        <p class="preludio-panel__emphasis">¿Y si el noventa y cinco por ciento de las empresas que invertían en IA tenían exactamente este problema?</p>
+        <p>Buscó el perfil del autor. En LinkedIn, la descripción era escueta: «Socio en Digital Change Advisors.»</p>
+        <p class="preludio-panel__emphasis">Adalid se quedó inmóvil. Conocía ese nombre.</p>
+
+        <p class="preludio-panel__divider-text">* * *</p>
+
+        <p>Cuatro meses atrás, en junio, Ricardo había cerrado la puerta de su oficina con inusual seriedad.</p>
+        <p class="preludio-panel__quote">—Adalid, los pilotos no están avanzando por un problema técnico. Están estancados por un problema humano. La gente no está adoptando la IA porque tiene miedo, porque no confía, porque sus jefes no modelan el cambio. Esto no se arregla con el mejor código.</p>
+        <p>—Ricardo, con todo respeto, contratamos las mejores herramientas. Invertimos en capacitación. Necesitamos más disciplina operativa, no más… psicología corporativa.</p>
+        <p>Ricardo había sostenido su mirada durante cinco segundos.</p>
+        <p class="preludio-panel__quote">—Hay alguien que te puede ayudar a ver esto desde otra perspectiva. Se llama Mónica Reyes. Trabajó conmigo cuando hice la transición de CFO a CEO. Llámala. Antes de que sea demasiado tarde.</p>
+        <p>Adalid había tomado la tarjeta con cortesía profesional. En su mente, la etiqueta ya estaba puesta: <em>Consultora soft. Temas blandos. No va a mover la aguja del ROI.</em></p>
+        <p>La tarjeta había terminado en el segundo cajón de su escritorio, enterrada bajo manuales técnicos y certificaciones cloud. Cuatro meses después, seguía ahí.</p>
+
+        <p class="preludio-panel__divider-text">* * *</p>
+
+        <p>Adalid abrió el segundo cajón. Ahí estaba. Intacta.</p>
+        <div class="preludio-panel__note">
+          <p><strong>Dra. Mónica Reyes, PhD</strong></p>
+          <p>Digital Change Advisors</p>
+          <p>Especialista en Rentabilización de la IA</p>
+        </div>
+        <p>Cuatro meses atrás había leído esas tres líneas y había tomado una decisión en menos de tres segundos. Ahora acababa de leer durante cuarenta minutos a un socio de esa misma firma describir con total precisión el problema que había destruido dieciocho meses de trabajo.</p>
+        <p class="preludio-panel__emphasis">Y Ricardo lo había sabido. Cuatro meses atrás.</p>
+        <p>No iba a lograrlo optimizando código. Mañana, a primera hora, le enviaría un correo. No porque creyera en «lo humano» como solución, sino porque se había quedado sin opciones técnicas.</p>
+
+        <hr class="preludio-panel__divider">
+        <p class="preludio-panel__date">Miércoles 15 de octubre, 10:23 p.m. — En casa de Adalid</p>
+
+        <p>Adalid llegó a su casa a las 10:23 p.m. La luz de la cocina estaba encendida. Laura había dejado una nota sobre la isla de granito, junto a una taza de café frío que Adalid había olvidado esa mañana.</p>
+        <div class="preludio-panel__note">
+          <p><strong>Dashboard Familiar — Q3 2025</strong></p>
+          <p>Compromiso 1: Cenas familiares (5 días/semana)<br>Resultado: 73% ausencias · Desviación: −46 puntos vs objetivo</p>
+          <p>Compromiso 2: Proyecto universidad Santiago<br>Estatus: 0% avance (última revisión hace 47 días)</p>
+          <p>Compromiso 3: Fin de semana fuera de la ciudad<br>Estatus: Cancelado (2 veces) · Última conversación: Hace 9 días</p>
+          <p><em>No necesito disculpas. Necesito un plan con fechas.</em><br>— Laura</p>
+        </div>
+        <p>Era el mismo peso que había sentido en la sala de juntas unas horas atrás. Laura no estaba pidiendo atención emocional; estaba presentando un reporte de desviaciones. Y usaba el mismo lenguaje que él: métricas, compromisos, cumplimiento.</p>
+        <p>Laura estaba en la habitación principal, leyendo en su iPad. Levantó la vista cuando Adalid entró, pero no dijo nada. Solo lo miró con la misma expresión que Ricardo había usado esa mañana: <em>Ya no quiero palabras. Quiero resultados.</em></p>
+        <p class="preludio-panel__quote">—Adalid, no necesito que me digas que has estado ausente. Ya lo sé. Lo que necesito es saber si esto es temporal o permanente, porque si es permanente, necesitamos redefinir qué significa esta familia. Y si es temporal, necesito fechas. No promesas. Fechas.</p>
+        <p>—Es temporal. Tengo ciento veinte días para…</p>
+        <p class="preludio-panel__quote">—Llevas diciendo que es temporal durante tres años —lo interrumpió Laura—. Y cada vez que lo dices, la línea de tiempo se extiende otros seis meses. No estoy pidiendo que renuncies a tu trabajo, estoy pidiendo que definas cuánto más vas a posponer esta familia.</p>
+        <p>Adalid no tenía respuesta, porque Laura tenía razón. Durante tres años, había postergado lo importante no urgente por lo urgente importante. Y ahora estaba a punto de perder ambos.</p>
+
+        <hr class="preludio-panel__divider">
+        <p class="preludio-panel__date">Miércoles 15 de octubre, 11:47 p.m. — Bitácora digital</p>
+
+        <div class="preludio-panel__bitacora">
+          <p>Ningún sistema que está a punto de colapsar lo anuncia con métricas verdes. Eso tendría que haberlo sabido antes.</p>
+          <p>¿Cuántos de tus KPIs miden lo que puedes controlar en lugar de medir lo que realmente mueve el negocio?</p>
+          <p>Laura presentó un dashboard. Mismo formato que Ricardo, mismos ceros. Las personas que te quieren aprenden a hablar el único idioma que procesas.</p>
+          <p>Primer movimiento: contactar a quien Ricardo recomendó hace cuatro meses y yo descarté en tres segundos. No voy convencido. No sé si eso importa.</p>
+        </div>
+
+        <p class="preludio-panel__countdown">Día uno de ciento veinte.<br>El reloj marcaba las 11:59 p.m.</p>
+        <p class="preludio-panel__closing">En sesenta segundos, sería jueves.<br><strong>Adalid Puentes tendría ciento diecinueve días para resolver el problema correcto.</strong></p>
+      </div>
+      <div class="preludio-panel__cta">
+        <p>Lo que Adalid aplicó en los siguientes 119 días está documentado en la novela. Si te identificas con su punto de partida, el libro te da la secuencia completa.</p>
+        <div class="preludio-panel__cta-group">
+          <a href="#amazon-impreso" target="_blank" rel="noopener" class="btn-preludio-amazon">Impreso — $29.97 en Amazon →</a>
+          <a href="#amazon-ebook" target="_blank" rel="noopener" class="btn-preludio-ebook">Ebook — $19.97 en Amazon →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     SCRIPTS
+     ═══════════════════════════════════════════ -->
+
+<!-- Metric count-up -->
+<script>
+(function() {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('.metric-item');
+  if (!items.length) return;
+
+  function countUp(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    if (reduced) { el.textContent = target + suffix; return; }
+    var duration = 1100;
+    var start = null;
+    function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+    function step(ts) {
+      if (!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      el.textContent = Math.round(easeOut(progress) * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var el = entry.target;
+        el.classList.add('metric-in');
+        var num = el.querySelector('[data-count]');
+        if (num) countUp(num);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.25 });
+
+  items.forEach(function(item) { observer.observe(item); });
+})();
+</script>
+
+<!-- Panel del preludio -->
+<script>
+(function () {
+  var panel    = document.getElementById('preludio-panel');
+  var btn      = document.getElementById('btn-preludio');
+  var closeBtn = panel && panel.querySelector('.preludio-panel__close');
+  var backdrop = panel && panel.querySelector('.preludio-panel__backdrop');
+  var drawer   = panel && panel.querySelector('.preludio-panel__drawer');
+
+  if (!panel || !btn) return;
+
+  var focusable = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+  function trapFocus(e) {
+    var els = Array.from(panel.querySelectorAll(focusable)).filter(function(el) { return !el.disabled; });
+    var first = els[0], last = els[els.length - 1];
+    if (e.key === 'Tab') {
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  }
+
+  function openPanel() {
+    panel.hidden = false;
+    document.body.style.overflow = 'hidden';
+    btn.setAttribute('aria-expanded', 'true');
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() { panel.classList.add('is-open'); });
+    });
+    drawer.scrollTop = 0;
+    setTimeout(function() { closeBtn.focus(); }, 420);
+    panel.addEventListener('keydown', trapFocus);
+  }
+
+  function closePanel() {
+    panel.classList.remove('is-open');
+    document.body.style.overflow = '';
+    btn.setAttribute('aria-expanded', 'false');
+    panel.removeEventListener('keydown', trapFocus);
+    btn.focus();
+    drawer.addEventListener('transitionend', function hide() {
+      panel.hidden = true;
+      drawer.removeEventListener('transitionend', hide);
+    });
+  }
+
+  btn.addEventListener('click', openPanel);
+  closeBtn.addEventListener('click', closePanel);
+  backdrop.addEventListener('click', closePanel);
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !panel.hidden) closePanel();
+  });
+})();
+</script>
+
+<!-- Scroll-reveal B2–B4 -->
+<script>
+(function() {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Si reduced motion, hacer todo visible de inmediato y salir */
+  if (reduced) {
+    document.querySelectorAll('.sr').forEach(function(el) { el.classList.add('sr-in'); });
+    document.querySelectorAll('[data-count]').forEach(function(el) {
+      var prefix   = el.getAttribute('data-prefix') || '';
+      var suffix   = el.getAttribute('data-suffix') || '';
+      var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+      el.textContent = prefix + parseFloat(el.getAttribute('data-count')).toFixed(decimals) + suffix;
+    });
+    return;
+  }
+
+  function countUp(el) {
+    var target   = parseFloat(el.getAttribute('data-count'));
+    var prefix   = el.getAttribute('data-prefix') || '';
+    var suffix   = el.getAttribute('data-suffix') || '';
+    var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    var duration = 2400;
+    var start    = null;
+    function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+    function step(ts) {
+      if (!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var val = easeOut(progress) * target;
+      el.textContent = prefix + val.toFixed(decimals) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function reveal(el, delay) {
+    setTimeout(function() { el && el.classList.add('sr-in'); }, delay || 0);
+  }
+
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (!entry.isIntersecting) return;
+      var s = entry.target;
+      io.unobserve(s);
+
+      /* B2 — El Espejo */
+      if (s.classList.contains('block-espejo')) {
+        var card    = s.querySelector('.caso-card.sr');
+        var stats   = s.querySelectorAll('.caso-stat.sr');
+        var content = s.querySelector('.espejo-content.sr');
+        var pull    = s.querySelector('.espejo-pull.sr');
+        reveal(card, 0);
+        stats.forEach(function(el, i) { reveal(el, i * 80); });
+        reveal(content, 100);
+        reveal(pull, 300);
+      }
+
+      /* B3 — Primer Capítulo */
+      if (s.classList.contains('block-preludio')) {
+        reveal(s.querySelector('.preludio-content.sr'),  0);
+        reveal(s.querySelector('.preludio-fragment.sr'), 150);
+      }
+
+      /* B4 — La Tesis */
+      if (s.classList.contains('block-revela')) {
+        var intro     = s.querySelector('.revela-intro.sr');
+        var cards     = s.querySelectorAll('.revela-card.sr');
+        var connector = s.querySelector('.revela-connector.sr');
+        reveal(intro, 0);
+        cards.forEach(function(el, i) { reveal(el, 80 + i * 100); });
+        reveal(connector, 80 + cards.length * 100 + 60);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  ['block-espejo', 'block-preludio', 'block-revela'].forEach(function(cls) {
+    var el = document.querySelector('.' + cls);
+    if (el) io.observe(el);
+  });
+})();
+</script>
+
+<!-- Propagación UTM a CTAs de Tally -->
+<script>
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  if (!params.toString()) return;
+  var tallyLinks = document.querySelectorAll('a[href*="tally.so"]');
+  tallyLinks.forEach(function(link) {
+    var url = new URL(link.href);
+    params.forEach(function(value, key) {
+      url.searchParams.set(key, value);
+    });
+    link.href = url.toString();
+  });
+})();
+</script>
+
+</body>
+</html>

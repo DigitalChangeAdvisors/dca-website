@@ -1,0 +1,2329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Return Test — Digital Change Advisors</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ─────────────────────────────────────────────
+   SISTEMA DE DISEÑO DCA 2026
+   ───────────────────────────────────────────── */
+:root {
+  --dca-teal:          #2e8b76;
+  --dca-gold:          #a48111;
+  --dca-carbon:        #1e2a38;
+  --dca-white:         #ffffff;
+  --dca-terracotta:    #c2593f;
+  --dca-platinum:      #dfe3e1;
+  --dca-teal-subtle:   rgba(46,139,118,0.05);
+  --font-display:      'Marcellus', Georgia, serif;
+  --font-body:         'Montserrat', 'Helvetica Neue', sans-serif;
+  --section-padding:   80px;
+  --text-max-width:    720px;
+  --layout-max-width:  1100px;
+}
+
+/* ─── RESET & BASE ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--dca-carbon);
+  background: var(--dca-white);
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+/* ─── TIPOGRAFÍA ─── */
+h1, h2 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+h1 { font-size: clamp(26px, 4vw, 42px); }
+h2 { font-size: clamp(22px, 3vw, 34px); }
+
+p { line-height: 1.6; }
+
+/* Pirámide invertida — líneas display */
+.hero-h1 .line,
+.cta-main-inner h2 .line { display: block; }
+
+/* ─── LAYOUT ─── */
+.container {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.text-column {
+  max-width: var(--text-max-width);
+  margin: 0 auto;
+}
+
+section {
+  padding: 48px 0;
+}
+
+@media (min-width: 768px) {
+  section { padding: var(--section-padding) 0; }
+}
+
+/* ─── SECTION LABEL ─── */
+.section-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--dca-teal);
+  margin-bottom: 10px;
+}
+
+/* ─── BOTÓN CTA PRIMARIO ─── */
+.btn-primary {
+  display: inline-block;
+  background: var(--dca-teal);
+  color: var(--dca-white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 8px;
+  min-height: 52px;
+  padding: 16px 36px;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.18s;
+}
+
+.btn-primary:hover { opacity: 0.88; }
+
+.btn-primary--gold {
+  background: var(--dca-gold);
+  color: var(--dca-white);
+}
+
+/* ─── BOTÓN OUTLINE ─── */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid var(--dca-teal);
+  color: var(--dca-teal);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 8px;
+  min-height: 48px;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+
+.btn-outline:hover {
+  background: var(--dca-teal);
+  color: var(--dca-white);
+}
+
+.btn-outline--white {
+  border-color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.85);
+}
+
+.btn-outline--white:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--dca-white);
+  border-color: var(--dca-white);
+}
+
+/* ─── CTA SUPPORT TEXT ─── */
+.cta-support {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  opacity: 0.70;
+  margin-top: 10px;
+  display: block;
+  text-align: center;
+}
+
+/* ─── TARJETAS ─── */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(30,42,56,0.06);
+  border: 1px solid var(--dca-platinum);
+  background: var(--dca-white);
+  padding: 28px;
+}
+
+/* ─── MOBILE FULL-WIDTH BUTTONS ─── */
+@media (max-width: 767px) {
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════ */
+.site-header {
+  background: var(--dca-white);
+  border-bottom: 1px solid var(--dca-platinum);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+@media (max-width: 767px) {
+  .site-header { position: static; }
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  padding: 0 24px;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  gap: 16px;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.header-logo svg { display: block; }
+
+.header-cta {
+  flex-shrink: 0;
+  background: var(--dca-teal);
+  color: var(--dca-white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 0.18s;
+}
+
+.header-cta:hover { opacity: 0.88; }
+
+/* ═══════════════════════════════════════════
+   BLOQUE 1 — HERO
+   ═══════════════════════════════════════════ */
+.block-hero {
+  background: var(--dca-white);
+  padding: 64px 0 56px;
+}
+
+@media (min-width: 768px) {
+  .block-hero { padding: 96px 0 80px; }
+}
+
+.hero-inner {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .hero-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+}
+
+.hero-content {}
+
+.hero-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--dca-teal);
+  margin-bottom: 16px;
+}
+
+.hero-h1 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.5vw, 32px);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--dca-carbon);
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--dca-teal);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.hero-body {
+  font-size: 15px;
+  color: rgba(30,42,56,0.78);
+  margin-bottom: 0;
+  line-height: 1.7;
+}
+
+.hero-anchor-quote {
+  margin: 20px 0 32px;
+  padding: 16px 20px;
+  border-left: 3px solid var(--dca-gold);
+  background: rgba(164,129,17,0.04);
+  border-radius: 0 6px 6px 0;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--dca-carbon);
+  line-height: 1.55;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hero-visual {
+  position: relative;
+}
+
+.hero-visual-card {
+  background: var(--dca-white);
+  border-radius: 12px;
+  border: 1px solid var(--dca-platinum);
+  box-shadow: 0 8px 32px rgba(30,42,56,0.09);
+  padding: 32px 28px;
+  position: relative;
+}
+
+.hero-visual-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--dca-teal);
+  margin-bottom: 20px;
+}
+
+.iug-gauge {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.iug-number {
+  font-family: var(--font-display);
+  font-size: 56px;
+  color: var(--dca-gold);
+  line-height: 1;
+  display: block;
+}
+
+.iug-label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 12px;
+  color: rgba(30,42,56,0.60);
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  margin-top: 6px;
+}
+
+.obstacles-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.obstacle-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.obstacle-bar-fill {
+  height: 6px;
+  border-radius: 3px;
+  flex: 1;
+}
+
+.obstacle-bar-fill--critical { background: var(--dca-terracotta); width: 75%; }
+.obstacle-bar-fill--emerging { background: var(--dca-gold); width: 45%; }
+.obstacle-bar-fill--capacity { background: var(--dca-teal); width: 60%; }
+
+.obstacle-bar-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(30,42,56,0.55);
+  white-space: nowrap;
+  min-width: 80px;
+}
+
+.hero-visual-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--dca-platinum);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-tag {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(30,42,56,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hero-blur-badge {
+  background: rgba(46,139,118,0.08);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--dca-teal);
+}
+
+/* ═══════════════════════════════════════════
+   BLOQUE 2 — CREDIBILIDAD ARIA (ex B5)
+   ═══════════════════════════════════════════ */
+.block-credibility {
+  background: var(--dca-teal-subtle);
+  border-top: 1px solid rgba(46,139,118,0.12);
+  border-bottom: 1px solid rgba(46,139,118,0.12);
+}
+
+.credibility-intro {
+  max-width: var(--text-max-width);
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.credibility-intro h2 {
+  font-size: clamp(18px, 1.7vw, 22px);
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+.credibility-intro p {
+  font-size: 17px;
+  color: rgba(30,42,56,0.75);
+  line-height: 1.7;
+}
+
+.credibility-intro p + p { margin-top: 12px; }
+
+/* Metrics grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+
+@media (min-width: 768px) {
+  .metrics-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.metric-item {
+  text-align: center;
+  padding: 28px 16px;
+  background: var(--dca-white);
+  border-radius: 10px;
+  border: 1px solid var(--dca-platinum);
+  box-shadow: 0 2px 8px rgba(30,42,56,0.04);
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.metric-item.metric-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.metric-item:nth-child(1) { transition-delay: 0ms; }
+.metric-item:nth-child(2) { transition-delay: 80ms; }
+.metric-item:nth-child(3) { transition-delay: 160ms; }
+.metric-item:nth-child(4) { transition-delay: 240ms; }
+
+.metric-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(30,42,56,0.10), 0 2px 8px rgba(46,139,118,0.07);
+}
+
+.metric-item.metric-in:hover {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .metric-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+.metric-number {
+  font-family: var(--font-display);
+  font-size: 40px;
+  color: var(--dca-gold);
+  line-height: 1;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.metric-label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: rgba(30,42,56,0.55);
+  line-height: 1.3;
+}
+
+.credibility-footer {
+  text-align: center;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.credibility-authorship {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(30,42,56,0.50);
+  margin-bottom: 14px;
+}
+
+.credibility-connector {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--dca-teal);
+  line-height: 1.5;
+  padding: 16px 20px;
+  background: rgba(46,139,118,0.06);
+  border-radius: 8px;
+  border: 1px solid rgba(46,139,118,0.15);
+}
+
+/* ═══════════════════════════════════════════
+   BLOQUE 3 — EL ENTREGABLE
+   ═══════════════════════════════════════════ */
+.block-deliverable {
+  background: var(--dca-white);
+  border-top: 3px solid var(--dca-gold);
+}
+
+.deliverable-inner {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.deliverable-intro {
+  max-width: var(--text-max-width);
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.deliverable-intro h2 { margin-bottom: 24px; }
+
+.deliverable-intro .body-list {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.body-list li {
+  list-style: none;
+  font-size: 16px;
+  color: rgba(30,42,56,0.80);
+  padding-left: 20px;
+  position: relative;
+}
+
+.body-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 2px;
+  background: var(--dca-teal);
+}
+
+/* Timeline */
+.timeline {
+  background: var(--dca-platinum);
+  border-radius: 12px;
+  border: 1px solid rgba(30,42,56,0.08);
+  box-shadow: 0 2px 8px rgba(30,42,56,0.05);
+  padding: 32px;
+  margin: 40px auto;
+  max-width: 680px;
+}
+
+.timeline-title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  color: var(--dca-teal);
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.timeline-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timeline-step {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.timeline-step:not(:last-child) {
+  padding-bottom: 24px;
+}
+
+.timeline-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 40px;
+  bottom: 0;
+  width: 2px;
+  background: var(--dca-platinum);
+}
+
+.timeline-dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--dca-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-dot svg {
+  width: 16px;
+  height: 16px;
+  fill: white;
+}
+
+.timeline-content {}
+
+.timeline-time {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--dca-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.timeline-desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--dca-carbon);
+  line-height: 1.5;
+}
+
+/* Report mockup gallery */
+.mockup-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin: 40px 0 0;
+}
+
+@media (min-width: 600px) {
+  .mockup-gallery { grid-template-columns: repeat(3, 1fr); }
+}
+
+.mockup-card {
+  border-radius: 10px;
+  border: 1px solid var(--dca-platinum);
+  box-shadow: 0 4px 16px rgba(30,42,56,0.07);
+  overflow: hidden;
+  background: var(--dca-white);
+}
+
+.mockup-visual {
+  height: 140px;
+  background: rgba(46,139,118,0.04);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--dca-platinum);
+}
+
+.mockup-visual--gauge {
+  background: rgba(46,139,118,0.04);
+}
+
+.gauge-visual {
+  position: relative;
+  width: 90px;
+  height: 50px;
+}
+
+.gauge-arc {
+  width: 90px;
+  height: 45px;
+  border-radius: 90px 90px 0 0;
+  border: 6px solid;
+  border-bottom: none;
+  border-color: var(--dca-gold);
+  opacity: 0.5;
+}
+
+.gauge-needle {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  height: 32px;
+  background: var(--dca-gold);
+  border-radius: 3px;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(-18deg);
+  opacity: 0.8;
+}
+
+.gauge-value {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--dca-gold);
+  filter: blur(3px);
+}
+
+.heatmap-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 12px;
+  width: 100%;
+}
+
+.heatmap-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.heatmap-bar {
+  height: 10px;
+  border-radius: 3px;
+  flex: 1;
+}
+
+.heatmap-label {
+  font-size: 9px;
+  color: rgba(30,42,56,0.40);
+  filter: blur(1.5px);
+  min-width: 60px;
+  font-family: var(--font-body);
+}
+
+.pdf-visual {
+  padding: 16px;
+  width: 75%;
+}
+
+.pdf-header-bar {
+  height: 12px;
+  background: var(--dca-teal);
+  opacity: 0.25;
+  border-radius: 3px;
+  margin-bottom: 12px;
+}
+
+.pdf-line {
+  height: 6px;
+  background: rgba(30,42,56,0.10);
+  border-radius: 2px;
+  margin-bottom: 6px;
+}
+
+.pdf-line--short { width: 65%; }
+.pdf-line--medium { width: 80%; }
+
+.mockup-caption {
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(30,42,56,0.60);
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════
+   BLOQUE 4 — MARCO DE LOS 10 OBSTÁCULOS (ex B2)
+   ═══════════════════════════════════════════ */
+.block-obstacles {
+  background: var(--dca-teal-subtle);
+  border-top: 3px solid var(--dca-gold);
+}
+
+.block-obstacles .container { max-width: var(--layout-max-width); }
+
+.section-intro {
+  max-width: var(--text-max-width);
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.section-intro h2 { margin-bottom: 20px; }
+
+.section-intro p {
+  font-size: 16px;
+  color: rgba(30,42,56,0.75);
+}
+
+.section-intro p + p { margin-top: 12px; }
+
+.obstacles-withholding {
+  max-width: 640px;
+  margin: 0 auto 40px;
+  padding: 18px 24px;
+  background: rgba(164,129,17,0.04);
+  border-left: 4px solid var(--dca-gold);
+  border-radius: 0 8px 8px 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(30,42,56,0.75);
+  line-height: 1.55;
+  text-align: left;
+}
+
+/* Obstacles grid */
+.obstacles-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 0;
+}
+
+@media (min-width: 600px) {
+  .obstacles-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.obstacle-group-label {
+  grid-column: 1 / -1;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  padding-left: 16px;
+}
+
+.obstacle-group-label--critical { color: var(--dca-terracotta); }
+.obstacle-group-label--emerging  { color: var(--dca-gold); }
+.obstacle-group-label--latent    { color: var(--dca-teal); }
+
+.obstacle-item {
+  border-radius: 8px;
+  background: var(--dca-white);
+  border: 1px solid var(--dca-platinum);
+  box-shadow: 0 2px 6px rgba(30,42,56,0.04);
+  padding: 14px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border-left-width: 4px;
+  border-left-style: solid;
+}
+
+.obstacle-item--critical { border-left-color: var(--dca-terracotta); }
+.obstacle-item--emerging  { border-left-color: var(--dca-gold); }
+.obstacle-item--latent    { border-left-color: var(--dca-teal); }
+
+.obstacle-num {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 12px;
+  color: rgba(30,42,56,0.35);
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: color 0.2s ease;
+}
+.obstacle-item--critical:hover .obstacle-num { color: var(--dca-terracotta); }
+.obstacle-item--emerging:hover  .obstacle-num { color: var(--dca-gold); }
+.obstacle-item--latent:hover    .obstacle-num { color: var(--dca-teal); }
+@media (prefers-reduced-motion: reduce) {
+  .obstacle-num { transition: none; }
+}
+
+.obstacle-name {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--dca-carbon);
+  line-height: 1.4;
+}
+
+/* ═══════════════════════════════════════════
+   BLOQUE 5 — MECÁNICA DEL TEST (ex B4)
+   ═══════════════════════════════════════════ */
+.block-mechanics {
+  background: var(--dca-white);
+  border-top: 1px solid var(--dca-platinum);
+}
+
+.mechanics-inner {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+@media (min-width: 768px) {
+  .mechanics-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+}
+
+.mechanics-content h2 { margin-bottom: 24px; font-size: clamp(17px, 2vw, 24px); }
+
+.mechanics-body {
+  font-size: 16px;
+  color: rgba(30,42,56,0.78);
+  line-height: 1.7;
+}
+
+.mechanics-body p + p { margin-top: 14px; }
+
+.pull-quote {
+  margin-top: 32px;
+  padding: 20px 24px;
+  border-left: 4px solid var(--dca-gold);
+  background: rgba(164,129,17,0.04);
+  border-radius: 0 8px 8px 0;
+}
+
+.pull-quote p {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--dca-carbon);
+  line-height: 1.55;
+}
+
+.mechanics-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mechanic-stat {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  border-radius: 10px;
+  background: var(--dca-white);
+  border: 1px solid var(--dca-platinum);
+  box-shadow: 0 2px 6px rgba(30,42,56,0.04);
+}
+
+.mechanic-number {
+  font-family: var(--font-display);
+  font-size: 36px;
+  color: var(--dca-teal);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 64px;
+}
+
+.mechanic-desc {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: rgba(30,42,56,0.70);
+  line-height: 1.4;
+}
+
+.mechanic-desc strong {
+  font-weight: 600;
+  color: var(--dca-carbon);
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* ═══════════════════════════════════════════
+   BLOQUE 6 — QUOTE DE CIERRE + CTA
+   Fondo: blanco · Borde oro arriba
+   ═══════════════════════════════════════════ */
+.block-ceo-quote {
+  background: var(--dca-carbon);
+  border-top: 3px solid var(--dca-gold);
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.ceo-quote-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.ceo-quote-mark {
+  font-family: var(--font-display);
+  font-size: 72px;
+  color: var(--dca-gold);
+  line-height: 0.6;
+  display: block;
+  margin-bottom: 20px;
+  opacity: 0.65;
+}
+
+.ceo-quote-text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(18px, 2vw, 24px);
+  color: var(--dca-white);
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+.ceo-quote-attr {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.03em;
+  margin-bottom: 44px;
+}
+
+.ceo-quote-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.ceo-quote-note {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.02em;
+}
+
+/* ═══════════════════════════════════════════
+   BLOQUE 7 — TESTIMONIALES (ex B6)
+   ═══════════════════════════════════════════ */
+.block-testimonials {
+  background: var(--dca-teal-subtle);
+  border-top: 3px solid var(--dca-gold);
+}
+
+.testimonials-intro {
+  max-width: var(--text-max-width);
+  margin: 0 auto 16px;
+  text-align: center;
+}
+
+.testimonials-intro h2 { margin-bottom: 16px; }
+
+.testimonials-subtext {
+  font-size: 14px;
+  color: rgba(30,42,56,0.55);
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 0;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonials-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+.testimonial-card {
+  border-radius: 10px;
+  border: 1px solid var(--dca-platinum);
+  border-left: 4px solid var(--dca-gold);
+  box-shadow: 0 2px 10px rgba(30,42,56,0.06);
+  background: var(--dca-white);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-quote-mark {
+  font-family: var(--font-display);
+  font-size: 48px;
+  color: var(--dca-teal);
+  opacity: 0.25;
+  line-height: 0.8;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.testimonial-text {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 15px;
+  color: rgba(30,42,56,0.85);
+  line-height: 1.7;
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+.testimonial-text .highlight {
+  font-weight: 600;
+  color: var(--dca-teal);
+}
+
+.testimonial-divider {
+  height: 1px;
+  background: var(--dca-platinum);
+  margin-bottom: 20px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.testimonial-photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid var(--dca-gold);
+  box-shadow: 0 0 0 3px rgba(164,129,17,0.12);
+}
+
+.testimonial-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.testimonial-info {}
+
+.testimonial-name {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--dca-carbon);
+  margin-bottom: 2px;
+}
+
+.testimonial-role {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(30,42,56,0.55);
+}
+
+.testimonial-sector {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 11px;
+  color: rgba(30,42,56,0.38);
+  margin-top: 2px;
+}
+
+/* ═══════════════════════════════════════════
+   BLOQUE 8 — PARA QUIÉN ES / NO ES (NUEVO)
+   ═══════════════════════════════════════════ */
+.block-for-whom {
+  background: var(--dca-white);
+  border-top: 3px solid var(--dca-gold);
+}
+
+.for-whom-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 32px;
+}
+
+.for-whom-header h2 { margin-bottom: 12px; }
+
+.for-whom-header p {
+  font-size: 15px;
+  color: rgba(30,42,56,0.60);
+}
+
+.for-whom-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .for-whom-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.for-whom-col {
+  border-radius: 10px;
+  padding: 32px;
+}
+
+.for-whom-col--yes {
+  background: rgba(46,139,118,0.05);
+  border: 1px solid rgba(46,139,118,0.18);
+  border-left: 4px solid var(--dca-teal);
+}
+
+.for-whom-col--no {
+  background: rgba(194,89,63,0.03);
+  border: 1px solid rgba(194,89,63,0.12);
+  border-left: 4px solid rgba(194,89,63,0.35);
+}
+
+.for-whom-col-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 20px;
+}
+
+.for-whom-col--yes .for-whom-col-label { color: var(--dca-teal); }
+.for-whom-col--no  .for-whom-col-label { color: var(--dca-terracotta); }
+
+.for-whom-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.for-whom-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: rgba(30,42,56,0.80);
+  line-height: 1.5;
+}
+
+.for-whom-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.for-whom-icon--yes { background: rgba(46,139,118,0.12); }
+.for-whom-icon--no  { background: rgba(194,89,63,0.10); }
+
+.for-whom-icon svg {
+  width: 11px;
+  height: 11px;
+}
+
+/* ═══════════════════════════════════════════
+   BLOQUE 9 — DIFERENCIACIÓN VS. VENDORS (NUEVO)
+   ═══════════════════════════════════════════ */
+.block-differentiation {
+  background: #f3f3f3;
+  border-top: 3px solid var(--dca-gold);
+}
+
+.diff-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px;
+}
+
+.diff-header h2 { margin-bottom: 14px; }
+
+.diff-header p {
+  font-size: 15px;
+  color: rgba(30,42,56,0.65);
+  line-height: 1.6;
+}
+
+.diff-table-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+
+.diff-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--dca-white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(30,42,56,0.06);
+}
+
+.diff-table thead tr th {
+  padding: 18px 24px;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.diff-table thead tr th:first-child {
+  background: #f3f3f3;
+  color: rgba(30,42,56,0.55);
+  border-right: 1px solid var(--dca-platinum);
+  width: 48%;
+}
+
+.diff-table thead tr th:last-child {
+  background: var(--dca-teal);
+  color: var(--dca-white);
+  border-left: 3px solid var(--dca-gold);
+}
+
+.diff-table tbody tr:not(:last-child) td {
+  border-bottom: 1px solid var(--dca-platinum);
+}
+
+.diff-table tbody tr td {
+  padding: 18px 24px;
+  font-size: 14px;
+  line-height: 1.55;
+  vertical-align: top;
+}
+
+.diff-table tbody tr td:first-child {
+  color: rgba(30,42,56,0.55);
+  background: rgba(0,0,0,0.01);
+  border-right: 1px solid var(--dca-platinum);
+}
+
+.diff-table tbody tr td:last-child {
+  color: var(--dca-carbon);
+  font-weight: 500;
+  border-left: 3px solid var(--dca-gold);
+}
+
+.diff-closing {
+  text-align: center;
+  max-width: 600px;
+  margin: 36px auto 0;
+  font-size: 14px;
+  color: rgba(30,42,56,0.60);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.diff-closing strong {
+  color: var(--dca-carbon);
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════
+   BLOQUE 10 — CTA PRINCIPAL (único fondo carbón)
+   ═══════════════════════════════════════════ */
+.block-cta-main {
+  background: var(--dca-teal);
+  text-align: center;
+}
+
+.cta-main-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.cta-main-inner h2 {
+  color: var(--dca-white);
+  margin-bottom: 20px;
+  font-size: clamp(22px, 2.8vw, 34px);
+}
+
+.cta-main-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.cta-main-cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta-support--dark {
+  color: rgba(255,255,255,0.55);
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+.site-footer {
+  background: var(--dca-carbon);
+  color: rgba(255,255,255,0.75);
+}
+
+.footer-connectors {
+  background: #f3f3f3;
+  border-bottom: 1px solid rgba(30,42,56,0.08);
+  padding: 56px 0;
+}
+
+.footer-connectors-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+  .footer-connectors-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.footer-connector {
+  padding: 28px;
+  border: 1px solid rgba(30,42,56,0.10);
+  border-radius: 10px;
+  background: var(--dca-white);
+}
+
+.footer-connector--primary {
+  border-color: rgba(46,139,118,0.25);
+  border-left: 3px solid var(--dca-teal);
+}
+
+.footer-connector-sublabel {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--dca-teal);
+  margin-bottom: 12px;
+}
+
+.footer-connector h3 {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--dca-carbon);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.footer-brand {
+  padding: 48px 24px;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .footer-brand {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+.footer-logo-area {}
+
+.footer-logo { display: block; margin-bottom: 14px; }
+.footer-logo svg { display: block; }
+
+.footer-tagline {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 0;
+}
+
+.footer-legal {
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  .footer-legal { text-align: left; }
+}
+
+.footer-legal p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.30);
+  line-height: 1.7;
+}
+
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════
+   UTILIDADES
+   ═══════════════════════════════════════════ */
+.text-center { text-align: center; }
+
+.mt-8  { margin-top: 8px; }
+.mt-12 { margin-top: 12px; }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+.mt-32 { margin-top: 32px; }
+.mt-40 { margin-top: 40px; }
+.mt-48 { margin-top: 48px; }
+.mb-8  { margin-bottom: 8px; }
+.mb-16 { margin-bottom: 16px; }
+.mb-24 { margin-bottom: 24px; }
+.mb-32 { margin-bottom: 32px; }
+
+.section-accent {
+  width: 40px;
+  height: 3px;
+  background: var(--dca-gold);
+  border-radius: 2px;
+  margin: 16px auto 0;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+     ═══════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+
+    <a href="https://digitalchangeadvisors.com" target="_blank" rel="noopener" class="header-logo" aria-label="Digital Change Advisors — ReturnAI">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -8 400 88" width="220" height="48" aria-hidden="true" focusable="false">
+        <line x1="3" y1="73" x2="73" y2="73" stroke="#e4e4e4" stroke-width="1"/>
+        <path d="M 8 68 C 22 14, 55 8, 68 8" fill="none" stroke="#2e8b76" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="8" cy="68" r="5" fill="#2e8b76"/>
+        <circle cx="68" cy="8" r="12" fill="#a48111"/>
+        <line x1="90" y1="14" x2="90" y2="64" stroke="#1e2a38" stroke-width="1" opacity="0.12"/>
+        <text x="106" y="55" font-family="'Marcellus', Georgia, serif" font-weight="400" font-size="44" fill="#2e8b76" letter-spacing="-0.5">DCA</text>
+        <text x="109" y="70" font-family="'Montserrat', Helvetica, sans-serif" font-weight="600" font-size="10.5" fill="#1e2a38" opacity="0.80" letter-spacing="2.6">DIGITAL CHANGE ADVISORS</text>
+      </svg>
+    </a>
+
+    <a href="https://tally.so/r/Np6e5W" target="_blank" rel="noopener" class="header-cta">Iniciar mi diagnóstico</a>
+
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════════
+     BLOQUE 1 · HERO
+     ═══════════════════════════════════════════ -->
+<section class="block-hero" id="inicio">
+  <div class="hero-inner">
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">AI Return Test</p>
+
+      <h1 class="hero-h1">
+        <span class="line">Cuantifica el retorno perdido</span>
+        <span class="line">de tu inversión en IA.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Tu Índice de Urgencia Global, tu mapa de obstáculos y tu arquetipo de resultado — en 25 minutos.
+      </p>
+
+      <div class="hero-body">
+        <p>Lo que el AI Return Test entrega no es un reporte genérico: es el instrumento de diagnóstico con la profundidad que tu próxima reunión de Junta requiere.</p>
+      </div>
+
+      <div class="hero-anchor-quote">
+        El equivalente a una sesión de diagnóstico con un consultor senior del Modelo ARIA. Completas el test en 25 minutos. Tu reporte llega en 5.
+      </div>
+
+      <div class="hero-cta-group">
+        <a href="https://tally.so/r/Np6e5W" target="_blank" rel="noopener" class="btn-primary">Iniciar mi diagnóstico</a>
+        <span class="cta-support">Resultado inmediato · 25 minutos · Confidencial</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-visual-card">
+        <p class="hero-visual-label">Vista previa · Tu reporte ejecutivo</p>
+        <img
+          src="images/art-reporte-mockup.png"
+          alt="Muestra del reporte ejecutivo AI Return Test — Índice de Urgencia Global, mapa de calor de obstáculos y arquetipo de resultado"
+          width="1000"
+          height="1200"
+          loading="eager"
+          style="width:100%;height:auto;aspect-ratio:5/6;border-radius:8px;display:block;"
+        >
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     BLOQUE 2 · CREDIBILIDAD DEL MARCO — ARIA
+     Fondo: teal-subtle · Posición: autoridad intelectual
+     ═══════════════════════════════════════════ -->
+<section class="block-credibility">
+  <div class="container">
+
+    <div class="credibility-intro">
+      <p class="section-label">El Modelo ARIA</p>
+      <h2>14 herramientas propietarias. 70% de incorporación sostenida al flujo de trabajo. ROI documentado en 120 días. Con garantía contractual de resultado.</h2>
+      <div class="section-accent"></div>
+
+      <div style="margin-top:28px;">
+        <p>ARIA — Aceleración del Retorno de la Inteligencia Artificial. La metodología identifica los obstáculos que impiden que tu inversión en IA llegue al P&L, interviene en el orden correcto y transfiere el método a un equipo interno para sostener los resultados más allá de la intervención.</p>
+        <p style="margin-top:14px;">Lo que hace posible la garantía: el <strong>Vector de Fricción Estratégica</strong> mapea cómo los obstáculos se amplifican entre sí cuando operan sin intervención — y determina el orden exacto de diagnóstico que ningún vendor de software ejecuta.</p>
+      </div>
+    </div>
+
+    <div class="metrics-grid">
+
+      <div class="metric-item">
+        <span class="metric-number" data-count="14" data-suffix="">14</span>
+        <span class="metric-label">Herramientas del Modelo ARIA</span>
+      </div>
+
+      <div class="metric-item">
+        <span class="metric-number" data-count="70" data-suffix="+">70+</span>
+        <span class="metric-label">Empresas clientes Latam</span>
+      </div>
+
+      <div class="metric-item">
+        <span class="metric-number" data-count="250" data-suffix="+">250+</span>
+        <span class="metric-label">Líderes en la Comunidad LARIA</span>
+      </div>
+
+      <div class="metric-item">
+        <span class="metric-number" data-count="120" data-suffix="">120</span>
+        <span class="metric-label">Días para ROI documentado</span>
+      </div>
+
+    </div>
+
+    <div class="credibility-footer">
+      <p class="credibility-authorship">Digital Change Advisors, LLC. · Sheridan, Wyoming, EE.UU.</p>
+      <p class="credibility-connector">El AI Return Test establece la línea base del Modelo ARIA — el diagnóstico que fija el punto de partida y con el que se audita el retorno al cierre de cada intervención.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     BLOQUE 3 · EL ENTREGABLE
+     Fondo: teal-subtle · Separado por línea oro
+     ═══════════════════════════════════════════ -->
+<section class="block-deliverable">
+  <div class="deliverable-inner">
+
+    <div class="deliverable-intro">
+      <p class="section-label">Lo que recibes</p>
+      <h2>Tu diagnóstico ejecutivo completo en 5 minutos — con el número que llevarás a tu próxima reunión de Junta.</h2>
+      <div class="section-accent"></div>
+
+      <div style="margin-top:28px;">
+        <ul class="body-list">
+          <li>Tu <strong>IUG — Índice de Urgencia Global</strong>: tu visión de la empresa, calculado sobre tus respuestas reales, que cuantifica el riesgo financiero de los obstáculos activos en tu organización hoy.</li>
+          <li>Tu <strong>arquetipo de resultado</strong> y los 3 obstáculos críticos que lo sostienen — cada uno analizado en tres dimensiones: su significado operativo, por qué bloquea el ROI de tu IA, y qué lo convierte en un desafío estratégico no resoluble con más capacitación.</li>
+          <li>El <strong>costo financiero de la inacción</strong>: estimado para tu industria y para el tamaño de tu organización. No es un análisis genérico, es el número que cambia el frame de la conversación con tu equipo directivo.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <p class="timeline-title">Lo que pasa después de enviar tus respuestas</p>
+      <div class="timeline-steps">
+
+        <div class="timeline-step">
+          <div class="timeline-dot">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+          </div>
+          <div class="timeline-content">
+            <p class="timeline-time">Segundo 10</p>
+            <p class="timeline-desc">Tu <strong>IUG en pantalla</strong>: el score, el arquetipo de rentabilización y el mapa de calor de tus 10 obstáculos.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-dot">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div class="timeline-content">
+            <p class="timeline-time">Minuto 5</p>
+            <p class="timeline-desc">Tu <strong>reporte en PDF de 10 páginas</strong> en tu correo: análisis sectorial, vectores de fricción estratégica y la hoja de ruta de lo que puedes cambiar hoy.</p>
+          </div>
+        </div>
+
+        <div class="timeline-step">
+          <div class="timeline-dot" style="background: var(--dca-gold);">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <div class="timeline-content">
+            <p class="timeline-time" style="color:var(--dca-teal);">Acceso incluido</p>
+            <p class="timeline-desc">La <strong>página personalizada de tu arquetipo</strong> con el video de análisis en profundidad del patrón que está bloqueando el retorno de tu IA.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mockup-gallery">
+
+      <div class="mockup-card">
+        <div class="mockup-visual mockup-visual--img">
+          <img src="images/art-mockup-iug.png" alt="Tu Índice de Urgencia Global — gauge con score personalizado" width="680" height="280" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <p class="mockup-caption">Tu Índice de Urgencia Global</p>
+      </div>
+
+      <div class="mockup-card">
+        <div class="mockup-visual mockup-visual--img">
+          <img src="images/art-mockup-heatmap.png" alt="Tu mapa de calor de obstáculos — críticos, emergentes y latentes" width="680" height="280" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <p class="mockup-caption">Tu mapa de calor — críticos, emergentes y latentes</p>
+      </div>
+
+      <div class="mockup-card">
+        <div class="mockup-visual mockup-visual--img">
+          <img src="images/art-mockup-report.png" alt="Tu reporte ejecutivo personalizado por industria — 10 páginas PDF" width="680" height="280" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <p class="mockup-caption">Tu reporte ejecutivo personalizado por industria</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     BLOQUE 4 · MARCO DE LOS 10 OBSTÁCULOS (ex B2)
+     Fondo: blanco · Separado por línea oro
+     ═══════════════════════════════════════════ -->
+<section class="block-obstacles">
+  <div class="container">
+
+    <div class="section-intro">
+      <p class="section-label">El sistema de diagnóstico</p>
+      <h2>10 obstáculos en 3 dimensiones. Estratégicos, organizacionales y psicológicos — el instrumento revela cuáles de los tres están activos en tu organización hoy.</h2>
+      <div class="section-accent"></div>
+      <div style="margin-top:24px;">
+        <p>De los 10 obstáculos identificados en la investigación aplicada con más de 70 organizaciones, el diagnóstico revela cuáles están activos en tu empresa, con qué intensidad y en qué orden conviene intervenirlos.</p>
+      </div>
+    </div>
+
+    <!-- Withholding note — abre la sección para activar curiosity gap -->
+    <div class="obstacles-withholding">
+      Los análisis, puntajes y diagnóstico de cada obstáculo se revelan en tu reporte personalizado — no antes. Lo que ves aquí es el mapa de lo que el instrumento mide.
+    </div>
+
+    <div class="obstacles-grid">
+
+      <div class="obstacle-group-label obstacle-group-label--critical" style="grid-column: 1 / -1;">
+        Obstáculos Estratégicos — dirección e inversión
+      </div>
+
+      <div class="obstacle-item obstacle-item--critical">
+        <span class="obstacle-num">01</span>
+        <span class="obstacle-name">Falta de Claridad en la Contribución de Valor</span>
+      </div>
+      <div class="obstacle-item obstacle-item--critical">
+        <span class="obstacle-num">02</span>
+        <span class="obstacle-name">Fricción de Governance</span>
+      </div>
+      <div class="obstacle-item obstacle-item--critical">
+        <span class="obstacle-num">03</span>
+        <span class="obstacle-name">Desalineación en Políticas de Talento</span>
+      </div>
+
+      <div class="obstacle-group-label obstacle-group-label--emerging" style="grid-column: 1 / -1;">
+        Obstáculos Organizacionales — estructura y cultura
+      </div>
+
+      <div class="obstacle-item obstacle-item--emerging">
+        <span class="obstacle-num">04</span>
+        <span class="obstacle-name">Silos Culturales</span>
+      </div>
+      <div class="obstacle-item obstacle-item--emerging">
+        <span class="obstacle-num">05</span>
+        <span class="obstacle-name">Brecha Generacional</span>
+      </div>
+      <div class="obstacle-item obstacle-item--emerging">
+        <span class="obstacle-num">06</span>
+        <span class="obstacle-name">Liderazgo Desconectado</span>
+      </div>
+
+      <div class="obstacle-group-label obstacle-group-label--latent" style="grid-column: 1 / -1;">
+        Obstáculos Psicológicos — creencias y comportamiento
+      </div>
+
+      <div class="obstacle-item obstacle-item--latent">
+        <span class="obstacle-num">07</span>
+        <span class="obstacle-name">Creencias Limitantes</span>
+      </div>
+      <div class="obstacle-item obstacle-item--latent">
+        <span class="obstacle-num">08</span>
+        <span class="obstacle-name">Síndrome del Impostor Digital</span>
+      </div>
+      <div class="obstacle-item obstacle-item--latent">
+        <span class="obstacle-num">09</span>
+        <span class="obstacle-name">Capacitación sin Impacto</span>
+      </div>
+      <div class="obstacle-item obstacle-item--latent">
+        <span class="obstacle-num">10</span>
+        <span class="obstacle-name">Miedo al Desplazamiento</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     BLOQUE 5 · MECÁNICA DEL TEST (ex B4)
+     ═══════════════════════════════════════════ -->
+<section class="block-mechanics">
+  <div class="mechanics-inner">
+
+    <div class="mechanics-content">
+      <p class="section-label">El instrumento</p>
+      <h2>El AI Return Test no mide tu conocimiento sobre IA. Identifica cuáles de los 10 obstáculos están activos en tu organización — y calcula el costo financiero de cada semana sin intervención.</h2>
+
+      <div class="mechanics-body mt-24">
+        <p>Este test no es para curiosos. Está diseñado para aquel ejecutivo que necesita llevar un número a su próxima reunión de Junta — y ese número no puede ser una estimación genérica.</p>
+        <p>Las respuestas reflejan tu lectura del estado real de la organización. No hay datos delegables a tu equipo.</p>
+      </div>
+
+      <div class="pull-quote">
+        <p>El equivalente a una sesión de diagnóstico con un consultor senior: un IUG, el mapa de tus obstáculos, un arquetipo de rentabilización y el costo financiero parametrizado para tu industria. En 5 minutos, en tu correo.</p>
+      </div>
+    </div>
+
+    <div class="mechanics-visual">
+
+      <div class="mechanic-stat">
+        <div class="mechanic-number">25′</div>
+        <div class="mechanic-desc">
+          <strong>Tiempo de aplicación</strong>
+          El tiempo exacto que toma el diagnóstico completo
+        </div>
+      </div>
+
+      <div class="mechanic-stat">
+        <div class="mechanic-number">10</div>
+        <div class="mechanic-desc">
+          <strong>Obstáculos diagnosticados</strong>
+          Los obstáculos que impiden el retorno de la IA, clasificados por severidad en tu empresa
+        </div>
+      </div>
+
+      <div class="mechanic-stat">
+        <div class="mechanic-number">7</div>
+        <div class="mechanic-desc">
+          <strong>Arquetipos de rentabilización</strong>
+          Tu diagnóstico te clasifica en uno de 7 perfiles con patrón de intervención específico
+        </div>
+      </div>
+
+      <div class="mechanic-stat">
+        <div class="mechanic-number">5′</div>
+        <div class="mechanic-desc">
+          <strong>Tiempo al reporte</strong>
+          Tu diagnóstico personalizado de 10 páginas llega a tu correo en 5 minutos
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     BLOQUE 6 · QUOTE DE CIERRE + CTA
+     Fondo: blanco · Borde oro arriba
+     ═══════════════════════════════════════════ -->
+<section class="block-ceo-quote">
+  <div class="ceo-quote-inner">
+    <span class="ceo-quote-mark">&ldquo;</span>
+    <p class="ceo-quote-text">Lo que más me sorprende no es cuántas organizaciones tienen obstáculos activos. Es cuántas ya lo intuían — y cuánto tiempo transcurrió sin el número preciso para poder actuar.</p>
+    <p class="ceo-quote-attr">César Lozano · CEO · Digital Change Advisors</p>
+    <div class="ceo-quote-cta">
+      <a href="https://tally.so/r/Np6e5W" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Iniciar mi diagnóstico →</a>
+      <span class="ceo-quote-note">Resultado inmediato · 25 minutos · Sin compromiso</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     BLOQUE 7 · TESTIMONIALES (ex B6)
+     Rectangular + border-radius 8px · Fondo blanco
+     ═══════════════════════════════════════════ -->
+<section class="block-testimonials">
+  <div class="container">
+
+    <div class="testimonials-intro">
+      <p class="section-label">Validación de campo</p>
+      <h2>Lo que el diagnóstico reveló en sus organizaciones</h2>
+      <div class="section-accent"></div>
+    </div>
+
+    <div class="testimonials-grid">
+
+      <!-- Tarjeta 1 — Rubén Darío Cañas / Subocol (más largo, featured) -->
+      <div class="testimonial-card testimonial-card--featured">
+        <span class="testimonial-quote-mark">"</span>
+        <p class="testimonial-text">
+          Cuando Digital Change Advisors ejecutó con nosotros el diagnóstico, descubrimos una paradoja incómoda: vendíamos certeza con la IA hacia afuera, mientras vivíamos incertidumbre con la IA hacia adentro. Nuestro Índice de Urgencia Global resultó ser <span class="highlight">48.4 — zona amarilla</span>. Lo que más valoré fue la objetividad. No fue una opinión consultiva, fue data: obstáculos sistémicos cuantificados y un diagnóstico honesto basado en evidencia.
+        </p>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-author">
+          <div class="testimonial-photo">
+            <img src="images/art-photo-ruben-canas.png" alt="Rubén Darío Cañas A." loading="lazy">
+          </div>
+          <div class="testimonial-info">
+            <p class="testimonial-name">Rubén Darío Cañas A.</p>
+            <p class="testimonial-role">CEO · Subocol - Grupo SURA</p>
+            <p class="testimonial-sector">Gestión de siniestros de movilidad</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2 — Julián Hurtado / Susuerte (segundo más largo) -->
+      <div class="testimonial-card">
+        <span class="testimonial-quote-mark">"</span>
+        <p class="testimonial-text">
+          El reporte reflejaba con <span class="highlight">precisión quirúrgica</span> lo que estábamos viviendo en Susuerte. No era un reporte genérico: era un espejo de nuestra realidad.<br><br>Lo que más valoré fue que el diagnóstico no comenzó con una propuesta comercial — comenzó con una lectura honesta de nuestra situación.<br><br>Eso, en el mundo de la consultoría, no es frecuente.
+        </p>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-author">
+          <div class="testimonial-photo">
+            <img src="images/art-photo-julian-hurtado.png" alt="Julián Hurtado" loading="lazy">
+          </div>
+          <div class="testimonial-info">
+            <p class="testimonial-name">Julián Hurtado</p>
+            <p class="testimonial-role">CEO · Susuerte S.A.</p>
+            <p class="testimonial-sector">Apuestas y servicios financieros</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3 — Diego Parra / SUMMA — Grupo Argos (más corto) -->
+      <div class="testimonial-card">
+        <span class="testimonial-quote-mark">"</span>
+        <p class="testimonial-text">
+          El AI Return Test nos permitió articular con datos lo que ya intuíamos:<br><br>Los obstáculos críticos no estaban en la tecnología, sino en la forma en que los equipos la interpretaban.<br><br>El diagnóstico fue <span class="highlight">inmediatamente accionable</span> y tuvo respaldo directo de la dirección para iniciar la intervención.
+        </p>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-author">
+          <div class="testimonial-photo">
+            <img src="images/art-photo-diego-parra.png" alt="Diego Parra" loading="lazy">
+          </div>
+          <div class="testimonial-info">
+            <p class="testimonial-name">Diego Parra</p>
+            <p class="testimonial-role">CIO · SUMMA - Grupo Argos</p>
+            <p class="testimonial-sector">Servicios Compartidos Integrados</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="testimonials-subtext">Los testimoniales corresponden a líderes que aplicaron el diagnóstico en sus organizaciones durante la fase de validación del instrumento. Sus nombres, cargos y empresas son verificables públicamente.</p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     BLOQUE 8 · PARA QUIÉN ES / PARA QUIÉN NO ES (NUEVO)
+     Fondo: blanco · Calificación bidireccional
+     ═══════════════════════════════════════════ -->
+<section class="block-for-whom">
+  <div class="container">
+
+    <div class="for-whom-header">
+      <p class="section-label">Calificación</p>
+      <h2>El AI Return Test no es para todos</h2>
+      <p>El diagnóstico tiene más valor cuando se aplica a quien lo puede convertir en acción.</p>
+    </div>
+
+    <div class="for-whom-grid">
+
+      <div class="for-whom-col for-whom-col--yes">
+        <p class="for-whom-col-label">Para quién es</p>
+        <div class="for-whom-list">
+
+          <div class="for-whom-item">
+            <div class="for-whom-icon for-whom-icon--yes">
+              <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 6L5 9L10 3" stroke="#2e8b76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span>Directivo C-Level con inversión activa en IA que aún no produce retorno documentable ante tu Junta</span>
+          </div>
+
+          <div class="for-whom-item">
+            <div class="for-whom-icon for-whom-icon--yes">
+              <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 6L5 9L10 3" stroke="#2e8b76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span>Ejecutivo con una reunión de Junta en el horizonte que necesita un número, no una narrativa</span>
+          </div>
+
+          <div class="for-whom-item">
+            <div class="for-whom-icon for-whom-icon--yes">
+              <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 6L5 9L10 3" stroke="#2e8b76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span>Tu piloto de IA funciona técnicamente — y los KPIs del negocio no lo reflejan</span>
+          </div>
+
+          <div class="for-whom-item">
+            <div class="for-whom-icon for-whom-icon--yes">
+              <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 6L5 9L10 3" stroke="#2e8b76" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span>Quieres saber cuánto retorno está represado antes de la próxima decisión de inversión</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="for-whom-col for-whom-col--no">
+        <p class="for-whom-col-label">Para quién no es</p>
+        <div class="for-whom-list">
+
+          <div class="for-whom-item">
+            <div class="for-whom-icon for-whom-icon--no">
+              <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 3L9 9M9 3L3 9" stroke="#c2593f" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span>Organizaciones sin inversión activa en IA en los últimos 12 meses</span>
+          </div>
+
+          <div class="for-whom-item">
+            <div class="for-whom-icon for-whom-icon--no">
+              <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 3L9 9M9 3L3 9" stroke="#c2593f" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span>Quienes buscan capacitación técnica en herramientas de IA — el AI Return Test mide retorno, no habilidades</span>
+          </div>
+
+          <div class="for-whom-item">
+            <div class="for-whom-icon for-whom-icon--no">
+              <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 3L9 9M9 3L3 9" stroke="#c2593f" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span>Startups en etapa pre-revenue o sin inversión formal en IA</span>
+          </div>
+
+          <div class="for-whom-item">
+            <div class="for-whom-icon for-whom-icon--no">
+              <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 3L9 9M9 3L3 9" stroke="#c2593f" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span>Directivos que ya tienen el ROI de su inversión en IA documentado y verificable ante la Junta</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     BLOQUE 9 · DIFERENCIACIÓN VS. VENDORS (NUEVO)
+     Fondo: platino #f3f3f3 · Borde oro arriba
+     ═══════════════════════════════════════════ -->
+<section class="block-differentiation">
+  <div class="container">
+
+    <div class="diff-header">
+      <p class="section-label">Diferenciación</p>
+      <h2>El vendor ya te instaló la IA. El AI Return Test mide por qué todavía no te produce retorno.</h2>
+      <p>Este test no compite con tus soluciones de IA, diagnostica los 10 obstáculos que impiden que esa plataforma genere el retorno que tú le prometiste a la Junta.</p>
+    </div>
+
+    <div class="diff-table-wrap">
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th>Lo que el vendor entrega</th>
+            <th>Lo que el AI Return Test revela</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Métricas de uso: logins, licencias activas, consumo de tokens</td>
+            <td>Cuáles de los 10 obstáculos organizacionales están bloqueando el retorno — y con qué intensidad</td>
+          </tr>
+          <tr>
+            <td>Playbook estándar de change management y capacitación técnica en la plataforma</td>
+            <td>Tu arquetipo de rentabilización entre 7 posibles, con la ruta de captura de valor calibrada a tu organización</td>
+          </tr>
+          <tr>
+            <td>Reporte de adopción de la plataforma por equipo o departamento</td>
+            <td>Tu Índice de Urgencia Global (IUG) — el número que llevarás a tu próxima reunión de Junta</td>
+          </tr>
+          <tr>
+            <td>Acompañamiento durante la implementación técnica y despliegue de pilotos</td>
+            <td>El costo financiero de la inacción, estimado por industria y tamaño de tu empresa</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="diff-closing">
+      <strong>El AI Return Test no reemplaza a tu vendor.</strong> Diagnostica lo que el vendor no puede medir: los obstáculos humanos y organizacionales que impiden que la inversión que ya hiciste llegue al P&L.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     BLOQUE 10 · CTA PRINCIPAL
+     ÚNICO BLOQUE CON FONDO CARBÓN — BOTÓN DORADO
+     ═══════════════════════════════════════════ -->
+<section class="block-cta-main" id="iniciar">
+  <div class="cta-main-inner">
+
+    <p class="section-label" style="color: rgba(255,255,255,0.45);">Tu próximo paso</p>
+
+    <h2>
+      <span class="line">Diagnóstico ejecutivo — 25 minutos.</span>
+      <span class="line">El número para tu próxima Junta.</span>
+    </h2>
+
+    <div class="cta-main-body">
+      <p>Tu diagnóstico es confidencial. Tu reporte llega en 5 minutos.</p>
+    </div>
+
+    <div class="cta-main-cta-group">
+      <a href="https://tally.so/r/Np6e5W" target="_blank" rel="noopener" class="btn-primary btn-primary--gold">Iniciar mi diagnóstico</a>
+      <span class="cta-support cta-support--dark">Resultado inmediato · Confidencial · Sin compromiso</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER · IDENTIDAD INSTITUCIONAL + CONECTORES
+     ═══════════════════════════════════════════ -->
+<footer class="site-footer">
+
+  <div class="footer-connectors">
+    <div class="footer-connectors-grid">
+
+      <div class="footer-connector footer-connector--primary">
+        <p class="footer-connector-sublabel">Novela ReturnAI · $19.97 ebook · $29.97 impreso</p>
+        <h3>¿Prefieres comprender el despliegue del modelo ARIA en el contexto de una empresa primero?</h3>
+        <a href="#" class="btn-outline">Conocer la Novela ReturnAI</a>
+      </div>
+
+      <div class="footer-connector">
+        <p class="footer-connector-sublabel">AI Return Assessment · $5,000 · Diagnóstico presencial</p>
+        <h3>¿Necesitas un diagnóstico presencial para tu equipo directivo?</h3>
+        <a href="#" class="btn-outline">Conocer el AI Return Assessment</a>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="footer-divider">
+
+  <div class="footer-brand">
+
+    <div class="footer-logo-area">
+      <a href="https://digitalchangeadvisors.com" target="_blank" rel="noopener" class="footer-logo" aria-label="Digital Change Advisors — ReturnAI">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -8 400 88" width="220" height="48" aria-hidden="true" focusable="false">
+          <line x1="3" y1="73" x2="73" y2="73" stroke="#ffffff" stroke-width="1" opacity="0.15"/>
+          <path d="M 8 68 C 22 14, 55 8, 68 8" fill="none" stroke="#2e8b76" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="8" cy="68" r="5" fill="#2e8b76"/>
+          <circle cx="68" cy="8" r="12" fill="#a48111"/>
+          <line x1="90" y1="14" x2="90" y2="64" stroke="#ffffff" stroke-width="1" opacity="0.15"/>
+          <text x="106" y="55" font-family="'Marcellus', Georgia, serif" font-weight="400" font-size="44" fill="#ffffff" letter-spacing="-0.5">DCA</text>
+          <text x="109" y="70" font-family="'Montserrat', Helvetica, sans-serif" font-weight="600" font-size="10.5" fill="#ffffff" opacity="0.80" letter-spacing="2.6">DIGITAL CHANGE ADVISORS</text>
+        </svg>
+      </a>
+      <p class="footer-tagline">De la inversión en IA al retorno documentado.</p>
+    </div>
+
+    <div class="footer-legal">
+      <p>© 2026 Digital Change Advisors, LLC.<br>Todos los derechos reservados.</p>
+      <p style="margin-top:8px;">Modelo ARIA® es propiedad intelectual de Digital Change Advisors, LLC.</p>
+      <p style="margin-top:8px;"><a href="https://dca-returnai.github.io/dca-website/privacy-policy.html" style="color:rgba(255,255,255,0.30);text-decoration:none;" target="_blank" rel="noopener">Política de privacidad</a> · <a href="https://dca-returnai.github.io/dca-website/terms-of-use.html" style="color:rgba(255,255,255,0.30);text-decoration:none;" target="_blank" rel="noopener">Términos de uso</a></p>
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+  /* Metric cards: staggered entrance + count-up */
+  (function() {
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var items = document.querySelectorAll('.metric-item');
+    if (!items.length) return;
+
+    function countUp(el) {
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      if (reduced) { el.textContent = target + suffix; return; }
+      var duration = 1100;
+      var start = null;
+      function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+      function step(ts) {
+        if (!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        el.textContent = Math.round(easeOut(progress) * target) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          el.classList.add('metric-in');
+          var num = el.querySelector('[data-count]');
+          if (num) countUp(num);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.25 });
+
+    items.forEach(function(item) { observer.observe(item); });
+  })();
+</script>
+
+<script>
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    if (!params.toString()) return;
+    var tallyLinks = document.querySelectorAll('a[href*="tally.so"]');
+    tallyLinks.forEach(function(link) {
+      var url = new URL(link.href);
+      params.forEach(function(value, key) {
+        url.searchParams.set(key, value);
+      });
+      link.href = url.toString();
+    });
+  })();
+</script>
+
+</body>
+</html>
