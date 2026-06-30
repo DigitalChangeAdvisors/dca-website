@@ -56,7 +56,7 @@ Todos los botones y enlaces del website + artículos apuntan a `https://www.digi
 - **Dev (monorepo):** `DCA-ReturnAI/dca-presencia-digital-dev` — carpeta `website/`
 - **Producción:** `DCA-ReturnAI/dca-website` — GitHub Pages activo
 - **URL staging:** `https://dca-returnai.github.io/dca-website/`
-- **Deploy desde MacBook (monorepo):** `git subtree push --prefix=website production-website main --force`
+- **Deploy CANÓNICO (MacBook o iMac):** `./deploy.sh website` (o `both`) desde la raíz del monorepo. **No usar `git subtree push` directo** — `deploy.sh` aborta si falta `website/CNAME` y verifica el dominio post-deploy. Ver "Hardening de Deploy y Dominio" en el CLAUDE.md raíz.
 - **⚠️ Nota de sincronización:** Si la producción tiene commits directos del iMac, usar `--force` tras integrar los cambios remotos en el monorepo.
 - **🌐 Dominio — CANÓNICO (2026-06-30):** El dominio es `digitalchangeadvisors.com` (apex), versionado en **`website/CNAME`**. `www` redirige al apex vía Cloudflare. **Nunca borrar `website/CNAME`.** Causa raíz de un incidente: el deploy por `subtree split + push --force` reemplaza `main` con el contenido de `website/`; si el `CNAME` solo existía en producción (creado por GitHub al fijar el dominio) y no en el código fuente, **el force-push lo borra y desconecta el dominio** (apex → 404, GitHub vacía el ajuste de Pages). Solución: el CNAME vive en el código fuente → sobrevive a todo redeploy. Si el dominio se cae, verificar con `GET /repos/DCA-ReturnAI/dca-website/pages` (campo `cname`) y, si está vacío, re-fijar con `PUT .../pages -d '{"cname":"digitalchangeadvisors.com"}'`.
 
