@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../ara-styles.css">
+  <link rel="stylesheet" href="../ara/ara-styles.css">
 <script>document.documentElement.classList.add('js-ready')</script>
 </head>
 <body>
@@ -45,17 +45,13 @@
     <span class="hero-overtitle hero-overtitle--centered">Diagnóstico ejecutivo · Equipo directivo</span>
     <h2 class="hero-title ara-reveal">Tu organización opera bajo Amenaza de Tormenta: múltiples crisis activas, otras en desarrollo con una ventana de prevención abierta pero que está cerrándose.</h2>
 
-    <!-- VIDEO PLACEHOLDER (video único por landing — pendiente de producción) -->
-    <div class="hero-video-placeholder">
-      <div class="hero-video-inner">
-        <div class="hero-video-icon">
-          <svg width="22" height="26" viewBox="0 0 22 26" fill="none" aria-hidden="true">
-            <polygon points="1,1 21,13 1,25" fill="rgba(46,139,118,0.55)"/>
-          </svg>
-        </div>
-        <span class="hero-video-label">Video próximamente</span>
-      </div>
-    </div>
+    <!-- HERO IMAGE · foto editorial del arquetipo (poster del futuro video) -->
+    <figure class="hero-video">
+      <picture>
+        <source srcset="../images/foto_amenaza_tormenta.webp" type="image/webp">
+        <img src="../images/foto_amenaza_tormenta.jpg" width="1920" height="1080" fetchpriority="high" decoding="async" alt="Líderes observando indicadores en caída con alertas — arquetipo Amenaza de Tormenta" class="hero-video__img">
+      </picture>
+    </figure>
 
   </div>
 </section>

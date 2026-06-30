@@ -41,6 +41,16 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 | `/comunidad` | `comunidad.html` | LARIA: 240 miembros, Skool | ⏳ Pendiente |
 | `/contacto` | `contacto.html` | Formulario mínimo, sin chatbots | ⏳ Pendiente |
 
+## Enrutamiento de CTAs y Enlaces — CANÓNICO (2026-06-29)
+
+Todos los botones y enlaces del website + artículos apuntan a `https://www.digitalchangeadvisors.com` (URLs limpias, **siempre con `www`**). Cero enlaces a staging `dca-returnai.github.io`.
+
+- **CTA "AI Return Test" → SIEMPRE `/art`** (la landing ART, `website/art/index.html`), con UTMs intactos (`?utm_source=<página>&utm_medium=website&utm_campaign=ai-return-test`). Unifica el destino: antes homepage y returnai saltaban directo a Tally — corregido.
+- **Tally directo (`tally.so/r/Np6e5W`) → SOLO en los CTAs internos de la landing `/art`.** Ninguna otra página enlaza a Tally. (Excepción no-CTA: `tally.so/help/privacy-policy` como referencia legal.)
+- **TidyCal (`tidycal.com/pwgdigital/returnai`)** se conserva como endpoint de agendamiento (equivalente funcional a Tally).
+- **Footer — destinos de páginas aún no desplegadas:** Academia → `https://www.digitalchangeacademy.org` · Comunidad LARIA → `https://www.skool.com/comunidad-lada-2386/` · Libro ReturnAI → `/novela-returnai` · **Red ARIA → texto sin enlace** (hasta tener página).
+- Fragmentos cross-page preservados como URL absoluta + ancla (`/#libro`, `/blog#newsletter-pulse`). Anclas de misma página quedan relativas (`#fases`).
+
 ## Repositorios de Despliegue
 
 - **Dev (monorepo):** `DCA-ReturnAI/dca-presencia-digital-dev` — carpeta `website/`
@@ -60,6 +70,35 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 | "adopción" como FIN | "retorno" | "adopción" solo válido como MEDIO: el camino, no el destino |
 | "soluciones integrales" | — | Framing genérico de vendor |
 | "transformación digital" | — | Categoría anterior de DCA, no la actual |
+
+## Sistema Newsletter — AI Return Pulse (canónico 2026-06-19)
+
+### Presencia del formulario
+- **`blog.html`** — sección `#newsletter-pulse` completa (con proof points, badge, lista de beneficios)
+- **`article-paper00.html` … `article-paper09.html`** — formulario compacto `.art-pulse` inline, entre `.art-author-section` y `.art-cta`
+- **`index.html` (homepage)** — ❌ NO. Decisión BE: diluye el CTA primario (AI Return Test). Prohibido añadir sin revisión estratégica explícita.
+
+### Stack técnico
+- **Endpoint GAS (cuenta GW):** `https://script.google.com/macros/s/AKfycbwZaU3UD_HeREVZ5s48paNfxKym7_CjUQaYeZnVeKtqGa3ucAuOIs2nzGbJsIu42vEn/exec`
+- **Spreadsheet destino:** "AI Return Pulse - Suscriptores" · Drive `ceo@digitalchangeadvisors.com` · ID `1tR7UVxfeSRWPVUeuHT0JxKzqYW_PdA2q5Z2fiwZntVw`
+- **Email de bienvenida:** vía Brevo (API key en el GAS), sale desde `ceo@digitalchangeadvisors.com`
+- **Payload:** `{ email, source }` — source dinámico por `window.location.pathname` en artículos (`article-paper00`, `article-paper01`…), `'blog'` en `blog.html`
+- **CSS artículos:** `.art-pulse` y clases derivadas en `styles-article.css` (al final del archivo)
+- **Fix crítico:** `.art-pulse__success[hidden]` y `.art-pulse__error[hidden]` requieren `display:none` explícito — el `display:flex` del selector de clase sobreescribe el `[hidden]` del browser si no se añade este override
+
+### Copy aprobado (artículos) — BE Opción A (2026-06-19)
+- **Descripción bajo el título:** *"El análisis que no está en el artículo — cada dos semanas, antes de tu reunión de Junta."*
+- **Mecanismo:** Escasez real (diferencia newsletter vs. blog público) + Consistencia post-lectura + Ancla situacional de Junta
+- **Etapa BE:** Solución — el visitante acaba de terminar un artículo completo, alta receptividad
+
+### Jerarquía en artículos (orden invariante)
+```
+[Contenido del artículo]
+[Autor]
+[AI Return Pulse — compacto]   ← micro-conversión escalón intermedio
+[AI Return Test — CTA primario]
+[Artículos relacionados]
+```
 
 ## Decisiones Técnicas
 

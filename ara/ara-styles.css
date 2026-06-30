@@ -1195,7 +1195,34 @@ h2.hero-title .line { display: block; }
   text-transform: uppercase;
   color: rgba(46,139,118,0.5);
 }
+/* Hero archetype image — foto editorial del arquetipo (poster del futuro video) · overlay teal/carbón brand+BE */
+.hero-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0 0 64px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--dca-platinum);
+}
+.hero-video__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.85) contrast(1.04);
+}
+.hero-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(30,42,56,0.20), rgba(30,42,56,0) 45%),
+    rgba(46,139,118,0.10);
+}
 @media (max-width: 640px) {
+  .hero-video { margin-bottom: 40px; }
   .hero-identity { flex-direction: column; text-align: center; gap: 24px; }
   .hero-icon { width: 140px; height: 140px; }
   .hero-icon img { width: 140px; height: 140px; }
