@@ -58,6 +58,6 @@ image-slot:focus-visible,
   * { scroll-behavior: auto !important; }
   [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
   .hero h1 .line, .hero .chapeau, .hero__cta { animation: none !important; opacity: 1 !important; transform: none !important; }
-  .fullbleed__frame image-slot { transform: none !important; }
+  .fullbleed__frame img { transform: none !important; }
   .btn .arrow { transition: none !important; }
 }

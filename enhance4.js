@@ -70,7 +70,7 @@ function updateStepper() {
 updateStepper();
 
 // ---------- Parallax banda fotográfica ----------
-const para = document.querySelector('.fullbleed__frame image-slot');
+const para = document.querySelector('.fullbleed__frame img');
 const paraFrame = document.querySelector('.fullbleed__frame');
 
 // ---------- Scroll loop (rAF) ----------
