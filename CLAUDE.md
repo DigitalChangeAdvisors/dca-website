@@ -174,7 +174,7 @@ Todos los botones y enlaces del website + artículos apuntan a `https://www.digi
 - **H2 Problema:** "El 70% no puede demostrar retorno de su inversión en IA."
 - **Sección Problema H2:** "retorno de su inversión en IA" (no "ROI de IA")
 - **Label sección Libro:** "El libro" (no "Novela empresarial")
-- **Footer descriptor:** "De la inversión en IA al retorno documentado." — nunca "Convertimos…"
+- **Footer descriptor:** "De la adopción de la IA al Retorno que sí importa." — nunca "Convertimos…" (canónico único desde 2026-06-30; reemplazó "De la inversión en IA al retorno documentado.")
 - **Footer tira de ciudades:** ELIMINADA. Nunca reintroducir Santiago, Madrid ni Miami.
 - **CTA final nota:** "Sin compromiso · 25 minutos · Tu reporte es confidencial" (no "Sin costo")
 - **CTA cards:** 01 IUG · 02 Arquetipo organizacional · 03 Mapa de calor (incluye "3 capacidades instaladas") · 04 Costo financiero (usa "destrucción de valor" — loss aversion CFO/CEO)
@@ -342,7 +342,7 @@ Todos los botones y enlaces del website + artículos apuntan a `https://www.digi
 
 ### Elementos compartidos con el home (ya sincronizados)
 - Nav canónica: 4 ítems + CTA · clase `is-current` en "Modelo ARIA" ✅
-- Footer canónico: descriptor "De la inversión en IA al retorno documentado." · sin tira de ciudades · 4 columnas ✅
+- Footer canónico: descriptor "De la adopción de la IA al Retorno que sí importa." · sin tira de ciudades · 4 columnas ✅
 - Logo SVG: `font-weight="400"` · `focusable="false"` · sin `role="img"` redundante ✅
 
 ### Los 3 puntos críticos (prioridad de fine-tuning)
