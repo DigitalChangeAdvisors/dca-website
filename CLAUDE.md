@@ -103,10 +103,26 @@ Todos los botones y enlaces del website + artículos apuntan a `https://www.digi
 
 ## Decisiones Técnicas
 
-- Imágenes (`img-*.png`) residen en `website/` (misma carpeta que los HTML)
-- `assets/` contiene `favicon.png` y `og-returnai.png`
+- Imágenes en `assets/` (fotos, blog, líderes, hero) + `favicon.png` y `og-returnai.png`
 - Logo v2.2 integrado como SVG inline en nav y footer (no archivo externo)
 - `image-slot.js` solo para staging/autoría — reemplazar por `<img>` reales antes del dominio final
+
+### ⚡ Rendimiento de Imágenes — CANÓNICO (2026-06-30)
+
+**Regla: NINGUNA imagen se publica en PNG de foto.** Toda fotografía va en JPG optimizado (+ WebP donde haya `<picture>`), redimensionada a su ancho real de despliegue. Un PNG de foto de varios MB deja el header/hero en blanco mientras carga — inaceptable para C-Level.
+
+*Incidente que motivó la regla (2026-06-30):* el hero del homepage era un PNG de **7.4 MB** → el C-Level veía el header en blanco los primeros segundos. Barrido completo del website: **>50 MB → <2 MB** de imágenes.
+
+**Cómo optimizar (herramientas locales, sin Homebrew):**
+- **JPG:** `sips --resampleWidth <ancho> in.png --out out.jpg -s format jpeg -s formatOptions <72-80>`
+- **WebP:** `cwebp -q <80-82> -resize <ancho> 0 in.png -o out.webp` (binario libwebp descargable de `downloads.webmproject.org`)
+- Anchos de referencia: hero full-bleed **1920** · tarjetas/miniaturas **800** · retratos **900** · portada libro **760**
+
+**Estado actual (2026-06-30):**
+- **Homepage (`index.html`):** los 7 `<image-slot>` → `<picture>` con **WebP + fallback JPG** reales. Hero con `fetchpriority="high"`; resto `loading="lazy"`; `width`/`height` para cero CLS. `image-slot.js` retirado de esta página.
+- **returnai, nosotros, blog, article-paper00–09:** el `src` de sus `<image-slot>` se repuntó de `.png` → `.jpg` optimizado (mismo mecanismo, sin riesgo de layout/parallax). Mejora pendiente opcional: convertir esos slots a `<picture>` con WebP.
+- Los PNG máster originales quedan en `assets/` (sin referenciar); pueden moverse fuera del deploy (`_image-masters/`) para aligerar el repo — no afecta la carga.
+- Es hardening técnico: no cambia diseño ni mecanismo BE/UX (misma imagen, misma posición, mismo recorte).
 
 ## Datos y Decisiones Canónicas del Homepage — BLOQUEO DE PRODUCCIÓN
 
