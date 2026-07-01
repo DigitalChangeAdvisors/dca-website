@@ -118,10 +118,11 @@ Todos los botones y enlaces del website + artículos apuntan a `https://www.digi
 - **WebP:** `cwebp -q <80-82> -resize <ancho> 0 in.png -o out.webp` (binario libwebp descargable de `downloads.webmproject.org`)
 - Anchos de referencia: hero full-bleed **1920** · tarjetas/miniaturas **800** · retratos **900** · portada libro **760**
 
-**Estado actual (2026-06-30):**
-- **Homepage (`index.html`):** los 7 `<image-slot>` → `<picture>` con **WebP + fallback JPG** reales. Hero con `fetchpriority="high"`; resto `loading="lazy"`; `width`/`height` para cero CLS. `image-slot.js` retirado de esta página.
-- **returnai, nosotros, blog, article-paper00–09:** el `src` de sus `<image-slot>` se repuntó de `.png` → `.jpg` optimizado (mismo mecanismo, sin riesgo de layout/parallax). Mejora pendiente opcional: convertir esos slots a `<picture>` con WebP.
-- Los PNG máster originales quedan en `assets/` (sin referenciar); pueden moverse fuera del deploy (`_image-masters/`) para aligerar el repo — no afecta la carga.
+**Estado actual (2026-06-30) — TODO el website en `<picture>` + WebP:**
+- **Todas las páginas** (`index.html`, `returnai`, `nosotros`, `blog`, `article-paper00–09`): los `<image-slot>` → `<picture>` con **WebP + fallback JPG** reales (0 `<image-slot>` en producción). Heroes con `fetchpriority="high"`; resto `loading="lazy"` + `decoding="async"`; `width`/`height` para cero CLS.
+- **Conversión CSS no destructiva:** los selectores `image-slot` pasaron a `:is(image-slot,img)` (matchea ambos) + regla `img.opt-img{display:block;width:100%;object-fit:cover}`. Así ningún estilo/animación de reveal/hover se rompió al cambiar de elemento.
+- `image-slot.js` sigue cargado (por compatibilidad) pero ya no se usa en producción; se puede retirar de los `<head>` en una limpieza futura.
+- **Másters PNG** (22 archivos, ~40 MB) movidos a `_image-masters/website/` (raíz del monorepo, **fuera** del subtree de deploy). `website/assets/` bajó a ~8.7 MB. Los PNG que SÍ se usan por `content=`/`href=` (og-returnai, favicon) o aún referenciados (dca-simbolo, field-study-cover) se conservaron.
 - Es hardening técnico: no cambia diseño ni mecanismo BE/UX (misma imagen, misma posición, mismo recorte).
 
 ## Datos y Decisiones Canónicas del Homepage — BLOQUEO DE PRODUCCIÓN
