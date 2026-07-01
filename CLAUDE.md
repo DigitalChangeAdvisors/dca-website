@@ -551,6 +551,7 @@ Estas dos métricas se monitorizan sprint a sprint y alimentan el Reporte Ejecut
 - [x] Perspectivas (`blog.html`)
 - [x] `/modelo-aria` — Fine-tuning BE completo (8 puntos · commit `4b4abe8`). Pendiente: image-slots → img reales antes del dominio final
 - [x] `/returnai` — v6 implementada, brand compliance aplicado, routing canónico. Fine-tuning al final. **bridge usa 19% (real case) — verificar alineación con homepage (11%)**
+  - Hero (2026-06-30, gate aprobado): foto ensanchada a `#top .hero-split { grid-template-columns: 1.18fr 0.82fr; gap: 56px; align-items: start }` — alineada arriba (a la altura del H1), scoped a returnai (no afecta `.hero-split` de modelo-aria). Imagen del hero: `<picture>` WebP+JPG.
 - [~] `/nosotros` — **FINE-TUNING EN CURSO** (2026-06-08). 10 secciones. S1 cerrado: H1 2L, ficha, propósito integrado, pirámide 3L. S2 cerrado: p-pyramid `div+nowrap`, firma-mark `flex-start`, copy BE. S3 cerrado: banda editorial `nosotros-banda.png`. S4 cerrado: quote canónica "Lo vimos/Modelo ARIA lo logra" + prose 3P BE sin redundancias. S5–S10 pendientes.
 - [ ] `/casos`
 - [ ] 5 páginas restantes
