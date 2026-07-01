@@ -456,7 +456,8 @@
 /* Hero /returnai — columna de texto más amplia + H1 mayor que /modelo-aria
    La columna 1.18fr da ~670px a 1200px container; sigue soportando las 36 chars
    de la línea más larga del H1 a 34px sin quiebre (Pirámide Invertida intacta).
-   Imagen ensanchada 0.75→0.82fr + gap 64→56 + centrado vertical explícito
-   (ajuste solicitado 2026-06-30: foto más ancha y centrada arriba-abajo). */
-#top .hero-split { grid-template-columns: 1.18fr 0.82fr; gap: 56px; align-items: center; }
+   Imagen ensanchada 0.75→0.82fr + gap 64→56 + alineada ARRIBA (start) para que
+   su borde superior coincida con el H1 (ajuste 2026-06-30: la columna de texto
+   es más alta que la foto; con 'center' la foto quedaba visualmente baja). */
+#top .hero-split { grid-template-columns: 1.18fr 0.82fr; gap: 56px; align-items: start; }
 #top h1 { font-size: clamp(24px, 2.6vw, 34px); }
