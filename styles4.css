@@ -71,7 +71,7 @@
 .aria2__step li::before { content: ""; position: absolute; left: 0; top: 7px; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; }
 
 /* ============================================================
-   Slots de imagen arrastrables (image-slot)
+   Slots de imagen arrastrables (:is(image-slot,img))
    ============================================================ */
 .fullbleed__frame { height: 480px; overflow: hidden; }
 .fullbleed__frame img { display: block; width: 100%; height: 560px; object-fit: cover; will-change: transform; }
@@ -95,3 +95,6 @@ img.book__slot { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4;
   .bridge__legend { flex-direction: column; gap: 14px; }
   .bridge__leg.is-impact { text-align: left; margin-left: 0; }
 }
+
+/* imágenes optimizadas: reemplazo de image-slot por <img> real */
+img.opt-img{display:block;width:100%;object-fit:cover}

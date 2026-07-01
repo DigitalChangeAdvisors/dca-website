@@ -9,7 +9,7 @@ html { scroll-padding-top: 96px; }
 /* ---------- Foco visible accesible (teclado) ---------- */
 a:focus-visible,
 button:focus-visible,
-image-slot:focus-visible,
+:is(image-slot,img):focus-visible,
 .rung:focus-visible,
 .industries-grid a:focus-visible {
   outline: 2px solid var(--teal);

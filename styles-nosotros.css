@@ -43,7 +43,7 @@
 .founder--mirror .founder__media { order: 2; }
 
 /* slot de retrato — overlay carbón sutil mediante marco, sin tapar el drop */
-image-slot.founder__photo {
+:is(image-slot,img).founder__photo {
   display: block; width: 100%; height: auto;
   aspect-ratio: 4 / 5; border-radius: 10px;
   border: 1px solid var(--border);

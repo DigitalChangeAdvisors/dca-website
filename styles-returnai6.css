@@ -70,12 +70,12 @@
    ============================================================ */
 @media (prefers-reduced-motion: no-preference) {
   .js .rai6 .book__slot,
-  .js .rai6 .persp-card image-slot {
+  .js .rai6 .persp-card :is(image-slot,img) {
     clip-path: inset(0 100% 0 0);
     transition: clip-path 1s var(--ease, ease) 0.1s;
   }
   .js .rai6 .book__slot.in,
-  .js .rai6 .persp-card.in image-slot { clip-path: inset(0 0 0 0); }
+  .js .rai6 .persp-card.in :is(image-slot,img) { clip-path: inset(0 0 0 0); }
 }
 
 /* ============================================================
@@ -119,6 +119,6 @@
   .rai6 .tl-node,
   .rai6 .tl-days { opacity: 1 !important; transform: none !important; transition: none !important; }
   .rai6 .book__slot,
-  .rai6 .persp-card image-slot { clip-path: none !important; }
+  .rai6 .persp-card :is(image-slot,img) { clip-path: none !important; }
   .rai6 .sol-group__rule { transform: none !important; }
 }

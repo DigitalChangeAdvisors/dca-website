@@ -118,13 +118,13 @@
   border-radius: 12px;
   margin-bottom: 28px;
 }
-.masthead__media image-slot {
+.masthead__media :is(image-slot,img) {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
   transition: transform 0.7s var(--ease);
 }
-.masthead__featured:hover .masthead__media image-slot { transform: scale(1.03); }
+.masthead__featured:hover .masthead__media :is(image-slot,img) { transform: scale(1.03); }
 .masthead__cat {
   font-size: 12px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase;
   color: var(--teal); margin-bottom: 14px; display: block;
@@ -183,7 +183,7 @@
   transition: color 0.25s var(--ease), transform 0.3s var(--ease);
   text-wrap: balance;
 }
-.rail-item__thumb image-slot {
+.rail-item__thumb :is(image-slot,img) {
   display: block; width: 84px; height: 64px; border-radius: 6px;
 }
 .rail__more {
@@ -316,7 +316,7 @@
   position: relative;
   overflow: hidden;
 }
-.article-card__img-wrap image-slot,
+.article-card__img-wrap :is(image-slot,img),
 .article-card__img-wrap img {
   display: block;
   width: 100%;
@@ -324,7 +324,7 @@
   object-fit: cover;
   transition: transform 0.5s var(--ease);
 }
-.article-card:hover .article-card__img-wrap image-slot,
+.article-card:hover .article-card__img-wrap :is(image-slot,img),
 .article-card:hover .article-card__img-wrap img { transform: scale(1.04); }
 
 /* Cuerpo */
@@ -671,7 +671,7 @@
   overflow: hidden;
   box-shadow: 0 30px 70px rgba(0,0,0,0.4);
 }
-.report-band__cover image-slot { display: block; width: 100%; height: 100%; }
+.report-band__cover :is(image-slot,img) { display: block; width: 100%; height: 100%; }
 .report-band .label { color: var(--gold); display: block; margin-bottom: 18px; }
 .report-band h2 {
   color: #fff; font-size: clamp(30px, 3.4vw, 48px); margin-bottom: 20px; text-wrap: balance;
@@ -694,7 +694,7 @@
 
 /* Cover: hover zoom sutil */
 .report-band__cover { transition: filter 0.6s var(--ease); }
-.report-band__cover:hover image-slot { transform: scale(1.03); }
+.report-band__cover:hover :is(image-slot,img) { transform: scale(1.03); }
 
 /* ============================================================
    QUIÉN INVESTIGA — expertos con rostro y credencial
@@ -709,9 +709,9 @@
   margin-bottom: 22px; filter: grayscale(0.18);
   transition: filter 0.6s var(--ease);
 }
-.expert__photo image-slot { display: block; width: 100%; height: 100%; transition: transform 0.7s var(--ease); }
+.expert__photo :is(image-slot,img) { display: block; width: 100%; height: 100%; transition: transform 0.7s var(--ease); }
 .expert:hover .expert__photo { filter: grayscale(0); }
-.expert:hover .expert__photo image-slot { transform: scale(1.04); }
+.expert:hover .expert__photo :is(image-slot,img) { transform: scale(1.04); }
 .expert__name {
   font-family: var(--display); font-size: 24px;
   color: var(--carbon); margin-bottom: 5px; text-wrap: balance;
@@ -720,21 +720,21 @@
 .expert__bio { font-size: 14.5px; line-height: 1.6; color: var(--carbon-70); text-wrap: pretty; }
 
 /* Imagen reveal con máscara (v6) */
-.masthead__media image-slot,
-.report-band__cover image-slot,
-.expert__photo image-slot {
+.masthead__media :is(image-slot,img),
+.report-band__cover :is(image-slot,img),
+.expert__photo :is(image-slot,img) {
   clip-path: inset(100% 0 0 0);
   transition: clip-path 1.05s var(--ease-mask), transform 0.7s var(--ease), filter 0.6s var(--ease);
   will-change: clip-path;
 }
-.masthead__featured.in .masthead__media image-slot,
-.report-band__cover.in image-slot,
-.expert.in .expert__photo image-slot {
+.masthead__featured.in .masthead__media :is(image-slot,img),
+.report-band__cover.in :is(image-slot,img),
+.expert.in .expert__photo :is(image-slot,img) {
   clip-path: inset(0 0 0 0);
 }
-.no-js .masthead__media image-slot,
-.no-js .report-band__cover image-slot,
-.no-js .expert__photo image-slot { clip-path: none; }
+.no-js .masthead__media :is(image-slot,img),
+.no-js .report-band__cover :is(image-slot,img),
+.no-js .expert__photo :is(image-slot,img) { clip-path: none; }
 
 /* ============================================================
    NEWSLETTER AI RETURN PULSE
@@ -1190,7 +1190,7 @@
   overflow: hidden;
   background: var(--platinum);
 }
-.author-mini__photo image-slot {
+.author-mini__photo :is(image-slot,img) {
   display: block;
   width: 100%; height: 100%;
 }
@@ -1241,13 +1241,13 @@
   .persp-head h1 .word__i { transform: none !important; transition: none !important; }
   .article-card { transition: none !important; }
   .article-card:hover { transform: none !important; box-shadow: none !important; }
-  .article-card__img-wrap image-slot { transition: none !important; }
-  .article-card:hover .article-card__img-wrap image-slot { transform: none !important; }
+  .article-card__img-wrap :is(image-slot,img) { transition: none !important; }
+  .article-card:hover .article-card__img-wrap :is(image-slot,img) { transform: none !important; }
   .article-card__read { opacity: 1 !important; transform: none !important; transition: none !important; }
   .article-card::after { transition: none !important; }
   .article-card__read::after { transition: none !important; }
-  .masthead__media image-slot,
-  .masthead__featured:hover .masthead__media image-slot { clip-path: none !important; transform: none !important; transition: none !important; }
+  .masthead__media :is(image-slot,img),
+  .masthead__featured:hover .masthead__media :is(image-slot,img) { clip-path: none !important; transform: none !important; transition: none !important; }
   .rail-item__title { transition: none !important; }
   .rail-item:hover .rail-item__title { transform: none !important; }
   .footer__col a::after { transition: none !important; }

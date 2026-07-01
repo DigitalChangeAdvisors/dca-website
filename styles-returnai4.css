@@ -75,4 +75,4 @@
   .js .rai4 .comp-cards > [data-reveal].in { transform: none; }
 }
 
-.rai4 .hero-figure image-slot { box-shadow: 0 30px 70px rgba(30,42,56,0.16); }
+.rai4 .hero-figure :is(image-slot,img) { box-shadow: 0 30px 70px rgba(30,42,56,0.16); }
