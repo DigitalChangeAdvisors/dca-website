@@ -62,3 +62,53 @@ document.querySelectorAll('[data-stagger]').forEach(parent => {
     if (child.hasAttribute('data-reveal')) child.style.transitionDelay = (i * 0.1) + 's';
   });
 });
+
+// --- Panel lateral: Extracto del libro (mismo sistema que /novela-returnai) ---
+(function () {
+  const panel = document.getElementById('preludio-panel');
+  const btn = document.getElementById('btn-extracto');
+  if (!panel || !btn) return;
+
+  const closeBtn = panel.querySelector('.preludio-panel__close');
+  const backdrop = panel.querySelector('.preludio-panel__backdrop');
+  const drawer = panel.querySelector('.preludio-panel__drawer');
+  const focusable = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+  function trapFocus(e) {
+    if (e.key !== 'Tab') return;
+    const els = [...panel.querySelectorAll(focusable)].filter(el => !el.disabled);
+    const first = els[0], last = els[els.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+
+  function openPanel(e) {
+    e.preventDefault();
+    panel.hidden = false;
+    document.body.style.overflow = 'hidden';
+    btn.setAttribute('aria-expanded', 'true');
+    requestAnimationFrame(() => requestAnimationFrame(() => panel.classList.add('is-open')));
+    drawer.scrollTop = 0;
+    setTimeout(() => closeBtn.focus(), 420);
+    panel.addEventListener('keydown', trapFocus);
+  }
+
+  function closePanel() {
+    panel.classList.remove('is-open');
+    document.body.style.overflow = '';
+    btn.setAttribute('aria-expanded', 'false');
+    panel.removeEventListener('keydown', trapFocus);
+    btn.focus();
+    drawer.addEventListener('transitionend', function hide() {
+      panel.hidden = true;
+      drawer.removeEventListener('transitionend', hide);
+    });
+  }
+
+  btn.addEventListener('click', openPanel);
+  closeBtn.addEventListener('click', closePanel);
+  backdrop.addEventListener('click', closePanel);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !panel.hidden) closePanel();
+  });
+})();

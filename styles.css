@@ -588,106 +588,95 @@ p { text-wrap: pretty; }
 }
 
 /* ============================================================
-   Modal — Extracto del libro
+   Panel lateral — Extracto del libro
+   Mismo sistema que website/novela-returnai/index.html (#preludio-panel)
    ============================================================ */
-.modal {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
+.preludio-panel {
+  position: fixed; inset: 0; z-index: 1200;
+  display: flex; justify-content: flex-end;
+  visibility: hidden; pointer-events: none;
 }
-.modal.is-open {
-  opacity: 1;
-  pointer-events: auto;
-}
-.modal__overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(30, 42, 56, 0.82);
+.preludio-panel:not([hidden]) { visibility: visible; pointer-events: auto; }
+
+.preludio-panel__backdrop {
+  position: absolute; inset: 0;
+  background: rgba(30, 42, 56, 0.65);
+  opacity: 0; transition: opacity 0.35s ease;
   cursor: pointer;
 }
-.modal__card {
-  position: relative;
-  background: var(--white);
-  border-radius: 12px;
-  max-width: 640px;
-  width: 100%;
-  max-height: 88vh;
-  overflow-y: auto;
-  padding: 48px 48px 40px;
-  transform: scale(0.96) translateY(8px);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  scrollbar-width: thin;
-  scrollbar-color: var(--teal-light) transparent;
+.preludio-panel.is-open .preludio-panel__backdrop { opacity: 1; }
+
+.preludio-panel__drawer {
+  position: relative; width: min(620px, 92vw);
+  background: var(--carbon); height: 100vh; overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex; flex-direction: column;
+  scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
 }
-.modal.is-open .modal__card { transform: scale(1) translateY(0); }
-.modal__close {
-  position: absolute;
-  top: 16px;
-  right: 18px;
-  background: none;
-  border: none;
-  font-size: 22px;
-  color: var(--carbon-55);
-  cursor: pointer;
-  line-height: 1;
-  padding: 6px 10px;
-  border-radius: 4px;
-  transition: color 0.2s, background 0.2s;
+.preludio-panel.is-open .preludio-panel__drawer { transform: translateX(0); }
+
+.preludio-panel__close {
+  position: sticky; top: 0; align-self: flex-end;
+  background: transparent; border: none; cursor: pointer;
+  color: rgba(255, 255, 255, 0.5); font-size: 28px; line-height: 1;
+  padding: 20px 24px 0; z-index: 10; transition: color 0.2s;
 }
-.modal__close:hover { color: var(--carbon); background: var(--platinum); }
-.modal__close:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
-.modal__stat {
+.preludio-panel__close:hover { color: #fff; }
+.preludio-panel__close:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+
+.preludio-panel__inner { padding: 0 48px 64px; }
+
+.preludio-panel__stat {
   font-family: var(--display);
-  font-size: clamp(18px, 2.8vw, 24px);
-  color: var(--carbon);
+  font-size: clamp(20px, 2.6vw, 26px);
+  color: #fff;
   line-height: 1.35;
-  margin: 0 0 28px;
+  margin: 8px 0 32px;
   padding-bottom: 24px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
-.modal__stat strong { color: var(--teal); }
-.modal__body { display: flex; flex-direction: column; gap: 14px; }
-.modal__body p {
+.preludio-panel__stat strong { color: var(--teal-light); }
+
+.preludio-panel__body { display: flex; flex-direction: column; gap: 14px; }
+.preludio-panel__body p {
   font-family: var(--body);
-  font-size: 15px;
+  font-size: 15.5px;
   font-weight: 400;
-  line-height: 1.72;
-  color: var(--carbon-70);
+  line-height: 1.78;
+  color: rgba(255, 255, 255, 0.78);
   margin: 0;
 }
-.modal__hook {
-  background: var(--platinum);
+.preludio-panel__hook {
+  background: rgba(46, 139, 118, 0.1);
   border-left: 3px solid var(--teal);
   border-radius: 0 6px 6px 0;
   padding: 14px 18px;
-  color: var(--carbon) !important;
+  color: #fff !important;
   font-weight: 500 !important;
 }
-.modal__result {
-  background: rgba(46, 139, 118, 0.06);
+.preludio-panel__result {
+  background: rgba(164, 129, 17, 0.1);
   border-left: 3px solid var(--gold);
   border-radius: 0 6px 6px 0;
   padding: 14px 18px;
-  color: var(--carbon) !important;
+  color: #fff !important;
   font-weight: 600 !important;
 }
-.modal__question {
+.preludio-panel__question {
   font-family: var(--display) !important;
-  font-size: 17px !important;
-  color: var(--carbon) !important;
+  font-size: 18px !important;
+  color: #fff !important;
   font-weight: 400 !important;
   line-height: 1.5 !important;
-  margin-top: 6px !important;
+  margin-top: 8px !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .preludio-panel__drawer { transition: none; }
+  .preludio-panel__backdrop { transition: none; }
 }
 @media (max-width: 600px) {
-  .modal__card { padding: 36px 24px 28px; }
+  .preludio-panel__inner { padding: 0 24px 48px; }
 }
 
 /* Mobile menu open */
