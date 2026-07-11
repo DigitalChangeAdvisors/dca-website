@@ -148,10 +148,13 @@ Todos los botones y enlaces del website + artículos apuntan a `https://www.digi
 - **Impacto:** LED (Digital Team Leadership) · AI Governance Canvas · Impact Validation Matrix · Talent Roadmap Strategy Map · Agency Activators · PATH (Human Transformation Assurance Plan)
 - Los identificadores MATCH / LED / PATH aparecen en el homepage en la lista técnica de herramientas de la metodología — esto es intencional y aprobado. No aplica la restricción de nombres internos en este contexto metodológico.
 
-### Modal "Leer un extracto" (novela ReturnAI)
-- Personaje: **Adalid Puentes** · Inversión: **$8,2 millones** · Adopción inicial: **11%** · Resultado: **$891K en el P&L**
-- Apertura modal: "El 95% de las empresas invierte en IA. Solo el **5%** genera retorno medible."
-- JS en `app.js`, CSS en `styles.css` (sección Modal)
+### Panel "Leer Preludio" (novela ReturnAI) — canónico 2026-07-10
+- Botón: **"Leer Preludio"** (antes "Leer un extracto" — retirado, no reintroducir). Segundo botón: **"Ver más detalles"** → `https://www.digitalchangeadvisors.com/novela-returnai` (antes "Ver en Amazon" — retirado).
+- Patrón UI: panel lateral derecho deslizante (`#preludio-panel`, drawer oscuro `var(--carbon)`) — **no modal centrado**. Es el mismo componente ya usado en `website/novela-returnai/index.html` para "Leer el primer capítulo" (`.preludio-panel`, `.preludio-panel__drawer`, etc.) — mismo sistema de clases, reutilizado verbatim.
+- **Contenido:** el Preludio completo de la novela ("El momento en que todo cambió" — Adalid Puentes recibe el ultimátum de 120 días de Ricardo Mendoza), no un resumen/teaser. Texto fuente entregado por el usuario 2026-07-10 — no parafrasear ni resumir si se vuelve a tocar esta sección.
+- Estructura: `.preludio-panel__header` (tag "Preludio" + h2 título + fecha) → `.preludio-panel__body` con párrafos, `.preludio-panel__quote` (diálogos, borde oro) y `.preludio-panel__emphasis` (líneas dramáticas cortas, bold) intercalados, `.preludio-panel__list` (los 3 objetivos de los 120 días), cierre en `.preludio-panel__question` ("Esta es su historia. / Podría ser la tuya.")
+- JS en `app.js` (apertura/cierre, focus trap, Escape, click en backdrop), CSS en `styles.css` (sección "Panel lateral — Extracto del libro")
+- **Incidente que motivó el rediseño (2026-07-10):** el modal centrado original nunca tuvo JS de apertura/cierre en ningún commit — el botón no hacía nada desde que se construyó. Se reemplazó por este panel lateral, que ya estaba validado y en producción en `/novela-returnai`.
 
 > **Distinción con el Caso Ancla real:** El caso de la novela (Adalid Puentes, $8.2M/11%→70%) es diferente del caso ancla documentado con cliente real (Gestora de inversiones, $3.2M → 19%→67%, +13 puntos). El homepage usa el caso de la novela. El caso real se usa en copy de /returnai, /nosotros y argumentación con dato de negocio. No existe `/casos` como página independiente.
 
