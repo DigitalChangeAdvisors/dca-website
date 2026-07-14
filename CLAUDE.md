@@ -89,6 +89,11 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 - **Teal elegido sobre oro** por dos razones: (1) mejor contraste sobre el fondo platino de esa sección (~3.73:1 teal vs. ~3.30:1 oro); (2) el oro de esta página está reservado por spec exclusivamente para el CTA primario y la franja de estado — usarlo también aquí habría violado esa regla ya establecida.
 - La variable `--dca-terracotta` se conserva declarada en `:root` (parte de la paleta base reutilizada) para casos reales de advertencia (ej. error de validación de formulario) — hoy sin uso activo en esta página.
 
+### Corrección de copy — cierre no debe introducir productos sin enlace (2026-07-14)
+- **Corregido:** el Bloque 7 (cierre) decía "La novela es la entrada; el AI Return Assessment es el diagnóstico profundo de tu organización." Cambiado a: "Los Lectores Fundadores ya lo habrán discutido con el autor y ya lo tendrán en sus manos."
+- Por qué: el AI Return Assessment es un producto pago de la escalera de valor ($5,000, hasta 20 líderes) que esta página nunca introdujo ni enlazó. Mencionarlo justo después del único CTA de la página (registro), sin contexto ni ruta de acción, no ancla nada — solo compite con la decisión de conversión en el peor momento posible (justo al cierre). Diagnóstico BE: la etapa de Cierre necesita reforzar escasez/exclusividad y compromiso/consistencia, no introducir una oferta nueva de otra etapa (Solución) sin sus prerrequisitos (autoridad, enlace, explicación).
+- **Regla derivada:** si un producto de la escalera de valor no tiene su propio bloque con explicación y CTA (como sí lo tiene el AI Return Test en `/novela-returnai`), no se nombra de pasada en ningún punto de esta página — ni en el cierre ni en ningún otro bloque. La frase de cierre solo puede reforzar hechos ya establecidos en la propia página (fecha de lanzamiento, exclusividad de fundador) — no introducir información nueva sin ruta de acción.
+
 ### Verificado al construir
 - No existe ningún bloque de "Lectores Fundadores" embebido en `/novela-returnai` — nada que retirar de esa página.
 - El CTA del libro en el homepage sigue apuntando a `/novela-returnai`, sin cruce con esta página.
