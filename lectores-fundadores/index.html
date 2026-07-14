@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lectores Fundadores ReturnAI — Digital Change Advisors</title>
+<meta name="description" content="Una cohorte cerrada de 50 decisores accede al creador del Modelo ARIA antes del lanzamiento de ReturnAI, el 22 de septiembre de 2026.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://www.digitalchangeadvisors.com/lectores-fundadores">
+<meta property="og:title" content="Lectores Fundadores ReturnAI">
+<meta property="og:description" content="Una cohorte cerrada de 50 decisores accede al creador del Modelo ARIA antes del lanzamiento de ReturnAI, el 22 de septiembre de 2026.">
+<meta property="og:image" content="../assets/og-returnai.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="../images/favicon.png">
+<link rel="apple-touch-icon" href="../images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ─────────────────────────────────────────────
+   SISTEMA DE DISEÑO DCA 2026 — reutilizado de /novela-returnai
+   ───────────────────────────────────────────── */
+:root {
+  --dca-teal:          #2e8b76;
+  --dca-gold:          #a48111;
+  --dca-carbon:        #1e2a38;
+  --dca-white:         #ffffff;
+  --dca-terracotta:    #c2593f;
+  --dca-platinum:      #dfe3e1;
+  --dca-platinum-bg:   #f3f3f3;
+  --dca-teal-subtle:   rgba(46,139,118,0.05);
+  --dca-teal-04:       rgba(46,139,118,0.04);
+  --font-display:      'Marcellus', Georgia, serif;
+  --font-body:         'Montserrat', 'Helvetica Neue', sans-serif;
+  --section-padding:   80px;
+  --text-max-width:    720px;
+  --layout-max-width:  1100px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--dca-carbon);
+  background: var(--dca-white);
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+h1 { font-size: clamp(26px, 4vw, 42px); }
+h2 { font-size: clamp(22px, 3vw, 34px); }
+p  { line-height: 1.6; }
+
+/* Pirámide invertida — líneas explícitas */
+.lf-h1 .line { display: block; }
+
+:focus-visible { outline: 3px solid var(--dca-teal); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 2000;
+  background: var(--dca-carbon); color: #fff; padding: 12px 20px;
+  font-family: var(--font-body); font-weight: 600; font-size: 14px;
+  border-radius: 0 0 8px 0; text-decoration: none;
+}
+.skip-link:focus { left: 0; }
+
+/* Honeypot anti-spam del formulario Brevo — oculto fuera de viewport, nunca display:none */
+.lf-honeypot {
+  position: absolute; left: -9999px; top: 0;
+  width: 1px; height: 1px; overflow: hidden;
+}
+
+.container {
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section { padding: 48px 0; }
+@media (min-width: 768px) { section { padding: var(--section-padding) 0; } }
+
+.section-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--dca-teal);
+  margin-bottom: 10px;
+}
+
+.section-accent {
+  width: 40px;
+  height: 3px;
+  background: var(--dca-gold);
+  border-radius: 2px;
+  margin: 16px auto 0;
+}
+
+.text-center { text-align: center; }
+
+/* ─── BOTONES (reutilizados de /novela-returnai) ─── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dca-teal);
+  color: var(--dca-white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 8px;
+  min-height: 52px;
+  padding: 16px 36px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.18s;
+}
+.btn-primary:hover { opacity: 0.88; }
+.btn-primary--gold { background: var(--dca-gold); color: var(--dca-white); }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid var(--dca-teal);
+  color: var(--dca-teal);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 8px;
+  min-height: 48px;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+.btn-outline:hover { background: var(--dca-teal); color: var(--dca-white); }
+
+.cta-support {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 13px;
+  opacity: 0.65;
+  margin-top: 10px;
+  display: block;
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  .btn-primary, .btn-outline { width: 100%; }
+}
+
+/* ═══════════════════════════════════════════
+   HEADER STICKY (reutilizado)
+   ═══════════════════════════════════════════ */
+.site-header {
+  background: var(--dca-white);
+  border-bottom: 1px solid var(--dca-platinum);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+@media (max-width: 767px) { .site-header { position: static; } }
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  padding: 0 24px;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  gap: 16px;
+}
+.header-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; flex-shrink: 0; }
+.header-logo svg { display: block; }
+
+.header-cta {
+  flex-shrink: 0;
+  background: var(--dca-teal);
+  color: var(--dca-white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 0.18s;
+}
+.header-cta:hover { opacity: 0.88; }
+
+/* ═══════════════════════════════════════════
+   FRANJA DE ESTADO — carbón/oro, alto contraste
+   ═══════════════════════════════════════════ */
+.status-strip {
+  background: var(--dca-carbon);
+  padding: 12px 24px;
+  text-align: center;
+}
+.status-strip p {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--dca-gold);
+  line-height: 1.4;
+}
+@media (max-width: 560px) {
+  .status-strip p { letter-spacing: 0.09em; }
+}
+
+/* ═══════════════════════════════════════════
+   HÉROE
+   ═══════════════════════════════════════════ */
+.block-hero-lf {
+  background: var(--dca-white);
+  padding: 64px 0 56px;
+}
+@media (min-width: 768px) { .block-hero-lf { padding: 96px 0 80px; } }
+
+.hero-lf-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.lf-h1 {
+  font-size: clamp(26px, 3.6vw, 44px);
+  line-height: 1.22;
+  color: var(--dca-carbon);
+  margin: 0 auto 24px;
+  max-width: 720px;
+}
+
+.hero-lf-sub {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 17px;
+  color: rgba(30,42,56,0.75);
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto 32px;
+}
+
+.hero-lf-cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.hero-lf-preorder {
+  margin-top: 14px;
+}
+
+.hero-lf-price-note {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: rgba(30,42,56,0.52);
+  text-align: center;
+  margin-top: 4px;
+}
+
+.hero-lf-discreet {
+  display: inline-block;
+  margin-top: 28px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13.5px;
+  color: rgba(30,42,56,0.55);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(30,42,56,0.25);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.hero-lf-discreet:hover { color: var(--dca-teal); border-color: var(--dca-teal); }
+
+/* ═══════════════════════════════════════════
+   CONTEXTO DE LA COHORTE — Platino
+   ═══════════════════════════════════════════ */
+.block-contexto {
+  background: var(--dca-platinum-bg);
+}
+.contexto-inner {
+  max-width: var(--text-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+.contexto-inner h2 { margin-bottom: 20px; }
+.contexto-body {
+  font-size: 16px;
+  color: rgba(30,42,56,0.78);
+  line-height: 1.75;
+  text-align: left;
+}
+.contexto-body p + p { margin-top: 16px; }
+.contexto-body b { color: var(--dca-carbon); }
+
+/* ═══════════════════════════════════════════
+   BENEFICIOS — 4 tarjetas + Apex
+   ═══════════════════════════════════════════ */
+.block-beneficios { background: var(--dca-white); }
+
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media (min-width: 640px) { .beneficios-grid { grid-template-columns: 1fr 1fr; } }
+
+.benefit-card {
+  background: var(--dca-teal-04);
+  border: 2px solid var(--dca-gold);
+  border-radius: 10px;
+  padding: 28px 26px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+.benefit-card.bc-in { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .benefit-card { opacity: 1 !important; transform: none !important; }
+}
+
+.benefit-num {
+  font-family: var(--font-display);
+  font-size: 28px;
+  color: var(--dca-gold);
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.benefit-title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15.5px;
+  color: var(--dca-carbon);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.benefit-desc {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: rgba(30,42,56,0.66);
+  line-height: 1.6;
+}
+
+/* Apex — peldaño superior, no una tarjeta más */
+.apex-band {
+  max-width: 900px;
+  margin: 28px auto 0;
+  background: var(--dca-carbon);
+  border: 3px solid var(--dca-gold);
+  border-radius: 10px;
+  padding: 28px 32px;
+}
+.apex-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--dca-gold);
+  margin-bottom: 10px;
+}
+.apex-text {
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.65;
+}
+
+/* ═══════════════════════════════════════════
+   RAZÓN PARA CREER — cifra única centrada
+   ═══════════════════════════════════════════ */
+.block-proof {
+  background: var(--dca-teal-subtle);
+  border-top: 1px solid rgba(46,139,118,0.12);
+  border-bottom: 1px solid rgba(46,139,118,0.12);
+  text-align: center;
+}
+.proof-line {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.6vw, 30px);
+  color: var(--dca-carbon);
+  line-height: 1.4;
+}
+.proof-line b { color: var(--dca-gold); font-weight: 400; }
+
+/* ═══════════════════════════════════════════
+   FORMULARIO DE REGISTRO
+   ═══════════════════════════════════════════ */
+.block-registro { background: var(--dca-platinum-bg); }
+
+.registro-inner {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.registro-scarcity {
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--dca-teal);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.registro-card {
+  background: var(--dca-white);
+  border-radius: 12px;
+  border: 1px solid var(--dca-platinum);
+  box-shadow: 0 4px 20px rgba(30,42,56,0.07);
+  padding: 36px 32px;
+}
+@media (max-width: 479px) { .registro-card { padding: 28px 22px; } }
+
+.registro-card-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--dca-teal);
+  margin-bottom: 24px;
+}
+
+.form-field { margin-bottom: 18px; }
+.form-field label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--dca-carbon);
+  margin-bottom: 6px;
+}
+.form-field input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--dca-carbon);
+  background: var(--dca-white);
+  border: 1.5px solid var(--dca-platinum);
+  border-radius: 8px;
+  padding: 12px 14px;
+  min-height: 48px;
+  transition: border-color 0.18s;
+}
+.form-field input:focus { border-color: var(--dca-teal); outline: none; }
+.form-field input:focus-visible { outline: 3px solid var(--dca-teal); outline-offset: 1px; }
+
+.registro-submit { width: 100%; margin-top: 4px; }
+.registro-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.registro-microcopy {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: rgba(30,42,56,0.55);
+  line-height: 1.6;
+  margin-top: 18px;
+  text-align: center;
+}
+
+.registro-success {
+  text-align: center;
+  padding: 24px 8px;
+}
+.registro-success p {
+  font-family: var(--font-display);
+  font-size: clamp(19px, 2.2vw, 24px);
+  color: var(--dca-carbon);
+  line-height: 1.4;
+}
+.registro-success[hidden] { display: none; }
+
+/* ═══════════════════════════════════════════
+   CIERRE
+   ═══════════════════════════════════════════ */
+.block-cierre { background: var(--dca-white); text-align: center; }
+.cierre-inner { max-width: 620px; margin: 0 auto; padding: 0 24px; }
+.cierre-inner p {
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  color: rgba(30,42,56,0.68);
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER (reutilizado de /novela-returnai)
+   ═══════════════════════════════════════════ */
+.site-footer { background: var(--dca-carbon); color: rgba(255,255,255,0.75); }
+.footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin: 0; }
+.footer-brand {
+  padding: 48px 24px;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+@media (min-width: 768px) { .footer-brand { grid-template-columns: 1fr 1fr; align-items: center; } }
+.footer-logo { display: block; margin-bottom: 14px; }
+.footer-logo svg { display: block; }
+.footer-tagline { font-family: var(--font-body); font-weight: 300; font-size: 13px; color: rgba(255,255,255,0.55); }
+.footer-legal { text-align: right; }
+@media (max-width: 767px) { .footer-legal { text-align: left; } }
+.footer-legal p { font-size: 12px; color: rgba(255,255,255,0.30); line-height: 1.7; }
+</style>
+</head>
+
+<body>
+<a href="#main" class="skip-link">Saltar al contenido</a>
+
+<!-- ═══════════════════════════════════════════
+     HEADER STICKY — reutilizado, CTA apunta al registro (esta página no vende directo)
+     ═══════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="https://digitalchangeadvisors.com" target="_blank" rel="noopener" class="header-logo" aria-label="Digital Change Advisors">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -8 400 88" width="220" height="48" aria-hidden="true" focusable="false">
+        <line x1="3" y1="73" x2="73" y2="73" stroke="#e4e4e4" stroke-width="1"/>
+        <path d="M 8 68 C 22 14, 55 8, 68 8" fill="none" stroke="#2e8b76" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="8" cy="68" r="5" fill="#2e8b76"/>
+        <circle cx="68" cy="8" r="12" fill="#a48111"/>
+        <line x1="90" y1="14" x2="90" y2="64" stroke="#1e2a38" stroke-width="1" opacity="0.12"/>
+        <text x="106" y="55" font-family="'Marcellus', Georgia, serif" font-weight="400" font-size="44" fill="#2e8b76" letter-spacing="-0.5">DCA</text>
+        <text x="109" y="70" font-family="'Montserrat', Helvetica, sans-serif" font-weight="600" font-size="10.5" fill="#1e2a38" opacity="0.80" letter-spacing="2.6">DIGITAL CHANGE ADVISORS</text>
+      </svg>
+    </a>
+    <a href="#registro" class="header-cta">Registro de fundador →</a>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     FRANJA DE ESTADO
+     ═══════════════════════════════════════════ -->
+<div class="status-strip">
+  <p>Lanzamiento 22 de septiembre de 2026 · Acceso anticipado abierto</p>
+</div>
+
+<main id="main">
+
+<!-- ═══════════════════════════════════════════
+     HÉROE
+     ═══════════════════════════════════════════ -->
+<section class="block-hero-lf" id="inicio">
+  <div class="hero-lf-inner">
+
+    <h1 class="lf-h1">
+      <span class="line">El retorno de tu inversión en IA no se pierde en la IA.</span>
+      <span class="line">Se pierde en las personas.</span>
+    </h1>
+
+    <p class="hero-lf-sub">
+      ReturnAI es la novela donde un directivo lo descubre — y lo resuelve con método. Esto es lo que reciben los primeros 50 lectores que lo confirman antes que nadie.
+    </p>
+
+    <div class="hero-lf-cta-group">
+      <a href="#registro" class="btn-primary btn-primary--gold">Unirme a los Lectores Fundadores</a>
+      <span class="hero-lf-price-note">Impreso $29.97 · Ebook $19.97 · Disponibles el 22 de septiembre.</span>
+    </div>
+
+    <!-- Botón secundario de preorden — solo se muestra si PREORDER_URL tiene valor (ver script) -->
+    <div id="preorder-slot" class="hero-lf-preorder" hidden></div>
+
+    <a href="https://www.digitalchangeadvisors.com/novela-returnai" class="hero-lf-discreet">¿Primera vez que oyes de ReturnAI? Conoce la historia completa →</a>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CONTEXTO DE LA COHORTE
+     ═══════════════════════════════════════════ -->
+<section class="block-contexto">
+  <div class="contexto-inner">
+    <p class="section-label">Una cohorte cerrada de 50 decisores. Esto es lo que el resto no recibe.</p>
+    <h2>Lectores Fundadores ReturnAI</h2>
+    <div class="contexto-body">
+      <p>ReturnAI es la novela donde un directivo descubre que el retorno de su inversión en IA no se perdió en la tecnología, sino en su gente — y lo resuelve con el <b>Modelo ARIA</b>. Los primeros 50 líderes que confirman su lugar acceden a algo que el resto del funnel de DCA no ofrece: el creador del método, en una sala cerrada.</p>
+      <p>El número no es arbitrario: es el límite físico de una sala donde el creador del Modelo ARIA puede leer, en vivo, el benchmark de cada participante. Pasado ese umbral, deja de ser una sesión — se vuelve una conferencia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     BENEFICIOS + APEX
+     ═══════════════════════════════════════════ -->
+<section class="block-beneficios">
+  <div class="container">
+
+    <div class="beneficios-grid">
+
+      <div class="benefit-card">
+        <div class="benefit-num">01</div>
+        <h3 class="benefit-title">Mastermind con el creador</h3>
+        <p class="benefit-desc">Sesión privada en vivo con el autor y creador del Modelo ARIA — jueves 17 de septiembre — en una sala cerrada de pares C-Level. Leemos la tesis del libro sobre el benchmark agregado de la cohorte.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-num">02</div>
+        <h3 class="benefit-title">Tu benchmark de pares</h3>
+        <p class="benefit-desc">Completa tu AI Return Test y desbloquea tu posición frente al resto de la cohorte, con corte el 11 de septiembre. El test es público; tu posición en esta sala, no.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-num">03</div>
+        <h3 class="benefit-title">El método detrás de la historia</h3>
+        <p class="benefit-desc">Un dossier ejecutivo con los frameworks del Modelo ARIA y una lista de chequeo accionable. Lo recibes al registrarte.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-num">04</div>
+        <h3 class="benefit-title">Estatus de fundador</h3>
+        <p class="benefit-desc">Credencial digital numerada de Lector Fundador y el ebook antes del lanzamiento en Amazon.</p>
+      </div>
+
+    </div>
+
+    <div class="apex-band">
+      <p class="apex-label">Apex</p>
+      <p class="apex-text">Los primeros 20 fundadores que acrediten su compra en Amazon —la reserva del ebook cuenta desde su apertura; el día del lanzamiento, cualquier versión— tienen una lectura 1:1 de su benchmark con el autor.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     RAZÓN PARA CREER
+     ═══════════════════════════════════════════ -->
+<section class="block-proof">
+  <div class="container">
+    <p class="proof-line">Adopción superior al <b>70%</b> · ROI documentado en <b>120 días</b>.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FORMULARIO DE REGISTRO
+     ═══════════════════════════════════════════ -->
+<section class="block-registro" id="registro">
+  <div class="registro-inner">
+
+    <p class="registro-scarcity">La cohorte se cierra en 50. El acceso al creador no se repite.</p>
+
+    <div class="registro-card">
+      <p class="registro-card-label">Registro de fundador</p>
+
+      <form id="lf-form" novalidate>
+        <div class="form-field">
+          <label for="lf-nombre">Nombre</label>
+          <input type="text" id="lf-nombre" name="NOMBRE" autocomplete="name" required>
+        </div>
+        <div class="form-field">
+          <label for="lf-cargo">Cargo</label>
+          <input type="text" id="lf-cargo" name="CARGO" autocomplete="organization-title" required>
+        </div>
+        <div class="form-field">
+          <label for="lf-empresa">Empresa</label>
+          <input type="text" id="lf-empresa" name="EMPRESA" autocomplete="organization" required>
+        </div>
+        <div class="form-field">
+          <label for="lf-email">Email corporativo</label>
+          <input type="email" id="lf-email" name="EMAIL" autocomplete="email" required>
+        </div>
+
+        <input type="hidden" name="locale" value="es">
+        <input type="hidden" name="html_type" value="simple">
+        <div class="lf-honeypot" aria-hidden="true">
+          <input type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit" class="btn-primary btn-primary--gold registro-submit">Unirme a los Lectores Fundadores</button>
+      </form>
+
+      <p class="registro-microcopy">Recibirás el dossier de fundador; al completar tu AI Return Test, tu posición en el benchmark de la cohorte (corte: 11 de septiembre).</p>
+
+      <div id="lf-success" class="registro-success" role="status" aria-live="polite" tabindex="-1" hidden>
+        <p>Revisa tu correo: tu dossier va en camino.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CIERRE
+     ═══════════════════════════════════════════ -->
+<section class="block-cierre">
+  <div class="cierre-inner">
+    <p>Lanzamiento: 22 de septiembre de 2026. La novela es la entrada; el AI Return Assessment es el diagnóstico profundo de tu organización.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER — reutilizado de /novela-returnai
+     ═══════════════════════════════════════════ -->
+<footer class="site-footer">
+  <hr class="footer-divider">
+  <div class="footer-brand">
+    <div class="footer-logo-area">
+      <a href="https://digitalchangeadvisors.com" target="_blank" rel="noopener" class="footer-logo" aria-label="Digital Change Advisors">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -8 400 88" width="220" height="48" aria-hidden="true" focusable="false">
+          <line x1="3" y1="73" x2="73" y2="73" stroke="#ffffff" stroke-width="1" opacity="0.15"/>
+          <path d="M 8 68 C 22 14, 55 8, 68 8" fill="none" stroke="#2e8b76" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="8" cy="68" r="5" fill="#2e8b76"/>
+          <circle cx="68" cy="8" r="12" fill="#a48111"/>
+          <line x1="90" y1="14" x2="90" y2="64" stroke="#ffffff" stroke-width="1" opacity="0.15"/>
+          <text x="106" y="55" font-family="'Marcellus', Georgia, serif" font-weight="400" font-size="44" fill="#ffffff" letter-spacing="-0.5">DCA</text>
+          <text x="109" y="70" font-family="'Montserrat', Helvetica, sans-serif" font-weight="600" font-size="10.5" fill="#ffffff" opacity="0.80" letter-spacing="2.6">DIGITAL CHANGE ADVISORS</text>
+        </svg>
+      </a>
+      <p class="footer-tagline">De la adopción de la IA al Retorno que sí importa.</p>
+    </div>
+    <div class="footer-legal">
+      <p>© 2026 Digital Change Advisors, LLC.<br>Todos los derechos reservados.</p>
+      <p style="margin-top:8px;">Modelo ARIA® es propiedad intelectual de Digital Change Advisors, LLC.</p>
+      <p style="margin-top:8px;">
+        <a href="https://www.digitalchangeadvisors.com/privacy-policy" style="color:rgba(255,255,255,0.30);text-decoration:none;" target="_blank" rel="noopener">Política de privacidad</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.digitalchangeadvisors.com/terms-of-use" style="color:rgba(255,255,255,0.30);text-decoration:none;" target="_blank" rel="noopener">Términos de uso</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ─────────────────────────────────────────────
+   CONFIGURACIÓN — reemplazar antes de publicar
+   ───────────────────────────────────────────── */
+// Endpoint real conectado el 14 de julio de 2026. Formulario nativo de Brevo
+// vinculado a la lista FUNDADORES_RETURNAI. Incluye honeypot anti-spam
+// (email_address_check) — debe permanecer siempre vacío.
+//
+// ⚠️ QA obligatorio antes de publicar, no opcional:
+// mode:'no-cors' (más abajo) hace la respuesta OPACA: si Brevo rechaza el
+// envío (falta un campo oculto, ID de lista, locale, etc.) esta página igual
+// mostrará "Revisa tu correo: tu dossier va en camino" — falso positivo.
+// Hacer un envío de prueba y confirmar en el panel de Brevo que el contacto
+// entró a la lista de Fundadores — no basta con ver el mensaje de éxito en
+// pantalla. Si falla, usar el snippet nativo de Brevo comentado más abajo en
+// vez del fetch directo.
+const BREVO_FORM_ACTION = 'https://7d804b9a.sibforms.com/serve/MUIFAHmKIeVy3lPlcxJQ1M6z_ukM4vT-b4BHxXlUPc-4Abi3Lxp0uv84L2Z-jTLmu1cPbW05cMRYzXKjC1IJiioLtGlXAoOcO_ETZr7EYoIjqkTAYGTRzuIH3Qus1o0XXX9xRyjB96oObkdkG3JKSQG3FkVOxoI3kkwKfoPW1IUZV8RPwPaJ11ILZlj3BKrvSSArbFfVBWoSIg4Icg==';
+
+// Vacía hasta que abra la preorden en KDP (~20 de agosto). Al asignar valor,
+// se renderiza un botón secundario "Reservar el ebook en Amazon →".
+const PREORDER_URL = '';
+
+/* Alternativa: si el fetch directo a Brevo no es viable por CORS, reemplazar
+   el <form id="lf-form"> completo por el snippet de embed nativo que Brevo
+   genera en Contactos → Formularios → Compartir → Código HTML, y eliminar
+   el listener de abajo.
+
+<!-- INICIO snippet nativo Brevo (alternativa) -->
+<div class="sib-form" style="text-align: center; background-color: transparent;"> ... </div>
+<!-- FIN snippet nativo Brevo -->
+
+*/
+
+(function() {
+  var slot = document.getElementById('preorder-slot');
+  if (PREORDER_URL) {
+    var a = document.createElement('a');
+    a.href = PREORDER_URL;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.className = 'btn-outline';
+    a.textContent = 'Reservar el ebook en Amazon →';
+    slot.appendChild(a);
+    slot.hidden = false;
+  }
+})();
+
+(function() {
+  var form = document.getElementById('lf-form');
+  var success = document.getElementById('lf-success');
+  var submitBtn = form.querySelector('.registro-submit');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando…';
+
+    var formData = new FormData(form);
+
+    // mode: 'no-cors' — la respuesta de Brevo es opaca (no se puede leer el
+    // resultado); se asume éxito si la petición no lanza un error de red.
+    fetch(BREVO_FORM_ACTION, { method: 'POST', mode: 'no-cors', body: formData })
+      .then(function() {
+        form.hidden = true;
+        success.hidden = false;
+        success.focus();
+      })
+      .catch(function() {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Unirme a los Lectores Fundadores';
+      });
+  });
+})();
+
+/* Reveal one-shot de las tarjetas de beneficio al entrar al viewport */
+(function() {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cards = document.querySelectorAll('.benefit-card');
+  if (reduced || !('IntersectionObserver' in window)) {
+    cards.forEach(function(c) { c.classList.add('bc-in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry, i) {
+      if (entry.isIntersecting) {
+        setTimeout(function() { entry.target.classList.add('bc-in'); }, i * 90);
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.25 });
+  cards.forEach(function(c) { io.observe(c); });
+})();
+</script>
+
+</body>
+</html>

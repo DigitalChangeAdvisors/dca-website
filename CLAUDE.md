@@ -40,6 +40,60 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 | `/libro` | `libro.html` | ReturnAI la novela, Amazon, extracto | ⏳ Pendiente |
 | `/comunidad` | `comunidad.html` | LARIA: 240 miembros, Skool | ⏳ Pendiente |
 | `/contacto` | `contacto.html` | Formulario mínimo, sin chatbots | ⏳ Pendiente |
+| `/lectores-fundadores` | `lectores-fundadores/index.html` | Cohorte cerrada de 50 "Lectores Fundadores" ReturnAI — destino exclusivo de invitación nominal/LinkedIn/newsletter, sin nav | ✅ Implementada (2026-07-13) — pendiente `BREVO_FORM_ACTION` y `PREORDER_URL` antes de publicar |
+
+## Decisiones Canónicas de `/lectores-fundadores` — página de cohorte cerrada (2026-07-13)
+
+> Página nueva e independiente, **no enlazada desde el nav principal** — único destino de invitaciones nominales, posts de LinkedIn y newsletter para la cohorte "Lectores Fundadores" de la novela ReturnAI (lanzamiento 22 de septiembre de 2026). Pre-audit ejecutado: `/behavioral-economics-c-level` + `/ui-ux-pro-max`.
+
+### Patrón de archivo
+- HTML/CSS/JS autocontenido en un solo archivo (no usa el sistema de CSS/JS en cascada del website principal) — mismo patrón que `/novela-returnai`. Header, footer, botón primario y tarjetas con marco oro sobre teal claro reutilizados verbatim de esa página.
+- `<meta name="robots" content="noindex, nofollow">` — deliberado. Por qué: una página de "cohorte cerrada de 50" indexable en Google deja de sentirse exclusiva; refuerza la escasez real validada en el audit BE.
+
+### Etapa conductual y mecanismos (audit BE)
+- Etapa: **Cierre** (registro de cupo limitado), con hook de **Diagnóstico** en el H1 de pérdida — el visitante llega frío a contenido de DCA aunque sea C-Level con contexto previo del tema.
+- Escasez real, no ficticia: invitación nominal + cohorte de 50 + Apex verificable por compra en Amazon.
+- "Modelo ARIA" se menciona ya en el Bloque 3 (contexto de cohorte), antes del párrafo 3 de la página — regla de anclaje cognitivo.
+- El número "50" está justificado con una razón operativa real (capacidad de la sala del mastermind en vivo), no como cifra de marketing sin explicación.
+
+### Patrón visual — Apex NO es una 5ª tarjeta
+- El peldaño "Apex" (primeros 20 fundadores que acrediten compra en Amazon) va en una **banda horizontal aparte, debajo del grid de 4 tarjetas** — fondo carbón, marco oro completo (3px), una sola frase corrida, sin bullets ni checkmarks.
+- Por qué: un 5º tile dentro del mismo grid de beneficios lee como tier de pricing SaaS — prohibido por brand book (referencia McKinsey/Bain, no estética de vendor de tecnología).
+
+### Formulario y atribución — regla de negocio, no preferencia UX
+- El submit del formulario **nunca** redirige al AI Return Test. Estado de éxito inline sin recargar página: "Revisa tu correo: tu dossier va en camino." El enlace al ART lo entrega solo el email automático de bienvenida de Brevo.
+- Por qué: proteger la atribución de "fundador" en Brevo — si el ART se ofrece desde esta página, se pierde el registro segmentado de la cohorte.
+
+### Corrección post-revisión (2026-07-13) — cifra apilada y disclosure de IP
+- **Corregido:** el Bloque 3 mencionaba "el sistema de 14 componentes... validado en 70+ organizaciones" junto a "Modelo ARIA". Eliminado — quedó solo "...lo resuelve con el Modelo ARIA."
+- Por qué (dos razones, ambas suficientes por sí solas):
+  1. Apilaba cifra con el Bloque 5 ("70+ organizaciones" vs. "Adopción superior al 70%") — un C-Level escéptico lee dos cifras con el mismo número a pocos scrolls de distancia como la misma cifra reformulada, o como descuido. Viola la regla de "una sola cifra en tratamiento display por página" (ver CLAUDE.md raíz). Además "70+ organizaciones" es una cifra que en la estrategia de contenidos sigue pendiente de confirmar (conflicto con "+2.000 líderes intervenidos").
+  2. El número exacto de componentes del Modelo ARIA ("14 componentes") es información de propiedad intelectual — no se divulga en copy libre de páginas públicas sin pasar por el guardián de IP del modelo, aunque la página sea `noindex`.
+- **Regla derivada:** la única cifra de prueba social de toda la página vive en el Bloque 5 (razón para creer) — no repetirla ni parafrasearla en ningún otro bloque.
+
+### Integración Brevo conectada — endpoint real + honeypot (2026-07-14)
+- `BREVO_FORM_ACTION` ya no es placeholder: apunta al formulario nativo de Brevo (`sibforms.com/serve/...`) vinculado a la lista **FUNDADORES_RETURNAI**.
+- `<form id="lf-form">` ahora incluye, justo antes del botón de envío: dos campos ocultos estándar de Brevo (`locale=es`, `html_type=simple`) y un honeypot anti-spam (`email_address_check`).
+- **QA sigue pendiente antes del lanzamiento público:** el `fetch` usa `mode:'no-cors'` → la respuesta es opaca, así que un rechazo de Brevo (campo faltante, ID de lista, locale) igual mostraría el mensaje de éxito en pantalla (falso positivo). Falta hacer un envío de prueba real y confirmar en el panel de Brevo que el contacto entró a la lista — no basta con ver el mensaje de éxito en el navegador. Si falla, usar el snippet nativo de Brevo ya comentado en el `<script>` en vez del fetch directo.
+- `PREORDER_URL` (misma sección del `<script>`) — sigue vacío hasta que abra la preorden en KDP (~20 de agosto de 2026). Al asignarse, aparece automáticamente un botón secundario "Reservar el ebook en Amazon →" en el héroe.
+
+#### Patrón del honeypot — por qué está hecho así (no simplificar)
+- **`type="text"`, no `type="hidden"`:** un honeypot con `type="hidden"` no engaña a los bots de spam más simples (algunos ya ignoran campos hidden por diseño) ni sirve como señal fuerte para el anti-spam de Brevo, que espera un campo de texto real que un humano nunca completaría. El campo debe parecer rellenable para el bot, no invisible a nivel de DOM.
+- **Ocultamiento por posición fuera de viewport (`position:absolute; left:-9999px`), nunca `display:none` ni `visibility:hidden`:** varios bots de scraping detectan y saltan campos con `display:none`/`visibility:hidden` precisamente porque es la técnica de honeypot más común y ya está en sus listas de evasión. Sacarlo del viewport por posición es menos detectable y es la misma técnica ya validada en esta página para `.skip-link` — reutilización intencional, no casualidad.
+- **`tabindex="-1"` + `aria-hidden="true"` + `autocomplete="off"`:** sin esto, un usuario real con teclado o lector de pantalla podría llegar al campo por Tab y completarlo por error, lo que dispararía un falso positivo de spam y bloquearía su propio registro. El autocomplete apagado evita que el navegador lo rellene solo.
+- **El valor debe permanecer SIEMPRE vacío** — ni el usuario, ni el JS del formulario, ni el autocompletado deben escribirle nada. Si en un futuro fine-tuning alguien "limpia" este campo pensando que es código muerto porque nunca se lee su valor en el JS del cliente, se rompe el anti-spam del lado de Brevo sin que se note en el navegador.
+
+### Corrección de color — terracota reservado exclusivamente para advertencias (2026-07-14)
+- **Corregido:** la línea de escasez del Bloque 6 ("La cohorte se cierra en 50...") usaba `var(--dca-terracotta)` para destacar el texto. Cambiado a `var(--dca-teal)`.
+- Por qué: el brand book raíz reserva Terracota para "Alertas, badges de severidad" — no para énfasis general de copy. Aunque la reutilización era técnicamente legítima (mismo token que `/novela-returnai`), el uso semántico era incorrecto: la línea de escasez es un mensaje de urgencia comercial, no una advertencia de error/severidad.
+- **Teal elegido sobre oro** por dos razones: (1) mejor contraste sobre el fondo platino de esa sección (~3.73:1 teal vs. ~3.30:1 oro); (2) el oro de esta página está reservado por spec exclusivamente para el CTA primario y la franja de estado — usarlo también aquí habría violado esa regla ya establecida.
+- La variable `--dca-terracotta` se conserva declarada en `:root` (parte de la paleta base reutilizada) para casos reales de advertencia (ej. error de validación de formulario) — hoy sin uso activo en esta página.
+
+### Verificado al construir
+- No existe ningún bloque de "Lectores Fundadores" embebido en `/novela-returnai` — nada que retirar de esa página.
+- El CTA del libro en el homepage sigue apuntando a `/novela-returnai`, sin cruce con esta página.
+- Esta página no enlaza al AI Return Test en ningún punto.
+- Rutas relativas `../assets/og-returnai.png` y `../images/favicon.png` verificadas contra archivos reales — resuelven correctamente.
 
 ## Enrutamiento de CTAs y Enlaces — CANÓNICO (2026-06-29)
 
