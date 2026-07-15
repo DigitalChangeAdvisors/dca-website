@@ -41,6 +41,20 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 | `/comunidad` | `comunidad.html` | LARIA: 240 miembros, Skool | ⏳ Pendiente |
 | `/contacto` | `contacto.html` | Formulario mínimo, sin chatbots | ⏳ Pendiente |
 | `/lectores-fundadores` | `lectores-fundadores/index.html` | Cohorte cerrada de 50 "Lectores Fundadores" ReturnAI — destino exclusivo de invitación nominal/LinkedIn/newsletter, sin nav | ✅ Implementada (2026-07-13) — pendiente `BREVO_FORM_ACTION` y `PREORDER_URL` antes de publicar |
+| `/novela-returnai` | `novela-returnai/index.html` | Landing pública del libro ReturnAI — héroe, caso Adalid, capítulo 1, AI Return Test | ✅ En producción — CTAs de compra reparados (2026-07-14), libro aún no a la venta |
+
+## Decisiones Canónicas de `/novela-returnai` — CTAs de compra reparados (2026-07-14)
+
+> El libro sale el 22 de septiembre de 2026 y todavía no está a la venta. Varios botones apuntaban a anclas muertas (`#amazon-link`, `#amazon-impreso`, `#amazon-ebook`) en 7 ocurrencias sobre 4 ubicaciones (header, héroe, "Tu próximo paso", modal del capítulo 1). Se reemplazaron por un único CTA "Unirme a los Lectores Fundadores →" hacia `/lectores-fundadores`, con línea de apoyo de precios/fecha reutilizada verbatim. Se agregó la misma franja de estado de `/lectores-fundadores` bajo el header, y se corrigió `$3.2M → $8.2M` en `meta description` y `og:description` (inconsistencia con el resto de la página, que ya usaba $8.2M en el héroe y el cuerpo).
+
+### Decisión 1 — El header NO lleva subtexto de precio/fecha (deliberado, no un olvido)
+El CTA del header ("Unirme a los Lectores Fundadores →") no tiene línea de apoyo debajo, a diferencia del héroe, "Tu próximo paso" y el modal del capítulo 1, que sí la tienen. Por qué: el header es una barra sticky compacta de 68px de alto — el mismo patrón que usa el resto del sitio. Meter una segunda línea de texto ahí obliga a rediseñar la altura/estructura del header, un cambio de layout mayor al que se pidió (fix de CTAs rotos, no rediseño de header). Si en el futuro se decide agregarlo, es una decisión de layout nueva, no una corrección de copy.
+
+### Decisión 2 — `PREORDER_URL` vacía es un estado válido, no una tarea sin terminar
+Igual que en `/lectores-fundadores`, `PREORDER_URL` se declaró vacía en un bloque de configuración al inicio del `<script>`. Vacía = estado correcto y esperado hasta que abra la preorden en KDP (~20 de agosto de 2026) — no es una variable a medio terminar. El botón secundario "Reservar el ebook en Amazon →" se activa solo asignándole un valor; no requiere tocar el HTML. Aparece junto al botón primario **solo** en héroe y "Tu próximo paso" — deliberadamente ausente del header y del modal del capítulo 1, para no sobrecargar esos dos puntos con un segundo CTA.
+
+### Decisión 3 — Criterio de limpieza de CSS: "toda clase sin referencia en el HTML", no una lista cerrada
+Se eliminaron 6 clases CSS huérfanas tras colapsar los dos botones de compra en uno: `.cta-libro-option`, `.cta-libro-option-format`, `.cta-libro-option-price`, `.cta-libro-option-sub`, `.cta-libro-option--secondary`, `.btn-preludio-ebook` (con sus `:hover`). El criterio no fue "borrar esta lista cerrada de nombres" — fue **"toda clase que quedó sin ninguna referencia en el HTML tras este cambio"**, verificado con grep antes de cada borrado (incluida `.cta-libro-option--secondary`, que no estaba en la lista inicial y se sumó al confirmarse huérfana con el mismo método). Precedente: si en el futuro aparece otro selector huérfano relacionado con este mismo cambio, se limpia con el mismo criterio — grep de verificación primero, borrado después.
 
 ## Decisiones Canónicas de `/lectores-fundadores` — página de cohorte cerrada (2026-07-13)
 
