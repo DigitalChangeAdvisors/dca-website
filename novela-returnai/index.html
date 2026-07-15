@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ReturnAI — La novela · Digital Change Advisors</title>
-<meta name="description" content="La única novela construida sobre un caso real del Modelo ARIA. Adalid Puentes tenía $3.2M invertidos en IA sin retorno. Lo que ocurrió en los siguientes 120 días es exactamente lo que ReturnAI despliega en cada intervención.">
+<meta name="description" content="La única novela construida sobre un caso real del Modelo ARIA. Adalid Puentes tenía $8.2M invertidos en IA sin retorno. Lo que ocurrió en los siguientes 120 días es exactamente lo que ReturnAI despliega en cada intervención.">
 <link rel="canonical" href="https://www.digitalchangeadvisors.com/novela-returnai">
 <meta property="og:title" content="ReturnAI — La novela · Digital Change Advisors">
-<meta property="og:description" content="La metodología que convirtió $3.2M sin retorno en $891K en el P&L — narrada desde adentro.">
+<meta property="og:description" content="La metodología que convirtió $8.2M sin retorno en $891K en el P&L — narrada desde adentro.">
 <meta property="og:image" content="assets/og-returnai.png">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="../images/favicon.png">
@@ -238,6 +238,27 @@ section { padding: 48px 0; }
   transition: opacity 0.18s;
 }
 .header-cta:hover { opacity: 0.88; }
+
+/* ═══════════════════════════════════════════
+   FRANJA DE ESTADO — carbón/oro, alto contraste
+   ═══════════════════════════════════════════ */
+.status-strip {
+  background: var(--dca-carbon);
+  padding: 12px 24px;
+  text-align: center;
+}
+.status-strip p {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--dca-gold);
+  line-height: 1.4;
+}
+@media (max-width: 560px) {
+  .status-strip p { letter-spacing: 0.09em; }
+}
 
 /* ═══════════════════════════════════════════
    B1 — HERO
@@ -830,61 +851,17 @@ section { padding: 48px 0; }
   margin-right: auto;
 }
 
-/* Dos opciones de compra */
+/* CTA único de registro (antes: dos opciones de compra) */
 .cta-libro-options {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  max-width: 440px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 @media (max-width: 479px) {
-  .cta-libro-options { grid-template-columns: 1fr; max-width: 100%; }
-}
-
-.cta-libro-option {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
-  text-decoration: none;
-  background: var(--dca-gold);
-  color: var(--dca-white);
-  border-radius: 8px;
-  padding: 18px 20px 14px;
-  transition: opacity 0.18s, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-  border: none;
-  cursor: pointer;
-}
-.cta-libro-option:hover { opacity: 0.90; transform: translateY(-2px); }
-
-.cta-libro-option--secondary {
-  background: transparent;
-  border: 2px solid var(--dca-gold);
-  color: var(--dca-gold);
-}
-.cta-libro-option--secondary:hover {
-  background: rgba(164,129,17,0.10);
-  opacity: 1;
-}
-
-.cta-libro-option-format {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 14px;
-  margin-bottom: 4px;
-}
-.cta-libro-option-price {
-  font-family: var(--font-display);
-  font-size: 22px;
-  line-height: 1.1;
-  margin-bottom: 4px;
-}
-.cta-libro-option-sub {
-  font-family: var(--font-body);
-  font-size: 11px;
-  opacity: 0.72;
-  font-weight: 500;
+  .cta-libro-options { flex-direction: column; align-items: stretch; }
 }
 
 .cta-libro-amazon-note {
@@ -1240,20 +1217,6 @@ section { padding: 48px 0; }
   margin-top: 36px; font-size: 12px !important;
   text-transform: uppercase; letter-spacing: 0.08em;
 }
-/* Ebook — outline button en panel oscuro */
-.preludio-panel__cta .btn-preludio-ebook {
-  display: inline-flex; align-items: center; justify-content: center;
-  background: transparent; color: rgba(255,255,255,0.85);
-  font-family: var(--font-body); font-weight: 600; font-size: 14px;
-  text-decoration: none; border-radius: 8px;
-  border: 1.5px solid rgba(255,255,255,0.3);
-  min-height: 48px; padding: 14px 28px;
-  transition: border-color 0.18s, color 0.18s;
-}
-.preludio-panel__cta .btn-preludio-ebook:hover {
-  border-color: rgba(255,255,255,0.6); color: #fff;
-}
-
 .preludio-panel__cta {
   margin-top: 48px; padding-top: 32px;
   border-top: 1px solid rgba(255,255,255,0.1);
@@ -1382,11 +1345,18 @@ section { padding: 48px 0; }
       </svg>
     </a>
 
-    <!-- CTA header → Amazon directo (placeholder hasta tener URL) -->
-    <a href="#amazon-link" target="_blank" rel="noopener" class="header-cta">Obtener el libro →</a>
+    <!-- CTA header → registro de fundadores (el libro aún no está a la venta) -->
+    <a href="https://www.digitalchangeadvisors.com/lectores-fundadores" target="_blank" rel="noopener" class="header-cta">Unirme a los Lectores Fundadores →</a>
 
   </div>
 </header>
+
+<!-- ═══════════════════════════════════════════
+     FRANJA DE ESTADO
+     ═══════════════════════════════════════════ -->
+<div class="status-strip">
+  <p>Lanzamiento 22 de septiembre de 2026 · Acceso anticipado abierto</p>
+</div>
 
 
 <!-- ═══════════════════════════════════════════
@@ -1410,11 +1380,11 @@ section { padding: 48px 0; }
       </p>
 
       <div class="hero-cta-group">
-        <!-- CTA hero → Amazon: Impreso (activar con URL real) -->
-        <a href="#amazon-impreso" target="_blank" rel="noopener" class="btn-primary">Impreso — $29.97 en Amazon →</a>
-        <!-- CTA hero → Amazon: Ebook (activar con URL real) -->
-        <a href="#amazon-ebook" target="_blank" rel="noopener" class="btn-outline">Ebook — $19.97 en Amazon →</a>
+        <a href="https://www.digitalchangeadvisors.com/lectores-fundadores" target="_blank" rel="noopener" class="btn-primary">Unirme a los Lectores Fundadores →</a>
+        <!-- Botón secundario de preorden — solo se muestra si PREORDER_URL tiene valor (ver script) -->
+        <span id="preorder-slot-hero"></span>
       </div>
+      <p class="price-note">Impreso $29.97 · Ebook $19.97 · Disponibles el 22 de septiembre.</p>
     </div>
 
     <div class="novela-cover-wrap">
@@ -1651,25 +1621,15 @@ section { padding: 48px 0; }
 
     <span class="cta-libro-gold-line"></span>
 
-    <p class="cta-libro-body">Elige el formato. El contenido es el mismo: el caso completo, los 120 días, los 10 obstáculos intervenidos y el retorno documentado ante la Junta.</p>
+    <p class="cta-libro-body">Únete a los Lectores Fundadores. El contenido es el mismo: el caso completo, los 120 días, los 10 obstáculos intervenidos y el retorno documentado ante la Junta.</p>
 
     <div class="cta-libro-options">
-
-      <a href="#amazon-impreso" target="_blank" rel="noopener" class="cta-libro-option cta-libro-option--primary">
-        <span class="cta-libro-option-format">Impreso</span>
-        <span class="cta-libro-option-price">$29.97</span>
-        <span class="cta-libro-option-sub">El libro · Amazon Prime</span>
-      </a>
-
-      <a href="#amazon-ebook" target="_blank" rel="noopener" class="cta-libro-option cta-libro-option--secondary">
-        <span class="cta-libro-option-format">Ebook</span>
-        <span class="cta-libro-option-price">$19.97</span>
-        <span class="cta-libro-option-sub">Lectura inmediata</span>
-      </a>
-
+      <a href="https://www.digitalchangeadvisors.com/lectores-fundadores" target="_blank" rel="noopener" class="btn-primary btn-primary--gold">Unirme a los Lectores Fundadores →</a>
+      <!-- Botón secundario de preorden — solo se muestra si PREORDER_URL tiene valor (ver script) -->
+      <span id="preorder-slot-proximo-paso"></span>
     </div>
 
-    <p class="cta-libro-amazon-note">Disponible en Amazon · Envío internacional</p>
+    <p class="cta-libro-amazon-note">Impreso $29.97 · Ebook $19.97 · Disponibles el 22 de septiembre.</p>
 
   </div>
 </section>
@@ -1974,9 +1934,9 @@ section { padding: 48px 0; }
       <div class="preludio-panel__cta">
         <p>Lo que Adalid aplicó en los siguientes 119 días está documentado en la novela. Si te identificas con su punto de partida, el libro te da la secuencia completa.</p>
         <div class="preludio-panel__cta-group">
-          <a href="#amazon-impreso" target="_blank" rel="noopener" class="btn-preludio-amazon">Impreso — $29.97 en Amazon →</a>
-          <a href="#amazon-ebook" target="_blank" rel="noopener" class="btn-preludio-ebook">Ebook — $19.97 en Amazon →</a>
+          <a href="https://www.digitalchangeadvisors.com/lectores-fundadores" target="_blank" rel="noopener" class="btn-preludio-amazon">Unirme a los Lectores Fundadores →</a>
         </div>
+        <p>Impreso $29.97 · Ebook $19.97 · Disponibles el 22 de septiembre.</p>
       </div>
     </div>
   </div>
@@ -1986,6 +1946,33 @@ section { padding: 48px 0; }
 <!-- ═══════════════════════════════════════════
      SCRIPTS
      ═══════════════════════════════════════════ -->
+
+<!-- Configuración — reemplazar antes de publicar -->
+<script>
+// Vacía hasta que abra la preorden en KDP (~20 de agosto). Al asignar valor,
+// se renderiza un botón secundario "Reservar el ebook en Amazon →" junto al
+// botón primario de fundadores, en el héroe y en "Tu próximo paso" — mismo
+// patrón que en /lectores-fundadores.
+const PREORDER_URL = '';
+
+(function() {
+  if (!PREORDER_URL) return;
+  // Héroe: fondo blanco → btn-outline (teal). "Tu próximo paso": fondo
+  // carbón → btn-outline--white (ya definido para botones sobre fondo oscuro).
+  var slots = { 'preorder-slot-hero': 'btn-outline', 'preorder-slot-proximo-paso': 'btn-outline btn-outline--white' };
+  Object.keys(slots).forEach(function(id) {
+    var slot = document.getElementById(id);
+    if (!slot) return;
+    var a = document.createElement('a');
+    a.href = PREORDER_URL;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.className = slots[id];
+    a.textContent = 'Reservar el ebook en Amazon →';
+    slot.appendChild(a);
+  });
+})();
+</script>
 
 <!-- Metric count-up -->
 <script>
