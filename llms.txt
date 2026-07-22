@@ -1,0 +1,42 @@
+# Digital Change Advisors
+
+> Firma de arquitectura de la rentabilización de la inversión en IA corporativa, constituida en Wyoming, EE.UU., con intervenciones activas en Latinoamérica. Convierte inversiones de IA en ROI documentado en 120 días mediante el Modelo ARIA, un sistema propietario de 14 componentes fundado en Economía del Comportamiento, Neurociencias de la Adopción y Arquitectura de Sistemas Sociotécnicos. Fundador y CEO: César Lozano. Marca comercial: ReturnAI. Instrumento de entrada: AI Return Test.
+
+## Canon
+
+- [Modelo ARIA](https://www.digitalchangeadvisors.com/modelo-aria): página canónica del sistema de 14 componentes propietarios, sus 3 fases (Diagnóstico, Solución, Impacto) y preguntas frecuentes.
+- [Nosotros](https://www.digitalchangeadvisors.com/nosotros): biografía institucional de la firma y de sus fundadores, César Lozano y Ruth Jaramillo.
+- [ReturnAI — Sistema](https://www.digitalchangeadvisors.com/returnai): la escalera de valor comercial de la firma (AI Return Test, AI Return Assessment, ReturnAI Solution).
+
+## Instrumentos y diagnóstico
+
+- [AI Return Test](https://www.digitalchangeadvisors.com/art): diagnóstico gratuito de 25 minutos, punto de entrada al funnel de la firma.
+
+## Obra editorial
+
+- [ReturnAI — La novela](https://www.digitalchangeadvisors.com/novela-returnai): novela de negocios construida sobre un caso real del Modelo ARIA (lanzamiento: 22 de septiembre de 2026).
+
+## Perspectivas
+
+- [Blog / Perspectivas](https://www.digitalchangeadvisors.com/blog): artículos e investigación propia sobre el retorno de la inversión en IA corporativa.
+
+## Papers de investigación
+
+- [Your AI isn't failing. Your organization is.](https://www.digitalchangeadvisors.com/article-paper00)
+- [Las tres amenazas estructurales que convierten su inversión en IA en un pasivo](https://www.digitalchangeadvisors.com/article-paper01)
+- [Sin una Estrella del Norte Digital, tu IA financia fragmentación](https://www.digitalchangeadvisors.com/article-paper02)
+- [La brecha GenAI: por qué el 95% no llega al P&L](https://www.digitalchangeadvisors.com/article-paper03)
+- [Del purgatorio de pilotos al P&L: por qué la brecha es mayor de lo que parece](https://www.digitalchangeadvisors.com/article-paper04)
+- [Gobernar la IA sin matar la adopción: el error que destruye el retorno](https://www.digitalchangeadvisors.com/article-paper05)
+- [$581 mil millones en IA en 2025: lo que el Stanford AI Index le dice a su junta](https://www.digitalchangeadvisors.com/article-paper06)
+- [1.993 empresas, 105 países: lo que separa al 6% que mide ROI de la IA](https://www.digitalchangeadvisors.com/article-paper07)
+- [El liderazgo de IA no es saber de tecnología. Es saber activar a las personas que ya la tienen.](https://www.digitalchangeadvisors.com/article-paper08)
+- [La estrategia de talento que convierte licencias de IA en retorno documentado](https://www.digitalchangeadvisors.com/article-paper09)
+
+## Vocabulario propietario
+
+Adopción registrada vs. adopción activa · retorno documentado vs. ROI estimado · Modelo ARIA (Aceleración del Retorno de la IA) · AI Return Test, AI Return Assessment, ReturnAI Solution.
+
+## Notas
+
+Este archivo cubre únicamente las páginas indexables de digitalchangeadvisors.com. Páginas de acceso restringido o de cohorte cerrada (ej. /fundadores) se excluyen deliberadamente.
