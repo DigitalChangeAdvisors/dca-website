@@ -132,12 +132,34 @@ Todos los botones y enlaces del website + artículos apuntan a `https://www.digi
 
 ## Repositorios de Despliegue
 
-- **Dev (monorepo):** `DCA-ReturnAI/dca-presencia-digital-dev` — carpeta `website/`
-- **Producción:** `DCA-ReturnAI/dca-website` — GitHub Pages activo
+- **Dev (monorepo):** `DigitalChangeAdvisors/dca-presencia-digital-dev` — carpeta `website/`
+- **Producción:** `DigitalChangeAdvisors/dca-website` — GitHub Pages activo
 - **URL staging:** `https://dca-returnai.github.io/dca-website/`
 - **Deploy CANÓNICO (MacBook o iMac):** `./deploy.sh website` (o `both`) desde la raíz del monorepo. **No usar `git subtree push` directo** — `deploy.sh` aborta si falta `website/CNAME` y verifica el dominio post-deploy. Ver "Hardening de Deploy y Dominio" en el CLAUDE.md raíz.
 - **⚠️ Nota de sincronización:** Si la producción tiene commits directos del iMac, usar `--force` tras integrar los cambios remotos en el monorepo.
-- **🌐 Dominio — CANÓNICO (2026-06-30):** El dominio es `digitalchangeadvisors.com` (apex), versionado en **`website/CNAME`**. `www` redirige al apex vía Cloudflare. **Nunca borrar `website/CNAME`.** Causa raíz de un incidente: el deploy por `subtree split + push --force` reemplaza `main` con el contenido de `website/`; si el `CNAME` solo existía en producción (creado por GitHub al fijar el dominio) y no en el código fuente, **el force-push lo borra y desconecta el dominio** (apex → 404, GitHub vacía el ajuste de Pages). Solución: el CNAME vive en el código fuente → sobrevive a todo redeploy. Si el dominio se cae, verificar con `GET /repos/DCA-ReturnAI/dca-website/pages` (campo `cname`) y, si está vacío, re-fijar con `PUT .../pages -d '{"cname":"digitalchangeadvisors.com"}'`.
+- **🌐 Dominio — CANÓNICO (2026-06-30):** El dominio es `digitalchangeadvisors.com` (apex), versionado en **`website/CNAME`**. `www` redirige al apex vía Cloudflare. **Nunca borrar `website/CNAME`.** Causa raíz de un incidente: el deploy por `subtree split + push --force` reemplaza `main` con el contenido de `website/`; si el `CNAME` solo existía en producción (creado por GitHub al fijar el dominio) y no en el código fuente, **el force-push lo borra y desconecta el dominio** (apex → 404, GitHub vacía el ajuste de Pages). Solución: el CNAME vive en el código fuente → sobrevive a todo redeploy. Si el dominio se cae, verificar con `GET /repos/DigitalChangeAdvisors/dca-website/pages` (campo `cname`) y, si está vacío, re-fijar con `PUT .../pages -d '{"cname":"digitalchangeadvisors.com"}'`.
+- **📛 Nota de organización (2026-07-22):** el org de GitHub se movió de `DCA-ReturnAI` a `DigitalChangeAdvisors`. Las URLs viejas siguen redirigiendo (GitHub las conserva), pero cualquier remote configurado con el nombre viejo conviene actualizarlo al hacerle push — evita depender del redirect indefinidamente.
+
+## Infraestructura Técnica GEO — robots.txt, sitemap.xml, llms.txt, schema (2026-07-22)
+
+> Ejecutado al integrar la "Estrategia GEO DCA 2026-2027" (documento aparte) a la bitácora de lanzamiento de 12 semanas. Verificado en vivo contra producción, no solo desplegado.
+
+### Hallazgo — Cloudflare bloqueaba a los rastreadores de IA por defecto
+El toggle **"robots.txt gestionado"** de Cloudflare (Security Settings → Bot traffic) escribía automáticamente `Disallow: /` para ClaudeBot, GPTBot, Google-Extended, Applebot-Extended, Amazonbot y meta-externalagent — comportamiento por defecto de esa función, nadie del equipo lo configuró así. Se apagó ese toggle y se desbloquearon individualmente ClaudeBot, GPTBot y Claude-User en **AI Crawl Control**. El `robots.txt` propio (`website/robots.txt`) es ahora la única fuente de verdad — no depende de que ese toggle de Cloudflare se mantenga apagado.
+
+### Archivos nuevos en la raíz de `website/`
+- `robots.txt` — `Allow: /` explícito + referencia a `sitemap.xml`.
+- `sitemap.xml` — páginas core (`/`, `/modelo-aria`, `/returnai`, `/nosotros`, `/novela-returnai`, `/art`, `/blog`) + los 10 papers de investigación (`article-paper00`–`09`). **Deliberadamente fuera:** `/fundadores` y `/privacy-policy` (ambas `noindex`); `amenaza`, `ara`, `barco`, `feudos`, `sindrome` (5 landings ABM que comparten el mismo `<title>` "AI Return Assessment" — riesgo de contenido duplicado si se indexan todas); `centro-baip` y `sprint-roadmap-01-baip` (no son contenido de cara al cliente).
+- `llms.txt` — resumen del canon de la firma para agentes de IA (formato estándar: H1 + resumen + enlaces por sección).
+- Dado de alta en Google Search Console (propiedad de Dominio, verificada por TXT en Cloudflare) y Bing Webmaster Tools (verificado por CNAME en Cloudflare) — ambos confirmados en estado correcto.
+
+### Schema markup agregado (sin tocar copy visible ni UX, salvo lo anotado)
+- `modelo-aria.html`: `<link rel="canonical">` (no existía), JSON-LD `FAQPage` (envolviendo el FAQ visual ya existente) + `DefinedTerm` para "Modelo ARIA", `dateModified` en el JSON-LD `Service` existente, fecha de actualización visible en el footer, y un `<h2>` visualmente oculto (técnica de recorte estándar — cero impacto visual, sí lo lee un lector de pantalla) con la pregunta literal "¿Qué es el Modelo ARIA?". El H1 de conversión no se tocó.
+- `novela-returnai/index.html`: JSON-LD `Book` nuevo (autor, editorial, fecha de lanzamiento 2026-09-22, formatos impreso/ebook).
+- `nosotros.html`: `sameAs` (LinkedIn) agregado al schema `Person` de César Lozano existente. **Corrección de paso:** el campo `knowsAbout` tenía "Gestión del cambio organizacional" — término vetado (ver tabla de arriba); corregido a "Arquitectura de Sistemas Sociotécnicos". Se agregó la línea de desambiguación visible del homónimo (conferencista motivacional mexicano) reutilizando la clase `.founder__credit` ya existente — sin CSS nuevo. Página marcada "cerrado definitivo" en el mapa de arriba: este cambio de copy visible sí pasó por confirmación explícita del usuario antes de implementarse, dado el gate obligatorio de esta sección.
+
+### Por qué `blog.html` no se tocó
+Los 10 papers de investigación **ya estaban enlazados** desde `/blog` (masthead + catálogo + riel "Lo último") antes de esta sesión. Una verificación inicial con grep buscando `article-paperXX.html` (con extensión) dio negativo porque el sitio usa URLs limpias sin `.html` — patrón de búsqueda incorrecto, no ausencia real de enlaces. Corregido el patrón, los 10 aparecían correctamente enlazados. No hubo cambio de contenido/UX en `blog.html`.
 
 ## Términos Vetados — Comunicación Externa (acumulativo)
 
