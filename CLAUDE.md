@@ -175,6 +175,45 @@ El toggle **"robots.txt gestionado"** de Cloudflare (Security Settings → Bot t
 ### Por qué `blog.html` no se tocó
 Los 10 papers de investigación **ya estaban enlazados** desde `/blog` (masthead + catálogo + riel "Lo último") antes de esta sesión. Una verificación inicial con grep buscando `article-paperXX.html` (con extensión) dio negativo porque el sitio usa URLs limpias sin `.html` — patrón de búsqueda incorrecto, no ausencia real de enlaces. Corregido el patrón, los 10 aparecían correctamente enlazados. No hubo cambio de contenido/UX en `blog.html`.
 
+## ⚠️ Punto Único de Falla — Cloudflare AI Crawl Control (2026-08-03)
+
+> El permiso de rastreo por IA para este dominio **no vive en el repositorio**. Vive en un panel de Cloudflare (Security → AI Crawl Control) que no tiene revisión de código, no dispara alerta ante un cambio, y **ya bloqueó silenciosamente a los rastreadores de IA una vez** (hallazgo del 2026-07-22, ver sección de arriba: el toggle "robots.txt gestionado" escribía `Disallow: /` para GPTBot/ClaudeBot/Google-Extended/Applebot-Extended/Amazonbot/meta-externalagent sin que nadie del equipo lo configurara así). `website/robots.txt` es una petición voluntaria — la aplicación real y forzada del bloqueo o permiso ocurre en ese panel. Si alguien lo reconfigura sin pasar por aquí, el sitio puede desaparecer de las superficies generativas sin que el `git log` lo refleje.
+
+### Inventario de estado — AI Crawl Control (verificación pendiente de panel)
+
+| Rastreador | Estado documentado | Fuente / fecha |
+|---|---|---|
+| GPTBot | Permitido (desbloqueado explícitamente) | Sección "Infraestructura Técnica GEO" arriba, 2026-07-22 |
+| ClaudeBot | Permitido (desbloqueado explícitamente) | ídem |
+| Claude-User | Permitido (desbloqueado explícitamente) | ídem |
+| Amazonbot | Bloqueado (deliberado, según nota de 2026-07-22) | ídem |
+| Bytespider | Bloqueado (deliberado, según nota de 2026-07-22) | ídem |
+| CCBot | Bloqueado (deliberado, según nota de 2026-07-22) — **⚠️ contradice el objetivo confirmado 2026-08-03 de permitir CCBot sin restricción como rastreador de entrenamiento**. No se resolvió en esta sesión por falta de acceso al panel — requiere decisión explícita: ¿se actualiza AI Crawl Control para permitirlo, o se documenta por qué se sigue bloqueando pese al objetivo declarado? | Conflicto detectado 2026-08-03 |
+| Meta-ExternalAgent | Bloqueado (deliberado, según nota de 2026-07-22) | ídem |
+| Applebot-Extended | Bloqueado (deliberado, según nota de 2026-07-22) | ídem |
+| OAI-SearchBot | **Pendiente de verificar** — sin registro previo | — |
+| ChatGPT-User | **Pendiente de verificar** — sin registro previo | — |
+| Claude-SearchBot | **Pendiente de verificar** — sin registro previo | — |
+| Google-Extended | **Pendiente de verificar** — el hallazgo de 2026-07-22 dice que Cloudflare lo bloqueaba por defecto; no hay registro de que se haya desbloqueado explícitamente en AI Crawl Control (a diferencia de GPTBot/ClaudeBot/Claude-User) | — |
+| PerplexityBot | **Pendiente de verificar** — sin registro previo | — |
+| Perplexity-User | **Pendiente de verificar** — sin registro previo | — |
+
+No tuve acceso al panel de Cloudflare en este entorno (sin `wrangler`, sin token API) — esta tabla es una reconstrucción de lo ya documentado en este archivo, no una verificación en vivo. **Acción pendiente del usuario:** entrar a Security → AI Crawl Control, confirmar/corregir cada fila, y resolver el conflicto de CCBot.
+
+### Estado del toggle "robots.txt gestionado"
+Debe permanecer **desactivado**. Activarlo revierte la decisión canónica del 2026-07-22: Cloudflare volvería a escribir `Disallow: /` automáticamente para varios rastreadores de IA sin pasar por este archivo ni por `website/robots.txt`. El control de regresión de esto vive en `scripts/verify-robots.sh` (ver T5) — falla en rojo si aparece cualquier línea `Disallow` en el `robots.txt` servido, porque esa es la firma de que el toggle se reactivó.
+
+### Verificación y responsable
+- **Fecha de esta documentación:** 2026-08-03.
+- **Verificación de panel:** pendiente — no se realizó en esta sesión (sin acceso). Responsable de completarla: César Lozano (CEO, único operador con acceso al panel de Cloudflare de este dominio).
+- **Próxima revisión:** 2026-11 (alineada con la revisión de `robots.txt` — ver comentario en el propio archivo).
+
+### Instrucción de recuperación — si un rastreador queda bloqueado
+1. Confirmar primero que no es un problema de `robots.txt` (correr `scripts/verify-robots.sh` — si falla en la comprobación de "sin líneas Disallow", el toggle gestionado se reactivó: apagarlo en Security Settings → Bot traffic).
+2. Si `robots.txt` está limpio, entrar a Security → AI Crawl Control y buscar el rastreador en la tabla — columna "Bloquear rastreador" debe estar en off para los de entrenamiento/recuperación en vivo listados arriba.
+3. Revisar Bot Analytics (mismo panel) para confirmar que el desbloqueo se tradujo en tráfico real del rastreador, no solo en el ajuste — ver T4 más abajo.
+4. Documentar el cambio en esta misma tabla con fecha, para que quede trazable qué se tocó y cuándo — este archivo es el único registro con control de versiones de un ajuste que vive fuera del repositorio.
+
 ## Términos Vetados — Comunicación Externa (acumulativo)
 
 | Término prohibido | Sustituto | Criterio |

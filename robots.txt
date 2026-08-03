@@ -1,4 +1,7 @@
+# robots.txt — Digital Change Advisors
+# Última revisión: 2026-08 · Próxima revisión: 2026-11
+
 User-agent: *
 Allow: /
 
-Sitemap: https://www.digitalchangeadvisors.com/sitemap.xml
+Sitemap: https://digitalchangeadvisors.com/sitemap.xml
