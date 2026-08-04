@@ -231,6 +231,26 @@ Debe permanecer **desactivado**. Activarlo revierte la decisión canónica del 2
 - **Hallazgo fuera de alcance, para registro:** la pantalla "Señales → Disponibilidad de robots.txt" lista **14 hosts monitoreados**, incluyendo 2 subdominios con certificado SSL inválido (`526 Invalid SSL Certificate`, identificadores tipo hash) y `vault.digitalchangeadvisors.com` respondiendo `404`. No forman parte de esta tarea (no son el dominio principal ni están en el sitemap) — se documentan aquí como hallazgo de higiene de DNS/SSL a revisar aparte, no se investigaron ni se tocaron.
 - **Artefactos:** las 4 capturas quedaron en `infraestructura/` (raíz del monorepo) — ruta distinta de `docs/infraestructura/` que proponía la tarea original. No las moví ni renombré sin confirmar contigo primero.
 
+## Auditoría técnica adicional (2026-08-04) — title/description, JS, rutas, API Cloudflare
+
+> Ejecutada al cierre del "Paquete 2" (entidad, citación e indexación). Cubre las 7 páginas del sitemap que no son papers de investigación (home, modelo-aria, returnai, nosotros, novela-returnai, art, blog) — los 10 papers ya se auditaron en el diagnóstico previo al Paquete 2.
+
+### `title` / `meta description` — 15 de 17 páginas fuera de rango
+Regla del proyecto: título 50–60 caracteres, descripción 120–155. **Solo 2 páginas cumplen `title`** (`/nosotros` 45, `/article-paper03` 53 — ambas cerca del límite inferior, no exactas) **y solo 2 cumplen `description`** (`/nosotros` 148, `/article-paper09` 141). Ninguna página cumple ambas. La mayoría de los títulos duplica o triplica el límite superior (ej. `/article-paper09` en 130, `/modelo-aria` en 105). **No corregido** — es reescritura de copy en 17 páginas, requiere su propia sesión de `/copy` + `/validar-marca`, no una corrección mecánica.
+
+### Dependencia de JavaScript — las 7 páginas, contenido sustancial en HTML crudo
+Verificado con `curl` (sin ejecutar JS), igual método que los 10 papers: `/` 2.027 palabras, `/modelo-aria` 2.434, `/returnai` 2.162, `/nosotros` 1.229, `/novela-returnai` 3.104, `/blog` 1.255, `/art` 1.568 — todas ya contadas en HTML servido, ninguna depende de inyección por JS. Único uso real de `innerHTML` fuera del formulario de newsletter: el filtro de temas de `/blog` (chips de categoría, conteo de "perspectivas visibles") — UI de filtrado, no oculta contenido de los artículos, que ya están en el HTML.
+
+### Rutas con error — sin 404 reales; 2 saltos de redirección evitables
+Se probaron los 22 enlaces internos únicos de las 17 páginas del sitemap. **Cero 404.** Dos enlaces todavía apuntan a rutas de directorio sin barra final (301 innecesario, mismo defecto ya identificado y pospuesto para las "9 rutas restantes"):
+- `art/index.html` → enlaza a `/ara` (falta `/`)
+- `novela-returnai/index.html` → enlaza a `/fundadores` (falta `/`)
+
+### API de Cloudflare — control granular por bot y serie histórica: sin confirmar en Free sin token
+- **Estado/acción por rastreador y toggle "robots.txt gestionado":** no expuestos por la API GraphQL de AI Crawl Control (`developers.cloudflare.com/ai-crawl-control/reference/graphql-api`) — ninguno de los dos aparece en su documentación.
+- **Serie histórica de solicitudes por rastreador:** dataset `httpRequestsAdaptiveGroups` (GraphQL de zona), campos `datetimeHour` + `botDetectionIds`/`userAgent` + `count`. La documentación de AI Crawl Control no cita una restricción de plan explícita para este dataset específico — pero la API GraphQL Analytics general de Cloudflare está documentada como "Pro plan o superior", no Free, y no hay token de API disponible en este entorno para probarlo en vivo.
+- **Conclusión (según instrucción explícita del usuario — no seguir rodeos si no se confirma en 20 minutos):** el control de estado por bot y de la serie histórica **queda manual** — vía la pestaña "Seguridad"/"Métricas" del panel, no automatizable desde aquí sin una prueba de API con token real o un plan pagado.
+
 ## Términos Vetados — Comunicación Externa (acumulativo)
 
 | Término prohibido | Sustituto | Criterio |
