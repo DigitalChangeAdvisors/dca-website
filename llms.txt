@@ -85,7 +85,7 @@ Retorno de la IA · AI Return Test · AI Return Assessment · Solución ReturnAI
 
 - [Your AI isn't failing. Your organization is.](https://digitalchangeadvisors.com/article-paper00)
 - [Las tres amenazas estructurales que convierten su inversión en IA en un pasivo](https://digitalchangeadvisors.com/article-paper01)
-- [Sin una Estrella del Norte Digital, tu IA financia fragmentación](https://digitalchangeadvisors.com/article-paper02)
+- [Sin AI North Star, tu IA financia fragmentación](https://digitalchangeadvisors.com/article-paper02)
 - [La brecha GenAI: por qué el 95% no llega al P&L](https://digitalchangeadvisors.com/article-paper03)
 - [Del purgatorio de pilotos al P&L: por qué la brecha es mayor de lo que parece](https://digitalchangeadvisors.com/article-paper04)
 - [Gobernar la IA sin matar la adopción: el error que destruye el retorno](https://digitalchangeadvisors.com/article-paper05)
