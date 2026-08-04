@@ -39,7 +39,7 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 | `/red-aria` | `red-aria.html` | Captación de nodos/socios por país | ⏳ Pendiente |
 | `/libro` | `libro.html` | ReturnAI la novela, Amazon, extracto | ⏳ Pendiente |
 | `/comunidad` | `comunidad.html` | LARIA: 240 miembros, Skool | ⏳ Pendiente |
-| `/contacto` | `contacto.html` | Formulario mínimo, sin chatbots | ⏳ Pendiente |
+| `/contacto` | `contacto/index.html` | AI Return Test como vía preferente; correo + agenda directa; ubicación y constitución legal | ✅ Implementada (2026-08-04) |
 | `/fundadores` | `fundadores/index.html` | Cohorte cerrada de 50 "Lectores Fundadores" ReturnAI — destino exclusivo de invitación nominal/LinkedIn/newsletter, sin nav | ✅ Implementada (2026-07-13) — pendiente `BREVO_FORM_ACTION` y `PREORDER_URL` antes de publicar |
 | `/novela-returnai` | `novela-returnai/index.html` | Landing pública del libro ReturnAI — héroe, caso Adalid, capítulo 1, AI Return Test | ✅ En producción — CTAs de compra reparados (2026-07-14), libro aún no a la venta |
 
