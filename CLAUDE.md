@@ -407,8 +407,11 @@ Ver `project_novela_returnai_ctas_fix.md` en memoria para el detalle completo de
 - "Ingeniera Industrial, MBA EAFIT. Coach Profesional certificada por el Neuroscience and Coaching Institute (USA). 20+ años como ejecutiva empresarial. Cocreadora de los Frameworks Ágiles que fundamentan el Modelo ARIA. Autora de «Sembrando Semillas de Vida» y co-autora del libro de divulgación científica «Mentalidad Digital»."
 - **No incluir** "Transformación Humana 4.0" — eliminado en fine-tuning
 
-### Garantía (copy canónico)
-- "Retorno documentado en 120 días. Si no se logra en ese plazo, continuamos hasta documentarlo."
+### Garantía (copy canónico) — actualizado 2026-08-04, sustituye la forma anterior
+- **Forma canónica completa, única:** "Retorno documentado en 120 días, con garantía contractual de re-intervención si no se alcanza."
+- **Regla:** la cláusula de garantía ("con garantía contractual de re-intervención si no se alcanza") **nunca se separa** de la cifra "120 días" en ninguna afirmación propia de DCA sobre su propio servicio (home, `llms.txt`, JSON-LD `Service` de `/modelo-aria` y `/returnai`). Si la cifra aparece sola en ese tipo de afirmación, es una regresión — corregirla.
+- **No aplica** a: citas textuales de testimonios, encabezados de casos de estudio con datos de un cliente específico, la trama de la novela ReturnAI, ni badges numéricos que ya están acompañados de su propia explicación en prosa inmediata (ej. "Bridge" de `/modelo-aria` y `/`). Esos son hechos narrados o históricos, no la promesa de servicio de DCA.
+- **Forma anterior, retirada:** "Retorno documentado en 120 días. Si no se logra en ese plazo, continuamos hasta documentarlo." — sustituida en `index.html` (chapeau, `og:description`, sección de garantía), `llms.txt` (no existía ahí, se añadió) y el JSON-LD `Service` de `modelo-aria.html`/`returnai.html` (no tenían la cláusula).
 
 ### Copy y estructura adicional
 - **H2 Problema:** "El 70% no puede demostrar retorno de su inversión en IA."
