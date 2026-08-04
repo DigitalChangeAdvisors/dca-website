@@ -202,6 +202,16 @@ Los 10 papers de investigación **ya estaban enlazados** desde `/blog` (masthead
 
 No tuve acceso al panel de Cloudflare en este entorno (sin `wrangler`, sin token API) — esta tabla es una reconstrucción de lo ya documentado en este archivo, no una verificación en vivo. **Acción pendiente del usuario:** entrar a Security → AI Crawl Control, confirmar/corregir cada fila, y resolver el conflicto de CCBot.
 
+### ⚠️ Metodología de revisión — CORREGIDA (2026-08-04)
+
+> Esta sección reemplaza la metodología implícita en la tabla de arriba (una lista fija de agentes "conocidos"). La observación que la motivó: ShapBot/0.1.0 fue el agente de **mayor volumen** del 2026-08-03 (58 de 283 solicitudes, 20.5%) y no aparecía en ninguna lista — un proceso que solo revisara la tabla de arriba nunca lo habría detectado.
+
+**La revisión periódica NO compara `robots.txt`/AI Crawl Control contra la tabla de agentes de arriba (lista fija).** La compara contra los **agentes efectivamente vistos** en `docs/infraestructura/rastreo-historico.csv` durante el período — una lista fija envejece; el tráfico real no. Procedimiento:
+1. Agrupar el CSV del período por `user_agent`/agente y ordenar por volumen.
+2. Cualquier agente con volumen relevante (no un hit aislado) que **no** esté ya en `docs/infraestructura/agentes-ia.md` entra al inventario con una decisión explícita: permitir, bloquear, o pendiente de verificar — igual que se hizo con ShapBot.
+3. La tabla de arriba sigue siendo el registro histórico de las decisiones de 2026-07-22/2026-08-03 sobre los rastreadores de entrenamiento/recuperación en vivo más conocidos (GPTBot, ClaudeBot, etc.) — no se descarta, pero ya no es el único criterio de "qué revisar".
+- **Próxima revisión:** 2026-11 (sin cambio de fecha, solo de método — ver `docs/infraestructura/agentes-ia.md`).
+
 ### Estado del toggle "robots.txt gestionado"
 Debe permanecer **desactivado**. Activarlo revierte la decisión canónica del 2026-07-22: Cloudflare volvería a escribir `Disallow: /` automáticamente para varios rastreadores de IA sin pasar por este archivo ni por `website/robots.txt`. El control de regresión de esto vive en `scripts/verify-robots.sh` (ver T5) — falla en rojo si aparece cualquier línea `Disallow` en el `robots.txt` servido, porque esa es la firma de que el toggle se reactivó.
 
