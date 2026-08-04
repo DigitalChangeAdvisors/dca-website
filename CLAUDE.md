@@ -134,9 +134,11 @@ Se eliminaron 6 clases CSS huérfanas tras colapsar los dos botones de compra en
 - Esta página no enlaza al AI Return Test en ningún punto.
 - Rutas relativas `../assets/og-returnai.png` y `../images/favicon.png` verificadas contra archivos reales — resuelven correctamente.
 
-## Enrutamiento de CTAs y Enlaces — CANÓNICO (2026-06-29)
+## Enrutamiento de CTAs y Enlaces — CANÓNICO (2026-06-29, host actualizado 2026-08)
 
-Todos los botones y enlaces del website + artículos apuntan a `https://www.digitalchangeadvisors.com` (URLs limpias, **siempre con `www`**). Cero enlaces a staging `dca-returnai.github.io`.
+> **⚠️ Actualización 2026-08 (decisión D-A) — la regla "siempre con `www`" de 2026-06-29 queda retirada, no matizada.** Host canónico = **apex** (`https://digitalchangeadvisors.com`, sin `www`). Motivo: el `CNAME` de GitHub Pages es el apex (ver "Dominio — CANÓNICO", 2026-06-30) y `www` ya hace 301 hacia él vía Cloudflare; mantener `canonical`/`og:url`/enlaces en `www` significaba declarar como referencia una URL que solo redirige, un salto extra que un rastreador no necesita dar. Se alinea el código con la infraestructura real (que vive en Cloudflare, sin versionar) — no al revés. Todo enlace, `canonical`, `og:url` y referencia JSON-LD al propio dominio se corrigió a apex el 2026-08 (ver `scripts/verify-robots.sh`, que ahora también verifica esto). Los enlaces salientes a terceros (Tally, TidyCal, Skool, etc.) no se tocan — son dominios ajenos, fuera del alcance de esta regla.
+
+Todos los botones y enlaces del website + artículos apuntan a `https://digitalchangeadvisors.com` (URLs limpias, **siempre apex, sin `www`**). Cero enlaces a staging `dca-returnai.github.io`.
 
 - **CTA "AI Return Test" → SIEMPRE `/art`** (la landing ART, `website/art/index.html`), con UTMs intactos (`?utm_source=<página>&utm_medium=website&utm_campaign=ai-return-test`). Unifica el destino: antes homepage y returnai saltaban directo a Tally — corregido.
 - **Tally directo (`tally.so/r/Np6e5W`) → SOLO en los CTAs internos de la landing `/art`.** Ninguna otra página enlaza a Tally. (Excepción no-CTA: `tally.so/help/privacy-policy` como referencia legal.)
@@ -188,7 +190,7 @@ Los 10 papers de investigación **ya estaban enlazados** desde `/blog` (masthead
 | Claude-User | Permitido (desbloqueado explícitamente) | ídem |
 | Amazonbot | Bloqueado (deliberado, según nota de 2026-07-22) | ídem |
 | Bytespider | Bloqueado (deliberado, según nota de 2026-07-22) | ídem |
-| CCBot | Bloqueado (deliberado, según nota de 2026-07-22) — **⚠️ contradice el objetivo confirmado 2026-08-03 de permitir CCBot sin restricción como rastreador de entrenamiento**. No se resolvió en esta sesión por falta de acceso al panel — requiere decisión explícita: ¿se actualiza AI Crawl Control para permitirlo, o se documenta por qué se sigue bloqueando pese al objetivo declarado? | Conflicto detectado 2026-08-03 |
+| CCBot | **Desbloqueado (decisión D-B, 2026-08-03)** — revierte deliberadamente el bloqueo de 2026-07-22. Motivo: presencia en el corpus de entrenamiento (Common Crawl alimenta a la mayoría de LLMs) es una apuesta de autoridad de categoría para la estrategia GEO de la firma; no hay contenido sensible publicado en este dominio que justifique excluirlo. Se verificó que la nota de 2026-07-22 no registraba una razón individual y sustantiva para bloquear CCBot específicamente — solo lo agrupaba junto a Amazonbot/Bytespider/Meta-ExternalAgent/Applebot-Extended sin motivo propio. **Acción pendiente del usuario:** reflejar este desbloqueo en el panel de AI Crawl Control (columna "Bloquear rastreador" → off para CCBot) | Decisión D-B, 2026-08-03 |
 | Meta-ExternalAgent | Bloqueado (deliberado, según nota de 2026-07-22) | ídem |
 | Applebot-Extended | Bloqueado (deliberado, según nota de 2026-07-22) | ídem |
 | OAI-SearchBot | **Pendiente de verificar** — sin registro previo | — |
@@ -213,6 +215,21 @@ Debe permanecer **desactivado**. Activarlo revierte la decisión canónica del 2
 2. Si `robots.txt` está limpio, entrar a Security → AI Crawl Control y buscar el rastreador en la tabla — columna "Bloquear rastreador" debe estar en off para los de entrenamiento/recuperación en vivo listados arriba.
 3. Revisar Bot Analytics (mismo panel) para confirmar que el desbloqueo se tradujo en tráfico real del rastreador, no solo en el ajuste — ver T4 más abajo.
 4. Documentar el cambio en esta misma tabla con fecha, para que quede trazable qué se tocó y cuándo — este archivo es el único registro con control de versiones de un ajuste que vive fuera del repositorio.
+
+### Evidencia real observada — capturas de panel (2026-08-03/04)
+
+> Capturas del dashboard de Cloudflare (`AI Crawl Control`), aportadas por el usuario durante esta sesión. Confirman en vivo varios puntos que antes estaban marcados "pendiente de verificar".
+
+- **Plan de la zona:** Free (no Business/Enterprise). El feature AI Crawl Control y su API de lectura (`bot_management`, ver T9) están disponibles igual en este plan.
+- **Toggle "robots.txt gestionado":** confirmado **apagado** en dos pantallas distintas (Información general y Señales) — consistente con la decisión de 2026-07-22.
+- **Últimas 24h (snapshot, no línea base de 30 días):** 121 solicitudes de rastreadores de IA detectadas · 98 permitidas · 23 fallidas · ruta más rastreada `/sitemap.xml` (14 solicitudes exitosas) · **0 violaciones de `robots.txt`** (coherente con que el archivo actual no tiene ningún `Disallow`).
+- **Solicitudes permitidas por organización (24h):** Meta 36 · Anthropic 25 · Google 17 · OpenAI 8 · Microsoft/Bing 8 · Perplexity 3 · **Common Crawl (CCBot) 1** · Apple 0 · ByteDance/Bytespider 0 · DuckDuckGo 0.
+
+**⚠️ Conflicto detectado con la tabla de arriba:** la nota de 2026-07-22 marca a **Meta-ExternalAgent** y **CCBot** como bloqueados deliberadamente en AI Crawl Control. Pero el tráfico observado muestra **36 solicitudes permitidas de Meta y 1 de CCBot en las últimas 24h** — si el bloqueo fuera un bloqueo forzado real (edge/WAF), no deberían aparecer como "permitidas". Hipótesis más probable: ese "bloqueo" de 2026-07-22 nunca fue un bloqueo forzado — fue (como el resto de este mecanismo) una entrada en el `robots.txt` gestionado, es decir, una petición voluntaria que un rastreador no compliant simplemente ignora. Si esto es correcto, refuerza aún más el argumento del punto único de falla: ni siquiera el "bloqueo" documentado bloqueaba de verdad.
+**No confirmado a falta de la pestaña "Seguridad" de AI Crawl Control** (columna "Bloquear rastreador" por bot) — el usuario no capturó esa pantalla. Acción pendiente: capturarla para cerrar esto con certeza.
+
+- **Hallazgo fuera de alcance, para registro:** la pantalla "Señales → Disponibilidad de robots.txt" lista **14 hosts monitoreados**, incluyendo 2 subdominios con certificado SSL inválido (`526 Invalid SSL Certificate`, identificadores tipo hash) y `vault.digitalchangeadvisors.com` respondiendo `404`. No forman parte de esta tarea (no son el dominio principal ni están en el sitemap) — se documentan aquí como hallazgo de higiene de DNS/SSL a revisar aparte, no se investigaron ni se tocaron.
+- **Artefactos:** las 4 capturas quedaron en `infraestructura/` (raíz del monorepo) — ruta distinta de `docs/infraestructura/` que proponía la tarea original. No las moví ni renombré sin confirmar contigo primero.
 
 ## Términos Vetados — Comunicación Externa (acumulativo)
 
