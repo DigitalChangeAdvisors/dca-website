@@ -266,6 +266,18 @@ Se probaron los 22 enlaces internos únicos de las 17 páginas del sitemap. **Ce
 | "adopción" como FIN | "retorno" | "adopción" solo válido como MEDIO: el camino, no el destino |
 | "soluciones integrales" | — | Framing genérico de vendor |
 | "transformación digital" | — | Categoría anterior de DCA, no la actual |
+| "modelo ADA" | "Modelo ARIA" | Nomenclatura retirada; encontrada residual en `landings/DCA_Benchmark_BigFour_PromptLibrary.html` (corregido 2026-08-05) |
+| "LADA" / "Comunidad LADA" | "LARIA" / "Comunidad LARIA" | Nomenclatura retirada; corregido en 9 archivos de texto visible (2026-08-05). El slug legado `comunidad-lada-2386` en la URL real de Skool NO se toca — depende de si Skool permite migrar la URL sin romper enlaces existentes (pendiente, verificación del usuario) |
+| "Aceleración del Retorno de la Inteligencia Artificial" (expansión larga de ARIA) | "Aceleración del Retorno de la IA" | Cadena canónica única (confirmado 2026-08-05, decisión explícita: "de la IA", no la forma larga). Corregido en 4 archivos donde se había instalado la variante larga: `website/art`, `landings/art`, `landings/ai-return-test-landing`, `landings/novela` |
+| "Liderazgo Digital" como nombre del Sprint 5 de la Solución ReturnAI | "Modernización del Liderazgo" | Nombre canónico ya fijado en la tabla de sprints de `../CLAUDE.md` — `website/returnai.html` nunca lo reflejó hasta 2026-08-05 |
+| "Certificación de Champions internos" (cierre de Sprint 6, rol interno) | "Habilitación de Champions internos" | Distingue el rol interno de cierre de la Solución ReturnAI del programa comercial "Certificación de Champions ReturnAI" de Digital Change Academy — mismo sustantivo colisionaba dos ofertas distintas (corregido 2026-08-05, `modelo-aria.html`) |
+
+### Confirmado NO retirado (re-auditado 2026-08-05)
+- **LED / MATCH / PATH** como códigos de componente del Modelo ARIA (`Digital Team Leadership (LED)`, etc.) — explícitamente aprobados en este mismo archivo, sección "Datos canónicos de esta página" de `/modelo-aria`. Un inventario de nomenclatura los señaló por error como retirados; no lo son en este contexto metodológico.
+- La cadena deletreada "Liderazgo de Equipos para la Era Digital" no aparece en ningún archivo — no había nada que corregir ahí.
+
+### Pendiente sin término vigente documentado
+- **"Visión 4.0"** en `sprint-roadmap-02-baip/index.html` (página interna `noindex`) — no existe hoy un término de reemplazo documentado en el canon. Dejado sin tocar hasta que se defina uno.
 
 ## Sistema Newsletter — AI Return Pulse (canónico 2026-06-19)
 
