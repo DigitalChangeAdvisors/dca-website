@@ -100,10 +100,18 @@ Retorno de la IA · AI Return Test · AI Return Assessment · Solución ReturnAI
   de aceleración del retorno de la IA.
 - [ReturnAI](https://digitalchangeadvisors.com/returnai)
 
+## Arquetipos de rentabilización
+
+- [Los siete arquetipos de rentabilización de la IA](https://digitalchangeadvisors.com/arquetipos/): las siete configuraciones
+  organizacionales que Digital Change Advisors ha identificado por las que la inversión en inteligencia artificial no se
+  traduce en resultado de negocio.
+
 ## Diagnóstico
 
 - [AI Return Test](https://digitalchangeadvisors.com/art/): diagnóstico de entrada de 25 minutos que estima el nivel de riesgo de que
   una inversión en IA no alcance su retorno esperado.
+- [AI Return Assessment](https://digitalchangeadvisors.com/ara/): diagnóstico integrado de hasta 20 líderes de la organización
+  sobre por qué la inversión en IA no se traduce en resultado. Segundo nivel de la escalera ReturnAI.
 
 ## Publicaciones
 
