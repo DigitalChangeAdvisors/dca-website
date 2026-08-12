@@ -351,6 +351,22 @@ Se probaron los 22 enlaces internos únicos de las 17 páginas del sitemap. **Ce
 ### Pendiente sin término vigente documentado
 - **"Visión 4.0"** en `sprint-roadmap-02-baip/index.html` (página interna `noindex`) — no existe hoy un término de reemplazo documentado en el canon. Dejado sin tocar hasta que se defina uno.
 
+## Firma de Autoría — Ruth Jaramillo (canon vigente, agosto 2026)
+
+- **Firma canónica:** `Socia fundadora · Neurociencias de la Adopción · Cocreadora del Modelo ARIA`
+- **Versión corta, solo por restricción real de ancho** (ej. tarjetas compactas del catálogo de `/blog`): `Socia fundadora · Cocreadora del Modelo ARIA`
+- **Formato:** separador punto medio `·` (U+00B7). "Neurociencias de la Adopción" siempre con N y A mayúsculas — nombre canónico de una de las tres disciplinas fundacionales del Modelo ARIA, sin variantes. "Modelo ARIA" siempre con ARIA en mayúsculas. "Socia fundadora": Socia con mayúscula inicial, fundadora en minúscula.
+- **Aplica en:** páginas de artículo (byline, bloque de autor, bio, citas destacadas), índice del blog, `index.html` (rol visible, alt, JSON-LD `founder`), `llms.txt`.
+- **Excepción deliberada — `/nosotros`:** esa página conserva `Directora — Digital Change Academy` en JSON-LD, `.label`, `alt` y `.founder__credit`. **No es una inconsistencia pendiente — es una decisión de posicionamiento del usuario.** Digital Change Academy es una marca distinta de Digital Change Advisors, con dominio propio (`digitalchangeacademy.org`), y su dirección es un cargo real que se mantiene visible en la ficha institucional. No normalizar esta diferencia sin autorización expresa del usuario.
+- **Firmas relacionadas, también canónicas:**
+  - César Lozano: `Socio fundador · CEO · Arquitecto del Modelo ARIA` (sin cambios)
+  - Alejandro Ríos: `Consultor Asociado · Validación Empírica del Retorno`
+- **Razón de fondo:** Digital Change Advisors es una firma de consultoría estratégica cuya categoría propietaria es la rentabilización de las inversiones en IA corporativa. No se posiciona en las categorías capacitación, formación, gestión del cambio, transformación cultural ni recursos humanos. Las firmas de autoría son un punto de contacto de alta visibilidad con lectores C-Level; una firma que ancle en cargo funcional o en la marca de formación traslada la percepción de la firma a una categoría ajena.
+- **Vocabulario prohibido como descripción de rol o de lo que vende la firma:** transformación humana, transformación cultural, gestión del cambio, capacitación, formación, curso, taller, desarrollo de liderazgo, recursos humanos, gestión humana.
+- **Excepción de nombre propio:** el componente MATCH conserva su nombre expandido "Modelo Ágil de Transformación Cultural y Humana". Es propiedad intelectual con denominación registrada, no vocabulario descriptivo, y no se modifica nunca.
+- **Desglose canónico del Modelo ARIA:** 14 componentes propietarios = 3 instrumentos de diagnóstico (AIMT, AILS, AICD) + 7 frameworks ágiles + 4 herramientas de gestión. Los 7 frameworks se califican como "de rentabilización", nunca "de transformación humana".
+- **Decisión editorial pendiente (no resuelta):** `article-paper09` interpela al CHRO en su titular y en su meta description. El encuadre hacia recursos humanos de esa pieza está identificado y a la espera de decisión editorial del usuario. No modificar sin instrucción expresa.
+
 ## Sistema Newsletter — AI Return Pulse (canónico 2026-06-19)
 
 ### Presencia del formulario
@@ -462,7 +478,7 @@ Ver `project_novela_returnai_ctas_fix.md` en memoria para el detalle completo de
 - Los 17 países = comunidad LARIA (Skool), **no** presencia de firma
 
 ### Líderes en homepage
-- Solo 2: **César Lozano** (CEO) + **Ruth Jaramillo** (Directora — Digital Change Academy)
+- Solo 2: **César Lozano** (CEO) + **Ruth Jaramillo** (Socia fundadora · Neurociencias de la Adopción · Cocreadora del Modelo ARIA)
 - El tercer líder (si aplica) va en `/nosotros`, no en homepage
 
 ### Bio Ruth Jaramillo (canónica)
@@ -667,7 +683,7 @@ Ver `project_novela_returnai_ctas_fix.md` en memoria para el detalle completo de
 - Acción: eliminar el tercer `.leader` div. Reemplazar los 2 restantes con los datos reales.
 - Framing diferente al home: aquí son "autores del Modelo ARIA", no "líderes de la firma".
 - César: "CEO · Digital Change Advisors — Autor del Modelo ARIA y del framework MATCH. Líder de más de 70 intervenciones de retorno de IA en LatAm."
-- Ruth: "Directora · Digital Change Academy — Cocreadora de los Frameworks Ágiles del Modelo ARIA. Ingeniera Industrial, MBA EAFIT, Coach certificada NCI."
+- Ruth: "Socia fundadora · Neurociencias de la Adopción · Cocreadora del Modelo ARIA — Ingeniera Industrial, MBA EAFIT, Coach certificada NCI."
 - Fotos: usar `<img src="img-leader-1.png">` y `<img src="img-leader-2.png">` (reales, ya en producción).
 
 ### Inventario completo — decisiones de cada sección
