@@ -146,6 +146,73 @@ Se eliminaron 6 clases CSS huérfanas tras colapsar los dos botones de compra en
 
 **Hallazgo transversal a las 4 pasadas:** `article-paper04.html` y `article-paper09.html` codifican vocales acentuadas como entidades HTML (`&oacute;`, etc.) en vez de UTF-8 literal — cualquier grep de verificación sobre esos dos archivos debe usar la entidad, no la tilde literal, o dará falso negativo. Documentado también como hallazgo de sesión: el `grep` de esta máquina es en realidad `ugrep`, que puede dar falso negativo con un `$` en medio del patrón — usar `grep -F` (cadena fija) en cualquier verificación que incluya cifras en dólares.
 
+## Estándar de Publicación — Perspectivas / Papers del Blog (canónico 2026-09-01)
+
+> Documentado tras auditar los 10 papers existentes (`article-paper00.html`…`article-paper09.html`) tal como están construidos hoy — no es una regla nueva, es la formalización de un patrón que ya era 100% consistente en el código pero nunca se había escrito. Ver también el comando `/perspectiva` en `.claude/commands/`, que implementa este flujo completo.
+
+### Flujo de 9 pasos
+1. El usuario entrega el texto — formato `.md` exportado de Google Docs (mismo patrón que los "Paper 0X DCA - ....md" ya en el repo): `####` para subtítulos, `**negrita**`, `*cursiva*` para epígrafes/citas, cifras con fuente citable.
+2. Claude estructura el contenido mapeándolo a los bloques del sistema (ver tabla de clases abajo).
+3. Pasa por `/validar-marca`: términos prohibidos, regla de "adopción" como medio (nunca como fin), regla de verificabilidad numérica (cifra de tercero → `citation` en JSON-LD con autor + URL primaria; cifra propia → muestra/período/método; si no se puede cumplir ninguna, se reformula sin la cifra).
+4. Claude genera el prompt de Nano Banana 2 (ver plantilla abajo) — **una sola imagen sirve de tarjeta del catálogo y de hero del artículo** (patrón de los 9 papers 01–09; paper00 usó dos imágenes distintas, patrón abandonado después).
+5. El usuario genera la imagen y la entrega — master ~3:2 (p. ej. 800×533), composición centrada, nada crítico en el 15–18% superior/inferior (debe sobrevivir recorte a 16:9 tarjeta, 16:6.5 hero desktop, 4:3 hero mobile).
+6. Claude optimiza y exporta con Pillow: WebP (q82) + JPG (q78), nombrados `assets/blog-article-paperNN.{webp,jpg}`.
+7. Claude construye `article-paperNN.html` completo (head/OG/JSON-LD, hero, cuerpo, autor, CTA, relacionados) clonando el patrón exacto de un paper existente.
+8. Alta en `blog.html`: tarjeta nueva en `.article-grid`, entrada nueva en `Blog.blogPost[]` (JSON-LD), contador `<b>N</b> perspectivas` actualizado (regresión ya ocurrida una vez — ver "Correcciones de contenido" arriba, no repetirla).
+9. Alta en `sitemap.xml` + `./deploy.sh website` + verificación en vivo (margen 30–60s de caché de borde antes de reportar fallo — ver Regla 8 del CLAUDE.md raíz).
+
+### Qué entrega el usuario vs. qué decide Claude
+El texto en formato `.md` no basta para derivar todo — por artículo, confirmar con el usuario:
+- **Autor**: César Lozano, Ruth Jaramillo, Alejandro Ríos, u otro nuevo (requiere foto de perfil si es nuevo)
+- **Badge de categoría**: Marco · Análisis · Investigación · Tendencias · Gobernanza · Metodología (mapea a `.format-badge--frame` los primeros/Gobernanza/Metodología, a `.format-badge--field` Análisis/Investigación/Tendencias)
+- **`data-stage`** (taxonomía de filtro del catálogo): `adopcion` · `evidencia` · `gobierno` · `roi`
+- **Contenido de `.art-insights`** ("Puntos clave", 2–4 líneas tras el hero) — Claude propone, el usuario aprueba
+
+### Tabla de clases — `styles-article.css` (verificada, no inventar nombres nuevos)
+| Bloque | Clase / patrón | Nota |
+|---|---|---|
+| Párrafo de cuerpo | `.art-body p` (sin clase propia) | 17px, line-height 1.78 — no crear `.paragraph` ni similar |
+| Negrita / cursiva inline | `<strong>` / `<em>` nativos | No existe `.highlight`/`.mark` — nunca envolver en spans nuevos |
+| Cita destacada (pull quote) | `<blockquote class="art-quote"><p>…</p><cite>Autor — Rol</cite></blockquote>` | Cursiva display, borde oro izquierdo |
+| Dato de campo / implicación práctica | `<div class="art-callout"><span class="art-callout__label">…</span><p>…</p></div>` | Fondo teal 5%, borde teal |
+| Puntos clave (resumen) | `<div class="art-insights" role="note" aria-label="Puntos clave">` | Fondo carbón sólido, siempre justo tras `.art-hero`, antes del primer párrafo |
+| H2 de sección | `.art-body h2` | Barra oro izquierda — nunca `<h2>` sin este contenedor |
+| H3 de subsección | `.art-body h3` | Uppercase, teal, sin barra |
+| Cifras destacadas | `.art-stats` (grid 3 col) con `.art-stat` × N | `.art-stat__num` + `.art-stat__label` |
+| CTA inline en texto | `<a class="art-inline-cta">texto — Realiza el AI Return Test →</a>` | Distinto de `.btn--gold` (botón sólido de sección) |
+| Separador | `<hr class="art-divider" />` | — |
+| Tags de cierre | `.art-tags` > `.art-tag` × N | — |
+| Bio de autor | `.art-author-section` > `.art-author-card` | Foto + nombre + rol + `.art-author__bio` |
+| Newsletter compacto | `.art-pulse` | Entre `.art-author-section` y `.art-cta` — ver "Sistema Newsletter" abajo |
+| CTA principal de cierre | `.art-cta` con botón `.btn.btn--gold` | Fondo teal sólido |
+| Artículos relacionados | `.art-related` > `.art-rel-card` × 3 | — |
+| Hero de imagen | `.art-hero` (fuera de `.art-header`, antes de `.art-body`) | `aspect-ratio:16/6.5` desktop → `4/3` en `≤767px`; `<picture>` WebP+JPG, `loading="eager"` (es LCP) |
+
+**Jerarquía invariante de cierre de artículo:** `[Cuerpo] → [Autor] → [AI Return Pulse] → [AI Return Test CTA] → [Artículos relacionados]` (ya documentada en "Sistema Newsletter" abajo, aplica igual aquí).
+
+**Firmas de autor canónicas** (ver "Firma de Autoría" abajo para el detalle completo): César Lozano `Socio fundador · CEO · Arquitecto del Modelo ARIA`; Ruth Jaramillo `Socia fundadora · Neurociencias de la Adopción · Cocreadora del Modelo ARIA` (versión corta en tarjetas: `Socia fundadora · Cocreadora del Modelo ARIA`); Alejandro Ríos `Consultor Asociado · Validación Empírica del Retorno`.
+
+**Imágenes — patrón de un solo archivo compartido:** a diferencia de `/arquetipos` (que sí necesitó hero dedicado tras rechazar el crop compartido — ver esa sección arriba), los 9 papers 01–09 reutilizan el mismo `assets/blog-article-paperNN.{webp,jpg}` como tarjeta de catálogo (`aspect-ratio:16/9` en `.article-card__img-wrap`) y como hero de artículo (`.art-hero`). Solo crear un segundo archivo (`blog-feat-paperNN`) si, al revisar el resultado, el recorte compartido corta algo importante en alguno de los tres aspect-ratios — no por defecto.
+
+**Prompt base para Nano Banana 2 (inglés, plantilla — personalizar `[SUJETO]` según el tema del artículo):**
+```
+Photorealistic corporate photograph, documentary style — no posed stock-photo
+smiles, no direct eye contact with camera. [SUJETO: p.ej. "A senior executive
+reviewing financial data on a laptop, alone in a glass-walled office at dusk"].
+Composition: centered subject, generous headroom, nothing critical within the
+top or bottom 18% of the frame — must survive cropping to 16:9, 16:6.5, and 4:3
+from the same master. Lighting: high contrast, single directional light source,
+executive atmosphere. Color grading: slightly desaturated, teal-carbon color
+cast (#2e8b76 / #1e2a38) with a single subtle warm gold accent (#a48111) — muted,
+not saturated. No text, no logos, no graphic overlays. No gradient backgrounds.
+Aspect ratio 3:2. Style reference: Bain & Company / McKinsey editorial
+photography, not generic tech-vendor stock imagery.
+```
+Basado en la regla "Producción Visual — Fotografía" del CLAUDE.md raíz (estilo documental, desaturado, alto contraste, overlay teal/carbón) — el grading va horneado en el prompt de generación, no aplicado después vía CSS (a diferencia del `.hero-video::after` de las landings ARA, que sí superpone overlay por CSS sobre video).
+
+### Hueco identificado — sin corregir, dejar para cuando aparezca de nuevo
+`article-paper09.html` tiene un `<h1 class="art-title">` de 3 líneas y resuelve el tamaño de fuente con `style="font-size:clamp(20px,2vw,24px)"` **inline**, en vez de una clase modificadora — el sistema por defecto (`.art-title { font-size: clamp(26px,3.2vw,44px) }`) no cubre titulares largos. **Regla para el próximo paper con titular de 3 líneas:** crear `.art-title--long` en `styles-article.css` en vez de repetir el inline style — no es bloqueante, solo evitar que el parche a mano se vuelva costumbre.
+
 ## Decisiones Canónicas de `/arquetipos` y las 7 landings ABM (2026-08-05)
 
 > Paquete ejecutado en una sola sesión: página madre nueva + saneamiento SEO de las 7 landings de arquetipo + indexación de `/ara`. Contexto: las 7 landings ABM (`amenaza`, `barco`, `feudos`, `sindrome`, `teatro`, `tormenta`, `trampa`) compartían `<title>`, no tenían `<meta name="robots">` ni `canonical` propia, y no existía ninguna página que nombrara el marco completo de los 7 arquetipos como objeto citable por motores generativos.
