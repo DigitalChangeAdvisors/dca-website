@@ -393,6 +393,9 @@
   margin: 0;
   line-height: 1.65;
 }
+.art-callout p + p {
+  margin-top: 14px;
+}
 
 /* Divider */
 .art-divider {
