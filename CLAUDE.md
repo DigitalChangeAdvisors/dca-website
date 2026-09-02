@@ -152,7 +152,7 @@ Se eliminaron 6 clases CSS huérfanas tras colapsar los dos botones de compra en
 
 ### Flujo de 9 pasos
 1. El usuario entrega el texto — formato `.md` exportado de Google Docs (mismo patrón que los "Paper 0X DCA - ....md" ya en el repo): `####` para subtítulos, `**negrita**`, `*cursiva*` para epígrafes/citas, cifras con fuente citable.
-2. Claude estructura el contenido mapeándolo a los bloques del sistema (ver tabla de clases abajo).
+2. Claude estructura el contenido mapeándolo a los bloques del sistema (ver tabla de clases abajo), aplicando el estándar de párrafo (ver subsección propia abajo).
 3. Pasa por `/validar-marca`: términos prohibidos, regla de "adopción" como medio (nunca como fin), regla de verificabilidad numérica (cifra de tercero → `citation` en JSON-LD con autor + URL primaria; cifra propia → muestra/período/método; si no se puede cumplir ninguna, se reformula sin la cifra).
 4. Claude genera el prompt de Nano Banana 2 (ver plantilla abajo) — **una sola imagen sirve de tarjeta del catálogo y de hero del artículo** (patrón de los 9 papers 01–09; paper00 usó dos imágenes distintas, patrón abandonado después).
 5. El usuario genera la imagen y la entrega — master ~3:2 (p. ej. 800×533), composición centrada, nada crítico en el 15–18% superior/inferior (debe sobrevivir recorte a 16:9 tarjeta, 16:6.5 hero desktop, 4:3 hero mobile).
@@ -160,6 +160,29 @@ Se eliminaron 6 clases CSS huérfanas tras colapsar los dos botones de compra en
 7. Claude construye `article-paperNN.html` completo (head/OG/JSON-LD, hero, cuerpo, autor, CTA, relacionados) clonando el patrón exacto de un paper existente.
 8. Alta en `blog.html`: tarjeta nueva en `.article-grid`, entrada nueva en `Blog.blogPost[]` (JSON-LD), contador `<b>N</b> perspectivas` actualizado (regresión ya ocurrida una vez — ver "Correcciones de contenido" arriba, no repetirla).
 9. Alta en `sitemap.xml` + `./deploy.sh website` + verificación en vivo (margen 30–60s de caché de borde antes de reportar fallo — ver Regla 8 del CLAUDE.md raíz).
+
+### Estándar de párrafo — lecturabilidad C-Level (canónico 2026-09-02)
+
+> Investigado y aprobado por el usuario tras revisar `article-paper10.html` rediseñado en producción (21 párrafos → 47, ninguno sobre 53 palabras). Aplica a todo párrafo de cuerpo (`.art-body p`) y a los párrafos dentro de `.art-callout` — no a `.art-quote` ni `.art-insights`, que ya son tratamientos breves por diseño.
+
+| | |
+|---|---|
+| **Máximo** | 3 líneas de pantalla en la columna del sitio (`.art-inner`, 720px, Montserrat 15–17px ≈ 75 car/línea) — equivalente a ~55–60 palabras / 2–3 oraciones |
+| **Ideal** | 2 líneas — ~30–40 palabras / 1–2 oraciones |
+| **Párrafo de una sola oración** | Válido y deseable para remates o transiciones — no rellenar por "verse muy corto" |
+| **Excepción** | Una tríada retórica paralela (ej. mentalidad AI / liderazgo AI / ADN AI) puede exceder el máximo si partirla rompe el paralelismo — la figura retórica pesa más que el conteo de palabras |
+| **Regla de corte** | Siempre en el límite de oración más cercano a la idea completa — nunca a mitad de una cláusula subordinada |
+
+**Justificación (Behavioral Economics):**
+1. **Restricción de memoria de trabajo** (Ley de Miller / Cognitive Load Theory): la memoria de trabajo retiene ~7±2 "chunks" a la vez. Un párrafo largo obliga a sostener varias cláusulas subordinadas en memoria mientras se busca la idea central — carga cognitiva extrínseca que compite con la comprensión real del argumento.
+2. **Costo de oportunidad del tiempo ejecutivo**: [Nielsen Norman Group](https://www.nngroup.com/articles/concise-scannable-and-objective-how-to-write-for-the-web/) documenta que el 79% de los usuarios escanea en vez de leer palabra por palabra, y solo procesa el 20–28% del texto de una página. Para un C-Level esto no es preferencia estética — es asignación racional de un recurso escaso. Reescribir para ser conciso/escaneable mejora la usabilidad medida en 47–58% ([NN/g](https://www.nngroup.com/articles/applying-writing-guidelines-web-pages/)).
+3. **Patrón de lectura en F**: el ojo lee las primeras palabras de cada párrafo nuevo antes de decidir si sigue. Más párrafos cortos = más puntos de enganche por unidad de contenido; un texto de pocos párrafos largos ofrece menos entradas al lector que solo escanea.
+4. **Costo de re-lectura como micro-pérdida** (aversión a la pérdida aplicada a la atención): un párrafo denso que obliga a releer genera fricción; acumulada a lo largo del artículo, sube el riesgo de abandono antes del CTA — el punto de conversión real de la pieza.
+5. **Consistente con reglas de marca ya vigentes**: la regla de "una sola cifra en tratamiento display por página" (CLAUDE.md raíz) existe para que cada afirmación ancle sin competir por atención. Párrafos cortos aplican el mismo principio a nivel de prosa.
+
+Fuentes: [Miller's Law — Laws of UX](https://lawsofux.com/millers-law/) · [Cognitive Load Theory — ScienceDirect](https://www.sciencedirect.com/topics/psychology/cognitive-load-theory)
+
+**Nota técnica — callouts con varios párrafos:** `.art-callout p + p { margin-top: 14px }` (agregada en `styles-article.css` al aplicar este estándar) — antes de esta regla, todo `.art-callout` de los 10 papers usaba un único `<p>`; ahora puede llevar 2–4 párrafos cortos apilados con espacio visible entre ellos.
 
 ### Qué entrega el usuario vs. qué decide Claude
 El texto en formato `.md` no basta para derivar todo — por artículo, confirmar con el usuario:
@@ -171,10 +194,10 @@ El texto en formato `.md` no basta para derivar todo — por artículo, confirma
 ### Tabla de clases — `styles-article.css` (verificada, no inventar nombres nuevos)
 | Bloque | Clase / patrón | Nota |
 |---|---|---|
-| Párrafo de cuerpo | `.art-body p` (sin clase propia) | 17px, line-height 1.78 — no crear `.paragraph` ni similar |
+| Párrafo de cuerpo | `.art-body p` (sin clase propia) | 17px, line-height 1.78 — no crear `.paragraph` ni similar. Máx. 3 líneas (~55–60 palabras), ver "Estándar de párrafo" abajo |
 | Negrita / cursiva inline | `<strong>` / `<em>` nativos | No existe `.highlight`/`.mark` — nunca envolver en spans nuevos |
 | Cita destacada (pull quote) | `<blockquote class="art-quote"><p>…</p><cite>Autor — Rol</cite></blockquote>` | Cursiva display, borde oro izquierdo |
-| Dato de campo / implicación práctica | `<div class="art-callout"><span class="art-callout__label">…</span><p>…</p></div>` | Fondo teal 5%, borde teal |
+| Dato de campo / implicación práctica | `<div class="art-callout"><span class="art-callout__label">…</span><p>…</p>[<p>…</p>…]</div>` | Fondo teal 5%, borde teal. Puede llevar 2–4 `<p>` cortos apilados (`.art-callout p + p` da el espacio) — ver "Estándar de párrafo" |
 | Puntos clave (resumen) | `<div class="art-insights" role="note" aria-label="Puntos clave">` | Fondo carbón sólido, siempre justo tras `.art-hero`, antes del primer párrafo |
 | H2 de sección | `.art-body h2` | Barra oro izquierda — nunca `<h2>` sin este contenedor |
 | H3 de subsección | `.art-body h3` | Uppercase, teal, sin barra |
