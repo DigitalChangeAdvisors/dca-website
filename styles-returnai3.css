@@ -151,7 +151,7 @@
   color: rgba(255,255,255,0.6);
   font-size: 14.5px;
 }
-.s8-cta { margin-top: 28px; }
+.s8-cta { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 28px; }
 @media (max-width: 768px) {
   .s8-grid { grid-template-columns: 1fr; gap: 36px; }
   .s8-cover { height: 360px; order: -1; }
