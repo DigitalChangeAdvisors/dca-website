@@ -713,6 +713,11 @@ section { padding: 48px 0; }
 }
 .store-tile__icon { display: block; width: 32px; height: 32px; }
 .store-tile__icon svg, .store-tile__icon img { display: block; width: 100%; height: 100%; object-fit: contain; }
+/* El logo "books" es apaisado (240x146) — a ancho fijo de 32px queda con menos
+   altura que los íconos cuadrados. Se fija la altura a 32px (igual que el resto)
+   y se deja el ancho libre para que la proporción real determine el tamaño. */
+.store-tile__icon--wide { width: auto; height: 32px; }
+.store-tile__icon--wide img { width: auto; height: 100%; }
 .store-tile__name {
   font-family: var(--font-body);
   font-weight: 700;
@@ -1704,7 +1709,7 @@ section { padding: 48px 0; }
 
       <a href="https://www.amazon.com/-/es/Cesar-Lozano/dp/6280244636" target="_blank" rel="noopener" class="store-tile">
         <span class="store-tile__format">Impreso</span>
-        <span class="store-tile__icon"><img src="../assets/icon-amazon-books.png" alt="" loading="lazy" width="240" height="146"></span>
+        <span class="store-tile__icon store-tile__icon--wide"><img src="../assets/icon-amazon-books.png" alt="" loading="lazy" width="240" height="146"></span>
         <span class="store-tile__name">Amazon</span>
         <span class="store-tile__note">Envío internacional a tu oficina o casa</span>
       </a>
