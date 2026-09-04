@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>document.documentElement.classList.replace('no-js','js');</script>
+
+<title>Solo el 7% opera agentes de IA autónomos en producción | DCA</title>
+<meta name="description" content="Bain midió a 951 compañías: solo el 7% opera agentes plenamente autónomos. La autonomía no cierra la fuga de productividad de la IA — la amplía." />
+<link rel="canonical" href="https://digitalchangeadvisors.com/article-paper16" />
+<meta name="theme-color" content="#1e2a38" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://digitalchangeadvisors.com/article-paper16" />
+<meta property="og:title" content="¿Por qué los agentes de IA no cierran por sí solos la brecha entre productividad y resultado?" />
+<meta property="og:description" content="Bain midió que solo el 7% opera agentes plenamente autónomos. La autonomía no cierra la fuga de productividad — la amplía. César Lozano — DCA." />
+<meta property="og:image" content="https://digitalchangeadvisors.com/assets/og-returnai.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:site_name" content="Digital Change Advisors" />
+<meta property="og:locale" content="es_LA" />
+<meta property="article:published_time" content="2026-09-04T00:00:00Z" />
+<meta property="article:author" content="César Lozano" />
+
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/favicon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</noscript>
+
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styles4.css" />
+<link rel="stylesheet" href="styles5.css" />
+<link rel="stylesheet" href="styles6.css" />
+<link rel="stylesheet" href="styles-article.css" />
+
+<noscript>
+  <style>[data-reveal] { opacity: 1 !important; transform: none !important; }</style>
+</noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "¿Por qué los agentes de IA no cierran por sí solos la brecha entre productividad y resultado?",
+  "author": {"@type": "Person", "name": "César Lozano"},
+  "datePublished": "2026-09-04",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Digital Change Advisors",
+    "logo": {"@type": "ImageObject", "url": "https://digitalchangeadvisors.com/assets/favicon.png"}
+  },
+  "url": "https://digitalchangeadvisors.com/article-paper16",
+  "inLanguage": "es",
+  "citation": [
+    {
+      "@type": "CreativeWork",
+      "name": "Your AI Budget Is Growing. Your Returns Aren't. Here's Why.",
+      "author": [
+        {"@type": "Person", "name": "Michael Heric"},
+        {"@type": "Person", "name": "Purna Doddapaneni"},
+        {"@type": "Person", "name": "Antoine Debarre"}
+      ],
+      "publisher": { "@type": "Organization", "name": "Bain & Company" },
+      "datePublished": "2026-06-01",
+      "url": "https://www.bain.com/insights/your-ai-budget-is-growing-your-returns-arent-heres-why/",
+      "description": "Brief de Bain & Company publicado el 1 de junio de 2026, basado en la Automation and AI Pathfinder Survey 2026, encuesta a 951 compañías globales. Del módulo de autonomía de ese instrumento: 7% de las compañías opera agentes plenamente autónomos en producción; 38% opera con el modelo de aprobación humana requerida; 32% opera con barandas y excepciones. Bain advierte que esos segmentos no suman 100% por redondeo. Entre las compañías que incumplieron sus metas de ahorro, 38% tiene agentes con autonomía de nivel barandas o superior, frente a 50% de las que sí cumplieron. Precisión: este artículo usa el módulo de autonomía del instrumento; la pieza de esta serie sobre el costo de la brecha usa el módulo de ahorro del mismo instrumento — son hallazgos distintos y no deben fusionarse. Hay además dos cifras de 38% distintas dentro de este mismo hallazgo, de universos diferentes: el modelo de aprobación humana requerida (38% del total de encuestados) y las compañías que incumplieron sus metas y tienen autonomía de nivel barandas o superior (38% de ese subgrupo) — no son la misma cifra. La lectura de que el contraste 38%/50% admite un orden causal inverso al de una lectura rápida es de Digital Change Advisors; Bain reporta el contraste sin atribuirle causalidad."
+    }
+  ]
+}
+</script>
+</head>
+<body class="v4 v5 v6">
+
+<a href="#contenido" class="skip-link">Saltar al contenido</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://digitalchangeadvisors.com/" class="nav__logo" aria-label="Digital Change Advisors — Inicio">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -8 400 88" role="img" aria-hidden="true">
+        <line x1="3" y1="73" x2="73" y2="73" stroke="#e4e4e4" stroke-width="1"/>
+        <path d="M 8 68 C 22 14, 55 8, 68 8" fill="none" stroke="#2e8b76" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="8" cy="68" r="5" fill="#2e8b76"/>
+        <circle cx="68" cy="8" r="12" fill="#a48111"/>
+        <line x1="90" y1="14" x2="90" y2="64" stroke="#1e2a38" stroke-width="1" opacity="0.12"/>
+        <text x="106" y="55" font-family="'Marcellus', Georgia, serif" font-size="44" fill="#2e8b76" letter-spacing="-0.5">DCA</text>
+        <text x="109" y="70" font-family="'Montserrat', Helvetica, sans-serif" font-weight="600" font-size="10.5" fill="#1e2a38" opacity="0.80" letter-spacing="2.6">DIGITAL CHANGE ADVISORS</text>
+      </svg>
+    </a>
+    <ul class="nav__links">
+      <li><a href="https://digitalchangeadvisors.com/modelo-aria">Modelo ARIA</a></li>
+      <li><a href="https://digitalchangeadvisors.com/returnai">ReturnAI</a></li>
+      <li><a href="https://digitalchangeadvisors.com/blog" aria-current="page" class="is-current">Perspectivas</a></li>
+      <li><a href="https://digitalchangeadvisors.com/nosotros">Nosotros</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="https://digitalchangeadvisors.com/art/?utm_source=article-p16&utm_medium=website&utm_campaign=ai-return-test" class="btn btn--primary">AI Return Test <span class="arrow">&rarr;</span></a>
+      <button class="nav__burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="https://digitalchangeadvisors.com/modelo-aria">Modelo ARIA</a>
+  <a href="https://digitalchangeadvisors.com/returnai">ReturnAI</a>
+  <a href="https://digitalchangeadvisors.com/blog">Perspectivas</a>
+  <a href="https://digitalchangeadvisors.com/nosotros">Nosotros</a>
+  <a href="https://digitalchangeadvisors.com/art/?utm_source=article-p16&utm_medium=website&utm_campaign=ai-return-test" class="btn btn--primary btn--lg">AI Return Test &rarr;</a>
+</div>
+
+<main id="contenido">
+
+  <!-- ===== ENCABEZADO DEL ARTÍCULO ===== -->
+  <header class="art-header">
+    <div class="art-inner">
+      <nav class="art-breadcrumb" aria-label="Ruta de navegación">
+        <a href="https://digitalchangeadvisors.com/blog">Perspectivas</a>
+        <span aria-hidden="true">/</span>
+        <span>Gobernanza · Bain</span>
+      </nav>
+      <span class="art-cat art-cat--frame">Gobernanza · Bain</span>
+      <h1 class="art-title art-title--long"><span class="line">¿Por qué los agentes de IA no cierran</span><span class="line">por sí solos la brecha entre</span><span class="line">productividad y resultado?</span></h1>
+      <p class="art-lead">Porque un agente no decide a dónde va el tiempo que libera; decide más rápido dentro del mismo flujo. En <a href="https://www.bain.com/insights/your-ai-budget-is-growing-your-returns-arent-heres-why/" target="_blank" rel="noopener noreferrer">la medición global de Bain de 2026</a>, solo el 7% de las compañías opera agentes plenamente autónomos en producción — mientras la mayoría de los casos de negocio que los financiaron se construyó sobre la economía de la automatización total.</p>
+      <div class="art-byline">
+        <picture><source srcset="assets/blog-author-cesar-lozano.webp" type="image/webp"><img src="assets/blog-author-cesar-lozano.jpg" alt="Foto de César Lozano" class="art-byline__photo" width="48" height="48" loading="lazy"></picture>
+        <div class="art-byline__info">
+          <span class="art-byline__name">César Lozano</span>
+          <span class="art-byline__role">Socio fundador · CEO · Arquitecto del Modelo ARIA</span>
+          <span class="art-byline__meta">
+            <time datetime="2026-09-04">4 sep 2026</time>
+            <span class="art-dot" aria-hidden="true"></span>
+            13 min de lectura
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== IMAGEN HERO ===== -->
+  <div class="art-hero">
+    <picture><source srcset="assets/blog-article-paper16.webp" type="image/webp"><img src="assets/blog-article-paper16.jpg" alt="Ejecutivo revisando en su tableta una cola de decisiones pendientes de aprobación, con paneles de monitoreo de un agente de IA activos detrás de él" width="1400" height="600" loading="eager"></picture>
+  </div>
+
+  <!-- ===== CUERPO DEL ARTÍCULO ===== -->
+  <article class="art-body" data-reveal>
+    <div class="art-inner">
+
+      <!-- Puntos clave -->
+      <div class="art-insights" role="note" aria-label="Puntos clave">
+        <span class="art-insights__label">Puntos clave</span>
+        <ul>
+          <li>Bain midió a 951 compañías: solo el 7% opera agentes plenamente autónomos en producción; el modelo dominante (38%) exige aprobación humana, y otro 32% opera con barandas y excepciones.</li>
+          <li>Entre las compañías que incumplieron sus metas de ahorro, solo el 38% tiene agentes con autonomía de nivel barandas o superior, frente al 50% de las que sí cumplieron — un contraste que admite dos lecturas opuestas, y Bain no elige entre ellas.</li>
+          <li>La aprobación humana no es un mecanismo de conversión, es un punto de control: verifica que la decisión del agente sea aceptable, no verifica el destino de la capacidad que libera.</li>
+          <li>La tesis de Digital Change Advisors: la autonomía no cierra la fuga de productividad de la IA — la amplía. El AI Governance Canvas y los AI Agency Activators del Modelo ARIA existen para medir si alguien definió ese destino antes del despliegue.</li>
+        </ul>
+      </div>
+
+      <!-- Intro -->
+      <p>Porque un agente no decide a dónde va el tiempo que libera; decide más rápido dentro del mismo flujo.</p>
+      <p>La medición global de Bain de 2026 muestra que solo el 7% de las compañías opera agentes plenamente autónomos en producción, mientras la mayoría de los casos de negocio que los financiaron se construyó sobre la economía de la automatización total.</p>
+      <p>Digital Change Advisors llama <strong>fuga de productividad de la IA</strong> a la disipación de la capacidad que la herramienta libera en el puesto individual antes de convertirse en un resultado financiero registrable.</p>
+      <p>La autonomía no la cierra. Aumenta la velocidad a la que se produce capacidad, y deja intacta la pregunta de a dónde va.</p>
+
+      <h2>El dato</h2>
+      <p>El 1 de junio de 2026, Bain &amp; Company publicó el brief <a href="https://www.bain.com/insights/your-ai-budget-is-growing-your-returns-arent-heres-why/" target="_blank" rel="noopener noreferrer"><em>Your AI Budget Is Growing. Your Returns Aren't. Here's Why.</em></a>, firmado por Michael Heric, Purna Doddapaneni y Antoine Debarre.</p>
+      <p>Se basa en su <em>Automation and AI Pathfinder Survey 2026</em>, una encuesta a 951 compañías globales.</p>
+      <p>Del módulo de autonomía de ese instrumento —el mismo que sostiene la pieza sobre el costo de la brecha en esta serie, en un módulo distinto— surgen tres cifras.</p>
+      <p>Solo el 7% de las compañías opera agentes plenamente autónomos en producción. El modelo dominante, citado por el 38% de los encuestados, es el de aprobación humana requerida. Otro 32% opera con barandas y excepciones: una persona interviene cada vez que el agente encuentra algo que no puede resolver con confianza.</p>
+
+      <div class="art-stats" aria-label="Niveles de autonomía de agentes de IA en producción">
+        <div class="art-stat">
+          <span class="art-stat__num">7%</span>
+          <span class="art-stat__label">opera agentes plenamente <em>autónomos</em> en producción</span>
+        </div>
+        <div class="art-stat">
+          <span class="art-stat__num">38%</span>
+          <span class="art-stat__label">opera con <em>aprobación humana</em> requerida — el modelo dominante</span>
+        </div>
+        <div class="art-stat">
+          <span class="art-stat__num">32%</span>
+          <span class="art-stat__label">opera con <em>barandas y excepciones</em></span>
+        </div>
+      </div>
+
+      <p>Bain advierte que esos segmentos no suman cien por redondeo. Y añade un contraste: entre las compañías que incumplieron sus metas de ahorro, solo el 38% tiene agentes con autonomía de nivel barandas o superior, frente al 50% de las que sí cumplieron.</p>
+
+      <h2>Lo que el estudio no explica</h2>
+      <p>Bain nombra la fractura financiera con precisión y sin eufemismos. Si el caso de negocio de la IA agéntica se construyó sobre la economía de la automatización total y lo que está operando enruta una parte significativa de las decisiones a una cola humana, entonces el director financiero aprobó un conjunto de números y la organización está viviendo con otro.</p>
+      <p>Es una observación correcta y poco frecuente en documentos de firma.</p>
+      <p>Lo que el brief no explica es por qué una organización que no logra convertir el trabajo asistido en resultado esperaría convertir el trabajo autónomo.</p>
+      <p>Porque la capa de aprobación humana que cubre al 38% no es un mecanismo de conversión. Es un punto de control. Verifica que la decisión del agente sea aceptable y no verifica nada sobre el destino de la capacidad que esa decisión libera.</p>
+      <p><strong>Un flujo con aprobación humana y un flujo sin ella comparten exactamente la misma ausencia: en ninguno de los dos hay alguien que haya decidido, antes del despliegue, a dónde va el tiempo que el agente devuelve.</strong> La autonomía cambia quién ejecuta el paso. No cambia dónde termina el ahorro.</p>
+
+      <div class="art-callout">
+        <span class="art-callout__label">Dos lecturas del mismo contraste</span>
+        <p>El 38% frente al 50% admite dos lecturas opuestas, y el brief no elige entre ellas.</p>
+        <p>Puede leerse como que más autonomía produce mejores resultados. También puede leerse en el orden inverso: que las compañías que ya habían rediseñado su flujo pudieron otorgar más autonomía, porque sabían qué estaban delegando.</p>
+        <p>La diferencia entre ambas lecturas no es académica. Una recomienda subir el nivel de autonomía; la otra advierte que subirlo sin rediseñar el flujo es copiar el síntoma visible de quien convirtió.</p>
+      </div>
+
+      <p><strong>La pregunta que el brief deja abierta es esta: ¿qué tendría que existir en una organización para que delegar una decisión a un agente produzca resultado y no solamente velocidad?</strong></p>
+
+      <h2>La tesis de Digital Change Advisors</h2>
+      <p>Tienen que existir dos cosas, y ninguna de las dos es tecnológica.</p>
+      <p>La primera es una definición explícita de qué decisiones se delegan, con qué umbral y contra qué indicador se juzga el resultado de haberlas delegado.</p>
+      <p>El propio Bain observa que hoy la gobernanza está repartida casi por igual entre tecnología, las funciones de negocio y equipos centrales, sin un dueño claro en la mayoría de las organizaciones.</p>
+      <p>Un agente desplegado en esas condiciones opera sin criterio declarado: hace bien lo que se le pidió y nadie estableció de antemano contra qué línea financiera se verificaría que hacerlo bien valía la pena.</p>
+
+      <div class="art-callout">
+        <span class="art-callout__label">Dos condiciones, ninguna tecnológica</span>
+        <p>En el Modelo ARIA —Aceleración del Retorno de la IA— la primera condición es el <strong>AI Governance Canvas</strong>: qué se delega, con qué umbral, contra qué indicador.</p>
+        <p>La segunda es más incómoda. La capa de aprobación humana solo produce valor si quien aprueba ejerce criterio. Una persona que revisa cuarenta decisiones por hora y las aprueba todas no está supervisando: está firmando.</p>
+        <p>Los <strong>AI Agency Activators</strong> del Modelo ARIA existen para medir exactamente esa diferencia: si quien supervisa ejerce criterio o solo aprueba. Es una variable de comportamiento, no de arquitectura, y ningún registro de auditoría la revela.</p>
+      </div>
+
+      <p>Una organización que confunde firmar con supervisar tiene un punto de control que consume tiempo humano, retrasa la decisión y no aporta juicio. En términos financieros, eso es peor que la autonomía plena y peor que la ausencia de agente.</p>
+      <p>De ahí la tesis. <strong>La autonomía no cierra la fuga: la amplía.</strong> Un agente que actúa dentro de un flujo que nadie rediseñó produce más capacidad disipada por unidad de tiempo, no más resultado registrado.</p>
+      <p>La herramienta anterior liberaba horas de a una; el agente las libera de a muchas. Si el destino de esas horas seguía sin definirse, lo que la organización compró fue una tasa de fuga mayor con el mismo denominador.</p>
+      <p>Y esta vez el gasto es superior y la reversión más costosa, porque el agente ya quedó incrustado en el flujo.</p>
+      <p>Bain prescribe rediseñar el modelo operativo y no solo el proceso. La prescripción es correcta y es suya.</p>
+      <p>Lo que ninguna encuesta puede decirle a un director general es si su organización está hoy en condiciones de sostener ese rediseño, y eso sí es medible antes de firmar: la <strong>mentalidad AI</strong> de quien trabaja junto al agente y decide si el tiempo devuelto se reinvierte o se absorbe; el <strong>liderazgo AI</strong> de quien fija el destino de esa capacidad; y el <strong>ADN AI</strong> que determina si la supervisión sigue siendo criterio al tercer mes o ya se volvió una firma.</p>
+
+      <h2>Lo que cuesta mantener el curso</h2>
+      <p>Bain formula una pregunta que, según su propio texto, el área de tecnología no puede responder en lugar del director general: quién responde personalmente cuando un agente toma una decisión consecuente equivocada en producción.</p>
+      <p>Es la pregunta correcta y conviene extenderla, porque su versión completa no es de riesgo sino de retorno.</p>
+      <p><strong>La misma persona que responde cuando el agente decide mal es la que debe responder por el destino de la capacidad que el agente libera cuando decide bien.</strong></p>
+      <p>Si esas dos responsabilidades recaen en personas distintas, o si la segunda no recae en nadie, la organización tiene gobernanza del error y no tiene gobernanza del valor.</p>
+      <p>Es la configuración más común y la más cara, porque garantiza que cada fallo tenga dueño y ningún ahorro lo tenga.</p>
+      <p>Para un director general esto tiene una consecuencia de calendario. El 90% de las compañías de la encuesta está aumentando su presupuesto, y lo está haciendo para desplegar agentes.</p>
+      <p>Esa decisión se toma una vez por ciclo y define la arquitectura operativa de los tres años siguientes.</p>
+      <p>Nombrar al responsable del destino de la capacidad antes del despliegue no cuesta presupuesto y, según el propio Bain, establecer la línea de responsabilidad toma una tarde. Hacerlo después significa negociarlo con un flujo que ya está corriendo, con un proveedor ya contratado y con un caso de negocio ya aprobado sobre supuestos que nadie va a querer reabrir.</p>
+      <p>La mayoría de los pares de cualquier director general va a desplegar agentes este año sobre flujos que no rediseñó. Eso es tranquilizador y engañoso a la vez.</p>
+      <p>Lo que altera el cálculo es que la ventaja de quien sí lo hace no proviene de tecnología distinta —el 7% que opera con autonomía plena no compró otra cosa— sino de haber decidido antes qué delegaba y a dónde iba lo que se liberara.</p>
+
+      <h3>Qué cambia en la gestión a partir de mañana</h3>
+      <p><strong>Un cambio, concreto: antes de aprobar el despliegue de un agente, nombrar por escrito a quién pertenece la capacidad que ese agente va a liberar y contra qué línea del estado de resultados se verificará que llegó.</strong></p>
+      <p>No es un requisito de gobernanza corporativa ni un control de riesgos. Es la única forma de que la delegación de una decisión produzca resultado en lugar de velocidad.</p>
+      <p>Un agente aprobado sin ese campo resuelto puede funcionar exactamente como se prometió, superar todas sus métricas de desempeño técnico y no mover un solo indicador financiero — y la organización no tendrá manera de saber en qué punto se perdió el valor, porque nunca definió dónde debía aparecer.</p>
+      <p>El costo de resolverlo es una conversación antes de firmar. El costo de no resolverlo es un ciclo presupuestal completo.</p>
+
+      <div class="art-callout">
+        <span class="art-callout__label">En síntesis</span>
+        <p>Bain midió en 2026, sobre 951 compañías globales, algo que casi ningún comité verifica sobre su propio caso de negocio: solo el 7% opera agentes plenamente autónomos en producción, mientras el modelo dominante —el 38%— exige aprobación humana y otro 32% funciona con barandas y excepciones.</p>
+        <p>Es decir, la mayoría de las inversiones en agentes se aprobó con la economía de la automatización total y opera con una realidad en la que una parte significativa de las decisiones va a una cola humana.</p>
+        <p>El dato que casi nadie nota es el contraste que sigue: entre las compañías que incumplieron sus metas de ahorro solo el 38% tiene agentes con autonomía de nivel barandas o superior, frente al 50% de las que cumplieron — cifra que admite dos lecturas opuestas, porque no es evidente si la autonomía produjo el resultado o si el resultado permitió otorgar la autonomía.</p>
+        <p>La pregunta para un director general deja de ser cuánta autonomía delegar y pasa a ser quién responde por el destino de la capacidad que el agente libera cuando acierta.</p>
+      </div>
+
+      <h3>La pregunta que este artículo no responde</h3>
+      <p>Usted puede saber qué decisiones ha delegado a un agente y con qué nivel de supervisión. Lo que este artículo no puede decirle es si la persona que supervisa esas decisiones está ejerciendo criterio o solamente aprobando.</p>
+
+      <!-- Pull quote -->
+      <blockquote class="art-quote">
+        <p>La misma persona que responde cuando el agente decide mal es la que debe responder por el destino de la capacidad que el agente libera cuando decide bien.</p>
+        <cite>César Lozano — Socio fundador · CEO · Arquitecto del Modelo ARIA</cite>
+      </blockquote>
+
+      <p><strong>Su propia cifra:</strong> el <strong>AI Return Test</strong> de Digital Change Advisors mide la distancia entre la productividad que su equipo ya está produciendo con inteligencia artificial y el resultado que su organización está registrando. Treinta minutos o menos. El resultado es un diagnóstico equivalente al de una sesión de consultoría de alto valor.</p>
+      <p><a href="https://digitalchangeadvisors.com/art/?utm_source=article-p16&utm_medium=website&utm_campaign=ai-return-test" class="art-inline-cta">Mide tu propia brecha con el AI Return Test &rarr;</a></p>
+
+      <hr class="art-divider" />
+
+      <!-- Tags -->
+      <div class="art-tags">
+        <span class="art-tag">Bain</span>
+        <span class="art-tag">Agentes autónomos</span>
+        <span class="art-tag">Gobernanza de IA</span>
+        <span class="art-tag">Fuga de productividad</span>
+        <span class="art-tag">ROI en IA</span>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- ===== BIO DEL AUTOR ===== -->
+  <div class="art-author-section">
+    <div class="art-inner">
+      <div class="art-author-card">
+        <picture><source srcset="assets/blog-author-cesar-lozano.webp" type="image/webp"><img src="assets/blog-author-cesar-lozano.jpg" alt="César Lozano" class="art-author__photo" width="80" height="80" loading="lazy"></picture>
+        <div class="art-author__info">
+          <span class="art-author__name">César Lozano</span>
+          <span class="art-author__role">Socio fundador · CEO · Arquitecto del Modelo ARIA</span>
+          <p class="art-author__bio">César Lozano es fundador y CEO de Digital Change Advisors y autor del Modelo ARIA, el sistema de 14 componentes propietarios que convierte la inversión en IA en retorno auditable. Con más de 30 años como consultor corporativo, ha liderado 70+ intervenciones organizacionales en Estados Unidos y Latinoamérica. Es autor de la novela ReturnAI.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CTA ===== -->
+  <!-- AI Return Pulse — newsletter compacto post-artículo -->
+  <section class="art-pulse">
+    <div class="wrap">
+      <div class="art-pulse__inner">
+        <div class="art-pulse__text">
+          <span class="label">Newsletter quincenal</span>
+          <p class="art-pulse__title">AI Return Pulse</p>
+          <p class="art-pulse__desc">El análisis que no está en el artículo — cada dos semanas, antes de tu reunión de Junta.</p>
+        </div>
+        <div class="art-pulse__form-wrap">
+          <form id="art-pulse-form" novalidate>
+            <div class="art-pulse__row">
+              <input type="email" id="art-pulse-email" class="art-pulse__input" placeholder="nombre@empresa.com" autocomplete="email" required aria-label="Tu correo corporativo" aria-describedby="art-pulse-error" />
+              <button type="submit" class="btn btn--primary art-pulse__btn">Suscribirse <span class="arrow">&rarr;</span></button>
+            </div>
+            <p id="art-pulse-error" class="art-pulse__error" role="alert" hidden>Ingresa un correo corporativo válido.</p>
+          </form>
+          <div id="art-pulse-success" class="art-pulse__success" role="status" hidden>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Suscripción confirmada. Revisa tu bandeja de entrada.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="art-cta">
+    <div class="art-inner" style="text-align:center">
+      <span class="label" style="color:rgba(255,255,255,0.65);display:block;margin-bottom:16px">Diagnóstico ejecutivo</span>
+      <h2 class="art-cta__h2">El diagnóstico que ubica a tu organización<br>dentro del Modelo ARIA en 25 minutos.</h2>
+      <p class="art-cta__p">Cuantifica cuánto retorno está dejando sobre la mesa tu inversión en IA. El número que llevarás a tu próxima reunión de Junta.</p>
+      <a href="https://digitalchangeadvisors.com/art/?utm_source=article-p16&utm_medium=website&utm_campaign=ai-return-test" class="btn btn--gold">AI Return Test <span class="arrow">&rarr;</span></a>
+      <p class="art-cta__note">Sin compromiso · 25 minutos · Tu reporte es confidencial</p>
+    </div>
+  </section>
+
+  <!-- ===== ARTÍCULOS RELACIONADOS ===== -->
+  <section class="art-related">
+    <div class="art-inner--wide">
+      <h2 class="art-related__title">Más perspectivas</h2>
+      <div class="art-related__grid">
+
+        <a href="https://digitalchangeadvisors.com/article-paper15" class="art-rel-card">
+          <div class="art-rel-card__img">
+            <picture><source srcset="assets/blog-article-paper15.webp" type="image/webp"><img src="assets/blog-article-paper15.jpg" alt="" width="400" height="267" loading="lazy"></picture>
+          </div>
+          <div class="art-rel-card__body">
+            <span class="art-cat art-cat--field">Investigación</span>
+            <h3 class="art-rel-card__title">¿Qué distingue a las organizaciones donde la inversión en IA sí llega al resultado?</h3>
+            <p class="art-rel-card__meta">Ruth Jaramillo</p>
+          </div>
+        </a>
+        <a href="https://digitalchangeadvisors.com/article-paper14" class="art-rel-card">
+          <div class="art-rel-card__img">
+            <picture><source srcset="assets/blog-article-paper14.webp" type="image/webp"><img src="assets/blog-article-paper14.jpg" alt="" width="400" height="267" loading="lazy"></picture>
+          </div>
+          <div class="art-rel-card__body">
+            <span class="art-cat art-cat--frame">Marco</span>
+            <h3 class="art-rel-card__title">¿La productividad que genera la IA llega tarde al resultado, o no llega?</h3>
+            <p class="art-rel-card__meta">Ruth Jaramillo</p>
+          </div>
+        </a>
+        <a href="https://digitalchangeadvisors.com/article-paper13" class="art-rel-card">
+          <div class="art-rel-card__img">
+            <picture><source srcset="assets/blog-article-paper13.webp" type="image/webp"><img src="assets/blog-article-paper13.jpg" alt="" width="400" height="267" loading="lazy"></picture>
+          </div>
+          <div class="art-rel-card__body">
+            <span class="art-cat art-cat--frame">Gobernanza</span>
+            <h3 class="art-rel-card__title">¿Cuánto cuesta financieramente no cerrar la brecha de productividad de la IA?</h3>
+            <p class="art-rel-card__meta">César Lozano</p>
+          </div>
+        </a>
+      </div>
+      <div class="art-related__more">
+        <a href="https://digitalchangeadvisors.com/blog" class="btn btn--secondary">Ver todas las perspectivas <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid footer__grid--blog">
+      <div class="footer__brand">
+        <a href="https://digitalchangeadvisors.com/" class="footer__logo--neg" aria-label="Digital Change Advisors — Inicio">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -8 400 88" role="img" aria-hidden="true">
+            <line x1="3" y1="73" x2="73" y2="73" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+            <path d="M 8 68 C 22 14, 55 8, 68 8" fill="none" stroke="#2e8b76" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="8" cy="68" r="5" fill="#2e8b76"/>
+            <circle cx="68" cy="8" r="12" fill="#a48111"/>
+            <line x1="90" y1="14" x2="90" y2="64" stroke="#ffffff" stroke-width="1" opacity="0.18"/>
+            <text x="106" y="55" font-family="'Marcellus', Georgia, serif" font-size="44" fill="#ffffff" letter-spacing="-0.5">DCA</text>
+            <text x="109" y="70" font-family="'Montserrat', Helvetica, sans-serif" font-weight="600" font-size="10.5" fill="#ffffff" opacity="0.80" letter-spacing="2.6">DIGITAL CHANGE ADVISORS</text>
+          </svg>
+        </a>
+        <p>De la inversión en IA al retorno documentado.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Soluciones</h4>
+        <ul>
+          <li><a href="https://digitalchangeadvisors.com/returnai">ReturnAI</a></li>
+          <li><a href="https://digitalchangeadvisors.com/modelo-aria">Modelo ARIA</a></li>
+          <li><a href="https://digitalchangeadvisors.com/art/?utm_source=article-p16&utm_medium=website&utm_campaign=ai-return-test">AI Return Test</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Firma</h4>
+        <ul>
+          <li><a href="https://digitalchangeadvisors.com/nosotros">Nosotros</a></li>
+          <li><a href="https://www.digitalchangeacademy.org" target="_blank" rel="noopener">Academia</a></li>
+          <li>Red ARIA</li>
+          <li><a href="https://digitalchangeadvisors.com/novela-returnai/">Libro ReturnAI</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Perspectivas</h4>
+        <ul>
+          <li><a href="https://digitalchangeadvisors.com/blog">Todas las perspectivas</a></li>
+          <li><a href="https://digitalchangeadvisors.com/blog#newsletter-pulse">AI Return Pulse</a></li>
+          <li><a href="https://www.skool.com/comunidad-lada-2386/" target="_blank" rel="noopener">Comunidad LARIA</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:ceo@digitalchangeadvisors.com">ceo@digitalchangeadvisors.com</a></li>
+          <li><a href="https://tidycal.com/pwgdigital/returnai" target="_blank" rel="noopener">Agendar sesión</a></li>
+          <li><a href="https://digitalchangeadvisors.com/contacto/">Página de contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Digital Change Advisors, LLC.</span>
+      <div class="footer__legal">
+        <a href="https://digitalchangeadvisors.com/privacy-policy">Política de privacidad</a>
+        <a href="https://digitalchangeadvisors.com/terms-of-use">Términos de uso</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="enhance4.js"></script>
+
+
+<!-- AI Return Pulse — newsletter script -->
+<script>
+(function () {
+  var form    = document.getElementById('art-pulse-form');
+  var input   = document.getElementById('art-pulse-email');
+  var error   = document.getElementById('art-pulse-error');
+  var success = document.getElementById('art-pulse-success');
+  var re      = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbwZaU3UD_HeREVZ5s48paNfxKym7_CjUQaYeZnVeKtqGa3ucAuOIs2nzGbJsIu42vEn/exec';
+
+  input.addEventListener('input', function () {
+    if (input.getAttribute('aria-invalid') === 'true' && re.test(input.value.trim())) {
+      input.setAttribute('aria-invalid', 'false');
+      if (error) error.hidden = true;
+    }
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var val = input.value.trim();
+    if (!re.test(val)) {
+      input.setAttribute('aria-invalid', 'true');
+      if (error) error.hidden = false;
+      input.focus();
+      return;
+    }
+    input.setAttribute('aria-invalid', 'false');
+    if (error) error.hidden = true;
+
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) btn.disabled = true;
+
+    var source = window.location.pathname.replace(/.*\//, '').replace('.html', '') || 'article';
+
+    function showSuccess() {
+      form.hidden = true;
+      if (success) success.hidden = false;
+    }
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({ email: val, source: source })
+    })
+    .then(function () { showSuccess(); })
+    .catch(function () { showSuccess(); })
+    .finally(function () { if (btn) btn.disabled = false; });
+  });
+})();
+</script>
+</body>
+</html>
