@@ -101,6 +101,55 @@
 <link rel="stylesheet" href="styles5.css" />
 <link rel="stylesheet" href="styles6.css" />
 <!-- image-slot.js retirado del homepage: las imágenes ahora son <picture>/<img> reales optimizados -->
+
+<!-- ============================ FRANJA DE LANZAMIENTO — Novela ReturnAI (2026-09-04) ============================
+     Estática, sin loop: reutiliza el patrón .status-strip de /novela-returnai/ (carbón + dorado,
+     sin movimiento). Un marquee en loop continuo rompe la regla canónica "nunca loops" del
+     CLAUDE.md raíz y activa un mecanismo de Cierre (urgencia) en la etapa de Diagnóstico del
+     homepage — auditado con /behavioral-economics-c-level y /ui-ux-pro-max antes de implementar.
+     ================================================================================================ -->
+<style>
+.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
+.site-header .nav { position: static; }
+
+.launch-strip { background: var(--carbon); padding: 11px 24px; }
+.launch-strip__inner {
+  max-width: var(--maxw); margin: 0 auto;
+  display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap;
+}
+.launch-strip p {
+  font-family: var(--body); font-weight: 700; font-size: 11.5px;
+  text-transform: uppercase; letter-spacing: 0.14em; color: var(--white); margin: 0;
+}
+.launch-strip__btn {
+  /* Negro puro (no --carbon) para cumplir contraste WCAG AA 4.5:1 sobre oro — 5.73:1 vs. 3.97:1 con --carbon */
+  background: var(--gold); color: #000;
+  font-family: var(--body); font-weight: 700; font-size: 11px;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  padding: 7px 18px; border-radius: 6px; text-decoration: none; white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 4px;
+  transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.launch-strip__btn:hover { transform: translateY(-1px); }
+
+.hero { padding-top: 248px; }
+
+@media (max-width: 880px) {
+  .hero { padding-top: 224px; }
+  .mobile-menu { padding-top: 150px; }
+}
+@media (max-width: 560px) {
+  .launch-strip { padding: 10px 16px; }
+  .launch-strip__inner { flex-direction: column; gap: 8px; }
+  .launch-strip p { font-size: 10.5px; letter-spacing: 0.08em; text-align: center; width: 100%; }
+  .hero { padding-top: 268px; }
+  .mobile-menu { padding-top: 194px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .launch-strip__btn { transition: none !important; }
+}
+</style>
+
 <noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body class="v4 v5 v6">
@@ -108,6 +157,16 @@
 <a href="#contenido" class="skip-link">Saltar al contenido</a>
 
 <div class="scroll-progress"></div>
+
+<div class="site-header">
+
+<!-- ============================ FRANJA DE LANZAMIENTO ============================ -->
+<div class="launch-strip">
+  <div class="launch-strip__inner">
+    <p>Nuevo · La novela ReturnAI ya está disponible</p>
+    <a href="https://digitalchangeadvisors.com/novela-returnai/" class="launch-strip__btn">Comprar <span class="arrow">&rarr;</span></a>
+  </div>
+</div>
 
 <!-- ============================ NAV ============================ -->
 <nav class="nav">
@@ -135,6 +194,8 @@
     </div>
   </div>
 </nav>
+
+</div><!-- /.site-header -->
 
 <div class="mobile-menu" id="mobile-menu">
   <a href="https://digitalchangeadvisors.com/modelo-aria">Modelo ARIA</a>
@@ -508,13 +569,13 @@
       </picture>
       <div data-reveal>
         <span class="label">El libro</span>
-        <span class="label" style="display:block;margin-top:6px;color:var(--gold)">Lanzamiento 22 de septiembre · Acceso anticipado abierto</span>
+        <span class="label" style="display:block;margin-top:6px;color:var(--gold)">Disponible ya</span>
         <h2 style="margin:16px 0 20px">ReturnAI</h2>
         <p class="chapeau" style="margin-bottom:18px">De la adopción de la IA al Retorno que sí importa.</p>
-        <p style="color:var(--carbon-70);max-width:520px">Tu empresa invirtió en IA. ¿Tu equipo la está usando? ReturnAI es la novela donde un directivo lo descubre — y lo resuelve con método. Únete a los Lectores Fundadores antes del lanzamiento.</p>
+        <p style="color:var(--carbon-70);max-width:520px">Tu empresa invirtió en IA. ¿Tu equipo la está usando? ReturnAI es la novela donde un directivo lo descubre — y lo resuelve con método. Descúbrelo tú mismo: ya disponible en Amazon, Apple Books, Kindle y Google Play.</p>
         <div class="book__cta">
           <a href="#" id="btn-extracto" class="btn btn--secondary" aria-expanded="false" aria-controls="preludio-panel">Leer Preludio <span class="arrow">&rarr;</span></a>
-          <a href="https://digitalchangeadvisors.com/novela-returnai/" class="btn btn--primary">Acceso anticipado <span class="arrow">&rarr;</span></a>
+          <a href="https://digitalchangeadvisors.com/novela-returnai/" class="btn btn--primary">Comprar <span class="arrow">&rarr;</span></a>
         </div>
       </div>
     </div>
@@ -682,7 +743,7 @@
         <h4>Perspectivas</h4>
         <ul>
           <li><a href="#perspectivas">Investigación</a></li>
-          <li><a href="#red">Libro ReturnAI</a></li>
+          <li><a href="https://digitalchangeadvisors.com/novela-returnai/">Libro ReturnAI</a></li>
           <li><a href="#perspectivas">Academia</a></li>
           <li><a href="https://digitalchangeadvisors.com/art/?utm_source=homepage&utm_medium=website&utm_campaign=ai-return-test" target="_blank" rel="noopener">AI Return Test</a></li>
         </ul>
