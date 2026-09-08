@@ -46,23 +46,38 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "La estrategia de talento que convierte licencias de IA en retorno documentado — y por qué 9 de cada 10 empresas no la tiene.",
-  "author": {"@type": "Person", "name": "Ruth Jaramillo"},
-  "datePublished": "2026-06-08",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Digital Change Advisors",
-    "logo": {"@type": "ImageObject", "url": "https://digitalchangeadvisors.com/assets/favicon.png"}
-  },
-  "url": "https://digitalchangeadvisors.com/article-paper09",
-  "inLanguage": "es",
-  "citation": [
-    { "@type": "CreativeWork", "name": "Future of Jobs Report 2025", "publisher": { "@type": "Organization", "name": "World Economic Forum" }, "url": "https://www.weforum.org/press/2025/01/future-of-jobs-report-2025-78-million-new-job-opportunities-by-2030-but-urgent-upskilling-needed-to-prepare-workforces/" },
-    { "@type": "CreativeWork", "name": "Global Workforce Hopes and Fears Survey 2025", "publisher": { "@type": "Organization", "name": "PwC" }, "url": "https://www.pwc.com/gx/en/issues/workforce/hopes-and-fears.html" },
-    { "@type": "CreativeWork", "name": "2025 AI Adoption Report", "publisher": { "@type": "Organization", "name": "Wharton School (AI at Wharton)" }, "url": "https://knowledge.wharton.upenn.edu/special-report/2025-ai-adoption-report/" },
-    { "@type": "CreativeWork", "name": "Why Half of GenAI Projects Fail", "publisher": { "@type": "Organization", "name": "Gartner" }, "url": "https://www.gartner.com/en/articles/genai-project-failure" },
-    { "@type": "CreativeWork", "name": "Gartner Predicts 30% of Generative AI Projects Will Be Abandoned After Proof of Concept By End of 2025", "publisher": { "@type": "Organization", "name": "Gartner" }, "url": "https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025" }
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://digitalchangeadvisors.com/article-paper09#article",
+      "headline": "La estrategia de talento que convierte licencias de IA en retorno documentado — y por qué 9 de cada 10 empresas no la tiene.",
+      "author": {"@type": "Person", "name": "Ruth Jaramillo"},
+      "datePublished": "2026-06-08",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Digital Change Advisors",
+        "logo": {"@type": "ImageObject", "url": "https://digitalchangeadvisors.com/assets/favicon.png"}
+      },
+      "url": "https://digitalchangeadvisors.com/article-paper09",
+      "inLanguage": "es",
+      "citation": [
+        { "@type": "CreativeWork", "name": "Future of Jobs Report 2025", "publisher": { "@type": "Organization", "name": "World Economic Forum" }, "url": "https://www.weforum.org/press/2025/01/future-of-jobs-report-2025-78-million-new-job-opportunities-by-2030-but-urgent-upskilling-needed-to-prepare-workforces/" },
+        { "@type": "CreativeWork", "name": "Global Workforce Hopes and Fears Survey 2025", "publisher": { "@type": "Organization", "name": "PwC" }, "url": "https://www.pwc.com/gx/en/issues/workforce/hopes-and-fears.html" },
+        { "@type": "CreativeWork", "name": "2025 AI Adoption Report", "publisher": { "@type": "Organization", "name": "Wharton School (AI at Wharton)" }, "url": "https://knowledge.wharton.upenn.edu/special-report/2025-ai-adoption-report/" },
+        { "@type": "CreativeWork", "name": "Why Half of GenAI Projects Fail", "publisher": { "@type": "Organization", "name": "Gartner" }, "url": "https://www.gartner.com/en/articles/genai-project-failure" },
+        { "@type": "CreativeWork", "name": "Gartner Predicts 30% of Generative AI Projects Will Be Abandoned After Proof of Concept By End of 2025", "publisher": { "@type": "Organization", "name": "Gartner" }, "url": "https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025" }
+      ]
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Talent Strategy Roadmap",
+      "description": "Componente 13 del Modelo ARIA: mapa que asigna a cada persona de una organización una de cuatro rutas explícitas — upskilling, reskilling, incorporación de talento externo o salida digna — con criterios de decisión verificables.",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "Modelo ARIA",
+        "publisher": { "@id": "https://digitalchangeadvisors.com/#organization" }
+      }
+    }
   ]
 }
 </script>
@@ -154,6 +169,12 @@
         </ul>
       </div>
 
+      <!-- La lectura de Digital Change Advisors -->
+      <div class="art-callout">
+        <span class="art-callout__label">La lectura de Digital Change Advisors</span>
+        <p>Digital Change Advisors sostiene que el retorno que se busca ya está dentro de la organización, en las personas que ya se contrataron y las licencias que ya se pagan. Lo que falta no es más inversión: es la arquitectura que decide, con criterio explícito, qué ruta sigue cada persona. La pregunta sin respuesta que congela la adopción es una sola: ¿me van a entrenar o me van a reemplazar? El Talent Strategy Roadmap, Componente 13 del Modelo ARIA, existe para responderla con cuatro rutas explícitas.</p>
+      </div>
+
       <!-- Intro -->
       <p>Cuando 9 de cada 10 empresas no logran conectar su inversión en IA con un número en el P&amp;L, la causa dominante no es técnica: nadie diseñó la arquitectura de talento que construye ese puente.</p>
 
@@ -174,8 +195,8 @@
       </div>
 
       <!-- H2 1 -->
-      <h2>Por qué el presupuesto de capacitación no es una estrategia de talento para la IA</h2>
-      <p>La mayoría de las organizaciones que invierte en IA comete el mismo error de clasificación: trata la decisión de talento como un tema de Recursos Humanos. Se aprueba un presupuesto de capacitación, se contratan cursos sobre la herramienta, se certifica al equipo y se reporta el porcentaje de completación. Todos los indicadores de actividad se cumplen. Y las licencias siguen siendo un costo fijo sin contrapartida en el P&amp;L.</p>
+      <h2>¿Por qué el presupuesto de capacitación no es una estrategia de talento para la IA?</h2>
+      <p>La tesis de Digital Change Advisors: la mayoría de las organizaciones que invierte en IA comete el mismo error de clasificación, trata la decisión de talento como un tema de Recursos Humanos. Se aprueba un presupuesto de capacitación, se contratan cursos sobre la herramienta, se certifica al equipo y se reporta el porcentaje de completación. Todos los indicadores de actividad se cumplen. Y las licencias siguen siendo un costo fijo sin contrapartida en el P&amp;L.</p>
       <p>La confusi&oacute;n est&aacute; en el objeto. La capacitaci&oacute;n ense&ntilde;a a usar una herramienta. Una estrategia de talento responde cuatro preguntas que ning&uacute;n curso responde: qui&eacute;n profundiza sus capacidades en el rol que ya ocupa, qui&eacute;n se reconvierte hacia los roles que la IA est&aacute; creando, qu&eacute; plazas exigen talento externo que el mercado interno no puede producir, y qui&eacute;n dejar&aacute; la organizaci&oacute;n &mdash; y bajo qu&eacute; condiciones. La primera produce certificados. La segunda produce decisiones de arquitectura financiera con destino verificable en el P&amp;L. Confundirlas es financiar la brecha entre uso y retorno sin saberlo.</p>
       <p>Los datos del mercado describen el tamaño del error. El <a href="https://www.weforum.org/press/2025/01/future-of-jobs-report-2025-78-million-new-job-opportunities-by-2030-but-urgent-upskilling-needed-to-prepare-workforces/" target="_blank" rel="noopener noreferrer">World Economic Forum</a> proyecta que el 39% de las competencias actuales de los trabajadores se transformará o quedará obsoleto antes de 2030, y el 63% de los empleadores ya identifica la brecha de habilidades como la barrera principal para transformar su negocio. Mientras tanto, la <a href="https://www.pwc.com/gx/en/issues/workforce/hopes-and-fears.html" target="_blank" rel="noopener noreferrer">encuesta global de PwC</a> a casi 50.000 trabajadores revela la grieta desde adentro: el 72% de los altos ejecutivos siente que tiene los recursos de desarrollo que necesita; entre quienes deben producir el retorno en la operación, solo el 51% dice lo mismo. Veintiún puntos de distancia entre quien aprueba la inversión y quien debe convertirla en resultado. Esa distancia no se cierra con más cursos. Se cierra con arquitectura.</p>
 
@@ -203,7 +224,7 @@
 
       <!-- Pull quote -->
       <blockquote class="art-quote">
-        <p>El CHRO que trata la preparaci&oacute;n para la IA como un &iacute;tem del calendario de capacitaci&oacute;n no est&aacute; gestionando mal el cambio &mdash; est&aacute; gestionando la variable equivocada.</p>
+        <p>El CHRO que trata la preparaci&oacute;n para la IA como un &iacute;tem del calendario de capacitaci&oacute;n no est&aacute; gestionando mal el cambio &mdash; est&aacute; gestionando la variable equivocada, sostiene Ruth Jaramillo, de Digital Change Advisors.</p>
         <cite>Ruth Jaramillo — Socia fundadora · Neurociencias de la Adopción · Cocreadora del Modelo ARIA</cite>
       </blockquote>
 

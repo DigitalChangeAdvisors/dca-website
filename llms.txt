@@ -102,7 +102,7 @@ Retorno de la IA · AI Return Test · AI Return Assessment · Solución ReturnAI
 
 ## Arquetipos de rentabilización
 
-- [Los siete arquetipos de rentabilización de la IA](https://digitalchangeadvisors.com/arquetipos/): las siete configuraciones
+- [¿Qué arquetipo organizacional bloquea el retorno de tu inversión en IA?](https://digitalchangeadvisors.com/arquetipos/): las siete configuraciones
   organizacionales que Digital Change Advisors ha identificado por las que la inversión en inteligencia artificial no se
   traduce en resultado de negocio.
 
