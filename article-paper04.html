@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <script>document.documentElement.classList.replace('no-js','js');</script>
 
-<title>Del purgatorio de pilotos al P&L | Digital Change Advisors</title>
+<title>¿Por qué el purgatorio de pilotos de IA nunca llega al P&L? | DCA</title>
 <meta name="description" content="Métricas técnicas impecables y un estado de resultados que no se mueve. La distancia entre el piloto que funciona y el retorno que aparece tiene causas identificables." />
 <link rel="canonical" href="https://digitalchangeadvisors.com/article-paper04" />
 <meta name="theme-color" content="#1e2a38" />
 
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://digitalchangeadvisors.com/article-paper04" />
-<meta property="og:title" content="Del purgatorio de pilotos al P&L: por qué la brecha es mayor de lo que parece." />
-<meta property="og:description" content="El ROI promedio de las iniciativas de IA a finales de 2025 era del 5,9% — inferior al costo de capital. El problema no es tecnológico. Es de rentabilización. César Lozano — DCA." />
+<meta property="og:title" content="¿Por qué el purgatorio de pilotos de IA nunca llega al P&L?" />
+<meta property="og:description" content="El problema del purgatorio de pilotos no es tecnológico: es de rentabilización. El ROI promedio de las iniciativas de IA cerró 2025 en 5,9% — inferior al costo de capital. César Lozano — DCA." />
 <meta property="og:image" content="https://digitalchangeadvisors.com/assets/og-returnai.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -46,19 +46,34 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Del purgatorio de pilotos al P&L: por qué la brecha es mayor de lo que parece.",
-  "author": {"@type": "Person", "name": "César Lozano", "url": "https://digitalchangeadvisors.com/autor/cesar-lozano"},
-  "datePublished": "2026-04-03",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Digital Change Advisors",
-    "logo": {"@type": "ImageObject", "url": "https://digitalchangeadvisors.com/assets/favicon.png"}
-  },
-  "url": "https://digitalchangeadvisors.com/article-paper04",
-  "inLanguage": "es",
-  "citation": [
-    { "@type": "CreativeWork", "name": "AI Strategy research (siete estrategias para ROI sostenible, 2026)", "publisher": { "@type": "Organization", "name": "MIT Sloan Management Review" }, "url": "https://sloanreview.mit.edu/tag/ai-strategy/" }
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://digitalchangeadvisors.com/article-paper04#article",
+      "headline": "¿Por qué el purgatorio de pilotos de IA nunca llega al P&L?",
+      "author": {"@type": "Person", "name": "César Lozano", "url": "https://digitalchangeadvisors.com/autor/cesar-lozano"},
+      "datePublished": "2026-04-03",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Digital Change Advisors",
+        "logo": {"@type": "ImageObject", "url": "https://digitalchangeadvisors.com/assets/favicon.png"}
+      },
+      "url": "https://digitalchangeadvisors.com/article-paper04",
+      "inLanguage": "es",
+      "citation": [
+        { "@type": "CreativeWork", "name": "AI Strategy research (siete estrategias para ROI sostenible, 2026)", "publisher": { "@type": "Organization", "name": "MIT Sloan Management Review" }, "url": "https://sloanreview.mit.edu/tag/ai-strategy/" }
+      ]
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Retorno documentado",
+      "description": "Movimiento verificable de un indicador de negocio que la empresa ya seguía, con línea base anterior y atribución explícita — a diferencia del ROI estimado, una proyección construida sobre supuestos antes de la inversión.",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "Modelo ARIA",
+        "publisher": { "@id": "https://digitalchangeadvisors.com/#organization" }
+      }
+    }
   ]
 }
 </script>
@@ -111,10 +126,10 @@
       <nav class="art-breadcrumb" aria-label="Ruta de navegaci&oacute;n">
         <a href="https://digitalchangeadvisors.com/blog">Perspectivas</a>
         <span aria-hidden="true">/</span>
-        <span>An&aacute;lisis &middot; M&eacute;tricas &amp; ROI</span>
+        <span>An&aacute;lisis &middot; M&eacute;tricas &amp; ROI &middot; Marco DCA</span>
       </nav>
-      <span class="art-cat art-cat--field">An&aacute;lisis &middot; M&eacute;tricas &amp; ROI</span>
-      <h1 class="art-title" style="max-width:34ch;font-size:clamp(22px,2.2vw,30px);"><span class="line">Del purgatorio de pilotos al P&amp;L:</span><span class="line">por qu&eacute; la brecha es mayor</span><span class="line">de lo que parece.</span></h1>
+      <span class="art-cat art-cat--field">An&aacute;lisis &middot; M&eacute;tricas &amp; ROI &middot; Marco DCA</span>
+      <h1 class="art-title" style="max-width:34ch;font-size:clamp(22px,2.2vw,30px);"><span class="line">¿Por qu&eacute; el purgatorio de pilotos</span><span class="line">de IA nunca llega</span><span class="line">al P&amp;L?</span></h1>
       <p class="art-lead">Cuando el modelo tiene 94% de precisi&oacute;n y el margen bruto no se ha movido, el problema nunca fue tecnol&oacute;gico.</p>
       <div class="art-byline">
         <picture><source srcset="assets/blog-author-cesar-lozano.webp" type="image/webp"><img src="assets/blog-author-cesar-lozano.jpg" alt="Foto de C&eacute;sar Lozano" class="art-byline__photo" width="48" height="48" loading="lazy"></picture>
@@ -148,6 +163,12 @@
           <li>En casos documentados, los equipos ignoran las recomendaciones del sistema de IA en el 69% de las decisiones cr&iacute;ticas. La herramienta opera con precisi&oacute;n t&eacute;cnica; el comportamiento no cambia; el P&amp;L permanece intacto.</li>
           <li>La brecha entre adopci&oacute;n registrada (licencias activas, onboarding completado) y adopci&oacute;n activa real supera el 60% en promedio. Esa es la distancia que ning&uacute;n dashboard de plataforma mide — y la que determina si la inversi&oacute;n aparece como activo o como pasivo en el estado de resultados.</li>
         </ul>
+      </div>
+
+      <!-- La lectura de Digital Change Advisors -->
+      <div class="art-callout">
+        <span class="art-callout__label">La lectura de Digital Change Advisors</span>
+        <p>Digital Change Advisors distingue el ROI estimado del retorno documentado, porque la distancia entre ambos es exactamente el purgatorio de pilotos. El ROI estimado es una proyección construida sobre supuestos, anterior a la inversión. El retorno documentado es el movimiento verificable de un indicador que la empresa ya seguía, con línea base anterior y atribución explícita. El primero se aprueba en un comité. Solo el segundo aparece en el estado de resultados.</p>
       </div>
 
       <!-- Intro -->
@@ -193,7 +214,7 @@
       <p>La IA funcionaba perfectamente. Los comportamientos humanos que la rodeaban, no. Eso es exactamente lo que el <a href="https://sloanreview.mit.edu/tag/ai-strategy/" target="_blank" rel="noopener noreferrer">MIT Sloan Management Review</a> documenta para 2026: el ROI de la IA no se alcanza acumulando tecnolog&iacute;as en stacks sobrecargados, sino permitiendo que la IA mejore las operaciones continuas. El contexto operacional — la suma de creencias, h&aacute;bitos y compromisos emocionales que definen c&oacute;mo las personas toman decisiones cada d&iacute;a — no viene incluido en ning&uacute;n manual de implementaci&oacute;n.</p>
 
       <blockquote class="art-quote">
-        <p>La IA funciona perfectamente. Los humanos, no. Esa distinci&oacute;n cambia qui&eacute;n es responsable del problema — y qui&eacute;n tiene el m&eacute;todo para resolverlo.</p>
+        <p>La IA funciona perfectamente. Los humanos, no. Esa distinci&oacute;n cambia qui&eacute;n es responsable del problema — y qui&eacute;n tiene el m&eacute;todo para resolverlo, sostiene C&eacute;sar Lozano, de Digital Change Advisors.</p>
         <cite>C&eacute;sar Lozano — CEO, Digital Change Advisors</cite>
       </blockquote>
 
@@ -211,8 +232,8 @@
       </div>
 
       <!-- H2 4 -->
-      <h2>De la adopci&oacute;n registrada a la adopci&oacute;n activa: la m&eacute;trica que conecta la IA con el P&amp;L</h2>
-      <p>La distinci&oacute;n que con mayor frecuencia separa a las organizaciones que documentan retorno de las que acumulan pilotos sin ROI no es el presupuesto tecnol&oacute;gico ni la sofisticaci&oacute;n del modelo. Es si la IA lleg&oacute; a generar adopci&oacute;n activa — sostenida en el tiempo, superior al 70%, impactando los KPIs que importan al negocio — o si se qued&oacute; en adopci&oacute;n registrada: licencias pagadas, accesos otorgados, onboarding completado en el LMS corporativo.</p>
+      <h2>¿Qu&eacute; m&eacute;trica conecta la adopci&oacute;n de la IA con el P&amp;L?</h2>
+      <p>La tesis de Digital Change Advisors: la distinci&oacute;n que con mayor frecuencia separa a las organizaciones que documentan retorno de las que acumulan pilotos sin ROI no es el presupuesto tecnol&oacute;gico ni la sofisticaci&oacute;n del modelo. Es si la IA lleg&oacute; a generar adopci&oacute;n activa — sostenida en el tiempo, superior al 70%, impactando los KPIs que importan al negocio — o si se qued&oacute; en adopci&oacute;n registrada: licencias pagadas, accesos otorgados, onboarding completado en el LMS corporativo.</p>
 
       <p>En los proyectos que hemos acompa&ntilde;ado, la brecha promedio entre esos dos n&uacute;meros supera el 60%. En varios casos fue superior al 80%. Esa diferencia no aparece en ning&uacute;n dashboard de plataforma de IA. Y es exactamente la diferencia entre una l&iacute;nea verde y una l&iacute;nea roja en el estado de resultados del trimestre.</p>
 
