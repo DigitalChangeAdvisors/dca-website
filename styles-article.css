@@ -84,6 +84,16 @@
   border: 1px solid rgba(30, 42, 56, 0.14);
 }
 
+/* Fuente analizada — declaración de transparencia, jerarquía visual menor que .art-cat */
+.art-source-note {
+  display: block;
+  font-family: var(--body);
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(30, 42, 56, 0.7);
+  margin: -12px 0 20px;
+}
+
 /* H1 */
 .art-title {
   font-family: var(--display);
