@@ -43,8 +43,9 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 | `/fundadores` | `fundadores/index.html` | Cohorte cerrada de 50 "Lectores Fundadores" ReturnAI — destino exclusivo de invitación nominal/LinkedIn/newsletter, sin nav | ✅ Implementada (2026-07-13) — pendiente `BREVO_FORM_ACTION` y `PREORDER_URL` antes de publicar |
 | `/novela-returnai` | `novela-returnai/index.html` | Landing pública del libro ReturnAI — héroe, caso Adalid, capítulo 1, AI Return Test | ✅ En producción — CTAs de compra reparados (2026-07-14), libro aún no a la venta |
 | `/arquetipos` | `arquetipos/index.html` | Página madre de los 7 arquetipos de rentabilización de la IA — marco de diagnóstico, `DefinedTermSet` JSON-LD, CTA doble AI Return Test / AI Return Assessment | ✅ Implementada y desplegada (2026-08-05) — ver "Decisiones Canónicas de `/arquetipos`" abajo |
-| `/autor` | `autor/index.html` | Índice de autores del Modelo ARIA (hoy solo César; Ruth en Fase 2 del sistema de autoridad) | ✅ Implementada (2026-09-07) |
+| `/autor` | `autor/index.html` | Índice de autores del Modelo ARIA — César y Ruth | ✅ Implementada (2026-09-07), tarjeta de Ruth agregada (2026-09-08) |
 | `/autor/cesar-lozano` | `autor/cesar-lozano/index.html` | Página canónica de evidencia del autor — 8 bloques, `Person` JSON-LD, único CTA hacia `/art/` | ✅ Implementada (2026-09-07) — ver sección propia abajo |
+| `/autor/ruth-jaramillo` | `autor/ruth-jaramillo/index.html` | Misma plantilla de 8 bloques, ángulo complementario (por qué la adopción falla en las personas) | ✅ Implementada (2026-09-08) — ver sección propia abajo |
 
 ## Escalera de Valor de `/returnai` — 2 rutas nuevas, conteo corregido (2026-09-08)
 
@@ -120,10 +121,32 @@ Los 18 ya tenían módulo de autor (o, en el caso de `arquetipos/`, una razón d
 
 ### Guía editorial para artículos futuros (sección 5.5)
 Ya documentada como estándar canónico en la sección **"Estándar de Publicación — Perspectivas / Papers del Blog"** más abajo en este mismo archivo (dato propio en el primer tercio, cifra de tercero siempre con fuente, firma de persona real). Se agrega aquí la regla específica del módulo de autor, que antes no estaba explícita:
-- El **descriptor corto** de cada autor (`.art-author__role`) es literal — copiar exactamente el de `/autor/cesar-lozano` (o el que se fije para Ruth cuando exista su página), nunca una variante nueva por artículo.
+- El **descriptor corto** de cada autor (`.art-author__role`) es literal — copiar exactamente el de `/autor/cesar-lozano` o `/autor/ruth-jaramillo`, nunca una variante nueva por artículo.
 - La **bio** (`.art-author__bio`) es la misma cadena en los 17 artículos de un mismo autor — no personalizar por tema del artículo.
-- El **enlace** (`.art-author__link`) es obligatorio si el autor tiene página canónica propia; se omite (no se apunta a un destino provisional) si no la tiene todavía.
+- El **enlace** (`.art-author__link`) es obligatorio si el autor tiene página canónica propia — desde el 2026-09-08 ambos socios la tienen, así que todo artículo nuevo lleva el enlace desde el primer momento.
 - Al construir el siguiente artículo con `/perspectiva`, el Paso 2 de ese flujo (confirmar autor con el usuario) debe usar el descriptor y bio ya fijados aquí — no inventar uno nuevo por pieza.
+
+## Sistema de Autoridad Personal — Ruth Jaramillo: página de autora, firma de cierre, LinkedIn (2026-09-08)
+
+> Cierra el Sistema de Autoridad Personal para los dos socios. Ejecutado bajo instrucción explícita del usuario ("adelante con TODOS los pendientes"), con dos decisiones que requirieron su input directo antes de proceder: el ángulo editorial de la página (la especificación, sección 3.5, exigía explícitamente "no construir en esta fase... se construye después del lanzamiento, con ángulo editorial aprobado por el cliente" — el usuario aprobó usar el ángulo que la propia especificación ya sugería, en vez de dar uno nuevo) y las cifras del Bloque 2 (la credencial), que no estaban en el documento rector y la regla del propio documento prohíbe inferir.
+
+### `/autor/ruth-jaramillo` — mismos 8 bloques que la de César, sin plantilla nueva
+Construida con el mismo patrón exacto de `/autor/cesar-lozano` (mismas clases `au-*`, mismo CSS embebido, mismo `Person` JSON-LD). Diferencias de contenido, todas trazables a una fuente:
+- **Bloque 1 (declaración de posición):** compuesto combinando su bio ya publicada (socia fundadora, cocreadora de los Frameworks Ágiles del Modelo ARIA) con el ángulo aprobado — no es una frase nueva inventada, es la síntesis de hechos ya confirmados.
+- **Bloque 2 (la credencial):** 25 años de trayectoria en productividad humana, 20+ años como ejecutiva empresarial, 2 libros publicados, Ingeniera Industrial · MBA EAFIT, Coach certificada por el Neuroscience and Coaching Institute (USA). Las cifras de años y "cocreadora de los Frameworks Ágiles" las dio el usuario en esta sesión; el resto ya estaba confirmado en el repo (bio de `/nosotros`, módulo de autor de sus artículos). **Se usó "Frameworks Ágiles del Modelo ARIA" sin el calificador "de transformación humana"** que el usuario mencionó de pasada al dar el dato — "transformación humana" es término vetado como descripción de rol (tabla de términos prohibidos, `CLAUDE.md` raíz); se aplicó la regla ya vigente sin volver a preguntar, dado que es una regla mecánica y no una decisión de contenido.
+- **Bloque 3 (el problema), 6 (el instrumento), 7 (lo que no hacemos), 8 (garantía + CTA):** contenido canónico de la firma, idéntico al de la página de César — la especificación no distingue estos bloques por socio.
+- **Bloque 4 (autoría verificable):** tabla propia con sus 2 obras («Sembrando Semillas de Vida», «Mentalidad Digital» — coautoría con César). «Sembrando Semillas de Vida» no tiene año ni ISBN confirmados en ningún archivo del repo — la tabla lo declara honestamente («Sin registro público confirmado») en vez de inventar un dato, siguiendo el principio explícito de la especificación de que "la diferencia se declara, no se disimula".
+- **Bloque 5 (el caso propio):** mismo caso de producción del libro (18 meses → 16 semanas) que usa la página de César — es un caso a nivel de firma, no exclusivo de un socio, y la especificación lo describe como "el único caso... que la firma puede exhibir hoy".
+
+### Enlaces cruzados completados en la misma sesión
+- `/autor/index.html`: tarjeta de Ruth agregada junto a la de César.
+- **Firma de cierre corregida** en los 6 artículos con cita destacada propia (`paper05`, `08`, `09`, `12`, `14`, `15`) — llevaban la firma retirada de agosto 2026 en el `<cite>`, ahora usan el descriptor canónico vigente (ver hallazgo documentado más arriba, sección del reencuadre autoral).
+- **5º elemento del módulo de autor** (enlace a `/autor/ruth-jaramillo`) y `author.url` en JSON-LD, agregados en sus 7 artículos — antes se omitían deliberadamente porque la página no existía.
+- `founder[]` del homepage: `url` + `sameAs` agregados a la entrada de Ruth, mismo patrón que César — el `jobTitle` de ese mismo campo **no se tocó** (sigue siendo la firma de agosto 2026 por decisión de posicionamiento ya documentada, distinta de la firma del módulo de autor).
+- `sitemap.xml`, `llms.txt` (que nunca había listado ninguna de las 2 páginas de autor — corregido para ambas) y `linkedin/perfiles-actualizados.md` sincronizados.
+
+### LinkedIn de Ruth — confirmado por el usuario
+`https://www.linkedin.com/in/ruth-yamile-jaramillo/`. Aplicado en el `sameAs` de la nueva página, en el `founder[]` del homepage, y en `linkedin/perfiles-actualizados.md` (que ya no tiene ningún dato marcado como pendiente para Ruth, salvo la aplicación manual del contenido al perfil real — Claude Code no puede editar LinkedIn).
 
 ## Infraestructura GEO (2026-07-22)
 
@@ -375,8 +398,8 @@ El usuario autorizó explícitamente: *"cuando por efectos del reacomodo queden 
 ### `article-paper00` — única excepción puntual, no parte del protocolo
 Después de cerrar las 4 tandas, el usuario pidió corregir "veinticinco minutos" → "menos de 30 minutos" en `article-paper00` — un cambio de cifra puntual para alinear ese único dato con el par canónico del instrumento (`55 preguntas · menos de 30 minutos`), **no** una intervención del protocolo de reencuadre. `article-paper00` sigue, por lo demás, completamente fuera de alcance del protocolo — no se le aplicó ninguna de las 7 intervenciones.
 
-### Hallazgo pendiente de decisión del usuario, no corregido — firma de cierre de Ruth Jaramillo
-Los 6 artículos de Ruth con cita de cierre propia (`article-paper05`, `08`, `09`, `12`, `14`, `15` — `article-paper03` no cuenta, su cita de cierre es un testimonio externo de un CIO citado por el MIT, no de Ruth) siguen usando el `<cite>` `"Ruth Jaramillo — Socia fundadora · Neurociencias de la Adopción · Cocreadora del Modelo ARIA"` — la firma retirada de agosto 2026 (ver "Firma de Autoría" más abajo), inconsistente con el descriptor canónico vigente (`"Socia fundadora de Digital Change Advisors · Adopción sostenible de la inteligencia artificial"`) que ya usan el byline superior y el módulo de autor al pie de esos mismos 6 artículos. Verificado que es un patrón 100% consistente entre los 6 (no hay drift entre ellos) — es deuda preexistente a la Fase 3 de septiembre, no introducida por el reencuadre de esta sesión. **No se tocó** porque está fuera del alcance de las 7 intervenciones del protocolo. Queda como tarea pendiente — registrada en memoria del proyecto (`project_sistema_autoridad_personal.md`).
+### Hallazgo corregido en sesión aparte — firma de cierre de Ruth Jaramillo (2026-09-08)
+Los 6 artículos de Ruth con cita de cierre propia (`article-paper05`, `08`, `09`, `12`, `14`, `15` — `article-paper03` no cuenta, su cita de cierre es un testimonio externo de un CIO citado por el MIT, no de Ruth) usaban el `<cite>` `"Ruth Jaramillo — Socia fundadora · Neurociencias de la Adopción · Cocreadora del Modelo ARIA"` — la firma retirada de agosto 2026 (ver "Firma de Autoría" más abajo), inconsistente con el descriptor canónico vigente que ya usaban el byline superior y el módulo de autor al pie de esos mismos 6 artículos. No era parte de las 7 intervenciones del protocolo de reencuadre — se corrigió en la misma sesión que construyó `/autor/ruth-jaramillo` (ver esa sección más abajo).
 
 ## Decisiones Canónicas de `/arquetipos` y las 7 landings ABM (2026-08-05)
 
