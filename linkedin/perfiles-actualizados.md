@@ -62,14 +62,15 @@ Si tu organización invirtió en IA y no puede documentar el retorno ante su Jun
 - **Empresa:** Digital Change Advisors
 - **Descripción:** Adopción sostenible de la inteligencia artificial mediante el Modelo ARIA — el sistema propietario que documenta el retorno en 120 días.
 
-### Sección destacada (2 enlaces — no 3)
-1. AI Return Test — `https://digitalchangeadvisors.com/art/`
-2. Novela ReturnAI — `https://digitalchangeadvisors.com/novela-returnai/`
+### Sección destacada (3 enlaces)
+1. Página de autora — `https://digitalchangeadvisors.com/autor/ruth-jaramillo`
+2. AI Return Test — `https://digitalchangeadvisors.com/art/`
+3. Novela ReturnAI — `https://digitalchangeadvisors.com/novela-returnai/`
 
-**Falta el 3er enlace (página de autor)** porque `/autor/ruth-jaramillo` está explícitamente fuera de esta fase (sección 3.5 de la especificación). Agregar el enlace cuando esa página exista.
+`/autor/ruth-jaramillo` ya está construida y en producción (2026-09-08) — el 3er enlace, antes pendiente, ya está disponible.
 
 ### URL personalizada
-**No disponible en este documento.** No encontré una URL de LinkedIn de Ruth Jaramillo confirmada en el código del sitio (a diferencia de César, cuyo `sameAs` ya estaba en `/nosotros`). Antes de aplicar este perfil, confirmar la URL actual de su LinkedIn personal.
+Confirmada por el usuario (2026-09-08): `https://www.linkedin.com/in/ruth-yamile-jaramillo/`
 
 ---
 
@@ -79,7 +80,8 @@ Si tu organización invirtió en IA y no puede documentar el retorno ante su Jun
 |---|---|---|
 | Página canónica de autor (`/autor/cesar-lozano`) | "César Lozano" · "Creador del Modelo ARIA · Rentabilización de inversiones en inteligencia artificial" | ✅ Verificado en el código, en producción |
 | Módulo de autor del blog (17 artículos) | Mismo nombre y descriptor, literal | ✅ Verificado — unificado en esta misma sesión (antes variaba entre artículos, ver hallazgo abajo) |
-| Perfil personal de LinkedIn | Igual al de arriba | ⏳ Pendiente — aplicar el contenido de este archivo manualmente |
+| Perfil personal de LinkedIn (César) | Igual al de arriba | ⏳ Pendiente — aplicar el contenido de este archivo manualmente |
+| Perfil personal de LinkedIn (Ruth, `https://www.linkedin.com/in/ruth-yamile-jaramillo/`) | "Ruth Jaramillo" · "Socia fundadora de Digital Change Advisors · Adopción sostenible de la inteligencia artificial" | ⏳ Pendiente — aplicar el contenido de este archivo manualmente |
 | Página de empresa en LinkedIn (Digital Change Advisors) | Debe nombrar a César como fundador/CEO con el mismo descriptor | ⏳ No verificable desde este entorno — requiere acceso al panel de LinkedIn de la empresa |
 | Ficha de autor en Amazon (ReturnAI y los 7 títulos anteriores con registro) | "César Lozano" sin variantes | ⏳ No verificable desde este entorno — requiere revisión manual de cada ficha |
 | Ficha de autor en Apple Books / Google Play Books / Kobo (ReturnAI) | "César Lozano" sin variantes | ⏳ No verificable desde este entorno — requiere revisión manual |
