@@ -77,6 +77,43 @@ El libro impreso de ReturnAI declara 55 preguntas y menos de 30 minutos — cifr
 - Todas las meta descriptions tocadas se reverificaron dentro del rango 120–155 caracteres tras el cambio (el par canónico es más largo que "25 minutos", dos descripciones de `/art/` requirieron acortarse en otra parte de la frase para no exceder el límite).
 - Regla de pirámide invertida verificada en los 2 headlines multilinea afectados (`/art/` bloque 10, `/returnai` bloque de cierre) — la línea con el par canónico sigue siendo igual o más larga que la línea siguiente.
 
+## Sistema de Autoridad Personal — Fase 3: módulo de autor, firma de Alejandro Ríos, LinkedIn (2026-09-08)
+
+> Continúa la Fase 2 de arriba, bajo el mismo `website/ESPECIFICACION_Sistema_Autoridad_DCA.md`, Frentes 3 y 4.
+
+### Módulo de autor unificado en los 17 artículos de Perspectivas
+Auditoría previa reveló que el descriptor de César **ya variaba entre artículos** — "CEO · Digital Change Advisors" en 9 de ellos, "Socio fundador · CEO · Arquitecto del Modelo ARIA" en `article-paper16`, ninguno coincidiendo con el `DESCRIPTOR_CORTO_1` canónico de la especificación (sección 2.1). Exactamente la inconsistencia que la sección 5.1 pide eliminar ("descriptor corto, literal y sin variaciones entre artículos").
+- **Unificado en los 17 artículos** (script Python con verificación de 1 coincidencia exacta por archivo antes de escribir):
+  - César (9 artículos: 00, 01, 02, 04, 06, 07, 10, 11, 13): rol → `Creador del Modelo ARIA · Rentabilización de inversiones en inteligencia artificial` (literal, `DESCRIPTOR_CORTO_1`). Bio (2 frases, reutilizable) → *"César Lozano es un consultor colombiano especializado en la rentabilización de inversiones corporativas en inteligencia artificial y creador del Modelo ARIA. Durante treinta años ha acompañado a más de setenta empresas a través de cuatro olas tecnológicas sucesivas."* Se agregó un 5º elemento nuevo al módulo — enlace fijo `<a class="art-author__link">Ver el perfil de autor →</a>` hacia `/autor/cesar-lozano` — con CSS nuevo (`.art-author__link` en `styles-article.css`, teal 13px, sin clase previa).
+  - Ruth (7 artículos: 03, 05, 08, 09, 12, 14, 15): rol → `Socia fundadora de Digital Change Advisors · Adopción sostenible de la inteligencia artificial` (literal, `DESCRIPTOR_CORTO_2`). Bio → *"Ruth Jaramillo es socia fundadora de Digital Change Advisors y cocreadora de los Frameworks Ágiles del Modelo ARIA. Ingeniera Industrial y Coach Profesional certificada por el Neuroscience and Coaching Institute (USA), con más de 20 años como ejecutiva empresarial."* **Sin el 5º elemento (enlace)** — decisión explícita del usuario: `/autor/ruth-jaramillo` no existe todavía (Fase 2 del sistema de autoridad, fuera de alcance), y se prefirió omitir el enlace en sus 8 piezas antes que apuntarlo al índice `/autor` como destino interino. Agregar el enlace cuando esa página se construya.
+- **`author.url` agregado al JSON-LD `BlogPosting`** de los 9 artículos de César, enlazando a `/autor/cesar-lozano` — mismo criterio que el `sameAs`/`url` ya agregado en Fase 2 al `Organization` del homepage y al `Person` de `/nosotros`. Los de Ruth quedan solo con `name` (sin `url`), coherente con la ausencia de su página.
+
+### Corrección de firma — `article-paper00.html` (sección 5.3)
+El artículo firmado por "Alejandro Ríos, Consultor Asociado" — personaje que no existe — se conserva y pasa a firma de César Lozano, con **9 puntos corregidos** en el mismo archivo: `og:description`, `article:author`, `author` del JSON-LD (+ `url`), foto/nombre/rol del byline superior, cita destacada (`blockquote cite`), y la tarjeta de autor al pie (foto, nombre, rol, bio, + enlace nuevo).
+- **Hallazgo no contemplado por la especificación, resuelto con el usuario antes de tocarlo:** el cuerpo del artículo está narrado en primera persona ("documenté los mismos patrones...") con las cifras del personaje ficticio — *"diez años"* y *"treinta y cinco empresas"* — que contradicen la credencial real y verificable de César (*"treinta años"*, *"más de setenta empresas"*, sección 2.2). Cambiar solo la firma sin corregir el cuerpo habría dejado un artículo firmado por César que se contradice con su propia página de autor — justo el tipo de discrepancia que el sistema de autoridad existe para prevenir. **Confirmado por el usuario:** corregir las 2 apariciones (párrafo + `<h2>`) a las cifras reales. No se tocó ninguna otra frase del artículo — cambio mínimo y mecánico, no una reescritura de tesis.
+- **Referencias a Alejandro Ríos eliminadas también fuera del artículo** (mismo criterio "en ese artículo y en cualquier otra parte del sitio"): `blog.html` (JSON-LD `Blog.blogPost[]` + byline de la tarjeta destacada del masthead) y `index.html` (tarjeta de Perspectivas en homepage, "Alejandro Ríos · Red ARIA" → "César Lozano", eliminando también la mención de "Red ARIA" como red profesional).
+- **Única mención de Alejandro Ríos que permanece en el sitio, deliberadamente:** `novela-returnai/index.html`, dentro del panel "Leer Preludio" (extracto de la novela) — es el propio personaje ficticio leyendo, dentro de la trama, el artículo real de César. Es narrativa ya enmarcada como ficción (panel "Preludio"), no una ficha de equipo — el usuario confirmó explícitamente no tocarla ("Es parte de la ficción, no lo toques", 2026-09-07).
+- Verificado con `grep -rl "Alejandro"` sobre todo `website/*.html`+`*/index.html` tras el cambio: cero resultados fuera de `novela-returnai/index.html`.
+
+### Auditoría de los 18 artículos (sección 5.4) — tabla completa
+
+| Artículo | Firma actual | Módulo de autor | Dato propio 1er tercio | Acción |
+|---|---|---|---|---|
+| `article-paper00` | César Lozano *(antes Alejandro Ríos)* | ✅ | ✅ (88%/74%) | Firma corregida + cifras del cuerpo corregidas |
+| `article-paper01`–`02`, `04`, `06`–`07`, `10`–`11`, `13` (César, 9) | César Lozano | ✅ | ✅ (cada uno con cifra citada en el `art-lead`) | Descriptor y bio unificados al canon |
+| `article-paper03`, `05`, `08`–`09`, `12`, `14`–`15` (Ruth, 7) | Ruth Jaramillo | ✅ | ✅ | Descriptor y bio unificados al canon |
+| `article-paper16` | César Lozano | ✅ | ✅ | Descriptor y bio unificados (antes ya usaba una versión distinta y más cercana al canon, ahora exacta) |
+| `arquetipos/index.html` | Ruth Jaramillo (solo en la tarjeta del catálogo, la página no lleva firma propia) | N/A — no es un `article-paperNN`, es un framework sin autor personal | N/A | Sin acción — fuera del patrón de módulo de autor |
+
+Los 18 ya tenían módulo de autor (o, en el caso de `arquetipos/`, una razón documentada para no llevarlo) — el punto 1 del flujo de la sección 5.4 ("añadir el módulo a los que no lo tengan") no tuvo trabajo pendiente. Los 17 `article-paperNN` tienen dato citable con fuente en el primer tercio (`art-lead`) — ninguno requirió marcarse como pendiente de dato propio.
+
+### Guía editorial para artículos futuros (sección 5.5)
+Ya documentada como estándar canónico en la sección **"Estándar de Publicación — Perspectivas / Papers del Blog"** más abajo en este mismo archivo (dato propio en el primer tercio, cifra de tercero siempre con fuente, firma de persona real). Se agrega aquí la regla específica del módulo de autor, que antes no estaba explícita:
+- El **descriptor corto** de cada autor (`.art-author__role`) es literal — copiar exactamente el de `/autor/cesar-lozano` (o el que se fije para Ruth cuando exista su página), nunca una variante nueva por artículo.
+- La **bio** (`.art-author__bio`) es la misma cadena en los 17 artículos de un mismo autor — no personalizar por tema del artículo.
+- El **enlace** (`.art-author__link`) es obligatorio si el autor tiene página canónica propia; se omite (no se apunta a un destino provisional) si no la tiene todavía.
+- Al construir el siguiente artículo con `/perspectiva`, el Paso 2 de ese flujo (confirmar autor con el usuario) debe usar el descriptor y bio ya fijados aquí — no inventar uno nuevo por pieza.
+
 ## Infraestructura GEO (2026-07-22)
 
 Refuerzo técnico para que los motores generativos (ClaudeBot, GPTBot, Google-Extended, PerplexityBot) puedan rastrear, indexar y citar el sitio. Cambios puramente técnicos/invisibles — ninguno pasó por el gate de BE/UI-UX porque ninguno toca copy ni patrón de interacción visible, excepto donde se anota lo contrario.
@@ -510,16 +547,18 @@ Se probaron los 22 enlaces internos únicos de las 17 páginas del sitemap. **Ce
 ### Pendiente sin término vigente documentado
 - **"Visión 4.0"** en `sprint-roadmap-02-baip/index.html` (página interna `noindex`) — no existe hoy un término de reemplazo documentado en el canon. Dejado sin tocar hasta que se defina uno.
 
-## Firma de Autoría — Ruth Jaramillo (canon vigente, agosto 2026)
+## Firma de Autoría (canon vigente, actualizado 2026-09-08 — sustituye el canon de agosto 2026)
 
-- **Firma canónica:** `Socia fundadora · Neurociencias de la Adopción · Cocreadora del Modelo ARIA`
-- **Versión corta, solo por restricción real de ancho** (ej. tarjetas compactas del catálogo de `/blog`): `Socia fundadora · Cocreadora del Modelo ARIA`
-- **Formato:** separador punto medio `·` (U+00B7). "Neurociencias de la Adopción" siempre con N y A mayúsculas — nombre canónico de una de las tres disciplinas fundacionales del Modelo ARIA, sin variantes. "Modelo ARIA" siempre con ARIA en mayúsculas. "Socia fundadora": Socia con mayúscula inicial, fundadora en minúscula.
-- **Aplica en:** páginas de artículo (byline, bloque de autor, bio, citas destacadas), índice del blog, `index.html` (rol visible, alt, JSON-LD `founder`), `llms.txt`.
-- **Excepción deliberada — `/nosotros`:** esa página conserva `Directora — Digital Change Academy` en JSON-LD, `.label`, `alt` y `.founder__credit`. **No es una inconsistencia pendiente — es una decisión de posicionamiento del usuario.** Digital Change Academy es una marca distinta de Digital Change Advisors, con dominio propio (`digitalchangeacademy.org`), y su dirección es un cargo real que se mantiene visible en la ficha institucional. No normalizar esta diferencia sin autorización expresa del usuario.
-- **Firmas relacionadas, también canónicas:**
-  - César Lozano: `Socio fundador · CEO · Arquitecto del Modelo ARIA` (sin cambios)
-  - Alejandro Ríos: `Consultor Asociado · Validación Empírica del Retorno`
+> **Superseded por el Sistema de Autoridad Personal.** Las firmas de agosto 2026 (`Socio fundador · CEO · Arquitecto del Modelo ARIA` / `Socia fundadora · Neurociencias de la Adopción · Cocreadora del Modelo ARIA`) quedan retiradas de todo punto de contacto cubierto por `website/ESPECIFICACION_Sistema_Autoridad_DCA.md` (sección 2.1). No reintroducirlas en artículos nuevos ni en la página de autor.
+
+- **César Lozano — firma canónica:** `Creador del Modelo ARIA · Rentabilización de inversiones en inteligencia artificial` (`DESCRIPTOR_CORTO_1`, literal, sin parafrasear).
+- **Ruth Jaramillo — firma canónica:** `Socia fundadora de Digital Change Advisors · Adopción sostenible de la inteligencia artificial` (`DESCRIPTOR_CORTO_2`, literal, sin parafrasear).
+- **Alejandro Ríos:** retirado — no existe. Ver sección "Fase 3: módulo de autor..." arriba para la corrección de firma de `article-paper00.html` y la eliminación de sus menciones en el resto del sitio.
+- **Formato:** separador punto medio `·` (U+00B7).
+- **Aplica sin abreviar en:** el módulo de autor al pie de cada artículo (`.art-author__role`) y el byline superior junto al H1 (`.art-byline__role`) — unificados en los 17 artículos el 2026-09-08 (antes variaban entre sí, ver hallazgo en la sección de Fase 3). También en `/autor/cesar-lozano` (`.au-hero__descriptor`) y en LinkedIn (`website/linkedin/perfiles-actualizados.md`).
+- **Versión corta, solo por restricción real de ancho** (tarjetas compactas del catálogo de `/blog`, `.byline__role`): César → `Creador del Modelo ARIA`; Ruth → `Socia fundadora de Digital Change Advisors`. Es la primera cláusula de cada descriptor canónico, no una redacción nueva — mismo criterio de abreviación ya aceptado en el canon anterior para este mismo componente.
+- **`index.html` (rol visible, alt, JSON-LD `founder`):** César actualizado con `url`/`sameAs` hacia `/autor/cesar-lozano` (Fase 2). El `jobTitle` de Ruth en el `founder[]` de `Organization` **no se tocó** — sigue con la firma de agosto 2026 (`Socia fundadora · Neurociencias de la Adopción · Cocreadora del Modelo ARIA`), porque ese campo describe su rol en la organización, no es el "módulo de autor" que la especificación exige literal — fuera de alcance de la Fase 3 hasta que se revise `/nosotros`/homepage con el mismo criterio.
+- **Excepción deliberada — `/nosotros`:** esa página conserva `Directora — Digital Change Academy` en JSON-LD, `.label`, `alt` y `.founder__credit` para Ruth, y su propia versión del rol de César en el `Person` JSON-LD independiente. **No es una inconsistencia pendiente — es una decisión de posicionamiento del usuario**, y además `/nosotros` está fuera del alcance textual del Sistema de Autoridad Personal (que solo mandata el módulo de autor de Perspectivas y la página `/autor`). Digital Change Academy es una marca distinta de Digital Change Advisors, con dominio propio (`digitalchangeacademy.org`). No normalizar esta diferencia sin autorización expresa del usuario.
 - **Razón de fondo:** Digital Change Advisors es una firma de consultoría estratégica cuya categoría propietaria es la rentabilización de las inversiones en IA corporativa. No se posiciona en las categorías capacitación, formación, gestión del cambio, transformación cultural ni recursos humanos. Las firmas de autoría son un punto de contacto de alta visibilidad con lectores C-Level; una firma que ancle en cargo funcional o en la marca de formación traslada la percepción de la firma a una categoría ajena.
 - **Vocabulario prohibido como descripción de rol o de lo que vende la firma:** transformación humana, transformación cultural, gestión del cambio, capacitación, formación, curso, taller, desarrollo de liderazgo, recursos humanos, gestión humana.
 - **Excepción de nombre propio:** el componente MATCH conserva su nombre expandido "Modelo Ágil de Transformación Cultural y Humana". Es propiedad intelectual con denominación registrada, no vocabulario descriptivo, y no se modifica nunca.

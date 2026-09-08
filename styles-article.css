@@ -476,6 +476,16 @@
   line-height: 1.65;
   margin: 0;
 }
+.art-author__link {
+  display: inline-block;
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--teal);
+  text-decoration: none;
+  margin-top: 10px;
+}
+.art-author__link:hover { text-decoration: underline; }
 
 /* ── CTA del artículo ─────────────────────────────────────────── */
 .art-cta {
