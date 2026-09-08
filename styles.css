@@ -204,13 +204,22 @@ p { text-wrap: pretty; }
 }
 .logo { display: inline-flex; align-items: center; text-decoration: none; flex-shrink: 0; }
 .logo svg { display: block; }
-.nav__links { display: flex; align-items: center; gap: 34px; list-style: none; }
-.nav__links a { color: var(--carbon); text-decoration: none; font-size: 15px; font-weight: 500; position: relative; }
+.nav__links { display: flex; align-items: center; gap: 24px; list-style: none; }
+.nav__links a { color: var(--carbon); text-decoration: none; font-size: 15px; font-weight: 500; position: relative; white-space: nowrap; }
 .nav__links a::after { content: ""; position: absolute; left: 0; bottom: -5px; width: 0; height: 1.5px; background: var(--teal); transition: width 0.25s ease; }
 .nav__links a:hover::after { width: 100%; }
 .nav__cta { display: flex; align-items: center; gap: 16px; }
+.nav__cta .btn { white-space: nowrap; }
 .nav__burger { display: none; background: none; border: 0; cursor: pointer; flex-direction: column; gap: 5px; }
 .nav__burger span { width: 24px; height: 2px; background: var(--carbon); }
+
+/* El 5º ítem "El autor del Modelo ARIA" (añadido 2026-09-07) no cabe en una sola
+   línea junto al resto del nav por debajo de ~1260px — colapsa a menú móvil antes
+   de lo que colapsaban los demás componentes de página (que siguen en 880px). */
+@media (max-width: 1259px) {
+  .nav__links, .nav__cta .btn { display: none; }
+  .nav__burger { display: flex; }
+}
 
 /* ============================================================
    HERO
@@ -329,6 +338,28 @@ p { text-wrap: pretty; }
 .case__attr { font-size: 12.5px; color: rgba(255,255,255,0.45); margin-top: 16px; letter-spacing: 0.06em; font-style: normal; }
 .case__cta { margin-top: 36px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
 .case__cta p { font-size: 17px; color: rgba(255,255,255,0.72); max-width: 420px; line-height: 1.5; }
+
+/* Validación de campo del diagnóstico (homepage) */
+.validation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.validation-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 12px;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.validation-card__quote { font-family: var(--display); font-style: italic; font-size: 16px; line-height: 1.55; color: rgba(255,255,255,0.88); flex: 1; }
+.validation-card__author { display: flex; align-items: center; gap: 12px; margin-top: 20px; }
+.validation-card__author img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex: none; }
+.validation-card__name { font-size: 14px; font-weight: 600; color: var(--white); }
+.validation-card__role { font-size: 12.5px; color: rgba(255,255,255,0.55); margin-top: 2px; }
+.validation-footnote { font-size: 12.5px; color: rgba(255,255,255,0.5); margin-top: 24px; line-height: 1.6; max-width: 760px; }
+.validation-footnote__link { color: var(--teal-light); text-decoration: underline; white-space: nowrap; }
+@media (max-width: 767px) {
+  .validation-grid { grid-template-columns: 1fr; }
+}
 .btn--ghost { border: 1px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.88); background: transparent; padding: 14px 26px; border-radius: 6px; font-size: 14.5px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background 0.25s ease, border-color 0.25s ease; white-space: nowrap; }
 .btn--ghost:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.6); }
 
