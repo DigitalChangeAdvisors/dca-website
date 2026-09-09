@@ -939,8 +939,6 @@
 
 @media (max-width: 980px) {
   .masthead__grid { grid-template-columns: 1fr; gap: 48px; }
-  .field-study__grid { grid-template-columns: 1fr; gap: 44px; }
-  .field-study__mock { max-width: 300px; aspect-ratio: 3 / 4; }
   .authors-band__inner { gap: 40px; }
 }
 
@@ -1119,16 +1117,16 @@
 }
 .field-study__h2 {
   color: #fff;
-  font-size: clamp(20px, 2vw, 28px);
+  font-size: clamp(20px, 1.7vw, 25px);
   line-height: 1.2;
   margin-bottom: 22px;
   text-wrap: unset;
 }
 .field-study__h2 .line { display: block; }
 .field-study__text .chapeau {
-  color: rgba(255, 255, 255, 0.70);
-  margin-bottom: 36px;
-  max-width: 52ch;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 28px;
+  max-width: 56ch;
 }
 .field-study__closer {
   font-family: 'Montserrat', sans-serif;
@@ -1159,13 +1157,30 @@
   box-shadow: 0 8px 22px rgba(164,129,17,0.40);
 }
 .field-study__secondary {
-  font-size: 14px; font-weight: 600;
-  color: rgba(255, 255, 255, 0.60);
+  font-size: 13px; font-weight: 600;
+  color: var(--teal-light);
   text-decoration: none;
   display: inline-flex; align-items: center; gap: 6px;
   transition: color 0.2s ease;
 }
 .field-study__secondary:hover { color: #fff; }
+.field-study__text .chapeau a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(255, 255, 255, 0.45);
+}
+.field-study__text .chapeau a:hover { text-decoration-color: #fff; }
+
+@media (max-width: 980px) {
+  /* Fix de regresión (2026-09-08): esta regla vivía antes de la declaración
+     base de .field-study__grid/.field-study__mock (línea ~1045) — con igual
+     especificidad, la base (sin media query) ganaba la cascada por orden de
+     aparición y el layout de 2 columnas nunca colapsaba en mobile, causando
+     overflow horizontal real en producción. Movida a después de la base. */
+  .field-study__grid { grid-template-columns: 1fr; gap: 44px; }
+  .field-study__mock { max-width: 300px; aspect-ratio: 3 / 4; }
+}
 
 /* ============================================================
    S6 QUIÉN INVESTIGA — banda editorial horizontal
