@@ -296,6 +296,14 @@ Fuentes: [Miller's Law — Laws of UX](https://lawsofux.com/millers-law/) · [Co
 
 **Nota técnica — callouts con varios párrafos:** `.art-callout p + p { margin-top: 14px }` (agregada en `styles-article.css` al aplicar este estándar) — antes de esta regla, todo `.art-callout` de los 10 papers usaba un único `<p>`; ahora puede llevar 2–4 párrafos cortos apilados con espacio visible entre ellos.
 
+### Enlaces en prosa — color canónico teal, nunca el azul por defecto (canónico 2026-09-09)
+
+Todo enlace dentro del cuerpo del artículo (`.art-body a`) o del lead (`.art-lead a`) — citas a fuentes primarias, artículos relacionados de la serie, cualquier hipervínculo embebido en texto — usa **teal** (`var(--teal)`, `#2e8b76`), subrayado, con hover a `#1f6657`. Regla ya aplicada en `styles-article.css`, cubre automáticamente los 17 artículos + `/arquetipos` (comparten la hoja de estilos) — no requiere tocar el HTML de cada pieza.
+
+- **Por qué (incidente 2026-09-09):** el usuario reportó en `article-paper10.html` que los enlaces a "los artículos que siguen en esta serie" se veían en el azul por defecto del navegador — `.art-body`/`.art-lead` nunca tuvieron una regla `a { color }` propia, así que cualquier `<a>` sin clase (una cita a McKinsey, un enlace a otro paper) heredaba el azul nativo, rompiendo con el sistema visual teal/oro del brand book.
+- **No toca `.art-inline-cta`** (el enlace-CTA con `border-bottom` en vez de subrayado, usado para llamados a la acción dentro del cuerpo) — selector con `:not(.art-inline-cta)` para no pisar su estilo ya existente.
+- **Regla para toda pieza futura:** no se necesita ninguna clase nueva en el HTML del artículo — cualquier `<a>` que un autor inserte en un párrafo, lead o lista del cuerpo hereda el teal automáticamente. Si se crea una plantilla de contenido nueva fuera de `styles-article.css` (otra sección de Perspectivas, un formato distinto), replicar la misma regla ahí — nunca dejar un `<a>` de prosa sin `color` explícito.
+
 ### Qué entrega el usuario vs. qué decide Claude
 El texto en formato `.md` no basta para derivar todo — por artículo, confirmar con el usuario:
 - **Autor**: César Lozano, Ruth Jaramillo, Alejandro Ríos, u otro nuevo (requiere foto de perfil si es nuevo)

@@ -222,6 +222,24 @@
   font-weight: 400;
 }
 
+/* Enlaces en prosa — citas a fuentes y artículos relacionados en teal suave,
+   nunca el azul de enlace por defecto del navegador */
+.art-lead a:not(.art-inline-cta),
+.art-body a:not(.art-inline-cta) {
+  color: var(--teal);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.art-lead a:not(.art-inline-cta):hover,
+.art-body a:not(.art-inline-cta):hover {
+  color: #1f6657;
+}
+.art-lead a:not(.art-inline-cta):visited,
+.art-body a:not(.art-inline-cta):visited {
+  color: var(--teal);
+}
+
 /* ── CTA inline en cuerpo del artículo ───────────────────────── */
 .art-inline-cta {
   display: inline-block;
