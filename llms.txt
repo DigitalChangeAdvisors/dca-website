@@ -100,6 +100,7 @@ Retorno de la IA · AI Return Test · AI Return Assessment · Solución ReturnAI
 - [¿La productividad que genera la IA llega tarde al resultado, o no llega?](https://digitalchangeadvisors.com/article-paper14)
 - [¿Qué distingue a las organizaciones donde la inversión en IA sí llega al resultado?](https://digitalchangeadvisors.com/article-paper15)
 - [¿Por qué los agentes de IA no cierran por sí solos la brecha entre productividad y resultado?](https://digitalchangeadvisors.com/article-paper16)
+- [¿Por qué un índice de madurez de IA no le dice a una empresa cuánto está perdiendo?](https://digitalchangeadvisors.com/article-paper17)
 
 ## Modelo y metodología
 
@@ -115,8 +116,8 @@ Retorno de la IA · AI Return Test · AI Return Assessment · Solución ReturnAI
 
 ## Diagnóstico
 
-- [AI Return Test](https://digitalchangeadvisors.com/art/): diagnóstico de entrada de 25 minutos que estima el nivel de riesgo de que
-  una inversión en IA no alcance su retorno esperado.
+- [AI Return Test](https://digitalchangeadvisors.com/art/): diagnóstico de entrada de 55 preguntas, menos de 30 minutos, que estima el
+  nivel de riesgo de que una inversión en IA no alcance su retorno esperado.
 - [AI Return Assessment](https://digitalchangeadvisors.com/ara/): diagnóstico integrado de hasta 20 líderes de la organización
   sobre por qué la inversión en IA no se traduce en resultado. Segundo nivel de la escalera ReturnAI.
 
