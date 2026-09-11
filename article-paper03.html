@@ -417,6 +417,7 @@
   var form    = document.getElementById('art-pulse-form');
   var input   = document.getElementById('art-pulse-email');
   var error   = document.getElementById('art-pulse-error');
+  var errorDefaultText = error ? error.textContent : '';
   var success = document.getElementById('art-pulse-success');
   var re      = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
   var ENDPOINT = 'https://script.google.com/macros/s/AKfycbwZaU3UD_HeREVZ5s48paNfxKym7_CjUQaYeZnVeKtqGa3ucAuOIs2nzGbJsIu42vEn/exec';
@@ -433,7 +434,7 @@
     var val = input.value.trim();
     if (!re.test(val)) {
       input.setAttribute('aria-invalid', 'true');
-      if (error) error.hidden = false;
+      if (error) { error.textContent = errorDefaultText; error.hidden = false; }
       input.focus();
       return;
     }
@@ -457,7 +458,9 @@
       body: JSON.stringify({ email: val, source: source })
     })
     .then(function () { showSuccess(); })
-    .catch(function () { showSuccess(); })
+    .catch(function () {
+      if (error) { error.textContent = 'No pudimos confirmar tu suscripción — intenta de nuevo en unos minutos.'; error.hidden = false; }
+    })
     .finally(function () { if (btn) btn.disabled = false; });
   });
 })();

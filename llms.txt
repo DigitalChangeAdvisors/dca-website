@@ -135,7 +135,7 @@ Retorno de la IA · AI Return Test · AI Return Assessment · Solución ReturnAI
 
 ## Notas
 
-Este archivo cubre únicamente las páginas indexables de digitalchangeadvisors.com. Páginas de acceso restringido o de cohorte cerrada (ej. /fundadores) se excluyen deliberadamente.
+Este archivo cubre únicamente las páginas indexables de digitalchangeadvisors.com. Páginas de acceso restringido, noindex, o retiradas de producción se excluyen deliberadamente.
 
 ## Uso de este contenido
 

@@ -40,8 +40,8 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 | `/libro` | `libro.html` | ReturnAI la novela, Amazon, extracto | ⏳ Pendiente |
 | `/comunidad` | `comunidad.html` | LARIA: 240 miembros, Skool | ⏳ Pendiente |
 | `/contacto` | `contacto/index.html` | AI Return Test como vía preferente; correo + agenda directa; ubicación y constitución legal | ✅ Implementada (2026-08-04) |
-| `/fundadores` | `fundadores/index.html` | Cohorte cerrada de 50 "Lectores Fundadores" ReturnAI — destino exclusivo de invitación nominal/LinkedIn/newsletter, sin nav | ✅ Implementada (2026-07-13) — pendiente `BREVO_FORM_ACTION` y `PREORDER_URL` antes de publicar |
-| `/novela-returnai` | `novela-returnai/index.html` | Landing pública del libro ReturnAI — héroe, caso Adalid, capítulo 1, AI Return Test | ✅ En producción — CTAs de compra reparados (2026-07-14), libro aún no a la venta |
+| ~~`/fundadores`~~ | ~~`fundadores/index.html`~~ | Cohorte cerrada de 50 "Lectores Fundadores" — vía de acceso previa al lanzamiento | ❌ **Retirada (2026-09-04)** — el libro pasó a venta directa; carpeta eliminada del repo, ruta da 404 en producción (confirmado). Ver "Decisiones Canónicas de `/fundadores`" abajo — queda como registro histórico, no como estado vigente |
+| `/novela-returnai` | `novela-returnai/index.html` | Landing pública del libro ReturnAI — héroe, caso Adalid, capítulo 1, sección de compra, AI Return Test | ✅ En producción — **libro a la venta** desde 2026-09-04 (Amazon Kindle, Apple Books, Amazon impreso, envío nacional Colombia; Google Play Books y Kobo pendientes de URL) |
 | `/arquetipos` | `arquetipos/index.html` | Página madre de los 7 arquetipos de rentabilización de la IA — marco de diagnóstico, `DefinedTermSet` JSON-LD, CTA doble AI Return Test / AI Return Assessment | ✅ Implementada y desplegada (2026-08-05) — ver "Decisiones Canónicas de `/arquetipos`" abajo |
 | `/autor` | `autor/index.html` | Índice de autores del Modelo ARIA — César y Ruth | ✅ Implementada (2026-09-07), tarjeta de Ruth agregada (2026-09-08) |
 | `/autor/cesar-lozano` | `autor/cesar-lozano/index.html` | Página canónica de evidencia del autor — 8 bloques, `Person` JSON-LD, único CTA hacia `/art/` | ✅ Implementada (2026-09-07) — ver sección propia abajo |
@@ -603,7 +603,7 @@ Verificado con `curl` (sin ejecutar JS), igual método que los 10 papers: `/` 2.
 ### Rutas con error — sin 404 reales; 2 saltos de redirección evitables
 Se probaron los 22 enlaces internos únicos de las 17 páginas del sitemap. **Cero 404.** Dos enlaces todavía apuntan a rutas de directorio sin barra final (301 innecesario, mismo defecto ya identificado y pospuesto para las "9 rutas restantes"):
 - `art/index.html` → enlaza a `/ara` (falta `/`)
-- `novela-returnai/index.html` → enlaza a `/fundadores` (falta `/`)
+- ~~`novela-returnai/index.html` → enlaza a `/fundadores` (falta `/`)~~ — **hallazgo obsoleto:** ese CTA fue retirado por completo el 2026-09-04 junto con la página `/fundadores` (ver mapa de páginas arriba); no queda enlace que corregir.
 
 ### API de Cloudflare — reintento con token real (2026-08-04) — resultado mixto, confirmado en vivo
 
@@ -656,20 +656,32 @@ Se probaron los 22 enlaces internos únicos de las 17 páginas del sitemap. **Ce
 - **Desglose canónico del Modelo ARIA:** 14 componentes propietarios = 3 instrumentos de diagnóstico (AIMT, AILS, AICD) + 7 frameworks ágiles + 4 herramientas de gestión. Los 7 frameworks se califican como "de rentabilización", nunca "de transformación humana".
 - **Decisión editorial pendiente (no resuelta):** `article-paper09` interpela al CHRO en su titular y en su meta description. El encuadre hacia recursos humanos de esa pieza está identificado y a la espera de decisión editorial del usuario. No modificar sin instrucción expresa.
 
-## Sistema Newsletter — AI Return Pulse (canónico 2026-06-19)
+## Sistema Newsletter — AI Return Pulse (canónico 2026-06-19, incidente y fix 2026-09-11)
 
 ### Presencia del formulario
 - **`blog.html`** — sección `#newsletter-pulse` completa (con proof points, badge, lista de beneficios)
-- **`article-paper00.html` … `article-paper09.html`** — formulario compacto `.art-pulse` inline, entre `.art-author-section` y `.art-cta`
+- **`article-paper00.html` … `article-paper17.html`** (18 artículos) — formulario compacto `.art-pulse` inline, entre `.art-author-section` y `.art-cta`
 - **`index.html` (homepage)** — ❌ NO. Decisión BE: diluye el CTA primario (AI Return Test). Prohibido añadir sin revisión estratégica explícita.
 
-### Stack técnico
-- **Endpoint GAS (cuenta GW):** `https://script.google.com/macros/s/AKfycbwZaU3UD_HeREVZ5s48paNfxKym7_CjUQaYeZnVeKtqGa3ucAuOIs2nzGbJsIu42vEn/exec`
-- **Spreadsheet destino:** "AI Return Pulse - Suscriptores" · Drive `ceo@digitalchangeadvisors.com` · ID `1tR7UVxfeSRWPVUeuHT0JxKzqYW_PdA2q5Z2fiwZntVw`
-- **Email de bienvenida:** vía Brevo (API key en el GAS), sale desde `ceo@digitalchangeadvisors.com`
+### Stack técnico (actualizado 2026-09-11)
+- **Endpoint GAS (cuenta GW):** `https://script.google.com/macros/s/AKfycbwZaU3UD_HeREVZ5s48paNfxKym7_CjUQaYeZnVeKtqGa3ucAuOIs2nzGbJsIu42vEn/exec` — mismo URL de siempre, deployment versionado (@7 al cierre de esta sesión); actualizar el código requiere `clasp push` + `clasp deploy -i <deploymentId>` sobre ese mismo ID, nunca crear un deployment nuevo (rompería el URL que usan los 19 archivos).
+- **Spreadsheet destino:** "AI Return Pulse - Suscriptores" · Drive `ceo@digitalchangeadvisors.com` · ID `1tR7UVxfeSRWPVUeuHT0JxKzqYW_PdA2q5Z2fiwZntVw` · columnas A–D (timestamp/email/fuente/estado) + **E–F nuevas** (código HTTP y cuerpo de la respuesta de Brevo por cada envío — diagnóstico permanente, ver incidente abajo). Reiniciada desde cero el 2026-09-11 (0 filas de histórico previo, arranca limpia).
+- **Email de bienvenida:** vía **plantilla de Brevo (Template ID `7`)**, no vía texto armado en el script — el script solo llama `templateId: 7` + destinatario. Asunto, remitente y cuerpo son 100% editables desde Brevo → Transaccional → Plantillas, sin tocar código.
+- **Remitente:** `Cesar Lozano · DCA <cesar@pulse.digitalchangeadvisors.com>` — reemplaza a `ceo@digitalchangeadvisors.com`, retirado deliberadamente de Brevo como remitente (decisión del usuario, 2026-09-11).
 - **Payload:** `{ email, source }` — source dinámico por `window.location.pathname` en artículos (`article-paper00`, `article-paper01`…), `'blog'` en `blog.html`
 - **CSS artículos:** `.art-pulse` y clases derivadas en `styles-article.css` (al final del archivo)
 - **Fix crítico:** `.art-pulse__success[hidden]` y `.art-pulse__error[hidden]` requieren `display:none` explícito — el `display:flex` del selector de clase sobreescribe el `[hidden]` del browser si no se añade este override
+
+### Incidente — suscripciones nunca llegaban, silenciosamente (diagnosticado y resuelto 2026-09-11)
+El formulario llevaba desde el 19 de junio de 2026 mostrando "Suscripción confirmada" en el 100% de los intentos sin que el correo de bienvenida llegara nunca (o casi nunca) a destino — nadie lo había detectado porque el propio frontend ocultaba el fallo.
+- **Causa raíz real:** Brevo tiene activada, por API key, la restricción de seguridad "IPs autorizadas" (`Configuración → Seguridad → IP autorizadas`). Google Apps Script no tiene una IP de salida fija — usa un pool rotativo de Google Cloud — así que cada ejecución podía caer en una IP nueva no autorizada, y Brevo respondía `401 unauthorized` sin que el script se enterara. **Fix:** el usuario desactivó esa restricción para "Claves API" (quedó igual que "Claves SMTP", ya desactivada) — es la única solución sostenible, whitelistear IPs individuales no habría durado.
+- **Por qué era invisible:** dos capas de silencio apiladas. (1) La llamada a Brevo en el script usaba `muteHttpExceptions: true` sin capturar ni registrar la respuesta — un 401 no lanzaba excepción, el script seguía y respondía "ok" igual. (2) El `fetch` del frontend (los 19 archivos) usa `mode:'no-cors'` (respuesta opaca, necesario porque Apps Script no soporta CORS real en despliegues web) y el código mostraba el mensaje de éxito **tanto en `.then()` como en `.catch()`** — es decir, pase lo que pase, incluso sin red, el visitante siempre veía confirmación.
+- **Fix aplicado a las dos capas:**
+  1. **Servidor (GAS):** `sendConfirmationEmail()` ahora captura `resp.getResponseCode()` y `resp.getContentText()` y los escribe en las columnas E/F de la hoja por cada envío — cualquier fallo futuro de Brevo es visible ahí sin reconstruir el diagnóstico.
+  2. **Frontend (19 archivos: `blog.html` + `article-paper00`–`17`):** el `.catch()` ya no llama a `showSuccess()` — ahora muestra un mensaje real ("No pudimos confirmar tu suscripción — intenta de nuevo en unos minutos") reutilizando el elemento de error ya existente (`art-pulse-error`/`pulse-error`), con su texto original restaurado (`errorDefaultText`) cuando el fallo es de validación de formato en vez de red. Nota: `mode:'no-cors'` sigue haciendo que casi cualquier respuesta (incluido un 401 del propio servidor) resuelva como "éxito" para el navegador — este fix solo corrige el caso de fallo de red genuino (offline, dominio inalcanzable), que antes también se enmascaraba. La detección de fallos del lado del servidor depende de las columnas E/F, no del frontend.
+- **Migración a plantilla de Brevo:** a petición del usuario, el contenido dejó de vivir en el script (`getEmailBody()`, eliminada) y pasó a la Plantilla `7` de Brevo — cualquier ajuste de redacción, asunto o remitente futuro se hace ahí, no en Apps Script.
+- **De paso, corregido el contenido del correo** (estaba desactualizado desde su creación en junio, invisible por el mismo bug): los 3 enlaces a artículos y el del AI Return Test apuntaban al dominio de staging `dca-returnai.github.io` en vez de `digitalchangeadvisors.com` (violaba la regla de enrutamiento canónico ya vigente desde 2026-06-29), y el pie decía "25 minutos" en vez del par canónico "55 preguntas · menos de 30 minutos" (vigente desde 2026-09-07).
+- **Regla derivada para cualquier integración futura de Apps Script + Brevo:** revisar primero `Configuración → Seguridad → IP autorizadas` en Brevo — si está activada para el tipo de clave en uso (API o SMTP) y el llamador no tiene IP fija (como Apps Script), desactivarla desde el inicio en vez de esperar a que falle intermitentemente.
 
 ### Copy aprobado (artículos) — BE Opción A (2026-06-19)
 - **Descripción bajo el título:** *"El análisis que no está en el artículo — cada dos semanas, antes de tu reunión de Junta."*

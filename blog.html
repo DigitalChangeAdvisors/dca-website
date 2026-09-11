@@ -976,6 +976,7 @@
   if (!form) return;
   var input = document.getElementById('pulse-email');
   var error = document.getElementById('pulse-error');
+  var errorDefaultText = error ? error.textContent : '';
   var success = document.getElementById('pulse-success');
   var re = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
@@ -993,7 +994,7 @@
     var val = input.value.trim();
     if (!re.test(val)) {
       input.setAttribute('aria-invalid', 'true');
-      if (error) error.hidden = false;
+      if (error) { error.textContent = errorDefaultText; error.hidden = false; }
       input.focus();
       return;
     }
@@ -1021,7 +1022,9 @@
       body: JSON.stringify({ email: val, source: 'blog' })
     })
     .then(function () { showSuccess(); })
-    .catch(function () { showSuccess(); })
+    .catch(function () {
+      if (error) { error.textContent = 'No pudimos confirmar tu suscripción — intenta de nuevo en unos minutos.'; error.hidden = false; }
+    })
     .finally(function () { if (btn) btn.disabled = false; });
   });
 })();
