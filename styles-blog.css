@@ -1051,9 +1051,15 @@
   align-items: center;
 }
 .field-study__cover img {
+  /* La foto (tableta sostenida a dos manos) trae su propio fondo — a
+     diferencia del recorte flotante anterior, aquí sí corresponde el
+     tratamiento estándar de fotografía del brand book (radio 8-12px +
+     sombra suave), no el "sin forma rectangular" que exigía el recorte. */
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 10px;
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.35);
 }
 
 .field-study__eyebrow {
