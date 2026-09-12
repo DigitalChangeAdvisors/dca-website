@@ -47,6 +47,7 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 | `/autor/cesar-lozano` | `autor/cesar-lozano/index.html` | Página canónica de evidencia del autor — 8 bloques, `Person` JSON-LD, único CTA hacia `/art/` | ✅ Implementada (2026-09-07) — ver sección propia abajo |
 | `/autor/ruth-jaramillo` | `autor/ruth-jaramillo/index.html` | Misma plantilla de 8 bloques, ángulo complementario (por qué la adopción falla en las personas) | ✅ Implementada (2026-09-08) — ver sección propia abajo |
 | `/estudio-fuga` | `estudio-fuga/index.html` | Landing autocontenida de captación en frío (LinkedIn/gremial) para el Estudio de Fuga de Productividad de la IA · Colombia 2026 — un solo CTA, `noindex, follow` | ✅ Implementada y desplegada (2026-09-12) — ver "Decisiones Canónicas de `/estudio-fuga`" abajo |
+| `/umbral` | `umbral/index.html` | Formulario de calificación de 5 preguntas (una por pantalla) + devolución de perfil A/B/C/D, con enlace de salida al AI Return Test — destino del CTA de `/estudio-fuga` | ✅ Implementada y desplegada (2026-09-12) — ver "Decisiones Canónicas de `/umbral`" abajo. ⚠️ Persistencia sin conectar — ver esa sección |
 
 ## Decisiones Canónicas de `/estudio-fuga` (2026-09-12)
 
@@ -71,6 +72,28 @@ El único CTA ("Participar ahora") apunta a `/umbral` — un paso de calificaci�
 
 ### Cupo canónico y fine-tuning aplicado
 Ver `CLAUDE.md` raíz, sección "Estudio de Fuga de Productividad de la IA · Colombia 2026 — cupo canónico", para la cifra vigente ("hasta 100 empresas") y el resumen del fine-tuning de copy/BE aplicado (titular en voz DCA, cifra ancla en pastilla, bloque de beneficios con marco de pérdida, CTA con doble declaración de expectativa).
+
+## Decisiones Canónicas de `/umbral` (2026-09-12)
+
+> Formulario de calificación de 5 preguntas (U-01, una pregunta por pantalla + captura de contacto) + pantalla de devolución de perfil A/B/C/D (U-02), destino del único CTA de `/estudio-fuga`. Construido a partir de un prompt de especificación completo entregado por el usuario, refinado primero en un Artifact (BE + UI/UX) antes de este despliegue. Sin nav, sin footer, sin salida distinta al flujo o al enlace final — mismo patrón autocontenido que `/estudio-fuga`.
+
+### Lógica del árbol de perfil (no expuesta al usuario)
+Eje veredicto (Reactivo 1: "De acuerdo"/"Totalmente de acuerdo" = con veredicto) × eje captura (Reactivo 5: "Espero"/"Escalo" = con captura) → perfil A (con+con) / B (con+sin) / C (sin+con) / D (sin+sin). Los Reactivos 2-4 no cambian el perfil — insertan una frase de especificidad (prioridad R3 > R2 > R4, máximo una) en la lectura. El Reactivo 5 además determina la pregunta de cierre de cada devolución (4 variantes, tabla fija). Detalle completo de textos y árbol en la conversación que lo produjo — no repetido aquí para no duplicar una fuente que puede desincronizarse; el código de `umbral/index.html` es la fuente de verdad ejecutable.
+
+### Desviaciones deliberadas del texto fuente original
+- **Reactivos 4 y 5 corregidos de "usted" a "tú"** — el documento de gobernanza interna (`website/Umbral_Cinco_Preguntas_Estudio_Fuga_2026.md`) los daba como texto verbatim no negociable, en un registro que rompía la voz "tú" del resto del embudo. El usuario ordenó explícitamente la corrección — prevalece sobre la regla de fidelidad textual del documento fuente para esos dos puntos específicos.
+- **Titulares de los 4 perfiles reescritos** (el prompt original los marcaba como "sugeridos", no verbatim) para evitar frases que sonaran descalificadoras en posición de titular ("no puedes demostrarlo", "el registro, no") — ver commit/conversación para el antes/después completo.
+- **Párrafos de lectura y del bloque de decisión reestructurados en párrafos cortos** (1-2 oraciones, con espacio entre ellos) sin alterar ninguna palabra del texto verbatim — mismo criterio de lecturabilidad ya documentado en "Estándar de párrafo" para Perspectivas.
+- **Botón final:** "Quiero sumarme al estudio" — no el "Tomar el AI Return Test" original ni "Quiero participar en el AI Return Test" (primera iteración). Se ajustó porque el párrafo previo nunca menciona "AI Return Test" — solo habla de "sumarte al estudio" —, y nombrar el instrumento recién en el botón introducía un término nuevo justo en el momento de mayor peso decisional. El botón repite el verbo que el propio párrafo ya usa.
+
+### Par canónico del instrumento — 55, nunca 60
+`website/Umbral_Cinco_Preguntas_Estudio_Fuga_2026.md` decía "el instrumento tiene 60 preguntas... la cifra de 55 quedó retirada" — confirmado por el usuario como incorrecto (2026-09-12): el canon vigente en todo el sitio desde 2026-09-07 es **55 preguntas · menos de 30 minutos**, inmutable (impreso en el libro ReturnAI). Corregido en ese documento. `/umbral` solo usa "55 preguntas, en menos de 30 minutos".
+
+### ⚠️ Persistencia — pendiente de conectar antes de dar tráfico real
+La página funciona completa sin backend (todo el flujo, cálculo de perfil y devolución corren en el cliente), pero **ningún envío se guarda todavía**. `SUBMIT_ENDPOINT` en el `<script>` está vacío a propósito — mismo patrón ya usado en el proyecto para configuración pendiente (`BREVO_FORM_ACTION`/`PREORDER_URL` de `/fundadores`, ambas vacías-como-estado-válido). El mecanismo elegido: `fetch(SUBMIT_ENDPOINT, {method:'POST', mode:'no-cors', body: JSON.stringify(payload)})` hacia un Google Apps Script Web App que escriba en una Google Sheet — mismo stack ya usado en "AI Return Pulse" y la Bitácora de Hoja de Ruta de este proyecto. Dos acciones distintas viajan al mismo endpoint (`action: 'submit'` al terminar el formulario, `action: 'click'` si hace clic en el enlace de salida), correlacionadas por un `submissionId` generado en el cliente. El código del lado de Apps Script no vive en este repo (se entrega directamente al usuario para pegarlo en su propio proyecto de Apps Script) — pendiente que el usuario lo despliegue y devuelva la URL del Web App para completar `SUBMIT_ENDPOINT`.
+
+### Enlace de salida
+El único botón de U-02 abre `https://digitalchangeadvisors.com/art/` (AI Return Test, ruta canónica ya establecida en este archivo) en pestaña nueva, con UTM propios (`utm_source=umbral&utm_medium=devolucion&utm_campaign=estudio-fuga-2026`) más el `origen` capturado al entrar a `/umbral` — no pisa el UTM con el que llegó el visitante a `/estudio-fuga`, lo encadena.
 
 ## Escalera de Valor de `/returnai` — 2 rutas nuevas, conteo corregido (2026-09-08)
 
