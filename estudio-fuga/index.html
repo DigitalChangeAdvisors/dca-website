@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>document.documentElement.classList.replace('no-js','js');</script>
+
+<title>Estudio de Fuga de Productividad de la IA · Colombia 2026</title>
+<meta name="description" content="Tu empresa mide la adopción de la IA. Nadie mide todavía la fuga de productividad que no llega al P&amp;L. Participa en el estudio." />
+<meta name="robots" content="noindex, follow" />
+<!-- noindex deliberado: página de captación de campaña (tráfico prestado/LinkedIn), no es contenido editorial del sitio -->
+<link rel="canonical" href="https://digitalchangeadvisors.com/estudio-fuga/" />
+
+<!-- OG mínimo — la distribución es LinkedIn/correo, sin esto el enlace se ve roto al compartirlo.
+     No se declara og:image: no se entregó ninguna imagen ni se especificó en el brief. -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://digitalchangeadvisors.com/estudio-fuga/" />
+<meta property="og:title" content="Estudio de Fuga de Productividad de la IA · Colombia 2026" />
+<meta property="og:description" content="Tu empresa mide la adopción de la IA. Nadie mide todavía la fuga de productividad que no llega al P&amp;L. Participa en el estudio." />
+<meta name="twitter:card" content="summary" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</noscript>
+
+<style>
+  /* ============ TOKENS — paleta y tipografía exactas del brief ============ */
+  :root {
+    --white: #ffffff;
+    --teal: #2e8b76;
+    --teal-hover: #1f6657; /* mismo valor canónico ya usado en el sitio para hover de teal */
+    --gold: #a48111;
+    --carbon: #1e2a38;
+    --carbon-70: rgba(30, 42, 56, 0.7);
+    --carbon-55: rgba(30, 42, 56, 0.55);
+    --platinum: #dfe3e1;
+    --font-display: 'Marcellus', Georgia, serif;
+    --font-body: 'Montserrat', Helvetica, Arial, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--white);
+    color: var(--carbon);
+    font-family: var(--font-body);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Estado sin CSS/JS: contenido siempre legible */
+  .no-js body { font-family: Georgia, serif; }
+
+  a { color: inherit; }
+
+  ::selection { background: var(--teal); color: var(--white); }
+
+  /* ============ LAYOUT — una columna centrada, max-width 680px ============ */
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 88px 24px 96px;
+  }
+
+  @media (max-width: 640px) {
+    .wrap { padding: 56px 20px 64px; }
+  }
+
+  /* ============ EYEBROW — nombre del estudio, ancla cognitiva ============ */
+  /* Añadido fuera del copy literal entregado: instala el nombre del estudio
+     antes del párrafo 3 (protocolo BE de anclaje). No es una cifra ni una
+     promesa nueva — es el mismo nombre que ya identifica la pieza. Quitar si
+     se prefiere ceñirse estrictamente a los bloques de copy dados. */
+  .eyebrow {
+    display: block;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 14.5px; /* +2px sobre el token .label del sitio (12.5px) — a pedido, específico de esta página */
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin: 0 0 20px;
+  }
+
+  /* ============ CIFRA ANCLA — brecha global ya medida (McKinsey) ============ */
+  /* Añadida a pedido explícito del usuario (2026-09-11), tras el análisis BE.
+     43 puntos porcentuales es la MISMA cifra "fuga de productividad" ya
+     citada en article-paper10 (McKinsey, ago. 2026: 80% percibe impacto vs.
+     37% lo ve en EBIT) — se reutiliza, no se inventa. Es la única cifra en
+     tratamiento display de la página (regla de "una sola cifra display").
+     El texto distingue explícitamente que es la brecha GLOBAL, no la de
+     Colombia — Colombia es justamente lo que este estudio todavía no sabe. */
+  .anchor-stat {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--platinum);
+  }
+  .anchor-stat__num {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    font-size: clamp(26px, 6vw, 38px);
+    line-height: 1.2;
+    color: var(--gold);
+    border: 1.5px solid var(--teal);
+    border-radius: 10px;
+    padding: 10px 20px;
+  }
+  .anchor-stat__num-line { display: block; }
+  .anchor-stat__label {
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--carbon-70);
+    max-width: 32ch;
+  }
+
+  @media (max-width: 420px) {
+    .anchor-stat { flex-direction: column; gap: 6px; }
+  }
+
+  /* ============ TITULAR ============ */
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(28px, 5.2vw, 42px);
+    line-height: 1.3;
+    color: var(--carbon);
+    margin: 0 0 40px;
+    letter-spacing: -0.01em;
+  }
+  h1 .line { display: block; }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 26px; margin-bottom: 32px; }
+  }
+
+  /* ============ CUERPO — párrafos 1 y 3 ============ */
+  .body-text {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--carbon);
+    margin: 0 0 28px;
+  }
+
+  /* ============ CUERPO — párrafo 2, destacado (tesis central) ============ */
+  .thesis {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(19px, 3vw, 22px);
+    line-height: 1.5;
+    color: var(--carbon);
+    border-left: 4px solid var(--gold);
+    padding: 4px 0 4px 24px;
+    margin: 8px 0 36px;
+  }
+
+  /* ============ BLOQUE — qué recibe si participa ============ */
+  .benefits {
+    background: var(--platinum);
+    border-radius: 12px;
+    padding: 28px 28px 28px 24px;
+    margin: 8px 0 40px;
+  }
+  .benefits__label {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--carbon-70);
+    margin: 0 0 16px;
+  }
+  .benefits ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .benefits li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--carbon);
+  }
+  .benefits li + li { margin-top: 12px; }
+  .benefits__loss {
+    margin: 18px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid rgba(30, 42, 56, 0.14);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--carbon-70);
+  }
+  .benefits li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    background: var(--teal);
+  }
+
+  /* ============ AUTORIDAD — quién levanta el estudio ============ */
+  /* Añadida a pedido (P0, 2026-09-11): ningún patrón de landing de alta
+     conversión para tráfico frío omite una señal de credibilidad de quien
+     pide la acción. No nombra el modelo propietario — solo la firma y una
+     cifra de trayectoria ya canónica y usada en todo el sitio (70+
+     organizaciones en Latinoamérica), no una cifra nueva. */
+  .authority {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--carbon-70);
+    margin: 0 0 36px;
+    padding-left: 16px;
+    border-left: 2px solid var(--platinum);
+  }
+
+  /* ============ MOCKUP — portada del informe ============ */
+  /* Posición deliberada: después de "qué recibe" y antes del CTA — paga la
+     promesa justo antes de pedir el clic, sin competir con el titular.
+     Tratamiento sobrio (2026-09-11, P1.4): sin rotación, sombra mínima de
+     una sola capa — registro editorial MBB/Big Four, no mockup de marketing. */
+  .cover-mockup {
+    margin: 8px 0 44px;
+    text-align: center;
+  }
+  .cover-mockup img {
+    width: 250px;
+    max-width: 66%;
+    height: auto;
+    display: inline-block;
+    border-radius: 4px;
+    box-shadow: 0 8px 24px rgba(30, 42, 56, 0.14);
+  }
+
+  /* ============ CTA — línea de entrada + botón único ============ */
+  .cta-block {
+    margin: 48px 0 0;
+    text-align: center;
+  }
+  .cta-intro {
+    font-size: 15px;
+    color: var(--carbon-70);
+    margin: 0 0 20px;
+  }
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 14px 40px;
+    background: var(--teal);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+  }
+  .cta-button:hover,
+  .cta-button:active { background: var(--teal-hover); }
+  .cta-button:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 3px;
+  }
+
+  /* Nota de confianza — mismo patrón de 3 cláusulas ya usado en todo CTA del
+     sitio (ART, artículos de Perspectivas). Ausente en el brief original;
+     añadida (P0, 2026-09-11) porque es la página con más fricción de
+     confianza de todo el sitio — tráfico 100% frío, cero contexto de marca. */
+  .cta-trust {
+    font-size: 13px;
+    color: var(--carbon-55);
+    margin: 14px 0 0;
+  }
+
+  .cta-next {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--carbon-55);
+    margin: 14px 0 0;
+    max-width: 46ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-dates {
+    font-size: 13.5px;
+    line-height: 1.5;
+    font-weight: 600;
+    color: var(--teal);
+    margin: 10px 0 0;
+    max-width: 46ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ============ PIE DE PÁGINA ============ */
+  footer {
+    margin-top: 80px;
+    padding-top: 28px;
+    border-top: 1px solid var(--platinum);
+    text-align: center;
+  }
+  footer p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--carbon-55);
+    margin: 0;
+    max-width: 50ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 640px) {
+    .benefits { padding: 24px 20px; }
+    footer { margin-top: 56px; }
+  }
+
+  /* ============ ACCESIBILIDAD — reduced motion ============ */
+  @media (prefers-reduced-motion: reduce) {
+    .cta-button { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- EYEBROW (ver nota en <style>) -->
+  <span class="eyebrow">Estudio de Fuga de Productividad de la IA · Colombia 2026</span>
+
+  <!-- TITULAR -->
+  <h1>
+    <span class="line">Tu empresa mide la adopción de</span>
+    <span class="line">la IA. Nadie mide todavía</span>
+    <span class="line">la fuga de productividad</span>
+    <span class="line">que no llega al P&amp;L.</span>
+  </h1>
+
+  <!-- CIFRA ANCLA (ver nota en <style>) — reubicada bajo el titular a pedido (2026-09-11) -->
+  <div class="anchor-stat">
+    <span class="anchor-stat__num"><span class="anchor-stat__num-line">43 puntos</span><span class="anchor-stat__num-line">porcentuales</span></span>
+    <span class="anchor-stat__label">Esta es la brecha entre la percepción de impacto de la IA y el resultado que las empresas ven en su EBIT — McKinsey, 2026, a nivel global. Colombia todavía no tiene su propio número.</span>
+  </div>
+
+  <!-- CUERPO · PÁRRAFO 1 -->
+  <p class="body-text">En agosto de 2026, Endeavor y Xertica midieron, sobre 493 profesionales de siete sectores en Colombia, que el 82% de las empresas percibe un impacto significativo de la inteligencia artificial. McKinsey, el mismo mes, sobre 1.719 ejecutivos en 97 países, encontró que menos de cuatro de cada diez lo ven reflejado en el EBIT de su empresa.</p>
+
+  <!-- CUERPO · PÁRRAFO 2 — destacado, tesis central -->
+  <p class="thesis">Tu empresa ya sabe qué tan adoptada está su IA. Todavía no sabe cuánto le cuesta la fuga de productividad que impide el retorno. Eso es lo que estamos midiendo.</p>
+
+  <!-- CUERPO · PÁRRAFO 3 -->
+  <p class="body-text">Estamos levantando esa medición con un cupo de hasta 100 empresas colombianas con inversión activa en inteligencia artificial. No evaluamos herramientas ni proveedores: medimos si esa inversión está llegando al resultado del negocio.</p>
+
+  <!-- AUTORIDAD (ver nota en <style>) -->
+  <p class="authority">Este estudio lo levanta Digital Change Advisors, la firma especializada en medir el retorno de las inversiones en inteligencia artificial — ha acompañado a más de 70 organizaciones en Latinoamérica.</p>
+
+  <!-- BLOQUE · QUÉ RECIBE SI PARTICIPA -->
+  <div class="benefits">
+    <p class="benefits__label">Esto es lo que obtiene tu empresa</p>
+    <ul>
+      <li>Tu número: cuánto te cuesta la fuga de productividad de tu IA, antes de que lo diga cualquier informe público.</li>
+      <li>El corte de resultados de tu sector, semanas antes de la publicación abierta de enero de 2027.</li>
+      <li>Una lectura de 30 minutos con el equipo del estudio para entender qué hacer con ese número.</li>
+      <li>Reconocimiento como una de las empresas que sí midieron su inversión en IA — no solo la adoptaron.</li>
+    </ul>
+    <p class="benefits__loss">Quien no participa solo conocerá el promedio del país en enero de 2027 — sin su número, sin el corte de su sector y sin la conversación con el equipo del estudio.</p>
+  </div>
+
+  <!-- MOCKUP — portada del informe -->
+  <div class="cover-mockup">
+    <picture>
+      <source srcset="images/portada-estudio.webp" type="image/webp">
+      <img src="images/portada-estudio.jpg" alt="Portada del Estudio de Fuga de Productividad de la IA en Colombia — Q4 2026, resultados en enero 2027" width="250" height="323" loading="lazy" decoding="async">
+    </picture>
+  </div>
+
+  <!-- CTA — único botón de la página -->
+  <div class="cta-block">
+    <p class="cta-intro">El primer paso: cinco preguntas y tres minutos, y recibes una lectura inmediata de dónde está tu empresa.</p>
+    <a href="/umbral" class="cta-button">Participar ahora</a>
+    <p class="cta-trust">Sin compromiso · Respuestas confidenciales · Resultados agregados por sector</p>
+    <p class="cta-next">Si tu empresa califica, el siguiente paso es el AI Return Test — el instrumento completo del estudio: 55 preguntas, menos de 30 minutos.</p>
+    <p class="cta-dates">El plazo para participar cierra el 16 de octubre de 2026. Quienes participan reciben su resultado el 3 de noviembre — semanas antes de la publicación abierta en enero de 2027.</p>
+  </div>
+
+  <!-- PIE DE PÁGINA -->
+  <footer>
+    <p>Lo produce Digital Change Advisors, una firma de consultoría que trabaja sobre el retorno de las inversiones en IA corporativa. No medimos herramientas ni evaluamos proveedores.</p>
+  </footer>
+
+</div>
+
+<!-- Propagación de UTM al CTA — patrón obligatorio de landings/CLAUDE.md, adaptado:
+     el destino aquí es el placeholder interno "/umbral" en vez de un formulario
+     externo (Tally/TidyCal). Sin esto, el utm_source=linkedin (o el que traiga
+     el visitante) se pierde entre esta página y el formulario del umbral. -->
+<script>
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    if (!params.toString()) return;
+    var cta = document.querySelector('.cta-button');
+    if (!cta) return;
+    var url = new URL(cta.href, window.location.origin);
+    params.forEach(function(value, key) {
+      url.searchParams.set(key, value);
+    });
+    cta.href = url.pathname + url.search;
+  })();
+</script>
+
+</body>
+</html>

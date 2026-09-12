@@ -46,6 +46,31 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 | `/autor` | `autor/index.html` | Índice de autores del Modelo ARIA — César y Ruth | ✅ Implementada (2026-09-07), tarjeta de Ruth agregada (2026-09-08) |
 | `/autor/cesar-lozano` | `autor/cesar-lozano/index.html` | Página canónica de evidencia del autor — 8 bloques, `Person` JSON-LD, único CTA hacia `/art/` | ✅ Implementada (2026-09-07) — ver sección propia abajo |
 | `/autor/ruth-jaramillo` | `autor/ruth-jaramillo/index.html` | Misma plantilla de 8 bloques, ángulo complementario (por qué la adopción falla en las personas) | ✅ Implementada (2026-09-08) — ver sección propia abajo |
+| `/estudio-fuga` | `estudio-fuga/index.html` | Landing autocontenida de captación en frío (LinkedIn/gremial) para el Estudio de Fuga de Productividad de la IA · Colombia 2026 — un solo CTA, `noindex, follow` | ✅ Implementada y desplegada (2026-09-12) — ver "Decisiones Canónicas de `/estudio-fuga`" abajo |
+
+## Decisiones Canónicas de `/estudio-fuga` (2026-09-12)
+
+> Landing autocontenida (HTML/CSS embebido, sin nav, sin las 4 hojas de estilo en cascada del website) para captación de tráfico 100% frío (LinkedIn, correo gremial) del Estudio de Fuga de Productividad de la IA · Colombia 2026. Brief original altamente prescriptivo: no nombra el modelo propietario, un solo CTA en toda la página, paleta y tipografía exactas del brand book. Fine-tuning BE + UI/UX completo (auditoría de triple lente — C-Level UX, mecanismos BE, claridad/conversión — seguida de iteración fina bloque por bloque).
+
+### Corrección de ubicación (2026-09-12)
+Se desplegó primero, por error, a `landings/` → repo `dca-landings`. Su URL definitiva ya estaba establecida antes de esta sesión en el dominio principal — **`https://digitalchangeadvisors.com/estudio-fuga/`** — no en el repo de landings. Movida el mismo día a `website/estudio-fuga/index.html`, con `<link rel="canonical">` y `og:url` agregados apuntando a esa URL (no los tenía en su ubicación anterior). Retirada de `dca-landings` en el redeploy. Ver `CLAUDE.md` raíz, sección del cupo canónico, para el detalle del incidente.
+
+### Desviaciones deliberadas de las convenciones de `landings/` — no son regresiones si se audita esta página con esas reglas
+Aunque ahora vive en `website/`, el archivo sigue el patrón de landing autocontenida (no el sistema de CSS en cascada del resto del website) y se aparta a propósito de las convenciones de `landings/CLAUDE.md`, porque es una pieza de campaña aislada, no un producto de la escalera de valor:
+
+| Convención de landings | Esta página | Por qué |
+|---|---|---|
+| 3 CTAs (header + hero + cierre) | **1 solo CTA** en toda la página | Brief original: "la landing no informa, convierte" llevado al extremo |
+| Platino Tech `#f3f3f3` | `#dfe3e1` | Paleta específica del brief original, decisión de marca deliberada para esta campaña |
+| Contenedor de texto máx. 720px | 680px | Calibrado a layout de una sola columna sin sidebar |
+| Botón CTA min-height 52px | 48px | Página de una columna, botón centrado |
+| Nav completa | Sin nav | Página de campaña aislada, no parte de la navegación del sitio |
+
+### ⚠️ Bloqueo real antes de distribuir el enlace (no bloquea el archivo ya publicado)
+El único CTA ("Participar ahora") apunta a `/umbral` — un paso de calificación de 5 preguntas / 3 minutos que hoy **no existe como página construida**. Solo existe como documento de gobernanza interna (`website/Umbral_Cinco_Preguntas_Estudio_Fuga_2026.md`, marcado "no circula fuera de la firma"). La página se publicó igual porque nadie tiene el enlace todavía — pero antes de compartir `https://digitalchangeadvisors.com/estudio-fuga/` en LinkedIn, correo gremial o cualquier canal externo, `/umbral` debe existir y resolver 200, o todo el tráfico de la campaña llega a un CTA roto.
+
+### Cupo canónico y fine-tuning aplicado
+Ver `CLAUDE.md` raíz, sección "Estudio de Fuga de Productividad de la IA · Colombia 2026 — cupo canónico", para la cifra vigente ("hasta 100 empresas") y el resumen del fine-tuning de copy/BE aplicado (titular en voz DCA, cifra ancla en pastilla, bloque de beneficios con marco de pérdida, CTA con doble declaración de expectativa).
 
 ## Escalera de Valor de `/returnai` — 2 rutas nuevas, conteo corregido (2026-09-08)
 
