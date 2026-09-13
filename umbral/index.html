@@ -390,11 +390,9 @@
 (function () {
   'use strict';
 
-  // ⚠️ CONFIGURAR ANTES DE DAR TRÁFICO REAL A ESTA PÁGINA:
-  // URL del Google Apps Script Web App que escribe en la hoja de respuestas.
-  // Vacío = válido (la página funciona igual), pero ningún envío se persiste
-  // hasta que se complete el despliegue del script — ver nota de entrega.
-  var SUBMIT_ENDPOINT = '';
+  // Google Apps Script Web App conectado a "Umbral Estudio Fuga - Respuestas"
+  // (Google Sheet) — verificado en vivo 2026-09-13 (submit + click, ambos OK).
+  var SUBMIT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyPOeKsPrVokyIQDSmFQtnzKiJgDT9q4z-t8ecqOEnKwRQhvmspxUXIafVWWtuEJeM3/exec';
 
   // ============ TEXTOS FUENTE — VERBATIM, NO REFORMULAR (salvo tú/usted ya corregido) ============
   var QUESTIONS = [
