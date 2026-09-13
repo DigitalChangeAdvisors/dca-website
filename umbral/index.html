@@ -288,6 +288,12 @@
     margin-left: 0;
     width: 100%;
   }
+  .result-decision p.result-trust {
+    font-size: 13px;
+    color: var(--carbon-55);
+    text-align: center;
+    margin: 12px 0 0;
+  }
 
   /* ============ ACCESIBILIDAD ============ */
   @media (prefers-reduced-motion: reduce) {
@@ -380,6 +386,7 @@
         <p>Si prefieres ir más allá, el próximo paso es este: sumarte al estudio &quot;Fuga de Productividad de la IA · Colombia 2026&quot; implica 55 preguntas, en menos de 30 minutos. Sin costo.</p>
         <p>A cambio recibes tu número exacto de fuga, el corte de resultados de tu sector semanas antes de esa publicación, una lectura de 30 minutos con el equipo del estudio, y reconocimiento como una de las empresas que sí midieron su inversión en IA.</p>
         <a class="btn-primary" id="rArtLink" href="#" target="_blank" rel="noopener noreferrer">Quiero sumarme al estudio</a>
+        <p class="result-trust">Sin compromiso · Tu reporte es confidencial</p>
       </div>
     </section>
 
@@ -689,8 +696,12 @@
       elRReading.appendChild(p);
     });
 
+    // Salto directo al AI Return Test (Tally), sin pasar por /art/ — excepción
+    // deliberada para este visitante ya "caliente" (ver website/CLAUDE.md,
+    // "Decisiones Canónicas de /umbral" y CLAUDE.md raíz, "Enrutamiento de
+    // CTAs y Enlaces"). Mismos parámetros que /art/ ya propaga a Tally.
     var utm = 'utm_source=umbral&utm_medium=devolucion&utm_campaign=estudio-fuga-2026&origen=' + encodeURIComponent(state.origen);
-    elRArtLink.href = 'https://digitalchangeadvisors.com/art/?' + utm;
+    elRArtLink.href = 'https://tally.so/r/Np6e5W?' + utm;
 
     elScreenContact.hidden = true;
     elIntakeHeader.style.display = 'none';
