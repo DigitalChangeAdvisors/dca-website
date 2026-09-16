@@ -1,0 +1,9 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 -8 560 88" width="560" height="88">
+  <defs><style>@import url('https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Montserrat:wght@300;600&amp;display=swap');</style></defs>
+  <line x1="3" y1="73" x2="73" y2="73" stroke="#e4e4e4" stroke-width="1"/>
+  <path d="M 8 68 C 22 14, 55 8, 68 8" fill="none" stroke="#2e8b76" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="8" cy="68" r="5" fill="#2e8b76"/>
+  <circle cx="68" cy="8" r="12" fill="#a48111"/>
+  <line x1="90" y1="14" x2="90" y2="64" stroke="#1e2a38" stroke-width="1" opacity="0.12"/>
+  <text x="106" y="53" font-family="'Marcellus', Georgia, serif" font-weight="400" font-size="36" fill="#2e8b76" letter-spacing="-0.3">Digital Change Advisors</text>
+</svg>

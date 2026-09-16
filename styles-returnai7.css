@@ -1,0 +1,590 @@
+/* =====================================================
+   ReturnAI Vitrina v7 — La Escalera de Valor + Los 6 Sprints
+   Optimizado para C-Level · Economía conductual aplicada
+   ===================================================== */
+
+/* ============================================================
+   VALUE LADDER — Cabeza de sección scoped
+   ============================================================ */
+
+#sistema-returnai .section-head h2 { font-size: clamp(20px, 2.2vw, 30px); }
+#sistema-returnai .section-head { margin-bottom: 36px; }
+#sistema-returnai .section-head .chapeau { font-size: clamp(16px, 1.35vw, 18px); }
+#sistema-returnai .section-head .chapeau + .chapeau { margin-top: 14px; }
+
+/* ============================================================
+   VALUE LADDER — La Escalera de Valor
+   ============================================================ */
+
+.vl-group {
+  margin-bottom: 48px;
+}
+
+.vl-group__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid rgba(30,42,56,0.08);
+  margin-bottom: 0;
+  flex-wrap: wrap;
+}
+
+.vl-group__sub {
+  font-size: 13px;
+  color: var(--carbon-55, #8b94a0);
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+.vl-group__rule {
+  flex: 1;
+  min-width: 32px;
+}
+
+.vl-group__rule--gold {
+  height: 2px;
+  background: linear-gradient(90deg, rgba(164,129,17,0.35) 0%, transparent 100%);
+  border: none;
+}
+
+/* Table container */
+.vl-table {
+  border: 1px solid rgba(30,42,56,0.09);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Rows */
+.vl-row {
+  display: grid;
+  grid-template-columns: 210px 1fr 200px 130px;
+  gap: 0;
+  padding: 18px 24px;
+  border-bottom: 1px solid rgba(30,42,56,0.06);
+  align-items: start;
+  box-shadow: inset 3px 0 0 transparent;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.vl-row:last-child {
+  border-bottom: none;
+}
+
+.vl-row:hover {
+  background: rgba(46,139,118,0.07);
+  box-shadow: inset 3px 0 0 var(--gold, #a48111);
+}
+
+.vl-row--highlight {
+  background: rgba(46,139,118,0.04);
+}
+
+.vl-row--highlight:hover {
+  background: rgba(46,139,118,0.12);
+  box-shadow: inset 3px 0 0 var(--gold, #a48111);
+}
+
+/* Name + free badge */
+.vl-name {
+  font-weight: 600;
+  color: var(--carbon, #1e2a38);
+  font-size: 14.5px;
+  display: block;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.vl-row--highlight .vl-name {
+  color: var(--teal, #2e8b76);
+}
+
+.vl-badge-free {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--teal, #2e8b76);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(46,139,118,0.1);
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+
+/* Columns */
+.vl-row__desc {
+  font-size: 13.5px;
+  color: var(--carbon-70, #4a5568);
+  line-height: 1.55;
+  padding-right: 20px;
+}
+
+.vl-row__scope {
+  font-size: 12.5px;
+  color: var(--carbon-55, #8b94a0);
+  line-height: 1.5;
+  padding-right: 12px;
+}
+
+.vl-row__cta {
+  padding-top: 2px;
+}
+
+.vl-link {
+  font-size: 13px;
+  color: var(--teal, #2e8b76);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.vl-link:hover {
+  text-decoration: underline;
+}
+
+.vl-link:focus-visible {
+  outline: 2px solid var(--teal, #2e8b76);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ---- Flagship row (Nivel de Resultados Escalables) ---- */
+
+.vl-group--flagship .vl-group__head {
+  border-bottom-color: rgba(164,129,17,0.2);
+  margin-bottom: 0;
+}
+
+.vl-flagship-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  border: 2px solid var(--gold, #a48111);
+  border-radius: 12px;
+  padding: 32px;
+  background: rgba(164,129,17,0.04);
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.vl-flagship-row:hover {
+  background: rgba(164,129,17,0.07);
+}
+
+.vl-flagship__label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--gold, #a48111);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.vl-flagship__name {
+  font-family: var(--display, 'Marcellus', Georgia, serif);
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 400;
+  color: var(--carbon, #1e2a38);
+  margin: 0 0 14px;
+  line-height: 1.25;
+}
+
+.vl-flagship__desc {
+  font-size: 14.5px;
+  color: var(--carbon-70, #4a5568);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0;
+}
+
+.vl-flagship__aside {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  min-width: 200px;
+  text-align: center;
+}
+
+.vl-flagship__specs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.vl-flagship__specs span {
+  font-size: 13px;
+  color: var(--carbon-70, #4a5568);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.vl-flagship__specs span::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold, #a48111);
+  flex-shrink: 0;
+}
+
+.vl-flagship__cta-alt {
+  display: block;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--teal, #2e8b76);
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+}
+
+.vl-flagship__cta-alt:hover {
+  text-decoration: underline;
+}
+
+/* Footer close — two-tier closing statement */
+.vl-group--flagship {
+  margin-bottom: 20px;
+}
+
+.vl-close {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 16px;
+}
+
+.vl-close__main {
+  font-size: clamp(14px, 1.2vw, 16px);
+  color: var(--carbon-70, #4a5568);
+  line-height: 1.65;
+  margin: 0 0 8px;
+}
+
+.vl-close__sub {
+  font-size: 13px;
+  color: var(--carbon-55, #8b94a0);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ============================================================
+   LOS 6 SPRINTS v2 — 2×3 grid, Apple Style
+   ============================================================ */
+
+.s6-section.bg-carbon {
+  background: var(--carbon, #1e2a38);
+}
+
+.s6-section .section-head h2 {
+  color: #fff;
+  max-width: 640px;
+}
+
+.chapeau-dark {
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.65;
+  color: rgba(255,255,255,0.6);
+  max-width: 640px;
+  margin: 16px 0 0;
+}
+
+.s6-section .label.on-carbon {
+  color: var(--teal, #2e8b76);
+}
+
+/* 2×3 grid */
+.s6-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 48px 0 40px;
+}
+
+.s6-card {
+  padding: 36px 28px;
+  border-right: 1px solid rgba(255,255,255,0.07);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,0.06);
+  opacity: 0;
+  transition: background 0.22s ease;
+}
+
+.s6-card:hover { background: rgba(0,0,0,0.18); }
+
+.s6-card:nth-child(3n)   { border-right: none; }
+.s6-card:nth-child(n+4)  { border-bottom: none; }
+.s6-card--gold           { background: rgba(164,129,17,0.10); }
+.s6-card--gold:hover     { background: rgba(164,129,17,0.04); }
+
+/* ---- Entrada staggered — desactivar reveal del grid, animar solo tarjetas ---- */
+
+.s6-grid[data-reveal],
+.s6-grid[data-reveal].in {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+@keyframes s6CardReveal {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.s6-grid.in .s6-card {
+  animation: s6CardReveal 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.s6-grid.in .s6-card:nth-child(1) { animation-delay: 0.06s; }
+.s6-grid.in .s6-card:nth-child(2) { animation-delay: 0.14s; }
+.s6-grid.in .s6-card:nth-child(3) { animation-delay: 0.22s; }
+.s6-grid.in .s6-card:nth-child(4) { animation-delay: 0.30s; }
+.s6-grid.in .s6-card:nth-child(5) { animation-delay: 0.38s; }
+.s6-grid.in .s6-card:nth-child(6) { animation-delay: 0.46s; }
+
+.s6-card__top  { margin-bottom: 4px; }
+
+.s6-num {
+  font-family: var(--display, 'Marcellus', Georgia, serif);
+  font-size: 52px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.08);
+  line-height: 1;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.s6-num--gold { color: rgba(164,129,17,0.4); }
+
+.s6-days {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--teal, #2e8b76);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.s6-name {
+  font-family: var(--display, 'Marcellus', Georgia, serif);
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.s6-purpose {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.65;
+  margin: 0 0 20px;
+}
+
+.s6-deliver {
+  margin-top: auto;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.s6-deliver--gold      { border-top-color: rgba(164,129,17,0.25); }
+
+.s6-deliver__lbl {
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  color: var(--teal, #2e8b76);
+  text-transform: uppercase;
+}
+
+.s6-deliver__lbl--gold { color: var(--gold, #a48111); }
+
+.s6-deliver__val {
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+}
+
+.s6-deliver--gold .s6-deliver__val { color: rgba(255,255,255,0.75); }
+.s6-deliver--gold strong           { color: var(--gold, #a48111); }
+
+/* Footer */
+.s6-footer {
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+  padding: 36px 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  flex-wrap: wrap;
+}
+
+.s6-claim {
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.s6-claim__icon {
+  color: var(--teal, #2e8b76);
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1;
+}
+
+/* CTA */
+.s6-cta {
+  text-align: center;
+  padding: 20px 0 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.s6-note {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.35);
+  margin: 0;
+}
+
+/* Gold button (new) */
+.btn--gold {
+  background: var(--gold, #a48111);
+  color: #fff;
+  border: 2px solid var(--gold, #a48111);
+}
+
+.btn--gold:hover,
+.btn--gold:focus-visible {
+  background: #8a6c0e;
+  border-color: #8a6c0e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(164,129,17,0.35);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Value Ladder — tablet */
+@media (max-width: 1100px) {
+  .vl-row {
+    grid-template-columns: 190px 1fr 170px 110px;
+    padding: 16px 20px;
+  }
+  .vl-flagship-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .vl-flagship__specs {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+  }
+  .vl-flagship__aside {
+    align-items: flex-start;
+  }
+}
+
+/* Value Ladder — mobile */
+@media (max-width: 720px) {
+  .vl-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 16px 16px;
+  }
+  .vl-row__scope {
+    padding-right: 0;
+    padding-top: 2px;
+  }
+  .vl-row__cta {
+    padding-top: 6px;
+  }
+  .vl-flagship-row {
+    padding: 24px;
+  }
+}
+
+/* s6-grid — tablet: 2 columnas */
+@media (max-width: 960px) {
+  .s6-grid { grid-template-columns: repeat(2, 1fr); }
+  .s6-card:nth-child(3n)  { border-right: 1px solid rgba(255,255,255,0.07); }
+  .s6-card:nth-child(2n)  { border-right: none; }
+  .s6-card:nth-child(n+4) { border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .s6-card:nth-child(n+5) { border-bottom: none; }
+  .s6-footer { gap: 32px; }
+}
+
+/* s6-grid — mobile: 1 columna */
+@media (max-width: 580px) {
+  .s6-grid { grid-template-columns: 1fr; border-radius: 10px; }
+  .s6-card                { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.07) !important; }
+  .s6-card:last-child     { border-bottom: none !important; }
+  .s6-footer              { flex-direction: column; gap: 16px; align-items: flex-start; padding: 28px 0; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .vl-row,
+  .vl-flagship-row,
+  .btn--gold {
+    transition: none;
+  }
+  .s6-card,
+  .s6-grid.in .s6-card {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ============================================================
+   S9 · CTA FINAL — overrides (carga después de rai6, mayor precedencia)
+   ============================================================ */
+
+/* Label: block centrado + línea dorada debajo (vs inline-flex de rai6 que pone la línea a la derecha) */
+.rai3 .finalcta .label {
+  display: block;
+  text-align: center;
+  margin-bottom: 0;
+}
+.rai3 .finalcta .label::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0;
+  background: var(--gold);
+  border-radius: 2px;
+  margin: 10px auto 28px;
+  transition: width 0.6s var(--ease, ease) 0.2s;
+}
+.rai3 .finalcta .in .label::after { width: 52px; }
+
+/* H2: pirámide invertida 2 líneas — font reducido + wrap ampliado */
+.rai3 .finalcta h2 {
+  font-size: clamp(22px, 2.4vw, 30px);
+  text-wrap: unset;
+  margin-bottom: 24px;
+}
+.rai3 .finalcta h2 .line { display: block; }
+.rai3 .finalcta .rai-cta__wrap { max-width: 720px; }
+
+/* Chapeau: jerarquía subordinada, columna más angosta */
+.rai3 .finalcta .rai-cta__body {
+  max-width: 500px;
+  font-size: 16px;
+}

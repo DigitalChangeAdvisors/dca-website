@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>document.documentElement.classList.replace('no-js','js');</script>
+
+<title>La brecha GenAI: por qué el 95% no llega al P&L | DCA</title>
+<meta name="description" content="La causa de que el 95% de la IA generativa no llegue al P&L no es técnica: es organizacional. Lectura de DCA sobre el MIT Project NANDA." />
+<link rel="canonical" href="https://digitalchangeadvisors.com/article-paper03" />
+<meta name="theme-color" content="#1e2a38" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://digitalchangeadvisors.com/article-paper03" />
+<meta property="og:title" content="La brecha GenAI: por qué el 95% de los proyectos de IA no llega al P&L." />
+<meta property="og:description" content="La causa de que el 95% de los proyectos de IA generativa no llegue al P&L no es técnica: es organizacional. Lectura de Digital Change Advisors sobre el análisis del MIT Project NANDA a más de 300 iniciativas. Ruth Jaramillo — DCA." />
+<meta property="og:image" content="https://digitalchangeadvisors.com/assets/og-returnai.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:site_name" content="Digital Change Advisors" />
+<meta property="og:locale" content="es_LA" />
+<meta property="article:published_time" content="2026-05-15T00:00:00Z" />
+<meta property="article:author" content="Ruth Jaramillo" />
+
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/favicon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</noscript>
+
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styles4.css" />
+<link rel="stylesheet" href="styles5.css" />
+<link rel="stylesheet" href="styles6.css" />
+<link rel="stylesheet" href="styles-article.css" />
+
+<noscript>
+  <style>[data-reveal] { opacity: 1 !important; transform: none !important; }</style>
+</noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://digitalchangeadvisors.com/article-paper03#article",
+      "headline": "La brecha GenAI: por qué el 95% de los proyectos de IA no llega al P&L.",
+      "author": {"@type": "Person", "name": "Ruth Jaramillo", "url": "https://digitalchangeadvisors.com/autor/ruth-jaramillo/"},
+      "datePublished": "2026-05-15",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Digital Change Advisors",
+        "logo": {"@type": "ImageObject", "url": "https://digitalchangeadvisors.com/assets/favicon.png"}
+      },
+      "url": "https://digitalchangeadvisors.com/article-paper03",
+      "inLanguage": "es",
+      "citation": [
+        { "@type": "CreativeWork", "name": "The GenAI Divide: State of AI in Business 2025", "publisher": { "@type": "Organization", "name": "MIT Project NANDA" }, "url": "https://www.media.mit.edu/groups/nanda/overview/" }
+      ]
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Adopción activa",
+      "description": "Uso de la inteligencia artificial incorporado al flujo diario de trabajo hasta el punto de modificar un indicador de negocio — a diferencia de la adopción registrada (licencias, accesos, asistencia).",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "Modelo ARIA",
+        "publisher": { "@id": "https://digitalchangeadvisors.com/#organization" }
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body class="v4 v5 v6">
+
+<a href="#contenido" class="skip-link">Saltar al contenido</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://digitalchangeadvisors.com/" class="nav__logo" aria-label="Digital Change Advisors — Inicio">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -8 400 88" role="img" aria-hidden="true">
+        <line x1="3" y1="73" x2="73" y2="73" stroke="#e4e4e4" stroke-width="1"/>
+        <path d="M 8 68 C 22 14, 55 8, 68 8" fill="none" stroke="#2e8b76" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="8" cy="68" r="5" fill="#2e8b76"/>
+        <circle cx="68" cy="8" r="12" fill="#a48111"/>
+        <line x1="90" y1="14" x2="90" y2="64" stroke="#1e2a38" stroke-width="1" opacity="0.12"/>
+        <text x="106" y="55" font-family="'Marcellus', Georgia, serif" font-size="44" fill="#2e8b76" letter-spacing="-0.5">DCA</text>
+        <text x="109" y="70" font-family="'Montserrat', Helvetica, sans-serif" font-weight="600" font-size="10.5" fill="#1e2a38" opacity="0.80" letter-spacing="2.6">DIGITAL CHANGE ADVISORS</text>
+      </svg>
+    </a>
+    <ul class="nav__links">
+      <li><a href="https://digitalchangeadvisors.com/modelo-aria">Modelo ARIA</a></li>
+      <li><a href="https://digitalchangeadvisors.com/returnai">ReturnAI</a></li>
+      <li><a href="https://digitalchangeadvisors.com/autor/cesar-lozano/">El autor del Modelo ARIA</a></li>
+      <li><a href="https://digitalchangeadvisors.com/blog" aria-current="page" class="is-current">Perspectivas</a></li>
+      <li><a href="https://digitalchangeadvisors.com/nosotros">Nosotros</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="https://digitalchangeadvisors.com/art/?utm_source=article-p03&utm_medium=website&utm_campaign=ai-return-test" class="btn btn--primary">AI Return Test <span class="arrow">&rarr;</span></a>
+      <button class="nav__burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="https://digitalchangeadvisors.com/modelo-aria">Modelo ARIA</a>
+  <a href="https://digitalchangeadvisors.com/returnai">ReturnAI</a>
+  <a href="https://digitalchangeadvisors.com/autor/cesar-lozano/">El autor del Modelo ARIA</a>
+  <a href="https://digitalchangeadvisors.com/blog">Perspectivas</a>
+  <a href="https://digitalchangeadvisors.com/nosotros">Nosotros</a>
+  <a href="https://digitalchangeadvisors.com/art/?utm_source=article-p03&utm_medium=website&utm_campaign=ai-return-test" class="btn btn--primary btn--lg">AI Return Test &rarr;</a>
+</div>
+
+<main id="contenido">
+
+  <!-- ===== ENCABEZADO DEL ARTÍCULO ===== -->
+  <header class="art-header">
+    <div class="art-inner">
+      <nav class="art-breadcrumb" aria-label="Ruta de navegaci&oacute;n">
+        <a href="https://digitalchangeadvisors.com/blog">Perspectivas</a>
+        <span aria-hidden="true">/</span>
+        <span>Investigación · Tesis DCA</span>
+      </nav>
+      <span class="art-cat art-cat--field">Investigación · Tesis DCA</span>
+      <span class="art-source-note">Fuente analizada: MIT Project NANDA, 2025</span>
+      <h1 class="art-title" style="max-width:32ch;font-size:clamp(24px,2.6vw,34px);"><span class="line">La brecha GenAI: por qué el 95%</span><span class="line">no llega al P&amp;L.</span></h1>
+      <p class="art-lead">El <a href="https://www.media.mit.edu/groups/nanda/overview/" target="_blank" rel="noopener noreferrer">MIT Project NANDA</a> analizó más de 300 iniciativas de IA generativa en 18 meses. De cada 100 que pilotaron, solo 5 lograron impacto documentado en el P&amp;L. La causa del 95% de fracaso no está en la tecnología — está en los obstáculos organizacionales que ningún proveedor de software diagnostica ni resuelve.</p>
+      <div class="art-byline">
+        <picture><source srcset="assets/blog-author-ruth-jaramillo.webp" type="image/webp"><img src="assets/blog-author-ruth-jaramillo.jpg" alt="Foto de Ruth Jaramillo" class="art-byline__photo" width="48" height="48" loading="lazy"></picture>
+        <div class="art-byline__info">
+          <span class="art-byline__name">Ruth Jaramillo</span>
+          <span class="art-byline__role">Socia fundadora de Digital Change Advisors · Adopción sostenible de la inteligencia artificial</span>
+          <span class="art-byline__meta">
+            <time datetime="2026-05-15">15 may 2026</time>
+            <span class="art-dot" aria-hidden="true"></span>
+            6 min de lectura
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== IMAGEN HERO ===== -->
+  <div class="art-hero">
+    <picture><source srcset="assets/blog-article-paper03.webp" type="image/webp"><img src="assets/blog-article-paper03.jpg" alt="Corredor corporativo largo — la distancia entre lanzamiento e impacto financiero en proyectos de IA" width="1400" height="600" loading="eager"></picture>
+  </div>
+
+  <!-- ===== CUERPO DEL ARTÍCULO ===== -->
+  <article class="art-body" data-reveal>
+    <div class="art-inner">
+
+      <!-- Puntos clave -->
+      <div class="art-insights" role="note" aria-label="Puntos clave">
+        <span class="art-insights__label">Puntos clave</span>
+        <ul>
+          <li>El cuello de botella de la inversión en IA no está en el modelo tecnológico: está en la brecha entre pilotear una herramienta y convertirla en comportamiento operativo que impacta el P&L. Las organizaciones que resuelven esto primero construyen ventajas estructurales que sus competidores no podrán igualar comprando la misma tecnología después.</li>
+          <li>El 90% de los empleados ya usa IA con cuentas personales para tareas laborales, frente al 40% de empresas con suscripciones corporativas activas. La resistencia que reportan los líderes no es a la IA: es a las herramientas que no se integran a sus flujos reales de trabajo.</li>
+          <li>Externalizar la gestión humana del proceso no es señal de debilidad organizacional: es la estrategia que el MIT documenta como la que duplica la probabilidad de que un piloto de IA llegue a implementación real — 66% frente a 33%.</li>
+        </ul>
+      </div>
+
+      <!-- La lectura de Digital Change Advisors -->
+      <div class="art-callout">
+        <span class="art-callout__label">La lectura de Digital Change Advisors</span>
+        <p>Digital Change Advisors nombra la distancia entre adopción registrada y adopción activa. La registrada es lo que muestran los reportes: licencias, accesos, asistencia. La activa es el uso incorporado al flujo diario hasta el punto de modificar un indicador. La primera se reporta. Solo la segunda produce retorno. El AI Return Test mide cuál de las dos tiene hoy una organización.</p>
+      </div>
+
+      <!-- Intro -->
+      <p>Tu piloto funcionó. Tu equipo terminó la capacitación. Llevas meses con licencias activas y reuniones donde nadie dice que no a la IA. Y el P&amp;L sigue sin reflejarlo. Eso no es un retraso temporal ni un problema de integraciones pendientes.</p>
+      <p>El MIT Project NANDA lo documentó en más de 300 iniciativas durante 18 meses: es la Brecha GenAI. El retorno documentado llega al 5% de las organizaciones que invirtieron — no es un redondeo conservador. Y el costo de ese dato no es solo el capital atrapado en licencias sin <strong>adopción activa</strong>. Es la distancia competitiva que cada trimestre de inacción instala entre las empresas que ya cruzaron la brecha y las que siguen midiendo activaciones en lugar de retorno.</p>
+      <p>La causa del fracaso no está donde la mayoría la busca. De las cinco barreras principales que el MIT identificó para escalar la IA, cuatro son de naturaleza humana y organizacional. Solo una tiene componente técnico. Ese diagnóstico equivocado — creer que el problema es de herramienta, de modelo o de integraciones — es exactamente lo que impide intervenir los <strong>obstáculos de rentabilización</strong> que bloquean el retorno de la inversión.</p>
+
+      <!-- Estadísticas -->
+      <div class="art-stats" aria-label="Datos clave del an&aacute;lisis">
+        <div class="art-stat">
+          <span class="art-stat__num">95%</span>
+          <span class="art-stat__label">de inversiones en IA sin impacto documentado en P&amp;L</span>
+        </div>
+        <div class="art-stat">
+          <span class="art-stat__num">4 de 5</span>
+          <span class="art-stat__label">principales obstáculos en IA son humanos, no técnicos</span>
+        </div>
+        <div class="art-stat">
+          <span class="art-stat__num">2×</span>
+          <span class="art-stat__label">mayor probabilidad de éxito con socio externo especializado</span>
+        </div>
+      </div>
+
+      <!-- Sección 1 -->
+      <h2>El colapso del embudo: de 100 pilotos a 5 implementaciones reales</h2>
+      <p>La anatomía del fracaso que documenta el MIT es más precisa de lo que la mayoría de los directorios ha visto. De cada 100 organizaciones que investigaron herramientas de IA para sus procesos internos, 80 iniciaron exploración formal, 50 llegaron a pilotarlas, 20 alcanzaron una fase de prueba real, y solo 5 completaron una implementación con impacto sostenido en productividad o P&amp;L. Un embudo que pierde el 95% del potencial en el trayecto entre la intención y el resultado.</p>
+      <p>Lo que este dato evidencia no es un problema de selección de herramientas. El MIT es directo al señalar la causa: lo que frena la escala es que "la mayoría de las herramientas de IA no se aprenden y no se integran bien en los flujos de trabajo". La brecha es conductual y organizacional. No técnica.</p>
+      <p>Cuando los directivos identifican los principales obstáculos para escalar la IA, la lista revela una contradicción de presupuesto. El primer obstáculo es la resistencia de los usuarios. El segundo: herramientas percibidas como "rígidas, sobreingeniadas o desalineadas con los flujos reales de trabajo". El tercero, la experiencia de usuario deficiente. Cuatro de los cinco obstáculos principales son humanos. Solo uno tiene componente técnico. Y sin embargo, entre el 50% y el 70% del presupuesto de IA fluye hacia ventas y marketing — donde las métricas son más cómodas de reportar — y no hacia el back-office, donde el MIT documenta los mayores retornos.</p>
+
+      <div class="art-callout">
+        <span class="art-callout__label">Inversión mal asignada — Hallazgo MIT Project NANDA</span>
+        <p>Las funciones de back-office — las más subinvertidas en la mayoría de los presupuestos — son donde el MIT documenta los retornos más contundentes: eliminaciones de BPO por entre <strong>USD 2 y 10 millones anuales</strong>, reducción del <strong>30%</strong> en gasto de agencias externas y ahorros de <strong>USD 1 millón</strong> en servicios de risk management. El capital fluye hacia donde el reporte es más cómodo, no hacia donde el retorno es más alto.</p>
+      </div>
+
+      <!-- Sección 2 -->
+      <h2>La adopción que ya existe: el síntoma que los reportes de TI no capturan</h2>
+      <p>El hallazgo más revelador del estudio no está en las cifras de uso oficial. Mientras el 40% de las empresas ha adquirido suscripciones corporativas de IA, el 90% de las empresas encuestadas reporta uso regular de herramientas personales — ChatGPT, Claude u otras — para tareas laborales. Prácticamente cada colaborador usa un modelo de lenguaje en su trabajo cotidiano. Lo hace fuera del radar de TI, con sus propias cuentas.</p>
+      <p>Este dato no es una anomalía por gestionar. Es evidencia de dos verdades que el CEO debe leer en paralelo. Primera: los empleados no se resisten a la IA — se resisten a las herramientas corporativas que no funcionan para ellos. Segunda: la <strong>adopción activa</strong> no espera los procesos formales de TI; ocurre de forma orgánica cuando el valor es inmediato y la herramienta es flexible.</p>
+      <p>El reto estratégico no es convencer a los equipos de usar IA. Es construir el canal que convierta ese impulso espontáneo en flujos de trabajo medibles y en retorno documentado para la organización. Esa conversión requiere un tipo de acompañamiento que ningún proveedor de plataforma puede entregar por sí solo, porque el problema no está en la herramienta: está en cómo la herramienta se instala en el comportamiento operativo real.</p>
+
+      <!-- Sección 3 -->
+      <h2>¿Qué supuesto destruye el retorno de la IA?</h2>
+      <p>La tesis de Digital Change Advisors: detrás de la mayoría de los proyectos de IA que no escalan hay un diagnóstico equivocado instalado antes de que el piloto comience. Los grandes proveedores tecnológicos han construido ecosistemas de capacitación completos: frameworks, certificaciones, plantillas de intervención. El problema no es la calidad de ese contenido. El problema es lo que genera en el equipo técnico que lo recibe: la convicción de que, armado con esas herramientas, puede gestionar los <strong>obstáculos de rentabilización</strong> que frenan el retorno.</p>
+      <p>Lo que los vendors entregan es conocimiento explícito — el tipo codificable en manuales y talleres. Gestionar la adopción activa en el flujo de trabajo opera desde el conocimiento tácito: el que solo se aprende mediante la experiencia acumulada y no puede transmitirse en ningún tutorial, por bien diseñado que esté. El equipo técnico no sabe lo que no sabe. La autosuficiencia percibida se convierte en el principal obstáculo precisamente porque nadie puede pedir ayuda para resolver un problema que no sabe que tiene.</p>
+      <p>Los datos del MIT cuantifican el costo de ese supuesto: las implementaciones construidas con socios externos tienen el doble de probabilidad de llegar a despliegue completo — 66% frente a 33% — y las tasas de <strong>adopción activa</strong> son casi el doble cuando la herramienta fue co-implementada con acompañamiento externo. La externalización del componente humano no es debilidad organizacional. Es la estrategia que duplica la probabilidad de retorno.</p>
+
+      <!-- Pull quote externo -->
+      <blockquote class="art-quote">
+        <p>Una vez que hemos invertido tiempo en entrenar un sistema para que entienda nuestros flujos de trabajo, los costos de cambio se vuelven prohibitivos.</p>
+        <cite>CIO, empresa de servicios financieros, USD 5,000 millones &middot; MIT Project NANDA, 2025</cite>
+      </blockquote>
+
+      <!-- Sección 4 -->
+      <h2>La ventana que se cierra: lo que el 5% ya está construyendo</h2>
+      <p>El MIT Project NANDA cierra su análisis con una advertencia de posición competitiva directa: "a medida que las empresas comiencen a cerrar relaciones con vendors y ciclos de retroalimentación a lo largo de 2026, la ventana para cruzar la Brecha GenAI se está estrechando rápidamente". El horizonte de 18 meses no es metáfora estratégica. Refleja ciclos de implementación de entre 2 y 18 meses documentados con 17 líderes de procurement e IT sourcing.</p>
+      <p>Las organizaciones que ya documentan retorno comparten un patrón consistente: tratan a sus proveedores de IA como consultores o BPOs, no como proveedores de software. Exigen alineación con sus estrategias propias de generación de valor, personalización de sus procesos específicos y accountability ejecutivo sobre los resultados. Es el modelo que la intervención de 6 sprints del <strong>Modelo ARIA</strong> ejecuta: diagnóstico de los obstáculos de rentabilización específicos, instalación de adopción activa en el flujo de trabajo y medición de retorno documentado frente al KPI acordado.</p>
+      <p>El conocimiento organizacional codificado en flujos de trabajo aumentados por IA, la disciplina de adopción activa construida con rigor y la eficiencia ganada son ventajas que se componen mes a mes. Las empresas que consoliden esto en los próximos 18 meses estarán construyendo posiciones que sus competidores no podrán igualar comprando la misma tecnología después.</p>
+
+      <!-- Cierre -->
+      <p>La brecha que el MIT documenta no requiere interpretación adicional: el 95% de la inversión global en IA no llega al P&amp;L porque los obstáculos de rentabilización no son técnicos. Son conductuales, organizacionales y de gobernanza. Ningún proveedor de plataforma opera en ese territorio. El CEO que continúa midiendo el éxito de su iniciativa de IA en licencias activas y asistencia a capacitaciones está midiendo la actividad equivocada — y cediendo terreno competitivo mientras lo hace.</p>
+      <p>La mayoría de las organizaciones que leen este artículo están en algún punto del 95%: pilotos que no escalan, usuarios registrados que no producen cambio operativo documentado, equipos que usan IA por fuera del canal oficial porque la herramienta corporativa no entra en su flujo real. Los tres son el mismo fenómeno.</p>
+<p>Digital Change Advisors lo nombra como la distancia entre adopción registrada y adopción activa. La registrada es lo que muestran los reportes: licencias, accesos, asistencia. La activa es el uso incorporado al flujo diario hasta el punto de modificar un indicador. La primera se reporta. Solo la segunda produce retorno.</p>
+<p>El <strong>AI Return Test</strong> mide cuál de las dos tiene hoy tu organización, y sin ese dato ninguna inversión adicional en tecnología cierra la brecha.</p>
+      <p><a href="https://digitalchangeadvisors.com/art/?utm_source=article-p03&utm_medium=website&utm_campaign=ai-return-test" class="art-inline-cta">Diagnostica d&oacute;nde est&aacute; atrapada tu inversi&oacute;n en IA &rarr;</a></p>
+
+      <hr class="art-divider" />
+
+      <!-- Tags -->
+      <div class="art-tags">
+        <span class="art-tag">ROI en IA corporativa</span>
+        <span class="art-tag">Brecha GenAI</span>
+        <span class="art-tag">Adopci&oacute;n activa de IA</span>
+        <span class="art-tag">Rentabilizaci&oacute;n de inversiones en IA</span>
+        <span class="art-tag">Obst&aacute;culos de rentabilizaci&oacute;n</span>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- ===== BIO DEL AUTOR ===== -->
+  <div class="art-author-section">
+    <div class="art-inner">
+      <div class="art-author-card">
+        <picture><source srcset="assets/blog-author-ruth-jaramillo.webp" type="image/webp"><img src="assets/blog-author-ruth-jaramillo.jpg" alt="Ruth Jaramillo" class="art-author__photo" width="80" height="80" loading="lazy"></picture>
+        <div class="art-author__info">
+          <span class="art-author__name">Ruth Jaramillo</span>
+          <span class="art-author__role">Socia fundadora de Digital Change Advisors · Adopción sostenible de la inteligencia artificial</span>
+          <p class="art-author__bio">Ruth Jaramillo es socia fundadora de Digital Change Advisors y cocreadora de los Frameworks Ágiles del Modelo ARIA. Ingeniera Industrial y Coach Profesional certificada por el Neuroscience and Coaching Institute (USA), con más de 20 años como ejecutiva empresarial.</p>
+          <a class="art-author__link" href="https://digitalchangeadvisors.com/autor/ruth-jaramillo/">Ver el perfil de autor &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CTA ===== -->
+  <!-- AI Return Pulse — newsletter compacto post-artículo -->
+  <section class="art-pulse">
+    <div class="wrap">
+      <div class="art-pulse__inner">
+        <div class="art-pulse__text">
+          <span class="label">Newsletter quincenal</span>
+          <p class="art-pulse__title">AI Return Pulse</p>
+          <p class="art-pulse__desc">El análisis que no está en el artículo — cada dos semanas, antes de tu reunión de Junta.</p>
+        </div>
+        <div class="art-pulse__form-wrap">
+          <form id="art-pulse-form" novalidate>
+            <div class="art-pulse__row">
+              <input type="email" id="art-pulse-email" class="art-pulse__input" placeholder="nombre@empresa.com" autocomplete="email" required aria-label="Tu correo corporativo" aria-describedby="art-pulse-error" />
+              <button type="submit" class="btn btn--primary art-pulse__btn">Suscribirse <span class="arrow">&rarr;</span></button>
+            </div>
+            <p id="art-pulse-error" class="art-pulse__error" role="alert" hidden>Ingresa un correo corporativo válido.</p>
+          </form>
+          <div id="art-pulse-success" class="art-pulse__success" role="status" hidden>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Revisa tu correo: ahí va el análisis que no está en este artículo.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="art-cta">
+    <div class="art-inner" style="text-align:center">
+      <span class="label" style="color:rgba(255,255,255,0.65);display:block;margin-bottom:16px">Diagn&oacute;stico ejecutivo</span>
+      <h2 class="art-cta__h2">El diagn&oacute;stico que ubica a tu organizaci&oacute;n<br>dentro del Modelo ARIA en 55 preguntas, menos de 30 minutos.</h2>
+      <p class="art-cta__p">Cuantifica cu&aacute;nto retorno est&aacute; dejando sobre la mesa tu inversi&oacute;n en IA. El n&uacute;mero que llevar&aacute;s a tu pr&oacute;xima reuni&oacute;n de Junta.</p>
+      <a href="https://digitalchangeadvisors.com/art/?utm_source=article-p03&utm_medium=website&utm_campaign=ai-return-test" class="btn btn--gold">AI Return Test <span class="arrow">&rarr;</span></a>
+      <p class="art-cta__note">Sin compromiso &middot; 55 preguntas, menos de 30 minutos &middot; Tu reporte es confidencial</p>
+    </div>
+  </section>
+
+  <!-- ===== ARTÍCULOS RELACIONADOS ===== -->
+  <section class="art-related">
+    <div class="art-inner--wide">
+      <h2 class="art-related__title">M&aacute;s perspectivas</h2>
+      <div class="art-related__grid">
+        
+        <a href="https://digitalchangeadvisors.com/article-paper01" class="art-rel-card">
+          <div class="art-rel-card__img">
+            <picture><source srcset="assets/blog-article-paper01.webp" type="image/webp"><img src="assets/blog-article-paper01.jpg" alt="" width="400" height="267" loading="lazy"></picture>
+          </div>
+          <div class="art-rel-card__body">
+            <span class="art-cat art-cat--frame">Marco</span>
+            <h3 class="art-rel-card__title">Las tres amenazas estructurales que convierten tu IA en un pasivo.</h3>
+            <p class="art-rel-card__meta">César Lozano</p>
+          </div>
+        </a>
+        <a href="https://digitalchangeadvisors.com/article-paper09" class="art-rel-card">
+          <div class="art-rel-card__img">
+            <picture><source srcset="assets/blog-article-paper09.webp" type="image/webp"><img src="assets/blog-article-paper09.jpg" alt="" width="400" height="267" loading="lazy"></picture>
+          </div>
+          <div class="art-rel-card__body">
+            <span class="art-cat art-cat--frame">Talento</span>
+            <h3 class="art-rel-card__title">La estrategia de talento que convierte licencias de IA en retorno documentado.</h3>
+            <p class="art-rel-card__meta">Ruth Jaramillo</p>
+          </div>
+        </a>
+        <a href="https://digitalchangeadvisors.com/article-paper07" class="art-rel-card">
+          <div class="art-rel-card__img">
+            <picture><source srcset="assets/blog-article-paper07.webp" type="image/webp"><img src="assets/blog-article-paper07.jpg" alt="" width="400" height="267" loading="lazy"></picture>
+          </div>
+          <div class="art-rel-card__body">
+            <span class="art-cat art-cat--field">Análisis</span>
+            <h3 class="art-rel-card__title">1.993 empresas, 105 países: lo que separa al 6% que mide ROI del 94% que no puede hacerlo.</h3>
+            <p class="art-rel-card__meta">César Lozano</p>
+          </div>
+        </a>
+      </div>
+      <div class="art-related__more">
+        <a href="https://digitalchangeadvisors.com/blog" class="btn btn--secondary">Ver todas las perspectivas <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid footer__grid--blog">
+      <div class="footer__brand">
+        <a href="https://digitalchangeadvisors.com/" class="footer__logo--neg" aria-label="Digital Change Advisors — Inicio">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -8 400 88" role="img" aria-hidden="true">
+            <line x1="3" y1="73" x2="73" y2="73" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+            <path d="M 8 68 C 22 14, 55 8, 68 8" fill="none" stroke="#2e8b76" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="8" cy="68" r="5" fill="#2e8b76"/>
+            <circle cx="68" cy="8" r="12" fill="#a48111"/>
+            <line x1="90" y1="14" x2="90" y2="64" stroke="#ffffff" stroke-width="1" opacity="0.18"/>
+            <text x="106" y="55" font-family="'Marcellus', Georgia, serif" font-size="44" fill="#ffffff" letter-spacing="-0.5">DCA</text>
+            <text x="109" y="70" font-family="'Montserrat', Helvetica, sans-serif" font-weight="600" font-size="10.5" fill="#ffffff" opacity="0.80" letter-spacing="2.6">DIGITAL CHANGE ADVISORS</text>
+          </svg>
+        </a>
+        <p>De la inversi&oacute;n en IA al retorno documentado.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Soluciones</h4>
+        <ul>
+          <li><a href="https://digitalchangeadvisors.com/returnai">ReturnAI</a></li>
+          <li><a href="https://digitalchangeadvisors.com/modelo-aria">Modelo ARIA</a></li>
+          <li><a href="https://digitalchangeadvisors.com/art/?utm_source=article-p03&utm_medium=website&utm_campaign=ai-return-test">AI Return Test</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Firma</h4>
+        <ul>
+          <li><a href="https://digitalchangeadvisors.com/nosotros">Nosotros</a></li>
+          <li><a href="https://www.digitalchangeacademy.org" target="_blank" rel="noopener">Academia</a></li>
+          <li>Red ARIA</li>
+          <li><a href="https://digitalchangeadvisors.com/novela-returnai/">Libro ReturnAI</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Perspectivas</h4>
+        <ul>
+          <li><a href="https://digitalchangeadvisors.com/blog">Todas las perspectivas</a></li>
+          <li><a href="https://digitalchangeadvisors.com/blog#newsletter-pulse">AI Return Pulse</a></li>
+          <li><a href="https://www.skool.com/comunidad-lada-2386/" target="_blank" rel="noopener">Comunidad LARIA</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:ceo@digitalchangeadvisors.com">ceo@digitalchangeadvisors.com</a></li>
+          <li><a href="https://agenda.digitalchangeadvisors.com/retorno-ia" target="_blank" rel="noopener">Agendar sesi&oacute;n</a></li>
+          <li><a href="https://digitalchangeadvisors.com/contacto/">P&aacute;gina de contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Digital Change Advisors, LLC.</span>
+      <div class="footer__legal">
+        <a href="https://digitalchangeadvisors.com/privacy-policy">Pol&iacute;tica de privacidad</a>
+        <a href="https://digitalchangeadvisors.com/terms-of-use">T&eacute;rminos de uso</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="enhance4.js"></script>
+
+
+<!-- AI Return Pulse — newsletter script -->
+<script>
+(function () {
+  var form    = document.getElementById('art-pulse-form');
+  var input   = document.getElementById('art-pulse-email');
+  var error   = document.getElementById('art-pulse-error');
+  var errorDefaultText = error ? error.textContent : '';
+  var success = document.getElementById('art-pulse-success');
+  var re      = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbwZaU3UD_HeREVZ5s48paNfxKym7_CjUQaYeZnVeKtqGa3ucAuOIs2nzGbJsIu42vEn/exec';
+
+  input.addEventListener('input', function () {
+    if (input.getAttribute('aria-invalid') === 'true' && re.test(input.value.trim())) {
+      input.setAttribute('aria-invalid', 'false');
+      if (error) error.hidden = true;
+    }
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var val = input.value.trim();
+    if (!re.test(val)) {
+      input.setAttribute('aria-invalid', 'true');
+      if (error) { error.textContent = errorDefaultText; error.hidden = false; }
+      input.focus();
+      return;
+    }
+    input.setAttribute('aria-invalid', 'false');
+    if (error) error.hidden = true;
+
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) btn.disabled = true;
+
+    var source = window.location.pathname.replace(/.*\//, '').replace('.html', '') || 'article';
+
+    function showSuccess() {
+      form.hidden = true;
+      if (success) success.hidden = false;
+    }
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({ email: val, source: source })
+    })
+    .then(function () { showSuccess(); })
+    .catch(function () {
+      if (error) { error.textContent = 'No pudimos confirmar tu suscripción — intenta de nuevo en unos minutos.'; error.hidden = false; }
+    })
+    .finally(function () { if (btn) btn.disabled = false; });
+  });
+})();
+</script>
+
+</body>
+</html>

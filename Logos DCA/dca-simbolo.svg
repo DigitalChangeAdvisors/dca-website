@@ -1,0 +1,7 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 -6 76 82" width="76" height="82">
+  <defs><style>@import url('https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Montserrat:wght@300;600&amp;display=swap');</style></defs>
+  <line x1="3" y1="72" x2="73" y2="72" stroke="#e4e4e4" stroke-width="1"/>
+  <path d="M 8 68 C 22 14, 55 8, 68 8" fill="none" stroke="#2e8b76" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="8" cy="68" r="5.5" fill="#2e8b76"/>
+  <circle cx="68" cy="8" r="10" fill="#a48111"/>
+</svg>

@@ -1,0 +1,112 @@
+/* ============================================================
+   ReturnAI v5 — Rigor y artesanía (scoped .rai5)
+   Carga DESPUÉS de styles-returnai4.css. Capa invisible que
+   lleva la página al nivel TOP: accesibilidad AA, micro-
+   tipografía, jerarquía de lectura, estados y performance
+   percibida. No cambia estructura — perfecciona el oficio.
+   ============================================================ */
+
+/* ============================================================
+   A · MICRO-TIPOGRAFÍA Y JERARQUÍA DE LECTURA
+   ============================================================ */
+
+/* Medida óptima de lectura (~66ch): ni renglones largos ni cortos */
+.rai5 .chapeau,
+.rai5 .sol-card__body,
+.rai5 .stage p,
+.rai5 .guarantee-body p,
+.rai5 .rai-cta__body,
+.rai5 .foundation-thesis,
+.rai5 .fn-txt,
+.rai5 .leader__cred,
+.rai5 .tl-desc { max-width: 66ch; }
+.rai5 .section-head.center .chapeau,
+.rai5 .foundation .foundation-thesis { margin-left: auto; margin-right: auto; }
+
+/* Cifras tabulares en todo numeral: alineación y cero salto de ancho (anti-CLS) */
+.rai5 .hero__cred b,
+.rai5 .rai-metric b,
+.rai5 .method-strip .ms-num,
+.rai5 .gstat__num,
+.rai5 .bridge__svg text,
+.rai5 .exhibit__val,
+.rai5 [data-count] { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
+
+/* Viudas/huérfanas y equilibrio de titulares */
+.rai5 h1, .rai5 h2, .rai5 h3,
+.rai5 .tl-title, .rai5 .persp-card__title, .rai5 .sol-card__name,
+.rai5 .pov blockquote { text-wrap: balance; }
+.rai5 p, .rai5 .chapeau, .rai5 .sol-card__body, .rai5 .rai4-beat { text-wrap: pretty; }
+.rai5 .pov blockquote, .rai5 .guarantee-body p { hanging-punctuation: first; }
+
+/* Consistencia de tracking en versalitas / eyebrows */
+.rai5 .label,
+.rai5 .persp-card__kicker,
+.rai5 .app-card__ctx,
+.rai5 .sol-invest__lbl,
+.rai5 .sol-card__price-lbl { letter-spacing: 0.09em; }
+
+/* Ritmo vertical consistente de cabeceras */
+.rai5 .section-head { margin-bottom: 52px; }
+
+/* ============================================================
+   B · ACCESIBILIDAD (WCAG 2.2 AA)
+   ============================================================ */
+
+/* Contraste AA en texto fino teal: 4.1:1 → 5.2:1 con --teal-dark */
+.rai5 .label,
+.rai5 .persp-card__kicker,
+.rai5 .app-card__ctx,
+.rai5 .sol-card__cta,
+.rai5 .system-link a,
+.rai5 .persp-all,
+.rai5 .rai-hero__link,
+.rai5 .fn-disc,
+.rai5 .source-note .ref { color: var(--teal-dark); }
+.rai5 .badge--teal { color: var(--teal-dark); border-color: var(--teal-dark); }
+.rai5 .tl-days { color: var(--teal-dark); border-color: var(--teal-dark); }
+
+/* Foco visible accesible en todos los interactivos (incl. componentes nuevos) */
+.rai5 a:focus-visible,
+.rai5 button:focus-visible,
+.rai5 .sol-card__cta:focus-visible,
+.rai5 .persp-all:focus-visible,
+.rai5 .system-link a:focus-visible,
+.rai5 .rai-hero__link:focus-visible,
+.rai5 .rai-cta__alt:focus-visible,
+.rai5 .persp-card:focus-visible,
+.rai5 .industries-grid a:focus-visible {
+  outline: 2px solid var(--teal-dark);
+  outline-offset: 3px;
+  border-radius: 5px;
+}
+.rai5 .bg-carbon a:focus-visible { outline-color: #6fc3ad; }
+
+/* Texto solo para lectores de pantalla (resumen del diagrama) */
+.rai5 .sr-only {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* Encabezado de la prueba sectorial (ahora h2) */
+.rai5 .proof__lead h2 {
+  font-family: var(--display); font-weight: 400;
+  font-size: clamp(24px, 2.4vw, 32px); line-height: 1.25; letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   C · ESTADOS DE INTERACCIÓN Y PERFORMANCE PERCIBIDA
+   ============================================================ */
+
+/* Respuesta táctil al pulsar (feedback inmediato) */
+.rai5 .btn:active { transform: translateY(1px) scale(0.992); }
+.rai5 .sol-card__cta:active .arrow,
+.rai5 .persp-all:active .arrow,
+.rai5 .system-link a:active .arrow { transform: translateX(2px); }
+.rai5 .industries-grid a:active { background: var(--teal-05); }
+
+/* Motion costoso solo si el usuario lo acepta */
+@media (prefers-reduced-motion: reduce) {
+  .rai4 .btn--primary::after { display: none !important; }
+  .rai5 .btn:active { transform: none; }
+}

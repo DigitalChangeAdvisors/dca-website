@@ -1,0 +1,68 @@
+/* ============================================================
+   /nosotros v3 — capa "nivel firma global"
+   Carga DESPUÉS de styles-nosotros2.css. Solo clases nuevas.
+   Añade: Propósito (credo), Principios (cómo trabajamos),
+   cita de fundador. La banda full-bleed reutiliza el sistema.
+   Cero colores nuevos.
+   ============================================================ */
+
+/* ---------- PROPÓSITO — credo, no oferta ---------- */
+.purpose__inner { max-width: 1040px; }
+.purpose__rule { width: 54px; height: 2px; background: var(--gold); margin-bottom: 36px; }
+.purpose__statement {
+  font-family: var(--display); font-weight: 400;
+  font-size: clamp(30px, 3.5vw, 48px); line-height: 1.2; letter-spacing: -0.012em;
+  color: var(--carbon); max-width: 940px; text-wrap: balance;
+}
+.purpose__statement .em { color: var(--teal); }
+.purpose__body {
+  max-width: 660px; margin-top: 32px; color: var(--carbon-70);
+  font-size: 17.5px; line-height: 1.72;
+}
+
+/* ---------- BANDA EDITORIAL full-bleed (reusa .fullbleed del sistema) ----------
+   El sistema ya estiliza .fullbleed / .fullbleed__frame / __cap y enhance4.js
+   le aplica parallax. Solo afinamos el overlay editorial teal-carbón. */
+.fullbleed--decl .fullbleed__frame { position: relative; }
+.fullbleed--decl .fullbleed__frame::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(30,42,56,0) 40%, rgba(30,42,56,0.10) 100%);
+}
+
+/* ---------- LIDERAZGO — cita del fundador (presencia, no solo bio) ---------- */
+.founder__quote {
+  font-family: var(--display); font-style: italic;
+  font-size: clamp(20px, 1.9vw, 25px); line-height: 1.38; color: var(--carbon);
+  border-left: 3px solid var(--gold); padding-left: 22px; margin: 0 0 28px;
+  max-width: 600px; text-wrap: pretty;
+}
+
+/* ---------- PRINCIPIOS — cómo trabajamos (capa de valores) ---------- */
+.principles {
+  display: grid; grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--border); border-left: 1px solid var(--border);
+}
+.principle {
+  padding: 44px 48px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.principle__n {
+  font-family: var(--display); font-size: 22px; color: var(--teal);
+  display: inline-block; margin-bottom: 18px;
+}
+.principle__n::after {
+  content: ""; display: block; width: 26px; height: 2px; background: var(--gold); margin-top: 14px;
+}
+.principle h3 {
+  font-family: var(--display); font-weight: 400;
+  font-size: clamp(21px, 2vw, 27px); line-height: 1.24; color: var(--carbon); margin-bottom: 14px;
+}
+.principle p { font-size: 15.5px; color: var(--carbon-70); line-height: 1.62; max-width: 420px; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 880px) {
+  .principles { grid-template-columns: 1fr; border-left: 0; }
+  .principle { padding: 34px 0; border-right: 0; }
+  .founder__quote { font-size: 21px; }
+}

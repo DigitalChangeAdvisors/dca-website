@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>document.documentElement.classList.replace('no-js','js');</script>
+
+<title>Gobernar la IA sin matar la adopción | Digital Change Advisors</title>
+<meta name="description" content="La gobernanza mal diseñada no protege la inversión en IA: la destruye. El modelo de culpabilidad individual tiene un costo financiero verificable." />
+<link rel="canonical" href="https://digitalchangeadvisors.com/article-paper05" />
+<meta name="theme-color" content="#1e2a38" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://digitalchangeadvisors.com/article-paper05" />
+<meta property="og:title" content="Gobernar la IA sin matar la adopción: el error que destruye el retorno antes de que aparezca." />
+<meta property="og:description" content="La gobernanza mal diseñada no protege la inversión en IA. La destruye. El modelo de culpabilidad individual — patrón Boeing-Uber — tiene un costo financiero documentado. Ruth Jaramillo — DCA." />
+<meta property="og:image" content="https://digitalchangeadvisors.com/assets/og-returnai.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:site_name" content="Digital Change Advisors" />
+<meta property="og:locale" content="es_LA" />
+<meta property="article:published_time" content="2026-03-20T00:00:00Z" />
+<meta property="article:author" content="Ruth Jaramillo" />
+
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/favicon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</noscript>
+
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styles4.css" />
+<link rel="stylesheet" href="styles5.css" />
+<link rel="stylesheet" href="styles6.css" />
+<link rel="stylesheet" href="styles-article.css" />
+
+<noscript>
+  <style>[data-reveal] { opacity: 1 !important; transform: none !important; }</style>
+</noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://digitalchangeadvisors.com/article-paper05#article",
+      "headline": "Gobernar la IA sin matar la adopción: el error que destruye el retorno antes de que aparezca.",
+      "author": {"@type": "Person", "name": "Ruth Jaramillo", "url": "https://digitalchangeadvisors.com/autor/ruth-jaramillo/"},
+      "datePublished": "2026-03-20",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Digital Change Advisors",
+        "logo": {"@type": "ImageObject", "url": "https://digitalchangeadvisors.com/assets/favicon.png"}
+      },
+      "url": "https://digitalchangeadvisors.com/article-paper05",
+      "inLanguage": "es",
+      "citation": [
+        { "@type": "CreativeWork", "name": "AI Strategy research", "publisher": { "@type": "Organization", "name": "MIT Sloan Management Review" }, "url": "https://sloanreview.mit.edu/tag/ai-strategy/" }
+      ]
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "AI Governance Canvas",
+      "description": "Componente del Modelo ARIA que responde al Obstáculo 2 (fricción de governance): mapea qué puede hacer cada persona con la IA en su contexto específico, sin pedir permiso, en lugar de partir de los riesgos para construir restricciones.",
+      "inDefinedTermSet": {
+        "@type": "DefinedTermSet",
+        "name": "Modelo ARIA",
+        "publisher": { "@id": "https://digitalchangeadvisors.com/#organization" }
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body class="v4 v5 v6">
+
+<a href="#contenido" class="skip-link">Saltar al contenido</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://digitalchangeadvisors.com/" class="nav__logo" aria-label="Digital Change Advisors — Inicio">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -8 400 88" role="img" aria-hidden="true">
+        <line x1="3" y1="73" x2="73" y2="73" stroke="#e4e4e4" stroke-width="1"/>
+        <path d="M 8 68 C 22 14, 55 8, 68 8" fill="none" stroke="#2e8b76" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="8" cy="68" r="5" fill="#2e8b76"/>
+        <circle cx="68" cy="8" r="12" fill="#a48111"/>
+        <line x1="90" y1="14" x2="90" y2="64" stroke="#1e2a38" stroke-width="1" opacity="0.12"/>
+        <text x="106" y="55" font-family="'Marcellus', Georgia, serif" font-size="44" fill="#2e8b76" letter-spacing="-0.5">DCA</text>
+        <text x="109" y="70" font-family="'Montserrat', Helvetica, sans-serif" font-weight="600" font-size="10.5" fill="#1e2a38" opacity="0.80" letter-spacing="2.6">DIGITAL CHANGE ADVISORS</text>
+      </svg>
+    </a>
+    <ul class="nav__links">
+      <li><a href="https://digitalchangeadvisors.com/modelo-aria">Modelo ARIA</a></li>
+      <li><a href="https://digitalchangeadvisors.com/returnai">ReturnAI</a></li>
+      <li><a href="https://digitalchangeadvisors.com/autor/cesar-lozano/">El autor del Modelo ARIA</a></li>
+      <li><a href="https://digitalchangeadvisors.com/blog" aria-current="page" class="is-current">Perspectivas</a></li>
+      <li><a href="https://digitalchangeadvisors.com/nosotros">Nosotros</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="https://digitalchangeadvisors.com/art/?utm_source=article-p05&utm_medium=website&utm_campaign=ai-return-test" class="btn btn--primary">AI Return Test <span class="arrow">&rarr;</span></a>
+      <button class="nav__burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="https://digitalchangeadvisors.com/modelo-aria">Modelo ARIA</a>
+  <a href="https://digitalchangeadvisors.com/returnai">ReturnAI</a>
+  <a href="https://digitalchangeadvisors.com/autor/cesar-lozano/">El autor del Modelo ARIA</a>
+  <a href="https://digitalchangeadvisors.com/blog">Perspectivas</a>
+  <a href="https://digitalchangeadvisors.com/nosotros">Nosotros</a>
+  <a href="https://digitalchangeadvisors.com/art/?utm_source=article-p05&utm_medium=website&utm_campaign=ai-return-test" class="btn btn--primary btn--lg">AI Return Test &rarr;</a>
+</div>
+
+<main id="contenido">
+
+  <!-- ===== ENCABEZADO DEL ARTÍCULO ===== -->
+  <header class="art-header">
+    <div class="art-inner">
+      <nav class="art-breadcrumb" aria-label="Ruta de navegaci&oacute;n">
+        <a href="https://digitalchangeadvisors.com/blog">Perspectivas</a>
+        <span aria-hidden="true">/</span>
+        <span>Gobernanza · Gobierno &amp; Junta</span>
+      </nav>
+      <span class="art-cat art-cat--frame">Gobernanza · Gobierno &amp; Junta</span>
+      <h1 class="art-title" style="max-width:38ch;font-size:clamp(20px,2vw,28px);"><span class="line">Gobernar la IA sin matar la adopción:</span><span class="line">el error que destruye el retorno.</span></h1>
+      <p class="art-lead">La gobernanza mal diseñada no protege la inversión en IA — la destruye. El modelo de culpabilidad individual — el mismo patrón de Boeing y Uber — tiene un costo financiero documentado y una alternativa que aprende en lugar de castigar.</p>
+      <div class="art-byline">
+        <picture><source srcset="assets/blog-author-ruth-jaramillo.webp" type="image/webp"><img src="assets/blog-author-ruth-jaramillo.jpg" alt="Foto de Ruth Jaramillo" class="art-byline__photo" width="48" height="48" loading="lazy"></picture>
+        <div class="art-byline__info">
+          <span class="art-byline__name">Ruth Jaramillo</span>
+          <span class="art-byline__role">Socia fundadora de Digital Change Advisors · Adopción sostenible de la inteligencia artificial</span>
+          <span class="art-byline__meta">
+            <time datetime="2026-03-20">20 mar 2026</time>
+            <span class="art-dot" aria-hidden="true"></span>
+            10 min de lectura
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== IMAGEN HERO ===== -->
+  <div class="art-hero">
+    <picture><source srcset="assets/blog-article-paper05.webp" type="image/webp"><img src="assets/blog-article-paper05.jpg" alt="Reunión mixta con tensión entre gobernanza y agilidad — el centro vacío de la mesa" width="1400" height="600" loading="eager"></picture>
+  </div>
+
+  <!-- ===== CUERPO DEL ARTÍCULO ===== -->
+  <article class="art-body" data-reveal>
+    <div class="art-inner">
+
+      <!-- Puntos clave -->
+      <div class="art-insights" role="note" aria-label="Puntos clave">
+        <span class="art-insights__label">Puntos clave</span>
+        <ul>
+          <li>La fricción de governance es el Obstáculo 2 en la rentabilización de la IA: una política de acceso confusa convierte en cero la intención de uso, incluso cuando la herramienta ya está instalada y pagada.</li>
+          <li>La mayor parte de los problemas operativos con sistemas de IA son conocidos por quienes los detectan y no se reportan — el efecto del silencio técnico acumula pasivos hasta que escalan a una consecuencia que ya no puede contenerse.</li>
+          <li>El modelo de culpabilidad individual — el patrón que Uber y Boeing siguieron — tiene un costo documentado de más de $20.000 millones en consecuencias acumuladas, sin resolver las causas que garantizan que el problema se repita.</li>
+        </ul>
+      </div>
+
+      <!-- La lectura de Digital Change Advisors -->
+      <div class="art-callout">
+        <span class="art-callout__label">La lectura de Digital Change Advisors</span>
+        <p>Nuestra investigación —validada en campo en 70+ empresas de Hispanoamérica— identifica la fricción de governance como el Obstáculo 2 en la rentabilización de la IA: la tecnología está disponible, el presupuesto se pagó, y el retorno no aparece en el P&amp;L. Cuando ese sistema impone un laberinto para usar lo que el discurso declara accesible, Digital Change Advisors lo identifica como la Trampa Burocrática, uno de los siete arquetipos de rentabilización de la IA. El equipo calcula que el costo de intentarlo supera el beneficio de lograrlo.</p>
+      </div>
+
+      <!-- Intro -->
+      <p>Era una madrugada de marzo de 2018 en Tempe, Arizona. Un vehículo autónomo de Uber circulaba a velocidad normal cuando su sistema de detección de objetos clasificó incorrectamente a un peatón y no activó el freno de emergencia a tiempo. El resultado fue una muerte. La respuesta institucional fue predecible: la operadora fue procesada penalmente, Uber suspendió su programa de vehículos autónomos. La narrativa oficial cerró el caso señalando a una persona.</p>
+      <p>Si en tu organización la primera conversación cuando algo falla en un proceso de IA es "¿quién fue?", estás operando bajo el mismo modelo. Y ese modelo tiene un costo financiero documentado que pocas empresas han calculado con precisión antes de pagarlo.</p>
+
+      <!-- Estadísticas -->
+      <div class="art-stats" aria-label="Datos clave del análisis">
+        <div class="art-stat">
+          <span class="art-stat__num">$20B+</span>
+          <span class="art-stat__label">costo total documentado del modelo de culpabilidad &mdash; caso Boeing 737 MAX</span>
+        </div>
+        <div class="art-stat">
+          <span class="art-stat__num">60&ndash;70%</span>
+          <span class="art-stat__label">problemas operativos con IA conocidos pero no reportados en organizaciones punitivas</span>
+        </div>
+        <div class="art-stat">
+          <span class="art-stat__num">+23%</span>
+          <span class="art-stat__label">incremento en tasas de apertura del piloto que la fricción de governance anuló</span>
+        </div>
+      </div>
+
+      <!-- H2 1 -->
+      <h2>El precio de encontrar culpables rápido</h2>
+      <p>El patrón se repitió en Boeing. Dos accidentes del 737 MAX en 2018 y 2019 mataron a 346 personas. El CEO Dennis Muilenburg fue destituido como respuesta visible ante los stakeholders. La promesa implícita fue que el problema estaba contenido. Cinco años después, en 2024, una puerta de emergencia se desprendió de un 737 MAX en pleno vuelo. Un nuevo CEO fue empujado a renunciar. La cultura que priorizaba velocidad de producción sobre rigor de prueba, con sistemas de reporte que desincentivaban las alertas internas, seguía operando. Nadie la había intervenido porque la narrativa oficial la había borrado señalando a una persona.</p>
+      <p>Ninguna de esas acciones abordó las decisiones de diseño que priorizaron velocidad de lanzamiento sobre rigor de prueba. Ninguna examinó los incentivos organizacionales que desincentivaban reportar señales de alerta temprana. La causa profunda del accidente no era una persona. Era un sistema &mdash; técnico, humano y organizacional &mdash; operando bajo condiciones que lo hacían predeciblemente frágil.</p>
+
+      <!-- Callout 1 -->
+      <div class="art-callout">
+        <span class="art-callout__label">Costo documentado del modelo de culpabilidad</span>
+        <p>El costo financiero de los accidentes del 737 MAX supera los $20.000 millones de dólares entre compensaciones, sanciones, pérdida de contratos y deterioro de la marca. Y ese número no incluye el costo de los fallos posteriores producidos por las mismas causas no intervenidas. En el contexto de la IA corporativa, el mismo mecanismo produce el mismo resultado &mdash; a menor escala, pero con la misma sistematicidad y el mismo impacto acumulado en el P&amp;L.</p>
+        <p>Desde la economía del comportamiento, el modelo de culpabilidad individual es una manifestación clásica de lo que Kahneman denomina Sistema 1 aplicado a la gestión de crisis: la mente busca, instintivamente, una causa simple y singular para problemas que son sistémicos y multivariables. Es cognitivamente económico, emocionalmente satisfactorio para los stakeholders, y estratégicamente destructivo para el retorno de largo plazo.</p>
+        <p>Los investigadores de <a href="https://sloanreview.mit.edu/tag/ai-strategy/" target="_blank" rel="noopener noreferrer">MIT Sloan</a> documentan el patrón con precisión: cuando una empresa se limita a destituir a un líder ante un fallo, raramente se resuelven las causas profundas y sistémicas &mdash; lo que produce la repetición de errores cuyo costo compuesto supera con creces el costo del incidente original.</p>
+      </div>
+
+      <!-- H2 2 -->
+      <h2>La paradoja del equipo que no usa lo que ya pagaron</h2>
+      <p>Imagine a un analista de marketing en una empresa financiera colombiana. Su organización ha invertido $1,2 millones de dólares en una plataforma de IA para personalización de comunicaciones con clientes. El piloto fue exitoso: un incremento del 23% en tasas de apertura y del 11% en conversión. Los números estaban documentados.</p>
+      <p>El resultado debería ser que el analista use la herramienta todos los días. No la usa.</p>
+      <p>Para generar una variante de copy con IA, necesita: leer un documento de política de 25 páginas para verificar que su caso de uso está permitido, llenar un formulario de solicitud con justificación de negocio, esperar entre 5 y 7 días para aprobación del área de tecnología, y enviar el copy a compliance antes de publicarlo. Total: dos semanas para lo que en el piloto tomó 20 minutos. El analista toma la decisión que cualquier cerebro toma cuando el costo de acción supera el beneficio percibido: no usa la herramienta. La organización sigue creyendo que tiene un proyecto de IA exitoso mientras el retorno de su inversión de $1,2 millones se acerca silenciosamente a cero.</p>
+
+      <!-- Callout 2 -->
+      <div class="art-callout">
+        <span class="art-callout__label">Obstáculo 2: Fricción de governance</span>
+        <p>Esto es lo que nuestra investigación &mdash; validada en campo en 70+ empresas de Hispanoamérica &mdash; identifica como el Obstáculo 2 en la rentabilización de la IA: la fricción de governance. Su mecanismo de daño es tan sutil como devastador: la tecnología está disponible, el presupuesto se pagó, los dashboards muestran acceso activo, y el retorno no aparece en el P&amp;L. La herramienta formalmente disponible no es la herramienta que genera impacto económico. Esa distinción es la brecha que ningún proveedor de la plataforma tiene incentivo para ayudarte a cerrar.</p>
+      </div>
+
+      <!-- Pull quote -->
+      <blockquote class="art-quote">
+        <p>Una política de IA diseñada para que nadie se equivoque es una política diseñada para que nadie aprenda. Y una organización que no aprende no genera retorno, sostiene Ruth Jaramillo, de Digital Change Advisors.</p>
+        <cite>Ruth Jaramillo &mdash; Socia fundadora de Digital Change Advisors · Adopción sostenible de la inteligencia artificial</cite>
+      </blockquote>
+
+      <p>El problema se agrava cuando la arquitectura de decisiones está diseñada, implícitamente, para producir inacción. "Usen IA, es prioritario para nuestra estrategia" convive con "cualquier uso inadecuado será sancionado, no tomen riesgos que comprometan nuestra licencia." Ese par de mensajes no produce participación cuidadosa. Produce parálisis disfrazada de prudencia.</p>
+      <p>El resultado más perverso es que la organización no detecta el problema hasta que ya ha perdido millones en inversiones que se "adoptaron" en los dashboards pero nunca impactaron los KPIs del negocio.</p>
+
+      <!-- H2 3 -->
+      <h2>La gobernanza que aprende: tres movimientos que protegen el P&amp;L</h2>
+      <p>Los investigadores François-Xavier de Vaujany y Aurélie Vandelannoitte, en su trabajo publicado en MIS Quarterly, proponen un marco que redefine el accountability en la era de la IA: la responsabilidad narrativa. La idea central es disruptiva en su simplicidad: en lugar de buscar al culpable, construir la historia completa. Mapear no solo qué salió mal, sino cómo las presiones competitivas, los incentivos desalineados y las rutinas organizacionales crearon las condiciones para que el fallo ocurriera.</p>
+
+      <h3>Mapear la historia real, más allá de lo obvio</h3>
+      <p>Cuando Google lanzó Gemini en 2024 y el sistema generó imágenes históricamente inexactas, el CEO Sundar Pichai comprometió cambios estructurales en los procesos de lanzamiento y en los procesos de red-teaming. Una responsabilidad narrativa más completa habría surfaceado las presiones competitivas para lanzar rápido ante los avances de OpenAI, y cómo esas presiones influyeron en las decisiones de los equipos de prueba. Mapear eso no es señalar culpables adicionales; es construir el conocimiento organizacional que previene la siguiente versión del mismo problema.</p>
+
+      <h3>Distribuir la propiedad, no la culpa</h3>
+      <p>La industria de la aviación ofrece el modelo más sofisticado del mundo en esta materia. Aerolíneas como Air France y KLM, siguiendo los estándares de la EASA, convocan paneles multidisciplinarios después de cualquier incidente de automatización. Estos paneles &mdash; que reúnen pilotos, ingenieros, psicólogos de factores humanos y directivos operativos &mdash; no buscan al culpable. Buscan el patrón. El resultado medible: la aviación comercial es estadísticamente el medio de transporte más seguro del mundo, no a pesar de sus sistemas de automatización, sino gracias a una cultura de gobernanza que aprendió a gestionar la complejidad distribuida.</p>
+
+      <h3>Integrar la reflexión en la práctica diaria</h3>
+      <p>ING Bank no espera a que ocurra un incidente para activar su proceso de revisión. Después de cada sprint de desarrollo, el equipo dedica tiempo estructurado a tres preguntas: ¿Qué aprendimos? ¿Qué supuestos resultaron incorrectos? ¿Cómo nuestras acciones contribuyeron al resultado? Google hace lo mismo con su cultura de post-mortem documentada en Site Reliability Engineering: el análisis de incidentes es una rutina integrada en el ciclo de trabajo, no una reacción a una crisis.</p>
+
+      <!-- H2 4 -->
+      <h2>¿Cómo pasa la gobernanza de paralizar a generar retorno?</h2>
+      <p>La tesis de Digital Change Advisors: el AI Governance Canvas &mdash; componente del Modelo ARIA &mdash; es la respuesta operativa directa al Obstáculo 2. No parte de los riesgos para construir restricciones; parte de los casos de uso para construir habilitaciones. La pregunta que responde no es "¿qué está prohibido?", sino: ¿qué puede hacer exactamente cada persona con la IA en su contexto específico, ahora mismo, sin pedir permiso? Lo que distingue al AI Governance Canvas de cualquier manual de compliance es su filosofía de diseño: elimina la sobrecarga cognitiva que produce la gobernanza tradicional sin sacrificar ningún nivel de control real.</p>
+
+      <h3>Eje 1 &mdash; Claridad de habilitación</h3>
+      <p>El Canvas mapea los casos de uso en tres vías de acción: vía verde (uso inmediato, sin aprobación, con las herramientas disponibles), vía amarilla (una verificación simple de tipo de dato antes de proceder), vía roja (aprobación formal con plazo máximo de respuesta predefinido &mdash; para evitar que la fricción burocrática se convierta en fricción infinita). De un documento de 40 páginas a tres preguntas: ¿Qué tarea? ¿Qué tipo de datos? ¿Uso interno o externo? El sistema responde exactamente qué puede hacer el colaborador. Esto elimina la confusión que produce la gobernanza tradicional y convierte la herramienta en algo que el equipo realmente usa.</p>
+
+      <h3>Eje 2 &mdash; Ownership del aprendizaje, no de la culpa</h3>
+      <p>Cada caso de uso no tiene un "responsable de compliance", sino un co-propietario de aprendizaje. La distinción es crítica: el responsable de compliance existe para castigar errores; el co-propietario de aprendizaje existe para capturar las lecciones que cada uso &mdash; exitoso o fallido &mdash; genera, y para mejorar la arquitectura de governance con base en esa evidencia. En la práctica, cada equipo tiene un governance champion cuya pregunta no es "¿hiciste algo mal?", sino "¿qué aprendimos de cómo usamos la IA esta semana y cómo podemos hacerlo mejor la siguiente?".</p>
+
+      <h3>Eje 3 &mdash; Gobernanza viva, no gobernanza congelada</h3>
+      <p>Cada 90 días, el equipo de governance revisa dos indicadores: el esfuerzo percibido de governance &mdash; qué tan fácil fue obtener claridad sobre qué puede hacer con IA &mdash; y el análisis de consultas repetidas. Si muchos colaboradores preguntan lo mismo, esa política genera fricción innecesaria sin agregar valor de control real. La regla interna es directa: cada trimestre se simplifica al menos una política de alta fricción. La gobernanza deja de ser un evento de lanzamiento y se convierte en una práctica que aprende a la misma velocidad que la tecnología que regula.</p>
+
+      <!-- Callout 3 -->
+      <div class="art-callout">
+        <span class="art-callout__label">El activo más subestimado: seguridad psicológica</span>
+        <p>UCLA Health estableció una red de culture champions y comités de revisión de incidentes diseñados como espacios psicológicamente seguros &mdash; donde el personal puede reportar riesgos sin temor a represalias. El resultado: una mejora documentada en la velocidad de aprendizaje organizacional que se tradujo en procesos más eficientes. En nuestra intervención de campo, la mayor parte de los problemas operativos con sistemas de IA son conocidos por los colaboradores que los detectan y no se reportan en organizaciones con gobernanza punitiva. Eso no es prudencia. Es el efecto del silencio técnico: pasivos que se acumulan en silencio hasta que aparecen en el balance cuando ya es demasiado tarde para contenerlos.</p>
+      </div>
+
+      <!-- Cierre -->
+      <p>Existe una pregunta que, en nuestra experiencia de campo con 70+ organizaciones, separa con claridad a las empresas que construyen gobernanza de IA con retorno real de las que construyen compliance de IA con costo real: cuando algo falla en un proceso que involucra la IA, ¿la primera conversación es "¿quién fue?" o "¿qué aprendemos?"? Si la respuesta honesta es la primera, tu organización tiene un modelo de gobernanza que garantiza que los mismos fallos se repitan bajo distintos nombres y en distintos ciclos presupuestarios &mdash; porque las causas profundas siguen intactas.</p>
+      <p>El retorno de la inversión en IA no es solo función de la tecnología instalada. Es función del sistema que la rodea: las políticas que habilitan o paralizan su uso cotidiano, los incentivos que promueven o suprimen el reporte de anomalías, la cultura que convierte el error en aprendizaje o en teatro.</p>
+<p>Cuando ese sistema impone un laberinto para usar lo que el discurso declara accesible, Digital Change Advisors lo identifica como la Trampa Burocrática, uno de los siete arquetipos de rentabilización de la IA. El equipo no rechaza la herramienta: calcula que el costo de intentarlo supera el beneficio de lograrlo. Y acierta.</p>
+<p>Ese cálculo es el que ningún proveedor de tecnología va a corregir por ti.</p>
+
+      <!-- CTA inline -->
+      <p><a href="https://digitalchangeadvisors.com/art/?utm_source=article-p05&utm_medium=website&utm_campaign=ai-return-test" class="art-inline-cta">Diagnostica qué obstáculo frena el retorno de tu IA &rarr;</a></p>
+
+      <hr class="art-divider" />
+
+      <!-- Tags -->
+      <div class="art-tags">
+        <span class="art-tag">Gobernanza de IA</span><span class="art-tag">Obstáculos organizacionales</span><span class="art-tag">Retorno de IA</span><span class="art-tag">Modelo ARIA</span><span class="art-tag">Junta</span>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- ===== BIO DEL AUTOR ===== -->
+  <div class="art-author-section">
+    <div class="art-inner">
+      <div class="art-author-card">
+        <picture><source srcset="assets/blog-author-ruth-jaramillo.webp" type="image/webp"><img src="assets/blog-author-ruth-jaramillo.jpg" alt="Ruth Jaramillo" class="art-author__photo" width="80" height="80" loading="lazy"></picture>
+        <div class="art-author__info">
+          <span class="art-author__name">Ruth Jaramillo</span>
+          <span class="art-author__role">Socia fundadora de Digital Change Advisors · Adopción sostenible de la inteligencia artificial</span>
+          <p class="art-author__bio">Ruth Jaramillo es socia fundadora de Digital Change Advisors y cocreadora de los Frameworks Ágiles del Modelo ARIA. Ingeniera Industrial y Coach Profesional certificada por el Neuroscience and Coaching Institute (USA), con más de 20 años como ejecutiva empresarial.</p>
+          <a class="art-author__link" href="https://digitalchangeadvisors.com/autor/ruth-jaramillo/">Ver el perfil de autor &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CTA ===== -->
+  <!-- AI Return Pulse — newsletter compacto post-artículo -->
+  <section class="art-pulse">
+    <div class="wrap">
+      <div class="art-pulse__inner">
+        <div class="art-pulse__text">
+          <span class="label">Newsletter quincenal</span>
+          <p class="art-pulse__title">AI Return Pulse</p>
+          <p class="art-pulse__desc">El análisis que no está en el artículo — cada dos semanas, antes de tu reunión de Junta.</p>
+        </div>
+        <div class="art-pulse__form-wrap">
+          <form id="art-pulse-form" novalidate>
+            <div class="art-pulse__row">
+              <input type="email" id="art-pulse-email" class="art-pulse__input" placeholder="nombre@empresa.com" autocomplete="email" required aria-label="Tu correo corporativo" aria-describedby="art-pulse-error" />
+              <button type="submit" class="btn btn--primary art-pulse__btn">Suscribirse <span class="arrow">&rarr;</span></button>
+            </div>
+            <p id="art-pulse-error" class="art-pulse__error" role="alert" hidden>Ingresa un correo corporativo válido.</p>
+          </form>
+          <div id="art-pulse-success" class="art-pulse__success" role="status" hidden>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Revisa tu correo: ahí va el análisis que no está en este artículo.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="art-cta">
+    <div class="art-inner" style="text-align:center">
+      <span class="label" style="color:rgba(255,255,255,0.65);display:block;margin-bottom:16px">Diagn&oacute;stico ejecutivo</span>
+      <h2 class="art-cta__h2">El diagn&oacute;stico que ubica a tu organizaci&oacute;n<br>dentro del Modelo ARIA en 55 preguntas, menos de 30 minutos.</h2>
+      <p class="art-cta__p">Cuantifica cu&aacute;nto retorno est&aacute; dejando sobre la mesa tu inversi&oacute;n en IA. El n&uacute;mero que llevar&aacute;s a tu pr&oacute;xima reuni&oacute;n de Junta.</p>
+      <a href="https://digitalchangeadvisors.com/art/?utm_source=article-p05&utm_medium=website&utm_campaign=ai-return-test" class="btn btn--gold">AI Return Test <span class="arrow">&rarr;</span></a>
+      <p class="art-cta__note">Sin compromiso &middot; 55 preguntas, menos de 30 minutos &middot; Tu reporte es confidencial</p>
+    </div>
+  </section>
+
+  <!-- ===== ARTÍCULOS RELACIONADOS ===== -->
+  <section class="art-related">
+    <div class="art-inner--wide">
+      <h2 class="art-related__title">M&aacute;s perspectivas</h2>
+      <div class="art-related__grid">
+        
+        <a href="https://digitalchangeadvisors.com/article-paper01" class="art-rel-card">
+          <div class="art-rel-card__img">
+            <picture><source srcset="assets/blog-article-paper01.webp" type="image/webp"><img src="assets/blog-article-paper01.jpg" alt="" width="400" height="267" loading="lazy"></picture>
+          </div>
+          <div class="art-rel-card__body">
+            <span class="art-cat art-cat--frame">Marco</span>
+            <h3 class="art-rel-card__title">Las tres amenazas estructurales que convierten tu IA en un pasivo.</h3>
+            <p class="art-rel-card__meta">César Lozano</p>
+          </div>
+        </a>
+        <a href="https://digitalchangeadvisors.com/article-paper09" class="art-rel-card">
+          <div class="art-rel-card__img">
+            <picture><source srcset="assets/blog-article-paper09.webp" type="image/webp"><img src="assets/blog-article-paper09.jpg" alt="" width="400" height="267" loading="lazy"></picture>
+          </div>
+          <div class="art-rel-card__body">
+            <span class="art-cat art-cat--frame">Talento</span>
+            <h3 class="art-rel-card__title">La estrategia de talento que convierte licencias de IA en retorno documentado.</h3>
+            <p class="art-rel-card__meta">Ruth Jaramillo</p>
+          </div>
+        </a>
+        <a href="https://digitalchangeadvisors.com/article-paper07" class="art-rel-card">
+          <div class="art-rel-card__img">
+            <picture><source srcset="assets/blog-article-paper07.webp" type="image/webp"><img src="assets/blog-article-paper07.jpg" alt="" width="400" height="267" loading="lazy"></picture>
+          </div>
+          <div class="art-rel-card__body">
+            <span class="art-cat art-cat--field">Análisis</span>
+            <h3 class="art-rel-card__title">1.993 empresas, 105 países: lo que separa al 6% que mide ROI del 94% que no puede hacerlo.</h3>
+            <p class="art-rel-card__meta">César Lozano</p>
+          </div>
+        </a>
+      </div>
+      <div class="art-related__more">
+        <a href="https://digitalchangeadvisors.com/blog" class="btn btn--secondary">Ver todas las perspectivas <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid footer__grid--blog">
+      <div class="footer__brand">
+        <a href="https://digitalchangeadvisors.com/" class="footer__logo--neg" aria-label="Digital Change Advisors — Inicio">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -8 400 88" role="img" aria-hidden="true">
+            <line x1="3" y1="73" x2="73" y2="73" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+            <path d="M 8 68 C 22 14, 55 8, 68 8" fill="none" stroke="#2e8b76" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="8" cy="68" r="5" fill="#2e8b76"/>
+            <circle cx="68" cy="8" r="12" fill="#a48111"/>
+            <line x1="90" y1="14" x2="90" y2="64" stroke="#ffffff" stroke-width="1" opacity="0.18"/>
+            <text x="106" y="55" font-family="'Marcellus', Georgia, serif" font-size="44" fill="#ffffff" letter-spacing="-0.5">DCA</text>
+            <text x="109" y="70" font-family="'Montserrat', Helvetica, sans-serif" font-weight="600" font-size="10.5" fill="#ffffff" opacity="0.80" letter-spacing="2.6">DIGITAL CHANGE ADVISORS</text>
+          </svg>
+        </a>
+        <p>De la inversi&oacute;n en IA al retorno documentado.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Soluciones</h4>
+        <ul>
+          <li><a href="https://digitalchangeadvisors.com/returnai">ReturnAI</a></li>
+          <li><a href="https://digitalchangeadvisors.com/modelo-aria">Modelo ARIA</a></li>
+          <li><a href="https://digitalchangeadvisors.com/art/?utm_source=article-p05&utm_medium=website&utm_campaign=ai-return-test">AI Return Test</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Firma</h4>
+        <ul>
+          <li><a href="https://digitalchangeadvisors.com/nosotros">Nosotros</a></li>
+          <li><a href="https://www.digitalchangeacademy.org" target="_blank" rel="noopener">Academia</a></li>
+          <li>Red ARIA</li>
+          <li><a href="https://digitalchangeadvisors.com/novela-returnai/">Libro ReturnAI</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Perspectivas</h4>
+        <ul>
+          <li><a href="https://digitalchangeadvisors.com/blog">Todas las perspectivas</a></li>
+          <li><a href="https://digitalchangeadvisors.com/blog#newsletter-pulse">AI Return Pulse</a></li>
+          <li><a href="https://www.skool.com/comunidad-lada-2386/" target="_blank" rel="noopener">Comunidad LARIA</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:ceo@digitalchangeadvisors.com">ceo@digitalchangeadvisors.com</a></li>
+          <li><a href="https://agenda.digitalchangeadvisors.com/retorno-ia" target="_blank" rel="noopener">Agendar sesi&oacute;n</a></li>
+          <li><a href="https://digitalchangeadvisors.com/contacto/">P&aacute;gina de contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 Digital Change Advisors, LLC.</span>
+      <div class="footer__legal">
+        <a href="https://digitalchangeadvisors.com/privacy-policy">Pol&iacute;tica de privacidad</a>
+        <a href="https://digitalchangeadvisors.com/terms-of-use">T&eacute;rminos de uso</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="enhance4.js"></script>
+
+
+<!-- AI Return Pulse — newsletter script -->
+<script>
+(function () {
+  var form    = document.getElementById('art-pulse-form');
+  var input   = document.getElementById('art-pulse-email');
+  var error   = document.getElementById('art-pulse-error');
+  var errorDefaultText = error ? error.textContent : '';
+  var success = document.getElementById('art-pulse-success');
+  var re      = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbwZaU3UD_HeREVZ5s48paNfxKym7_CjUQaYeZnVeKtqGa3ucAuOIs2nzGbJsIu42vEn/exec';
+
+  input.addEventListener('input', function () {
+    if (input.getAttribute('aria-invalid') === 'true' && re.test(input.value.trim())) {
+      input.setAttribute('aria-invalid', 'false');
+      if (error) error.hidden = true;
+    }
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var val = input.value.trim();
+    if (!re.test(val)) {
+      input.setAttribute('aria-invalid', 'true');
+      if (error) { error.textContent = errorDefaultText; error.hidden = false; }
+      input.focus();
+      return;
+    }
+    input.setAttribute('aria-invalid', 'false');
+    if (error) error.hidden = true;
+
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) btn.disabled = true;
+
+    var source = window.location.pathname.replace(/.*\//, '').replace('.html', '') || 'article';
+
+    function showSuccess() {
+      form.hidden = true;
+      if (success) success.hidden = false;
+    }
+
+    fetch(ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({ email: val, source: source })
+    })
+    .then(function () { showSuccess(); })
+    .catch(function () {
+      if (error) { error.textContent = 'No pudimos confirmar tu suscripción — intenta de nuevo en unos minutos.'; error.hidden = false; }
+    })
+    .finally(function () { if (btn) btn.disabled = false; });
+  });
+})();
+</script>
+
+</body>
+</html>

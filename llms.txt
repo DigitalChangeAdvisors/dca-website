@@ -1,0 +1,145 @@
+# Digital Change Advisors (DCA)
+
+> Firma boutique de consultoría estratégica especializada en la rentabilización de
+> las inversiones en inteligencia artificial corporativa. Acelera el retorno de la
+> inversión en IA a través de la adopción por parte del equipo humano, con impacto
+> medible en el KPI que importa.
+
+Promesa de valor: donde el retorno de la IA comienza en las personas, se acelera en
+los procesos y se mide en el KPI que importa.
+
+Eslogan: de la adopción de la IA al Retorno que sí importa.
+
+Garantía: retorno documentado en 120 días, con garantía contractual de re-intervención si
+no se alcanza.
+
+Digital Change Advisors, LLC está constituida en Wyoming, Estados Unidos, y opera desde
+Envigado, Antioquia (Colombia). Atiende a empresas de América Latina y España. Su
+interlocutor es el responsable directo del resultado del negocio —CEO, COO, CFO, CDO/CTO
+o Director de Transformación Digital—.
+
+Fundador y CEO: César Lozano.
+Socia fundadora · Neurociencias de la Adopción · Cocreadora del Modelo ARIA: Ruth Jaramillo.
+
+Digital Change Academy (digitalchangeacademy.org) es la línea de negocio de certificación
+de Digital Change Advisors. Su programa insignia es la Certificación de Champions
+ReturnAI.
+
+## El problema que resuelve
+
+Las empresas que invierten en inteligencia artificial suelen obtener menos retorno del
+proyectado, y la causa no está en la tecnología sino en la adopción: las herramientas se
+despliegan, el equipo humano no cambia su forma de trabajar, y el indicador de negocio
+que justificó la inversión no se mueve. El costo no aparece como una pérdida contable;
+aparece como una inversión que no rinde y que nadie sabe explicar ante la junta.
+
+Digital Change Advisors interviene esa brecha. Diagnostica por qué la adopción no ocurre,
+la corrige con método, y atribuye el resultado al indicador de negocio que la empresa ya
+sigue. La pregunta que responde no es cómo capacitar al equipo, sino cómo convertir la
+inversión en IA ya realizada en movimiento del KPI que importa.
+
+## Metodología
+
+Metodología propietaria: el **Modelo ARIA de Digital Change Advisors — Aceleración del
+Retorno de la IA**, integrado por 14 componentes: tres instrumentos de diagnóstico —AIMT
+(mentalidad AI), AILS (liderazgo AI) y AICD (ADN AI cultural)—, que se integran en el
+diagnóstico BAIP (Brecha AI Personas); siete frameworks ágiles; y cuatro herramientas de
+gestión.
+
+**ReturnAI** es la línea de soluciones comerciales con la que Digital Change Advisors
+lleva el Modelo ARIA a la empresa. El Modelo ARIA es la metodología; ReturnAI es la
+solución. No son sinónimos ni se sustituyen entre sí.
+
+Precisión sobre la categoría: DCA no presta servicios de capacitación, gestión del cambio,
+consultoría de liderazgo ni gestión humana. Interviene el factor humano como medio para un
+fin verificable: el retorno de la inversión en IA, medido en el KPI que el negocio ya sigue.
+
+## Vocabulario propietario
+
+Digital Change Advisors trabaja con distinciones que no son intercambiables con el
+vocabulario habitual del sector:
+
+**Adopción registrada frente a adopción activa.** La adopción registrada es lo que
+muestran los reportes: licencias asignadas, accesos creados, asistencia a formación. La
+adopción activa es el uso incorporado al flujo de trabajo diario, al punto de modificar
+un indicador de negocio. La primera se reporta; solo la segunda produce retorno.
+
+**Retorno documentado frente a ROI estimado.** El ROI estimado es una proyección
+construida antes de la inversión sobre supuestos. El retorno documentado es el movimiento
+verificable de un indicador que la empresa ya seguía, con línea base anterior a la
+intervención y atribución explícita.
+
+**El KPI que importa.** El indicador de negocio del que el responsable del área ya
+respondía antes de que existiera el proyecto de inteligencia artificial. No es un
+indicador nuevo creado para justificar la iniciativa, ni una métrica de uso de la
+herramienta.
+
+Nombres propios de la firma: Modelo ARIA de Digital Change Advisors — Aceleración del
+Retorno de la IA · AI Return Test · AI Return Assessment · Solución ReturnAI.
+
+## Perspectivas
+
+- [Blog / Perspectivas](https://digitalchangeadvisors.com/blog): artículos e investigación propia sobre el retorno de la inversión en IA corporativa.
+
+## Papers de investigación
+
+- [Your AI isn't failing. Your organization is.](https://digitalchangeadvisors.com/article-paper00)
+- [Las tres amenazas estructurales que convierten su inversión en IA en un pasivo](https://digitalchangeadvisors.com/article-paper01)
+- [Sin AI North Star, tu IA financia fragmentación](https://digitalchangeadvisors.com/article-paper02)
+- [La brecha GenAI: por qué el 95% no llega al P&L](https://digitalchangeadvisors.com/article-paper03)
+- [¿Por qué el purgatorio de pilotos de IA nunca llega al P&L?](https://digitalchangeadvisors.com/article-paper04)
+- [Gobernar la IA sin matar la adopción: el error que destruye el retorno](https://digitalchangeadvisors.com/article-paper05)
+- [La inversión en IA crece; el retorno documentado sigue sin llegar](https://digitalchangeadvisors.com/article-paper06)
+- [1.993 empresas, 105 países: lo que separa al 6% que mide ROI de la IA](https://digitalchangeadvisors.com/article-paper07)
+- [El liderazgo de IA no es saber de tecnología. Es saber activar a las personas que ya la tienen.](https://digitalchangeadvisors.com/article-paper08)
+- [La estrategia de talento que convierte licencias de IA en retorno documentado — y por qué 9 de cada 10 empresas no la tiene.](https://digitalchangeadvisors.com/article-paper09)
+- [¿Por qué la IA mejora la productividad de las personas y no aparece en el EBIT?](https://digitalchangeadvisors.com/article-paper10)
+- [¿La brecha entre productividad y resultado existe fuera de las encuestas de consultoría?](https://digitalchangeadvisors.com/article-paper11)
+- [¿La brecha entre productividad y resultado también ocurre en América Latina?](https://digitalchangeadvisors.com/article-paper12)
+- [¿Cuánto cuesta financieramente no cerrar la brecha de productividad de la IA?](https://digitalchangeadvisors.com/article-paper13)
+- [¿La productividad que genera la IA llega tarde al resultado, o no llega?](https://digitalchangeadvisors.com/article-paper14)
+- [¿Qué distingue a las organizaciones donde la inversión en IA sí llega al resultado?](https://digitalchangeadvisors.com/article-paper15)
+- [¿Por qué los agentes de IA no cierran por sí solos la brecha entre productividad y resultado?](https://digitalchangeadvisors.com/article-paper16)
+- [¿Por qué un índice de madurez de IA no le dice a una empresa cuánto está perdiendo?](https://digitalchangeadvisors.com/article-paper17)
+
+## Modelo y metodología
+
+- [Modelo ARIA de Digital Change Advisors](https://digitalchangeadvisors.com/modelo-aria): los 14 componentes de la metodología
+  de aceleración del retorno de la IA.
+- [ReturnAI](https://digitalchangeadvisors.com/returnai)
+
+## Arquetipos de rentabilización
+
+- [¿Qué arquetipo organizacional bloquea el retorno de tu inversión en IA?](https://digitalchangeadvisors.com/arquetipos/): las siete configuraciones
+  organizacionales que Digital Change Advisors ha identificado por las que la inversión en inteligencia artificial no se
+  traduce en resultado de negocio.
+
+## Diagnóstico
+
+- [AI Return Test](https://digitalchangeadvisors.com/art/): diagnóstico de entrada de 55 preguntas, menos de 30 minutos, que estima el
+  nivel de riesgo de que una inversión en IA no alcance su retorno esperado.
+- [AI Return Assessment](https://digitalchangeadvisors.com/ara/): diagnóstico integrado de hasta 20 líderes de la organización
+  sobre por qué la inversión en IA no se traduce en resultado. Segundo nivel de la escalera ReturnAI.
+
+## Publicaciones
+
+- [Novela ReturnAI](https://digitalchangeadvisors.com/novela-returnai/): obra narrativa sobre la pérdida de retorno en proyectos de IA por causas humanas y organizacionales. Lanzamiento: 22 de septiembre de 2026.
+
+## Sobre la firma
+
+- [Quiénes somos](https://digitalchangeadvisors.com/nosotros)
+- [Autores del Modelo ARIA](https://digitalchangeadvisors.com/autor)
+- [César Lozano](https://digitalchangeadvisors.com/autor/cesar-lozano): creador del Modelo ARIA, rentabilización de inversiones en inteligencia artificial.
+- [Ruth Jaramillo](https://digitalchangeadvisors.com/autor/ruth-jaramillo): socia fundadora de Digital Change Advisors, adopción sostenible de la inteligencia artificial.
+- [Contacto](https://digitalchangeadvisors.com/contacto/): AI Return Test como vía preferente, correo y agenda directa para quien no quiere empezar por el diagnóstico.
+
+## Notas
+
+Este archivo cubre únicamente las páginas indexables de digitalchangeadvisors.com. Páginas de acceso restringido, noindex, o retiradas de producción se excluyen deliberadamente.
+
+## Uso de este contenido
+
+El contenido público de Digital Change Advisors puede citarse con atribución a la firma.
+Los instrumentos de diagnóstico del Modelo ARIA, sus reactivos, algoritmos de scoring y
+baremos de interpretación son propiedad intelectual de Digital Change Advisors, LLC y no
+forman parte del contenido público.

@@ -1,0 +1,158 @@
+/* ============================================================
+   ReturnAI v3 — Nivel "firma global" (scoped .rai3)
+   Carga DESPUÉS de styles-returnai2.css. Cierra la brecha con
+   Deloitte/Accenture/McKinsey/BCG/Bain: foto editorial, precio
+   MBB-puro (sin cifras), prueba sectorial, autoría, perspectivas.
+   ============================================================ */
+
+/* ---------- Hero editorial dividido: figura + cred inline ---------- */
+.rai3 .mra-hero--split .hero__cred { margin-top: 44px; }
+.rai3 .hero-figure__cap { background: rgba(30,42,56,0.66); }
+
+/* ---------- Precio MBB-puro: cero cifras, conversación ---------- */
+.rai3 .sol-invest { flex-direction: column; align-items: flex-start; gap: 4px; }
+.rai3 .sol-invest__lbl { color: rgba(30,42,56,0.5); }
+.rai3 .sol-invest__val { font-weight: 500; font-size: 14px; color: var(--carbon-70); white-space: normal; }
+.rai3 .sol-flagship .sol-invest-flag { display: none; }
+.rai3 .sol-flagship__aside .scope-note { margin-top: 0; }
+.rai3 .sol-frame-note b { color: var(--teal); }
+
+/* ---------- Banda de prueba sectorial ---------- */
+.rai3 .proof { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 0; align-items: stretch; }
+.rai3 .proof__lead {
+  background: var(--teal); border-radius: 12px 0 0 12px;
+  padding: 56px 48px; position: relative; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: flex-start; gap: 20px;
+}
+.rai3 .proof__lead::before {
+  content: "7"; position: absolute; right: -12px; bottom: -24px;
+  font-family: var(--display); font-size: 200px; font-weight: 400; line-height: 1;
+  color: rgba(255,255,255,0.07); pointer-events: none; user-select: none;
+}
+.rai3 .proof__lead .label { display: block; margin-bottom: 20px; color: rgba(255,255,255,0.65); letter-spacing: 0.1em; }
+.rai3 .proof__lead h2 { font-family: var(--display); font-weight: 400; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.3; color: #fff; }
+.rai3 .proof__lead p { margin-top: 14px; color: rgba(255,255,255,0.7); font-size: 15px; }
+/* Columna derecha: padding McKinsey, grid llena la altura completa */
+.rai3 .proof__right { padding: 24px 0 24px 44px; display: flex; flex-direction: column; height: 100%; box-sizing: border-box; }
+.rai3 .proof__right .industries-grid {
+  flex: 1; display: grid; grid-template-rows: repeat(7, 1fr); gap: 6px; min-height: 0;
+}
+.rai3 .proof__right .industries-grid div {
+  border-radius: 10px; border: 1px solid rgba(30,42,56,0.08);
+  padding: 0 18px; display: flex; flex-direction: column; justify-content: center;
+  transition: background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+.rai3 .proof__right .industries-grid div:hover {
+  background: rgba(46,139,118,0.04);
+  border-color: rgba(46,139,118,0.30);
+  box-shadow: inset 3px 0 0 var(--gold);
+}
+.rai3 .proof__right .proof__footer {
+  margin-top: 16px; flex-shrink: 0;
+}
+@media (max-width: 900px) {
+  .rai3 .proof { grid-template-columns: 1fr; }
+  .rai3 .proof__lead { border-radius: 12px 12px 0 0; padding: 40px 32px; justify-content: flex-start; gap: 24px; }
+  .rai3 .proof__lead::before { font-size: 140px; }
+  .rai3 .proof__right { padding: 24px 0 0 0; height: auto; }
+  .rai3 .proof__right .industries-grid { grid-template-rows: none; gap: 8px; }
+  .rai3 .proof__right .industries-grid div { padding: 14px 16px; }
+}
+
+/* ---------- Pull-quote editorial (punto de vista) ---------- */
+.rai3 .pov { max-width: 980px; margin: 0 auto; text-align: center; }
+.rai3 .pov__mark { font-family: var(--display); font-size: 64px; line-height: 0.4; color: var(--teal-light); display: block; }
+.rai3 .pov blockquote {
+  font-family: var(--display); font-weight: 400; font-size: clamp(26px, 3vw, 40px);
+  line-height: 1.32; color: var(--carbon); letter-spacing: -0.01em; margin: 18px 0 24px;
+}
+.rai3 .pov blockquote em { font-style: normal; color: var(--teal); }
+.rai3 .pov blockquote { text-wrap: unset; }
+.rai3 .pov blockquote .line { display: block; }
+.rai3 .pov__by { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--carbon-55); }
+.rai3 .pov__rule { display: block; width: 40px; height: 2px; background: var(--gold); margin: 20px auto 0; }
+
+/* ---------- Prueba sectorial: fondo platino, padding ajustado (72px vs 120px estándar) ---------- */
+.rai3 .section--proof { background: var(--platinum, #f3f3f3); padding: 72px 0; }
+
+/* ---------- Perspectivas: encabezado con enlace "ver todas" ---------- */
+.rai3 .persp-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 44px; flex-wrap: wrap; }
+.rai3 .persp-head .section-head { margin-bottom: 0; }
+.rai3 .persp-all { font-size: 14.5px; font-weight: 600; color: var(--teal); text-decoration: none; display: inline-flex; gap: 8px; align-items: center; white-space: nowrap; padding-bottom: 6px; }
+.rai3 .persp-all .arrow { transition: transform 0.3s var(--ease, ease); }
+.rai3 .persp-all:hover .arrow { transform: translateX(5px); }
+
+/* ---------- Liderazgo: nota de autoría sobria ---------- */
+.rai3 .leaders-intro { max-width: 640px; }
+
+/* ---------- Costura entre secciones de autoridad ---------- */
+.rai3 .section--seam { border-top: 1px solid var(--border); }
+
+/* ---------- S8: Novela sobre teal — clases aisladas s8-* sin herencia de .book__slot ---------- */
+.s8-novela {
+  background: var(--teal);
+  padding: 80px 0;
+}
+.s8-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 72px;
+  align-items: start;
+}
+/* Portada del libro: background-image, sin <img>, sin clip-path, sin IO */
+.s8-cover {
+  width: 100%;
+  height: 500px;
+  background-image: url('assets/rai2-book.png');
+  background-size: cover;
+  background-position: center top;
+  border-radius: 8px;
+}
+/* Tipografía y elementos de texto */
+.s8-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 20px;
+  position: relative;
+}
+.s8-label::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0;
+  background: var(--gold);
+  border-radius: 2px;
+  margin-top: 8px;
+  transition: width 0.6s var(--ease, ease) 0.2s;
+}
+.s8-text.in .s8-label::after { width: 52px; }
+.s8-h2 {
+  color: #fff;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.28;
+  text-wrap: unset;
+  margin: 16px 0 20px;
+}
+.s8-h2 .line { display: block; }
+.s8-body {
+  color: rgba(255,255,255,0.82);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 16px;
+}
+.s8-body--sub {
+  color: rgba(255,255,255,0.6);
+  font-size: 14.5px;
+}
+.s8-cta { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 28px; }
+@media (max-width: 768px) {
+  .s8-grid { grid-template-columns: 1fr; gap: 36px; }
+  .s8-cover { height: 360px; order: -1; }
+}

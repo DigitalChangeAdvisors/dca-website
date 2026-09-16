@@ -1,0 +1,60 @@
+/* ============================================================
+   v6 — Motion expresivo y sobrio (solo lo carga Homepage v6.html)
+   ============================================================ */
+
+/* ---------- Nav que se condensa ---------- */
+.v6 .nav__inner { transition: padding 0.35s var(--ease); }
+.v6 .nav.scrolled .nav__inner { padding-top: 13px; padding-bottom: 13px; }
+.v6 .logo { transition: font-size 0.35s var(--ease); }
+.v6 .nav.scrolled .logo { font-size: 23px; }
+
+/* ---------- Revelado de titulares por palabras ---------- */
+.v6 [data-reveal].rf { transform: none !important; }
+.v6 [data-anim="words"] .word { display: inline-block; overflow: hidden; padding: 0.12em 0; margin: -0.12em 0; vertical-align: top; }
+.v6 [data-anim="words"] .word__i { display: inline-block; transform: translateY(115%); transition: transform 0.72s var(--ease); }
+.v6 [data-anim="words"].in .word__i { transform: translateY(0); }
+
+/* ---------- CTA magnético ---------- */
+.v6 .btn--lg { transition: transform 0.3s var(--ease), box-shadow 0.35s var(--ease), background 0.35s var(--ease); }
+
+/* ---------- Cifras del método: count-up + subrayado ---------- */
+.v6 .method-strip div { position: relative; }
+.v6 .ms-line { height: 2px; width: 0; background: var(--gold); margin-top: 14px; transition: width 0.8s var(--ease) 0.35s; }
+.v6 .method-strip.in .ms-line { width: 34px; }
+
+/* ---------- Diagrama-puente vivo ---------- */
+.v6 #bridgeDot { filter: drop-shadow(0 0 7px rgba(46,139,118,0.55)); animation: dotPulse 1.9s ease-in-out infinite; }
+@keyframes dotPulse { 0%, 100% { r: 8px; } 50% { r: 10px; } }
+.v6 #bridgeFlow { animation: flowMove 1.5s linear infinite; }
+@keyframes flowMove { to { stroke-dashoffset: -32; } }
+.v6 #bridgeRing { opacity: 0; }
+.v6 .bridge__svg.is-complete #bridgeRing { animation: ringOut 1.7s ease-out forwards; }
+@keyframes ringOut { 0% { r: 13px; opacity: 0.55; } 100% { r: 38px; opacity: 0; } }
+
+/* ---------- Íconos ARIA que se dibujan ---------- */
+.v6 .aria2__step .iconbox svg path { transition: stroke-dashoffset 0.9s var(--ease); }
+
+/* ---------- Acento activo del stepper ---------- */
+.v6 .aria2__stepper li { position: relative; padding-left: 18px; }
+.v6 .aria2__stepper li::before {
+  content: ""; position: absolute; left: 0; top: 50%; width: 3px; height: 58%;
+  background: var(--teal); transform: translateY(-50%) scaleY(0); transform-origin: center;
+  transition: transform 0.45s var(--ease); border-radius: 2px;
+}
+.v6 .aria2__stepper li.active::before { transform: translateY(-50%) scaleY(1); }
+
+/* ---------- Hover refinado: Perspectivas / Liderazgo ---------- */
+.v6 .insight__img { transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease); }
+.v6 .insight:hover .insight__img { transform: translateY(-4px) scale(1.015); box-shadow: 0 18px 42px rgba(30,42,56,0.13); }
+.v6 .insight h3::after { content: "  \2192"; color: var(--teal); opacity: 0; margin-left: 2px; transition: opacity 0.3s var(--ease); }
+.v6 .insight:hover h3::after { opacity: 1; }
+.v6 .leader__photo { transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease); }
+.v6 .leader:hover .leader__photo { transform: translateY(-4px) scale(1.01); box-shadow: 0 18px 42px rgba(30,42,56,0.12); }
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .v6 [data-anim="words"] .word__i { transform: none !important; transition: none !important; }
+  .v6 #bridgeDot, .v6 #bridgeFlow, .v6 #bridgeRing { animation: none !important; }
+  .v6 .ms-line { transition: none !important; width: 34px; }
+  .v6 .nav__inner, .v6 .logo { transition: none !important; }
+}

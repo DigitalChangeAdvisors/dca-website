@@ -1,0 +1,78 @@
+/* ============================================================
+   ReturnAI v4 — Bridge auto-play (IntersectionObserver)
+   Reemplaza el scrollytelling pinneado (260vh) con una sección
+   de altura normal cuya animación se auto-dispara al entrar
+   al viewport. Elimina la dependencia del scroll manual.
+   ============================================================ */
+
+/* ---------- 1 · BRIDGE EN AUTO-PLAY (pieza central) ---------- */
+.rai4-scrolly { background: rgba(46,139,118,0.04); position: relative; padding: 72px 0; }
+.rai4-scrolly__inner { height: auto; }
+.rai4-scrolly__pin { position: static; height: auto; display: block; overflow: visible; }
+.rai4-scrolly .section-head { margin-bottom: 0; }
+.rai4-scrolly .section-head h2 {
+  font-size: clamp(22px, 2.4vw, 32px);
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.rai4-scrolly .section-head h2 .line { display: block; }
+.rai4-scrolly .section-head .chapeau { max-width: 640px; margin-left: auto; margin-right: auto; }
+
+.rai4-bridge { position: relative; max-width: 760px; margin: 24px auto 0; width: 100%; }
+.rai4-scrolly .bridge__legend { display: none; }
+
+/* Beats: aparecen uno a uno sincronizados a la animación y se acumulan en columna */
+.rai4-beats { display: flex; flex-direction: column; gap: 20px; max-width: 720px; margin: 40px auto 0; }
+.rai4-beat {
+  font-size: 16.5px; line-height: 1.55; color: var(--carbon-70); text-align: left;
+  opacity: 0; transform: translateY(10px); will-change: opacity, transform;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.rai4-beat b { color: var(--teal); font-weight: 600; }
+.rai4-beat .n {
+  display: block; font-family: var(--display); font-size: 13px; color: var(--gold);
+  letter-spacing: 0.1em; margin-bottom: 6px;
+}
+
+/* Fallback: beats visibles estáticos sin transición */
+@media (prefers-reduced-motion: reduce) {
+  .rai4-beat { transition: none; opacity: 1; transform: none; }
+}
+@media (max-width: 600px) {
+  .rai4-beat { transition: none; opacity: 1; transform: none; }
+}
+
+/* ---------- 2 · NAV DE CAPÍTULO PERSISTENTE ---------- */
+.rai4 .section-nav a.active .lbl { opacity: 1; transform: translateX(0); }
+.rai4 .section-nav a.active .lbl { background: var(--carbon); color: #fff; border-color: var(--carbon); box-shadow: 0 8px 24px rgba(30,42,56,0.18); }
+.rai4 .section-nav.on-dark a.active .lbl { background: #fff; color: var(--carbon); }
+
+/* ---------- 3 · MICRO-INTERACCIONES REFINADAS ---------- */
+.rai4 .sol-card { transition: transform 0.45s var(--ease, ease), box-shadow 0.45s var(--ease, ease), border-color 0.45s var(--ease, ease); }
+.rai4 .sol-card:hover { transform: translateY(-7px); box-shadow: 0 26px 60px rgba(46,139,118,0.14); border-color: var(--teal-light); }
+.rai4 .comp-card:hover { box-shadow: 0 26px 60px rgba(46,139,118,0.13); border-color: var(--teal-light); }
+.rai4 .stage { transition: transform 0.45s var(--ease, ease), box-shadow 0.45s var(--ease, ease); }
+.rai4 .stage:hover { transform: translateY(-5px); box-shadow: 0 22px 50px rgba(30,42,56,0.10); }
+
+.rai4 .btn--primary { position: relative; overflow: hidden; }
+.rai4 .btn--primary::after {
+  content: ""; position: absolute; top: 0; left: -120%; width: 60%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: skewX(-18deg); transition: left 0.6s var(--ease, ease);
+}
+.rai4 .btn--primary:hover::after { left: 140%; }
+
+.rai4 .sol-card__cta:hover .arrow,
+.rai4 .system-link a:hover .arrow,
+.rai4 .persp-all:hover .arrow { transform: translateX(6px); }
+
+/* ---------- 4 · RITMO Y ENTRADA ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .js .rai4 .sol-grid > [data-reveal] { transform: translateY(34px) scale(0.985); }
+  .js .rai4 .sol-grid > [data-reveal].in { transform: none; }
+  .js .rai4 .comp-cards > [data-reveal] { transform: translateY(40px); }
+  .js .rai4 .comp-cards > [data-reveal].in { transform: none; }
+}
+
+.rai4 .hero-figure :is(image-slot,img) { box-shadow: 0 30px 70px rgba(30,42,56,0.16); }

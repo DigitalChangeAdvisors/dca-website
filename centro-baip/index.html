@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Centro de Ayuda · Certificación Analista BAIP · DCA</title>
+<meta name="description" content="Centro de ayuda vivo de la Certificación Analista BAIP — Digital Change Academy. Preguntas frecuentes de plataforma y contenido.">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     CENTRO DE AYUDA BAIP · DOCUMENTO VIVO
+     ▸ Para AÑADIR o EDITAR una pregunta NO necesitas tocar el diseño.
+       Baja hasta el bloque «const FAQ = [ ... ]» (buscá "EDITA AQUÍ" más abajo)
+       y copia la plantilla de una entrada. Eso es todo.
+     ▸ Marca DCA: Marcellus + Montserrat · teal #2e8b76 · oro #a48111 · carbón #1e2a38.
+════════════════════════════════════════════════════════════════════════════ -->
+<style>
+  :root{
+    --teal:#2e8b76; --teal-dk:#247060; --gold:#a48111; --carbon:#1e2a38;
+    --platinum:#dfe3e1; --teal-bg:rgba(46,139,118,.06); --teal-bd:rgba(46,139,118,.18);
+    --gold-bg:rgba(164,129,17,.06); --grey:#6b7280;
+    --fd:'Marcellus',Georgia,serif; --fb:'Montserrat','Helvetica Neue',sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--fb);color:var(--carbon);background:#eef0ef;font-size:15px;line-height:1.7;}
+
+  /* ── Hero ── */
+  .hero{background:var(--carbon);padding:38px 22px 34px;}
+  .hero-in{max-width:840px;margin:0 auto;}
+  .hero .kicker{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;}
+  .hero h1{font-family:var(--fd);font-weight:400;color:#fff;font-size:34px;margin:10px 0 6px;line-height:1.15;}
+  .hero p{color:rgba(255,255,255,.72);font-size:14px;margin:0;max-width:600px;}
+  .hero .visual{height:5px;width:70px;background:var(--teal);border-radius:3px;margin-top:18px;}
+
+  .wrap{max-width:840px;margin:0 auto;padding:26px 22px 70px;}
+
+  .intro{background:var(--teal-bg);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;
+         padding:14px 18px;font-size:13.5px;color:rgba(30,42,56,.82);margin-bottom:24px;}
+  .intro b{color:var(--carbon);}
+
+  /* ── Controles ── */
+  .controls{position:sticky;top:0;background:#eef0efe6;backdrop-filter:blur(6px);
+            padding:14px 0 12px;margin-bottom:8px;z-index:5;}
+  .search{width:100%;padding:13px 16px;border:1.5px solid var(--platinum);border-radius:10px;
+          font-family:inherit;font-size:15px;color:var(--carbon);background:#fff;outline:none;transition:border-color .2s;}
+  .search:focus{border-color:var(--teal);}
+  .search::placeholder{color:rgba(30,42,56,.4);}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center;}
+  .chips .lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--grey);margin-right:2px;}
+  .chip{border:1.5px solid var(--platinum);background:#fff;color:var(--carbon);border-radius:20px;
+        padding:6px 14px;font-family:inherit;font-size:12.5px;font-weight:600;cursor:pointer;transition:all .18s;}
+  .chip:hover{border-color:var(--teal);}
+  .chip.on{background:var(--teal);border-color:var(--teal);color:#fff;}
+  .chip.on.gold{background:var(--gold);border-color:var(--gold);}
+  .sep{width:1px;align-self:stretch;background:var(--platinum);margin:0 4px;}
+
+  .count{font-size:12px;color:var(--grey);margin:6px 2px 16px;}
+
+  /* ── Entradas (acordeón) ── */
+  .item{background:#fff;border:1px solid #e6e8e7;border-radius:12px;margin-bottom:12px;overflow:hidden;
+        transition:box-shadow .2s;}
+  .item:hover{box-shadow:0 2px 14px rgba(30,42,56,.06);}
+  .q{display:flex;align-items:flex-start;gap:12px;padding:16px 18px;cursor:pointer;}
+  .q:hover{background:#fbfbfb;}
+  .q .txt{flex:1;}
+  .q .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px;}
+  .tag{font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:5px;}
+  .tag.plataforma{background:var(--teal-bg);color:var(--teal-dk);}
+  .tag.contenido{background:var(--gold-bg);color:var(--gold);}
+  .tag.sprint{background:#eef0ef;color:var(--grey);}
+  .q .pregunta{font-weight:600;font-size:15px;color:var(--carbon);line-height:1.45;}
+  .q .caret{color:var(--teal);font-size:18px;line-height:1;margin-top:2px;transition:transform .2s;flex-shrink:0;}
+  .item.open .caret{transform:rotate(90deg);}
+  .a{display:none;padding:0 18px 18px 18px;}
+  .item.open .a{display:block;}
+  .a-inner{border-top:1px solid #f0f0f0;padding-top:14px;}
+  .a p{margin:0 0 10px;font-size:14px;line-height:1.75;color:rgba(30,42,56,.88);}
+  .a p:last-child{margin-bottom:0;}
+  .a strong{color:var(--carbon);}
+  .a .upd{font-size:11px;color:var(--grey);margin-top:12px;font-style:italic;}
+
+  .empty{text-align:center;color:var(--grey);padding:50px 20px;font-size:14px;}
+
+  footer{border-top:1px solid var(--platinum);margin-top:40px;padding-top:20px;text-align:center;
+         font-size:12px;color:var(--grey);}
+  footer .gold{color:var(--gold);font-weight:600;}
+
+  /* ── Selector de vista (FAQ / Glosario) ── */
+  .views{display:flex;gap:8px;margin-bottom:22px;}
+  .view-btn{flex:1;border:1.5px solid var(--platinum);background:#fff;color:var(--carbon);
+            border-radius:10px;padding:12px 14px;font-family:inherit;font-size:13.5px;font-weight:600;
+            cursor:pointer;transition:all .18s;text-align:center;}
+  .view-btn:hover{border-color:var(--teal);}
+  .view-btn.on{background:var(--carbon);border-color:var(--carbon);color:#fff;}
+
+  /* ── Glosario ── */
+  .g-item{background:#fff;border:1px solid #e6e8e7;border-left:3px solid var(--gold);border-radius:0 12px 12px 0;
+          margin-bottom:12px;padding:16px 18px;scroll-margin-top:96px;transition:box-shadow .2s,background .4s;}
+  .g-item:hover{box-shadow:0 2px 14px rgba(30,42,56,.06);}
+  .g-item.flash{background:var(--gold-bg);}
+  .g-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;}
+  .g-term{font-family:var(--fd);font-size:17px;color:var(--carbon);}
+  .g-def{font-size:14px;line-height:1.7;color:rgba(30,42,56,.88);margin:0;}
+  .g-def strong{color:var(--carbon);}
+  .g-also{font-size:12px;color:var(--grey);margin-top:6px;font-style:italic;}
+
+  @media (max-width:600px){
+    .hero h1{font-size:27px;} .wrap{padding:20px 16px 60px;}
+    .views{flex-direction:column;}
+  }
+  @media print{
+    .controls,.hero .visual,.views{display:none;} body{background:#fff;}
+    .item,.g-item{break-inside:avoid;} .a{display:block!important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-in">
+    <div class="kicker">Digital Change Academy · Certificación Analista BAIP</div>
+    <h1>Centro de Ayuda</h1>
+    <p>Tu compañero de consulta durante la certificación. Respuestas a las dudas más frecuentes sobre la plataforma y el contenido de los sprints.</p>
+    <div class="visual"></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="intro">
+    <b>¿Cómo usar este centro?</b> Escribe una palabra en el buscador (p. ej. «niveles», «PDF», «envío») o filtra por frente y sprint. Haz clic en cualquier pregunta para ver la respuesta. En el <b>Glosario</b> encuentras el significado de los términos técnicos del roadmap — también puedes llegar a un término haciendo clic en su enlace dentro del documento. Es un <b>documento vivo</b>: crece a medida que avanza la certificación. ¿No encuentras tu duda? Escríbele a tu facilitador.
+  </div>
+
+  <div class="views">
+    <button class="view-btn on" id="vb-faq" onclick="showView('faq')">❓ Preguntas frecuentes</button>
+    <button class="view-btn" id="vb-glosario" onclick="showView('glosario')">📖 Glosario de términos</button>
+  </div>
+
+  <div id="view-faq">
+    <div class="controls">
+      <input id="search" class="search" placeholder="🔍  Busca por palabra clave…" oninput="render()">
+      <div class="chips">
+        <span class="lbl">Frente</span>
+        <button class="chip on" data-frente="todo" onclick="setFrente('todo')">Todo</button>
+        <button class="chip" data-frente="plataforma" onclick="setFrente('plataforma')">Plataforma</button>
+        <button class="chip" data-frente="contenido" onclick="setFrente('contenido')">Contenido</button>
+        <span class="sep"></span>
+        <span class="lbl">Sprint</span>
+        <span id="sprint-chips"></span>
+      </div>
+    </div>
+
+    <div class="count" id="count"></div>
+    <div id="list"></div>
+  </div>
+
+  <div id="view-glosario" hidden>
+    <div class="controls">
+      <input id="g-search" class="search" placeholder="🔍  Busca un término…" oninput="renderGlosario()">
+    </div>
+
+    <div class="count" id="g-count"></div>
+    <div id="g-list"></div>
+  </div>
+
+  <footer>
+    <div>Digital Change Advisors · Modelo ARIA</div>
+    <div class="gold">Documento vivo — se enriquece con cada cohorte.</div>
+  </footer>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════════════════════════════════
+   ▼▼▼  EDITA AQUÍ  ▼▼▼   ·   CONTENIDO DEL CENTRO DE AYUDA
+   ───────────────────────────────────────────────────────────────────────────
+   Para AÑADIR una pregunta, copia esta plantilla dentro de la lista y rellénala:
+
+     {
+       sprint: "01",              // "01", "02", … o "General" (aplica a todos)
+       frente: "contenido",       // "plataforma"  ó  "contenido"
+       pregunta: "¿Tu pregunta?",
+       respuesta:
+         "Primer párrafo. Puedes usar **negrita** con dobles asteriscos.\n\n" +
+         "Segundo párrafo: separa párrafos con una línea en blanco (\\n\\n).",
+       actualizado: "2026-07-16"  // fecha AAAA-MM-DD
+     },
+
+   Reglas simples:
+   • El texto va entre comillas dobles "  ".  Si necesitas comillas dentro, usa « »  ó  ‘ ’.
+   • Cada entrada termina en coma  } ,
+   • **texto**  se ve en negrita.   \n\n  crea un párrafo nuevo.
+   ═══════════════════════════════════════════════════════════════════════════ */
+const FAQ = [
+
+  {
+    sprint: "General",
+    frente: "plataforma",
+    pregunta: "Al empezar a escribir, las preguntas guía dentro del recuadro desaparecen y ya no sé qué responder.",
+    respuesta:
+      "Es una observación muy justa y ya está corregida. Antes las preguntas guía aparecían como texto de ayuda **dentro** del recuadro y se ocultaban al escribir la primera letra —fue un límite de diseño, no un descuido tuyo—.\n\n" +
+      "En la versión actual las preguntas quedan **fijas y visibles** todo el tiempo, en un bloque justo encima del recuadro, así puedes consultarlas mientras redactas. Si abriste el documento antes de la actualización, **recárgalo** (tu trabajo se conserva por el autoguardado).\n\n" +
+      "Un consejo que siempre suma: si una respuesta es larga, esbózala por partes usando cada pregunta guía como subtítulo.",
+    actualizado: "2026-07-16"
+  },
+
+  {
+    sprint: "01",
+    frente: "contenido",
+    pregunta: "¿Cómo interpreto los niveles del reporte? Entiendo «extendido» o «foco senior», pero cuando dice solo «Cautela» o «Vulnerable», ¿qué significa?",
+    respuesta:
+      "Vale la pena separar dos cosas que el reporte junta. Una es el **nivel** —el estado de ese obstáculo en la escala **Cautela → Vulnerable → Diestro → Óptimo**, de más frágil a más maduro— y otra es el **alcance** —dónde se concentra ese estado: **extendido** (transversal a toda la unidad), **foco senior** (en los perfiles senior) o **en la base** (en la base de la pirámide)—.\n\n" +
+      "Cuando el reporte dice «Diestro en la base» te da las dos cosas: nivel + dónde. Cuando dice solo «Cautela» o «Vulnerable», sin apellido de alcance, léelo como el estado del grupo **como unidad** para ese obstáculo, no como algo repartido a medias: si hubiera un foco por segmento, el reporte lo nombraría, como sí hace con «senior» o «base».\n\n" +
+      "Para tu análisis lo que manda es el **nivel y el peso** del obstáculo (priorizas por «mayor peso × nivel más bajo»). El alcance es contexto adicional, **no** criterio de priorización — no lo sobre-interpretes o desviarás la conclusión.",
+    actualizado: "2026-07-16"
+  },
+
+  {
+    sprint: "General",
+    frente: "contenido",
+    pregunta: "En un caso real, ¿cómo se recolecta la información de contexto? ¿Cuántas entrevistas, quién las hace? De su calidad depende la calidad del análisis.",
+    respuesta:
+      "Excelente pregunta, y toca una **frontera de rol** que conviene tener clarísima. En BAIP tu trabajo como analista es leer el **consolidado ya procesado**: no diseñas ni ejecutas el levantamiento de información.\n\n" +
+      "Ese levantamiento —cómo se recoge el contexto, a quién se entrevista, con qué muestra— es responsabilidad de otro rol: el **Líder de Proyecto ReturnAI** que gestiona la cuenta de cada cliente. Es ese rol el que garantiza la calidad de la información de contexto (tienes toda la razón en que de ahí depende la calidad del análisis), siguiendo un protocolo estructurado que recibe como parte de su certificación **Champion ReturnAI**.\n\n" +
+      "A ti te llega el consolidado listo para analizar; tu valor está en leer las tres lentes (AIMT, AILS, AICD), triangular y traducir a **causa raíz** para el responsable del retorno. Así la cadena queda limpia: quien mide (Champion ReturnAI) y quien analiza (Analista BAIP) son roles distintos y complementarios.",
+    actualizado: "2026-07-16"
+  },
+
+  {
+    sprint: "General",
+    frente: "plataforma",
+    pregunta: "Si cierro la pestaña o el navegador, ¿pierdo lo que escribí?",
+    respuesta:
+      "No. El instrumento tiene **autoguardado**: cada cosa que escribes se conserva automáticamente en tu dispositivo, en tiempo real. Puedes cerrar y volver más tarde y tu trabajo estará ahí.\n\n" +
+      "Un detalle importante: el guardado es **por navegador y dispositivo** (no en la nube). Si retomas desde **el mismo computador y el mismo navegador**, todo sigue. Si cambias de equipo o de navegador, o borras los datos de navegación, no verás lo anterior. Consejo: trabaja siempre desde el mismo lugar y **envía** cada experimento al terminarlo (ahí sí queda respaldado con DCA).",
+    actualizado: "2026-07-16"
+  },
+
+  {
+    sprint: "General",
+    frente: "plataforma",
+    pregunta: "Voy a cambiar de computador (por ejemplo, uso uno fijo pero voy a viajar con un portátil). ¿Tengo que volver a escribir lo que ya hice, o sigo con el siguiente experimento en el equipo nuevo?",
+    respuesta:
+      "Depende de un solo detalle: **¿ya le diste clic a «Enviar» en ese experimento y viste el «✓ Enviado» con número de recibo?**\n\n" +
+      "**Si ya lo enviaste:** no tienes que copiar ni volver a escribir nada. Ese envío quedó registrado con DCA sin importar el computador — abre el roadmap en el equipo nuevo y sigue directo con el siguiente experimento. Vas a ver los campos del experimento anterior en blanco ahí (el autoguardado es por navegador y dispositivo, no en la nube), y es normal: esa información ya está a salvo por el envío, no por el autoguardado local.\n\n" +
+      "Cuando el siguiente experimento te pida identificar el expediente o caso analizado, es solo una referencia corta (el nombre del caso) — no tienes que repetir tus párrafos completos. Eso sí, antes de cambiar de equipo te conviene darle clic a **«Guardar copia en PDF»** en el experimento que ya enviaste: así tienes tu propia copia completa a mano en el equipo nuevo por si quieres consultar algo mientras avanzas.\n\n" +
+      "**Si todavía NO lo has enviado:** hazlo antes de cambiar de equipo. Mientras no aparezca el «✓ Enviado» con recibo, esas respuestas solo existen en el navegador del computador donde las escribiste — si empiezas a trabajar desde el equipo nuevo sin haberlo enviado antes, esa versión no te va a aparecer ahí.",
+    actualizado: "2026-09-07"
+  },
+
+  {
+    sprint: "General",
+    frente: "plataforma",
+    pregunta: "¿Cómo envío mi experimento y cómo sé que de verdad llegó?",
+    respuesta:
+      "Al final de cada experimento hay un botón de **Enviar**. Al pulsarlo, la plataforma envía tu registro y espera la confirmación del servidor: solo verás el mensaje **«✓ Enviado» con un número de recibo** cuando la información salió correctamente. Si no aparece ese recibo, el envío **no** se completó.\n\n" +
+      "Para enviar necesitas haber llenado tu **correo** en la portada (es obligatorio: es donde recibirás copia y el feedback). Si algo falla, revisa tu conexión y que el correo esté bien escrito, y vuelve a intentar.",
+    actualizado: "2026-07-16"
+  },
+
+  {
+    sprint: "General",
+    frente: "plataforma",
+    pregunta: "Le di a «Enviar» pero no estoy seguro de que se haya enviado.",
+    respuesta:
+      "La regla es simple: **si no viste el «✓ Enviado» con recibo, no se completó** — la confirmación solo aparece cuando el servidor lo verifica, nunca «por si acaso».\n\n" +
+      "Vuelve a abrir el experimento (tu trabajo sigue guardado) y pulsa **Enviar** de nuevo. Revisa que tu correo esté bien escrito y que tengas conexión. Cuando llegue, verás el recibo y te entrará una copia por correo. Si tras varios intentos no lo logras, escríbele a tu facilitador.",
+    actualizado: "2026-07-16"
+  },
+
+  {
+    sprint: "General",
+    frente: "plataforma",
+    pregunta: "¿Cómo genero el PDF y qué incluye?",
+    respuesta:
+      "Cada experimento tiene un botón para generar un **PDF**. Ese PDF incluye **todo** lo que registraste —el contenido completo de cada campo, no solo lo que se ve en pantalla—, con la identificación del reporte. Es tu copia para archivo o para revisar offline.\n\n" +
+      "Ten presente que **generar el PDF no equivale a enviar**: el envío al facilitador es el botón de **Enviar**. El PDF es para ti.",
+    actualizado: "2026-07-16"
+  },
+
+  {
+    sprint: "General",
+    frente: "plataforma",
+    pregunta: "¿Es obligatorio enviar cada experimento?",
+    respuesta:
+      "Sí. El envío de cada experimento es lo que **habilita el feedback** de seguimiento de tu facilitador y es **requisito de acceso a la Sesión de Mentoría de Cohorte** que cierra el sprint. Trabaja, guarda, y **envía** al terminar cada uno.",
+    actualizado: "2026-07-16"
+  },
+
+  {
+    sprint: "General",
+    frente: "contenido",
+    pregunta: "¿Yo aplico el instrumento (AIMT/AILS/AICD) o solo leo el reporte?",
+    respuesta:
+      "**Solo lees** reportes ya procesados. Como Analista BAIP no aplicas el instrumento ni lanzas la medición: la Suite BAIP entrega el reporte procesado y tú trabajas sobre él.\n\n" +
+      "Tu oficio es **leer, clasificar, triangular y traducir a causa raíz** — no diseñar ni administrar la medición. Ese levantamiento es de otro rol (el Líder de Proyecto ReturnAI). Busca «recolecta la información de contexto» en este centro para el detalle de esa frontera de rol.",
+    actualizado: "2026-07-16"
+  },
+
+  {
+    sprint: "01",
+    frente: "contenido",
+    pregunta: "¿Qué diferencia hay entre «nivel base» y «nivel de campo»?",
+    respuesta:
+      "Cada experimento corre en dos niveles y ambos capturan evidencia válida:\n\n" +
+      "**Nivel base** — usas un **reporte-caso curado** (un perfil real anonimizado que entrega la plataforma). Está disponible para todo participante.\n\n" +
+      "**Nivel de campo** — aplicas la misma lectura sobre **reportes reales ya procesados**, cuando el nodo o un ARIA Squad de tu entorno los haya generado (tu propio equipo o un piloto accesible).\n\n" +
+      "Si no tienes acceso a un piloto, completa el experimento en nivel base **sin perder evidencia**. Declara el nivel al inicio, en el bloque de identificación.",
+    actualizado: "2026-07-16"
+  },
+
+  {
+    sprint: "General",
+    frente: "contenido",
+    pregunta: "¿Por qué priorizo por «mayor peso × nivel más bajo» y no por el promedio del reporte?",
+    respuesta:
+      "Porque el **promedio esconde el cuello de botella**. Un reporte con promedio «aceptable» puede tener un obstáculo crítico —de alto peso y nivel muy bajo— que está frenando todo el retorno. Si priorizas por promedio, ese obstáculo desaparece del radar.\n\n" +
+      "La causa raíz vive en el **obstáculo de mayor peso con el nivel más bajo**. Ahí es donde una intervención mueve la aguja. Tu entregable no es un tablero de niveles: es la causa raíz priorizada para el responsable del retorno.",
+    actualizado: "2026-07-16"
+  },
+
+  {
+    sprint: "General",
+    frente: "contenido",
+    pregunta: "¿Puedo pedirle a la IA que haga el análisis por mí?",
+    respuesta:
+      "No, y es a propósito. La IA es un **andamiaje**: úsala para **estresar** tu clasificación, contraargumentar tu hipótesis y pulir el lenguaje a tono de retorno. Pero **la priorización y el veredicto los decides tú** — la IA no tiene el criterio para generar el reporte por ti.\n\n" +
+      "El valor del Analista BAIP está justo ahí: en el juicio experto que triangula las tres lentes y nombra la causa raíz. Apóyate en la IA, no la sustituyas por ella.",
+    actualizado: "2026-07-16"
+  },
+
+  {
+    sprint: "01",
+    frente: "contenido",
+    pregunta: "¿Cuál es la diferencia entre un «freno de creencia» y un «freno de capacidad»?",
+    respuesta:
+      "Un **freno de creencia** es de mentalidad: la persona **no actúa aunque podría** —espera la orden, no se atreve, no confía en el valor de la IA—. Un **freno de capacidad** es de habilidad o recurso: **querría pero no sabe cómo** o le falta la herramienta.\n\n" +
+      "La distinción es decisiva para el retorno: **capacitar (freno de capacidad) sobre lo que en realidad es un freno de creencia desperdicia la inversión**, porque la formación no mueve una creencia. Primero mueves la creencia; después, si hace falta, capacitas. Ese es el corazón del Experimento 1.01.",
+    actualizado: "2026-07-16"
+  },
+
+  {
+    sprint: "01",
+    frente: "contenido",
+    pregunta: "¿Cuál es el entregable final del Sprint 01?",
+    respuesta:
+      "Un **reporte de causas raíz** dirigido al responsable del retorno: no un tablero de niveles ni un promedio global. Triangulas AIMT, AILS y AICD sobre un mismo grupo, priorizas el cuello de botella por «mayor peso × nivel más bajo», lo nombras y lo traduces a un lenguaje de retorno (con su costo de oportunidad y una decisión para el C-Level).\n\n" +
+      "En una frase: el analista no entrega datos, entrega **la causa raíz priorizada y accionable**.",
+    actualizado: "2026-07-16"
+  },
+
+];
+
+/* ════════════════════════════════════════════════════════════════════════════
+   GLOSARIO DE TÉRMINOS TÉCNICOS
+   ───────────────────────────────────────────────────────────────────────────
+   Para AÑADIR un término, copia esta plantilla dentro de la lista:
+
+     {
+       termino: "Nombre del término",
+       slug: "nombre-del-termino",   // sin tildes ni espacios — se usa en el enlace #g-slug
+       sprint: "02",                 // "01", "02", … o "General"
+       definicion:
+         "Explicación breve en tuteo, sin tecnicismos innecesarios. Puedes usar **negrita**.",
+       tambien: "",                  // opcional: variantes del término (p. ej. "encuadre de lanzamiento, encuadre de retorno")
+       orden: null                   // opcional: número para forzar un orden manual frente a otros términos con «orden»
+                                      // (por defecto el glosario se ordena alfabéticamente por «termino»)
+     },
+
+   Para enlazar el término desde un roadmap, usa:
+     <a class="gloss-link" href="https://digitalchangeadvisors.com/centro-baip/#g-nombre-del-termino" target="_blank" rel="noopener">texto</a>
+   ═══════════════════════════════════════════════════════════════════════════ */
+const GLOSARIO = [
+
+  {
+    termino: "Encuadre",
+    slug: "encuadre",
+    sprint: "General",
+    definicion:
+      "La manera en que se presenta o enmarca una decisión, un dato o un hallazgo ante quien lo recibe. El mismo contenido puede sostenerse o perderse según cómo se encuadre: no es lo mismo lanzar una campaña con un encuadre que protege el dato que con uno que lo contamina, ni presentar tu reporte en **lenguaje de retorno** que dejarlo deslizar hacia capacitación.",
+    tambien: "encuadre de lanzamiento, encuadre de retorno"
+  },
+  {
+    termino: "Auditoría contrafáctica",
+    slug: "auditoria-contrafactica",
+    sprint: "02",
+    definicion:
+      "Ejercicio de preguntarte «¿qué habría pasado si esta decisión se hubiera tomado distinto?» para cada parámetro de la campaña, y declarar qué conclusión se habría perdido en ese escenario alternativo. No es una auditoría de errores: es una prueba de qué tan sólida es tu lectura frente a decisiones que pudieron ser otras.",
+    tambien: ""
+  },
+  {
+    termino: "Dictamen de anclaje",
+    slug: "dictamen-anclaje",
+    sprint: "02",
+    definicion:
+      "El veredicto que emites sobre cada parámetro de la campaña (población, segmentación, ventana): si quedó **bien establecido, discutible o mal establecido**, y por qué. «Anclaje» porque evalúa si la campaña quedó atada a un resultado de negocio real o si midió sin ese ancla.",
+    tambien: ""
+  },
+  {
+    termino: "Certificado de Límites de Validez",
+    slug: "certificado-limites-validez",
+    sprint: "02",
+    definicion:
+      "El documento con el que cierras el Experimento 5: una síntesis honesta de hasta dónde llega tu expediente y hasta dónde no —sus límites—, incluida la condición del AILS como señal indicativa. Es tu respuesta ya preparada a la objeción «¿la muestra es representativa?» que te encontrarás más adelante.",
+    tambien: ""
+  },
+  {
+    termino: "Ficha de Cobertura",
+    slug: "ficha-cobertura",
+    sprint: "02",
+    definicion:
+      "El registro de los tres parámetros con los que se lanzó la campaña —**población, segmentación y ventana**—, la decisión de negocio que debían sostener y quién la tomó. Reconstruirla es el primer paso del Experimento 5, antes de poder auditar si esos parámetros estuvieron bien puestos.",
+    tambien: ""
+  },
+  {
+    termino: "Paradoja de Simpson",
+    slug: "paradoja-simpson",
+    sprint: "02",
+    definicion:
+      "Fenómeno estadístico en el que una tendencia que aparece en varios grupos por separado se invierte o desaparece cuando esos grupos se juntan en uno solo. Por eso la unidad de análisis que elijas para tu campaña no es un detalle técnico: puede cambiar por completo la conclusión.",
+    tambien: ""
+  },
+  {
+    termino: "Validación psicométrica",
+    slug: "validacion-psicometrica",
+    sprint: "02",
+    definicion:
+      "El proceso mediante el cual un instrumento de medición (como AILS) demuestra estadísticamente que mide lo que dice medir, de forma consistente. Mientras un instrumento está **en proceso de validación psicométrica**, sus resultados se tratan como una **señal indicativa** —útil para orientar, pero no como una medición ya certificada— y así debes declararlo en tu Certificado de Límites de Validez.",
+    tambien: "señal indicativa"
+  },
+  {
+    termino: "Reactivos",
+    slug: "reactivos",
+    sprint: "02",
+    definicion:
+      "Las preguntas o ítems individuales que componen un instrumento de medición (por ejemplo, cada pregunta puntual dentro de AIMT, AILS o AICD). Como Analista BAIP nunca ves ni editas los reactivos: trabajas siempre sobre el reporte ya procesado, no sobre el instrumento en bruto.",
+    tambien: ""
+  },
+  {
+    termino: "Baremos",
+    slug: "baremos",
+    sprint: "02",
+    definicion:
+      "Las tablas de referencia que convierten una puntuación bruta de un instrumento en un nivel interpretable (por ejemplo, de Cautela a Óptimo). Son parte de la capa protegida del instrumento: tú lees el nivel ya calculado, no el baremo que lo produjo.",
+    tambien: ""
+  },
+  {
+    termino: "Matriz de triangulación",
+    slug: "matriz-triangulacion",
+    sprint: "General",
+    definicion:
+      "La tabla en la que cruzas **obstáculo × lente × nivel** para ver si las tres lentes (AIMT, AILS, AICD) coinciden en un mismo obstáculo (refuerzo) o se contradicen (tensión). Es la herramienta con la que triangulas —cruzas varias fuentes— antes de nombrar una causa raíz.",
+    tambien: ""
+  },
+  {
+    termino: "Expediente",
+    slug: "expediente",
+    sprint: "02",
+    definicion:
+      "El conjunto de todo lo que ya produjiste sobre un mismo caso —las tres lecturas clínicas del Sprint 01, la matriz de triangulación y el reporte de causas raíz— que los Experimentos 5 a 8 retoman y llevan a examen, plan y defensa. No abres un caso nuevo en el Sprint 02: el expediente es ese historial acumulado de un mismo caso a través de los dos sprints.",
+    tambien: "antes se llamaba «legajo»; se simplificó a «expediente» por ser un término más habitual en el español de Colombia"
+  },
+  {
+    termino: "Caso de valor",
+    slug: "caso-de-valor",
+    sprint: "02",
+    definicion:
+      "La argumentación que conecta tu plan de intervención con un beneficio de negocio cuantificado —cuánto cuesta no actuar, cuánto se libera si se actúa—, dirigida a quien debe aprobar el plan. Es la versión en lenguaje de retorno de lo que en otros contextos se llama «business case».",
+    tambien: ""
+  },
+  {
+    termino: "Reporte de causas raíz",
+    slug: "reporte-causas-raiz",
+    sprint: "01",
+    definicion:
+      "El entregable obligatorio del Sprint 01 (Campo E3 del Experimento 1.04): un texto de una página que triangula las tres lentes (AIMT, AILS, AICD) sobre un mismo grupo, nombra el obstáculo de mayor peso con el nivel más bajo y lo traduce a lenguaje de retorno —con su costo de oportunidad y una decisión concreta para el C-Level—.\n\nEn el Sprint 02 esa misma conclusión se retoma, se somete a examen y se formaliza como **Mapa de Causa Raíz (S4)** dentro del Reporte BAIP completo: no son el mismo documento, son dos momentos del mismo hallazgo.",
+    tambien: ""
+  },
+  {
+    termino: "Mapa de Causa Raíz (S4)",
+    slug: "mapa-causa-raiz",
+    sprint: "02",
+    definicion:
+      "Una de las siete secciones (S1–S7) del Reporte BAIP que produces en el Sprint 02: la lista ya corregida y priorizada de causas raíz, cada una con su par de componentes del Modelo ARIA y el nivel organizacional donde vive su cierre.\n\nEs la versión formalizada del **reporte de causas raíz** del Sprint 01, después de pasar por el examen de los diez obstáculos canónicos y la prueba de distribución en el Experimento 6 — y es la entrada directa del Plan de Intervención (S5) del Experimento 7.",
+    tambien: "S4"
+  },
+  {
+    termino: "Obstáculo canónico",
+    slug: "obstaculo-canonico",
+    sprint: "02",
+    definicion:
+      "Cada uno de los diez obstáculos fijos y nombrados que el Modelo ARIA reconoce como las causas típicas que bloquean el retorno de la inversión en IA en una organización, agrupados en tres categorías: **Estratégicos, Organizacionales y Psicológicos**.\n\nEn el Experimento 6 los usas como lista de verificación: para cada uno emites un veredicto —causa, derivado, señuelo o no evidenciado— contrastado con la evidencia de tu propio cruce. Busca cada obstáculo por su nombre en este glosario para ver su definición completa y las herramientas del Modelo ARIA que lo cierran.",
+    tambien: "los diez obstáculos canónicos",
+    orden: 0
+  },
+  {
+    termino: "Keystone",
+    slug: "keystone",
+    sprint: "02",
+    definicion:
+      "El obstáculo de mayor peso dentro de la cadena causal: aquel cuya intervención libera —o cuya desatención bloquea— el resto del diagnóstico, como la piedra clave de un arco. En el Plan de Intervención (S5) siempre ocupa la primera posición, encadenado de inmediato con el obstáculo amplificado que produce en segundo lugar.",
+    tambien: ""
+  },
+  {
+    termino: "Señuelo",
+    slug: "senuelo",
+    sprint: "02",
+    definicion:
+      "Un obstáculo que en la Matriz de Fundamentación parece causa raíz pero, al contrastarlo con la evidencia, resulta ser un efecto o una correlación —no la causa real—. Es uno de los cuatro veredictos posibles junto con causa, derivado y no evidenciado.\n\nExiste también el «señuelo de segundo orden»: una apariencia engañosa más sutil, que solo se revela al examinar el cruce con cuidado —el primer señuelo ya descartado puede esconder uno nuevo detrás.",
+    tambien: "señuelo de segundo orden"
+  },
+  {
+    termino: "Prueba de distribución",
+    slug: "prueba-distribucion",
+    sprint: "02",
+    definicion:
+      "El procedimiento con el que verificas, para los dos obstáculos de mayor peso, si el patrón de impacto que su naturaleza predice —su **huella distributiva** esperada— coincide con el que el reporte realmente muestra. Si no coincide, es la señal de que debes reordenar la cadena causal: es la prueba con la que el Experimento 6 corrige (o confirma) la conclusión del Sprint 01.",
+    tambien: ""
+  },
+  {
+    termino: "Huella distributiva",
+    slug: "huella-distributiva",
+    sprint: "02",
+    definicion:
+      "El patrón específico con el que el efecto de un obstáculo se distribuye entre segmentos de la población. Un freno relacional o de mando —por ejemplo, desconfianza hacia un líder— varía según la exposición directa a ese líder; un freno estructural —como una política o un proceso— es uniforme entre segmentos.\n\nComparar la huella que predice la naturaleza del obstáculo contra la huella que el reporte muestra es, precisamente, la **prueba de distribución**. No son sinónimos: la huella es la evidencia; la prueba es el procedimiento que la usa.",
+    tambien: ""
+  },
+  {
+    termino: "Cadena causal",
+    slug: "cadena-causal",
+    sprint: "02",
+    definicion:
+      "El orden en el que un obstáculo amplifica a otro dentro de un mismo diagnóstico: cuál es la causa raíz (el **keystone**) y cuál es el obstáculo que ese keystone amplifica en segundo lugar. La prueba de distribución existe para confirmar o corregir ese orden con evidencia, no con intuición.",
+    tambien: ""
+  },
+  {
+    termino: "Obstáculo 1 · Claridad en la contribución",
+    slug: "obstaculo-1-claridad-contribucion",
+    sprint: "02",
+    definicion:
+      "**Categoría: Estratégico.** Falta de claridad estratégica sobre los casos de uso de la IA: proliferan pilotos y pruebas de concepto sin priorización por ROI o KPI, y la organización queda sin foco operativo.\n\n**Herramientas del Modelo ARIA que lo cierran:** AINS — AI North Star (alinea a la alta dirección en una sola jornada sobre la arquitectura futura de la empresa en la era IA) + MVI — Matriz de Validación de Impacto (filtra la madurez y el potencial real de cada piloto antes de escalarlo, evitando el «purgatorio de los pilotos»).",
+    tambien: "",
+    orden: 1
+  },
+  {
+    termino: "Obstáculo 2 · Fricción de governance",
+    slug: "obstaculo-2-friccion-governance",
+    sprint: "02",
+    definicion:
+      "**Categoría: Estratégico.** Reglas, restricciones y aprobaciones confusas que hacen que la IA esté «disponible» en el papel pero prácticamente inaccesible en el día a día.\n\n**Herramientas del Modelo ARIA que lo cierran:** AINS — AI North Star + AIGC — AI Governance Canvas (co-crea con la alta dirección un marco normativo claro que equilibra agilidad con gestión de riesgo, y disuelve la ambigüedad regulatoria que paraliza la experimentación).",
+    tambien: "",
+    orden: 2
+  },
+  {
+    termino: "Obstáculo 3 · Desalineación del talento",
+    slug: "obstaculo-3-desalineacion-talento",
+    sprint: "02",
+    definicion:
+      "**Categoría: Estratégico.** Mensajes contradictorios entre «capacitar a la plantilla actual» o «contratar/reemplazar con talento nativo IA», que rompe el compromiso y congela la adopción.\n\n**Herramientas del Modelo ARIA que lo cierran:** AINS — AI North Star + MRT — Mapa de Rutas de Talento (traza para cada persona una de cuatro rutas claras frente a la IA: evolución, reinvención, inserción o transición).",
+    tambien: "",
+    orden: 3
+  },
+  {
+    termino: "Obstáculo 4 · Silos culturales",
+    slug: "obstaculo-4-silos-culturales",
+    sprint: "02",
+    definicion:
+      "**Categoría: Organizacional.** Cada área experimenta con IA de forma aislada, duplica esfuerzos y no comparte el aprendizaje, lo que impide escalar soluciones a nivel corporativo.\n\n**Herramientas del Modelo ARIA que lo cierran:** AICD — AI Culture Diagnostic (audita 28 marcadores de ADN AI para visibilizar las barreras estructurales que sabotean la innovación) + AINS — AI North Star.",
+    tambien: "",
+    orden: 4
+  },
+  {
+    termino: "Obstáculo 5 · Brecha generacional",
+    slug: "obstaculo-5-brecha-generacional",
+    sprint: "02",
+    definicion:
+      "**Categoría: Organizacional.** Diferencias de creencias y hábitos entre generaciones —perfiles senior más escépticos, perfiles jóvenes más nativos digitales— que generan bloqueo, tensión y fuga de talento.\n\n**Herramientas del Modelo ARIA que lo cierran:** LEIA — Liderazgo para la Era IA (actualiza el ejercicio del mando con el modelo de las 5C: Conexión, Confianza, Coherencia, Cocreación, Cuidado) + PATH — Plan de Aseguramiento de la Transformación Humana (instala rituales y anclas que blindan los hábitos adquiridos contra el «efecto rebote»).",
+    tambien: "",
+    orden: 5
+  },
+  {
+    termino: "Obstáculo 6 · Liderazgo desconectado",
+    slug: "obstaculo-6-liderazgo-desconectado",
+    sprint: "02",
+    definicion:
+      "**Categoría: Organizacional.** El C-suite anuncia una visión «IA First» que no baja a decisiones, recursos ni rutinas concretas, dejando un vacío que se llena de rumores.\n\n**Herramientas del Modelo ARIA que lo cierran:** AILS — AI Leadership Style (audita 21 comportamientos críticos de mando y revela la brecha entre la gestión actual y el perfil que la era IA exige) + LEIA — Liderazgo para la Era IA (cierra esa brecha con el protocolo de las 5C).",
+    tambien: "",
+    orden: 6
+  },
+  {
+    termino: "Obstáculo 7 · Creencias limitantes",
+    slug: "obstaculo-7-creencias-limitantes",
+    sprint: "02",
+    definicion:
+      "**Categoría: Psicológico.** Marcos mentales heredados de la era industrial —experiencia sobre datos, identidad fija, perfeccionismo— que filtran y sabotean cualquier intento de adopción de la IA.\n\n**Herramientas del Modelo ARIA que lo cierran:** AIMT — AI Mindset Test (calibra 30 creencias habilitantes y convierte la «resistencia al cambio» en datos accionables) + AIMC — AI Mindset Canvas (reconfigura esas creencias mediante micro-experimentos de cambio validados en la realidad).",
+    tambien: "",
+    orden: 7
+  },
+  {
+    termino: "Obstáculo 8 · Síndrome del impostor digital",
+    slug: "obstaculo-8-sindrome-impostor-digital",
+    sprint: "02",
+    definicion:
+      "**Categoría: Psicológico.** Baja autopercepción sobre el propio nivel de preparación digital: aunque haya capacitación, la persona no confía en su capacidad para usar o supervisar la IA en decisiones reales, y se auto-paraliza.\n\n**Herramientas del Modelo ARIA que lo cierran:** AIMT — AI Mindset Test + ADA — Activadores de Agencia (otorga «permisos de acción» explícitos que transforman la espera pasiva de instrucciones en autonomía ejecutiva con riesgos calculados).",
+    tambien: "",
+    orden: 8
+  },
+  {
+    termino: "Obstáculo 9 · Capacitación sin impacto",
+    slug: "obstaculo-9-capacitacion-sin-impacto",
+    sprint: "02",
+    definicion:
+      "**Categoría: Psicológico.** Entrenamientos genéricos «sobre la IA», sin práctica guiada de aplicación real en las tareas del rol, que no cambian el comportamiento de las personas.\n\n**Herramientas del Modelo ARIA que lo cierran:** DAS — Diseño Ágil de Soluciones (traduce la visión macro en microhabilidades priorizadas por valor) + MATCH — Modelo Ágil de Transformación Cultural y Humana (sustituye la formación estática por sprints de aprendizaje vinculados a los KPI del negocio).",
+    tambien: "",
+    orden: 9
+  },
+  {
+    termino: "Obstáculo 10 · Miedo al desplazamiento",
+    slug: "obstaculo-10-miedo-desplazamiento",
+    sprint: "02",
+    definicion:
+      "**Categoría: Psicológico.** Temor a ser reemplazado por la IA que dispara resistencia emocional pasiva, desconexión y uso oculto de la herramienta.\n\n**Herramientas del Modelo ARIA que lo cierran:** AICD — AI Culture Diagnostic + AIIB — AI Inspiration Board (sincroniza en una jornada el propósito personal del colaborador con los objetivos de la organización, resignificando la IA como vehículo de evolución y no como amenaza).",
+    tambien: "",
+    orden: 10
+  },
+
+];
+/* ▲▲▲  FIN DEL CONTENIDO  ▲▲▲  (de aquí para abajo es el motor; no hace falta tocarlo) */
+
+// ── Estado de filtros ──
+var estadoFrente = 'todo';
+var estadoSprint = 'todos';
+
+// Chips de sprint generados desde los datos (más "General" siempre)
+(function buildSprintChips(){
+  var sprints = FAQ.map(function(f){return f.sprint;})
+                   .filter(function(s){return s && s!=='General';});
+  var uniq = sprints.filter(function(s,i){return sprints.indexOf(s)===i;}).sort();
+  var html = '<button class="chip on gold" data-sprint="todos" onclick="setSprint(\'todos\')">Todos</button>';
+  uniq.forEach(function(s){
+    html += '<button class="chip" data-sprint="'+s+'" onclick="setSprint(\''+s+'\')">Sprint '+s+'</button>';
+  });
+  document.getElementById('sprint-chips').innerHTML = html;
+})();
+
+function showView(v){
+  document.getElementById('view-faq').hidden = (v!=='faq');
+  document.getElementById('view-glosario').hidden = (v!=='glosario');
+  document.getElementById('vb-faq').classList.toggle('on', v==='faq');
+  document.getElementById('vb-glosario').classList.toggle('on', v==='glosario');
+}
+
+function renderGlosario(){
+  var q=(document.getElementById('g-search').value||'').toLowerCase().trim();
+  var arr=GLOSARIO.filter(function(g){
+    if(!q) return true;
+    var hay=(g.termino+' '+g.definicion+' '+(g.tambien||'')).toLowerCase();
+    return hay.indexOf(q)!==-1;
+  }).slice().sort(function(a,b){
+    if(a.orden!=null && b.orden!=null) return a.orden-b.orden;
+    return a.termino.localeCompare(b.termino,'es');
+  });
+
+  var cont=document.getElementById('g-list');
+  document.getElementById('g-count').textContent =
+    arr.length+(arr.length===1?' término':' términos')+(q?' para «'+q+'»':'');
+
+  if(!arr.length){
+    cont.innerHTML='<div class="empty">No hay términos que coincidan.<br>Prueba otra palabra o escríbele a tu facilitador — y ese término entrará al glosario.</div>';
+    return;
+  }
+
+  cont.innerHTML=arr.map(function(g){
+    var st = g.sprint==='General' ? 'General' : 'Sprint '+g.sprint;
+    return ''
+    +'<div class="g-item" id="g-'+g.slug+'">'
+    +  '<div class="g-head">'
+    +    '<span class="g-term">'+esc(g.termino)+'</span>'
+    +    '<span class="tag sprint">'+esc(st)+'</span>'
+    +  '</div>'
+    +  '<p class="g-def">'+fmt(g.definicion).replace(/^<p>|<\/p>$/g,'')+'</p>'
+    +  (g.tambien?'<div class="g-also">También aparece como: '+esc(g.tambien)+'</div>':'')
+    +'</div>';
+  }).join('');
+}
+
+function irAGlosario(hash){
+  showView('glosario');
+  renderGlosario();
+  setTimeout(function(){
+    var el=document.getElementById(hash.replace('#',''));
+    if(!el) return;
+    el.scrollIntoView({behavior:'smooth',block:'start'});
+    el.classList.add('flash');
+    setTimeout(function(){el.classList.remove('flash');},1600);
+  },30);
+}
+
+function setFrente(f){
+  estadoFrente=f;
+  document.querySelectorAll('.chip[data-frente]').forEach(function(c){
+    c.classList.toggle('on', c.getAttribute('data-frente')===f);
+  });
+  render();
+}
+function setSprint(s){
+  estadoSprint=s;
+  document.querySelectorAll('.chip[data-sprint]').forEach(function(c){
+    c.classList.toggle('on', c.getAttribute('data-sprint')===s);
+  });
+  render();
+}
+
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function fmt(txt){
+  return esc(txt).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+    .split(/\n\n+/).map(function(p){return '<p>'+p.replace(/\n/g,'<br>')+'</p>';}).join('');
+}
+function fecha(iso){
+  if(!iso) return '';
+  var m=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+  var p=String(iso).split('-'); if(p.length<3) return iso;
+  return p[2].replace(/^0/,'')+' '+m[(+p[1])-1]+' '+p[0];
+}
+
+function render(){
+  var q=(document.getElementById('search').value||'').toLowerCase().trim();
+  var arr=FAQ.filter(function(f){
+    if(estadoFrente!=='todo' && f.frente!==estadoFrente) return false;
+    if(estadoSprint!=='todos' && f.sprint!==estadoSprint && f.sprint!=='General') return false;
+    if(q){ var hay=(f.pregunta+' '+f.respuesta).toLowerCase(); if(hay.indexOf(q)===-1) return false; }
+    return true;
+  });
+
+  var cont=document.getElementById('list');
+  document.getElementById('count').textContent =
+    arr.length+(arr.length===1?' pregunta':' preguntas')+(q?' para «'+q+'»':'');
+
+  if(!arr.length){
+    cont.innerHTML='<div class="empty">No hay preguntas que coincidan.<br>Prueba otra palabra o escríbele a tu facilitador — y esa duda entrará al centro.</div>';
+    return;
+  }
+
+  cont.innerHTML=arr.map(function(f,i){
+    var st = f.sprint==='General' ? 'General' : 'Sprint '+f.sprint;
+    return ''
+    +'<div class="item" id="it-'+i+'">'
+    +  '<div class="q" onclick="document.getElementById(\'it-'+i+'\').classList.toggle(\'open\')">'
+    +    '<div class="txt">'
+    +      '<div class="tags">'
+    +        '<span class="tag '+f.frente+'">'+(f.frente==='plataforma'?'Plataforma':'Contenido')+'</span>'
+    +        '<span class="tag sprint">'+esc(st)+'</span>'
+    +      '</div>'
+    +      '<div class="pregunta">'+esc(f.pregunta)+'</div>'
+    +    '</div>'
+    +    '<span class="caret">›</span>'
+    +  '</div>'
+    +  '<div class="a"><div class="a-inner">'+fmt(f.respuesta)
+    +    (f.actualizado?'<div class="upd">Actualizado: '+fecha(f.actualizado)+'</div>':'')
+    +  '</div></div>'
+    +'</div>';
+  }).join('');
+}
+
+render();
+renderGlosario();
+
+if(location.hash.indexOf('#g-')===0) irAGlosario(location.hash);
+window.addEventListener('hashchange', function(){
+  if(location.hash.indexOf('#g-')===0) irAGlosario(location.hash);
+});
+</script>
+</body>
+</html>

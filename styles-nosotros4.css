@@ -1,0 +1,88 @@
+/* ============================================================
+   /nosotros v4 — capa de modernidad y fluidez
+   Carga DESPUÉS de styles-nosotros3.css. Solo clases nuevas.
+   Reutiliza el motor de motion del sistema (enhance4/enhance6).
+   ============================================================ */
+
+/* ---------- WAYFINDING — indicador de sección lateral ---------- */
+.dotnav {
+  position: fixed; right: 30px; top: 50%; transform: translateY(-50%);
+  z-index: 90; display: flex; flex-direction: column; align-items: flex-end; gap: 20px;
+}
+/* El item mide solo el ancho del punto: la etiqueta sale del flujo, así
+   todos los puntos quedan alineados en una línea vertical perfecta. */
+.dotnav__item {
+  position: relative; display: block; width: 10px; height: 10px;
+  padding: 6px 0; box-sizing: content-box;
+  background: none; border: 0; cursor: pointer;
+}
+.dotnav__dot {
+  display: block; width: 10px; height: 10px; border-radius: 50%;
+  background: transparent; border: 1.5px solid rgba(30,42,56,0.32);
+  transition: background 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.dotnav__label {
+  position: absolute; right: calc(100% + 14px); top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
+  color: var(--carbon); opacity: 0; pointer-events: none;
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease); white-space: nowrap;
+}
+.dotnav__item:hover .dotnav__dot { border-color: var(--teal); }
+.dotnav__item:hover .dotnav__label { opacity: 0.7; transform: translateY(-50%); }
+.dotnav__item.active .dotnav__dot { background: var(--teal); border-color: var(--teal); box-shadow: 0 0 0 4px var(--teal-08); }
+.dotnav__item.active .dotnav__label { opacity: 1; transform: translateY(-50%); color: var(--teal); }
+
+/* Sobre secciones oscuras (teal) — invierte para contraste */
+.dotnav.on-dark .dotnav__dot { border-color: rgba(255,255,255,0.55); }
+.dotnav.on-dark .dotnav__label { color: #fff; }
+.dotnav.on-dark .dotnav__item.active .dotnav__dot { background: #fff; border-color: #fff; box-shadow: 0 0 0 4px rgba(255,255,255,0.18); }
+.dotnav.on-dark .dotnav__item.active .dotnav__label { color: #fff; }
+
+.dotnav__item:focus-visible { outline: 2px solid var(--teal); outline-offset: 4px; border-radius: 4px; }
+.dotnav.on-dark .dotnav__item:focus-visible { outline-color: #fff; }
+
+@media (max-width: 1180px) { .dotnav { display: none; } }
+
+/* ---------- HERO — pista de scroll (fluidez de entrada) ---------- */
+.scrollcue {
+  display: inline-flex; align-items: center; gap: 12px; margin-top: 44px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--carbon-55);
+  opacity: 0; transform: translateY(10px); animation: heroIn 0.8s ease forwards; animation-delay: 0.85s;
+}
+.scrollcue__track { width: 40px; height: 1px; background: rgba(30,42,56,0.25); position: relative; overflow: hidden; }
+.scrollcue__track::after {
+  content: ""; position: absolute; inset: 0; width: 40%; background: var(--teal);
+  animation: cueSlide 2.4s var(--ease) infinite;
+}
+@keyframes cueSlide { 0% { transform: translateX(-100%); } 60%, 100% { transform: translateX(280%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollcue { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .scrollcue__track::after { animation: none !important; }
+}
+
+/* ---------- PUENTE — encuadre en /nosotros (reusa .bridge__viz del sistema) ---------- */
+.section--bridge .section-head { margin-bottom: 40px; }
+.section--bridge .bridge__viz { margin-top: 8px; }
+
+/* ---------- MÉTODO — stepper fijo: conteo de componentes por paso ---------- */
+.aria2__count {
+  display: inline-flex; align-items: center; align-self: flex-start;
+  font-family: var(--display); font-size: 14px; color: var(--teal);
+  border: 1px solid var(--teal-light); border-radius: 100px; padding: 3px 13px; margin-bottom: 18px;
+}
+.v4 .aria2__step { min-height: 52vh; }
+
+/* ---------- PRINCIPIOS — micro-interacción de hover (fluidez Linear) ---------- */
+.principle { transition: background 0.35s var(--ease), transform 0.35s var(--ease); }
+.principle:hover { background: var(--white); }
+.principle:hover .principle__n { color: var(--teal); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .v4 .aria2__step { min-height: 0; }
+}

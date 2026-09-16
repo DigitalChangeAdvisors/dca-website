@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>document.documentElement.classList.replace('no-js','js');</script>
+
+<title>El Umbral — Estudio de Fuga de Productividad de la IA</title>
+<meta name="description" content="Cinco preguntas, tres minutos. Recibe en pantalla tu lectura de fuga de productividad de la IA, antes de decidir si te sumas al estudio completo." />
+<meta name="robots" content="noindex, follow" />
+<!-- noindex deliberado: paso de un embudo de captación (llega desde /estudio-fuga), no es contenido editorial del sitio -->
+<link rel="canonical" href="https://digitalchangeadvisors.com/umbral/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://digitalchangeadvisors.com/umbral/" />
+<meta property="og:title" content="El Umbral — Estudio de Fuga de Productividad de la IA" />
+<meta property="og:description" content="Cinco preguntas, tres minutos. Recibe en pantalla tu lectura de fuga de productividad de la IA." />
+<meta name="twitter:card" content="summary" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</noscript>
+
+<style>
+  :root {
+    --white: #ffffff;
+    --teal: #2e8b76;
+    --teal-hover: #1f6657;
+    --gold: #a48111;
+    --carbon: #1e2a38;
+    --carbon-70: rgba(30, 42, 56, 0.7);
+    --carbon-55: rgba(30, 42, 56, 0.55);
+    --carbon-40: rgba(30, 42, 56, 0.4);
+    --platinum: #dfe3e1;
+    --font-display: 'Marcellus', Georgia, serif;
+    --font-body: 'Montserrat', Helvetica, Arial, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--white);
+    color: var(--carbon);
+    font-family: var(--font-body);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  .no-js body { font-family: Georgia, serif; }
+
+  a { color: inherit; }
+  ::selection { background: var(--teal); color: var(--white); }
+
+  button { font-family: inherit; }
+
+  .app {
+    max-width: 640px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ============ MARCA ESTÁTICA (sin enlace) ============ */
+  .brandmark {
+    padding: 20px 24px 0;
+    font-family: var(--font-display);
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    color: var(--carbon);
+    flex-shrink: 0;
+  }
+
+  /* ============ ENCABEZADO FIJO + PROGRESO (solo U-01) ============ */
+  .intake-header {
+    padding: 18px 24px 16px;
+    flex-shrink: 0;
+  }
+  .intake-header__line {
+    font-size: 14px;
+    color: var(--carbon-70);
+    margin: 0 0 14px;
+    line-height: 1.5;
+  }
+  .progress-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .progress-label {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--carbon-55);
+    white-space: nowrap;
+  }
+  .progress-track {
+    flex: 1;
+    height: 4px;
+    background: var(--platinum);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--teal);
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+
+  /* ============ CUERPO PRINCIPAL ============ */
+  .stage {
+    flex: 1;
+    padding: 8px 24px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .screen { display: flex; flex-direction: column; }
+  .screen[hidden] { display: none; }
+
+  .screen-enter {
+    animation: screenIn 0.35s ease both;
+  }
+  @keyframes screenIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .q-text {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: clamp(20px, 4.6vw, 25px);
+    line-height: 1.4;
+    color: var(--carbon);
+    margin: 4px 0 28px;
+  }
+
+  .options { display: flex; flex-direction: column; gap: 10px; }
+
+  .option { position: relative; }
+  .option input {
+    position: absolute;
+    opacity: 0;
+    width: 1px; height: 1px;
+    pointer-events: none;
+  }
+  .option label {
+    display: block;
+    padding: 15px 18px;
+    border: 1.5px solid var(--platinum);
+    border-radius: 10px;
+    font-size: 15.5px;
+    line-height: 1.4;
+    color: var(--carbon);
+    cursor: pointer;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+  }
+  .option input:checked + label {
+    border-color: var(--teal);
+    background: rgba(46, 139, 118, 0.06);
+    font-weight: 600;
+  }
+  .option input:focus-visible + label {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
+  }
+  .option label:hover { border-color: var(--carbon-40); }
+
+  /* ============ NAV BOTONES ============ */
+  .nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .btn-back {
+    background: none;
+    border: none;
+    color: var(--carbon-55);
+    font-size: 14.5px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 12px 4px;
+  }
+  .btn-back:hover { color: var(--carbon); }
+  .btn-back[hidden] { visibility: hidden; }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 13px 28px;
+    background: var(--teal);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 15.5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, opacity 0.15s ease;
+    margin-left: auto;
+  }
+  .btn-primary:hover { background: var(--teal-hover); }
+  .btn-primary:disabled {
+    background: var(--platinum);
+    color: var(--carbon-55);
+    cursor: not-allowed;
+  }
+  .btn-primary:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 3px;
+  }
+
+  /* ============ CONTACTO ============ */
+  .field { margin-bottom: 18px; }
+  .field label {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--carbon-70);
+    margin-bottom: 7px;
+  }
+  .field input,
+  .field select {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 16px;
+    padding: 12px 14px;
+    border: 1.5px solid var(--platinum);
+    border-radius: 8px;
+    color: var(--carbon);
+    background: var(--white);
+  }
+  .field input:focus,
+  .field select:focus {
+    outline: none;
+    border-color: var(--teal);
+  }
+  .field-warning {
+    font-size: 13px;
+    color: var(--gold);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+  .field-warning[hidden] { display: none; }
+
+  /* ============ U-02 — DEVOLUCIÓN ============ */
+  .result-titular {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(24px, 5.5vw, 32px);
+    line-height: 1.25;
+    color: var(--gold);
+    margin: 8px 0 22px;
+  }
+  .result-reading p {
+    font-size: 16.5px;
+    line-height: 1.65;
+    color: var(--carbon);
+    margin: 0 0 16px;
+  }
+  .result-reading p:last-child { margin-bottom: 0; }
+  .result-separator {
+    border: none;
+    border-top: 1px solid var(--platinum);
+    margin: 36px 0;
+  }
+  .result-decision p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--carbon-70);
+    margin: 0 0 18px;
+  }
+  .result-decision a.btn-primary {
+    text-decoration: none;
+    margin-left: 0;
+    width: 100%;
+  }
+  .result-decision p.result-trust {
+    font-size: 13px;
+    color: var(--carbon-55);
+    text-align: center;
+    margin: 12px 0 0;
+  }
+
+  /* ============ ACCESIBILIDAD ============ */
+  @media (prefers-reduced-motion: reduce) {
+    .screen-enter { animation: none; }
+    .progress-fill { transition: none; }
+  }
+
+  @media (max-width: 420px) {
+    .brandmark { padding: 16px 20px 0; }
+    .intake-header { padding: 14px 20px 14px; }
+    .stage { padding: 4px 20px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <div class="brandmark" aria-hidden="true">Fuga de Productividad de la IA · Introducción al Estudio</div>
+
+  <div class="intake-header" id="intakeHeader">
+    <p class="intake-header__line">Cinco preguntas. Tres minutos. Tu resultado en pantalla al terminar.</p>
+    <div class="progress-row">
+      <span class="progress-label" id="progressLabel">Pregunta 1 de 5</span>
+      <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:20%"></div></div>
+    </div>
+  </div>
+
+  <div class="stage">
+
+    <!-- PANTALLA DE PREGUNTA (reutilizada para R1-R5) -->
+    <section class="screen screen-enter" id="screenQuestion">
+      <p class="q-text" id="qText"></p>
+      <div class="options" id="qOptions" role="radiogroup"></div>
+      <div class="nav-row">
+        <button class="btn-back" id="qBack" type="button">Atrás</button>
+        <button class="btn-primary" id="qNext" type="button" disabled>Siguiente</button>
+      </div>
+    </section>
+
+    <!-- PANTALLA DE CONTACTO -->
+    <section class="screen screen-enter" id="screenContact" hidden>
+      <p class="q-text">Tu resultado ya está listo. Solo necesitamos saber a quién entregárselo.</p>
+
+      <div class="field">
+        <label for="fEmpresa">Empresa</label>
+        <input type="text" id="fEmpresa" autocomplete="organization" />
+      </div>
+
+      <div class="field">
+        <label for="fSector">Sector</label>
+        <select id="fSector">
+          <option value="" disabled selected>Selecciona un sector</option>
+          <option>Tecnología</option>
+          <option>Telecomunicaciones</option>
+          <option>Energía y petróleo</option>
+          <option>Retail y consumo</option>
+          <option>Servicios financieros</option>
+          <option>Servicios profesionales/consultoría</option>
+          <option>Salud</option>
+          <option>Manufactura</option>
+          <option>Construcción</option>
+          <option>Otro</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="fCargo">Cargo</label>
+        <input type="text" id="fCargo" autocomplete="organization-title" />
+      </div>
+
+      <div class="field">
+        <label for="fCorreo">Correo corporativo</label>
+        <input type="email" id="fCorreo" autocomplete="email" inputmode="email" />
+        <p class="field-warning" id="correoWarning" hidden>Este parece un correo personal — si tienes uno corporativo, úsalo para que tu resultado quede bien atribuido a tu empresa. Puedes continuar de todas formas.</p>
+      </div>
+
+      <div class="nav-row">
+        <button class="btn-back" id="cBack" type="button">Atrás</button>
+        <button class="btn-primary" id="cNext" type="button" disabled>Ver mi resultado</button>
+      </div>
+    </section>
+
+    <!-- PANTALLA DE DEVOLUCIÓN (U-02) -->
+    <section class="screen screen-enter" id="screenResult" hidden>
+      <p class="result-titular" id="rTitular"></p>
+      <div class="result-reading" id="rReading"></div>
+      <hr class="result-separator" />
+      <div class="result-decision">
+        <p>Esta lectura ya es tu resultado. Puedes quedarte aquí y recibirás en enero de 2027, cuando se publique el estudio, el dato con el promedio del país.</p>
+        <p>Si prefieres ir más allá, el próximo paso es este: sumarte al estudio &quot;Fuga de Productividad de la IA · Colombia 2026&quot; implica 55 preguntas, en menos de 30 minutos. Sin costo.</p>
+        <p>A cambio recibes tu número exacto de fuga, el corte de resultados de tu sector semanas antes de esa publicación, una lectura de 30 minutos con el equipo del estudio, y reconocimiento como una de las empresas que sí midieron su inversión en IA.</p>
+        <a class="btn-primary" id="rArtLink" href="#" target="_blank" rel="noopener noreferrer">Quiero sumarme al estudio</a>
+        <p class="result-trust">Sin compromiso · Tu reporte es confidencial</p>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // Google Apps Script Web App conectado a "Umbral Estudio Fuga - Respuestas"
+  // (Google Sheet) — verificado en vivo 2026-09-13 (submit + click, ambos OK).
+  var SUBMIT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyPOeKsPrVokyIQDSmFQtnzKiJgDT9q4z-t8ecqOEnKwRQhvmspxUXIafVWWtuEJeM3/exec';
+
+  // ============ TEXTOS FUENTE — VERBATIM, NO REFORMULAR (salvo tú/usted ya corregido) ============
+  var QUESTIONS = [
+    {
+      key: 'r1',
+      text: 'En mi organización, existe claridad sobre cómo cada iniciativa de IA contribuye a objetivos de negocio medibles (KPIs, ROI, eficiencia operativa).',
+      options: ['Totalmente en desacuerdo', 'En desacuerdo', 'Neutral', 'De acuerdo', 'Totalmente de acuerdo']
+    },
+    {
+      key: 'r2',
+      text: '¿Con qué frecuencia los proyectos de IA permanecen en fase de piloto (POC) sin avanzar a producción o ser formalmente cancelados?',
+      options: ['Nunca', 'Raramente', 'A veces', 'Frecuentemente', 'Siempre']
+    },
+    {
+      key: 'r3',
+      text: '¿Con qué frecuencia descubres que otra área de tu empresa está trabajando en un problema de IA que tu área ya resolvió (o viceversa)?',
+      options: ['Nunca', 'Raramente', 'A veces', 'Frecuentemente', 'Constantemente']
+    },
+    {
+      key: 'r4',
+      text: '¿Con qué frecuencia el C-suite (equipo de gerencia) de tu organización menciona la IA en las decisiones operativas o estratégicas que toma, no solo en las comunicaciones generales?',
+      options: ['Siempre', 'Frecuentemente', 'A veces', 'Raramente', 'Nunca']
+    },
+    {
+      key: 'r5',
+      text: 'Necesitas usar IA hoy para entregar un proyecto urgente. El proceso de aprobación corporativo toma 2 semanas. ¿Qué haces?',
+      options: [
+        'Espero las 2 semanas y sigo el proceso',
+        'Uso una herramienta externa para cumplir el plazo',
+        'Escalo como urgente y presiono la aprobación acelerada',
+        'Hago el trabajo manualmente sin IA'
+      ]
+    }
+  ];
+
+  var PERSONAL_DOMAINS = ['gmail.com','hotmail.com','outlook.com','yahoo.com'];
+
+  var CLOSING_QUESTIONS = {
+    'Uso una herramienta externa para cumplir el plazo': '¿En qué línea de tu estado de resultados aparecen las horas que se están ganando fuera de tus sistemas?',
+    'Hago el trabajo manualmente sin IA': '¿Cuánto te está costando, en horas de tu gente, el cumplimiento de un proceso que la IA ya podía resolver?',
+    'Espero las 2 semanas y sigo el proceso': '¿Cuántas decisiones al trimestre llegan dos semanas tarde, y qué vale esa demora?',
+    'Escalo como urgente y presiono la aprobación acelerada': 'Si la excepción es la vía normal de acceso, ¿quién está gobernando el uso de la inversión?'
+  };
+
+  var SPECIFICITY = [
+    { key: 'r3', triggers: ['Frecuentemente', 'Constantemente'], phrase: 'Y descubres con frecuencia que dos áreas resolvieron el mismo problema: ese retorno se compró dos veces y se contabilizó una.' },
+    { key: 'r2', triggers: ['Frecuentemente', 'Siempre'], phrase: 'Y tus pilotos ni avanzan ni se cancelan: eso es costo recurrente sin dueño.' },
+    { key: 'r4', triggers: ['Raramente', 'Nunca'], phrase: 'Y la IA aparece en las comunicaciones de tu comité más que en sus decisiones.' }
+  ];
+
+  var PROFILE_TEMPLATES = {
+    A: {
+      titular: 'Mides el retorno y lo mantienes bajo control',
+      s1: 'Afirmas claridad sobre cómo cada iniciativa contribuye a un objetivo medible, y ante la urgencia tu organización resuelve dentro del perímetro corporativo.',
+      body: [
+        'Es la combinación menos frecuente.',
+        'En la referencia global disponible —McKinsey, The State of AI in 2026, agosto de 2026, 1.719 ejecutivos en 97 países—, 37% atribuye algún impacto en el EBIT y 6% califica como alto desempeño.'
+      ],
+      closingLeadIn: null,
+      tail: 'Con cinco preguntas se ve el patrón; no se ve si resiste una auditoría de gobierno.'
+    },
+    B: {
+      titular: 'El ahorro existe, pero vive fuera del radar',
+      s1: 'Afirmas claridad sobre la contribución de cada iniciativa a un objetivo medible, y ante la urgencia el trabajo sale del perímetro corporativo o se hace a mano.',
+      body: [
+        'Son dos cosas que no suelen convivir: hay cifra declarada arriba y el valor se está resolviendo por fuera abajo.',
+        'La referencia colombiana disponible —EY, Work Reimagined Survey Colombia, febrero de 2026— reporta que 92% de los trabajadores ya usa IA, con un ahorro promedio de ocho horas semanales.'
+      ],
+      closingLeadIn: 'Los presupuestos de 2027 se están cerrando ahora:',
+      tail: 'Con cinco preguntas se ve el patrón; no se ve cuánto de ese ahorro ya se perdió del registro.'
+    },
+    C: {
+      titular: 'Hay resultado, pero falta el número que lo pruebe',
+      s1: 'Tu organización contiene la urgencia dentro del perímetro, y al mismo tiempo no afirmas claridad sobre cómo cada iniciativa contribuye a un objetivo medible.',
+      body: [
+        'Estás produciendo valor que no puedes demostrar.',
+        'La referencia global disponible —McKinsey, The State of AI in 2026, agosto de 2026— indica que solo 37% de las organizaciones atribuye algún impacto en el EBIT.'
+      ],
+      closingLeadIn: 'Con los presupuestos de 2027 en construcción ahora:',
+      tail: 'Con cinco preguntas se ve el patrón; no se ve con qué cifra sostienes la conversación.'
+    },
+    D: {
+      titular: 'La inversión avanza; el registro se queda atrás',
+      s1: 'Tu organización no afirma claridad sobre cómo cada iniciativa de IA contribuye a un objetivo medible, y ante la urgencia el valor se resuelve fuera del perímetro corporativo o se pierde.',
+      body: [
+        'La combinación es la más frecuente y la más costosa: la inversión ocurre, el ahorro individual también, y ninguno de los dos se encuentra con el otro en un registro.',
+        'La referencia global disponible —MIT, proyecto NANDA, The GenAI Divide: State of AI in Business 2025, julio de 2025— reporta que 95% de las organizaciones no obtuvo retorno medible sobre 30 a 40 mil millones de dólares invertidos en IA generativa.'
+      ],
+      closingLeadIn: null,
+      tail: 'Con cinco preguntas se ve el patrón; no se ve cuánto de esa inversión ya quedó sin dueño.'
+    }
+  };
+
+  // ============ ESTADO ============
+  var state = {
+    step: 0,
+    answers: { r1: null, r2: null, r3: null, r4: null, r5: null },
+    contact: { empresa: '', sector: '', cargo: '', correo: '' },
+    origen: 'directo',
+    perfil: null,
+    submissionId: null
+  };
+
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var o = params.get('origen');
+    state.origen = (o && o.trim()) ? o.trim() : 'directo';
+  } catch (e) { state.origen = 'directo'; }
+
+  // ============ DOM ============
+  var elIntakeHeader = document.getElementById('intakeHeader');
+  var elProgressLabel = document.getElementById('progressLabel');
+  var elProgressFill = document.getElementById('progressFill');
+  var elScreenQuestion = document.getElementById('screenQuestion');
+  var elScreenContact = document.getElementById('screenContact');
+  var elScreenResult = document.getElementById('screenResult');
+  var elQText = document.getElementById('qText');
+  var elQOptions = document.getElementById('qOptions');
+  var elQBack = document.getElementById('qBack');
+  var elQNext = document.getElementById('qNext');
+  var elCBack = document.getElementById('cBack');
+  var elCNext = document.getElementById('cNext');
+  var elFEmpresa = document.getElementById('fEmpresa');
+  var elFSector = document.getElementById('fSector');
+  var elFCargo = document.getElementById('fCargo');
+  var elFCorreo = document.getElementById('fCorreo');
+  var elCorreoWarning = document.getElementById('correoWarning');
+  var elRTitular = document.getElementById('rTitular');
+  var elRReading = document.getElementById('rReading');
+  var elRArtLink = document.getElementById('rArtLink');
+
+  function renderQuestion() {
+    var q = QUESTIONS[state.step];
+    elProgressLabel.textContent = 'Pregunta ' + (state.step + 1) + ' de 5';
+    elProgressFill.style.width = (((state.step + 1) / 5) * 100) + '%';
+    elQText.textContent = q.text;
+    elQOptions.innerHTML = '';
+    q.options.forEach(function (opt, i) {
+      var wrap = document.createElement('div');
+      wrap.className = 'option';
+      var id = q.key + '_opt' + i;
+      var input = document.createElement('input');
+      input.type = 'radio';
+      input.name = q.key;
+      input.id = id;
+      input.value = opt;
+      if (state.answers[q.key] === opt) input.checked = true;
+      var label = document.createElement('label');
+      label.setAttribute('for', id);
+      label.textContent = opt;
+      input.addEventListener('change', function () {
+        state.answers[q.key] = opt;
+        elQNext.disabled = false;
+      });
+      wrap.appendChild(input);
+      wrap.appendChild(label);
+      elQOptions.appendChild(wrap);
+    });
+    elQNext.disabled = !state.answers[q.key];
+    elQNext.textContent = state.step === 4 ? 'Continuar' : 'Siguiente';
+    elQBack.hidden = state.step === 0;
+  }
+
+  elQNext.addEventListener('click', function () {
+    if (state.step < 4) {
+      state.step += 1;
+      renderQuestion();
+    } else {
+      showContact();
+    }
+  });
+
+  elQBack.addEventListener('click', function () {
+    if (state.step > 0) {
+      state.step -= 1;
+      renderQuestion();
+    }
+  });
+
+  function showContact() {
+    elScreenQuestion.hidden = true;
+    elScreenContact.hidden = false;
+    elProgressLabel.textContent = 'Último paso';
+    elProgressFill.style.width = '100%';
+    validateContact();
+  }
+
+  elCBack.addEventListener('click', function () {
+    elScreenContact.hidden = true;
+    elScreenQuestion.hidden = false;
+    state.step = 4;
+    renderQuestion();
+  });
+
+  function isPersonalDomain(email) {
+    var at = email.lastIndexOf('@');
+    if (at === -1) return false;
+    var domain = email.slice(at + 1).toLowerCase().trim();
+    return PERSONAL_DOMAINS.indexOf(domain) !== -1;
+  }
+
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function validateContact() {
+    var empresa = elFEmpresa.value.trim();
+    var sector = elFSector.value;
+    var cargo = elFCargo.value.trim();
+    var correo = elFCorreo.value.trim();
+    var emailOk = isValidEmail(correo);
+
+    elCorreoWarning.hidden = !(emailOk && isPersonalDomain(correo));
+
+    var allOk = empresa && sector && cargo && emailOk;
+    elCNext.disabled = !allOk;
+    return allOk;
+  }
+
+  [elFEmpresa, elFSector, elFCargo, elFCorreo].forEach(function (el) {
+    el.addEventListener('input', validateContact);
+    el.addEventListener('change', validateContact);
+  });
+
+  elCNext.addEventListener('click', function () {
+    if (!validateContact()) return;
+    state.contact.empresa = elFEmpresa.value.trim();
+    state.contact.sector = elFSector.value;
+    state.contact.cargo = elFCargo.value.trim();
+    state.contact.correo = elFCorreo.value.trim();
+    finish();
+  });
+
+  // ============ LÓGICA DE PERFIL Y DEVOLUCIÓN ============
+  function computeProfile() {
+    var conVeredicto = (state.answers.r1 === 'De acuerdo' || state.answers.r1 === 'Totalmente de acuerdo');
+    var conCaptura = (state.answers.r5 === 'Espero las 2 semanas y sigo el proceso' || state.answers.r5 === 'Escalo como urgente y presiono la aprobación acelerada');
+    if (conVeredicto && conCaptura) return 'A';
+    if (conVeredicto && !conCaptura) return 'B';
+    if (!conVeredicto && conCaptura) return 'C';
+    return 'D';
+  }
+
+  function pickSpecificity() {
+    for (var i = 0; i < SPECIFICITY.length; i++) {
+      var s = SPECIFICITY[i];
+      if (s.triggers.indexOf(state.answers[s.key]) !== -1) return s.phrase;
+    }
+    return '';
+  }
+
+  function buildReadingParagraphs(profile) {
+    var t = PROFILE_TEMPLATES[profile];
+    var specificity = pickSpecificity();
+    var closing = CLOSING_QUESTIONS[state.answers.r5];
+    var paragraphs = [t.s1];
+    if (specificity) paragraphs.push(specificity);
+    t.body.forEach(function (p) { paragraphs.push(p); });
+    if (t.closingLeadIn) {
+      paragraphs.push(t.closingLeadIn + ' ' + closing);
+    } else {
+      paragraphs.push(closing);
+    }
+    paragraphs.push(t.tail);
+    return paragraphs;
+  }
+
+  function generateId() {
+    return Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  }
+
+  function sendToBackend(payload) {
+    if (!SUBMIT_ENDPOINT) return;
+    try {
+      fetch(SUBMIT_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: JSON.stringify(payload)
+      }).catch(function () { /* fallo de red asíncrono — no bloquear la experiencia */ });
+    } catch (e) { /* fallo síncrono (ej. URL malformada) — no bloquear la experiencia */ }
+  }
+
+  function finish() {
+    var profile = computeProfile();
+    state.perfil = profile;
+    state.submissionId = generateId();
+    var t = PROFILE_TEMPLATES[profile];
+
+    elRTitular.textContent = t.titular;
+    elRReading.innerHTML = '';
+    buildReadingParagraphs(profile).forEach(function (text) {
+      var p = document.createElement('p');
+      p.textContent = text;
+      elRReading.appendChild(p);
+    });
+
+    // Salto directo al AI Return Test (Tally), sin pasar por /art/ — excepción
+    // deliberada para este visitante ya "caliente" (ver website/CLAUDE.md,
+    // "Decisiones Canónicas de /umbral" y CLAUDE.md raíz, "Enrutamiento de
+    // CTAs y Enlaces"). Mismos parámetros que /art/ ya propaga a Tally.
+    var utm = 'utm_source=umbral&utm_medium=devolucion&utm_campaign=estudio-fuga-2026&origen=' + encodeURIComponent(state.origen);
+    elRArtLink.href = 'https://tally.so/r/Np6e5W?' + utm;
+
+    elScreenContact.hidden = true;
+    elIntakeHeader.style.display = 'none';
+    elScreenResult.hidden = false;
+
+    sendToBackend({
+      action: 'submit',
+      submissionId: state.submissionId,
+      origen: state.origen,
+      r1: state.answers.r1, r2: state.answers.r2, r3: state.answers.r3, r4: state.answers.r4, r5: state.answers.r5,
+      empresa: state.contact.empresa, sector: state.contact.sector, cargo: state.contact.cargo, correo: state.contact.correo,
+      perfil: profile,
+      submittedAt: new Date().toISOString()
+    });
+  }
+
+  elRArtLink.addEventListener('click', function () {
+    sendToBackend({
+      action: 'click',
+      submissionId: state.submissionId,
+      clickedAt: new Date().toISOString()
+    });
+  });
+
+  renderQuestion();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+/* ============================================================
+   /nosotros v5 — craft tipográfico, accesibilidad (WCAG AA) y
+   precisión responsive. Carga DESPUÉS de styles-nosotros4.css.
+   No cambia la identidad: afina la calidad de ejecución.
+   ============================================================ */
+
+/* ---------- 1 · CRAFT MICRO-TIPOGRÁFICO ---------- */
+/* Balanceo de titulares y bloques cortos: evita viudas/huérfanas */
+h1, h2,
+.purpose__statement, .lead-assert, .founder__quote,
+.principle h3, .pullquote p, .evidence-card .section-head h2 {
+  text-wrap: balance;
+}
+/* Cuerpo: reparto tipográfico parejo de la última línea */
+.chapeau, .prose p, .hero__body, .principle p, .facts__v .sub, .cred-list .v {
+  text-wrap: pretty;
+}
+/* Puntuación colgante (progressive: Safari) */
+html { hanging-punctuation: first last; }
+
+/* Medida de lectura óptima (~66–72 caracteres por línea).
+   Se fija en px porque la unidad ch sobreestima (la "0" es más
+   ancha que el carácter promedio en Montserrat). */
+.prose { max-width: 620px; }
+.prose--wide { max-width: 700px; }
+.purpose__body { max-width: 580px; }
+
+/* ---------- 2 · ACCESIBILIDAD — contraste AA en texto fino ---------- */
+/* Sube grises por debajo de 4.5:1. La jerarquía se mantiene por
+   tamaño, peso y tratamiento — no por bajo contraste. */
+.facts__k { color: rgba(30,42,56,0.72); }
+.not-firm { color: rgba(30,42,56,0.70); }
+.principle p { color: rgba(30,42,56,0.74); }
+.evidence-card p { color: rgba(30,42,56,0.74); }
+
+/* Blanco pleno sobre teal para los textos pequeños de la franja */
+.bg-teal .scale-stat__label { color: #ffffff; }
+
+/* Foco visible reforzado en el wayfinding (teclado) */
+.dotnav__item:focus-visible { outline: 2px solid var(--teal); outline-offset: 5px; border-radius: 50%; }
+.dotnav.on-dark .dotnav__item:focus-visible { outline-color: #fff; }
+
+/* ---------- 3 · MODO ALTO CONTRASTE DEL SISTEMA ---------- */
+@media (forced-colors: active) {
+  .facts, .evidence-card, .principle, .aria2__step, .card { border: 1px solid CanvasText; }
+  .dotnav__dot { border-color: CanvasText; }
+  .dotnav__item.active .dotnav__dot { background: Highlight; border-color: Highlight; }
+  .scale-stat__rule, .purpose__rule { background: CanvasText; }
+}
+
+/* ---------- 4 · RESPONSIVE DE PRECISIÓN (móvil) ---------- */
+@media (max-width: 600px) {
+  .hero--decl { padding: 122px 0 60px; }
+  .hero__say h1 { font-size: clamp(29px, 8.4vw, 40px); }
+  .hero .chapeau { font-size: 18px; }
+  .purpose__statement { font-size: clamp(25px, 6.8vw, 34px); }
+  .founder__quote { font-size: 19px; padding-left: 18px; }
+  .facts { padding: 4px 22px; }
+  .facts__v { font-size: 19px; }
+  .evidence-card { padding: 28px 22px; }
+  .evidence-card .ev-shift { gap: 10px 12px; }
+  .scrollcue { margin-top: 30px; }
+  .section-head { margin-bottom: 40px; }
+}
+
+/* Tap targets cómodos en móvil para enlaces de texto */
+@media (max-width: 880px) and (pointer: coarse) {
+  .evidence-card__cta, .footer__col a, .footer__legal a { padding: 4px 0; display: inline-flex; }
+}
