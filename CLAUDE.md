@@ -46,10 +46,12 @@ Nuevas páginas: `<body class="v4 v5 v6">` y cargar las 4 CSS + 3 JS + image-slo
 | `/autor` | `autor/index.html` | Índice de autores del Modelo ARIA — César y Ruth | ✅ Implementada (2026-09-07), tarjeta de Ruth agregada (2026-09-08) |
 | `/autor/cesar-lozano` | `autor/cesar-lozano/index.html` | Página canónica de evidencia del autor — 8 bloques, `Person` JSON-LD, único CTA hacia `/art/` | ✅ Implementada (2026-09-07) — ver sección propia abajo |
 | `/autor/ruth-jaramillo` | `autor/ruth-jaramillo/index.html` | Misma plantilla de 8 bloques, ángulo complementario (por qué la adopción falla en las personas) | ✅ Implementada (2026-09-08) — ver sección propia abajo |
-| `/estudio-fuga` | `estudio-fuga/index.html` | Landing autocontenida de captación en frío (LinkedIn/gremial) para el Estudio de Fuga de Productividad de la IA · Colombia 2026 — un solo CTA, `noindex, follow` | ✅ Implementada y desplegada (2026-09-12) — ver "Decisiones Canónicas de `/estudio-fuga`" abajo |
-| `/umbral` | `umbral/index.html` | Formulario de calificación de 5 preguntas (una por pantalla) + devolución de perfil A/B/C/D, con enlace de salida al AI Return Test — destino del CTA de `/estudio-fuga` | ✅ Implementada, desplegada y con persistencia conectada (2026-09-12/13) — ver "Decisiones Canónicas de `/umbral`" abajo |
+| ~~`/estudio-fuga`~~ | ~~`estudio-fuga/index.html`~~ | Landing autocontenida de captación en frío (LinkedIn/gremial) para el Estudio de Fuga de Productividad de la IA · Colombia 2026 — un solo CTA, `noindex, follow` | ❌ **Retirada (2026-10-10)** — la activación 2026-2027 pasa a regirse por `Estrategia de Valor DCA 2027 - Definitiva.md`, que no incluye este estudio ni su mecánica. El enlace nunca se distribuyó, así que el retiro es limpio (sin redirect), mismo criterio que `/fundadores`. Archivo completo en `_archive/estudio-fuga-colombia-2026/` (raíz del workspace), con README de cómo retomarlo. Ruta da 404 desde el próximo despliegue. Ver "Decisiones Canónicas de `/estudio-fuga`" abajo — queda como registro histórico, no como estado vigente |
+| ~~`/umbral`~~ | ~~`umbral/index.html`~~ | Formulario de calificación de 5 preguntas (una por pantalla) + devolución de perfil A/B/C/D, con enlace de salida al AI Return Test — destino del CTA de `/estudio-fuga` | ❌ **Retirada (2026-10-10)**, junto con `/estudio-fuga` — no tiene razón de existir sin esa landing. Mismo archivo, misma fecha. Ver "Decisiones Canónicas de `/umbral`" abajo — registro histórico |
 
 ## Decisiones Canónicas de `/estudio-fuga` (2026-09-12)
+
+> ❌ **RETIRADA el 2026-10-10 — registro histórico, no estado vigente.** Ver fila de la tabla de arriba y `_archive/estudio-fuga-colombia-2026/README.md`. Todo lo que sigue describe cómo era la página mientras estuvo en producción; no usar como referencia para reconstruir sin antes revisar esa carpeta y la Estrategia de Valor DCA 2027.
 
 > Landing autocontenida (HTML/CSS embebido, sin nav, sin las 4 hojas de estilo en cascada del website) para captación de tráfico 100% frío (LinkedIn, correo gremial) del Estudio de Fuga de Productividad de la IA · Colombia 2026. Brief original altamente prescriptivo: no nombra el modelo propietario, un solo CTA en toda la página, paleta y tipografía exactas del brand book. Fine-tuning BE + UI/UX completo (auditoría de triple lente — C-Level UX, mecanismos BE, claridad/conversión — seguida de iteración fina bloque por bloque).
 
@@ -74,6 +76,8 @@ El único CTA ("Participar ahora") apunta a `/umbral` — un paso de calificaci�
 Ver `CLAUDE.md` raíz, sección "Estudio de Fuga de Productividad de la IA · Colombia 2026 — cupo canónico", para la cifra vigente ("hasta 100 empresas") y el resumen del fine-tuning de copy/BE aplicado (titular en voz DCA, cifra ancla en pastilla, bloque de beneficios con marco de pérdida, CTA con doble declaración de expectativa).
 
 ## Decisiones Canónicas de `/umbral` (2026-09-12)
+
+> ❌ **RETIRADA el 2026-10-10, junto con `/estudio-fuga` — registro histórico, no estado vigente.** Ver `_archive/estudio-fuga-colombia-2026/README.md`.
 
 > Formulario de calificación de 5 preguntas (U-01, una pregunta por pantalla + captura de contacto) + pantalla de devolución de perfil A/B/C/D (U-02), destino del único CTA de `/estudio-fuga`. Construido a partir de un prompt de especificación completo entregado por el usuario, refinado primero en un Artifact (BE + UI/UX) antes de este despliegue. Sin nav, sin footer, sin salida distinta al flujo o al enlace final — mismo patrón autocontenido que `/estudio-fuga`.
 
@@ -541,7 +545,7 @@ El artículo `/arquetipos` ganó un bloque `.art-hero` (mismo patrón que los 10
 Todos los botones y enlaces del website + artículos apuntan a `https://digitalchangeadvisors.com` (URLs limpias, **siempre apex, sin `www`**). Cero enlaces a staging `dca-returnai.github.io`.
 
 - **CTA "AI Return Test" → SIEMPRE `/art`** (la landing ART, `website/art/index.html`), con UTMs intactos (`?utm_source=<página>&utm_medium=website&utm_campaign=ai-return-test`). Unifica el destino: antes homepage y returnai saltaban directo a Tally — corregido.
-- **Tally directo (`tally.so/r/Np6e5W`) → SOLO en los CTAs internos de la landing `/art`, con una excepción deliberada:** `/umbral` (2026-09-13) — ver "Decisiones Canónicas de `/umbral`" más abajo. Ninguna otra página enlaza a Tally. (Excepción no-CTA adicional: `tally.so/help/privacy-policy` como referencia legal.)
+- **Tally directo (`tally.so/r/Np6e5W`) → SOLO en los CTAs internos de la landing `/art`.** La excepción que existía en `/umbral` (2026-09-13) quedó sin efecto al retirarse esa página el 2026-10-10 — ver "Decisiones Canónicas de `/umbral`" más abajo. Ninguna página en producción enlaza a Tally fuera de `/art`. (Excepción no-CTA adicional: `tally.so/help/privacy-policy` como referencia legal.)
 - **Agendamiento — DOS enlaces canónicos distintos, no intercambiables (corregido 2026-09-09):**
   - **`https://agenda.digitalchangeadvisors.com/retorno-ia`** — sesión general "Agendar sesión" con un experto DCA (`/returnai`, blog, contacto, footer de los 17 artículos de Perspectivas, `/arquetipos`, `/ara` — sesión de diagnóstico del producto AI Return Assessment).
   - **`https://agenda.digitalchangeadvisors.com/returnai-art`** — SOLO para "Analizar mis resultados con un especialista", el análisis de resultados ya obtenidos en el AI Return Test. Usado exclusivamente en las 7 landings ABM por arquetipo (`amenaza`, `barco`, `feudos`, `sindrome`, `teatro`, `tormenta`, `trampa`).

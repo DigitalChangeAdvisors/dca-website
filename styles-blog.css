@@ -1050,6 +1050,15 @@
   gap: 48px;
   align-items: center;
 }
+.field-study__grid--solo {
+  /* Variante sin imagen de portada — bloque reencuadrado 2026-10-10 al retirar
+     el Estudio de Fuga de Productividad · Colombia 2026 (ver _archive/).
+     Una sola columna centrada, en vez de dejar vacío el 40% de la imagen. */
+  grid-template-columns: 1fr;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: left;
+}
 .field-study__cover img {
   /* La foto (tableta sostenida a dos manos) trae su propio fondo — a
      diferencia del recorte flotante anterior, aquí sí corresponde el
