@@ -169,6 +169,34 @@ El usuario confirmó la nota pendiente de arriba, pero con un criterio más ampl
 
 **Deliberadamente sin tocar:** las cifras de la ficción ($8.2M, 120 días, 11%→70%, $891K), los extractos del Preludio/Capítulo 1 (diálogo entre comillas, claramente marcado como ficción) y las secciones "Para quién es/no es" — ninguno de estos afirma que el caso sea real; describen la trama o al lector real, no al revés. No se mezcló ninguna cifra con el caso real bajo NDA (`CLAUDE.md` raíz, "Caso Ancla") — sigue esa regla intacta.
 
+## La línea madre (McKinsey 80/37, brecha de 43 puntos) — Ajuste 3 del inventario (2026-10-10)
+
+> Ver `CLAUDE.md` raíz, sección "La línea madre: la brecha de 43 puntos" para la cita canónica completa y la regla de precisión. Esta entrada documenta el detalle técnico página por página.
+
+**Por qué ahora y con este peso:** instrucción explícita del usuario — la brecha de 43 puntos (80% productividad individual percibida / 37% impacto en EBIT, McKinsey, *The State of AI in 2026*, agosto 2026) es "el punto de apoyo de toda la comunicación en la siguiente temporada hasta tener nuevos datos alrededor de los avances de la IA". Antes de este cambio, la cifra solo vivía en `/autor/cesar-lozano`, `blog.html` y varios artículos de Perspectivas — ausente de las 4 páginas de mayor tráfico (home, `/returnai`, `/modelo-aria`, `/nosotros`), cada una con su propia cifra de "problema" distinta y, en 2 de los 4 casos, sin fuente verificable.
+
+**Patrón aplicado, consistente en las 4 páginas:** la cifra 80/37/43 reemplaza o complementa la cifra previa de "problema" de cada página, siempre con cita inmediata (`<p class="source-note">`), nunca presentada como "% de productividad perdida" (regla del Anexo D de la estrategia, ya vigente).
+
+| Página | Qué decía antes | Qué dice ahora | Fuente previa |
+|---|---|---|---|
+| `index.html`, sección "El problema" | "El 70% no puede demostrar retorno de su inversión en IA." | "El 80% de tu gente ya es más productiva con IA. Solo el 37%... — brecha de 43 puntos." | **Ninguna** — el 70% no tenía cita en esta página |
+| `index.html`, hero | "Identificamos los 10 obstáculos... que bloquean tu retorno" | Igual, + "que causan la fuga de productividad de la IA en tu organización" (conecta con la sección de abajo sin repetir las cifras en la misma página) | — |
+| `returnai.html`, sección "Del uso al retorno" | "La mayoría de las firmas mide si la IA se usa..." (sin cifra) | Antepone el 80/37/43 como evidencia de la brecha, antes del diagrama puente $0→$891K | **Ninguna** |
+| `modelo-aria.html`, sección "El problema de fondo" | "El 70% de las organizaciones... no puede documentar ROI" | 80/37/43, + segunda frase que conecta con la experiencia propia: "DCA confirma el mismo patrón en sus propios diagnósticos en 70+ organizaciones" | "Síntesis DCA sobre retorno de inversiones en IA 2024–2025" (autorreferencial, menos rigurosa que una encuesta de terceros) |
+| `nosotros.html`, hero "La firma" | "Digital Change Advisors cierra esa brecha..." (sin antecedente — "esa brecha" no estaba definida antes en el texto) | Antepone el 80/37/43, dándole a "esa brecha" un referente concreto | **Ninguna** |
+
+**Tesis de liderazgo, afilada en la misma sesión (`modelo-aria.html`, `.foundation-thesis`):**
+- Antes: *"el cuello de botella no es la tecnología; son los factores humanos y organizacionales que impiden que la IA convierta en retorno"* — afirmación genérica, el tipo de frase que usa cualquier consultora.
+- Ahora: *"el cuello de botella no es la tecnología — es el estilo de liderazgo. El estilo que llevó a tu empresa hasta aquí no es el que convierte la IA en EBIT."* — cita casi literal de la Estrategia de Valor DCA 2027 (sección 3.1), que advierte explícitamente que esta especificidad es "territorio libre... que ningún competidor puede copiar" si la firma la sostiene con datos propios (sección 17 de esa misma estrategia). Mantiene la regla de encuadre "el estilo que lo trajo hasta aquí" (nunca "usted es el problema") ya vigente en el `CLAUDE.md` raíz desde el inventario original.
+- Verificado: cero menciones residuales de "factores humanos y organizacionales" como la tesis central en esa página — era la única instancia.
+
+**CSS — `.source-note` subido a la cascada compartida.** Existía solo en `styles-modelo-aria.css` (page-specific). Se replicó exactamente (mismos valores: `font-size: 12.5px`, `color: var(--carbon-55)`, variante `.on-dark` para fondos oscuros) en `styles.css`, para que `index.html`, `returnai.html` y `nosotros.html` puedan citar fuentes sin que cada página necesite su propia definición. `modelo-aria.html` sigue cargando ambas hojas (la compartida y la propia) sin conflicto — la regla page-specific, cargada después en la cascada, simplemente repite los mismos valores.
+- **`nosotros.html` necesitó un ajuste adicional de ancho:** su hero (`.hero--decl`) constriñe `.chapeau`/`.hero__body` a `max-width: 720px`; se agregó la misma regla para `.source-note` en `styles-nosotros.css` (no en la hoja compartida, porque ese ancho es específico del layout de esta página). `index.html` y `returnai.html` no necesitaron ajuste — su `.source-note` ya hereda el `max-width: 760px` del `.section-head` contenedor.
+
+**`sitemap.xml`:** `lastmod` actualizado a 2026-10-10 en `/`, `/modelo-aria` y `/nosotros` (`/returnai` ya estaba en esa fecha por los Ajustes 1a/1b/corrección de precio de la misma sesión).
+
+**Sin cambios:** `blog.html` (ya tenía este framing correcto desde el Ajuste 0) y los artículos de Perspectivas que ya citaban la cifra con precisión — confirmado por grep antes de tocar nada.
+
 ## Sistema de Autoridad Personal — páginas de autor, saneamiento de home y par canónico del instrumento (2026-09-07)
 
 > Ejecutado bajo `website/ESPECIFICACION_Sistema_Autoridad_DCA.md` (documento rector, todos los datos confirmados por el usuario, sin campos pendientes de decisión). Objetivo: que un prospecto de contacto en frío que verifique a César Lozano en un buscador o un modelo de lenguaje encuentre una entidad coherente y verificable — no ganar audiencia. Fase 1 (reconocimiento) reportada y aprobada antes de tocar código; Fase 2 (este bloque) implementa los Frentes 1 y 2 más la corrección del par canónico. Fase 3 (módulo de autor en Perspectivas, firma de Alejandro Ríos, LinkedIn) queda para una sesión aparte.

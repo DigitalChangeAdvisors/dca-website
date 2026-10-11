@@ -357,6 +357,14 @@ p { text-wrap: pretty; }
 .validation-card__role { font-size: 12.5px; color: rgba(255,255,255,0.55); margin-top: 2px; }
 .validation-footnote { font-size: 12.5px; color: rgba(255,255,255,0.5); margin-top: 24px; line-height: 1.6; max-width: 760px; }
 .validation-footnote__link { color: var(--teal-light); text-decoration: underline; white-space: nowrap; }
+
+/* Cita de fuente de terceros — fondos claros y oscuros (Regla de verificabilidad,
+   CLAUDE.md raíz). Mismo patrón ya usado en styles-modelo-aria.css; se sube aquí
+   para reutilizarlo en cualquier página de la cascada compartida sin duplicar la
+   definición ni depender de que cada página tenga su propia hoja de estilos. */
+.source-note { font-size: 12.5px; line-height: 1.55; color: var(--carbon-55); margin-top: 14px; }
+.source-note.on-dark { color: rgba(255,255,255,0.55); }
+.source-note .ref { color: var(--teal); font-weight: 600; }
 @media (max-width: 767px) {
   .validation-grid { grid-template-columns: 1fr; }
 }
