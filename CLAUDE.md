@@ -148,6 +148,27 @@ El usuario confirmó la nota pendiente de arriba, pero con un criterio más ampl
 - **No se tocó el copy de ninguna fila** (textos y alcance de ambos Sprint quedaron iguales a la implementación anterior) — solo cambiaron el precio mostrado y la posición en el marcado (bloque `.vl-row` del Agent Sprint movido de un `.vl-group` a otro).
 - **Deliberadamente no se igualó la duración del North Star ("1 sesión ejecutiva") a "4 semanas"** pese a que el usuario describió a los Sprints en conjunto como intervenciones de 4 semanas — es la descripción de la categoría para justificar su posición en la escalera, no una instrucción explícita de reescribir el formato ya establecido del North Star Sprint. Si se confirma que el North Star también debe durar 4 semanas, es un cambio de copy aparte, no asumido aquí.
 
+## `/novela-returnai` — precisión ficción/realidad, Ajuste 2 del inventario (2026-10-10)
+
+> Ajuste 2 de la alineación con `Estrategia de Valor DCA 2027 - Definitiva.md` (hallazgo del inventario original: la página presentaba el caso de Adalid con lenguaje que lo hacía pasar por evidencia real — riesgo señalado explícitamente en el Anexo E de esa estrategia). Instrucción del usuario: precisar los mensajes sin faltar a la verdad, dejando claro que lo único ficticio es la historia narrada, y que el Modelo ARIA, los frameworks, los instrumentos y la experiencia de la firma son 100% reales.
+
+**Auditoría previa (grep de todo `website/*.html`):** "caso real" (3 archivos — 2 eran usos genéricos sin relación, confirmados por contexto), "Seguros Continental" (solo esta página), "Validado con el Modelo ARIA" (solo esta página), "basada en/construida sobre un caso real" (solo esta página). El resto del sitio (`returnai.html`, `index.html`, los 17 artículos de Perspectivas) ya usaba lenguaje correcto para la novela ("ficción empresarial", "narrado desde adentro") — no requirió cambios.
+
+**10 puntos corregidos en `novela-returnai/index.html`**, todos con el mismo principio (fuente real vs. relato ficticio, nunca mezclados):
+1. `description` del JSON-LD `Book` (línea ~1479) — ya no dice "construida sobre un caso real"; ahora distingue explícitamente trama (ficción) de método (real).
+2. Hero (`hero-chapeau`) — misma reescritura, con la frase "La historia es ficción. El método que sigue —y la experiencia detrás de él— es real."
+3. `alt` de la portada — agrega "directivo ficticio" y "aseguradora imaginaria".
+4. `caso-card-label` — "El caso documentado en la novela" → "El caso de Adalid, dentro de la novela (ficción narrativa)".
+5. `caso-card-footer` — "Validado con el Modelo ARIA" (implica auditoría de algo ficticio) → "Empresa y cifras ficticias · El Modelo ARIA que Adalid aplica opera hoy en 70+ organizaciones reales".
+6. H2 de la sección "Por qué esta historia importa" — "está documentada paso a paso" → "está narrada paso a paso, aplicando el mismo método que usamos con clientes reales".
+7. Párrafo siguiente — "La novela documenta exactamente ese momento" → "La novela narra exactamente ese momento... con el Modelo ARIA real".
+8. Cita atribuida a César Lozano — "Fue un problema" (pasado, ligado a Adalid) → "No es un problema... en la ficción y en cada intervención real" (generaliza al método, no al personaje).
+9. Tarjeta 04 de "Lo que el libro revela" — "La novela documenta por qué el orden importa" → "La novela ilustra por qué...".
+10. Conector de cierre de esa misma sección — ya era la línea más precisa de la página ("La ficción es el formato. La evidencia es real."); se reforzó a "Lo único de ficción en esta historia es la historia misma. El método, los instrumentos y la experiencia detrás son 100% reales." — frase que ahora sirve de principio rector para cualquier mención futura de la novela en el sitio.
+11. CTA del AI Return Test al cierre — "el caso documentado en el libro" → "el mismo instrumento real que usamos con cada cliente".
+
+**Deliberadamente sin tocar:** las cifras de la ficción ($8.2M, 120 días, 11%→70%, $891K), los extractos del Preludio/Capítulo 1 (diálogo entre comillas, claramente marcado como ficción) y las secciones "Para quién es/no es" — ninguno de estos afirma que el caso sea real; describen la trama o al lector real, no al revés. No se mezcló ninguna cifra con el caso real bajo NDA (`CLAUDE.md` raíz, "Caso Ancla") — sigue esa regla intacta.
+
 ## Sistema de Autoridad Personal — páginas de autor, saneamiento de home y par canónico del instrumento (2026-09-07)
 
 > Ejecutado bajo `website/ESPECIFICACION_Sistema_Autoridad_DCA.md` (documento rector, todos los datos confirmados por el usuario, sin campos pendientes de decisión). Objetivo: que un prospecto de contacto en frío que verifique a César Lozano en un buscador o un modelo de lenguaje encuentre una entidad coherente y verificable — no ganar audiencia. Fase 1 (reconocimiento) reportada y aprobada antes de tocar código; Fase 2 (este bloque) implementa los Frentes 1 y 2 más la corrección del par canónico. Fase 3 (módulo de autor en Perspectivas, firma de Alejandro Ríos, LinkedIn) queda para una sesión aparte.
