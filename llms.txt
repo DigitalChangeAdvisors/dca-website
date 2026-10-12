@@ -126,6 +126,10 @@ Retorno de la IA · AI Return Test · AI Return Assessment · Solución ReturnAI
 
 - [Novela ReturnAI](https://digitalchangeadvisors.com/novela-returnai/): obra narrativa sobre la pérdida de retorno en proyectos de IA por causas humanas y organizacionales. Lanzamiento: 22 de septiembre de 2026.
 
+## Programa de Aliados
+
+- [Red ARIA](https://digitalchangeadvisors.com/red-aria): programa de aliados para implementadores de IA, consultoras boutique y proveedores tecnológicos que incorporan el Modelo ARIA a su propia oferta, con certificación vía Digital Change Academy y modelo de ingresos compartidos.
+
 ## Sobre la firma
 
 - [Quiénes somos](https://digitalchangeadvisors.com/nosotros)
