@@ -1,0 +1,14 @@
+/* ============================================================
+   Red ARIA — imagen editorial de la sección Riesgo
+   ============================================================ */
+.ra-risk-photo {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+.ra-risk-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
