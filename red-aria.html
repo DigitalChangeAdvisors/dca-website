@@ -36,6 +36,14 @@
 <link rel="stylesheet" href="styles6.css" />
 <link rel="stylesheet" href="styles-modelo-aria.css" />
 
+<style>
+  /* Red ARIA — 4 stats en Autoridad (el resto del sitio usa 3) */
+  #autoridad .stats { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 880px) {
+    #autoridad .stats { grid-template-columns: 1fr; }
+  }
+</style>
+
 <script src="image-slot.js"></script>
 
 <noscript>
@@ -258,6 +266,10 @@
         <div class="stat__label">Organizaciones intervenidas</div>
       </div>
       <div class="stat">
+        <div class="stat__num"><span data-count="57">0</span><span class="suffix">+</span></div>
+        <div class="stat__label">Consultores certificados DCA</div>
+      </div>
+      <div class="stat">
         <div class="stat__num"><span data-count="14">0</span></div>
         <div class="stat__label">Componentes propietarios</div>
       </div>
@@ -279,6 +291,24 @@
     </div>
     <div class="special" data-reveal>
       <p>Red ARIA no es un directorio abierto. Cada mercado y vertical mantiene un cupo limitado de aliados activos — así cada aliado certificado conserva exclusividad real frente a su competencia local, en lugar de competir contra otro aliado DCA por el mismo cliente.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONSULTORES CERTIFICADOS (bloque directo, otro público) ============================ -->
+<section class="section bg-platinum" id="consultores-certificados" data-screen-label="Para consultores certificados">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="label">Para consultores certificados en los frameworks del Modelo ARIA</span>
+      <h2>Ya hiciste la parte difícil: certificarte en el método. Esto es lo que significa hoy.</h2>
+      <p class="chapeau">Si llegaste aquí por una invitación directa de Digital Change Advisors, esto es para ti — no para el resto de esta página.</p>
+      <p class="chapeau">Tu práctica viene de la gestión del cambio tradicional, y te certificaste en los frameworks ágiles de transformación humana que hoy son parte del Modelo ARIA. La IA no volvió obsoleta esa formación — la convirtió en la base que un consultor nuevo tendría que construir desde cero. Tú ya la tienes.</p>
+    </div>
+    <div class="special" data-reveal>
+      <p>No partes de cero y no entras solo. <strong>57+ consultores certificados DCA</strong> ya aplican estos frameworks en toda Latinoamérica, con el mismo estándar — la red en la que tu certificación ya tiene un lugar.</p>
+    </div>
+    <div class="hero__cta" style="margin-top:28px">
+      <a href="mailto:ceo@digitalchangeadvisors.com?subject=Reactivaci%C3%B3n%20%E2%80%94%20Consultor%20certificado%20Modelo%20ARIA" class="btn btn--primary btn--lg">Quiero reactivar mi certificación <span class="arrow">&rarr;</span></a>
     </div>
   </div>
 </section>
