@@ -939,6 +939,90 @@ section { padding: 48px 0; }
 }
 
 /* ═══════════════════════════════════════════
+   B5.5 — LECTORES: TESTIMONIALES
+   Blanco · Prueba social antes del CTA primario
+   Grid flex centrado: n=1 no estira ni queda vacío,
+   n>1 fluye y centra sin rediseño
+   ═══════════════════════════════════════════ */
+.block-testimonios {
+  background: var(--dca-white);
+}
+
+.testimonios-intro {
+  max-width: var(--text-max-width);
+  margin: 0 auto 40px;
+  text-align: center;
+}
+.testimonios-intro h2 {
+  font-size: clamp(20px, 2.2vw, 28px);
+  margin-bottom: 20px;
+}
+.testimonios-intro h2 .line { display: block; }
+.testimonios-intro p {
+  font-size: 16px;
+  color: rgba(30,42,56,0.72);
+  line-height: 1.7;
+}
+
+.testimonios-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+}
+
+.testimonio-card {
+  flex: 1 1 380px;
+  max-width: 440px;
+  background: var(--dca-white);
+  border-radius: 12px;
+  border: 1px solid var(--dca-platinum);
+  box-shadow: 0 4px 20px rgba(30,42,56,0.07);
+  padding: 32px;
+}
+
+.testimonio-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.testimonio-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.testimonio-name {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--dca-carbon);
+  line-height: 1.3;
+}
+.testimonio-role {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 13px;
+  color: rgba(30,42,56,0.6);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+.testimonio-quote {
+  margin: 0;
+  padding: 16px 0 0 20px;
+  border-left: 3px solid var(--dca-gold);
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: rgba(30,42,56,0.85);
+  line-height: 1.7;
+}
+.testimonio-quote p { margin: 0; }
+.testimonio-quote p + p { margin-top: 12px; }
+
+/* ═══════════════════════════════════════════
    B6 — CTA PRIMARIO: OBTENER EL LIBRO
    Carbón · Borde oro arriba · Dos opciones
    ═══════════════════════════════════════════ */
@@ -1819,6 +1903,50 @@ section { padding: 48px 0; }
     <div class="metodo-footer">
       <p class="metodo-authorship">Digital Change Advisors, LLC. · Firma registrada en EE.UU. · Operaciones en España, USA y Latam</p>
       <p class="metodo-connector">El Modelo ARIA es la base de ReturnAI — la solución que Adalid implementa en la novela para documentar sus resultados. Lo que él vive en 120 días es exactamente lo que el Modelo produce en campo.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     B5.5 · LECTORES — TESTIMONIALES
+     Blanco · Prueba social antes del CTA primario
+     ═══════════════════════════════════════════ -->
+<section class="block-testimonios" id="lectores">
+  <div class="container">
+
+    <div class="testimonios-intro">
+      <p class="section-label">Lectores</p>
+      <h2>
+        <span class="line">La historia de Adalid es ficción.</span>
+        <span class="line">La reacción de quien la lee, no.</span>
+      </h2>
+      <div class="section-accent"></div>
+      <div class="mt-24">
+        <p>Esto es lo que dice, con sus propias palabras, uno de los primeros lectores de ReturnAI.</p>
+      </div>
+    </div>
+
+    <div class="testimonios-grid">
+
+      <article class="testimonio-card">
+        <header class="testimonio-head">
+          <picture>
+            <source srcset="../assets/testimonio-novela-cesar-escobar.webp" type="image/webp">
+            <img src="../assets/testimonio-novela-cesar-escobar.jpg" alt="Foto de César Escobar B." class="testimonio-photo" width="64" height="64" loading="lazy">
+          </picture>
+          <div>
+            <p class="testimonio-name">César Escobar B.</p>
+            <p class="testimonio-role">Consultor Gobierno de IA (AI Governance) · AgilMente.co</p>
+          </div>
+        </header>
+        <blockquote class="testimonio-quote">
+          <p>«He vivido proyectos que yo consideraba muy adelantados y el negocio no lo veía así, y ese rebote cuando uno pensaba que ya todo marchaba bien y la inercia devolvía a las personas a su zona de confort.</p>
+          <p>Excelente el ARIA, no solo para que el board, por fin, vea la cifra, sino además para rescatar a las personas de la encrucijada de la IA.»</p>
+        </blockquote>
+      </article>
+
     </div>
 
   </div>
