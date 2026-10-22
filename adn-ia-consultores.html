@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>document.documentElement.classList.replace('no-js','js');</script>
+
+<title>Sprint ADN IA para consultores de Cultura y Cambio | DCA</title>
+<meta name="description" content="Un sprint de un mes para consultores de Cultura y Cambio y de TI: habilita al líder que decide qué cortar y qué recuperar cuando la IA no rinde." />
+<meta name="theme-color" content="#1e2a38" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://digitalchangeadvisors.com/adn-ia-consultores" />
+<meta property="og:title" content="Sprint ADN IA · Cultura y Cambio para cuando la IA no rinde" />
+<meta property="og:description" content="Cómo habilitar al líder que decide qué cortar y qué recuperar. Un mes, en pareja, sobre un caso de práctica propio. Digital Change Academy." />
+<meta property="og:image" content="https://digitalchangeadvisors.com/assets/og-returnai.png" />
+<meta property="og:site_name" content="Digital Change Advisors" />
+<meta property="og:locale" content="es_LA" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://digitalchangeadvisors.com/assets/og-returnai.png" />
+
+<link rel="canonical" href="https://digitalchangeadvisors.com/adn-ia-consultores" />
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/favicon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</noscript>
+
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styles4.css" />
+<link rel="stylesheet" href="styles5.css" />
+<link rel="stylesheet" href="styles6.css" />
+<link rel="stylesheet" href="styles-modelo-aria.css" />
+
+<style>
+  /* Sprint ADN IA · consultores — solo lo que el sistema del sitio no trae: marca de la academia, precios, formulario y preguntas */
+  .adn-academia { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 22px; }
+  .adn-academia img { width: 48px; height: 48px; display: block; }
+  .adn-academia span { font-size: 12.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-dark); }
+
+  .adn-precios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+  .adn-precio { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 28px 24px; }
+  .adn-precios .adn-precio p.adn-precio__monto { font-family: var(--display); font-size: 40px; color: var(--teal); margin: 0 0 8px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .adn-precio p { margin: 0; font-size: 16px; line-height: 1.5; }
+  .adn-precios .adn-precio p.adn-precio__monto { margin-bottom: 10px; }
+  .adn-nota { margin-top: 28px; font-size: 16px; line-height: 1.6; max-width: 760px; }
+
+  .adn-form { max-width: 720px; margin: 36px auto 0; text-align: left; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; }
+  .adn-campo { display: flex; flex-direction: column; gap: 6px; }
+  .adn-campo--ancho { grid-column: 1 / -1; }
+  .adn-campo label, .adn-campo .adn-leyenda { font-size: 14px; font-weight: 600; color: var(--carbon); }
+  .adn-campo .adn-opcional { font-weight: 400; color: #5a6472; }
+  .adn-campo input, .adn-campo select, .adn-campo textarea {
+    font: inherit; font-size: 16px; color: var(--carbon); background: var(--white);
+    border: 1.5px solid #c9d1ce; border-radius: 8px; padding: 12px 14px; min-height: 48px; width: 100%; box-sizing: border-box; }
+  .adn-campo textarea { min-height: 104px; resize: vertical; }
+  .adn-campo input:focus-visible, .adn-campo select:focus-visible, .adn-campo textarea:focus-visible { outline: 3px solid var(--teal); outline-offset: 1px; border-color: var(--teal); }
+  .adn-campo[data-error] input, .adn-campo[data-error] select { border-color: #9c4430; }
+  .adn-error { font-size: 14px; color: #9c4430; min-height: 0; }
+  .adn-consentimiento { grid-column: 1 / -1; display: flex; gap: 12px; align-items: flex-start; font-size: 15px; line-height: 1.5; }
+  .adn-consentimiento input { width: 22px; height: 22px; margin-top: 2px; flex-shrink: 0; accent-color: var(--teal); }
+  .adn-consentimiento a { color: var(--teal-dark); text-decoration: underline; }
+  .adn-enviar { grid-column: 1 / -1; text-align: center; }
+  .adn-enviar .btn[disabled] { opacity: .5; cursor: progress; transform: none; box-shadow: none; }
+  .adn-estado { grid-column: 1 / -1; border-radius: 10px; padding: 18px 20px; font-size: 16px; line-height: 1.55; }
+  .adn-estado[hidden] { display: none; }
+  .adn-estado--ok { background: rgba(46,139,118,.06); border: 1px solid var(--teal); }
+  .adn-estado--error { background: #fff; border: 1px solid #9c4430; color: #9c4430; }
+  .adn-trampa { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  .adn-preguntas { max-width: 820px; margin: 36px 0 0; }
+  .adn-preguntas details { border-top: 1px solid var(--border); padding: 4px 0; }
+  .adn-preguntas details:last-child { border-bottom: 1px solid var(--border); }
+  .adn-preguntas summary { cursor: pointer; list-style: none; padding: 18px 36px 18px 0; position: relative; font-weight: 600; font-size: 17px; color: var(--carbon); }
+  .adn-preguntas summary::-webkit-details-marker { display: none; }
+  .adn-preguntas summary::after { content: "+"; position: absolute; right: 4px; top: 14px; font-size: 24px; color: var(--teal-dark); }
+  .adn-preguntas details[open] summary::after { content: "–"; }
+  .adn-preguntas summary:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+  .adn-preguntas details p { margin: 0 0 18px; font-size: 16px; line-height: 1.6; max-width: 70ch; }
+
+  @media (max-width: 880px) {
+    .adn-precios { grid-template-columns: 1fr; }
+    .adn-form { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script src="image-slot.js"></script>
+
+<noscript>
+  <style>
+    [data-reveal] { opacity: 1 !important; transform: none !important; }
+  </style>
+</noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOccupationalProgram",
+  "name": "Sprint ADN IA · Cultura y Cambio para cuando la IA no rinde",
+  "description": "Sprint de un mes para consultores de Cultura y Cambio y de TI: cómo habilitar al líder que decide qué cortar y qué recuperar cuando una iniciativa de IA no rinde.",
+  "url": "https://digitalchangeadvisors.com/adn-ia-consultores",
+  "provider": {
+    "@type": "Organization",
+    "name": "Digital Change Academy",
+    "parentOrganization": { "@type": "Organization", "name": "Digital Change Advisors", "url": "https://digitalchangeadvisors.com" }
+  },
+  "educationalCredentialAwarded": "Experto Cultura y Cambio ADN IA",
+  "timeToComplete": "P1M",
+  "educationalProgramMode": "online",
+  "inLanguage": "es",
+  "offers": [
+    { "@type": "Offer", "price": "197", "priceCurrency": "USD", "description": "Cohorte de lanzamiento, para quienes ya tienen una certificación de DCA" },
+    { "@type": "Offer", "price": "297", "priceCurrency": "USD", "description": "Consultores de TI y de Cultura y Cambio, primera cohorte" },
+    { "@type": "Offer", "price": "497", "priceCurrency": "USD", "description": "Cohortes siguientes" }
+  ]
+}
+</script>
+</head>
+<body class="v4 v5 v6">
+
+<a href="#contenido" class="skip-link">Saltar al contenido</a>
+
+<div class="scroll-progress"></div>
+
+<!-- ============================ NAV ============================ -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="https://digitalchangeadvisors.com/" class="nav__logo" aria-label="Digital Change Advisors — Inicio">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -8 400 88" role="img" aria-hidden="true">
+        <line x1="3" y1="73" x2="73" y2="73" stroke="#e4e4e4" stroke-width="1"/>
+        <path d="M 8 68 C 22 14, 55 8, 68 8" fill="none" stroke="#2e8b76" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="8" cy="68" r="5" fill="#2e8b76"/>
+        <circle cx="68" cy="8" r="12" fill="#a48111"/>
+        <line x1="90" y1="14" x2="90" y2="64" stroke="#1e2a38" stroke-width="1" opacity="0.12"/>
+        <text x="106" y="55" font-family="'Marcellus', Georgia, serif" font-weight="400" font-size="44" fill="#2e8b76" letter-spacing="-0.5">DCA</text>
+        <text x="109" y="70" font-family="'Montserrat', Helvetica, sans-serif" font-weight="600" font-size="10.5" fill="#1e2a38" opacity="0.80" letter-spacing="2.6">DIGITAL CHANGE ADVISORS</text>
+      </svg>
+    </a>
+    <ul class="nav__links">
+      <li><a href="https://digitalchangeadvisors.com/modelo-aria">Modelo ARIA</a></li>
+      <li><a href="https://digitalchangeadvisors.com/returnai">ReturnAI</a></li>
+      <li><a href="https://digitalchangeadvisors.com/red-aria">Red ARIA</a></li>
+      <li><a href="https://digitalchangeadvisors.com/autor/cesar-lozano/">El autor</a></li>
+      <li><a href="https://digitalchangeadvisors.com/nosotros">Nosotros</a></li>
+      <li><a href="https://digitalchangeadvisors.com/blog">Perspectivas</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="https://digitalchangeadvisors.com/art/?utm_source=adn-ia-consultores&utm_medium=website&utm_campaign=ai-return-test" class="btn btn--primary" target="_blank" rel="noopener">AI Return Test <span class="arrow">&rarr;</span></a>
+      <button class="nav__burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="https://digitalchangeadvisors.com/modelo-aria">Modelo ARIA</a>
+  <a href="https://digitalchangeadvisors.com/returnai">ReturnAI</a>
+  <a href="https://digitalchangeadvisors.com/red-aria">Red ARIA</a>
+  <a href="https://digitalchangeadvisors.com/autor/cesar-lozano/">El autor</a>
+  <a href="https://digitalchangeadvisors.com/nosotros">Nosotros</a>
+  <a href="https://digitalchangeadvisors.com/blog">Perspectivas</a>
+  <a href="https://digitalchangeadvisors.com/art/?utm_source=adn-ia-consultores&utm_medium=website&utm_campaign=ai-return-test" class="btn btn--primary btn--lg" target="_blank" rel="noopener">AI Return Test &rarr;</a>
+</div>
+
+<main id="contenido">
+
+<!-- ============================ HERO ============================ -->
+<header class="hero" id="top" data-screen-label="Hero — Sprint ADN IA consultores">
+  <div class="hero__inner">
+    <div class="adn-academia"><img src="assets/logo-digital-change-academy.png" alt="" width="48" height="48"><span>Digital Change Academy &middot; Para consultores</span></div>
+    <h1>
+      <span class="line">Sprint ADN IA &middot; Cultura y Cambio</span>
+      <span class="line">para cuando la IA no rinde</span>
+    </h1>
+    <p class="chapeau"><strong>Cómo habilitar al líder que decide qué cortar y qué recuperar.</strong> El retorno de la IA se pierde en la última milla humana y se recupera cuando el líder del proceso conduce la adopción, medida en el KPI que importa.</p>
+    <div class="hero__cta">
+      <a href="#solicitud" class="btn btn--primary btn--lg">Solicitar mi cupo <span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ EL MOMENTO ============================ -->
+<section class="section" id="momento" data-screen-label="Cuando la IA no rinde">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="label">Cuando la IA no rinde</span>
+      <h2>La pregunta ya no es cómo instalar la herramienta. Es qué se corta y qué se recupera.</h2>
+      <p class="chapeau">El líder decide y conduce la adopción; Cultura y Cambio la habilita. Este sprint es para el consultor que quiere estar en esa conversación con algo concreto que aportar.</p>
+    </div>
+    <div class="cols3" data-stagger>
+      <div class="card flow-card" data-reveal>
+        <span class="label">Lo que ves</span>
+        <h3>Licencias activas, pilotos estancados y un KPI que no se mueve.</h3>
+        <p>Separas los síntomas que apuntan a la tecnología de los que apuntan a las personas, antes de proponer nada.</p>
+      </div>
+      <div class="card flow-card" data-reveal>
+        <span class="label">Lo que decide el líder</span>
+        <h3>Cortar, recuperar o esperar evidencia, con fecha.</h3>
+        <p>La decisión es suya. Lo que necesita es llegar a ella con criterio, no con la inercia de lo que ya se pagó.</p>
+      </div>
+      <div class="card flow-card" data-reveal>
+        <span class="label">Lo que habilitas tú</span>
+        <h3>La conversación, la evidencia y el siguiente paso.</h3>
+        <p>Diseñas experimentos breves en el trabajo real y distingues lo que puedes habilitar de lo que exige un diagnóstico especializado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ENTREGABLES ============================ -->
+<section class="section bg-tealsoft" id="entregables" data-screen-label="Lo que te llevas">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="label">Lo que te llevas</span>
+      <h2>Sales con dos documentos que puedes usar con tu próximo cliente.</h2>
+    </div>
+    <div class="cols3" data-stagger>
+      <div class="card flow-card" data-reveal>
+        <span class="label">Brief para el líder</span>
+        <h3>Una página para abrir la conversación.</h3>
+        <p>La iniciativa y su KPI, los síntomas, tu hipótesis, la decisión que el líder tiene por delante y la pregunta con la que la abres.</p>
+      </div>
+      <div class="card flow-card" data-reveal>
+        <span class="label">Hoja de Ruta Evolutiva</span>
+        <h3>Tu práctica, actualizada con evidencia propia.</h3>
+        <p>Lo que cambias, lo que conservas y tu oferta para cuando la IA no rinde, sustentada en cuatro experimentos que hiciste tú.</p>
+      </div>
+      <div class="card flow-card" data-reveal>
+        <span class="label">Credencial verificable</span>
+        <h3>Experto Cultura y Cambio ADN IA.</h3>
+        <p>Se emite en Accredible después de que defiendes tu trabajo en vivo. Se gana con evidencia, no con asistencia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CÓMO FUNCIONA ============================ -->
+<section class="section" id="como-funciona" data-screen-label="Cómo funciona el mes">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="label">Cómo funciona el mes</span>
+      <h2>Un mes, en pareja, sobre un caso de práctica que construyes tú.</h2>
+      <p class="chapeau">El caso es compuesto y sin datos de clientes: una iniciativa de IA que no rinde. Cada integrante de la pareja trabaja el suyo; la pareja es tu par crítico.</p>
+    </div>
+    <div class="finalcta__grid" data-reveal>
+      <div class="finalcta__card">
+        <span class="finalcta__card-num">01</span>
+        <strong class="finalcta__card-title">Día 0 &middot; Fundamentación</strong>
+        <p class="finalcta__card-desc">120 minutos en línea con César Lozano: el marco del sprint, las cuatro barreras que frenan la adopción y cómo se trabaja el mes.</p>
+      </div>
+      <div class="finalcta__card">
+        <span class="finalcta__card-num">02</span>
+        <strong class="finalcta__card-title">Semanas 1 y 2 &middot; Experimentos</strong>
+        <p class="finalcta__card-desc">Cuatro experimentos breves, de unas dos horas cada uno, con retroalimentación por correo en 24 horas.</p>
+      </div>
+      <div class="finalcta__card">
+        <span class="finalcta__card-num">03</span>
+        <strong class="finalcta__card-title">Semana 3 &middot; La novela y el ensayo</strong>
+        <p class="finalcta__card-desc">Lees ReturnAI y contrastas tu ruta con la historia en un ensayo breve.</p>
+      </div>
+      <div class="finalcta__card">
+        <span class="finalcta__card-num">04</span>
+        <strong class="finalcta__card-title">Semana 4 &middot; Defensa en vivo</strong>
+        <p class="finalcta__card-desc">Defiendes tu trabajo en el cierre. Con la defensa aprobada recibes la credencial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TU MODELO SE QUEDA ============================ -->
+<section class="section bg-platinum" id="tu-modelo" data-screen-label="Lo que se conserva">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="label">Lo que se conserva</span>
+      <h2>Tu modelo de cambio se queda. Lo que se actualiza son tres supuestos.</h2>
+      <p class="chapeau">ADKAR, Kotter, Prosci o el modelo propio que uses hoy no están equivocados: se diseñaron para otro tipo de cambio. En el sprint auditas el tuyo y actualizas lo que la IA movió: que la persona adopta solo con razones, que el cambio llega a un estado final estable y que el equipo de cambio es quien opera la adopción.</p>
+    </div>
+    <div class="special" data-reveal>
+      <p><strong>Para quién es.</strong> Para consultores independientes de gestión del cambio y transformación cultural, y para consultores de TI. Sin prerrequisitos: no necesitas una certificación previa ni un cliente real.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ QUIÉN FACILITA ============================ -->
+<section class="section" id="facilita" data-screen-label="Quién facilita">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="label">Quién facilita</span>
+      <h2>Liderar la IA es decidir qué se corta y qué rinde.</h2>
+      <p class="chapeau">Facilita César Lozano, autor de ReturnAI y fundador de Digital Change Advisors. Conduce la fundamentación del Día 0 y las defensas del cierre; el Equipo Facilitador de Digital Change Academy te acompaña en las semanas de experimentos.</p>
+    </div>
+    <div class="special" data-reveal>
+      <p>Adalid Puentes tiene USD 8,2 millones invertidos en IA que no aparecen en el estado de resultados y 120 días para demostrar su retorno. Es la historia de ReturnAI, la novela que lees en la semana 3: la recibes completa al cierre de la semana 2.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ INVERSIÓN ============================ -->
+<section class="section bg-tealsoft" id="inversion" data-screen-label="Inversión">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="label">Inversión por persona</span>
+      <h2>Primera cohorte: inicio a finales de enero de 2027.</h2>
+    </div>
+    <div class="adn-precios" data-reveal>
+      <div class="adn-precio"><p class="adn-precio__monto">USD 197</p><p>Cohorte de lanzamiento, para quienes ya tienen una certificación de DCA.</p></div>
+      <div class="adn-precio"><p class="adn-precio__monto">USD 297</p><p>Consultores de TI y de Cultura y Cambio, primera cohorte.</p></div>
+      <div class="adn-precio"><p class="adn-precio__monto">USD 497</p><p>Cohortes siguientes.</p></div>
+    </div>
+    <p class="adn-nota" data-reveal>Cada cohorte es de 6 personas: se trabaja en parejas y cada persona defiende su trabajo en vivo. El cupo se confirma con el pago, cuando el Equipo Facilitador responde a tu solicitud.</p>
+  </div>
+</section>
+
+<!-- ============================ SOLICITUD ============================ -->
+<section class="section finalcta" id="solicitud" data-screen-label="Solicitud de cupo">
+  <div class="wrap">
+    <div class="finalcta__inner" data-reveal>
+      <span class="label">Primera cohorte</span>
+      <h2>Solicita tu cupo.</h2>
+      <p class="finalcta__intro">El Equipo Facilitador te responde personalmente y confirma los cupos en el orden en que llegan las solicitudes. El cupo queda asegurado con el pago.</p>
+
+      <form class="adn-form" id="adn-form" novalidate>
+        <div class="adn-campo">
+          <label for="adn-nombre">Nombre completo</label>
+          <input id="adn-nombre" name="nombre" type="text" autocomplete="name" required maxlength="120" aria-describedby="adn-nombre-error">
+          <span class="adn-error" id="adn-nombre-error" aria-live="polite"></span>
+        </div>
+        <div class="adn-campo">
+          <label for="adn-email">Correo electrónico</label>
+          <input id="adn-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="160" aria-describedby="adn-email-error">
+          <span class="adn-error" id="adn-email-error" aria-live="polite"></span>
+        </div>
+        <div class="adn-campo">
+          <label for="adn-perfil">Tu perfil</label>
+          <select id="adn-perfil" name="perfil" required aria-describedby="adn-perfil-error">
+            <option value="">Elige una opción</option>
+            <option>Cultura y Cambio</option>
+            <option>TI</option>
+            <option>Otro</option>
+          </select>
+          <span class="adn-error" id="adn-perfil-error" aria-live="polite"></span>
+        </div>
+        <div class="adn-campo">
+          <label for="adn-pais">País</label>
+          <input id="adn-pais" name="pais" type="text" autocomplete="country-name" required maxlength="60" aria-describedby="adn-pais-error">
+          <span class="adn-error" id="adn-pais-error" aria-live="polite"></span>
+        </div>
+        <div class="adn-campo adn-campo--ancho">
+          <label for="adn-modelo">¿Qué modelo de cambio usas hoy? <span class="adn-opcional">(opcional)</span></label>
+          <input id="adn-modelo" name="modelo" type="text" maxlength="300">
+        </div>
+        <div class="adn-campo adn-campo--ancho">
+          <label for="adn-motivo">¿Por qué ahora? <span class="adn-opcional">(opcional)</span></label>
+          <textarea id="adn-motivo" name="motivo" maxlength="1500"></textarea>
+        </div>
+        <div class="adn-trampa" aria-hidden="true">
+          <label for="adn-web">Sitio web</label>
+          <input id="adn-web" name="web" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <label class="adn-consentimiento" for="adn-consentimiento">
+          <input id="adn-consentimiento" name="consentimiento" type="checkbox" required>
+          <span>Autorizo a Digital Change Academy a usar estos datos para responder a mi solicitud. <a href="https://digitalchangeadvisors.com/privacy-policy">Política de privacidad</a>.</span>
+        </label>
+        <div class="adn-estado adn-estado--error" id="adn-error-general" role="alert" hidden></div>
+        <div class="adn-estado adn-estado--ok" id="adn-ok" role="status" tabindex="-1" hidden></div>
+        <div class="adn-enviar">
+          <button type="submit" class="btn btn--primary btn--lg" id="adn-boton">Solicitar mi cupo <span class="arrow">&rarr;</span></button>
+          <p class="finalcta__note">Sin pago en este paso<span class="sep">·</span>Respuesta personal del Equipo Facilitador</p>
+        </div>
+      </form>
+      <noscript><p class="finalcta__intro">Para enviar tu solicitud sin JavaScript, escribe a <a href="mailto:gerencia@digitalchangeadvisors.com?subject=Solicitud%20de%20cupo%20%C2%B7%20Sprint%20ADN%20IA">gerencia@digitalchangeadvisors.com</a>.</p></noscript>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PREGUNTAS ============================ -->
+<section class="section" id="preguntas" data-screen-label="Preguntas frecuentes">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="label">Preguntas frecuentes</span>
+      <h2>Lo que suelen preguntar antes de solicitar.</h2>
+    </div>
+    <div class="adn-preguntas">
+      <details><summary>¿Necesito un cliente real?</summary><p>No. Trabajas sobre un caso de práctica compuesto, sin datos de clientes: una iniciativa de IA que no rinde.</p></details>
+      <details><summary>¿Necesito una certificación previa?</summary><p>No. El sprint no tiene prerrequisitos y parte del modelo de cambio que usas hoy.</p></details>
+      <details><summary>¿Cuánto tiempo requiere?</summary><p>La fundamentación dura 120 minutos. En las semanas 1 y 2 haces dos experimentos por semana, de unas dos horas cada uno. En la semana 3 lees la novela y escribes un ensayo breve, y en la semana 4 defiendes tu trabajo en vivo.</p></details>
+      <details><summary>¿Puedo usar IA durante el sprint?</summary><p>Sí, declarándola. La usas para validar entregables que construiste con tu criterio, y nunca con datos reales de clientes.</p></details>
+      <details><summary>¿Cuándo empieza?</summary><p>La primera cohorte inicia a finales de enero de 2027. Las fechas exactas se comunican a quienes solicitan cupo.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer" data-screen-label="Footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="https://digitalchangeadvisors.com/" class="logo" aria-label="Digital Change Advisors — Inicio">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -8 400 88" width="320" height="70" aria-hidden="true" focusable="false">
+            <line x1="3" y1="73" x2="73" y2="73" stroke="#ffffff" stroke-width="1" opacity="0.15"/>
+            <path d="M 8 68 C 22 14, 55 8, 68 8" fill="none" stroke="#2e8b76" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="8" cy="68" r="5" fill="#2e8b76"/>
+            <circle cx="68" cy="8" r="12" fill="#a48111"/>
+            <line x1="90" y1="14" x2="90" y2="64" stroke="#ffffff" stroke-width="1" opacity="0.15"/>
+            <text x="106" y="55" font-family="'Marcellus', Georgia, serif" font-weight="400" font-size="44" fill="#ffffff" letter-spacing="-0.5">DCA</text>
+            <text x="109" y="70" font-family="'Montserrat', Helvetica, sans-serif" font-weight="600" font-size="10.5" fill="#ffffff" opacity="0.80" letter-spacing="2.6">DIGITAL CHANGE ADVISORS</text>
+          </svg>
+        </a>
+        <p>De la adopción de la IA al Retorno que sí importa.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Firma</h4>
+        <ul>
+          <li><a href="https://digitalchangeadvisors.com/modelo-aria">Modelo ARIA</a></li>
+          <li><a href="https://digitalchangeadvisors.com/nosotros">Liderazgo</a></li>
+          <li><a href="https://digitalchangeadvisors.com/nosotros">Nosotros</a></li>
+          <li><a href="https://digitalchangeadvisors.com/contacto/">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Capacidades</h4>
+        <ul>
+          <li><a href="https://digitalchangeadvisors.com/#industrias">Industrias</a></li>
+          <li><a href="https://digitalchangeadvisors.com/returnai">ReturnAI</a></li>
+          <li><a href="https://digitalchangeadvisors.com/red-aria">Red ARIA</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Perspectivas</h4>
+        <ul>
+          <li><a href="https://digitalchangeadvisors.com/blog">Investigación</a></li>
+          <li><a href="https://digitalchangeadvisors.com/novela-returnai/">Libro ReturnAI</a></li>
+          <li><a href="https://digitalchangeadvisors.com/art/?utm_source=adn-ia-consultores&utm_medium=website&utm_campaign=ai-return-test" target="_blank" rel="noopener">AI Return Test</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2026 Digital Change Advisors, LLC.</span>
+      <div class="footer__legal">
+        <a href="https://digitalchangeadvisors.com/privacy-policy">Pol&iacute;tica de privacidad</a>
+        <a href="https://digitalchangeadvisors.com/terms-of-use">T&eacute;rminos de uso</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Solicitud de cupo → backend propio del Sprint ADN IA (Apps Script, pestaña «Solicitudes»).
+   La confirmación solo se muestra si el servidor devuelve ok y un número de solicitud: nunca por optimismo. */
+(function () {
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbyCmsXsK5xCRPvSis1j7WDEghF6YX6-l3LLZf9mo1MSDBtLCyAUQqII6a83ynXFG26tOg/exec';
+  var CORREO = 'gerencia@digitalchangeadvisors.com';
+  var form = document.getElementById('adn-form');
+  if (!form) return;
+  var boton = document.getElementById('adn-boton');
+  var errorGeneral = document.getElementById('adn-error-general');
+  var okBox = document.getElementById('adn-ok');
+  var reglas = {
+    nombre: function (v) { return v.trim().length >= 3 ? '' : 'Escribe tu nombre completo.'; },
+    email: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? '' : 'Revisa tu correo electrónico.'; },
+    perfil: function (v) { return v ? '' : 'Elige tu perfil.'; },
+    pais: function (v) { return v.trim().length >= 2 ? '' : 'Escribe tu país.'; }
+  };
+  function validar(nombre) {
+    var campo = form.elements[nombre];
+    var msg = reglas[nombre](campo.value);
+    var caja = campo.closest('.adn-campo');
+    document.getElementById('adn-' + nombre + '-error').textContent = msg;
+    if (msg) { caja.setAttribute('data-error', ''); campo.setAttribute('aria-invalid', 'true'); }
+    else { caja.removeAttribute('data-error'); campo.removeAttribute('aria-invalid'); }
+    return !msg;
+  }
+  Object.keys(reglas).forEach(function (n) {
+    form.elements[n].addEventListener('blur', function () { if (form.elements[n].value) validar(n); });
+  });
+  function mostrarError(texto) {
+    errorGeneral.innerHTML = '';
+    errorGeneral.appendChild(document.createTextNode(texto + ' Puedes intentarlo de nuevo o escribir a '));
+    var a = document.createElement('a'); a.href = 'mailto:' + CORREO; a.textContent = CORREO; errorGeneral.appendChild(a);
+    errorGeneral.appendChild(document.createTextNode('.'));
+    errorGeneral.hidden = false;
+  }
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    errorGeneral.hidden = true;
+    var invalidos = Object.keys(reglas).filter(function (n) { return !validar(n); });
+    if (invalidos.length) { form.elements[invalidos[0]].focus(); return; }
+    if (!form.elements.consentimiento.checked) { mostrarError('Necesitamos tu autorización para responderte.'); form.elements.consentimiento.focus(); return; }
+    var datos = {
+      tipo: 'solicitud-cupo',
+      nombre: form.elements.nombre.value, email: form.elements.email.value, perfil: form.elements.perfil.value,
+      pais: form.elements.pais.value, modelo: form.elements.modelo.value, motivo: form.elements.motivo.value,
+      web: form.elements.web.value, consentimiento: true, origen: (location.search || '').slice(1, 300)
+    };
+    boton.disabled = true; boton.firstChild.textContent = 'Enviando… ';
+    fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(datos), redirect: 'follow' })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (res && res.ok && res.solicitud) {
+          form.querySelectorAll('.adn-campo, .adn-consentimiento, .adn-enviar').forEach(function (el) { el.hidden = true; });
+          okBox.textContent = 'Recibimos tu solicitud. Tu número es ' + res.solicitud + '. Te enviamos un correo de confirmación y el Equipo Facilitador te responderá personalmente.';
+          okBox.hidden = false; okBox.focus();
+        } else {
+          mostrarError((res && res.mensaje) ? res.mensaje : 'No pudimos registrar tu solicitud.');
+        }
+      })
+      .catch(function () { mostrarError('No pudimos conectar con el servidor.'); })
+      .then(function () { boton.disabled = false; boton.firstChild.textContent = 'Solicitar mi cupo '; });
+  });
+})();
+</script>
+<script src="app.js"></script>
+<script src="enhance4.js"></script>
+<script src="enhance6.js"></script>
+</body>
+</html>
