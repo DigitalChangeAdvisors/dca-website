@@ -12,7 +12,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://digitalchangeadvisors.com/adn-ia-consultores" />
 <meta property="og:title" content="Sprint ADN IA · Cultura y Cambio para cuando la IA no rinde" />
-<meta property="og:description" content="La IA de tus clientes no está rindiendo. Un sprint de un mes para salir con una oferta nueva, dos entregables y la credencial Experto Cultura y Cambio ADN IA." />
+<meta property="og:description" content="La IA de tus clientes no está rindiendo. Un sprint de un mes para salir con una oferta nueva, dos entregables y la Certificación Experto Cultura y Cambio ADN IA, verificable en Accredible." />
 <meta property="og:image" content="https://digitalchangeadvisors.com/assets/og-adn-ia-consultores.jpg" />
 <meta property="og:site_name" content="Digital Change Advisors" />
 <meta property="og:locale" content="es_LA" />
@@ -94,8 +94,16 @@
   .adn-semanas__que { color: var(--carbon); }
   .adn-semanas__produce { color: #4a5563; }
   .adn-semanas__produce::before { content: "Produces: "; font-weight: 600; color: var(--carbon); }
-  #top h1 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.15; }
-  .adn-datos { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 15px; font-weight: 600; color: var(--carbon); }
+  #top h1 { font-size: clamp(28px, 3.4vw, 44px); line-height: 1.15; }
+  /* Pirámide invertida: en ≥1024px cada .line cabe entera en la columna de texto (más ancha que el hero dividido estándar) */
+  @media (min-width: 1024px) {
+    #top .hero-split { grid-template-columns: 1.3fr 0.7fr; gap: 56px; }
+    #top h1 { font-size: clamp(30px, 2.55vw, 38px); }
+    #top h1 .line { white-space: nowrap; }
+    #top .chapeau { max-width: 600px; }
+  }
+  #top .mra-hero__cta { margin-top: 32px; }
+  .adn-datos { list-style: none; padding: 0; margin: 24px 0 0; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 15px; font-weight: 600; color: var(--carbon); }
   .adn-datos li { position: relative; padding-left: 16px; }
   .adn-datos li::before { content: ""; position: absolute; left: 0; top: .55em; width: 7px; height: 7px; border-radius: 50%; background: var(--teal); }
   .adn-cta-nota { margin: 14px 0 0; font-size: 14px; color: #4a5563; }
@@ -148,7 +156,31 @@
   .adn-mas[open] > summary::after { content: "–"; }
   .adn-mas > summary:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
   .adn-mas .adn-testimonios { margin-top: 16px; }
+
+  /* Ajuste fino 2026-10-23: anchos alineados al grid, alturas de campo y pies de testimonio parejos */
+  .adn-campo input, .adn-campo select { height: 50px; }
+  .finalcta__note .sep { margin: 0 8px; color: #9aa3ad; }
+  .adn-calc { max-width: none; padding: 28px 32px; }
+  .adn-calc__fila { gap: 24px 32px; }
+  .adn-incluye { max-width: none; padding: 28px 32px 16px; }
+  .adn-incluye .adn-lista { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; }
+  .adn-incluye .adn-lista li:first-child { grid-column: 1 / -1; font-weight: 600; color: var(--carbon); }
+  .adn-supuestos { list-style: none; counter-reset: supuesto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 8px 0 0; padding: 0; }
+  .adn-supuestos li { counter-increment: supuesto; background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--gold); border-radius: 10px; padding: 24px 26px; font-size: 17px; line-height: 1.5; color: var(--carbon); }
+  .adn-supuestos li::before { content: "Supuesto " counter(supuesto); display: block; margin-bottom: 10px; font-size: 12.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--teal-dark); }
+  @supports (grid-template-rows: subgrid) {
+    .adn-testimonios { grid-auto-rows: auto; }
+    .adn-testimonio { display: grid; grid-row: span 2; grid-template-rows: subgrid; gap: 22px; }
+  }
+  .adn-testimonio figcaption { align-items: flex-start; }
   @media (max-width: 880px) {
+    .adn-supuestos, .adn-incluye .adn-lista { grid-template-columns: 1fr; }
+    .adn-supuestos { gap: 12px; }
+    .adn-supuestos li { padding: 18px 20px; font-size: 16px; }
+    .adn-supuestos li::before { margin-bottom: 6px; }
+    .adn-calc { padding: 24px; }
+    .adn-calc__fila { gap: 20px; }
+    .adn-incluye { padding-left: 24px; padding-right: 24px; }
     .adn-precios { grid-template-columns: 1fr; }
     .adn-testimonios { grid-template-columns: 1fr; }
     .adn-encaje, .adn-cifras, .adn-pasos { grid-template-columns: 1fr; }
@@ -178,7 +210,12 @@
     "name": "Digital Change Academy",
     "parentOrganization": { "@type": "Organization", "name": "Digital Change Advisors", "url": "https://digitalchangeadvisors.com" }
   },
-  "educationalCredentialAwarded": "Experto Cultura y Cambio ADN IA",
+  "educationalCredentialAwarded": {
+    "@type": "EducationalOccupationalCredential",
+    "name": "Certificación Experto Cultura y Cambio ADN IA",
+    "credentialCategory": "Certificación",
+    "description": "Emitida por Digital Change Academy y verificable en Accredible. Se obtiene al defender evidencia propia en vivo."
+  },
   "timeToComplete": "P1M",
   "educationalProgramMode": "online",
   "inLanguage": "es",
@@ -248,8 +285,8 @@
           <span class="line">El líder necesita decidir qué detener.</span>
           <span class="line">Tú puedes habilitar esa decisión.</span>
         </h1>
-        <p class="chapeau"><strong>Sprint ADN IA · Cultura y Cambio para cuando la IA no rinde.</strong> Un mes, en línea y en pareja, para salir con una oferta nueva que puedes cobrar, dos entregables listos para tu próximo cliente y la credencial Experto Cultura y Cambio ADN IA.</p>
-        <ul class="adn-datos"><li>Inicio: finales de enero de 2027</li><li>Unas 4 horas por semana</li><li>En línea</li></ul>
+        <p class="chapeau"><strong>Sprint ADN IA · Cultura y Cambio para cuando la IA no rinde.</strong> Un mes, en línea y en pareja, para salir con una oferta nueva que puedes cobrar, dos entregables listos para tu próximo cliente y la Certificación Experto Cultura y Cambio ADN IA, verificable en Accredible.</p>
+        <ul class="adn-datos"><li>Inicio: finales de enero de 2027</li><li>Unas 4 horas por semana</li><li>En línea</li><li>Certificación verificable en Accredible</li></ul>
         <div class="mra-hero__cta">
           <a href="#solicitud" class="btn btn--primary btn--lg">Quiero mi cupo <span class="arrow">&rarr;</span></a>
         </div>
@@ -347,9 +384,9 @@
         <p>Diagnóstico cultural, plan de comunicación o mapa de actores: rediseñas el que más vendes y sabes dónde ayuda la IA.</p>
       </div>
       <div class="card flow-card" data-reveal>
-        <span class="label">Una credencial que se verifica</span>
-        <h3>Experto Cultura y Cambio ADN IA.</h3>
-        <p>En Accredible, para tus propuestas y tu perfil. Se gana defendiendo evidencia propia en vivo.</p>
+        <span class="label">Una certificación que se verifica</span>
+        <h3>Certificación Experto Cultura y Cambio ADN IA.</h3>
+        <p>Verificable en Accredible, para tus propuestas y tu perfil. Se obtiene defendiendo evidencia propia en vivo.</p>
       </div>
     </div>
     <div class="adn-calc" data-reveal>
@@ -382,7 +419,7 @@
       <li><span class="adn-semanas__cuando">Semana 2 &middot; Experimento 3</span><span class="adn-semanas__que">Predicas con el ejemplo y preparas la conversación con el líder</span><span class="adn-semanas__produce"><strong>El Brief para el líder</strong></span></li>
       <li><span class="adn-semanas__cuando">Semana 2 &middot; Experimento 4</span><span class="adn-semanas__que">Tu práctica actualizada: cultura y medición del caso</span><span class="adn-semanas__produce"><strong>Tu Hoja de Ruta Evolutiva</strong></span></li>
       <li><span class="adn-semanas__cuando">Semana 3</span><span class="adn-semanas__que">La novela ReturnAI y tu ensayo</span><span class="adn-semanas__produce">El contraste entre la historia y tu práctica</span></li>
-      <li><span class="adn-semanas__cuando">Semana 4</span><span class="adn-semanas__que">Defensa en vivo con César Lozano</span><span class="adn-semanas__produce"><strong>La credencial</strong></span></li>
+      <li><span class="adn-semanas__cuando">Semana 4</span><span class="adn-semanas__que">Defensa en vivo con César Lozano</span><span class="adn-semanas__produce"><strong>Tu certificación en Accredible</strong></span></li>
     </ol>
     <div class="adn-cta"><a href="#solicitud" class="btn btn--primary btn--lg">Quiero mi cupo <span class="arrow">&rarr;</span></a></div>
   </div>
@@ -394,8 +431,13 @@
     <div class="section-head" data-reveal>
       <span class="label">Lo que se conserva</span>
       <h2>Tu modelo de cambio se queda. Lo que se actualiza son tres supuestos.</h2>
-      <p class="chapeau">ADKAR, Kotter, Prosci o tu modelo propio no están equivocados: se diseñaron para otro tipo de cambio. En el sprint auditas el tuyo y actualizas tres supuestos: que la persona adopta solo con razones, que el cambio llega a un estado final estable y que el equipo de cambio opera la adopción.</p>
+      <p class="chapeau">ADKAR, Kotter, Prosci o tu modelo propio no están equivocados: se diseñaron para otro tipo de cambio. En el sprint auditas el tuyo y actualizas tres supuestos.</p>
     </div>
+    <ol class="adn-supuestos" data-reveal>
+      <li>Que la persona adopta solo con razones.</li>
+      <li>Que el cambio llega a un estado final estable.</li>
+      <li>Que el equipo de cambio opera la adopción.</li>
+    </ol>
   </div>
 </section>
 
@@ -485,7 +527,7 @@
     </div>
     <ul class="adn-razones" data-reveal>
       <li><strong>Un grupo exclusivo, con el autor.</strong> Reducido y en parejas; César Lozano conduce el Día 0 y tu defensa.</li>
-      <li><strong>Llegas antes.</strong> Tu oferta y tu credencial, listas cuando tus clientes empiecen a preguntar qué hacer con la IA que no rinde.</li>
+      <li><strong>Llegas antes.</strong> Tu oferta y tu certificación, listas cuando tus clientes empiecen a preguntar qué hacer con la IA que no rinde.</li>
     </ul>
     <div class="adn-precios" data-reveal>
       <div class="adn-precio"><p class="adn-precio__monto">USD 197</p><p>Primera cohorte, si ya tienes una certificación de DCA.</p></div>
@@ -495,13 +537,13 @@
     <div class="adn-incluye" data-reveal>
       <h3>Qué incluye</h3>
       <ul class="adn-lista adn-lista--si">
+        <li>Certificación Experto Cultura y Cambio ADN IA, emitida y verificable en Accredible.</li>
         <li>Día 0 en vivo con César Lozano (120 minutos).</li>
         <li>Cuatro experimentos con retroalimentación por correo en 24 horas.</li>
         <li>Trabajo en pareja con tu par crítico.</li>
         <li>La novela ReturnAI completa.</li>
         <li>Tu Brief para el líder y tu Hoja de Ruta Evolutiva.</li>
         <li>Defensa en vivo con César Lozano.</li>
-        <li>Credencial verificable en Accredible.</li>
       </ul>
     </div>
     <p class="adn-nota" data-reveal>Cada cohorte es un grupo reducido y exclusivo. El cupo se confirma con el pago, cuando el Equipo Facilitador responde a tu solicitud. Puedes pagar con tarjeta de crédito o por transferencia a Bancolombia.</p>
@@ -593,7 +635,8 @@
       <h2>Lo que suelen preguntar antes de solicitar.</h2>
     </div>
     <div class="adn-preguntas">
-      <details><summary>¿Cómo recupero lo que invierto?</summary><p>Por tres vías: una oferta nueva que puedes cobrar (la conversación con el líder, con el Brief como entregable y el precio que tú definas), tu entregable estrella rediseñado y una credencial verificable para tus propuestas. Haz la cuenta con tu tarifa en la sección «Cómo recuperas la inversión».</p></details>
+      <details><summary>¿Cómo recupero lo que invierto?</summary><p>Por tres vías: una oferta nueva que puedes cobrar (la conversación con el líder, con el Brief como entregable y el precio que tú definas), tu entregable estrella rediseñado y una certificación verificable en Accredible para tus propuestas. Haz la cuenta con tu tarifa en la sección «Cómo recuperas la inversión».</p></details>
+      <details><summary>¿Qué certificación obtengo?</summary><p>La Certificación Experto Cultura y Cambio ADN IA, emitida por Digital Change Academy en Accredible: un enlace verificable que puedes incluir en tus propuestas y en tu perfil profesional. Se obtiene en la semana 4, al defender en vivo con César Lozano la evidencia que construiste en tu caso.</p></details>
       <details><summary>¿Cuánto tiempo requiere?</summary><p>Unas 4 horas por semana en las semanas 1 y 2: la fundamentación del Día 0 (120 minutos) y dos experimentos por semana, de unas dos horas cada uno. En la semana 3 lees la novela y escribes un ensayo breve, y en la semana 4 defiendes tu trabajo en vivo.</p></details>
       <details><summary>¿Y si no puedo asistir en vivo?</summary><p>El Día 0 queda grabado para que lo veas después. Si no puedes en la fecha de tu defensa, acordamos una segunda fecha.</p></details>
       <details><summary>¿Y si no es para mí?</summary><p>Si al terminar el Día 0 decides que el sprint no es para ti, te devolvemos el 100 % de lo que pagaste.</p></details>
