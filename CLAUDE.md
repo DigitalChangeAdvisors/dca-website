@@ -257,6 +257,14 @@ El usuario confirmó la nota pendiente de arriba, pero con un criterio más ampl
   - Garantía de devolución del 100 % si al terminar el Día 0 la persona decide que no es para ella.
   - Una sola línea genérica sobre «rutas opcionales con Digital Change Advisors» al terminar, sin condiciones.
   - **Nunca un número de cupos en el copy público:** el grupo se describe como «reducido y exclusivo».
+- **Auditoría de conversión y UX (2026-10-23, `Sprint ADN IA Consultores/V2_vigente/landing/AUDITORIA_CONVERSION_UX_LANDING.md`):**
+  - 11 bloques en orden de decisión: hero → para quién es → por qué ahora → cómo recuperas → semana a semana → tu modelo se queda → quién facilita → inversión y primera cohorte → solicitud → preguntas → cierre.
+  - 8 CTA idénticos («Quiero mi cupo», ancla `#solicitud`); regla: ningún tramo de más de 3.500 px sin CTA en móvil.
+  - Un solo bloque de precio, con «Qué incluye».
+  - «Qué pasa después» en 3 pasos, con respuesta en 48 horas hábiles.
+  - Día 0 grabado y segunda fecha para la defensa (pregunta frecuente).
+  - «57+ consultores certificados DCA» en «Quién facilita».
+  - H1 de esta página a `clamp(30px, 3.4vw, 44px)` (desviación deliberada del hero dividido estándar).
 - **Imagen del hero (2026-10-22):** generada con Nano Banana con un prompt propio (plantilla base del sitio + consultor que entrega una hoja de una página a un líder, sin texto legible). Hero dividido `.mra-hero--split` igual que `/red-aria` (body `mra-v5 mra-v6`). Máster 1856×2304 en `_image-masters/website/adn-ia-consultores-hero.jpeg` (fuera del subárbol publicado); derivados 960×1192 en `assets/adn-ia-consultores-hero.{webp,jpg}` (≈43/78 KB). Vista previa social propia `assets/og-adn-ia-consultores.jpg` (1200×630: logo de la academia sobre blanco + escena completa), porque un recorte 1,91:1 del retrato perdía la hoja o el rostro. Rótulo corto «Cultura y Cambio · TI» para que no tape la hoja a 360 px.
 
 ## `/novela-returnai` — precisión ficción/realidad, Ajuste 2 del inventario (2026-10-10)
