@@ -250,6 +250,13 @@ El usuario confirmó la nota pendiente de arriba, pero con un criterio más ampl
 - **Formulario → backend propio del sprint** (Apps Script «Academy · Motor Sprint ADN IA Consultores», pestaña `Solicitudes`, `Solicitudes.gs`): POST `text/plain`, `tipo:'solicitud-cupo'`; la confirmación solo aparece si responde `ok` y un número `SOL-NNNN` (sin `no-cors`, a diferencia de `/fundadores`). Honeypot `web` fuera del viewport. Aviso a gerencia@ con copia a ceo@ y acuse al solicitante.
 - **CSS:** sistema del sitio + `styles-modelo-aria.css` (tamaño del logo del nav, igual que `/red-aria`) + `<style>` acotado (`.adn-*`) para marca de la academia, precios, formulario y preguntas. Precios sin tachados ni plan resaltado.
 - **Indexable**, en `sitemap.xml`; fuera del nav principal.
+- **Revisión BE v2 (2026-10-23, decisiones del propietario; detalle en `Sprint ADN IA Consultores/V2_vigente/landing/REVISION_BE_LANDING_2.md`):**
+  - H1 centrado en el beneficio, en pirámide; NOMBRE pasa a la etiqueta superior.
+  - Nuevos bloques: «Cómo recuperas la inversión» (tres vías y una calculadora que solo divide el precio por la tarifa del visitante, sin cifras de retorno inventadas), «Lo que trabajas, semana a semana» (reemplaza «Cómo funciona el mes») y «Por qué en la primera cohorte».
+  - Cita canónica de McKinsey 80/37 con la muestra (1.719 ejecutivos, verificada por el propietario contra el estudio publicado).
+  - Garantía de devolución del 100 % si al terminar el Día 0 la persona decide que no es para ella.
+  - Una sola línea genérica sobre «rutas opcionales con Digital Change Advisors» al terminar, sin condiciones.
+  - **Nunca un número de cupos en el copy público:** el grupo se describe como «reducido y exclusivo».
 - **Imagen del hero (2026-10-22):** generada con Nano Banana con un prompt propio (plantilla base del sitio + consultor que entrega una hoja de una página a un líder, sin texto legible). Hero dividido `.mra-hero--split` igual que `/red-aria` (body `mra-v5 mra-v6`). Máster 1856×2304 en `_image-masters/website/adn-ia-consultores-hero.jpeg` (fuera del subárbol publicado); derivados 960×1192 en `assets/adn-ia-consultores-hero.{webp,jpg}` (≈43/78 KB). Vista previa social propia `assets/og-adn-ia-consultores.jpg` (1200×630: logo de la academia sobre blanco + escena completa), porque un recorte 1,91:1 del retrato perdía la hoja o el rostro. Rótulo corto «Cultura y Cambio · TI» para que no tape la hoja a 360 px.
 
 ## `/novela-returnai` — precisión ficción/realidad, Ajuste 2 del inventario (2026-10-10)
