@@ -249,7 +249,7 @@ El usuario confirmó la nota pendiente de arriba, pero con un criterio más ampl
 - **Mecanismo:** solicitud de cupo → respuesta personal del Equipo Facilitador → confirmación con pago, en orden de llegada. Sin sesión informativa (decisión del propietario, 2026-10-22). CTA único; el botón del hero es ancla a `#solicitud`.
 - **Formulario → backend propio del sprint** (Apps Script «Academy · Motor Sprint ADN IA Consultores», pestaña `Solicitudes`, `Solicitudes.gs`): POST `text/plain`, `tipo:'solicitud-cupo'`; la confirmación solo aparece si responde `ok` y un número `SOL-NNNN` (sin `no-cors`, a diferencia de `/fundadores`). Honeypot `web` fuera del viewport. Aviso a gerencia@ con copia a ceo@ y acuse al solicitante.
 - **CSS:** sistema del sitio + `styles-modelo-aria.css` (tamaño del logo del nav, igual que `/red-aria`) + `<style>` acotado (`.adn-*`) para marca de la academia, precios, formulario y preguntas. Precios sin tachados ni plan resaltado.
-- **Indexable**, en `sitemap.xml`; fuera del nav principal.
+- **Indexable**, en `sitemap.xml` y en `llms.txt` (sección propia «Programas para consultores», agregada 2026-10-23 con la descripción del JSON-LD); fuera del nav principal.
 - **Revisión BE v2 (2026-10-23, decisiones del propietario; detalle en `Sprint ADN IA Consultores/V2_vigente/landing/REVISION_BE_LANDING_2.md`):**
   - H1 centrado en el beneficio, en pirámide; NOMBRE pasa a la etiqueta superior.
   - Nuevos bloques: «Cómo recuperas la inversión» (tres vías y una calculadora que solo divide el precio por la tarifa del visitante, sin cifras de retorno inventadas), «Lo que trabajas, semana a semana» (reemplaza «Cómo funciona el mes») y «Por qué en la primera cohorte».

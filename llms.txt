@@ -130,6 +130,10 @@ Retorno de la IA · AI Return Test · AI Return Assessment · Solución ReturnAI
 
 - [Red ARIA](https://digitalchangeadvisors.com/red-aria): programa de aliados para implementadores de IA, consultoras boutique y proveedores tecnológicos que incorporan el Modelo ARIA a su propia oferta, con certificación vía Digital Change Academy y modelo de ingresos compartidos.
 
+## Programas para consultores
+
+- [Sprint ADN IA · Cultura y Cambio para cuando la IA no rinde](https://digitalchangeadvisors.com/adn-ia-consultores): sprint de un mes de Digital Change Academy para consultores de Cultura y Cambio y de TI: cómo habilitar al líder que decide qué cortar y qué recuperar cuando una iniciativa de IA no rinde.
+
 ## Sobre la firma
 
 - [Quiénes somos](https://digitalchangeadvisors.com/nosotros)
