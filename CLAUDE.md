@@ -265,6 +265,12 @@ El usuario confirmó la nota pendiente de arriba, pero con un criterio más ampl
   - Día 0 grabado y segunda fecha para la defensa (pregunta frecuente).
   - «57+ consultores certificados DCA» en «Quién facilita».
   - H1 de esta página a `clamp(30px, 3.4vw, 44px)` (desviación deliberada del hero dividido estándar).
+- **Testimonios (2026-10-23):** bloque `#testimonios` después de «Quién facilita».
+  - Patrón 3 + 3: tres visibles (Sandra Ossa, Alejandra Posada, Rafael Moñino; cada uno responde a una objeción distinta) y tres en un `<details>` «Ver 3 testimonios más» (Lina Marulanda, Gloria Lucía Cano, Mary Sol Sánchez). Se descartó el carrusel.
+  - Solo fragmentos literales que pasan la Zona A del sprint; el encuadre explícito dice «programas anteriores de la academia».
+  - Fotos de 160 px en `assets/testimonio-academia-*.{webp,jpg}`, circulares por CSS.
+  - Autorización y excepción a «testimonios sin datos numéricos» registradas en el CLAUDE.md raíz.
+  - CTA tras el bloque (9 CTA; máximo 3.420 px sin CTA en móvil).
 - **Imagen del hero (2026-10-22):** generada con Nano Banana con un prompt propio (plantilla base del sitio + consultor que entrega una hoja de una página a un líder, sin texto legible). Hero dividido `.mra-hero--split` igual que `/red-aria` (body `mra-v5 mra-v6`). Máster 1856×2304 en `_image-masters/website/adn-ia-consultores-hero.jpeg` (fuera del subárbol publicado); derivados 960×1192 en `assets/adn-ia-consultores-hero.{webp,jpg}` (≈43/78 KB). Vista previa social propia `assets/og-adn-ia-consultores.jpg` (1200×630: logo de la academia sobre blanco + escena completa), porque un recorte 1,91:1 del retrato perdía la hoja o el rostro. Rótulo corto «Cultura y Cambio · TI» para que no tape la hoja a 360 px.
 
 ## `/novela-returnai` — precisión ficción/realidad, Ajuste 2 del inventario (2026-10-10)

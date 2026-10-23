@@ -133,8 +133,24 @@
   .adn-cierre h2 { color: var(--white); }
   .adn-cierre p { color: rgba(255,255,255,.82); font-size: 17px; margin: 18px 0 30px; }
   .adn-cierre p.adn-cierre__nota { font-size: 14px; margin: 16px 0 0; color: rgba(255,255,255,.7); }
+  .adn-testimonios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 8px; }
+  .adn-testimonio { margin: 0; background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 26px; display: flex; flex-direction: column; justify-content: space-between; gap: 22px; }
+  .adn-testimonio blockquote { margin: 0; }
+  .adn-testimonio blockquote p { margin: 0; font-size: 16px; line-height: 1.6; font-style: italic; color: var(--carbon); }
+  .adn-testimonio figcaption { display: flex; align-items: center; gap: 14px; }
+  .adn-testimonio img { width: 64px; height: 64px; border-radius: 50%; display: block; flex-shrink: 0; }
+  .adn-testimonio figcaption span { font-size: 14px; line-height: 1.45; color: #4a5563; }
+  .adn-testimonio figcaption strong { display: block; font-size: 16px; color: var(--carbon); }
+  .adn-mas { margin-top: 24px; }
+  .adn-mas > summary { cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 600; color: var(--teal-dark); text-decoration: underline; text-underline-offset: 3px; }
+  .adn-mas > summary::-webkit-details-marker { display: none; }
+  .adn-mas > summary::after { content: "+"; font-size: 20px; text-decoration: none; }
+  .adn-mas[open] > summary::after { content: "–"; }
+  .adn-mas > summary:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+  .adn-mas .adn-testimonios { margin-top: 16px; }
   @media (max-width: 880px) {
     .adn-precios { grid-template-columns: 1fr; }
+    .adn-testimonios { grid-template-columns: 1fr; }
     .adn-encaje, .adn-cifras, .adn-pasos { grid-template-columns: 1fr; }
     .adn-semanas__produce { border-left: 3px solid var(--teal); padding-left: 12px; }
     .adn-semanas li { grid-template-columns: 1fr; gap: 4px; }
@@ -395,6 +411,67 @@
     <div class="special" data-reveal>
       <p>Adalid Puentes tiene USD 8,2 millones invertidos en IA que no aparecen en el estado de resultados y 120 días para demostrar su retorno. Es la historia de ReturnAI, la novela que lees en la semana 3: la recibes completa al cierre de la semana 2.</p>
     </div>
+    <div class="adn-cta"><a href="#solicitud" class="btn btn--primary btn--lg">Quiero mi cupo <span class="arrow">&rarr;</span></a></div>
+  </div>
+</section>
+
+<!-- ============================ 7b · TESTIMONIOS ============================ -->
+<section class="section bg-platinum" id="testimonios" data-screen-label="Testimonios de consultores certificados">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="label">Lo que dicen</span>
+      <h2>Consultores que ya se certificaron con Digital Change Academy.</h2>
+      <p class="chapeau">Sus testimonios hablan de programas anteriores de la academia: el mismo equipo y el mismo estándar que este sprint.</p>
+    </div>
+    <div class="adn-testimonios" data-reveal>
+      <figure class="adn-testimonio">
+        <blockquote><p>«Los clientes necesitan ver pronto resultados positivos en sus colaboradores, la forma en que se relacionan, la forma en que logran ver la Era Digital en sus vidas y por ende los beneficios que esto trae a las organizaciones a nivel económico.»</p></blockquote>
+        <figcaption>
+          <picture><source srcset="assets/testimonio-academia-sandra-ossa.webp" type="image/webp"><img src="assets/testimonio-academia-sandra-ossa.jpg" alt="Foto de Sandra Ossa" width="80" height="80" loading="lazy"></picture>
+          <span><strong>Sandra Ossa</strong>Facilitadora · Certificada por Digital Change Academy</span>
+        </figcaption>
+      </figure>
+      <figure class="adn-testimonio">
+        <blockquote><p>«Quería entender cómo apoyar a mis clientes en la gestión de los nuevos desafíos humanos que enfrentan las organizaciones en un mundo cada vez más digital y complejo. […] El resultado: un modelo novedoso, orientado a la acción y con impactos visibles desde el inicio.»</p></blockquote>
+        <figcaption>
+          <picture><source srcset="assets/testimonio-academia-alejandra-posada.webp" type="image/webp"><img src="assets/testimonio-academia-alejandra-posada.jpg" alt="Foto de Alejandra Posada" width="80" height="80" loading="lazy"></picture>
+          <span><strong>Alejandra Posada</strong>Consultora · Certificada por Digital Change Academy</span>
+        </figcaption>
+      </figure>
+      <figure class="adn-testimonio">
+        <blockquote><p>«Recomiendo la academia sin dudarlo —y así lo escribí en mi artículo en LinkedIn— como la opción más completa, integrada y flexible para especializarse en gestión del cambio en la Era Digital.»</p></blockquote>
+        <figcaption>
+          <picture><source srcset="assets/testimonio-academia-rafael-monino.webp" type="image/webp"><img src="assets/testimonio-academia-rafael-monino.jpg" alt="Foto de Rafael Moñino" width="80" height="80" loading="lazy"></picture>
+          <span><strong>Rafael Moñino</strong>Docente de posgrado y consultor empresarial · Certificado por Digital Change Academy</span>
+        </figcaption>
+      </figure>
+    </div>
+    <details class="adn-mas">
+      <summary>Ver 3 testimonios más</summary>
+      <div class="adn-testimonios">
+      <figure class="adn-testimonio">
+          <blockquote><p>«Estaba buscando una alternativa realmente disruptiva que me permitiera llevar a mis clientes a lograr una transformación efectiva, rápida y sostenible.»</p></blockquote>
+          <figcaption>
+            <picture><source srcset="assets/testimonio-academia-lina-marulanda.webp" type="image/webp"><img src="assets/testimonio-academia-lina-marulanda.jpg" alt="Foto de Lina Marulanda" width="80" height="80" loading="lazy"></picture>
+            <span><strong>Lina Marulanda</strong>Consultora · Certificada por Digital Change Academy</span>
+          </figcaption>
+        </figure>
+      <figure class="adn-testimonio">
+          <blockquote><p>«Hoy me siento parte de una comunidad donde la mentoría, la creatividad, el respeto y la generosidad no son conceptos abstractos, sino experiencias vividas cada día.»</p></blockquote>
+          <figcaption>
+            <picture><source srcset="assets/testimonio-academia-gloria-lucia-cano.webp" type="image/webp"><img src="assets/testimonio-academia-gloria-lucia-cano.jpg" alt="Foto de Gloria Lucía Cano" width="80" height="80" loading="lazy"></picture>
+            <span><strong>Gloria Lucía Cano</strong>Certificada por Digital Change Academy</span>
+          </figcaption>
+        </figure>
+      <figure class="adn-testimonio">
+          <blockquote><p>«Recomiendo la especialización porque el plan de estudios es actualizado y relevante para las tendencias actuales del mercado, los guías son expertos en el campo y están activos en la investigación constante.»</p></blockquote>
+          <figcaption>
+            <picture><source srcset="assets/testimonio-academia-mary-sol-sanchez.webp" type="image/webp"><img src="assets/testimonio-academia-mary-sol-sanchez.jpg" alt="Foto de Mary Sol Sánchez" width="80" height="80" loading="lazy"></picture>
+            <span><strong>Mary Sol Sánchez</strong>Consultora · Certificada por Digital Change Academy</span>
+          </figcaption>
+        </figure>
+      </div>
+    </details>
     <div class="adn-cta"><a href="#solicitud" class="btn btn--primary btn--lg">Quiero mi cupo <span class="arrow">&rarr;</span></a></div>
   </div>
 </section>
