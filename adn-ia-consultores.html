@@ -410,7 +410,7 @@
         <input id="adn-tarifa" type="number" inputmode="decimal" min="1" step="1" placeholder="Ej. 80" aria-describedby="adn-calc-resultado">
         <div class="adn-calc__salida">
           <p class="adn-calc__num" id="adn-calc-horas" aria-hidden="true"></p>
-          <p class="adn-calc__resultado" id="adn-calc-resultado" aria-live="polite">Escribe tu tarifa y verás cuántas horas de tu trabajo equivalen a la primera cohorte.</p>
+          <p class="adn-calc__resultado" id="adn-calc-resultado" aria-live="polite">Escribe tu tarifa y verás cuántas horas de tu trabajo equivalen a la inversión en la primera cohorte de la certificación.</p>
         </div>
       </div>
     </div>
@@ -420,10 +420,10 @@
 </section>
 
 <!-- ============================ 5 · SEMANA A SEMANA ============================ -->
-<section class="section" id="contenidos" data-screen-label="Lo que trabajas, semana a semana">
+<section class="section" id="contenidos" data-screen-label="Tu proceso de evolución como experto ADN IA, semana a semana">
   <div class="wrap">
     <div class="section-head" data-reveal>
-      <span class="label">Lo que trabajas, semana a semana</span>
+      <span class="label">Tu proceso de evolución como experto ADN IA, semana a semana</span>
       <h2>Un mes, en equipo, sobre un caso de práctica que construyes tú.</h2>
       <p class="chapeau"><strong>Hasta 4 horas por semana</strong> en las semanas 1 y 2; menos en las semanas 3 y 4. El caso es compuesto y sin datos de clientes. Cada quien trabaja el suyo, tus compañeros de equipo son tus pares críticos y recibes retroalimentación por correo en 24 horas.</p>
     </div>
@@ -813,7 +813,7 @@
     salida.textContent = '';
     var sr = document.createElement('span'); sr.className = 'adn-sr'; sr.textContent = horas(297, tarifa) + ' horas ';
     salida.appendChild(sr);
-    salida.appendChild(document.createTextNode('de tu tarifa equivalen a la primera cohorte (USD 297). Con certificación de DCA (USD 197): ' + horas(197, tarifa) + ' horas.'));
+    salida.appendChild(document.createTextNode('de tu tarifa equivalen a la inversión en la primera cohorte de la certificación (USD 297). Con certificación de DCA (USD 197): ' + horas(197, tarifa) + ' horas.'));
   });
 })();
 </script>
