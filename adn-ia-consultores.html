@@ -159,6 +159,12 @@
   .adn-mas > summary:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
   .adn-mas .adn-testimonios { margin-top: 16px; }
 
+  /* Bloque 3: las tres tarjetas cuentan una secuencia y se ven uniformes — título a tamaño fijo desde 1200px (mismo número de líneas) y filas alineadas entre tarjetas en cualquier ancho */
+  @media (min-width: 1200px) { #momento .flow-card h3 { font-size: 21px; } }
+  @supports (grid-template-rows: subgrid) {
+    @media (min-width: 881px) { #momento .cols3 .flow-card { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; align-content: start; } }
+  }
+
   /* Ajuste fino 2026-10-23: anchos alineados al grid, alturas de campo y pies de testimonio parejos */
   .adn-campo input, .adn-campo select { height: 50px; }
   .finalcta__note .sep { margin: 0 8px; color: #9aa3ad; }
@@ -352,19 +358,19 @@
     <p class="adn-nota" data-reveal>Esa brecha de 43 puntos ya está en la agenda de tus clientes. El líder decide y conduce la adopción; Cultura y Cambio la habilita. La pregunta es cómo acompañar al líder.</p>
     <div class="cols3" data-stagger style="margin-top:40px">
       <div class="card flow-card" data-reveal>
-        <span class="label">Lo que ves</span>
+        <span class="label">Lo que ves hoy</span>
         <h3>Licencias activas, pilotos estancados y un KPI que no se mueve.</h3>
         <p>Nadie sabe con certeza si el freno está en la herramienta o en cómo la usan las personas.</p>
       </div>
       <div class="card flow-card" data-reveal>
         <span class="label">Lo que decide el líder</span>
         <h3>Cortar, recuperar o esperar evidencia, con fecha.</h3>
-        <p>La decisión es suya; necesita llegar a ella con criterio, no con la inercia de lo ya pagado.</p>
+        <p>La decisión es suya, pero necesita evidencia sobre cómo se usa la IA, no solo sobre la herramienta.</p>
       </div>
       <div class="card flow-card" data-reveal>
-        <span class="label">Lo que habilitas tú</span>
-        <h3>La conversación, la evidencia y el siguiente paso.</h3>
-        <p>Diseñas experimentos breves y distingues lo que puedes habilitar de lo que exige un diagnóstico especializado.</p>
+        <span class="label">En quién te conviertes</span>
+        <h3>En quien lleva la evidencia a la conversación con el líder.</h3>
+        <p>Pasas de operar la adopción a habilitar la decisión y derivas lo que exige un diagnóstico especializado.</p>
       </div>
     </div>
   </div>
