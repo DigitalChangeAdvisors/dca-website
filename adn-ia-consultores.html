@@ -177,7 +177,10 @@
   .adn-supuestos { list-style: none; counter-reset: supuesto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 8px 0 0; padding: 0; }
   .adn-supuestos li { counter-increment: supuesto; background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--gold); border-radius: 10px; padding: 24px 26px; font-size: 17px; line-height: 1.5; color: var(--carbon); }
   .adn-supuestos li::before { content: "Supuesto " counter(supuesto); display: block; margin-bottom: 10px; font-size: 12.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--teal-dark); }
+  .adn-sup__t { display: block; font-weight: 600; font-size: 17px; line-height: 1.45; margin-bottom: 12px; }
+  .adn-sup__d { display: block; font-size: 15px; line-height: 1.6; color: #4a5563; }
   @supports (grid-template-rows: subgrid) {
+    @media (min-width: 881px) { .adn-supuestos li { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; align-content: start; } }
     .adn-testimonios { grid-auto-rows: auto; }
     .adn-testimonio { display: grid; grid-row: span 2; grid-template-rows: subgrid; gap: 22px; }
   }
@@ -186,6 +189,7 @@
     .adn-supuestos, .adn-incluye .adn-lista { grid-template-columns: 1fr; }
     .adn-supuestos { gap: 12px; }
     .adn-supuestos li { padding: 18px 20px; font-size: 16px; }
+    .adn-sup__t { font-size: 16px; margin-bottom: 8px; }
     .adn-supuestos li::before { margin-bottom: 6px; }
     .adn-calc { padding: 24px; }
     .adn-calc__fila { gap: 20px; }
@@ -446,12 +450,12 @@
     <div class="section-head" data-reveal>
       <span class="label">¿Certificarme implica que debo cambiar mi práctica profesional?</span>
       <h2>Tu práctica se mantiene. Solo la actualizas bajo tres supuestos.</h2>
-      <p class="chapeau">ADKAR, Kotter, Prosci o tu modelo propio no están equivocados: se diseñaron para otro tipo de cambio. En la certificación auditas el tuyo y actualizas tres supuestos.</p>
+      <p class="chapeau">ADKAR, Kotter, Prosci o tu modelo propio no están equivocados: se diseñaron para otro tipo de cambio. En la certificación auditas tu práctica y actualizas tres supuestos.</p>
     </div>
     <ol class="adn-supuestos" data-reveal>
-      <li>Que la persona adopta solo con razones.</li>
-      <li>Que el cambio llega a un estado final estable.</li>
-      <li>Que el equipo de cambio opera la adopción.</li>
+      <li><span class="adn-sup__t">Que la persona adopta solo con razones.</span><span class="adn-sup__d">Con la IA, la persona decide en cada tarea si la usa. Pesan el hábito y el temor, no solo los argumentos.</span></li>
+      <li><span class="adn-sup__t">Que el cambio llega a un estado final estable.</span><span class="adn-sup__d">La IA cambia de forma continua. No hay estado final: hay un ajuste permanente que se sostiene y se mide.</span></li>
+      <li><span class="adn-sup__t">Que el equipo de cambio opera la adopción.</span><span class="adn-sup__d">La adopción ocurre dentro de cada proceso. Quien responde por el KPI la lidera; tú habilitas esa decisión.</span></li>
     </ol>
   </div>
 </section>
