@@ -38,9 +38,10 @@
 
 <style>
   /* Certificación ADN IA · consultores — solo lo que el sistema del sitio no trae: marca de la academia, precios, formulario y preguntas */
-  .adn-academia { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 22px; }
-  .adn-academia img { width: 48px; height: 48px; display: block; }
-  .adn-academia span { font-size: 12.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-dark); }
+  /* Firma de marca del hero: logo de la academia y nombre de la certificación, centrados en la columna de texto */
+  .adn-marca { text-align: center; margin-bottom: 32px; }
+  .adn-marca img { width: 96px; height: 96px; display: block; margin: 0 auto 14px; }
+  .adn-marca__nombre { margin: 0; font-family: var(--body); font-weight: 500; font-size: clamp(28px, 3.4vw, 44px); line-height: 1.2; letter-spacing: -0.01em; color: var(--teal); text-wrap: balance; }
 
   .adn-precios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
   .adn-precio { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 28px 24px; }
@@ -94,11 +95,12 @@
   .adn-semanas__que { color: var(--carbon); }
   .adn-semanas__produce { color: #4a5563; }
   .adn-semanas__produce::before { content: "Produces: "; font-weight: 600; color: var(--carbon); }
-  #top h1 { font-size: clamp(28px, 3.4vw, 44px); line-height: 1.15; }
+  #top h1 { font-size: clamp(22px, 2.6vw, 30px); line-height: 1.2; }
   /* Pirámide invertida: en ≥1024px cada .line cabe entera en la columna de texto (más ancha que el hero dividido estándar) */
   @media (min-width: 1024px) {
-    #top .hero-split { grid-template-columns: 1.3fr 0.7fr; gap: 56px; }
-    #top h1 { font-size: clamp(30px, 2.55vw, 38px); }
+    #top .hero-split { grid-template-columns: 1.36fr 0.64fr; gap: 56px; }
+    .adn-marca__nombre { font-size: clamp(30px, 2.55vw, 38px); letter-spacing: -0.015em; white-space: nowrap; text-wrap: nowrap; }
+    #top h1 { font-size: clamp(24px, 2.05vw, 29px); }
     #top h1 .line { white-space: nowrap; }
     #top .chapeau { max-width: 600px; }
   }
@@ -279,7 +281,7 @@
   <div class="hero__inner">
     <div class="hero-split">
       <div class="hero-split__text">
-        <div class="adn-academia"><img src="assets/logo-digital-change-academy.png" alt="" width="48" height="48"><span>Digital Change Academy &middot; Certificación ADN IA</span></div>
+        <div class="adn-marca"><img src="assets/logo-digital-change-academy.png" alt="Digital Change Academy" width="96" height="96"><p class="adn-marca__nombre">Certificación Cultura y Cambio ADN IA</p></div>
         <h1>
           <span class="line">La IA de tus clientes no está rindiendo.</span>
           <span class="line">El líder necesita decidir qué detener.</span>
