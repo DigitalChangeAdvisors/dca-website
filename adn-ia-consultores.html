@@ -48,6 +48,7 @@
   .adn-precios .adn-precio p.adn-precio__monto { font-family: var(--display); font-size: 40px; color: var(--teal); margin: 0 0 8px; line-height: 1.1; font-variant-numeric: tabular-nums; }
   .adn-precio p { margin: 0; font-size: 16px; line-height: 1.5; }
   .adn-precios .adn-precio p.adn-precio__monto { margin-bottom: 10px; }
+  .adn-aval { margin: 28px 0 0; padding: 18px 24px; background: #a48111; color: #fff; border-radius: 8px; text-align: center; font-size: 19px; font-weight: 600; line-height: 1.4; }
   .adn-nota { margin-top: 28px; font-size: 16px; line-height: 1.6; max-width: 760px; }
 
   .adn-form { max-width: 720px; margin: 36px auto 0; text-align: left; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; }
@@ -160,9 +161,9 @@
   .adn-mas .adn-testimonios { margin-top: 16px; }
 
   /* Bloque 3: las tres tarjetas cuentan una secuencia y se ven uniformes — título a tamaño fijo desde 1200px (mismo número de líneas) y filas alineadas entre tarjetas en cualquier ancho */
-  @media (min-width: 1200px) { #momento .flow-card h3 { font-size: 21px; } }
+  @media (min-width: 1200px) { #momento .flow-card h3, #recuperas .flow-card h3 { font-size: 21px; } }
   @supports (grid-template-rows: subgrid) {
-    @media (min-width: 881px) { #momento .cols3 .flow-card { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; align-content: start; } }
+    @media (min-width: 881px) { #momento .cols3 .flow-card, #recuperas .cols3 .flow-card { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; align-content: start; } }
   }
 
   /* Ajuste fino 2026-10-23: anchos alineados al grid, alturas de campo y pies de testimonio parejos */
@@ -373,6 +374,7 @@
         <p>Pasas de operar la adopción a habilitar la decisión y derivas lo que exige un diagnóstico especializado.</p>
       </div>
     </div>
+    <div class="adn-cta"><a href="#solicitud" class="btn btn--primary btn--lg">Quiero mi cupo <span class="arrow">&rarr;</span></a></div>
   </div>
 </section>
 
@@ -386,20 +388,21 @@
     <div class="cols3" data-stagger>
       <div class="card flow-card" data-reveal>
         <span class="label">Una oferta nueva</span>
-        <h3>La conversación con el líder cuya IA no rinde.</h3>
-        <p>Llegas a un comprador que hoy no encuentra esa solución contigo. Con el Brief para el líder como entregable y el precio que tú defines.</p>
+        <h3>La conversación con el líder cuya iniciativa de IA no rinde.</h3>
+        <p>Llegas a un comprador que hoy no encuentra esa solución contigo. Con el Brief como entregable y el precio que tú defines.</p>
       </div>
       <div class="card flow-card" data-reveal>
         <span class="label">Lo que ya vendes, actualizado</span>
-        <h3>Tu entregable estrella, con las horas de trabajo que ahorra la IA a la vista.</h3>
-        <p>Diagnóstico cultural, plan de comunicación o mapa de actores: lo rediseñas y muestras cuánto tiempo se optimiza en cada etapa, para cobrarlo con más argumento.</p>
+        <h3>Tu entregable estrella, con las horas que ahorra la IA a la vista.</h3>
+        <p>Diagnóstico cultural, plan de comunicación o mapa de actores: muestras el tiempo optimizado y cobras con más argumento.</p>
       </div>
       <div class="card flow-card" data-reveal>
-        <span class="label">Una certificación que se verifica</span>
-        <h3>«Experto Cultura y Cambio ADN IA».</h3>
-        <p>Verificable en Accredible, para tus propuestas y tu perfil. Se obtiene defendiendo evidencia propia en vivo.</p>
+        <span class="label">Un presupuesto distinto</span>
+        <h3>Cobras a quien responde por la IA, con entregable propio.</h3>
+        <p>Tu comprador es el líder de la iniciativa. Cotizas el diagnóstico y el Brief como entregable, no por tu hora.</p>
       </div>
     </div>
+    <p class="adn-aval" data-reveal>Todo respaldado por tu certificación, verificable en Accredible.</p>
     <div class="adn-calc" data-reveal>
       <label for="adn-tarifa">Haz tu cuenta: ¿cuál es tu tarifa por hora, en USD?</label>
       <div class="adn-calc__fila">
@@ -646,7 +649,7 @@
       <h2>Lo que suelen preguntar antes de solicitar.</h2>
     </div>
     <div class="adn-preguntas">
-      <details><summary>¿Cómo recupero lo que invierto?</summary><p>Por tres vías: una oferta nueva que puedes cobrar (la conversación con el líder, con el Brief como entregable y el precio que tú definas), tu entregable estrella rediseñado y una certificación verificable en Accredible para tus propuestas. Haz la cuenta con tu tarifa en la sección «Cómo recuperas tu inversión en esta certificación».</p></details>
+      <details><summary>¿Cómo recupero lo que invierto?</summary><p>Por tres vías: una oferta nueva que puedes cobrar (la conversación con el líder, con el Brief como entregable y el precio que tú definas), tu entregable estrella actualizado y un presupuesto distinto al que hoy te contrata, todo respaldado por una certificación verificable en Accredible. Haz la cuenta con tu tarifa en la sección «Cómo recuperas tu inversión en esta certificación».</p></details>
       <details><summary>¿Qué certificación obtengo?</summary><p>La Certificación «Experto Cultura y Cambio ADN IA», emitida por Digital Change Academy en Accredible: un enlace verificable que puedes incluir en tus propuestas y en tu perfil profesional. Se obtiene en la semana 4, al defender en vivo con César Lozano la evidencia que construiste en tu caso.</p></details>
       <details><summary>¿Cuánto tiempo requiere?</summary><p>Hasta 4 horas por semana en las semanas 1 y 2: la fundamentación del Día 0 (120 minutos) y dos experimentos por semana, de unas dos horas cada uno. En la semana 3 lees la novela y escribes un ensayo breve, y en la semana 4 defiendes tu trabajo en vivo.</p></details>
       <details><summary>¿Y si no puedo asistir en vivo?</summary><p>El Día 0 queda grabado para que lo veas después. Si no puedes en la fecha de tu defensa, acordamos una segunda fecha.</p></details>
