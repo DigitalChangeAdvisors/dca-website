@@ -138,6 +138,11 @@
   .adn-pasos li { counter-increment: paso; background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 18px 18px 16px; font-size: 15px; line-height: 1.5; }
   .adn-pasos li::before { content: counter(paso); display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--teal); color: var(--white); font-weight: 700; font-size: 14px; margin-bottom: 10px; }
   .adn-pasos strong { display: block; color: var(--carbon); margin-bottom: 4px; }
+  .adn-facilita { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 56px; align-items: center; margin-bottom: 40px; }
+  .adn-facilita__texto .chapeau { max-width: 720px; }
+  .adn-facilita__foto { display: block; width: 220px; height: 220px; border-radius: 50%; overflow: hidden; background: #f3f3f3; border: 3px solid var(--gold); }
+  .adn-facilita__foto img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  @media (max-width: 880px) { .adn-facilita { grid-template-columns: 1fr; gap: 24px; } .adn-facilita__foto { order: -1; width: 160px; height: 160px; } }
   .adn-enlace { margin: 18px 0 0; }
   .adn-enlace a { color: var(--teal-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
   .adn-cierre { max-width: 760px; margin: 0 auto; text-align: center; }
@@ -461,13 +466,21 @@
 </section>
 
 <!-- ============================ 7 · QUIÉN FACILITA ============================ -->
-<section class="section" id="facilita" data-screen-label="Quién facilita">
+<section class="section" id="facilita" data-screen-label="¿Quién es el facilitador y cuál es su experiencia?">
   <div class="wrap">
     <div class="section-head" data-reveal>
-      <span class="label">Quién facilita</span>
-      <h2>Liderar la IA es decidir qué detener y qué rentabilizar.</h2>
-      <p class="chapeau">Facilita César Lozano, autor de ReturnAI y fundador de Digital Change Advisors. Conduce la fundamentación del Día 0 y las audiciones de certificación del cierre; el Equipo Facilitador de Digital Change Academy te acompaña en las semanas de experimentos. Detrás está una academia con <strong>57+ consultores certificados DCA</strong> en Latinoamérica.</p>
-      <p class="adn-enlace"><a href="https://digitalchangeadvisors.com/autor/cesar-lozano/">Conoce a César Lozano <span aria-hidden="true">&rarr;</span></a></p>
+      <span class="label">¿Quién es el facilitador y cuál es su experiencia?</span>
+      <h2>Liderar la IA es decidir qué iniciativa detener y cuál rentabilizar.</h2>
+    </div>
+    <div class="adn-facilita" data-reveal>
+      <div class="adn-facilita__texto">
+        <p class="chapeau">Facilita César Lozano, autor de ReturnAI, la primera novela en español sobre liderazgo en la era de la IA y fundador de Digital Change Advisors. Conduce la fundamentación del Día 0 y la sesión de mentoring de cierre con las audiciones de certificación; el Equipo de Digital Change Academy te acompaña a lo largo de los experimentos. Detrás está una academia con <strong>57+ consultores certificados</strong> en Latinoamérica.</p>
+        <p class="adn-enlace"><a href="https://digitalchangeadvisors.com/autor/cesar-lozano/" target="_blank" rel="noopener">Conoce a César Lozano <span aria-hidden="true">&rarr;</span></a></p>
+      </div>
+      <picture class="adn-facilita__foto">
+        <source srcset="assets/cesar-lozano-circulo.webp" type="image/webp">
+        <img src="assets/cesar-lozano-circulo.jpg" alt="Retrato de César Lozano, autor de ReturnAI y fundador de Digital Change Advisors" width="400" height="400" loading="lazy" decoding="async">
+      </picture>
     </div>
     <div class="special" data-reveal>
       <p>Adalid Puentes tiene USD 8,2 millones invertidos en IA que no aparecen en el estado de resultados y 120 días para demostrar su retorno. Es la historia de ReturnAI, la novela que lees en la semana 3: la recibes completa al cierre de la semana 2.</p>
