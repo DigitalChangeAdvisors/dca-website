@@ -774,7 +774,7 @@
     <div class="footer__bottom">
       <span>© 2026 Digital Change Advisors, LLC.</span>
       <div class="footer__legal">
-        <a href="https://digitalchangeadvisors.com/privacy-policy">Pol&iacute;tica de privacidad</a>
+        <a href="https://digitalchangeadvisors.com/privacy-policy" target="_blank" rel="noopener">Pol&iacute;tica de privacidad</a>
         <a href="https://digitalchangeadvisors.com/terms-of-use">T&eacute;rminos de uso</a>
       </div>
     </div>
@@ -810,6 +810,9 @@
   Object.keys(reglas).forEach(function (n) {
     form.elements[n].addEventListener('blur', function () { if (form.elements[n].value) validar(n); });
   });
+  /* Compatibilidad con el backend vigente: el Apps Script solo acepta los perfiles «Cultura y Cambio», «TI» y «Otro».
+     Se envía el equivalente y la opción elegida viaja completa en `origen`. Retirar este mapa cuando el backend acepte los perfiles nuevos. */
+  var PERFIL_BACKEND = { 'Líder de iniciativas IA': 'TI', 'Experto en cultura y cambio': 'Cultura y Cambio', 'Profesional Certificado DCA': 'Otro', 'Otro': 'Otro' };
   function mostrarError(texto) {
     errorGeneral.innerHTML = '';
     errorGeneral.appendChild(document.createTextNode(texto + ' Puedes intentarlo de nuevo o escribir a '));
@@ -825,9 +828,9 @@
     if (!form.elements.consentimiento.checked) { mostrarError('Necesitamos tu autorización para responderte.'); form.elements.consentimiento.focus(); return; }
     var datos = {
       tipo: 'solicitud-cupo',
-      nombre: form.elements.nombre.value, email: form.elements.email.value, perfil: form.elements.perfil.value,
+      nombre: form.elements.nombre.value, email: form.elements.email.value, perfil: PERFIL_BACKEND[form.elements.perfil.value] || 'Otro',
       pais: form.elements.pais.value, modelo: form.elements.modelo.value, motivo: form.elements.motivo.value,
-      web: form.elements.web.value, consentimiento: true, origen: (location.search || '').slice(1, 300)
+      web: form.elements.web.value, consentimiento: true, origen: (location.search || '').slice(1, 240) + ' | perfil=' + form.elements.perfil.value
     };
     boton.disabled = true; boton.firstChild.textContent = 'Enviando… ';
     fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(datos), redirect: 'follow' })
