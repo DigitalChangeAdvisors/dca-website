@@ -87,7 +87,11 @@
   .adn-enviar .btn[disabled] { opacity: .5; cursor: progress; transform: none; box-shadow: none; }
   .adn-estado { grid-column: 1 / -1; border-radius: 10px; padding: 18px 20px; font-size: 16px; line-height: 1.55; }
   .adn-estado[hidden] { display: none; }
-  .adn-estado--ok { background: rgba(46,139,118,.06); border: 1px solid var(--teal); }
+  .adn-form [hidden] { display: none !important; }
+  .adn-estado--ok { background: rgba(46,139,118,.08); border: 1px solid var(--teal); border-left: 5px solid var(--teal-dark); padding: 22px 24px; }
+  .adn-estado--ok strong { display: block; margin-bottom: 8px; font-size: 20px; color: #1f6657; }
+  .adn-estado--ok p { margin: 0 0 6px; }
+  .adn-estado--ok p:last-child { margin-bottom: 0; font-size: 15px; color: #3a4553; }
   .adn-estado--error { background: #fff; border: 1px solid #9c4430; color: #9c4430; }
   .adn-trampa { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
@@ -678,7 +682,7 @@
         <div class="adn-estado adn-estado--ok" id="adn-ok" role="status" tabindex="-1" hidden></div>
         <div class="adn-enviar">
           <p class="adn-garantia-form">Garantía: si al final de la fundamentación decides que no es para ti, recibes el 100 % de la inversión.</p>
-          <button type="submit" class="btn btn--primary btn--lg" id="adn-boton">Quiero mi cupo <span class="arrow">&rarr;</span></button>
+          <button type="submit" class="btn btn--primary btn--lg" id="adn-boton" data-label="Reservar mi cupo ">Reservar mi cupo <span class="arrow">&rarr;</span></button>
           <p class="finalcta__note">Sin pago en este paso<span class="sep">·</span>Respuesta en 48 horas<span class="sep">·</span>Garantía de devolución tras el Día 0</p>
         </div>
       </form>
@@ -838,8 +842,9 @@
       .then(function (res) {
         if (res && res.ok && res.solicitud) {
           form.querySelectorAll('.adn-campo, .adn-consentimiento, .adn-enviar').forEach(function (el) { el.hidden = true; });
-          okBox.textContent = 'Recibimos tu solicitud. Tu número es ' + res.solicitud + '. El Equipo Facilitador te responderá en 48 horas. Te enviamos un correo de confirmación: si no lo ves en unos minutos, revisa la carpeta de correo no deseado.';
-          okBox.hidden = false; okBox.focus();
+          okBox.innerHTML = '';
+          [['strong', 'Solicitud recibida · en proceso'], ['p', 'Tu número de solicitud es ' + res.solicitud + '.'], ['p', 'El Equipo Facilitador revisa tu perfil y te responde en las próximas 48 horas.'], ['p', 'Te enviamos un correo de confirmación a ' + datos.email + '. Si no lo ves en unos minutos, revisa la carpeta de correo no deseado.']].forEach(function (par) { var el = document.createElement(par[0]); el.textContent = par[1]; okBox.appendChild(el); });
+          okBox.hidden = false; okBox.scrollIntoView({ block: 'center' }); okBox.focus();
           if (window.adnTrack) { window.adnTrack('reserva_enviada', { perfil: datos.perfil }); }
         } else {
           if (window.adnTrack) { window.adnTrack('form_error_servidor', {}); }
@@ -847,7 +852,7 @@
         }
       })
       .catch(function () { mostrarError('No pudimos conectar con el servidor.'); })
-      .then(function () { boton.disabled = false; boton.firstChild.textContent = 'Quiero mi cupo '; });
+      .then(function () { boton.disabled = false; boton.firstChild.textContent = boton.getAttribute('data-label'); });
   });
 })();
 </script>
