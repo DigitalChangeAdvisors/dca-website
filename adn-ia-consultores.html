@@ -47,6 +47,8 @@
   .adn-precio { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 28px 24px; text-align: center; }
   .adn-precios .adn-precio p.adn-precio__monto { font-family: var(--display); font-size: 40px; color: var(--teal); margin: 0 0 8px; line-height: 1.1; font-variant-numeric: tabular-nums; }
   .adn-precio p { margin: 0; font-size: 16px; line-height: 1.5; }
+  .adn-precios .adn-precio p.adn-precio__tag { margin: 0 0 10px; font-size: 12.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #1f6657; }
+  .adn-precio--base { border-top: 4px solid var(--gold); box-shadow: 0 10px 28px rgba(30,42,56,.10); }
   .adn-precios .adn-precio p.adn-precio__monto { margin-bottom: 10px; }
   .adn-aval { margin: 28px 0 0; padding: 18px 24px; background: #a48111; color: #fff; border-radius: 8px; text-align: center; font-size: 19px; font-weight: 700; line-height: 1.4; }
   /* Contraste AA: botón principal y etiquetas pequeñas en teal oscuro (#267a67 ≈ 5,2:1 sobre blanco) — solo esta página */
@@ -77,9 +79,10 @@
   .adn-campo input:focus-visible, .adn-campo select:focus-visible, .adn-campo textarea:focus-visible { outline: 3px solid var(--teal); outline-offset: 1px; border-color: var(--teal); }
   .adn-campo[data-error] input, .adn-campo[data-error] select { border-color: #9c4430; }
   .adn-error { font-size: 14px; color: #9c4430; min-height: 0; }
-  .adn-consentimiento { grid-column: 1 / -1; display: flex; gap: 12px; align-items: flex-start; font-size: 15px; line-height: 1.5; }
-  .adn-consentimiento input { width: 22px; height: 22px; margin-top: 2px; flex-shrink: 0; accent-color: var(--teal); }
-  .adn-consentimiento a { color: var(--teal-dark); text-decoration: underline; }
+  .adn-consentimiento { grid-column: 1 / -1; display: flex; gap: 12px; align-items: center; min-height: 44px; font-size: 15px; line-height: 1.5; cursor: pointer; }
+  .adn-consentimiento input { width: 24px; height: 24px; flex-shrink: 0; accent-color: var(--teal-dark); cursor: pointer; }
+  .adn-consentimiento a { color: var(--teal-dark); text-decoration: underline; display: inline-block; padding: 12px 2px; margin: -12px 0; }
+  .adn-garantia-form { margin: 0 0 14px; font-size: 15px; font-weight: 600; color: var(--carbon); }
   .adn-enviar { grid-column: 1 / -1; text-align: center; }
   .adn-enviar .btn[disabled] { opacity: .5; cursor: progress; transform: none; box-shadow: none; }
   .adn-estado { grid-column: 1 / -1; border-radius: 10px; padding: 18px 20px; font-size: 16px; line-height: 1.55; }
@@ -153,6 +156,9 @@
   .adn-pasos li { counter-increment: paso; background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 18px 18px 16px; font-size: 15px; line-height: 1.5; }
   .adn-pasos li::before { content: counter(paso); display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--teal); color: var(--white); font-weight: 700; font-size: 14px; margin-bottom: 10px; }
   .adn-pasos strong { display: block; color: var(--carbon); margin-bottom: 4px; }
+  .adn-objeciones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 24px; max-width: 820px; margin: 28px auto 0; text-align: left; }
+  .adn-objeciones h3 { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--carbon); }
+  .adn-objeciones p { margin: 0; font-size: 14.5px; line-height: 1.5; color: #3a4553; }
   .adn-facilita { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 56px; align-items: center; margin-bottom: 40px; }
   .adn-facilita__texto .chapeau { max-width: 720px; }
   .adn-facilita__foto { display: block; width: 220px; height: 220px; border-radius: 50%; overflow: hidden; background: #f3f3f3; border: 3px solid var(--gold); }
@@ -216,7 +222,7 @@
     .adn-incluye { padding-left: 24px; padding-right: 24px; }
     .adn-precios { grid-template-columns: 1fr; }
     .adn-testimonios { grid-template-columns: 1fr; }
-    .adn-encaje, .adn-cifras, .adn-pasos { grid-template-columns: 1fr; }
+    .adn-encaje, .adn-cifras, .adn-pasos, .adn-objeciones { grid-template-columns: 1fr; }
     .adn-semanas__produce { border-left: 3px solid var(--teal); padding-left: 12px; }
     .adn-semanas li { grid-template-columns: 1fr; gap: 4px; }
     .adn-form { grid-template-columns: 1fr; }
@@ -380,7 +386,7 @@
     </div>
     <p class="source-note"><span class="ref">Fuente:</span> McKinsey, <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" rel="noopener"><em>The State of AI in 2026</em></a>, agosto de 2026 — 1.719 ejecutivos encuestados en 97 países.</p>
     </div>
-    <p class="adn-nota" data-reveal>Esa brecha de 43 puntos ya está en la agenda de tus clientes. El líder decide y conduce la adopción; Cultura y Cambio la habilita. La pregunta es cómo acompañar al líder.</p>
+    <p class="adn-nota" data-reveal>Esa brecha de 43 puntos ya está en la agenda de tus clientes, y alguien le llevará al líder la evidencia para decidir. La pregunta es si serás tú.</p>
     <div class="cols3" data-stagger style="margin-top:40px">
       <div class="card flow-card" data-reveal>
         <span class="label">Lo que ves hoy</span>
@@ -433,7 +439,7 @@
         <input id="adn-tarifa" type="number" inputmode="decimal" min="1" step="1" placeholder="Ej. 80" aria-describedby="adn-calc-resultado">
         <div class="adn-calc__salida">
           <p class="adn-calc__num" id="adn-calc-horas" aria-hidden="true"></p>
-          <p class="adn-calc__resultado" id="adn-calc-resultado" aria-live="polite">Escribe tu tarifa y verás cuántas horas de tu trabajo equivalen a la inversión en la primera cohorte de la certificación.</p>
+          <p class="adn-calc__resultado" id="adn-calc-resultado" aria-live="polite">Ejemplo: a USD 100 por hora, esta inversión equivale a menos de 3 horas de tu trabajo. Escribe tu tarifa para calcular la tuya.</p>
         </div>
       </div>
     </div>
@@ -448,13 +454,13 @@
     <div class="section-head" data-reveal>
       <span class="label">Tu proceso de evolución como experto ADN IA, semana a semana</span>
       <h2>De operar el cambio a habilitar la decisión del líder, en cuatro experimentos.</h2>
-      <p class="chapeau">Pasas de operar el cambio a habilitar la decisión del líder en cuatro movimientos: entender lo que frena la conducta, rediseñar tu entregable estrella con la IA, preparar la conversación con el líder y medir el caso. Cada semana produce algo tuyo, que presentas en tu audición de certificación al cierre.</p>
+      <p class="chapeau">Pasas de operar el cambio a habilitar la decisión del líder en cuatro movimientos: entender lo que frena la conducta, rediseñar tu entregable estrella con la IA, preparar la conversación con el líder y medir el caso. Cada semana produce algo tuyo, que presentas en tu audición de certificación, tu presentación final ante César Lozano.</p>
     </div>
     <ol class="adn-semanas" data-reveal>
       <li><span class="adn-semanas__cuando">Día 0 &middot; Fundamentación ágil 120 minutos online</span><span class="adn-semanas__que">El marco de la certificación y las cuatro barreras que frenan la adopción, con César Lozano</span><span class="adn-semanas__produce">Tu caso de práctica y tu primera hipótesis</span></li>
       <li><span class="adn-semanas__cuando">Semana 1 &middot; Experimento 1</span><span class="adn-semanas__que">Lo que frena la conducta se identifica antes de intervenirla</span><span class="adn-semanas__produce">Un diagnóstico de creencias por rol</span></li>
       <li><span class="adn-semanas__cuando">Semana 1 &middot; Experimento 2</span><span class="adn-semanas__que">Tu entregable estrella, rediseñado con la optimización de tiempo de intervención gracias a la IA</span><span class="adn-semanas__produce">El portafolio rediseñado con el mapa de dónde ayuda la IA</span></li>
-      <li><span class="adn-semanas__cuando">Semana 2 &middot; Experimento 3</span><span class="adn-semanas__que">De lo identificado a lo propuesto: tu conversación con el líder que debe mover el KPI</span><span class="adn-semanas__produce">El Brief para clientes, con tu propio uso de la IA como ejemplo</span></li>
+      <li><span class="adn-semanas__cuando">Semana 2 &middot; Experimento 3</span><span class="adn-semanas__que">De lo identificado a lo propuesto: tu conversación con el líder que debe mover el KPI</span><span class="adn-semanas__produce">El Brief para clientes (un documento de una página), con tu propio uso de la IA como ejemplo</span></li>
       <li><span class="adn-semanas__cuando">Semana 2 &middot; Experimento 4</span><span class="adn-semanas__que">Tu práctica evoluciona para sostener la adopción y medir el retorno de la IA en tu caso</span><span class="adn-semanas__produce">Tu Hoja de Ruta Evolutiva</span></li>
       <li><span class="adn-semanas__cuando">Semana 3</span><span class="adn-semanas__que">Ensayo de cierre: Tu nueva oferta vs solución ReturnAI</span><span class="adn-semanas__produce">Tu ensayo contrastando tu nueva oferta con una solución comercial probada</span></li>
       <li><span class="adn-semanas__cuando">Semana 4 &middot; 120 minutos online</span><span class="adn-semanas__que">Audición de certificación y mentoring de cierre con César Lozano</span><span class="adn-semanas__produce">Tu certificación en Accredible</span></li>
@@ -577,15 +583,15 @@
       <li><strong>Anticípate y lidera el mercado.</strong> Tu oferta y tu certificación, listas justo en el momento en que tus clientes empiecen a preguntar qué hacer con la IA que no logra los resultados esperados.</li>
     </ul>
     <div class="adn-precios" data-reveal>
-      <div class="adn-precio"><p class="adn-precio__monto">USD 197</p><p>Beneficio para los profesionales que ya tienen una certificación de DCA.</p></div>
-      <div class="adn-precio"><p class="adn-precio__monto">USD 297</p><p>Beneficio solo para la primera cohorte, si es tu primer programa con DCA.</p></div>
-      <div class="adn-precio"><p class="adn-precio__monto">USD 497</p><p>Valor comercial de la certificación de la segunda cohorte en adelante.</p></div>
+      <div class="adn-precio"><p class="adn-precio__tag">Valor de referencia</p><p class="adn-precio__monto">USD 497</p><p>Valor comercial de la certificación de la segunda cohorte en adelante.</p></div>
+      <div class="adn-precio adn-precio--base"><p class="adn-precio__tag">Tu inversión · primera cohorte</p><p class="adn-precio__monto">USD 297</p><p>Beneficio solo para la primera cohorte, si es tu primer programa con DCA.</p></div>
+      <div class="adn-precio"><p class="adn-precio__tag">Con certificación DCA previa</p><p class="adn-precio__monto">USD 197</p><p>Beneficio para los profesionales que ya tienen una certificación de DCA.</p></div>
     </div>
     <div class="adn-incluye" data-reveal>
       <h3>Beneficios que recibes</h3>
       <ul class="adn-lista adn-lista--si">
         <li>Certificación «Experto Cultura y Cambio ADN IA», emitida por Digital Change Academy y verificable en Accredible.</li>
-        <li>Fundamentación ágil en vivo con César Lozano (120 minutos).</li>
+        <li>Fundamentación ágil en vivo con César Lozano (120 minutos): el marco de la certificación.</li>
         <li>Cuatro experimentos con retroalimentación por correo en 24 horas.</li>
         <li>Trabajo en equipo con tus pares críticos para contrastar tu criterio.</li>
         <li>Copia digital de la novela ReturnAI completa, al cierre de la semana 2.</li>
@@ -612,6 +618,11 @@
         <li><strong>Respuesta en 48&nbsp;horas</strong><span>Revisamos tu perfil y confirmamos tu cupo en orden de llegada.</span></li>
         <li><strong>Confirmas con el pago</strong><span>Y recibes la invitación a la sesión de fundamentación el 20 de enero.</span></li>
       </ol>
+      <div class="adn-objeciones" aria-label="Tres respuestas antes de reservar">
+        <div><h3>¿Y si no es para mí?</h3><p>Si al final de la fundamentación decides que no, te devolvemos el 100 % de la inversión.</p></div>
+        <div><h3>¿Cuánto tiempo requiere?</h3><p>Hasta 4 horas por semana durante un mes, más la fundamentación en vivo de 2 horas.</p></div>
+        <div><h3>¿Necesito certificación previa?</h3><p>No. Sin prerrequisitos y sin necesidad de un cliente real.</p></div>
+      </div>
 
       <form class="adn-form" id="adn-form" novalidate>
         <div class="adn-campo">
@@ -666,6 +677,7 @@
         <div class="adn-estado adn-estado--error" id="adn-error-general" role="alert" hidden></div>
         <div class="adn-estado adn-estado--ok" id="adn-ok" role="status" tabindex="-1" hidden></div>
         <div class="adn-enviar">
+          <p class="adn-garantia-form">Garantía: si al final de la fundamentación decides que no es para ti, recibes el 100 % de la inversión.</p>
           <button type="submit" class="btn btn--primary btn--lg" id="adn-boton">Quiero mi cupo <span class="arrow">&rarr;</span></button>
           <p class="finalcta__note">Sin pago en este paso<span class="sep">·</span>Respuesta en 48 horas<span class="sep">·</span>Garantía de devolución tras el Día 0</p>
         </div>
