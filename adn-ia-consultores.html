@@ -39,7 +39,7 @@
 <style>
   /* Certificación ADN IA · consultores — solo lo que el sistema del sitio no trae: marca de la academia, precios, formulario y preguntas */
   /* Firma de marca del hero: logo de la academia y nombre de la certificación, centrados en la columna de texto */
-  .adn-marca { text-align: center; margin-bottom: 44px; }
+  .adn-marca { text-align: center; margin-bottom: 28px; }
   .adn-marca img { width: 144px; height: 144px; display: block; margin: 0 auto 14px; }
   .adn-marca__nombre { margin: 0; font-family: var(--body); font-weight: 500; font-size: clamp(28px, 3.4vw, 44px); line-height: 1.2; letter-spacing: -0.01em; color: var(--teal); text-wrap: balance; }
 
@@ -48,7 +48,21 @@
   .adn-precios .adn-precio p.adn-precio__monto { font-family: var(--display); font-size: 40px; color: var(--teal); margin: 0 0 8px; line-height: 1.1; font-variant-numeric: tabular-nums; }
   .adn-precio p { margin: 0; font-size: 16px; line-height: 1.5; }
   .adn-precios .adn-precio p.adn-precio__monto { margin-bottom: 10px; }
-  .adn-aval { margin: 28px 0 0; padding: 18px 24px; background: #a48111; color: #fff; border-radius: 8px; text-align: center; font-size: 19px; font-weight: 600; line-height: 1.4; }
+  .adn-aval { margin: 28px 0 0; padding: 18px 24px; background: #a48111; color: #fff; border-radius: 8px; text-align: center; font-size: 19px; font-weight: 700; line-height: 1.4; }
+  /* Contraste AA: botón principal y etiquetas pequeñas en teal oscuro (#267a67 ≈ 5,2:1 sobre blanco) — solo esta página */
+  .btn--primary { background: var(--teal-dark); }
+  .btn--primary:hover { background: #1f6657; }
+  .label, .flow-card .label, .section-head .label, .adn-semanas__cuando { color: var(--teal-dark); }
+  .bg-tealsoft .label, .source-note .ref { color: #1f6657; }
+  .hero-figure__cap { font-size: 12px; }
+  /* Botón fijo: aparece tras el hero y se oculta con el formulario y el cierre a la vista */
+  .adn-sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; display: flex; align-items: center; justify-content: center; gap: 22px; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: var(--white); border-top: 1px solid var(--border); box-shadow: 0 -6px 24px rgba(30,42,56,.10); transform: translateY(110%); visibility: hidden; transition: transform .3s cubic-bezier(.16,1,.3,1), visibility 0s .3s; }
+  .adn-sticky.is-on { transform: none; visibility: visible; transition: transform .3s cubic-bezier(.16,1,.3,1); }
+  .adn-sticky__txt { margin: 0; font-size: 15px; font-weight: 600; color: var(--carbon); }
+  .adn-sticky .btn { min-height: 48px; }
+  body.adn-has-sticky .footer { padding-bottom: 96px; }
+  @media (max-width: 640px) { .adn-sticky__txt { display: none; } .adn-sticky .btn { width: 100%; justify-content: center; } }
+  @media (prefers-reduced-motion: reduce) { .adn-sticky, .adn-sticky.is-on { transition: none; } }
   .adn-nota { margin-top: 28px; font-size: 16px; line-height: 1.6; max-width: 760px; }
 
   .adn-form { max-width: 720px; margin: 36px auto 0; text-align: left; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; }
@@ -103,7 +117,8 @@
     .adn-marca__nombre { font-size: clamp(30px, 2.55vw, 38px); letter-spacing: -0.015em; white-space: nowrap; text-wrap: nowrap; }
     #top h1 { font-size: clamp(24px, 2.05vw, 29px); }
     #top h1 .line { white-space: nowrap; }
-    #top .chapeau { max-width: 600px; }
+    #top .chapeau { max-width: none; font-size: 19px; line-height: 1.55; }
+    #top.hero { padding-top: 100px; }
   }
   #top .mra-hero__cta { margin-top: 32px; }
   .adn-datos { list-style: none; padding: 0; margin: 24px 0 0; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 15px; font-weight: 600; color: var(--carbon); }
@@ -133,7 +148,7 @@
   .adn-razones li { font-size: 17px; line-height: 1.55; padding: 0 0 12px; }
   .adn-precio p.adn-precio__nota { margin-top: 8px; font-size: 14px; color: var(--teal-dark); font-weight: 600; }
   .adn-incluye { margin-top: 32px; background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 26px 26px 14px; max-width: 820px; }
-  .adn-incluye h3 { margin: 0 0 14px; font-size: 19px; color: var(--teal); }
+  .adn-incluye h3 { margin: 0 0 14px; font-size: 19px; color: var(--teal-dark); }
   .adn-pasos { list-style: none; counter-reset: paso; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 820px; margin: 28px auto 0; padding: 0; text-align: left; }
   .adn-pasos li { counter-increment: paso; background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 18px 18px 16px; font-size: 15px; line-height: 1.5; }
   .adn-pasos li::before { content: counter(paso); display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--teal); color: var(--white); font-weight: 700; font-size: 14px; margin-bottom: 10px; }
@@ -274,7 +289,7 @@
       <li><a href="https://digitalchangeadvisors.com/blog">Perspectivas</a></li>
     </ul>
     <div class="nav__cta">
-      <a href="https://digitalchangeadvisors.com/art/?utm_source=adn-ia-consultores&utm_medium=website&utm_campaign=ai-return-test" class="btn btn--primary" target="_blank" rel="noopener">AI Return Test <span class="arrow">&rarr;</span></a>
+      <a href="#solicitud" class="btn btn--primary" data-track="nav_cta">Reservar cupo <span class="arrow">&rarr;</span></a>
       <button class="nav__burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -287,7 +302,7 @@
   <a href="https://digitalchangeadvisors.com/autor/cesar-lozano/">El autor</a>
   <a href="https://digitalchangeadvisors.com/nosotros">Nosotros</a>
   <a href="https://digitalchangeadvisors.com/blog">Perspectivas</a>
-  <a href="https://digitalchangeadvisors.com/art/?utm_source=adn-ia-consultores&utm_medium=website&utm_campaign=ai-return-test" class="btn btn--primary btn--lg" target="_blank" rel="noopener">AI Return Test &rarr;</a>
+  <a href="#solicitud" class="btn btn--primary btn--lg" data-track="menu_cta">Reservar cupo &rarr;</a>
 </div>
 
 <main id="contenido">
@@ -300,11 +315,11 @@
       <div class="hero-split__text">
         <h1>
           <span class="line">La IA de tus clientes no está generando retorno.</span>
-          <span class="line">El líder necesita decidir qué detener.</span>
+          <span class="line">El líder debe decidir cómo lograrlo.</span>
           <span class="line">Tú puedes habilitar esa decisión.</span>
         </h1>
-        <p class="chapeau"><strong>Certificación ADN IA · Cultura y Cambio para cuando la IA no rinde.</strong> Un mes, en línea y trabajando en equipo con colegas, para salir con una oferta nueva que puedes cobrar, dos entregables listos para tu próximo cliente y tu certificación como «Experto Cultura y Cambio ADN IA», verificable en Accredible.</p>
-        <ul class="adn-datos"><li>Inicio: miércoles 20 de enero de 2027</li><li>Hasta 4 horas por semana</li><li>En línea</li><li>Certificación verificable en Accredible</li></ul>
+        <p class="chapeau">Un mes, en línea y con colegas: sales con una oferta que puedes cobrar al líder de la iniciativa de IA, dos entregables listos para tu próximo cliente y tu certificación como «Experto Cultura y Cambio ADN IA», verificable en Accredible.</p>
+        <ul class="adn-datos"><li>Inicio: 20 de enero de 2027</li><li>Hasta 4 horas por semana</li><li>Verificable en Accredible</li></ul>
         <div class="mra-hero__cta">
           <a href="#solicitud" class="btn btn--primary btn--lg">Quiero mi cupo <span class="arrow">&rarr;</span></a>
         </div>
@@ -698,6 +713,8 @@
 </main>
 
 <!-- ============================ FOOTER ============================ -->
+<div class="adn-sticky" id="adn-sticky" aria-hidden="true"><p class="adn-sticky__txt">Primera cohorte · comienza el miércoles 20 de enero</p><a href="#solicitud" class="btn btn--primary" data-track="sticky_cta" tabindex="-1">Quiero mi cupo <span class="arrow">&rarr;</span></a></div>
+
 <footer class="footer" data-screen-label="Footer">
   <div class="wrap">
     <div class="footer__grid">
@@ -792,7 +809,7 @@
     ev.preventDefault();
     errorGeneral.hidden = true;
     var invalidos = Object.keys(reglas).filter(function (n) { return !validar(n); });
-    if (invalidos.length) { form.elements[invalidos[0]].focus(); return; }
+    if (invalidos.length) { if (window.adnTrack) { window.adnTrack('form_error', { campo: invalidos.join(',') }); } form.elements[invalidos[0]].focus(); return; }
     if (!form.elements.consentimiento.checked) { mostrarError('Necesitamos tu autorización para responderte.'); form.elements.consentimiento.focus(); return; }
     var datos = {
       tipo: 'solicitud-cupo',
@@ -808,7 +825,9 @@
           form.querySelectorAll('.adn-campo, .adn-consentimiento, .adn-enviar').forEach(function (el) { el.hidden = true; });
           okBox.textContent = 'Recibimos tu solicitud. Tu número es ' + res.solicitud + '. El Equipo Facilitador te responderá en 48 horas. Te enviamos un correo de confirmación: si no lo ves en unos minutos, revisa la carpeta de correo no deseado.';
           okBox.hidden = false; okBox.focus();
+          if (window.adnTrack) { window.adnTrack('reserva_enviada', { perfil: datos.perfil }); }
         } else {
+          if (window.adnTrack) { window.adnTrack('form_error_servidor', {}); }
           mostrarError((res && res.mensaje) ? res.mensaje : 'No pudimos registrar tu solicitud.');
         }
       })
@@ -833,6 +852,28 @@
     salida.appendChild(sr);
     salida.appendChild(document.createTextNode('de tu tarifa equivalen a la inversión en la primera cohorte de la certificación (USD 297). Con certificación de DCA (USD 197): ' + horas(197, tarifa) + ' horas.'));
   });
+})();
+</script>
+<script>
+/* Eventos de conversión: se envían a gtag (GA4) si la página lo carga, y siempre a dataLayer (Hotjar/GTM). */
+(function () {
+  window.dataLayer = window.dataLayer || [];
+  function track(name, params) { params = params || {}; params.page = 'adn-ia-consultores'; window.dataLayer.push(Object.assign({ event: name }, params)); if (typeof window.gtag === 'function') { window.gtag('event', name, params); } }
+  window.adnTrack = track;
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href="#solicitud"]'); if (!a) return;
+    var sec = a.closest('section, header, nav, .adn-sticky, .mobile-menu'); track('cta_click', { origen: a.getAttribute('data-track') || (sec && (sec.id || sec.className)) || 'otro' });
+  });
+  document.addEventListener('toggle', function (e) { var d = e.target; if (d && d.tagName === 'DETAILS' && d.open) { var s = d.querySelector('summary'); track('faq_open', { pregunta: s ? s.textContent.trim().slice(0, 80) : '' }); } }, true);
+  var form = document.getElementById('adn-form'), started = false;
+  if (form) { form.addEventListener('focusin', function () { if (!started) { started = true; track('form_start'); } }); }
+  var bar = document.getElementById('adn-sticky'), hero = document.querySelector('#top .mra-hero__cta .btn'), formSec = document.getElementById('solicitud'), cierre = document.getElementById('cierre');
+  if (bar && hero && formSec && 'IntersectionObserver' in window) {
+    var vis = { hero: true, form: false, cierre: false };
+    function upd() { var on = !vis.hero && !vis.form && !vis.cierre; bar.classList.toggle('is-on', on); bar.setAttribute('aria-hidden', on ? 'false' : 'true'); document.body.classList.toggle('adn-has-sticky', on); bar.querySelectorAll('a').forEach(function (a) { a.tabIndex = on ? 0 : -1; }); }
+    function watch(el, key) { new IntersectionObserver(function (en) { vis[key] = en[0].isIntersecting; upd(); }, { threshold: 0.05 }).observe(el); }
+    watch(hero, 'hero'); watch(formSec, 'form'); if (cierre) watch(cierre, 'cierre');
+  }
 })();
 </script>
 <script src="app.js"></script>
