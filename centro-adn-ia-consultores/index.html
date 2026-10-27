@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="https://digitalchangeadvisors.com/assets/favicon.png">
+<link rel="apple-touch-icon" href="https://digitalchangeadvisors.com/assets/favicon.png">
+<title>Centro de Ayuda · Certificación Experto Cultura y Cambio ADN IA · Digital Change Academy</title>
+<meta name="description" content="Centro de ayuda vivo del sprint — Digital Change Academy. Preguntas frecuentes de plataforma y contenido.">
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     CENTRO DE AYUDA · SPRINT ADN IA PARA CONSULTORES · DOCUMENTO VIVO
+     ▸ Para AÑADIR o EDITAR una pregunta NO necesitas tocar el diseño ni el motor.
+       Edita tools/contenido_centro.py y ejecuta tools/build_centro.py (o, a mano, el bloque «const FAQ = [ ... ]»).
+     ▸ Marca DCA: Marcellus + Montserrat · teal #2e8b76 · oro #a48111 · carbón #1e2a38.
+════════════════════════════════════════════════════════════════════════════ -->
+<style>
+/* ═══════════════════════════════════════════════════════════════════════════
+   KIT DCA · TOKENS DE MARCA · Digital Change Academy
+   Base visual única de los HTML de este programa (roadmap, Centro de Ayuda,
+   formulario de cierre, Panel y futura landing). Ver kit/README.md.
+   Proporción: blanco 70 % · teal 20 % · oro 10 % (solo acento sólido).
+   ═══════════════════════════════════════════════════════════════════════════ */
+:root {
+  /* Colores del Brand Book DCA */
+  --dca-blanco:    #ffffff;   /* dominante (70 %) */
+  --dca-teal:      #2e8b76;   /* color de marca (20 %): titulares grandes, bordes, fondos de bloque */
+  --dca-oro:       #a48111;   /* solo acento sólido (10 %): línea de cifra, separador de portada, sello */
+  --dca-carbon:    #1e2a38;   /* texto */
+  --dca-platino:   #dfe3e1;   /* fondos de tarjeta */
+  --dca-terracota: #c2593f;   /* solo alertas, nunca en llamados a la acción */
+  --dca-teal-5:    rgba(46, 139, 118, 0.05);  /* fondos alternos */
+
+  /* Derivados de accesibilidad (no son colores nuevos de marca: son el teal y la
+     terracota oscurecidos para cumplir contraste AA en texto pequeño y botones). */
+  --dca-teal-texto:      #236b5b;  /* 6,3:1 sobre blanco: enlaces, etiquetas, botones */
+  --dca-terracota-texto: #9c4430;  /* 6,4:1 sobre blanco: texto de alerta */
+  --dca-carbon-suave:    #55626f;  /* 6,2:1 sobre blanco: texto secundario */
+  --dca-platino-claro:   #f3f5f4;  /* superficie de formulario */
+
+  /* Tipografías: Marcellus solo en titulares y cifras (nunca por debajo de 24 px) */
+  --dca-fuente-titular: 'Marcellus', Georgia, serif;
+  --dca-fuente-cuerpo:  'Montserrat', Arial, sans-serif;
+  --dca-titular-min: 24px;
+
+  /* Escala */
+  --dca-radio:       10px;   /* tarjetas: 8 a 12 px */
+  --dca-radio-chico: 8px;
+  --dca-sombra:      0 1px 3px rgba(30, 42, 56, 0.08), 0 1px 2px rgba(30, 42, 56, 0.04);  /* sutil */
+  --dca-esp-1: 4px;  --dca-esp-2: 8px;  --dca-esp-3: 16px;  --dca-esp-4: 24px;  --dca-esp-5: 40px;  --dca-esp-6: 64px;
+  --dca-ancho-texto: 720px;
+  --dca-ancho-pagina: 1120px;
+  --dca-gutter: 16px;        /* margen lateral mínimo (360 px de ancho) */
+  --dca-foco: 0 0 0 3px rgba(35, 107, 91, 0.45);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   KIT DCA · COMPONENTES · Digital Change Academy
+   Requiere kit/tokens.css. Sin frameworks. Todas las clases llevan el prefijo «k-»
+   para convivir con las hojas propias de cada página (por ejemplo, la del motor
+   del roadmap). Reglas: títulos teal sobre blanco; oro solo sólido (máx. 3 usos
+   por vista); terracota solo en alertas; máximo 3 colores por composición; sin
+   gradientes; un bloque, una idea.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+.k-pagina { background: var(--dca-blanco); color: var(--dca-carbon); font-family: var(--dca-fuente-cuerpo);
+  font-size: 16px; line-height: 1.6; margin: 0; overflow-x: hidden; }
+.k-pagina *, .k-pagina *::before, .k-pagina *::after { box-sizing: border-box; }
+.k-contenedor { max-width: var(--dca-ancho-pagina); margin: 0 auto; padding: 0 var(--dca-gutter); }
+.k-contenedor--texto { max-width: var(--dca-ancho-texto); }
+.k-pagina a { color: var(--dca-teal-texto); text-underline-offset: 3px; }
+.k-pagina :focus-visible { outline: none; box-shadow: var(--dca-foco); border-radius: 4px; }
+.k-solo-lectores { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.k-bloque { margin: var(--dca-esp-5) 0; }
+
+/* 1. Cabecera de marca (logo y wordmark de texto) */
+.k-cabecera { display: flex; align-items: center; justify-content: space-between; gap: var(--dca-esp-3);
+  flex-wrap: wrap; padding: var(--dca-esp-3) var(--dca-gutter); border-bottom: 1px solid var(--dca-platino); background: var(--dca-blanco); }
+.k-wordmark { font-family: var(--dca-fuente-cuerpo); font-weight: 700; font-size: 13px; letter-spacing: .18em;
+  color: var(--dca-teal-texto); text-transform: uppercase; text-decoration: none; }
+.k-marca { display: inline-flex; align-items: center; gap: 10px; }
+.k-logo { width: 40px; height: 40px; display: block; flex-shrink: 0; }
+.k-cabecera__sub { font-size: 13px; color: var(--dca-carbon-suave); }
+
+/* 2. Portada: título Marcellus teal, subtítulo y separador oro */
+.k-portada { padding: var(--dca-esp-6) var(--dca-gutter) var(--dca-esp-5); background: var(--dca-blanco); }
+.k-portada__kicker { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--dca-carbon-suave); margin: 0 0 var(--dca-esp-3); }
+.k-portada__titulo { font-family: var(--dca-fuente-titular); font-weight: 400; color: var(--dca-teal);
+  font-size: clamp(32px, 6vw, 56px); line-height: 1.12; margin: 0; max-width: 18ch; }
+.k-portada__separador { width: 72px; height: 3px; background: var(--dca-oro); border: 0; margin: var(--dca-esp-4) 0; }
+.k-portada__subtitulo { font-size: clamp(17px, 2.4vw, 22px); line-height: 1.45; color: var(--dca-carbon); margin: 0; max-width: 40ch; }
+
+/* 3. Encabezados de sección */
+.k-h2 { font-family: var(--dca-fuente-titular); font-weight: 400; color: var(--dca-teal); font-size: clamp(26px, 3.4vw, 34px); line-height: 1.2; margin: 0 0 var(--dca-esp-3); }
+.k-h3 { font-family: var(--dca-fuente-cuerpo); font-weight: 700; color: var(--dca-carbon); font-size: 18px; line-height: 1.35; margin: var(--dca-esp-4) 0 var(--dca-esp-2); }
+.k-etiqueta { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--dca-teal-texto); }
+
+/* 4. Tarjetas */
+.k-tarjeta { background: var(--dca-platino); border-radius: var(--dca-radio); padding: var(--dca-esp-4); box-shadow: var(--dca-sombra); }
+.k-tarjeta--destacada { background: var(--dca-blanco); border: 1.5px solid var(--dca-teal); }
+.k-rejilla { display: grid; gap: var(--dca-esp-3); grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+
+/* 5. Cifra con línea dorada de 3 px */
+.k-cifra { border-left: 3px solid var(--dca-oro); padding: var(--dca-esp-1) 0 var(--dca-esp-1) var(--dca-esp-3); }
+.k-cifra__valor { font-family: var(--dca-fuente-titular); font-size: 40px; line-height: 1.1; color: var(--dca-carbon); display: block; }
+.k-cifra__texto { font-size: 14px; color: var(--dca-carbon-suave); display: block; margin-top: var(--dca-esp-1); }
+
+/* 6. Cita o frase canónica */
+.k-cita { margin: var(--dca-esp-4) 0; padding: 0; }
+.k-cita__texto { font-family: var(--dca-fuente-titular); font-size: clamp(24px, 3vw, 30px); line-height: 1.3; color: var(--dca-teal); margin: 0; }
+.k-cita__autor { display: block; margin-top: var(--dca-esp-2); font-size: 14px; color: var(--dca-carbon-suave); font-style: normal; }
+
+/* 7. Avisos */
+.k-aviso { border-radius: var(--dca-radio-chico); padding: var(--dca-esp-3); background: var(--dca-teal-5); border: 1px solid rgba(46,139,118,.25); font-size: 15px; }
+.k-aviso__titulo { font-weight: 700; color: var(--dca-teal-texto); margin: 0 0 var(--dca-esp-1); font-size: 14px; }
+.k-aviso--alerta { background: var(--dca-blanco); border: 1.5px solid var(--dca-terracota); }
+.k-aviso--alerta .k-aviso__titulo { color: var(--dca-terracota-texto); }
+
+/* 8. Tarjeta de experimento */
+.k-exp { background: var(--dca-blanco); border: 1px solid var(--dca-platino); border-radius: var(--dca-radio); padding: var(--dca-esp-4); box-shadow: var(--dca-sombra); }
+.k-exp__insignias { display: flex; flex-wrap: wrap; gap: var(--dca-esp-2); margin-bottom: var(--dca-esp-2); }
+.k-insignia { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .04em; padding: 3px 10px; border-radius: 999px; background: var(--dca-teal-5); color: var(--dca-teal-texto); border: 1px solid rgba(46,139,118,.25); }
+.k-insignia--neutra { background: var(--dca-platino-claro); color: var(--dca-carbon); border-color: var(--dca-platino); }
+.k-exp__titulo { font-weight: 700; font-size: 18px; margin: 0 0 var(--dca-esp-2); }
+.k-exp__dato { font-size: 14px; margin: var(--dca-esp-1) 0 0; color: var(--dca-carbon); }
+.k-exp__dato b { color: var(--dca-teal-texto); }
+
+/* 9. Línea de tiempo del mes */
+.k-tiempo { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--dca-esp-2); grid-template-columns: 1fr; }
+.k-tiempo__paso { border: 1px solid var(--dca-platino); border-radius: var(--dca-radio-chico); padding: var(--dca-esp-3); background: var(--dca-blanco); }
+.k-tiempo__cuando { display: block; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--dca-teal-texto); }
+.k-tiempo__que { display: block; font-weight: 600; margin-top: 2px; }
+.k-tiempo__paso[aria-current="step"] { border-color: var(--dca-teal); background: var(--dca-teal-5); }
+@media (min-width: 720px) { .k-tiempo { grid-template-columns: repeat(4, 1fr); } }
+
+/* 10. Lista de verificación con progreso */
+.k-checklist { list-style: none; margin: 0; padding: 0; }
+.k-checklist li { display: flex; gap: var(--dca-esp-2); align-items: flex-start; padding: var(--dca-esp-2) 0; border-bottom: 1px solid var(--dca-platino); }
+.k-checklist input[type="checkbox"] { accent-color: var(--dca-teal-texto); width: 18px; height: 18px; margin-top: 3px; flex: none; }
+.k-progreso { height: 6px; background: var(--dca-platino); border-radius: 999px; overflow: hidden; margin: var(--dca-esp-2) 0; }
+.k-progreso__barra { height: 100%; width: 0; background: var(--dca-teal); transition: width .3s; }
+.k-progreso__texto { font-size: 13px; color: var(--dca-carbon-suave); }
+
+/* 11. Tabla de marca */
+.k-tabla-envoltura { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+.k-tabla { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 480px; }
+.k-tabla th { background: var(--dca-teal-texto); color: var(--dca-blanco); text-align: left; padding: 10px 12px; font-weight: 600; }
+.k-tabla td { border-bottom: 1px solid var(--dca-platino); padding: 10px 12px; vertical-align: top; }
+.k-tabla tr:nth-child(even) td { background: var(--dca-teal-5); }
+
+/* 12. Acordeón de preguntas frecuentes */
+.k-acordeon { border-top: 1px solid var(--dca-platino); }
+.k-acordeon__item { border-bottom: 1px solid var(--dca-platino); }
+.k-acordeon__boton { width: 100%; text-align: left; background: none; border: 0; padding: var(--dca-esp-3) 36px var(--dca-esp-3) 0; font: 600 16px/1.4 var(--dca-fuente-cuerpo); color: var(--dca-carbon); cursor: pointer; position: relative; }
+.k-acordeon__boton::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 22px; color: var(--dca-teal-texto); }
+.k-acordeon__boton[aria-expanded="true"]::after { content: "–"; }
+.k-acordeon__panel { padding: 0 0 var(--dca-esp-3); font-size: 15px; }
+.k-acordeon__panel[hidden] { display: none; }
+
+/* 13. Glosario con filtro */
+.k-filtro { width: 100%; padding: 12px 14px; border: 1.5px solid var(--dca-platino); border-radius: var(--dca-radio-chico); font: 400 15px var(--dca-fuente-cuerpo); color: var(--dca-carbon); background: var(--dca-blanco); }
+.k-filtro:focus { border-color: var(--dca-teal-texto); outline: none; box-shadow: var(--dca-foco); }
+.k-glosario { margin: var(--dca-esp-3) 0 0; }
+.k-glosario__termino { font-weight: 700; color: var(--dca-teal-texto); margin-top: var(--dca-esp-3); }
+.k-glosario__definicion { margin: var(--dca-esp-1) 0 0; padding-bottom: var(--dca-esp-3); border-bottom: 1px solid var(--dca-platino); }
+.k-glosario__conteo { font-size: 13px; color: var(--dca-carbon-suave); margin-top: var(--dca-esp-2); }
+
+/* Pestañas */
+.k-pestanas { display: flex; gap: var(--dca-esp-2); border-bottom: 1px solid var(--dca-platino); flex-wrap: wrap; }
+.k-pestana { background: none; border: 0; border-bottom: 3px solid transparent; padding: var(--dca-esp-2) var(--dca-esp-3); font: 600 15px var(--dca-fuente-cuerpo); color: var(--dca-carbon-suave); cursor: pointer; }
+.k-pestana[aria-selected="true"] { color: var(--dca-teal-texto); border-bottom-color: var(--dca-teal); }
+.k-panel-pestana[hidden] { display: none; }
+
+/* 14. Formulario de envío */
+.k-form { display: grid; gap: var(--dca-esp-3); }
+.k-campo { display: grid; gap: var(--dca-esp-1); }
+.k-campo label, .k-campo legend { font-size: 13px; font-weight: 700; color: var(--dca-carbon); }
+.k-campo__ayuda { font-size: 13px; color: var(--dca-carbon-suave); }
+.k-campo input[type="text"], .k-campo input[type="email"], .k-campo input[type="date"], .k-campo textarea, .k-campo select {
+  width: 100%; padding: 11px 13px; border: 1.5px solid var(--dca-platino); border-radius: var(--dca-radio-chico);
+  font: 400 15px/1.5 var(--dca-fuente-cuerpo); color: var(--dca-carbon); background: var(--dca-platino-claro); }
+.k-campo textarea { min-height: 120px; resize: vertical; }
+.k-campo input:focus, .k-campo textarea:focus, .k-campo select:focus { border-color: var(--dca-teal-texto); background: var(--dca-blanco); outline: none; box-shadow: var(--dca-foco); }
+.k-campo--error input, .k-campo--error textarea { border-color: var(--dca-terracota); }
+.k-campo__error { font-size: 13px; color: var(--dca-terracota-texto); }
+.k-boton { display: inline-flex; align-items: center; justify-content: center; gap: var(--dca-esp-2); min-height: 44px; padding: 10px 22px;
+  border-radius: var(--dca-radio-chico); border: 1.5px solid var(--dca-teal-texto); background: var(--dca-teal-texto); color: var(--dca-blanco);
+  font: 700 15px var(--dca-fuente-cuerpo); cursor: pointer; text-decoration: none; }
+.k-boton:hover { background: var(--dca-carbon); border-color: var(--dca-carbon); }
+.k-boton--secundario { background: var(--dca-blanco); color: var(--dca-teal-texto); }
+.k-boton--secundario:hover { background: var(--dca-teal-5); color: var(--dca-teal-texto); border-color: var(--dca-teal-texto); }
+.k-boton:disabled { opacity: .55; cursor: default; }
+.k-estado { font-size: 14px; padding: var(--dca-esp-2) var(--dca-esp-3); border-radius: var(--dca-radio-chico); }
+.k-estado--enviado { background: var(--dca-teal-5); color: var(--dca-teal-texto); border: 1px solid rgba(46,139,118,.3); }
+.k-estado--error { background: var(--dca-blanco); color: var(--dca-terracota-texto); border: 1.5px solid var(--dca-terracota); }
+.k-opciones { display: grid; gap: var(--dca-esp-2); }
+.k-opcion { display: flex; gap: var(--dca-esp-2); align-items: flex-start; padding: var(--dca-esp-3); border: 1.5px solid var(--dca-platino); border-radius: var(--dca-radio-chico); background: var(--dca-blanco); cursor: pointer; }
+.k-opcion:has(input:checked) { border-color: var(--dca-teal-texto); background: var(--dca-teal-5); }
+.k-opcion input { accent-color: var(--dca-teal-texto); width: 18px; height: 18px; margin-top: 3px; flex: none; }
+.k-opcion__titulo { font-weight: 700; display: block; }
+.k-opcion__texto { font-size: 14px; color: var(--dca-carbon); display: block; }
+
+/* 15 y 16. Plantillas imprimibles: Brief para el líder y Hoja de Ruta Evolutiva */
+.k-plantilla { background: var(--dca-blanco); border: 1px solid var(--dca-platino); border-radius: var(--dca-radio); padding: var(--dca-esp-4); }
+.k-plantilla__cabeza { display: flex; justify-content: space-between; align-items: baseline; gap: var(--dca-esp-2); flex-wrap: wrap; border-bottom: 3px solid var(--dca-oro); padding-bottom: var(--dca-esp-2); margin-bottom: var(--dca-esp-3); }
+.k-plantilla__titulo { font-family: var(--dca-fuente-titular); font-size: 26px; color: var(--dca-teal); margin: 0; font-weight: 400; }
+.k-plantilla__nota { font-size: 12px; color: var(--dca-carbon-suave); }
+.k-plantilla__seccion { margin: 0 0 var(--dca-esp-3); }
+.k-plantilla__num { display: inline-block; min-width: 26px; font-weight: 700; color: var(--dca-teal-texto); }
+.k-plantilla__rotulo { font-weight: 700; font-size: 14px; }
+.k-plantilla__espacio { min-height: 56px; border-bottom: 1px dashed var(--dca-platino); margin-top: var(--dca-esp-1); }
+.k-plantilla__espacio[contenteditable="true"]:focus { outline: none; box-shadow: var(--dca-foco); }
+
+/* 17. Selector de ruta A, B o C con consentimiento (solo en materiales de cierre) */
+.k-rutas .k-opcion__titulo { color: var(--dca-teal-texto); }
+.k-consentimiento { display: flex; gap: var(--dca-esp-2); align-items: flex-start; padding: var(--dca-esp-3); background: var(--dca-platino-claro); border-radius: var(--dca-radio-chico); font-size: 14px; }
+.k-consentimiento input { accent-color: var(--dca-teal-texto); width: 18px; height: 18px; margin-top: 2px; flex: none; }
+
+/* 18. Tarjeta de firma */
+.k-firma { display: flex; gap: var(--dca-esp-3); align-items: flex-start; padding-top: var(--dca-esp-3); border-top: 1px solid var(--dca-platino); }
+.k-firma__sello { width: 44px; height: 44px; border-radius: 50%; border: 3px solid var(--dca-oro); flex: none; display: flex; align-items: center; justify-content: center; font-family: var(--dca-fuente-titular); font-size: 24px; color: var(--dca-teal); }
+.k-firma__nombre { font-weight: 700; display: block; }
+.k-firma__rol { font-size: 14px; color: var(--dca-carbon-suave); display: block; }
+
+/* 19. Pie con cláusula de uso */
+.k-pie { margin-top: var(--dca-esp-6); padding: var(--dca-esp-4) var(--dca-gutter); border-top: 1px solid var(--dca-platino); font-size: 13px; color: var(--dca-carbon-suave); text-align: center; }
+.k-pie__marca { font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--dca-teal-texto); font-size: 12px; display: block; margin-bottom: var(--dca-esp-1); }
+.k-pie__clausula { max-width: 760px; margin: 0 auto; }
+
+/* 20. Componentes del Panel */
+.k-envios { display: grid; gap: var(--dca-esp-2); }
+.k-envio { display: flex; justify-content: space-between; gap: var(--dca-esp-2); flex-wrap: wrap; align-items: center; padding: var(--dca-esp-3); background: var(--dca-blanco); border: 1px solid var(--dca-platino); border-radius: var(--dca-radio-chico); }
+.k-estado-envio { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 999px; }
+.k-estado-envio--pendiente { background: var(--dca-blanco); color: var(--dca-terracota-texto); border: 1px solid var(--dca-terracota); }
+.k-estado-envio--listo { background: var(--dca-teal-5); color: var(--dca-teal-texto); border: 1px solid rgba(46,139,118,.3); }
+.k-escalar { display: inline-flex; align-items: center; gap: 6px; font: 600 13px var(--dca-fuente-cuerpo); padding: 6px 12px; border-radius: 999px; border: 1.5px solid var(--dca-carbon); background: var(--dca-blanco); color: var(--dca-carbon); cursor: pointer; }
+.k-escalar[aria-pressed="true"] { background: var(--dca-carbon); color: var(--dca-blanco); }
+.k-tablero { display: grid; gap: var(--dca-esp-3); grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); }
+.k-borrador { background: var(--dca-platino-claro); border-radius: var(--dca-radio-chico); padding: var(--dca-esp-3); }
+.k-borrador__aprobacion { display: flex; gap: var(--dca-esp-2); align-items: center; margin-top: var(--dca-esp-2); font-size: 14px; }
+
+/* 21. Componentes de landing (solo catálogo; no se publican) */
+.k-hero { padding: var(--dca-esp-6) var(--dca-gutter); }
+.k-hero__titulo { font-family: var(--dca-fuente-titular); font-weight: 400; color: var(--dca-teal); font-size: clamp(34px, 6vw, 60px); line-height: 1.1; margin: 0 0 var(--dca-esp-3); max-width: 20ch; }
+.k-hero__bajada { font-size: clamp(17px, 2.2vw, 21px); max-width: 44ch; margin: 0 0 var(--dca-esp-4); }
+.k-precio { border: 1.5px solid var(--dca-teal); border-radius: var(--dca-radio); padding: var(--dca-esp-4); background: var(--dca-blanco); }
+.k-precio__monto { font-family: var(--dca-fuente-titular); font-size: 36px; color: var(--dca-carbon); }
+.k-credencial { display: flex; gap: var(--dca-esp-3); align-items: center; }
+.k-cta { display: flex; flex-wrap: wrap; gap: var(--dca-esp-2); align-items: center; }
+
+/* ── Movimiento reducido ──────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .k-pagina *, .k-pagina *::before, .k-pagina *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ── Impresión (roadmap, Brief y Hoja de Ruta) ───────────────────────────── */
+@media print {
+  .k-cabecera, .k-boton, .k-escalar, .k-filtro, .k-pestanas, .k-no-imprimir { display: none !important; }
+  .k-pagina { font-size: 11pt; }
+  .k-plantilla, .k-tarjeta, .k-exp, .k-aviso { box-shadow: none; break-inside: avoid; page-break-inside: avoid; }
+  .k-plantilla { border: 0; padding: 0; }
+  .k-plantilla__espacio { min-height: 70px; }
+  .k-pie { margin-top: 18pt; }
+  .k-acordeon__panel[hidden] { display: block !important; }
+}
+
+</style>
+<style>
+  :root{
+    --teal:#2e8b76; --teal-dk:#247060; --gold:#a48111; --carbon:#1e2a38;
+    --platinum:#dfe3e1; --teal-bg:rgba(46,139,118,.06); --teal-bd:rgba(46,139,118,.18);
+    --gold-bg:rgba(164,129,17,.06); --grey:#6b7280;
+    --fd:'Marcellus',Georgia,serif; --fb:'Montserrat','Helvetica Neue',sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:var(--fb);color:var(--carbon);background:var(--dca-blanco);font-size:15px;line-height:1.7;}
+
+  /* ── Hero ── */
+  .hero{background:var(--carbon);padding:38px 22px 34px;}
+  .hero-in{max-width:840px;margin:0 auto;}
+  .hero .kicker{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;}
+  .hero h1{font-family:var(--fd);font-weight:400;color:#fff;font-size:34px;margin:10px 0 6px;line-height:1.15;}
+  .hero p{color:rgba(255,255,255,.72);font-size:14px;margin:0;max-width:600px;}
+  .hero .visual{height:5px;width:70px;background:var(--teal);border-radius:3px;margin-top:18px;}
+
+  .wrap{max-width:840px;margin:0 auto;padding:26px 22px 70px;}
+  .k-portada .k-contenedor{max-width:840px;padding:0 22px;}  /* V2: la portada del kit se alinea con el contenido */
+  .k-portada{padding-left:0;padding-right:0;}
+
+  .intro{background:var(--teal-bg);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;
+         padding:14px 18px;font-size:13.5px;color:rgba(30,42,56,.82);margin-bottom:24px;}
+  .intro b{color:var(--carbon);}
+
+  /* ── Controles ── */
+  .controls{position:sticky;top:0;background:#eef0efe6;backdrop-filter:blur(6px);
+            padding:14px 0 12px;margin-bottom:8px;z-index:5;}
+  .search{width:100%;padding:13px 16px;border:1.5px solid var(--platinum);border-radius:10px;
+          font-family:inherit;font-size:15px;color:var(--carbon);background:#fff;outline:none;transition:border-color .2s;}
+  .search:focus{border-color:var(--teal);}
+  .search::placeholder{color:rgba(30,42,56,.4);}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center;}
+  .chips .lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--grey);margin-right:2px;}
+  .chip{border:1.5px solid var(--platinum);background:#fff;color:var(--carbon);border-radius:20px;
+        padding:6px 14px;font-family:inherit;font-size:12.5px;font-weight:600;cursor:pointer;transition:all .18s;}
+  .chip:hover{border-color:var(--teal);}
+  .chip.on{background:var(--teal);border-color:var(--teal);color:#fff;}
+  .chip.on.gold{background:var(--gold);border-color:var(--gold);}
+  .sep{width:1px;align-self:stretch;background:var(--platinum);margin:0 4px;}
+
+  .tag.nuevo{background:var(--gold);color:#fff;}
+  .item.flash{box-shadow:0 0 0 2px var(--gold);}
+  .nov{background:#fff;border:1px solid var(--teal-bd);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;
+       padding:14px 18px;margin-bottom:20px;}
+  .nov h2{font-family:var(--fb);font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 8px;}
+  .nov a{display:block;font-size:14px;font-weight:600;color:var(--carbon);text-decoration:none;padding:5px 0;line-height:1.4;}
+  .nov a:hover{color:var(--teal-dk);}
+  .nov a small{font-weight:400;color:var(--grey);font-size:11.5px;margin-left:6px;}
+  .count{font-size:12px;color:var(--grey);margin:6px 2px 16px;}
+
+  /* ── Entradas (acordeón) ── */
+  .item{background:#fff;border:1px solid #e6e8e7;border-radius:12px;margin-bottom:12px;overflow:hidden;
+        transition:box-shadow .2s;}
+  .item:hover{box-shadow:0 2px 14px rgba(30,42,56,.06);}
+  .q{display:flex;align-items:flex-start;gap:12px;padding:16px 18px;cursor:pointer;}
+  .q:hover{background:#fbfbfb;}
+  .q .txt{flex:1;}
+  .q .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px;}
+  .tag{font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:5px;}
+  .tag.plataforma{background:var(--teal-bg);color:var(--teal-dk);}
+  .tag.contenido{background:var(--gold-bg);color:var(--gold);}
+  .tag.sprint{background:#eef0ef;color:var(--grey);}
+  .q .pregunta{font-weight:600;font-size:15px;color:var(--carbon);line-height:1.45;}
+  .q .caret{color:var(--teal);font-size:18px;line-height:1;margin-top:2px;transition:transform .2s;flex-shrink:0;}
+  .item.open .caret{transform:rotate(90deg);}
+  .a{display:none;padding:0 18px 18px 18px;}
+  .item.open .a{display:block;}
+  .a-inner{border-top:1px solid #f0f0f0;padding-top:14px;}
+  .a p{margin:0 0 10px;font-size:14px;line-height:1.75;color:rgba(30,42,56,.88);}
+  .a p:last-child{margin-bottom:0;}
+  .a strong{color:var(--carbon);}
+  .a .upd{font-size:11px;color:var(--grey);margin-top:12px;font-style:italic;}
+
+  .empty{text-align:center;color:var(--grey);padding:50px 20px;font-size:14px;}
+
+  footer{border-top:1px solid var(--platinum);margin-top:40px;padding-top:20px;text-align:center;
+         font-size:12px;color:var(--grey);}
+  footer .gold{color:var(--gold);font-weight:600;}
+
+  /* ── Selector de vista (FAQ / Glosario) ── */
+  .views{display:flex;gap:8px;margin-bottom:22px;}
+  .view-btn{flex:1;border:1.5px solid var(--platinum);background:#fff;color:var(--carbon);
+            border-radius:10px;padding:12px 14px;font-family:inherit;font-size:13.5px;font-weight:600;
+            cursor:pointer;transition:all .18s;text-align:center;}
+  .view-btn:hover{border-color:var(--teal);}
+  .view-btn.on{background:var(--carbon);border-color:var(--carbon);color:#fff;}
+
+  /* ── Glosario ── */
+  .g-item{background:#fff;border:1px solid #e6e8e7;border-left:3px solid var(--gold);border-radius:0 12px 12px 0;
+          margin-bottom:12px;padding:16px 18px;scroll-margin-top:96px;transition:box-shadow .2s,background .4s;}
+  .g-item:hover{box-shadow:0 2px 14px rgba(30,42,56,.06);}
+  .g-item.flash{background:var(--gold-bg);}
+  .g-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px;}
+  .g-term{font-family:var(--fd);font-size:17px;color:var(--carbon);}
+  .g-def{font-size:14px;line-height:1.7;color:rgba(30,42,56,.88);margin:0;}
+  .g-def strong{color:var(--carbon);}
+  .g-also{font-size:12px;color:var(--grey);margin-top:6px;font-style:italic;}
+
+  @media (max-width:600px){
+    .hero h1{font-size:27px;} .wrap{padding:20px 16px 60px;}
+    .views{flex-direction:column;}
+  }
+  @media print{
+    .controls,.hero .visual,.views{display:none;} body{background:#fff;}
+    .item,.g-item{break-inside:avoid;} .a{display:block!important;}
+  }
+</style>
+</head>
+<body class="k-pagina">
+
+<!-- ZONA A -->
+<header class="k-cabecera"><span class="k-marca"><img class="k-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALAAAACwCAYAAACvt+ReAAAAAXNSR0IArs4c6QAAARJlWElmTU0AKgAAAAgABwESAAMAAAABAAEAAAEaAAUAAAABAAAAYgEbAAUAAAABAAAAagEoAAMAAAABAAIAAAExAAIAAABEAAAAcgE7AAIAAAANAAAAtodpAAQAAAABAAAAxAAAAAAAAABgAAAAAQAAAGAAAAABQ2FudmEgZG9jPURBRjVodWlHX1lNIHVzZXI9VUFFT2pyd19kRmsgYnJhbmQ9RXF1aXBvIGRlIENlc2FyIExvemFubwBDZXNhciBMb3phbm8AAAAGkAAABwAAAAQwMjEwkQEABwAAAAQBAgMAoAAABwAAAAQwMTAwoAEAAwAAAAEAAQAAoAIABAAAAAEAAACwoAMABAAAAAEAAACwAAAAAIA7lP4AAAAJcEhZcwAADsQAAA7EAZUrDhsAAAZqaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJYTVAgQ29yZSA2LjAuMCI+CiAgIDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgICAgIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICAgICAgICAgIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIgogICAgICAgICAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIgogICAgICAgICAgICB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iPgogICAgICAgICA8ZXhpZjpDb2xvclNwYWNlPjY1NTM1PC9leGlmOkNvbG9yU3BhY2U+CiAgICAgICAgIDxleGlmOlBpeGVsWERpbWVuc2lvbj41MDA8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpFeGlmVmVyc2lvbj4wMjEwPC9leGlmOkV4aWZWZXJzaW9uPgogICAgICAgICA8ZXhpZjpGbGFzaFBpeFZlcnNpb24+MDEwMDwvZXhpZjpGbGFzaFBpeFZlcnNpb24+CiAgICAgICAgIDxleGlmOlBpeGVsWURpbWVuc2lvbj41MDA8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpDb21wb25lbnRzQ29uZmlndXJhdGlvbj4KICAgICAgICAgICAgPHJkZjpTZXE+CiAgICAgICAgICAgICAgIDxyZGY6bGk+MTwvcmRmOmxpPgogICAgICAgICAgICAgICA8cmRmOmxpPjI8L3JkZjpsaT4KICAgICAgICAgICAgICAgPHJkZjpsaT4zPC9yZGY6bGk+CiAgICAgICAgICAgICAgIDxyZGY6bGk+MDwvcmRmOmxpPgogICAgICAgICAgICA8L3JkZjpTZXE+CiAgICAgICAgIDwvZXhpZjpDb21wb25lbnRzQ29uZmlndXJhdGlvbj4KICAgICAgICAgPHhtcDpDcmVhdG9yVG9vbD5DYW52YSBkb2M9REFGNWh1aUdfWU0gdXNlcj1VQUVPanJ3X2RGayBicmFuZD1FcXVpcG8gZGUgQ2VzYXIgTG96YW5vPC94bXA6Q3JlYXRvclRvb2w+CiAgICAgICAgIDx0aWZmOlJlc29sdXRpb25Vbml0PjI8L3RpZmY6UmVzb2x1dGlvblVuaXQ+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgICAgIDx0aWZmOlhSZXNvbHV0aW9uPjk2PC90aWZmOlhSZXNvbHV0aW9uPgogICAgICAgICA8dGlmZjpZUmVzb2x1dGlvbj45NjwvdGlmZjpZUmVzb2x1dGlvbj4KICAgICAgICAgPGRjOnRpdGxlPgogICAgICAgICAgICA8cmRmOkFsdD4KICAgICAgICAgICAgICAgPHJkZjpsaSB4bWw6bGFuZz0ieC1kZWZhdWx0Ij5Mb2dvIFJlZG9uZG8gRGlnaXRhbCBDaGFuZ2UgQWNhZGVteSAtIE51ZXZvIExvZ28gQWNhZGVteTwvcmRmOmxpPgogICAgICAgICAgICA8L3JkZjpBbHQ+CiAgICAg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" alt="" width="40" height="40"><span class="k-wordmark" aria-label="Digital Change Academy">DIGITAL CHANGE ACADEMY</span></span><span class="k-cabecera__sub">Centro de Ayuda</span></header>
+<section class="k-portada"><div class="k-contenedor"><p class="k-portada__kicker">Centro de Ayuda</p><h1 class="k-portada__titulo">Certificación Experto Cultura y Cambio ADN IA</h1><hr class="k-portada__separador"><p class="k-portada__subtitulo">Cómo habilitar al líder que decide qué cortar y qué recuperar.</p></div></section>
+<div class="wrap" style="padding-bottom:0"><p>Tu compañero de consulta durante el mes del sprint: experimentos, ensayo y defensa. Respuestas a las dudas más frecuentes sobre la plataforma y el contenido de cada semana.</p></div>
+<!-- /ZONA A -->
+
+<div class="wrap">
+  <div class="intro">
+    <b>¿Cómo usar este centro?</b> Escribe una palabra en el buscador (p. ej. «hipótesis», «PDF», «envío») o filtra por frente y semana. Haz clic en cualquier pregunta para ver la respuesta. En el <b>Glosario</b> encuentras el significado de los términos del roadmap. Es un <b>documento vivo</b>: crece a medida que avanza el sprint. ¿No encuentras tu duda? Escríbele al Equipo Facilitador.
+  </div>
+
+  <div id="novedades"></div>
+
+  <div class="views">
+    <button class="view-btn on" id="vb-faq" onclick="showView('faq')">❓ Preguntas frecuentes</button>
+    <button class="view-btn" id="vb-glosario" onclick="showView('glosario')">📖 Glosario de términos</button>
+  </div>
+
+  <div id="view-faq">
+    <div class="controls">
+      <input id="search" class="search" placeholder="🔍  Busca por palabra clave…" oninput="render()">
+      <div class="chips">
+        <span class="lbl">Frente</span>
+        <button class="chip on" data-frente="todo" onclick="setFrente('todo')">Todo</button>
+        <button class="chip" data-frente="plataforma" onclick="setFrente('plataforma')">Plataforma</button>
+        <button class="chip" data-frente="contenido" onclick="setFrente('contenido')">Contenido</button>
+        <span class="sep"></span>
+        <span class="lbl">Semana</span>
+        <span id="sprint-chips"></span>
+      </div>
+    </div>
+
+    <div class="count" id="count"></div>
+    <div id="list"></div>
+  </div>
+
+  <div id="view-glosario" hidden>
+    <div class="controls">
+      <input id="g-search" class="search" placeholder="🔍  Busca un término…" oninput="renderGlosario()">
+    </div>
+
+    <div class="count" id="g-count"></div>
+    <div id="g-list"></div>
+  </div>
+
+  <footer>
+    <div class="gold">Documento vivo — se enriquece con cada cohorte.</div>
+  </footer>
+</div>
+<footer class="k-pie"><span class="k-pie__marca">Digital Change Academy</span><p class="k-pie__clausula">Materiales para uso personal del participante. DICO es un marco abierto: úsalo citando «DICO · Digital Change Academy». El uso del MATCH en ofertas comerciales requiere certificación o alianza con Digital Change Advisors.</p></footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════════════
+   KIT DCA · COMPORTAMIENTO MÍNIMO · Digital Change Academy
+   JavaScript puro, sin dependencias. Se activa por atributos data-k-*:
+     data-k-acordeon       acordeón accesible (botones con aria-expanded)
+     data-k-pestanas       pestañas (role="tablist")
+     data-k-filtro="#id"   filtro de glosario sobre la lista indicada
+     data-k-checklist      lista de verificación con barra de progreso
+     data-k-form           validación de formulario (required y type="email")
+   El almacenamiento local va siempre envuelto en try/catch: la página funciona igual sin él.
+   No toca el motor de envío del roadmap (submitExp, saveField…).
+   ═══════════════════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  var KIT = {};
+
+  // Almacenamiento seguro: si el navegador lo bloquea (incógnito, datos borrados), no pasa nada.
+  KIT.leer = function (clave, porDefecto) {
+    try { var v = window.localStorage.getItem(clave); return v === null ? porDefecto : JSON.parse(v); }
+    catch (e) { return porDefecto; }
+  };
+  KIT.guardar = function (clave, valor) {
+    try { window.localStorage.setItem(clave, JSON.stringify(valor)); return true; }
+    catch (e) { return false; }
+  };
+
+  KIT.acordeon = function (raiz) {
+    raiz.querySelectorAll('.k-acordeon__boton').forEach(function (boton) {
+      var panel = document.getElementById(boton.getAttribute('aria-controls'));
+      if (!panel) return;
+      boton.addEventListener('click', function () {
+        var abierto = boton.getAttribute('aria-expanded') === 'true';
+        boton.setAttribute('aria-expanded', abierto ? 'false' : 'true');
+        panel.hidden = abierto;
+      });
+    });
+  };
+
+  KIT.pestanas = function (raiz) {
+    var tabs = Array.prototype.slice.call(raiz.querySelectorAll('[role="tab"]'));
+    function activar(tab) {
+      tabs.forEach(function (t) {
+        var sel = t === tab;
+        t.setAttribute('aria-selected', sel ? 'true' : 'false');
+        t.tabIndex = sel ? 0 : -1;
+        var p = document.getElementById(t.getAttribute('aria-controls'));
+        if (p) p.hidden = !sel;
+      });
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { activar(t); });
+      t.addEventListener('keydown', function (e) {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        var n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+        n.focus(); activar(n);
+      });
+    });
+  };
+
+  KIT.filtro = function (input) {
+    var lista = document.querySelector(input.getAttribute('data-k-filtro'));
+    var conteo = document.querySelector(input.getAttribute('data-k-conteo') || '#__sin_conteo');
+    if (!lista) return;
+    function normal(s) { return String(s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+    function aplicar() {
+      var q = normal(input.value), n = 0;
+      lista.querySelectorAll('[data-k-item]').forEach(function (item) {
+        var ver = !q || normal(item.textContent).indexOf(q) !== -1;
+        item.hidden = !ver; if (ver) n++;
+      });
+      if (conteo) conteo.textContent = n + (n === 1 ? ' término' : ' términos');
+    }
+    input.addEventListener('input', aplicar); aplicar();
+  };
+
+  KIT.checklist = function (raiz) {
+    var clave = raiz.getAttribute('data-k-checklist');
+    var cajas = raiz.querySelectorAll('input[type="checkbox"]');
+    var barra = raiz.querySelector('.k-progreso__barra');
+    var texto = raiz.querySelector('.k-progreso__texto');
+    var estado = clave ? KIT.leer(clave, {}) : {};
+    function pintar() {
+      var hechas = 0;
+      cajas.forEach(function (c) { if (c.checked) hechas++; });
+      var pct = cajas.length ? Math.round(hechas * 100 / cajas.length) : 0;
+      if (barra) barra.style.width = pct + '%';
+      if (texto) texto.textContent = hechas + ' de ' + cajas.length + ' listos';
+      var prog = raiz.querySelector('[role="progressbar"]');
+      if (prog) prog.setAttribute('aria-valuenow', String(pct));
+    }
+    cajas.forEach(function (c, i) {
+      if (estado[i]) c.checked = true;
+      c.addEventListener('change', function () { estado[i] = c.checked; if (clave) KIT.guardar(clave, estado); pintar(); });
+    });
+    pintar();
+  };
+
+  // Validación de formulario: required y correo. Devuelve la lista de errores (vacía si todo está bien).
+  KIT.validar = function (form) {
+    var errores = [];
+    form.querySelectorAll('.k-campo').forEach(function (campo) {
+      var el = campo.querySelector('input, textarea, select');
+      if (!el) return;
+      var msg = '';
+      if (el.type === 'radio') {
+        var grupo = form.querySelectorAll('input[name="' + el.name + '"]');
+        var alguno = Array.prototype.some.call(grupo, function (r) { return r.checked; });
+        if (el.required && !alguno) msg = 'Elige una opción.';
+      } else if (el.required && !String(el.value || '').trim()) {
+        msg = 'Este campo es obligatorio.';
+      } else if (el.type === 'email' && el.value && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(el.value.trim())) {
+        msg = 'Escribe un correo válido.';
+      }
+      campo.classList.toggle('k-campo--error', !!msg);
+      var err = campo.querySelector('.k-campo__error');
+      if (msg && !err) { err = document.createElement('div'); err.className = 'k-campo__error'; err.setAttribute('role', 'alert'); campo.appendChild(err); }
+      if (err) err.textContent = msg;
+      if (msg) errores.push({ campo: el.name || el.id, mensaje: msg });
+    });
+    return errores;
+  };
+
+  KIT.form = function (form) {
+    form.addEventListener('submit', function (e) {
+      var errores = KIT.validar(form);
+      if (errores.length) { e.preventDefault(); var p = form.querySelector('.k-campo--error input, .k-campo--error textarea'); if (p) p.focus(); }
+    });
+  };
+
+  KIT.iniciar = function (raiz) {
+    raiz = raiz || document;
+    raiz.querySelectorAll('[data-k-acordeon]').forEach(KIT.acordeon);
+    raiz.querySelectorAll('[data-k-pestanas]').forEach(KIT.pestanas);
+    raiz.querySelectorAll('[data-k-filtro]').forEach(KIT.filtro);
+    raiz.querySelectorAll('[data-k-checklist]').forEach(KIT.checklist);
+    raiz.querySelectorAll('form[data-k-form]').forEach(KIT.form);
+  };
+
+  window.KIT = KIT;
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { KIT.iniciar(); });
+  else KIT.iniciar();
+})();
+
+</script>
+<script>
+/* ════════════════════════════════════════════════════════════════════════════
+   ▼▼▼  CONTENIDO DEL CENTRO DE AYUDA (generado desde tools/contenido_centro.py)  ▼▼▼
+   sprint: "General" o la semana ("1"…"4") · frente: "plataforma" | "contenido"
+   ═══════════════════════════════════════════════════════════════════════════ */
+const FAQ = [
+  {
+    "sprint": "General",
+    "frente": "plataforma",
+    "pregunta": "Si cierro la pestaña o el navegador, ¿pierdo lo que escribí?",
+    "respuesta": "No. El roadmap tiene **autoguardado**: todo lo que escribes se conserva automáticamente en tu dispositivo, mientras escribes. Puedes cerrar y volver más tarde y tu trabajo seguirá ahí.\n\nUn detalle importante: el guardado es **por navegador y por equipo** (no está en la nube). Retoma siempre desde el mismo computador y el mismo navegador. No uses ventanas de incógnito ni borres los datos de navegación: perderías lo que no hayas enviado.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "plataforma",
+    "pregunta": "Voy a cambiar de computador. ¿Qué hago con lo que ya escribí?",
+    "respuesta": "Depende de un solo detalle: **¿ya lo enviaste y viste el «✓ Enviado» con tu número de recibo?**\n\n**Si ya lo enviaste:** quedó registrado, sin importar el computador. En el equipo nuevo abre el roadmap y sigue con el experimento que toque. Solo tendrás que volver a escribir los datos de identificación (caso, fecha).\n\n**Si todavía no lo has enviado:** envíalo antes de cambiar de equipo. Mientras no veas el «✓ Enviado» con recibo, lo escrito solo existe en el navegador donde lo escribiste.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "plataforma",
+    "pregunta": "¿Cómo envío mi experimento y cómo sé que de verdad llegó?",
+    "respuesta": "Al final de cada experimento pulsa **«Enviar Experimento N»**. Se abre una ventana con el resumen de tus respuestas; revísalo y pulsa **«✈ Enviar ahora al Equipo Facilitador»**.\n\nEl envío es real: el sistema registra tu trabajo, genera tu PDF y le avisa al Equipo Facilitador. Solo cuando todo eso ocurre ves **«✓ Envío confirmado»** con un **número de recibo** (por ejemplo, ADN-01-101-0001) y te llega una copia con el PDF a tu correo. Guarda ese recibo: lo citarás en tu ensayo.\n\nPara que el envío funcione, tu **correo, tu nombre y tu cohorte** deben estar escritos en la portada.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "plataforma",
+    "pregunta": "Pulsé «Enviar» pero no estoy seguro de que se haya enviado.",
+    "respuesta": "Revisa tres señales: (1) la ventana mostró **«✓ Envío confirmado»** con un número de recibo; (2) el botón del experimento dice **«✓ Enviado · [recibo]»**; (3) te llegó un correo con tu PDF.\n\nSi no ves el recibo, **no se envió**: el roadmap nunca confirma por optimismo. Tu trabajo sigue guardado; abre el experimento y pulsa **Enviar** de nuevo. Si te llega más de un correo, no pasa nada: el Equipo Facilitador siempre ve la versión más reciente.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "plataforma",
+    "pregunta": "¿Cómo genero el PDF y qué incluye?",
+    "respuesta": "Pulsa **«Guardar copia en PDF»** en cualquier experimento. Se abre una ventana con tu documento; en el diálogo de impresión elige **«Guardar como PDF»**.\n\nEl PDF contiene **el texto completo** de todos tus campos (no se recorta). Si todavía no has enviado el experimento, el PDF dice «Copia de trabajo — aún no enviado»: **generar el PDF no equivale a enviar**. Si tu navegador bloquea la ventana, permite las ventanas emergentes para este sitio.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "plataforma",
+    "pregunta": "¿Es obligatorio enviar cada experimento?",
+    "respuesta": "Sí. Cada envío deja la **evidencia con su código de recibo** que citarás en tu ensayo y habilita la retroalimentación escrita del Equipo Facilitador. El **Experimento 4** es el entregable obligatorio de los experimentos: «Mi práctica actualizada» es el borrador de tu Hoja de Ruta Evolutiva.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "plataforma",
+    "pregunta": "¿Qué hago si no alcanzo a terminar un experimento dentro de la semana?",
+    "respuesta": "Envía lo que tengas, con la decisión que puedas sostener con tu evidencia. Un experimento incompleto, con la razón por la que no se completó, **también es dato**: anótalo en «Observaciones para el Equipo Facilitador». Cada experimento está pensado para unas 2 horas; si un día no te alcanza, ajusta dentro de la misma semana y no lo acumules para la siguiente.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "plataforma",
+    "pregunta": "¿Qué hago con la información de los clientes?",
+    "respuesta": "**Nada: no entra al sprint.** Tu caso es de práctica: compuesto a partir de patrones de tu experiencia, sin nombres ni datos identificables de ningún cliente. No ingreses información real de clientes a ninguna herramienta de IA ni al roadmap.\n\nTu pareja ve tu registro y el Equipo Facilitador lo archiva: escribe como si cualquiera pudiera leerlo. Declara siempre el **origen del caso** y la **herramienta de IA** que usaste.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "plataforma",
+    "pregunta": "¿Puedo usar IA para llenar los campos del roadmap?",
+    "respuesta": "Puedes usarla como **andamiaje**, tal como lo indica cada experimento: para complicar tu caso, interpretar los roles, contrastar un entregable que tú generaste, proponerte versiones alternativas o simular objeciones. **La lectura, la hipótesis y las decisiones son tuyas**: la IA no escucha por ti, no firma tus resultados y no decide qué se escala.\n\nDeclara en cada registro qué hizo la IA y qué hiciste tú, y verifica siempre lo que te devuelva. Si inventa una cifra o una fuente, regístralo: es un hallazgo.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "plataforma",
+    "pregunta": "¿Cuándo y cómo llega la retroalimentación del Equipo Facilitador?",
+    "respuesta": "El Equipo Facilitador responde **por correo a tu pareja, una vez por semana**: la de la semana 1 cubre los Experimentos 1 y 2, y la de la semana 2 cubre los Experimentos 3 y 4. La respuesta llega **24 horas después** de que ambos hayan enviado sus registros de la semana. Incluye una valoración por criterio y, cuando aporta, ejemplos concretos de «cómo se vería más fuerte». Puedes responder ese mismo correo: llega directo al Equipo Facilitador.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "plataforma",
+    "pregunta": "¿Qué es el código de pareja y dónde lo escribo?",
+    "respuesta": "Es el código que el Equipo Facilitador te entrega al armar las parejas (por ejemplo, **P2**). Escríbelo en la **portada** del roadmap: se copia solo a cada experimento y es lo que **une tu registro con el de tu pareja**. Sin código, el envío no se acepta.\n\nSi lo escribes distinto al de tu pareja (por ejemplo, P2 y P-2), el sistema los verá como parejas distintas. Si dudas, pregúntale al Equipo Facilitador.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "plataforma",
+    "pregunta": "¿Mi pareja y yo editamos el mismo documento?",
+    "respuesta": "No. **Cada uno diligencia su propio registro**, en su propio navegador, y nadie edita el de la otra persona. Cada quien trabaja su propio caso de práctica. El sistema los une por el código de pareja cuando ambos envían.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "plataforma",
+    "pregunta": "¿Quién envía el experimento? ¿Qué pasa cuando solo uno de los dos envía?",
+    "respuesta": "**Cada uno envía su registro** y recibe un recibo de su parte. Cuando llegan los dos, el sistema genera el **consolidado de la pareja** (con los dos registros lado a lado) y los dos reciben el recibo de la pareja y el PDF.\n\nSi pasan 24 horas y falta uno, el Equipo Facilitador recibe un consolidado **parcial** y un aviso, y a ti te llega un correo contándotelo. Si tu pareja envía después, se emite el completo.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "plataforma",
+    "pregunta": "¿Cómo cuento mis horas de dedicación?",
+    "respuesta": "En la última página de cada experimento, en **«Mi dedicación de la semana»**: las horas totales y, en el cuadro de abajo, una línea por sesión de trabajo con fecha, minutos y actividad. Es **por persona**. La meta es de unas 2 horas por experimento (165 minutos en el Experimento 1, que incluye el Paso 0).",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "contenido",
+    "pregunta": "¿Qué es una conducta meta «observable» y cómo sé si la mía lo es?",
+    "respuesta": "Es una conducta que **otra persona podría ver que ocurre** y comprobar. «Que los líderes se apropien de la IA» no lo es; «que cada líder de área abra su reunión semanal mostrando una tarea en la que usó IA y cómo la verificó» sí.\n\nHazte la prueba de la cámara: *¿qué vería una cámara si esto ocurriera?* Si no tienes una respuesta concreta, reescríbela.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "contenido",
+    "pregunta": "¿Cómo escribo una buena hipótesis?",
+    "respuesta": "Tiene cinco partes: **(1)** la conducta meta, **(2)** el cambio que introduces, **(3)** cómo lo mides, **(4)** el criterio de éxito y **(5)** la decisión que tomarás si se cumple (escalar), si se cumple a medias (ajustar) o si no se cumple (descartar).\n\nLa regla de oro: **escríbela antes de ejecutar**, con el criterio de éxito y la decisión incluidos. Una hipótesis que se escribe después de ver el resultado no es una hipótesis.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "contenido",
+    "pregunta": "¿Qué pasa si mi hipótesis no se cumple?",
+    "respuesta": "Es un resultado válido y valioso. Lo que importa es que decidas con la evidencia (ajustar o descartar) y que registres por qué. El sprint no premia acertar: premia **decidir con evidencia**.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "contenido",
+    "pregunta": "¿Para qué me piden registrar lo que sentí?",
+    "respuesta": "Porque cada experimento está diseñado para que **sientas** el beneficio de hacerlo distinto, no solo para que lo entiendas: es el diseño de la experiencia. Que esa emoción acelere la práctica es una **hipótesis de diseño** de DCA, y tu registro es lo que la pone a prueba.\n\nAnota qué sentiste y con qué intensidad, también si fue incomodidad. Lo sentido es dato.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "contenido",
+    "pregunta": "¿Qué significan los pesos de 1 a 5 de las cuatro barreras?",
+    "respuesta": "Cada barrera —**creencias, capacidades del rol, lo que el líder decide y conduce, y cultura vigente**— tiene un peso de 1 (casi no frena tu conducta meta) a 5 (es la que más pesa). Partes del peso que diste en tu tarjeta de caso, lo re-ponderas con la evidencia de cada experimento y, en el Experimento 4, lo contrastas con tu pareja.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "contenido",
+    "pregunta": "¿Qué es el nivel de evidencia y por qué debo rotularlo?",
+    "respuesta": "Es la etiqueta honesta de qué tan sólido es lo que registras:\n\n**Simulada:** lo que dijo la IA al interpretar a las personas de tu caso (Experimentos 1 y 3). Es una **hipótesis**, no un hallazgo sobre personas reales.\n\n**Propia (real):** tu conducta de método durante el sprint: predicciones, verificaciones, errores de la IA que detectaste, fichas que emitiste.\n\n**Prospectiva (diseño):** el plan de medición que usarías con un cliente real. Es un plan, no un resultado.\n\nRotularlo es lo que mantiene creíble tu ensayo.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "contenido",
+    "pregunta": "¿Qué es el caso de práctica y por qué no usamos un cliente real?",
+    "respuesta": "Es una **iniciativa de IA ya invertida que no rinde**, compuesta a partir de patrones de tu experiencia, sin datos identificables de ningún cliente. Lo construyes en el **Paso 0** del Experimento 1 (45 minutos), con nueve campos ficticios: industria y área; la iniciativa (qué es, desde cuándo y un monto aproximado ficticio); el líder responsable y el KPI que debería moverse; al menos tres síntomas de que no rinde (de uso, de calidad y de KPI); tres roles afectados; la conducta meta del líder y la del equipo; su estado inicial; dos señales que contradicen tu hipótesis, y tu hipótesis inicial: qué parece fallar por la tecnología y qué por la adopción.\n\nNo usamos clientes reales porque los contratos suelen limitar el uso de IA con información del cliente y porque el objetivo es entrenar el método. Lo que aprendas lo llevarás después a tu práctica real.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "contenido",
+    "pregunta": "Mi caso me salió demasiado limpio. ¿Qué hago?",
+    "respuesta": "Un caso limpio no enseña. Pídele a la IA: *«Añade tensiones que yo no haya considerado: intereses cruzados, una historia previa de la iniciativa, una razón legítima por la que alguien defendería la inversión tal como está y otra por la que alguien la cortaría. No lo resuelvas»*. Después decide qué conservas. La lista de calidad exige **dos señales que contradigan tu hipótesis inicial**; si no las tienes, vuelve a complicarlo.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "contenido",
+    "pregunta": "¿Qué es el registro en tres pasos: yo, intercambio y acuerdo?",
+    "respuesta": "**Yo:** tu análisis, escrito antes de ver el de tu pareja. **Intercambio:** lees el de tu pareja y anotas qué cambió en tu mirada. **Acuerdo:** tu versión final. Es el mismo orden en los cuatro experimentos. Si los tres pasos salen idénticos, el intercambio no enriqueció nada: eso se nota.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "contenido",
+    "pregunta": "Cada uno tiene su propio caso. ¿Para qué sirve la pareja entonces?",
+    "respuesta": "La pareja es tu **par crítico**: lee tu caso y tus registros, revisa si la IA cedió demasiado pronto, verifica tu paso rediseñado, interpreta al líder que responde por el KPI de tu caso y objeta tu Brief para el líder. Quien explica su razonamiento a otro lo afina, y quien cuestiona el caso de otro entrena el criterio que el sprint busca proteger.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "contenido",
+    "pregunta": "Mi pareja no responde o no avanza, ¿qué hago?",
+    "respuesta": "Escríbele directamente primero. Si pasan **48 horas** sin intercambio, avanza con tu registro y avisa al Equipo Facilitador en «Observaciones»: el Equipo Facilitador hace de lector crítico. No te quedes esperando; el sprint dura un mes.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "contenido",
+    "pregunta": "¿Puedo cambiar de pareja?",
+    "respuesta": "Solo si el Equipo Facilitador lo autoriza, y antes de enviar el Experimento 1. Cambiar a mitad pierde el hilo del intercambio.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "contenido",
+    "pregunta": "¿Qué pasa con las fechas de mi cohorte?",
+    "respuesta": "La primera cohorte inicia con el Día 0 el miércoles 20 de enero de 2027. El Equipo Facilitador te comunica el calendario exacto: cuándo cierra cada semana, la fecha de entrega del ensayo y la del mentoring de cierre. Si no las has recibido, escríbele.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "contenido",
+    "pregunta": "¿En qué momento del sprint estoy y qué viene después?",
+    "respuesta": "El sprint tiene seis momentos. Ya hiciste el diagnóstico de entrada (1) y la fundamentación (2). Ahora estás en el sprint roadmap (3) con tus registros semanales (4) y la retroalimentación por correo (5). Después vienen la lectura de la novela, el ensayo y el mentoring de cierre con la defensa (6).",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "contenido",
+    "pregunta": "¿Qué es la etapa del ciclo que aparece en cada experimento?",
+    "respuesta": "Este sprint está diseñado con el MATCH, el modelo de diseño de experiencias de Digital Change Academy: cada experimento enfatiza una etapa del ciclo Activación → Acción → Repetición → Transformación.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "contenido",
+    "pregunta": "¿Puedo usar DICO con mis clientes?",
+    "respuesta": "Sí. Es un marco abierto; cítalo como “DICO · Digital Change Academy”.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "General",
+    "frente": "contenido",
+    "pregunta": "¿Tengo que leer la novela antes de empezar?",
+    "respuesta": "No es obligatorio. Antes del Paso 0 puedes leer el capítulo 1 de *ReturnAI* en https://digitalchangeadvisors.com/novela-returnai/ (el primer capítulo se lee gratis en esa página): Adalid Puentes tiene USD 8,2 millones invertidos en IA que no aparecen en el estado de resultados y 120 días para demostrar su retorno. Tu caso vive una situación del mismo tipo. Al cierre de la semana 2 recibirás la novela completa y la guía para tu ensayo de certificación.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "1",
+    "frente": "contenido",
+    "pregunta": "¿Cómo hago una conversación de diagnóstico con la IA sin que me dé la razón?",
+    "respuesta": "Dale una instrucción explícita: *«Interpreta a [rol] en mi caso. Sostén tus posiciones y no cedas ante argumentos débiles. Tienes una historia previa con este tipo de cambios y un interés propio que defender»*. Conduce tú: **solo preguntas** («¿Qué cambia para ti con esto?», «¿Qué te preocupa perder?»). No intentes convencer.\n\nSi la IA cede muy rápido, anótalo: tu pareja revisará precisamente eso. Y recuerda: lo que sale es **evidencia simulada**.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "1",
+    "frente": "contenido",
+    "pregunta": "¿Puedo sustituir una conversación con la IA por una con una persona real?",
+    "respuesta": "Sí: una conversación real de 20 minutos con un colega que interprete el rol sustituye una de las dos. No uses a un cliente real ni compartas datos de clientes. Anota en el nivel de evidencia que fue una conversación real con un colega.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "1",
+    "frente": "contenido",
+    "pregunta": "¿Qué es un mensaje por rol y cómo lo escribo?",
+    "respuesta": "Es el mensaje del cambio escrito para **un rol específico** en cuatro renglones: **qué cambia, qué no cambia, quién decide y cuándo se sabrá**. «La IA nos hará más eficientes» no le dice nada a nadie; el mismo mensaje por rol dice qué cambia en esa tarea y qué sigue siendo decisión de la persona.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "1",
+    "frente": "contenido",
+    "pregunta": "¿Cómo clasifico lo que escuché?",
+    "respuesta": "En una de tres: **pérdida de identidad o estatus** («ya no me necesitarán para esto»), **incertidumbre** («no sé qué va a pasar») o **falla de diseño del cambio** («lo que me piden no encaja con mi trabajo real»). Una frase textual de la persona es mejor que tu interpretación; las dos van en líneas separadas.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "1",
+    "frente": "contenido",
+    "pregunta": "¿Cómo elijo el entregable y el paso que voy a rediseñar?",
+    "respuesta": "Elige un **entregable estrella** de tu oferta (diagnóstico cultural, plan de comunicación, mapa de actores, encuesta de clima) y **un solo paso** de ese entregable. Si intentas rediseñar todo, no cabe en 2 horas ni se puede observar.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "1",
+    "frente": "contenido",
+    "pregunta": "¿Qué es un mapa de frontera y qué hago si la IA no puede con mi tarea?",
+    "respuesta": "Es tu registro de qué partes de una tarea quedaron **dentro**, **fuera** o «**no sé**» de lo que la IA hace bien, con la ejecución que lo respalda. Que la IA no pueda con una parte es un resultado valioso: señala dónde tu criterio es insustituible.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "1",
+    "frente": "contenido",
+    "pregunta": "En el Experimento 2, ¿la IA genera el entregable?",
+    "respuesta": "No. **Tú generas primero con tu criterio** y usas la IA para **validar**: que contraste, complete y busque fallas. Después decides qué aceptas y qué rechazas. Documenta al menos un error o hallazgo de la IA.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "2",
+    "frente": "contenido",
+    "pregunta": "¿Qué es la ficha de uso de IA?",
+    "respuesta": "Una ficha corta de un entregable tuyo que dice: **qué hizo la IA**, **qué hiciste tú** y **cómo verificaste**. Es la versión del consultor de la conducta que le pedirás al líder: declarar el uso. Quien no declara el suyo pierde autoridad para pedírselo.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "2",
+    "frente": "contenido",
+    "pregunta": "¿Cómo escribo un buen Brief para el líder?",
+    "respuesta": "Una página como máximo, con siete secciones: **(1)** la iniciativa y el KPI que debía mover; **(2)** tres síntomas observados; **(3)** la hipótesis: qué parece fallar por la tecnología y qué por la adopción; **(4)** qué decide el líder: cortar, recuperar o esperar evidencia, con fecha de compuerta, según tres criterios (viabilidad técnica, contribución al negocio y potencial de adopción humana); **(5)** qué habilitas tú desde Cultura y Cambio; **(6)** qué requiere diagnóstico especializado; **(7)** la pregunta con la que abres la conversación.\n\nUn buen Brief **separa tecnología y adopción**, **distingue qué decide el líder y qué habilitas tú**, y es **concreto y breve**. No decide por el líder: le ordena la decisión.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "2",
+    "frente": "contenido",
+    "pregunta": "Mi pareja interpreta al líder que responde por el KPI. ¿Qué espero de sus objeciones?",
+    "respuesta": "Objeciones **verosímiles**: «¿por qué no cortarla ya?», «eso es un problema de la herramienta», «no tengo tiempo», «muéstrame el dato». No son una evaluación de ti. Anota cuántas recibes y cuántas resiste tu Brief sin reescribirse; ajústalo con las que te cambien algo.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "2",
+    "frente": "contenido",
+    "pregunta": "¿Cómo mido el cambio si mi caso es de práctica?",
+    "respuesta": "No hay personas reales cuyo cambio medir. Lo que sí mides, con datos reales, es **tu propia conducta de método durante el sprint** (cuántas veces tu predicción falló, cuántas verificaciones hiciste, cuántas fichas emitiste). Y diseñas el **plan de medición prospectivo** que usarías con un cliente real: línea base, criterio de éxito y decisión. Está rotulado como diseño, no como resultado.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "2",
+    "frente": "contenido",
+    "pregunta": "¿Qué va en «Mi práctica actualizada»?",
+    "respuesta": "Una o dos páginas, tuyas: qué **conservas**, qué **cambias** y qué **dejas de hacer** en tu oferta, tus entregables, tu forma de medir valor y tu uso declarado de IA, con la evidencia de cada decisión, y tu **oferta para cuando la IA no rinde**: qué habilitas tú, qué decide el líder y qué requiere diagnóstico especializado. Incluye la hipótesis de tu siguiente ciclo y deja **abierta** la sección «Mi siguiente paso»: se cierra después del ensayo.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "Ensayo",
+    "frente": "contenido",
+    "pregunta": "¿Qué es el ensayo de certificación?",
+    "respuesta": "Es el contraste entre **tu ruta evolutiva** y los planteamientos de ***ReturnAI***, la novela de César Lozano que recibes al cierre de la semana 2. Tiene entre 800 y 1.200 palabras y una estructura obligatoria: tesis, tabla de tres columnas, un límite o pregunta abierta, «mis tres correcciones» al borrador de la IA, bitácora de uso de IA y tu decisión.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "Ensayo",
+    "frente": "contenido",
+    "pregunta": "¿Puedo usar IA para el ensayo?",
+    "respuesta": "Sí, y se declara. Pero se evalúa lo que la IA no puede producir por ti: tu **evidencia propia con códigos de recibo**, tus **tres correcciones** al borrador de la IA y tu **defensa en vivo**. Si no entendiste tu propio ensayo, la defensa lo muestra.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "Ensayo",
+    "frente": "contenido",
+    "pregunta": "¿Tengo que concluir que ReturnAI es la respuesta?",
+    "respuesta": "No. **La conclusión no se califica.** Se califica la calidad de tu contraste: evidencia propia, pasajes concretos de la novela, límites señalados, decisión propia y juicio frente a la IA. Quien concluye en contra de la novela se certifica igual.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "Ensayo",
+    "frente": "contenido",
+    "pregunta": "¿Cómo se lee la novela en 60 a 90 minutos?",
+    "respuesta": "No hace falta leerla completa. La guía de lectura propone un pasaje por barrera (creencias: Caps. 8 y 9; capacidades: Cap. 14; líder: Cap. 18 y el Posfacio; cultura: Cap. 1, pp. 5–6 y 14, y las bitácoras de los Caps. 6 y 7), unas 12.000 palabras. Cita siempre la **página impresa**.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "Ensayo",
+    "frente": "contenido",
+    "pregunta": "¿Cómo es la defensa en vivo?",
+    "respuesta": "Diez minutos en el mentoring de cierre: presentas tu tesis (3 minutos), César Lozano te hace una pregunta personalizada basada en tu ensayo y en tus registros, y una repregunta (5 minutos), y cierra con retroalimentación (2 minutos). Si no la superas, tienes una segunda oportunidad de 15 minutos con otra pregunta.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "Ensayo",
+    "frente": "contenido",
+    "pregunta": "¿Qué necesito para recibir el certificado «Experto Cultura y Cambio ADN IA»?",
+    "respuesta": "Cinco cosas: **(1)** los cuatro registros y envíos, **(2)** el intercambio con tu pareja en cada experimento, **(3)** la Hoja de Ruta Evolutiva, **(4)** el ensayo con la bitácora de IA y **(5)** superar la defensa. Después de la defensa aprobada, el certificado se emite de forma individual en Accredible.",
+    "actualizado": "2026-10-21"
+  },
+  {
+    "sprint": "Ensayo",
+    "frente": "contenido",
+    "pregunta": "¿Qué pasa después del sprint?",
+    "respuesta": "Las opciones de siguiente paso se conversan en el mentoring de cierre.",
+    "actualizado": "2026-10-21"
+  }
+];
+
+const GLOSARIO = [
+  {
+    "termino": "DICO",
+    "slug": "dico",
+    "sprint": "General",
+    "definicion": "Diseño Inverso de Conducta Objetivo. Una forma de actuar, no un producto: (1) definir primero la conducta meta, (2) diagnosticar las cuatro barreras, (3) experimentar en el flujo diario y (4) actualizar la práctica con la evidencia. Es un marco abierto: cítalo como «DICO · Digital Change Academy».",
+    "tambien": "",
+    "orden": 1
+  },
+  {
+    "termino": "Conducta meta",
+    "slug": "conducta-meta",
+    "sprint": "General",
+    "definicion": "La conducta específica y **observable** que quieres ver en tu caso. Si otra persona no podría comprobar que ocurre, todavía no es una conducta meta.",
+    "tambien": "",
+    "orden": 2
+  },
+  {
+    "termino": "Observable",
+    "slug": "observable",
+    "sprint": "General",
+    "definicion": "Que otra persona podría ver que ocurre y comprobarlo. Es la prueba de una buena conducta meta.",
+    "tambien": "",
+    "orden": 3
+  },
+  {
+    "termino": "Cuatro barreras",
+    "slug": "cuatro-barreras",
+    "sprint": "General",
+    "definicion": "Las cuatro causas que explican por qué una conducta no ocurre: **creencias**, **capacidades del rol**, **lo que el líder decide y conduce** y **cultura vigente**.",
+    "tambien": "",
+    "orden": 4
+  },
+  {
+    "termino": "Peso de una barrera",
+    "slug": "peso-barrera",
+    "sprint": "General",
+    "definicion": "Un número de 1 a 5 que dice cuánto frena tu conducta meta una barrera (1 = casi nada, 5 = la que más pesa). Lo re-ponderas con evidencia.",
+    "tambien": "",
+    "orden": 5
+  },
+  {
+    "termino": "Caso de práctica",
+    "slug": "caso-de-practica",
+    "sprint": "General",
+    "definicion": "Una iniciativa de IA ya invertida que no rinde, compuesta a partir de patrones de tu experiencia y sin datos identificables de clientes: con su líder y su KPI, tres síntomas, tres roles afectados, la conducta meta del líder y del equipo, su estado inicial, dos señales contrarias y tu hipótesis sobre qué falla por la tecnología y qué por la adopción. Lo construyes en el Paso 0.",
+    "tambien": "Caso",
+    "orden": 6
+  },
+  {
+    "termino": "Paso 0",
+    "slug": "paso-0",
+    "sprint": "General",
+    "definicion": "Los 45 minutos previos al Experimento 1 en que construyes y complicas tu caso de práctica.",
+    "tambien": "",
+    "orden": 7
+  },
+  {
+    "termino": "Nivel de evidencia",
+    "slug": "nivel-evidencia",
+    "sprint": "General",
+    "definicion": "La etiqueta honesta de qué tan sólido es lo que registras: **simulada** (la IA interpretó personas), **propia** (tu conducta de método) o **prospectiva** (un plan de medición).",
+    "tambien": "",
+    "orden": 8
+  },
+  {
+    "termino": "Evidencia simulada",
+    "slug": "evidencia-simulada",
+    "sprint": "General",
+    "definicion": "Lo que produce la IA al interpretar a las personas de tu caso. Es una hipótesis, no un hallazgo sobre personas reales.",
+    "tambien": "",
+    "orden": 9
+  },
+  {
+    "termino": "Hipótesis (cinco partes)",
+    "slug": "hipotesis",
+    "sprint": "General",
+    "definicion": "Lo que escribes antes de ejecutar un experimento: la conducta meta, el cambio que introduces, cómo lo mides, el criterio de éxito y la decisión (escalar, ajustar o descartar).",
+    "tambien": "",
+    "orden": 10
+  },
+  {
+    "termino": "Criterio de éxito",
+    "slug": "criterio-exito",
+    "sprint": "General",
+    "definicion": "Lo que tendría que pasar para que consideres que el experimento funcionó. Se escribe antes de ejecutar.",
+    "tambien": "",
+    "orden": 11
+  },
+  {
+    "termino": "Puente de evolución",
+    "slug": "puente-evolucion",
+    "sprint": "General",
+    "definicion": "La capa que une cómo se hacía antes con cómo se hace en la Era IA: *antes → ahora → por qué*, más lo que se conserva. Parte de cualquier modelo de cambio que uses.",
+    "tambien": "",
+    "orden": 12
+  },
+  {
+    "termino": "Momento de beneficio sentido",
+    "slug": "beneficio-sentido",
+    "sprint": "General",
+    "definicion": "Un instante diseñado dentro de cada experimento para que sientas el beneficio de hacerlo distinto. Se registra qué sentiste y con qué intensidad.",
+    "tambien": "",
+    "orden": 13
+  },
+  {
+    "termino": "Mensaje por rol",
+    "slug": "mensaje-por-rol",
+    "sprint": "General",
+    "definicion": "El mensaje del cambio escrito para un rol en cuatro renglones: qué cambia, qué no cambia, quién decide y cuándo se sabrá.",
+    "tambien": "",
+    "orden": 14
+  },
+  {
+    "termino": "Mapa de frontera",
+    "slug": "mapa-frontera",
+    "sprint": "General",
+    "definicion": "Tu registro de qué partes de una tarea quedaron dentro, fuera o «no sé» de lo que la IA hace bien, con la ejecución que lo respalda.",
+    "tambien": "",
+    "orden": 15
+  },
+  {
+    "termino": "Ficha de uso de IA",
+    "slug": "ficha-uso-ia",
+    "sprint": "General",
+    "definicion": "Una ficha corta de un entregable que dice qué hizo la IA, qué hiciste tú y cómo verificaste.",
+    "tambien": "",
+    "orden": 16
+  },
+  {
+    "termino": "Brief para el líder",
+    "slug": "brief-lider",
+    "sprint": "General",
+    "definicion": "Una página con siete secciones que prepara la conversación con el líder que responde por el KPI: la iniciativa y su KPI, tres síntomas, la hipótesis (tecnología o adopción), qué decide el líder (cortar, recuperar o esperar evidencia, con fecha de compuerta), qué habilitas tú, qué requiere diagnóstico especializado y la pregunta de apertura.",
+    "tambien": "Brief",
+    "orden": 17
+  },
+  {
+    "termino": "Diagnóstico especializado",
+    "slug": "diagnostico-especializado",
+    "sprint": "General",
+    "definicion": "Lo que necesita un síntoma que apunta a la tecnología (calidad del resultado, datos, integración con el flujo). El consultor de Cultura y Cambio lo nombra en el Brief; no lo improvisa.",
+    "tambien": "",
+    "orden": 18
+  },
+  {
+    "termino": "Dueño humano de la calidad",
+    "slug": "dueno-humano",
+    "sprint": "General",
+    "definicion": "La persona que responde por la calidad de un resultado, aunque la IA haya participado en producirlo.",
+    "tambien": "",
+    "orden": 19
+  },
+  {
+    "termino": "Entregable obligatorio",
+    "slug": "entregable-obligatorio",
+    "sprint": "General",
+    "definicion": "«Mi práctica actualizada» y la matriz de decisión del Experimento 4: el borrador de tu Hoja de Ruta Evolutiva.",
+    "tambien": "",
+    "orden": 20
+  },
+  {
+    "termino": "Hoja de Ruta Evolutiva",
+    "slug": "hoja-de-ruta",
+    "sprint": "General",
+    "definicion": "El entregable del sprint: tu práctica hoy, lo que probaste, lo que cambia, lo que conservas, tu plan de medición y tu siguiente paso.",
+    "tambien": "",
+    "orden": 21
+  },
+  {
+    "termino": "Recibo",
+    "slug": "recibo",
+    "sprint": "General",
+    "definicion": "El número que el sistema te devuelve cuando tu envío queda registrado (por ejemplo, ADN-01-101-0001). Lo citas en tu ensayo como evidencia.",
+    "tambien": "",
+    "orden": 22
+  },
+  {
+    "termino": "Pareja (par crítico)",
+    "slug": "pareja",
+    "sprint": "General",
+    "definicion": "Las dos personas que trabajan cada una su propio caso y se revisan mutuamente: leen, cuestionan, verifican e interpretan al líder que responde por el KPI. Sin roles de ejecutor y observador.",
+    "tambien": "",
+    "orden": 23
+  },
+  {
+    "termino": "Registro en tres pasos",
+    "slug": "registro-tres-pasos",
+    "sprint": "General",
+    "definicion": "**Yo** (mi análisis antes de ver el de mi pareja), **Intercambio** (qué cambió en mi mirada) y **Acuerdo** (mi versión final).",
+    "tambien": "",
+    "orden": 24
+  },
+  {
+    "termino": "Consolidado de la pareja",
+    "slug": "consolidado",
+    "sprint": "General",
+    "definicion": "El documento que el sistema genera cuando llegan los registros de los dos integrantes: los dos lado a lado, con recibo de pareja.",
+    "tambien": "",
+    "orden": 25
+  },
+  {
+    "termino": "Ensayo de certificación",
+    "slug": "ensayo",
+    "sprint": "General",
+    "definicion": "El contraste entre tu ruta evolutiva y los planteamientos de la novela ReturnAI. IA permitida y declarada; la conclusión no se califica.",
+    "tambien": "",
+    "orden": 26
+  },
+  {
+    "termino": "Defensa en vivo",
+    "slug": "defensa",
+    "sprint": "General",
+    "definicion": "Diez minutos en el mentoring de cierre para sustentar tu ensayo ante César Lozano. Con segunda oportunidad.",
+    "tambien": "",
+    "orden": 27
+  }
+];
+/* ▲▲▲  FIN DEL CONTENIDO  ▲▲▲  (de aquí para abajo es el motor) */
+
+// ── Estado de filtros ──
+var estadoFrente = 'todo';
+var estadoSprint = 'todos';
+
+// Slug estable por pregunta (explícito en «slug», o derivado del texto) y orden: más reciente primero
+function slugify(t){
+  return String(t).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').split('-').slice(0,7).join('-');
+}
+FAQ.forEach(function(f,i){ f._i=i; f._slug=f.slug||slugify(f.pregunta); });
+FAQ.sort(function(a,b){
+  var da=a.actualizado||'', db=b.actualizado||'';
+  return da<db?1:da>db?-1:a._i-b._i;
+});
+function esNuevo(f){
+  if(!f.actualizado) return false;
+  var d=new Date(f.actualizado+'T12:00:00');
+  return (Date.now()-d.getTime())/864e5 <= 14;
+}
+
+// Chips de sprint generados desde los datos (más "General" siempre)
+(function buildSprintChips(){
+  var sprints = FAQ.map(function(f){return f.sprint;})
+                   .filter(function(s){return s && s!=='General';});
+  var uniq = sprints.filter(function(s,i){return sprints.indexOf(s)===i;}).sort();
+  var html = '<button class="chip on gold" data-sprint="todos" onclick="setSprint(\'todos\')">Todos</button>';
+  uniq.forEach(function(s){
+    html += '<button class="chip" data-sprint="'+s+'" onclick="setSprint(\''+s+'\')">'+(/^\d+$/.test(s)?'Semana '+s:s)+'</button>';
+  });
+  document.getElementById('sprint-chips').innerHTML = html;
+})();
+
+function showView(v){
+  document.getElementById('view-faq').hidden = (v!=='faq');
+  document.getElementById('view-glosario').hidden = (v!=='glosario');
+  document.getElementById('vb-faq').classList.toggle('on', v==='faq');
+  document.getElementById('vb-glosario').classList.toggle('on', v==='glosario');
+}
+
+function renderGlosario(){
+  var q=(document.getElementById('g-search').value||'').toLowerCase().trim();
+  var arr=GLOSARIO.filter(function(g){
+    if(!q) return true;
+    var hay=(g.termino+' '+g.definicion+' '+(g.tambien||'')).toLowerCase();
+    return hay.indexOf(q)!==-1;
+  }).slice().sort(function(a,b){
+    if(a.orden!=null && b.orden!=null) return a.orden-b.orden;
+    return a.termino.localeCompare(b.termino,'es');
+  });
+
+  var cont=document.getElementById('g-list');
+  document.getElementById('g-count').textContent =
+    arr.length+(arr.length===1?' término':' términos')+(q?' para «'+q+'»':'');
+
+  if(!arr.length){
+    cont.innerHTML='<div class="empty">No hay términos que coincidan.<br>Prueba otra palabra o escríbele al Equipo Facilitador — y ese término entrará al glosario.</div>';
+    return;
+  }
+
+  cont.innerHTML=arr.map(function(g){
+    var st = g.sprint==='General' ? 'General' : 'Semana '+g.sprint;
+    return ''
+    +'<div class="g-item" id="g-'+g.slug+'">'
+    +  '<div class="g-head">'
+    +    '<span class="g-term">'+esc(g.termino)+'</span>'
+    +    '<span class="tag sprint">'+esc(st)+'</span>'
+    +  '</div>'
+    +  '<p class="g-def">'+fmt(g.definicion).replace(/^<p>|<\/p>$/g,'')+'</p>'
+    +  (g.tambien?'<div class="g-also">También aparece como: '+esc(g.tambien)+'</div>':'')
+    +'</div>';
+  }).join('');
+}
+
+function irAGlosario(hash){
+  showView('glosario');
+  renderGlosario();
+  setTimeout(function(){
+    var el=document.getElementById(hash.replace('#',''));
+    if(!el) return;
+    el.scrollIntoView({behavior:'smooth',block:'start'});
+    el.classList.add('flash');
+    setTimeout(function(){el.classList.remove('flash');},1600);
+  },30);
+}
+
+function setFrente(f){
+  estadoFrente=f;
+  document.querySelectorAll('.chip[data-frente]').forEach(function(c){
+    c.classList.toggle('on', c.getAttribute('data-frente')===f);
+  });
+  render();
+}
+function setSprint(s){
+  estadoSprint=s;
+  document.querySelectorAll('.chip[data-sprint]').forEach(function(c){
+    c.classList.toggle('on', c.getAttribute('data-sprint')===s);
+  });
+  render();
+}
+
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function fmt(txt){
+  return esc(txt).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+    .split(/\n\n+/).map(function(p){return '<p>'+p.replace(/\n/g,'<br>')+'</p>';}).join('');
+}
+function fecha(iso){
+  if(!iso) return '';
+  var m=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+  var p=String(iso).split('-'); if(p.length<3) return iso;
+  return p[2].replace(/^0/,'')+' '+m[(+p[1])-1]+' '+p[0];
+}
+
+function renderNovedades(){
+  var nuevos=FAQ.filter(esNuevo).slice(0,5);
+  var el=document.getElementById('novedades');
+  if(!nuevos.length){el.innerHTML='';return;}
+  el.innerHTML='<div class="nov"><h2>Novedades</h2>'+nuevos.map(function(f){
+    var st=f.sprint==='General'?'General':'Semana '+f.sprint;
+    return '<a href="#q-'+f._slug+'">'+esc(f.pregunta)+'<small>'+st+' · '+fecha(f.actualizado)+'</small></a>';
+  }).join('')+'</div>';
+}
+
+function irAPregunta(hash){
+  var id=hash.replace('#','');
+  showView('faq');
+  var el=document.getElementById(id);
+  if(!el){ // limpia filtros por si la pregunta quedó oculta
+    document.getElementById('search').value='';
+    estadoFrente='todo'; estadoSprint='todos';
+    document.querySelectorAll('.chip[data-frente]').forEach(function(c){c.classList.toggle('on',c.getAttribute('data-frente')==='todo');});
+    document.querySelectorAll('.chip[data-sprint]').forEach(function(c){c.classList.toggle('on',c.getAttribute('data-sprint')==='todos');});
+    render(); el=document.getElementById(id);
+  }
+  if(!el) return;
+  el.classList.add('open','flash');
+  setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'center'});},30);
+  setTimeout(function(){el.classList.remove('flash');},2200);
+}
+
+function render(){
+  var q=(document.getElementById('search').value||'').toLowerCase().trim();
+  var arr=FAQ.filter(function(f){
+    if(estadoFrente!=='todo' && f.frente!==estadoFrente) return false;
+    if(estadoSprint!=='todos' && f.sprint!==estadoSprint && f.sprint!=='General') return false;
+    if(q){ var hay=(f.pregunta+' '+f.respuesta).toLowerCase(); if(hay.indexOf(q)===-1) return false; }
+    return true;
+  });
+
+  var cont=document.getElementById('list');
+  document.getElementById('count').textContent =
+    arr.length+(arr.length===1?' pregunta':' preguntas')+(q?' para «'+q+'»':'');
+
+  if(!arr.length){
+    cont.innerHTML='<div class="empty">No hay preguntas que coincidan.<br>Prueba otra palabra o escríbele al Equipo Facilitador — y esa duda entrará al centro.</div>';
+    return;
+  }
+
+  cont.innerHTML=arr.map(function(f,i){
+    var st = f.sprint==='General' ? 'General' : (/^\d+$/.test(f.sprint) ? 'Semana '+f.sprint : f.sprint);
+    var iid='q-'+f._slug;
+    return ''
+    +'<div class="item" id="'+iid+'">'
+    +  '<div class="q" onclick="document.getElementById(\''+iid+'\').classList.toggle(\'open\')">'
+    +    '<div class="txt">'
+    +      '<div class="tags">'
+    +        '<span class="tag '+f.frente+'">'+(f.frente==='plataforma'?'Plataforma':'Contenido')+'</span>'
+    +        '<span class="tag sprint">'+esc(st)+'</span>'
+    +        (esNuevo(f)?'<span class="tag nuevo">Nuevo</span>':'')
+    +      '</div>'
+    +      '<div class="pregunta">'+esc(f.pregunta)+'</div>'
+    +    '</div>'
+    +    '<span class="caret">›</span>'
+    +  '</div>'
+    +  '<div class="a"><div class="a-inner">'+fmt(f.respuesta)
+    +    (f.actualizado?'<div class="upd">Actualizado: '+fecha(f.actualizado)+'</div>':'')
+    +  '</div></div>'
+    +'</div>';
+  }).join('');
+}
+
+render();
+renderNovedades();
+renderGlosario();
+
+function irAHash(){
+  if(location.hash.indexOf('#g-')===0) irAGlosario(location.hash);
+  else if(location.hash.indexOf('#q-')===0) irAPregunta(location.hash);
+}
+irAHash();
+window.addEventListener('hashchange', irAHash);
+</script>
+</body>
+</html>
