@@ -480,6 +480,13 @@ Refuerzo técnico para que los motores generativos (ClaudeBot, GPTBot, Google-Ex
 
 **Deploy:** `./deploy.sh website` desde la raíz del monorepo, como cualquier otro cambio de este proyecto.
 
+## `/novela-returnai` — segundo testimonio de lector (2026-10-29)
+
+- Sección `#lectores`: nueva tarjeta de **Mauricio Marquez** (Líder Nacional Mesa de Ayuda y Soporte, Sistema Integrado Gestión Procesal Laboral, SIUGJ), mismo componente `.testimonio-card` que la de César Escobar B.; cita literal del propietario: «El autor aborda conceptos complejos de una manera clara, práctica y amena, permitiendo que el lector avance con facilidad.» La introducción pasa de «uno de los primeros lectores» a «dos de los primeros lectores» (concordancia con el plural).
+- Foto: master 1200×1600 archivado en `_image-masters/website/testimonio-novela-mauricio-marquez.jpeg` (fuera del subárbol publicable, Regla 11); derivados cuadrados 240×240 centrados en el rostro en `assets/testimonio-novela-mauricio-marquez.{webp,jpg}` (≈9/13 KB), mismo formato que el de César Escobar.
+- CSS: una regla nueva, `.testimonio-head picture { flex-shrink: 0 }` — con un cargo largo el contenedor `<picture>` se encogía dentro del flex y deformaba la foto (con el cargo corto de César Escobar no ocurría). Verificado a 375 y 1280 px: círculo correcto, sin desborde; en escritorio ambas tarjetas miden igual (alto estirado por flex).
+- El cargo se publicó con «Líder» y «Gestión» acentuados (el propietario lo escribió sin tilde).
+
 ## Decisiones Canónicas de `/novela-returnai` — CTAs de compra reparados (2026-07-14)
 
 > El libro sale el 22 de septiembre de 2026 y todavía no está a la venta. Varios botones apuntaban a anclas muertas (`#amazon-link`, `#amazon-impreso`, `#amazon-ebook`) en 7 ocurrencias sobre 4 ubicaciones (header, héroe, "Tu próximo paso", modal del capítulo 1). Se reemplazaron por un único CTA "Unirme a los Lectores Fundadores →" hacia `/fundadores`, con línea de apoyo de precios/fecha reutilizada verbatim. Se agregó la misma franja de estado de `/fundadores` bajo el header, y se corrigió `$3.2M → $8.2M` en `meta description` y `og:description` (inconsistencia con el resto de la página, que ya usaba $8.2M en el héroe y el cuerpo).
