@@ -317,6 +317,7 @@
   /* ── Bloque 10 · Cierre y formulario ── */
   .cierre { background: var(--carbon); color: #fff; }
   .cierre h2 { color: #fff; }
+  .cierre h2 .line { display: block; text-wrap: balance; }
   .cierre .label { color: #9fd3c5; }
   /* Móvil: titular → formulario → WhatsApp/compartir. Escritorio: texto a la izquierda, formulario a la derecha. */
   .cierre__grid { display: grid; gap: 32px; grid-template-areas: "intro" "form" "extra"; }
@@ -677,9 +678,9 @@
 <section class="section cierre" id="registro" aria-labelledby="h-cierre">
   <div class="wrap cierre__grid">
     <div>
-      <span class="label">Cohorte enero 2027</span>
-      <h2 id="h-cierre">De la adopción de la IA al Retorno que sí importa.</h2>
-      <p class="cierre__intro" id="cierre-intro">Reserva tu cupo en la sesión en vivo del jueves 3 de diciembre. Ahí se presentan la certificación y las condiciones de lanzamiento.</p>
+      <span class="label">Tu siguiente paso</span>
+      <h2 id="h-cierre"><span class="line">El líder del proceso ya existe en cada cliente.</span> <span class="line">Falta quien lo habilite, y puedes ser tú.</span></h2>
+      <p class="cierre__intro" id="cierre-intro">En la sesión en vivo del jueves 3 de diciembre verás cómo cambia tu práctica cuando el foco pasa al líder del proceso, y conocerás las condiciones de lanzamiento de la cohorte.</p>
     </div>
 
     <div class="cierre__extra">
@@ -851,7 +852,7 @@ const LANDING_CONFIG = {
     cerrada:        ['Avisarme de la próxima cohorte', 'Avisarme']
   };
   var FORM = {
-    sesion:  { titulo: 'Reserva tu cupo en la sesión', intro: 'Reserva tu cupo en la sesión en vivo del ' + C.sesion.fecha.toLowerCase() + '. Ahí se presentan la certificación y las condiciones de lanzamiento.' },
+    sesion:  { titulo: 'Reserva tu cupo en la sesión', intro: 'En la sesión en vivo del ' + C.sesion.fecha.toLowerCase() + ' verás cómo cambia tu práctica cuando el foco pasa al líder del proceso, y conocerás las condiciones de lanzamiento de la cohorte.' },
     cohorte: { titulo: 'Levanta la mano para la cohorte de enero', intro: 'Levantar la mano no te obliga a pagar. Te llamamos para revisar contigo las condiciones; el pago se activa solo cuando la cohorte está confirmada.' },
     cerrada: { titulo: 'Avísame de la próxima cohorte', intro: 'La cohorte de enero ya cerró. Déjanos tus datos y te avisamos por WhatsApp cuando abra la próxima.' }
   };
