@@ -149,9 +149,12 @@
   .hero__foto-img { display: block; width: 100%; aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden; background: var(--platinum); box-shadow: 0 18px 40px rgba(30,42,56,0.12); }
   .hero__foto-img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
   /* Sello + tarjeta de la sesión: en la columna de texto, bajo los botones (la foto queda sola a la derecha) */
-  .hero__aval { display: flex; align-items: center; gap: 18px; margin-top: 28px; max-width: 580px; }
-  .hero__aval .sesion-card { flex: 1 1 auto; max-width: 400px; padding: 16px 18px 15px; }
-  .hero__aval .sesion-card__d { font-size: 20px; margin: 6px 0 2px; }
+  /* Centrado con blanco igual a cada lado; si no caben en una fila, sello arriba y tarjeta abajo, ambos centrados */
+  .hero__aval { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px 28px; margin-top: 32px; }
+  .hero__aval .sesion-card { flex: 0 1 auto; width: auto; max-width: 100%; padding: 20px 23px 19px; }
+  .hero__aval .sesion-card__k { font-size: 15.6px; }
+  .hero__aval .sesion-card__d { font-size: 25px; margin: 8px 0 3px; }
+  .hero__aval .sesion-card__h { font-size: 18.75px; }
   .sesion-card { width: 100%; max-width: 360px; border: 1px solid var(--border); border-top: 4px solid var(--gold); border-radius: var(--radius); padding: 22px 22px 20px; background: #fff; }
   .sesion-card__k { font-size: 12.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-ink); }
   .sesion-card__d { font-family: var(--serif); font-size: 24px; line-height: 1.25; margin: 8px 0 4px; }
@@ -161,7 +164,7 @@
     .hero__grid { grid-template-columns: minmax(0, 1fr) 440px; align-items: start; gap: 56px; }
     .hero__grid > div:first-child { padding-top: 8px; }
     .hero__foto-img { aspect-ratio: 4 / 5; }
-    .hero__aval { gap: 24px; margin-top: 32px; }
+    .hero__aval { margin-right: -56px; margin-top: 36px; } /* abarca también el espacio hasta la foto: el bloque queda centrado entre el borde del texto y la foto */
     .hero h1 { font-size: clamp(32px, 3vw, 42px); }
     .hero h1 .line { white-space: nowrap; }
     .hero__head h1 { margin-bottom: 36px; }
@@ -173,9 +176,9 @@
   .sello picture { position: absolute; inset: 0; }
   .sello__fb { font-family: var(--serif); line-height: 1.15; padding: 14%; }
   .sello__fb small { display: block; font-family: var(--sans); font-size: .42em; letter-spacing: .12em; text-transform: uppercase; margin-top: 6px; opacity: .92; }
-  .sello--hero { width: 96px; height: 96px; font-size: 14px; }
-  @media (min-width: 480px) { .sello--hero { width: 112px; height: 112px; font-size: 16px; } }
-  @media (min-width: 1024px) { .sello--hero { width: 128px; height: 128px; font-size: 17px; } }
+  .sello--hero { width: 144px; height: 144px; font-size: 21px; }
+  @media (min-width: 480px) { .sello--hero { width: 168px; height: 168px; font-size: 24px; } }
+  @media (min-width: 1024px) { .sello--hero { width: 192px; height: 192px; font-size: 26px; } }
   .sello--obtienes { width: 120px; height: 120px; font-size: 17px; }
 
   /* ── Bloque 2 · Cifras ── */
@@ -416,7 +419,7 @@
       <div class="hero__aval">
         <div class="sello sello--hero" data-sello>
           <span class="sello__fb" aria-hidden="true">ADN IA<small>Experto en Cultura y Cambio</small></span>
-          <picture><source srcset="assets/sello-adn-ia.webp" type="image/webp"><img src="assets/sello-adn-ia.png" alt="Sello de la Certificación Experto en Cultura y Cambio ADN IA, Digital Change Advisors" width="128" height="128" decoding="async"></picture>
+          <picture><source srcset="assets/sello-adn-ia.webp" type="image/webp"><img src="assets/sello-adn-ia.png" alt="Sello de la Certificación Experto en Cultura y Cambio ADN IA, Digital Change Advisors" width="192" height="192" decoding="async"></picture>
         </div>
         <div class="sesion-card" id="sesion-card">
           <div class="sesion-card__k">Sesión en vivo</div>
