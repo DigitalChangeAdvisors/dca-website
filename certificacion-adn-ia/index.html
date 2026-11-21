@@ -144,15 +144,24 @@
   .hero .ctas { margin-top: 32px; }
   .hero__micro { margin-top: 22px; font-size: 14px; color: var(--muted); }
   .hero__side { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+  /* Foto del héroe: 4:3 recortada en móvil (caras, pluma y hoja dentro del encuadre), 4:5 completa desde 1024px */
+  .hero__foto { position: relative; width: 100%; max-width: 560px; margin: 0; }
+  .hero__foto-img { display: block; width: 100%; aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden; background: var(--platinum); box-shadow: 0 18px 40px rgba(30,42,56,0.12); }
+  .hero__foto-img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
+  .hero__foto .sello--hero { position: absolute; right: -10px; bottom: -22px; box-shadow: 0 8px 22px rgba(30,42,56,0.18); }
   .sesion-card { width: 100%; max-width: 360px; border: 1px solid var(--border); border-top: 4px solid var(--gold); border-radius: var(--radius); padding: 22px 22px 20px; background: #fff; }
   .sesion-card__k { font-size: 12.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-ink); }
   .sesion-card__d { font-family: var(--serif); font-size: 24px; line-height: 1.25; margin: 8px 0 4px; }
   .sesion-card__h { font-size: 15px; color: var(--muted); }
   @media (min-width: 1024px) {
     .hero { padding: 88px 0 96px; }
-    .hero__grid { grid-template-columns: minmax(0, 1fr) 300px; align-items: center; gap: 56px; }
+    .hero__grid { grid-template-columns: minmax(0, 1fr) 440px; align-items: start; gap: 56px; }
+    .hero__grid > div:first-child { padding-top: 8px; }
+    .hero__foto-img { aspect-ratio: 4 / 5; }
+    .hero__foto .sello--hero { right: -14px; bottom: -28px; }
     .hero h1 { font-size: clamp(32px, 3vw, 42px); }
     .hero h1 .line { white-space: nowrap; }
+    .hero__head h1 { margin-bottom: 36px; }
   }
 
   /* ── Sello (con respaldo en color de marca mientras no exista la imagen) ── */
@@ -161,8 +170,8 @@
   .sello picture { position: absolute; inset: 0; }
   .sello__fb { font-family: var(--serif); line-height: 1.15; padding: 14%; }
   .sello__fb small { display: block; font-family: var(--sans); font-size: .42em; letter-spacing: .12em; text-transform: uppercase; margin-top: 6px; opacity: .92; }
-  .sello--hero { width: 168px; height: 168px; font-size: 22px; }
-  @media (min-width: 1024px) { .sello--hero { width: 200px; height: 200px; } }
+  .sello--hero { width: 96px; height: 96px; font-size: 14px; }
+  @media (min-width: 1024px) { .sello--hero { width: 132px; height: 132px; font-size: 18px; } }
   .sello--obtienes { width: 120px; height: 120px; font-size: 17px; }
 
   /* ── Bloque 2 · Cifras ── */
@@ -382,13 +391,15 @@
 
 <!-- ═══════════ BLOQUE 1 · HÉROE ═══════════ -->
 <section class="hero" aria-labelledby="h1">
+  <div class="wrap hero__head">
+    <span class="label">Certificación Experto en Cultura y Cambio ADN IA · Cohorte enero 2027</span>
+    <h1 id="h1">
+      <span class="line">Tu experiencia en cultura y cambio vale más con la IA.</span>
+      <span class="line">Solo si la vendes como retorno.</span>
+    </h1>
+  </div>
   <div class="wrap hero__grid">
     <div>
-      <span class="label">Certificación Experto en Cultura y Cambio ADN IA · Cohorte enero 2027</span>
-      <h1 id="h1">
-        <span class="line">Tu experiencia en cultura y cambio vale más con la IA.</span>
-        <span class="line">Solo si la vendes como retorno.</span>
-      </h1>
       <p class="chapeau">Las empresas ya invirtieron en IA y el retorno no aparece. El freno está en las personas y los procesos. Esta certificación te habilita para cerrar esa brecha humana frente a quien responde por los resultados.</p>
       <div class="ctas">
         <a class="btn btn--primary" href="#registro" data-cta data-bloque="heroe">Reservar mi cupo en la sesión</a>
@@ -400,10 +411,18 @@
       <p class="hero__micro">4 semanas · Presencial virtual · Apertura <span data-apertura>miércoles 27 de enero de 2027</span> · Cupos sujetos a cohorte mínima</p>
     </div>
     <div class="hero__side">
-      <div class="sello sello--hero" data-sello>
-        <span class="sello__fb" aria-hidden="true">ADN IA<small>Experto en Cultura y Cambio</small></span>
-        <picture><source srcset="assets/sello-adn-ia.webp" type="image/webp"><img src="assets/sello-adn-ia.png" alt="Sello de la Certificación Experto en Cultura y Cambio ADN IA, Digital Change Advisors" width="132" height="132" decoding="async"></picture>
-      </div>
+      <figure class="hero__foto">
+        <div class="hero__foto-img">
+          <picture>
+            <source type="image/webp" srcset="assets/hero-adn-ia-640.webp 640w, assets/hero-adn-ia-960.webp 960w" sizes="(min-width: 1024px) 440px, (min-width: 600px) 560px, 100vw">
+            <img src="assets/hero-adn-ia-960.jpg" width="960" height="1192" fetchpriority="high" decoding="async" alt="Una consultora presenta a un gerente general una hoja con un indicador que sube, en una sala de reuniones con paredes de vidrio; al fondo, un equipo trabaja frente a una pared con notas adhesivas.">
+          </picture>
+        </div>
+        <div class="sello sello--hero" data-sello>
+          <span class="sello__fb" aria-hidden="true">ADN IA<small>Experto en Cultura y Cambio</small></span>
+          <picture><source srcset="assets/sello-adn-ia.webp" type="image/webp"><img src="assets/sello-adn-ia.png" alt="Sello de la Certificación Experto en Cultura y Cambio ADN IA, Digital Change Advisors" width="132" height="132" decoding="async"></picture>
+        </div>
+      </figure>
       <div class="sesion-card" id="sesion-card">
         <div class="sesion-card__k">Sesión en vivo</div>
         <div class="sesion-card__d" data-sesion-fecha>Jueves 3 de diciembre de 2026</div>
