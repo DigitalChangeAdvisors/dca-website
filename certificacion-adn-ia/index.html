@@ -196,8 +196,14 @@
   .cifra__t { margin-top: 14px; font-size: 16.5px; }
   .cifra__f { margin-top: auto; padding-top: 18px; font-size: 13.5px; line-height: 1.5; color: var(--muted); }
   .cifra__f a { color: var(--teal-ink); }
-  .cierre-bloque { margin-top: 40px; font-size: 19px; max-width: 760px; }
-  .cierre-bloque strong { font-weight: 600; }
+  /* Cierre del bloque 2: dos líneas en pirámide (L1 70 ≥ L2 69 caracteres), un renglón cada una desde 1024px */
+  /* Título del bloque 2 en pirámide (L1 47 ≥ L2 31): corte explícito antes del remate */
+  .h2-lineas .line { display: block; }
+  @media (min-width: 1024px) { .h2-lineas .line { white-space: nowrap; } }
+  .cierre-bloque { margin-top: 48px; font-family: var(--serif); font-size: clamp(22px, 2.3vw, 30px); line-height: 1.32; letter-spacing: -0.005em; }
+  .cierre-bloque .line { display: block; }
+  .cierre-bloque .line--fuerte { color: var(--teal-ink); }
+  @media (min-width: 768px) { .cierre-bloque .line { white-space: nowrap; } .cierre-bloque .line--fuerte { font-size: 0.93em; } } /* L2 apenas más corta que L1 también a la vista */
   @media (min-width: 900px) { .cifras { grid-template-columns: repeat(3, 1fr); } }
 
   /* ── Bloque 3 · Comparación ── */
@@ -463,7 +469,7 @@
 <section class="section section--soft" aria-labelledby="h-mercado">
   <div class="wrap">
     <span class="label">El cambio en el mercado</span>
-    <h2 id="h-mercado" class="reveal">Tus clientes ya invirtieron en IA. Lo que falta no es tecnología.</h2>
+    <h2 id="h-mercado" class="reveal h2-lineas"><span class="line">Tus clientes ya invirtieron en IA. Lo que falta</span> <span class="line">es justo lo que tú sabes hacer.</span></h2>
     <div class="cifras">
       <article class="cifra reveal">
         <div class="cifra__n">60<small>&nbsp;%</small></div>
@@ -481,7 +487,7 @@
         <p class="cifra__f">Fuente: BCG, <a href="https://www.bcg.com/publications/2026/ai-transformation-is-a-workforce-transformation" target="_blank" rel="noopener"><cite>AI Transformation Is a Workforce Transformation</cite></a>, febrero de 2026.</p>
       </article>
     </div>
-    <p class="cierre-bloque reveal">El problema ya no es tecnológico. Es humano. <strong>Y quien sepa demostrarlo en números se vuelve interlocutor de la gerencia general.</strong></p>
+    <p class="cierre-bloque reveal"><span class="line">Las cifras lo confirman: el retorno de la IA se juega en las personas.</span> <span class="line line--fuerte">Quien lo demuestre en números llega a la mesa de la gerencia general.</span></p>
   </div>
 </section>
 
