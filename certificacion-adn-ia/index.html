@@ -14,7 +14,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://digitalchangeadvisors.com/certificacion-adn-ia/" />
 <meta property="og:title" content="Certificación Experto en Cultura y Cambio ADN IA" />
-<meta property="og:description" content="Tu experiencia en cultura y cambio vale más con la IA. Solo si la vendes como retorno. Cohorte enero 2027." />
+<meta property="og:description" content="Tu experiencia en cultura y cambio vale más en la era de la IA. Solo si la vendes como retorno de la inversión. Cohorte enero 2027." />
 <meta property="og:image" content="https://digitalchangeadvisors.com/certificacion-adn-ia/assets/og-adn-ia.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -23,7 +23,7 @@
 <meta property="og:locale" content="es_LA" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Certificación Experto en Cultura y Cambio ADN IA" />
-<meta name="twitter:description" content="Tu experiencia en cultura y cambio vale más con la IA. Solo si la vendes como retorno." />
+<meta name="twitter:description" content="Tu experiencia en cultura y cambio vale más en la era de la IA. Solo si la vendes como retorno de la inversión." />
 <meta name="twitter:image" content="https://digitalchangeadvisors.com/certificacion-adn-ia/assets/og-adn-ia.jpg" />
 <meta name="twitter:image:alt" content="Experto en Cultura y Cambio ADN IA · Cohorte enero 2027 · Digital Change Advisors" />
 
@@ -150,8 +150,15 @@
   .hero__foto-img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
   /* Sello + tarjeta de la sesión: en la columna de texto, bajo los botones (la foto queda sola a la derecha) */
   /* Centrado con blanco igual a cada lado; si no caben en una fila, sello arriba y tarjeta abajo, ambos centrados */
-  .hero__aval { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px 28px; margin-top: 32px; }
-  .hero__aval .sesion-card { flex: 0 1 auto; width: auto; max-width: 100%; padding: 20px 23px 19px; }
+  /* Botones + microtexto + sello/tarjeta comparten ancho: sello alineado con «Reservar» (izq.), tarjeta con «WhatsApp» (der.) */
+  .hero__accion { width: 100%; }
+  @media (min-width: 600px) {
+    .hero__accion { width: fit-content; max-width: 100%; }
+    .hero__accion .ctas .btn { flex: 1 1 auto; }  /* si los botones se apilan, ambos toman el ancho completo */
+    .hero__accion .hero__micro { width: 0; min-width: 100%; }  /* el microtexto no ensancha el contenedor */
+  }
+  .hero__aval { display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: 20px 20px; margin-top: 32px; }
+  .hero__aval .sesion-card { flex: 1 1 300px; width: auto; min-width: 0; max-width: none; padding: 20px 23px 19px; }
   .hero__aval .sesion-card__k { font-size: 15.6px; }
   .hero__aval .sesion-card__d { font-size: 25px; margin: 8px 0 3px; }
   .hero__aval .sesion-card__h { font-size: 18.75px; }
@@ -164,7 +171,7 @@
     .hero__grid { grid-template-columns: minmax(0, 1fr) 440px; align-items: start; gap: 56px; }
     .hero__grid > div:first-child { padding-top: 8px; }
     .hero__foto-img { aspect-ratio: 4 / 5; }
-    .hero__aval { margin-right: -56px; margin-top: 36px; } /* abarca también el espacio hasta la foto: el bloque queda centrado entre el borde del texto y la foto */
+    .hero__aval { margin-top: 36px; }
     .hero h1 { font-size: clamp(32px, 3vw, 42px); }
     .hero h1 .line { white-space: nowrap; }
     .hero__head h1 { margin-bottom: 36px; }
@@ -401,13 +408,14 @@
   <div class="wrap hero__head">
     <span class="label">Certificación Experto en Cultura y Cambio ADN IA · Cohorte enero 2027</span>
     <h1 id="h1">
-      <span class="line">Tu experiencia en cultura y cambio vale más con la IA.</span>
-      <span class="line">Solo si la vendes como retorno.</span>
+      <span class="line">Tu experiencia en cultura y cambio vale más en la era de la IA.</span>
+      <span class="line">Solo si la vendes como retorno de la inversión.</span>
     </h1>
   </div>
   <div class="wrap hero__grid">
     <div>
-      <p class="chapeau">Las empresas ya invirtieron en IA y el retorno no aparece. El freno está en la incapacidad de lograr que las personas la incorporen en el flujo diario con impacto. Esta certificación te habilita para cerrar esa brecha humana frente a quien responde por los resultados.</p>
+      <p class="chapeau">Tus clientes ya invirtieron en IA y el retorno no aparece. El freno no es la tecnología: es que sus equipos no la incorporan al trabajo diario. Esta certificación te habilita para cerrar esa brecha humana frente a quien responde por los resultados.</p>
+      <div class="hero__accion">
       <div class="ctas">
         <a class="btn btn--primary" href="#registro" data-cta data-bloque="heroe">Reservar mi cupo en la sesión</a>
         <a class="btn btn--ghost" href="https://wa.me/573108450530" data-whatsapp data-bloque="heroe" target="_blank" rel="noopener">
@@ -426,6 +434,7 @@
           <div class="sesion-card__d" data-sesion-fecha>Jueves 3 de diciembre de 2026</div>
           <div class="sesion-card__h" data-sesion-hora>6:30 a 8:00 p. m. (hora Bogotá)</div>
         </div>
+      </div>
       </div>
     </div>
     <div class="hero__side">
