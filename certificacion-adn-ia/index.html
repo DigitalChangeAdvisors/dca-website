@@ -148,7 +148,10 @@
   .hero__foto { position: relative; width: 100%; max-width: 560px; margin: 0; }
   .hero__foto-img { display: block; width: 100%; aspect-ratio: 4 / 3; border-radius: 10px; overflow: hidden; background: var(--platinum); box-shadow: 0 18px 40px rgba(30,42,56,0.12); }
   .hero__foto-img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
-  .hero__foto .sello--hero { position: absolute; right: -10px; bottom: -22px; box-shadow: 0 8px 22px rgba(30,42,56,0.18); }
+  /* Sello + tarjeta de la sesión: en la columna de texto, bajo los botones (la foto queda sola a la derecha) */
+  .hero__aval { display: flex; align-items: center; gap: 18px; margin-top: 28px; max-width: 580px; }
+  .hero__aval .sesion-card { flex: 1 1 auto; max-width: 400px; padding: 16px 18px 15px; }
+  .hero__aval .sesion-card__d { font-size: 20px; margin: 6px 0 2px; }
   .sesion-card { width: 100%; max-width: 360px; border: 1px solid var(--border); border-top: 4px solid var(--gold); border-radius: var(--radius); padding: 22px 22px 20px; background: #fff; }
   .sesion-card__k { font-size: 12.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-ink); }
   .sesion-card__d { font-family: var(--serif); font-size: 24px; line-height: 1.25; margin: 8px 0 4px; }
@@ -158,7 +161,7 @@
     .hero__grid { grid-template-columns: minmax(0, 1fr) 440px; align-items: start; gap: 56px; }
     .hero__grid > div:first-child { padding-top: 8px; }
     .hero__foto-img { aspect-ratio: 4 / 5; }
-    .hero__foto .sello--hero { right: -14px; bottom: -28px; }
+    .hero__aval { gap: 24px; margin-top: 32px; }
     .hero h1 { font-size: clamp(32px, 3vw, 42px); }
     .hero h1 .line { white-space: nowrap; }
     .hero__head h1 { margin-bottom: 36px; }
@@ -171,7 +174,8 @@
   .sello__fb { font-family: var(--serif); line-height: 1.15; padding: 14%; }
   .sello__fb small { display: block; font-family: var(--sans); font-size: .42em; letter-spacing: .12em; text-transform: uppercase; margin-top: 6px; opacity: .92; }
   .sello--hero { width: 96px; height: 96px; font-size: 14px; }
-  @media (min-width: 1024px) { .sello--hero { width: 132px; height: 132px; font-size: 18px; } }
+  @media (min-width: 480px) { .sello--hero { width: 112px; height: 112px; font-size: 16px; } }
+  @media (min-width: 1024px) { .sello--hero { width: 128px; height: 128px; font-size: 17px; } }
   .sello--obtienes { width: 120px; height: 120px; font-size: 17px; }
 
   /* ── Bloque 2 · Cifras ── */
@@ -409,6 +413,17 @@
         </a>
       </div>
       <p class="hero__micro">4 semanas · Presencial virtual · Apertura <span data-apertura>miércoles 27 de enero de 2027</span> · Cupos sujetos a cohorte mínima</p>
+      <div class="hero__aval">
+        <div class="sello sello--hero" data-sello>
+          <span class="sello__fb" aria-hidden="true">ADN IA<small>Experto en Cultura y Cambio</small></span>
+          <picture><source srcset="assets/sello-adn-ia.webp" type="image/webp"><img src="assets/sello-adn-ia.png" alt="Sello de la Certificación Experto en Cultura y Cambio ADN IA, Digital Change Advisors" width="128" height="128" decoding="async"></picture>
+        </div>
+        <div class="sesion-card" id="sesion-card">
+          <div class="sesion-card__k">Sesión en vivo</div>
+          <div class="sesion-card__d" data-sesion-fecha>Jueves 3 de diciembre de 2026</div>
+          <div class="sesion-card__h" data-sesion-hora>6:30 a 8:00 p. m. (hora Bogotá)</div>
+        </div>
+      </div>
     </div>
     <div class="hero__side">
       <figure class="hero__foto">
@@ -418,16 +433,7 @@
             <img src="assets/hero-adn-ia-960.jpg" width="960" height="1192" fetchpriority="high" decoding="async" alt="Una consultora presenta a un gerente general una hoja con un indicador que sube, en una sala de reuniones con paredes de vidrio; al fondo, un equipo trabaja frente a una pared con notas adhesivas.">
           </picture>
         </div>
-        <div class="sello sello--hero" data-sello>
-          <span class="sello__fb" aria-hidden="true">ADN IA<small>Experto en Cultura y Cambio</small></span>
-          <picture><source srcset="assets/sello-adn-ia.webp" type="image/webp"><img src="assets/sello-adn-ia.png" alt="Sello de la Certificación Experto en Cultura y Cambio ADN IA, Digital Change Advisors" width="132" height="132" decoding="async"></picture>
-        </div>
       </figure>
-      <div class="sesion-card" id="sesion-card">
-        <div class="sesion-card__k">Sesión en vivo</div>
-        <div class="sesion-card__d" data-sesion-fecha>Jueves 3 de diciembre de 2026</div>
-        <div class="sesion-card__h" data-sesion-hora>6:30 a 8:00 p. m. (hora Bogotá)</div>
-      </div>
     </div>
   </div>
 </section>
