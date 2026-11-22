@@ -14,7 +14,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://digitalchangeadvisors.com/certificacion-adn-ia/" />
 <meta property="og:title" content="Certificación Experto Cultura y Cambio ADN IA" />
-<meta property="og:description" content="En la era de la IA, tu valor no está en acompañar a cada persona. Está en habilitar al líder que mueve a todo su equipo. Cohorte enero 2027." />
+<meta property="og:description" content="En la era de la IA, tu valor no está en operar cada proyecto. Está en habilitar al líder que mueve a todo su equipo. Cohorte enero 2027." />
 <meta property="og:image" content="https://digitalchangeadvisors.com/certificacion-adn-ia/assets/og-adn-ia.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -23,7 +23,7 @@
 <meta property="og:locale" content="es_LA" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Certificación Experto Cultura y Cambio ADN IA" />
-<meta name="twitter:description" content="En la era de la IA, tu valor no está en acompañar a cada persona. Está en habilitar al líder que mueve a todo su equipo." />
+<meta name="twitter:description" content="En la era de la IA, tu valor no está en operar cada proyecto. Está en habilitar al líder que mueve a todo su equipo." />
 <meta name="twitter:image" content="https://digitalchangeadvisors.com/certificacion-adn-ia/assets/og-adn-ia.jpg" />
 <meta name="twitter:image:alt" content="Experto Cultura y Cambio ADN IA · Cohorte enero 2027 · Digital Change Advisors" />
 
@@ -137,13 +137,17 @@
   .franja--fase { background: #fff; color: var(--carbon); font-weight: 600; border-bottom: 4px solid var(--gold); }
 
   /* ── Bloque 1 · Héroe ── */
-  .hero { padding: 56px 0 72px; }
+  .hero { padding: 36px 0 72px; }
+  @media (min-width: 600px) { .hero { padding-top: 56px; } }
   .hero__grid { display: grid; gap: 40px; }
   .hero h1 { font-family: var(--serif); font-size: clamp(28px, 7.4vw, 42px); line-height: 1.16; letter-spacing: -0.015em; margin: 4px 0 22px; }
   .hero h1 .line { display: block; }
   .hero .chapeau { max-width: 640px; }
   .hero .ctas { margin-top: 32px; }
   .hero__micro { margin-top: 22px; font-size: 14px; color: var(--muted); }
+  .hero__wa { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 8px; color: var(--teal-ink); font-weight: 600; font-size: 15px; text-decoration: underline; text-underline-offset: 3px; }
+  .hero__wa:hover { color: var(--carbon); }
+  .hero__wa + .hero__micro { margin-top: 10px; }
   .hero__side { display: flex; flex-direction: column; align-items: center; gap: 24px; }
   /* Foto del héroe: 4:3 recortada en móvil (caras, pluma y hoja dentro del encuadre), 4:5 completa desde 1024px */
   .hero__foto { position: relative; width: 100%; max-width: 560px; margin: 0; }
@@ -282,6 +286,15 @@
   @media (min-width: 768px) { .datos { grid-template-columns: repeat(4, 1fr); } }
 
   .timeline { list-style: none; margin: 44px 0 0; padding: 0; position: relative; }
+  .plegable { margin-top: 36px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .plegable > summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 56px; padding: 14px 0; font-weight: 600; font-size: 17px; color: var(--teal-ink); }
+  .plegable > summary::-webkit-details-marker { display: none; }
+  .plegable > summary svg { flex: none; width: 20px; height: 20px; transition: transform .25s ease; }
+  .plegable[open] > summary svg { transform: rotate(45deg); }
+  .plegable .timeline { margin-top: 20px; }
+  .plegable--abierto { border: 0; }
+  .plegable--abierto > summary { display: none; }
+  .plegable--abierto .timeline { margin-top: 44px; }
   .timeline li { position: relative; padding: 0 0 28px 40px; }
   .timeline li::before { content: ''; position: absolute; left: 7px; top: 22px; bottom: -6px; width: 2px; background: var(--border); }
   .timeline li:last-child::before { display: none; }
@@ -320,7 +333,7 @@
 
   /* ── Bloque 8 · Inversión ── */
   /* Fase «sesion»: tarjeta de la clase abierta (objetivo + agenda | datos + obsequio + CTA) */
-  .clase { margin-top: 28px; display: grid; gap: 28px; padding: 28px 26px; border-left: 4px solid var(--gold); background: #fff; border-radius: 0 var(--radius) var(--radius) 0; }
+  .clase { margin-top: 28px; display: grid; gap: 28px; padding: 26px 20px; border-left: 4px solid var(--gold); background: #fff; border-radius: 0 var(--radius) var(--radius) 0; }
   .clase__objetivo { font-size: 19px; line-height: 1.55; }
   .clase__k, .clase__datos dt { font-size: 12.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-ink); }
   .clase__k { margin-top: 24px; }
@@ -330,9 +343,14 @@
   .clase__datos { margin: 0; display: grid; gap: 12px; }
   .clase__datos dd { margin: 2px 0 0; font-size: 17px; }
   .clase__datos div:first-child dd { font-family: var(--serif); font-size: 22px; line-height: 1.25; }
-  .clase__obsequio { margin-top: 24px; padding: 16px 18px; background: var(--teal-soft); border-radius: 8px; font-size: 16px; }
+  .clase__obsequio { margin-top: 24px; padding: 16px 18px; background: var(--teal-soft); border-radius: 8px; font-size: 16px; display: flex; gap: 16px; align-items: center; }
+  .clase__mini { flex: none; width: 144px; }
+  .clase__mini img { display: block; width: 144px; height: 96px; border-radius: 6px; border: 1px solid var(--border); background: var(--platinum); object-fit: cover; }
+  @media (max-width: 420px) { .clase__obsequio { flex-direction: column; align-items: flex-start; } .clase__mini, .clase__mini img { width: 100%; height: auto; } .clase__mini img { aspect-ratio: 3 / 2; } }
+  .clase__aval { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 15px; }
+  .clase__aval strong { color: var(--teal-ink); }
   .clase__caso { margin-top: 12px; padding: 0 18px; font-size: 16px; }
-  .clase__lado .btn { margin-top: 24px; width: 100%; }
+  .clase__lado .btn { margin-top: 20px; width: 100%; padding-left: 16px; padding-right: 16px; }
   .clase__nota { margin-top: 12px; font-size: 14px; color: var(--muted); }
   /* En móvil el H2 de la clase baja de tamaño para que cada línea quepa en un renglón (pirámide L1 ≥ L2, sin la viuda «frenan») */
   @media (max-width: 767px) { .h2-lineas--fluida { font-size: min(28px, 6.2vw); } }
@@ -399,13 +417,19 @@
   @media (min-width: 480px) { .fila-2 { grid-template-columns: 1fr 1fr; } }
   .consent { display: flex; gap: 12px; align-items: flex-start; margin: 6px 0 18px; font-size: 14.5px; line-height: 1.5; }
   .consent__box { flex: none; display: grid; place-items: center; width: 44px; height: 44px; margin: -10px -6px -10px -10px; cursor: pointer; }
-  .consent input { width: 22px; height: 22px; accent-color: var(--teal-dark); cursor: pointer; }
+  .consent input { width: 24px; height: 24px; accent-color: var(--teal-dark); cursor: pointer; }
   .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
   .form .btn--primary { width: 100%; }
   .form__nota { margin-top: 14px; font-size: 14px; color: var(--muted); text-align: center; }
   .form__error { margin-top: 16px; padding: 14px 16px; border-left: 4px solid var(--terracotta); background: #fbf1ee; font-size: 15px; }
   .form__ok { padding: 8px 0; }
   .form__ok strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 24px; line-height: 1.3; margin-bottom: 10px; }
+  .cal { margin-top: 18px; }
+  .cal__t { font-weight: 600; font-size: 15px; margin-bottom: 10px; }
+  .cal__fila { display: grid; gap: 10px; }
+  @media (min-width: 480px) { .cal__fila { grid-template-columns: 1fr 1fr; } }
+  .cal__btn { display: flex; align-items: center; justify-content: center; min-height: 48px; padding: 10px 14px; border: 1.5px solid var(--teal-dark); border-radius: 8px; color: var(--teal-ink); font-weight: 600; font-size: 15px; text-align: center; text-decoration: none; }
+  .cal__btn:hover { background: var(--teal-soft); }
   .whats-alt { margin-top: 28px; }
   .cierre .btn--ghost { color: #fff; border-color: rgba(255,255,255,0.7); }
   .cierre .btn--ghost:hover { background: #fff; color: var(--carbon); }
@@ -443,7 +467,7 @@
 
 <div class="franja franja--fase" id="franja-fase" hidden></div>
 <div class="franja franja--perfil" id="franja-perfil">
-  <div class="wrap" id="franja-perfil-txt">La evolución de tu práctica en cultura y cambio para generar valor en la era de la IA.</div>
+  <div class="wrap" id="franja-perfil-txt">Clase abierta en vivo · jueves 3 de diciembre · 5:30 p. m. (hora Bogotá)</div>
 </div>
 
 <header class="header">
@@ -469,21 +493,21 @@
   <div class="wrap hero__head">
     <span class="label">Certificación Experto Cultura y Cambio ADN IA · Cohorte enero 2027</span>
     <h1 id="h1">
-      <span class="line">En la era de la IA, tu valor no está en acompañar a cada persona.</span>
+      <span class="line">En la era de la IA, tu valor no está en operar cada proyecto.</span>
       <span class="line">Está en habilitar al líder que mueve a todo su equipo.</span>
     </h1>
   </div>
   <div class="wrap hero__grid">
     <div>
-      <p class="chapeau">Tus clientes ya invirtieron en IA y sus equipos no la incorporan al trabajo diario. Esta certificación te lleva a rediseñar tus prácticas para habilitar al líder del proceso: a través de él, la adopción llega a todo su equipo, con impacto en su KPI.</p>
+      <p class="chapeau">Tus clientes ya invirtieron en IA y sus equipos no la incorporan al trabajo diario. Esta certificación te lleva a rediseñar tus prácticas para habilitar al líder del proceso: a través de él, la adopción llega a todo su equipo, con impacto en su KPI.<span data-opc-sesion> Empieza el 3 de diciembre en una clase abierta, con una herramienta que te llevas.</span></p>
       <div class="hero__accion">
       <div class="ctas">
-        <a class="btn btn--primary" href="#registro" data-cta data-bloque="heroe">Reservar mi cupo en la sesión</a>
-        <a class="btn btn--ghost" href="https://wa.me/573108450530" data-whatsapp data-bloque="heroe" target="_blank" rel="noopener">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.2A8.5 8.5 0 1 1 20.5 11.6Z" stroke-linejoin="round"/></svg>
-          Hablar por WhatsApp
-        </a>
+        <a class="btn btn--primary" href="#registro" data-cta data-bloque="heroe">Reservar mi cupo en la clase</a>
       </div>
+      <a class="hero__wa" href="https://wa.me/573108450530" data-whatsapp data-bloque="heroe" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.2A8.5 8.5 0 1 1 20.5 11.6Z" stroke-linejoin="round"/></svg>
+        ¿Tienes una pregunta antes? Escríbenos por WhatsApp
+      </a>
       <p class="hero__micro" id="hero-micro">Clase abierta de 90 minutos en Google Meet · Sin costo para expertos en cultura y cambio y profesionales de TI</p>
       <div class="hero__aval">
         <div class="sello sello--hero" data-sello>
@@ -564,7 +588,7 @@
         <tr role="row">
           <th scope="row" role="rowheader">Ante la IA que no da lo esperado</th>
           <td role="cell" class="paralelo__igual" data-col="Quien sigue igual">Propone más capacitación y comunicación</td>
-          <td role="cell" class="paralelo__adn" data-col="Experto ADN IA">Habilita la decisión de cortar, recuperar o esperar evidencia</td>
+          <td role="cell" class="paralelo__adn" data-col="Experto ADN IA">Habilita la decisión del líder: escalar, ajustar o esperar evidencia</td>
         </tr>
         <tr role="row">
           <th scope="row" role="rowheader">Dónde interviene</th>
@@ -602,8 +626,49 @@
   </div>
 </section>
 
+<!-- ═══════════ BLOQUE 8 · INVERSIÓN Y CONDICIONES ═══════════
+     Los precios NO están en el HTML: los dibuja el script desde LANDING_CONFIG,
+     para que en fase «sesion» no exista ningún precio en la página (ni sin JS). -->
+<section class="section section--soft" id="inversion" aria-labelledby="h-inversion">
+  <div class="wrap">
+    <!-- Fase «sesion» (HTML por defecto): la clase abierta. En las demás fases el script
+         cambia etiqueta y H2 a «Inversión y condiciones» y oculta #inv-sesion. -->
+    <span class="label" id="inv-label">Clase abierta · En vivo</span>
+    <h2 id="h-inversion" class="reveal h2-lineas h2-lineas--fluida"><span class="line">Las cuatro barreras que frenan</span> <span class="line">la IA en tus clientes.</span></h2>
+    <div class="clase reveal" id="inv-sesion">
+      <div class="clase__cuerpo">
+        <p class="clase__objetivo">Sales sabiendo ubicar cuál de las cuatro barreras frena una iniciativa de IA de tu cliente y qué conversación abrir con el líder del proceso. Te sirve al día siguiente, para ayudar a tus clientes.</p>
+        <p class="clase__k">En 90 minutos</p>
+        <ol class="clase__agenda">
+          <li><strong>La brecha.</strong> Por qué la productividad individual con IA no llega al KPI.</li>
+          <li><strong>DICO en vivo.</strong> Las cuatro barreras aplicadas a un caso de práctica y al tuyo.</li>
+          <li><strong>El contraste.</strong> De operar la adopción proyecto a proyecto a habilitar al líder del proceso.</li>
+          <li><strong>Al cierre.</strong> La Certificación Experto Cultura y Cambio ADN IA.</li>
+        </ol>
+        <div class="clase__obsequio">
+          <picture class="clase__mini"><source srcset="assets/lienzo-miniatura-v1.webp" type="image/webp"><img src="assets/lienzo-miniatura-v1.jpg" width="432" height="288" loading="lazy" decoding="async" alt="Vista del Lienzo de las cuatro barreras: tarjetas de creencias y capacidades del rol, cada una con una escala de peso del 1 al 5."></picture>
+          <p><strong>Tu obsequio:</strong> el Lienzo de las cuatro barreras, una herramienta en línea para diagnosticar cualquier iniciativa de IA de tus clientes.</p>
+        </div>
+        <p class="clase__caso"><strong>Trae tu caso:</strong> una iniciativa de IA que quieras mejorar, sin datos de tus clientes.</p>
+      </div>
+      <div class="clase__lado">
+        <dl class="clase__datos">
+          <div><dt>Fecha</dt><dd data-sesion-fecha>Jueves 3 de diciembre de 2026</dd></div>
+          <div><dt>Hora</dt><dd data-sesion-hora>5:30 a 7:00 p. m. (hora Bogotá)</dd></div>
+          <div><dt>Medio</dt><dd data-sesion-medio>Encuentro online sincrónico en Google Meet</dd></div>
+          <div><dt>Formato</dt><dd>En vivo, sin grabación</dd></div>
+        </dl>
+        <p class="clase__aval">Te la presenta Digital Change Academy, la academia de los <strong>57+ consultores certificados por DCA</strong>.</p>
+        <a class="btn btn--primary" href="#registro" data-cta data-bloque="clase_abierta">Reservar mi cupo en la clase</a>
+        <p class="clase__nota">Sin costo para expertos en cultura y cambio y profesionales de TI. Las condiciones de lanzamiento de la cohorte de enero se presentan solo en vivo.</p>
+      </div>
+    </div>
+    <div id="inv-precios" hidden></div>
+  </div>
+</section>
+
 <!-- ═══════════ BLOQUE 5 · QUÉ TE LLEVAS ═══════════ -->
-<section class="section section--platinum" aria-labelledby="h-llevas">
+<section class="section" id="que-te-llevas" aria-labelledby="h-llevas">
   <div class="wrap">
     <span class="label">Qué te llevas</span>
     <h2 id="h-llevas" class="promesa reveal">Al certificarte, no sumas la IA a tu práctica: la rediseñas para que la adopción llegue hasta el&nbsp;KPI.</h2>
@@ -622,7 +687,7 @@
       </li>
       <li class="resultado reveal">
         <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="6" y="7" width="24" height="16" rx="1.5"/><path d="M18 23v6M13 30h10" stroke-linecap="round"/><path d="M11 18l4-4 3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div><h3>Preparar la conversación</h3><p>Llevas al líder un Brief de una página: qué cortar, qué recuperar o qué esperar, con fecha. Él decide y conduce la adopción en su equipo; tú la habilitas.</p></div>
+        <div><h3>Preparar la conversación</h3><p>Llevas al líder un Brief de una página: qué escalar, qué ajustar o qué esperar, con fecha. Él decide y conduce la adopción en su equipo; tú la habilitas.</p></div>
       </li>
     </ul>
     <p class="soporte reveal">Y sales con tu Hoja de Ruta Evolutiva: tu oferta para acelerar la adopción de la IA en el flujo diario, con impacto en el KPI. DICO (Diseño Inverso de Conducta Objetivo), el marco de Digital Change Academy, invierte la secuencia habitual: no cambia primero lo que la gente piensa para esperar que el resultado llegue, sino que parte de la conducta exacta que mueve el KPI y diseña hacia atrás, hasta la mentalidad que la sostiene.</p>
@@ -657,7 +722,7 @@
       </div>
     </div>
     <div class="cta-intermedio">
-      <a class="btn btn--primary" href="#registro" data-cta data-bloque="para_quien">Reservar mi cupo en la sesión</a>
+      <a class="btn btn--primary" href="#registro" data-cta data-bloque="para_quien">Reservar mi cupo en la clase</a>
     </div>
   </div>
 </section>
@@ -671,9 +736,11 @@
       <div class="dato"><strong>4</strong><span>semanas</span></div>
       <div class="dato"><strong>4</strong><span>lecciones</span></div>
       <div class="dato"><strong>4</strong><span>experimentos</span></div>
-      <div class="dato"><strong>En vivo</strong><span>presencial virtual</span></div>
+      <div class="dato"><strong>En vivo</strong><span>en línea</span></div>
     </div>
 
+    <details class="plegable" id="calendario">
+    <summary>Ver el calendario semana a semana<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
     <ol class="timeline timeline--5">
       <li class="reveal"><div class="timeline__sem">Día 0</div><div class="timeline__exp">Fundamentación en vivo</div><div class="timeline__txt">120 minutos: el marco DICO y las cuatro barreras, una lección por cada una.</div></li>
       <li class="reveal"><div class="timeline__sem">Semana 1</div><div class="timeline__exp">Experimentos 1 y 2</div><div class="timeline__txt">Antes de proponer, descubres qué creencia frena la conducta. Tu servicio estrella, rediseñado.</div></li>
@@ -681,8 +748,9 @@
       <li class="reveal"><div class="timeline__sem">Semana 3</div><div class="timeline__exp">Lectura y ensayo</div><div class="timeline__txt">Lectura guiada de la novela ReturnAI y tu ensayo.</div></li>
       <li class="reveal"><div class="timeline__sem">Semana 4</div><div class="timeline__exp">Mentoring de cierre</div><div class="timeline__txt">120 minutos en vivo, con tu audición de certificación y el Análisis de Ruta Evolutiva.</div></li>
     </ol>
+    </details>
     <!-- Excepción aprobada por el propietario (2026-11-21): se nombra «MATCH» en esta página porque los certificados DCA conocen el concepto MATCH, no el Modelo ARIA. -->
-    <p class="soporte reveal">Trabajas sobre un caso de práctica que construyes tú: una iniciativa de IA ya invertida que no da lo esperado, sin datos reales de clientes. Lo haces en pareja o trío con colegas de la cohorte, que actúan como tus pares críticos. La certificación equivale a un sprint del modelo MATCH de DCA, en modalidad presencial virtual con sesiones sincrónicas en línea.</p>
+    <p class="soporte reveal">Trabajas sobre un caso de práctica que construyes tú: una iniciativa de IA ya invertida que no da lo esperado, sin datos reales de clientes. Lo haces en pareja o trío con colegas de la cohorte, que actúan como tus pares críticos. La certificación equivale a un sprint del modelo MATCH de DCA, en línea y con sesiones sincrónicas en vivo.</p>
 
     <div class="obtienes-guia">
       <div class="panel panel--media panel--obtienes reveal">
@@ -721,50 +789,19 @@
   </div>
 </section>
 
-<!-- ═══════════ BLOQUE 8 · INVERSIÓN Y CONDICIONES ═══════════
-     Los precios NO están en el HTML: los dibuja el script desde LANDING_CONFIG,
-     para que en fase «sesion» no exista ningún precio en la página (ni sin JS). -->
-<section class="section section--soft" id="inversion" aria-labelledby="h-inversion">
-  <div class="wrap">
-    <!-- Fase «sesion» (HTML por defecto): la clase abierta. En las demás fases el script
-         cambia etiqueta y H2 a «Inversión y condiciones» y oculta #inv-sesion. -->
-    <span class="label" id="inv-label">Clase abierta · En vivo</span>
-    <h2 id="h-inversion" class="reveal h2-lineas h2-lineas--fluida"><span class="line">Las cuatro barreras que frenan</span> <span class="line">la IA en tus clientes.</span></h2>
-    <div class="clase reveal" id="inv-sesion">
-      <div class="clase__cuerpo">
-        <p class="clase__objetivo">Sales sabiendo ubicar cuál de las cuatro barreras frena una iniciativa de IA de tu cliente y qué conversación abrir con el líder del proceso. Te sirve al día siguiente, para ayudar a tus clientes.</p>
-        <p class="clase__k">En 90 minutos</p>
-        <ol class="clase__agenda">
-          <li><strong>La brecha.</strong> Por qué la productividad individual con IA no llega al KPI.</li>
-          <li><strong>DICO en vivo.</strong> Las cuatro barreras aplicadas a un caso de práctica y al tuyo.</li>
-          <li><strong>El contraste.</strong> De operar la adopción proyecto a proyecto a habilitar al líder del proceso.</li>
-          <li><strong>Al cierre.</strong> La Certificación Experto Cultura y Cambio ADN IA.</li>
-        </ol>
-        <p class="clase__obsequio"><strong>Tu obsequio:</strong> el Lienzo de las cuatro barreras, una herramienta en línea para diagnosticar cualquier iniciativa de IA de tus clientes.</p>
-        <p class="clase__caso"><strong>Trae tu caso:</strong> una iniciativa de IA que quieras mejorar, sin datos de tus clientes.</p>
-      </div>
-      <div class="clase__lado">
-        <dl class="clase__datos">
-          <div><dt>Fecha</dt><dd data-sesion-fecha>Jueves 3 de diciembre de 2026</dd></div>
-          <div><dt>Hora</dt><dd data-sesion-hora>5:30 a 7:00 p. m. (hora Bogotá)</dd></div>
-          <div><dt>Medio</dt><dd data-sesion-medio>Encuentro online sincrónico en Google Meet</dd></div>
-        </dl>
-        <a class="btn btn--primary" href="#registro" data-cta data-bloque="clase_abierta">Reservar mi cupo en la sesión</a>
-        <p class="clase__nota">Sin costo para expertos en cultura y cambio y profesionales de TI. No habrá grabación: es un encuentro de trabajo en vivo, y ahí se presentan las condiciones de lanzamiento de la cohorte de enero.</p>
-      </div>
-    </div>
-    <div id="inv-precios" hidden></div>
-  </div>
-</section>
 
 <!-- ═══════════ BLOQUE 9 · PREGUNTAS FRECUENTES ═══════════ -->
-<section class="section" aria-labelledby="h-faq">
+<section class="section section--soft" id="faq" aria-labelledby="h-faq">
   <div class="wrap narrow">
     <span class="label">Preguntas frecuentes</span>
     <h2 id="h-faq">Lo que conviene aclarar antes de reservar tu cupo.</h2>
     <div class="faq">
-      <details id="faq-1"><summary>¿Reservar mi cupo en la sesión me compromete a algo?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
-        <p>No. La clase abierta es sin costo y vale por sí sola: te llevas el diagnóstico de las cuatro barreras y, al cierre, conoces la certificación. Inscribirte en la cohorte es una decisión aparte.</p></details>
+      <details id="faq-1"><summary>¿Reservar mi cupo en la clase me compromete a algo?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
+        <p>No. La clase abierta es sin costo. Al cierre conoces la certificación, e inscribirte en la cohorte es una decisión aparte.</p></details>
+      <details data-opc-sesion><summary>¿Qué necesito para la clase?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
+        <p>Un computador con buena conexión y Google Meet, que funciona desde el navegador sin instalar nada. Trae una iniciativa de IA que quieras mejorar, sin datos de tus clientes. Te enviamos el enlace por WhatsApp.</p></details>
+      <details data-opc-sesion><summary>¿Qué me llevo si no me certifico?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
+        <p>El diagnóstico de las cuatro barreras aplicado a tu caso, la pregunta con la que abrirías la conversación con el líder del proceso y el Lienzo de las cuatro barreras, una herramienta en línea para usar con tus clientes.</p></details>
       <details><summary>¿Qué pasa si no se completa la cohorte?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
         <p>No se cobra nada o, si ya pagaste, devolvemos el 100&nbsp;%.</p></details>
       <details><summary>¿Necesito saber de IA?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
@@ -772,12 +809,12 @@
       <details><summary>¿Necesito un cliente real o expongo datos de mis clientes?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
         <p>No. Trabajas sobre un caso de práctica que construyes tú: una iniciativa de IA ya invertida que no da lo esperado, sin datos reales de clientes.</p></details>
       <details><summary>¿En qué se diferencia de una certificación en gestión del cambio?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
-        <p>Aquella te prepara para operar la adopción proyecto a proyecto. Esta te habilita para que el líder del proceso la conduzca y decida qué cortar y qué recuperar, medido en el KPI. Tu modelo no se descarta: se actualizan tres supuestos, que el adoptante es racional, que el cambio llega a un estado final estable y que el equipo de cambio opera la adopción.</p></details>
+        <p>Aquella te prepara para operar la adopción proyecto a proyecto. Esta te habilita para que el líder del proceso la conduzca y decida qué escalar y qué ajustar, medido en el KPI. Tu modelo no se descarta: se actualizan tres supuestos, que el adoptante es racional, que el cambio llega a un estado final estable y que el equipo de cambio opera la adopción.</p></details>
       <details><summary>¿Qué podré ofrecer a mis clientes al certificarme?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
-        <p>Una oferta para acelerar la adopción de la IA en el flujo diario, con impacto en el KPI: separar lo que falla por la tecnología de lo que falla por la adopción, diagnosticar las cuatro barreras y preparar con el líder la decisión de qué cortar y qué recuperar, con un plan de medición hasta el KPI.</p></details>
+        <p>Una oferta para acelerar la adopción de la IA en el flujo diario, con impacto en el KPI: separar lo que falla por la tecnología de lo que falla por la adopción, diagnosticar las cuatro barreras y preparar con el líder la decisión de qué escalar y qué ajustar, con un plan de medición hasta el KPI.</p></details>
       <details><summary>¿Cuánto dura y cuánto tiempo exige?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
-        <p>Cuatro semanas. Día 0: fundamentación en vivo de 120 minutos. Semanas 1 y 2: cuatro experimentos de unas 2 horas cada uno, repartidas en cinco días. Semana 3: lectura guiada de ReturnAI (60 a 90 minutos) y un ensayo. Semana 4: mentoring de cierre en vivo de 120 minutos, con tu audición de certificación. Modalidad presencial virtual, con sesiones sincrónicas en línea.</p></details>
-      <details><summary>¿Puedo pagar en moneda local?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
+        <p>Cuatro semanas. Día 0: fundamentación en vivo de 120 minutos. Semanas 1 y 2: cuatro experimentos de unas 2 horas cada uno, repartidas en cinco días. Semana 3: lectura guiada de ReturnAI (60 a 90 minutos) y un ensayo. Semana 4: mentoring de cierre en vivo de 120 minutos, con tu audición de certificación. Modalidad en línea, con sesiones sincrónicas en vivo.</p></details>
+      <details data-solo-cohorte hidden><summary>¿Puedo pagar en moneda local?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
         <p>Sí. Puedes pagar en pesos colombianos por transferencia a Bancolombia o con cualquier tarjeta de crédito mediante un enlace seguro de Stripe. Te enviamos los datos de pago personalmente cuando se confirma la cohorte.</p></details>
     </div>
   </div>
@@ -811,7 +848,7 @@
     </div>
 
     <form class="form" id="form" novalidate>
-      <h3 id="form-titulo">Reserva tu cupo en la sesión</h3>
+      <h3 id="form-titulo">Reserva tu cupo en la clase</h3>
       <div id="form-campos">
         <div class="campo">
           <label for="f-nombre">Nombre completo</label>
@@ -837,7 +874,7 @@
           <p class="campo__error" id="e-anio" aria-live="polite"></p>
         </div>
         <!-- Perfil no certificado -->
-        <div class="fila-2" data-solo-perfil="general">
+        <div class="fila-2" data-solo-perfil="general" data-oculto-sesion hidden>
           <div class="campo">
             <label for="f-anios">Años de experiencia <span class="opc" data-opc-sesion>(opcional)</span></label>
             <select id="f-anios" name="anios_experiencia" aria-describedby="e-anios">
@@ -874,8 +911,8 @@
         </div>
         <p class="campo__error" id="e-consent" aria-live="polite" style="margin-top:-8px;margin-bottom:14px"></p>
 
-        <button class="btn btn--primary" type="submit" id="btn-enviar">Reservar mi cupo en la sesión</button>
-        <p class="form__nota" id="form-nota">Te escribimos por WhatsApp para confirmar tu cupo y enviarte el enlace de la sesión.</p>
+        <button class="btn btn--primary" type="submit" id="btn-enviar">Reservar mi cupo en la clase</button>
+        <p class="form__nota" id="form-nota">Te escribimos por WhatsApp para confirmar tu cupo y enviarte el enlace de la clase. Al final de la clase te llevas el Lienzo de las cuatro barreras.</p>
         <div class="form__error" id="form-error" role="alert" hidden></div>
       </div>
       <div class="form__ok" id="form-ok" tabindex="-1" role="status" hidden></div>
@@ -920,7 +957,7 @@ const LANDING_CONFIG = {
   // Backend: Apps Script «Academy · Motor Sprint ADN IA Consultores» (el mismo de /adn-ia-consultores),
   // receptor tipo «mano-levantada» → pestaña «Inscripciones». Ver materiales/certificacion-adn-ia/apps-script/README.md
   formularioEndpoint: "https://script.google.com/macros/s/AKfycbyCmsXsK5xCRPvSis1j7WDEghF6YX6-l3LLZf9mo1MSDBtLCyAUQqII6a83ynXFG26tOg/exec",
-  sesion: { nombre: "Las cuatro barreras que frenan la IA en tus clientes", fecha: "Jueves 3 de diciembre de 2026", hora: "5:30 a 7:00 p. m. (hora Bogotá)", medio: "Encuentro online sincrónico en Google Meet", enlaceRegistro: "" }, // PENDIENTE: enlaceRegistro de la sesión
+  sesion: { nombre: "Las cuatro barreras que frenan la IA en tus clientes", fecha: "Jueves 3 de diciembre de 2026", fechaCorta: "jueves 3 de diciembre", horaInicio: "5:30 p. m.", inicioISO: "2026-12-03T17:30:00-05:00", finISO: "2026-12-03T19:00:00-05:00", hora: "5:30 a 7:00 p. m. (hora Bogotá)", medio: "Encuentro online sincrónico en Google Meet", enlaceRegistro: "" }, // PENDIENTE: enlaceRegistro de la sesión
   apertura: "Miércoles 27 de enero de 2027",
   precios: {
     valorComercial: 497,
@@ -954,29 +991,31 @@ const LANDING_CONFIG = {
 
   /* ── Textos por fase ── */
   var CTA = {
-    sesion:         ['Reservar mi cupo en la sesión', 'Reservar cupo'],
+    sesion:         ['Reservar mi cupo en la clase', 'Reservar cupo'],
     cohorte:        ['Quiero estar en la cohorte de enero', 'Levantar la mano'],
     confirmada:     ['Quiero estar en la cohorte de enero', 'Levantar la mano'],
     ultimo_llamado: ['Quiero estar en la cohorte de enero', 'Levantar la mano'],
     cerrada:        ['Avisarme de la próxima cohorte', 'Avisarme']
   };
   var FORM = {
-    sesion:  { titulo: 'Reserva tu cupo en la sesión', intro: 'Clase abierta «' + C.sesion.nombre + '»: ' + C.sesion.fecha.toLowerCase() + ', de ' + C.sesion.hora + ', en Google Meet.' },
+    sesion:  { titulo: 'Reserva tu cupo en la clase', intro: 'Clase abierta «' + C.sesion.nombre + '»: ' + C.sesion.fecha.toLowerCase() + ', de ' + C.sesion.hora + ', en Google Meet.' },
     cohorte: { titulo: 'Levanta la mano para la cohorte de enero', intro: 'Levantar la mano no te obliga a pagar. Te llamamos para revisar contigo las condiciones; el pago se activa solo cuando la cohorte está confirmada.' },
     cerrada: { titulo: 'Avísame de la próxima cohorte', intro: 'La cohorte de enero ya cerró. Déjanos tus datos y te avisamos por WhatsApp cuando abra la próxima.' }
   };
   var formTxt = FORM[fase] || FORM.cohorte;
 
   /* ── Franjas ── */
-  $('#franja-perfil-txt').textContent = esDCA
-    ? 'Volvemos al ecosistema con lo que construimos en 2026. Para ti, condiciones preferentes.'
-    : 'La evolución de tu práctica en cultura y cambio para generar valor en la era de la IA.';
+  var franjaClase = 'Clase abierta en vivo · ' + C.sesion.fechaCorta + ' · ' + C.sesion.horaInicio + ' (hora Bogotá)';
+  $('#franja-perfil-txt').textContent = fase === 'sesion'
+    ? (esDCA ? franjaClase + ' · Para certificados DCA, condiciones preferentes.' : franjaClase)
+    : (esDCA ? 'Volvemos al ecosistema con lo que construimos en 2026. Para ti, condiciones preferentes.'
+             : 'La evolución de tu práctica en cultura y cambio para generar valor en la era de la IA.');
   var franjaFase = { confirmada: 'Cohorte confirmada · Abrimos el ' + C.apertura.charAt(0).toLowerCase() + C.apertura.slice(1), ultimo_llamado: 'Último llamado hasta el ' + C.precios.corteLanzamiento };
   if (franjaFase[fase]) { var ff = $('#franja-fase'); ff.innerHTML = '<div class="wrap"></div>'; ff.firstChild.textContent = franjaFase[fase]; ff.hidden = false; }
 
   /* ── CTAs, WhatsApp, datos de sesión ── */
   $$('[data-cta]').forEach(function (a) { a.textContent = a.hasAttribute('data-cta-corto') ? CTA[fase][1] : CTA[fase][0]; });
-  $('#btn-enviar').textContent = fase === 'cerrada' ? 'Avisarme de la próxima cohorte' : (fase === 'sesion' ? 'Reservar mi cupo en la sesión' : 'Levantar la mano');
+  $('#btn-enviar').textContent = fase === 'cerrada' ? 'Avisarme de la próxima cohorte' : (fase === 'sesion' ? 'Reservar mi cupo en la clase' : 'Levantar la mano');
   $$('[data-whatsapp]').forEach(function (a) { a.href = URL_WA; });
   $$('[data-apertura]').forEach(function (el) { el.textContent = C.apertura.charAt(0).toLowerCase() + C.apertura.slice(1); });
   $$('[data-sesion-fecha]').forEach(function (el) { el.textContent = C.sesion.fecha; });
@@ -988,7 +1027,9 @@ const LANDING_CONFIG = {
   /* Textos que solo valen para la fase «sesion»; el HTML trae esa fase por defecto */
   if (fase !== 'sesion') {
     $$('[data-opc-sesion]').forEach(function (el) { el.hidden = true; });
-    $('#hero-micro').textContent = '4 semanas · Presencial virtual · Apertura ' + C.apertura.charAt(0).toLowerCase() + C.apertura.slice(1) + ' · Cupos sujetos a cohorte mínima';
+    $$('[data-solo-cohorte]').forEach(function (el) { el.hidden = false; });
+    var cal = $('#calendario'); cal.open = true; cal.classList.add('plegable--abierto');
+    $('#hero-micro').textContent = '4 semanas · En línea y en vivo · Apertura ' + C.apertura.charAt(0).toLowerCase() + C.apertura.slice(1) + ' · Cupos sujetos a cohorte mínima';
     $('#h-faq').textContent = fase === 'cerrada' ? 'Lo que conviene aclarar antes de dejar tus datos.' : 'Lo que conviene aclarar antes de levantar la mano.';
     var f1 = $('#faq-1');
     f1.querySelector('summary').firstChild.textContent = '¿Levantar la mano me obliga a pagar?';
@@ -1014,7 +1055,11 @@ const LANDING_CONFIG = {
   var usd = function (n) { return 'US$ ' + n; };
   if (fase === 'cerrada') {
     $('#inversion').hidden = true;
+    $('#que-te-llevas').classList.add('section--platinum'); $('#faq').classList.remove('section--soft');
   } else if (fase !== 'sesion') {
+    /* Fuera de «sesion»: Inversión vuelve antes de las preguntas, y se restituyen los fondos alternados */
+    var faq = $('#faq'); faq.parentNode.insertBefore($('#inversion'), faq);
+    $('#que-te-llevas').classList.add('section--platinum'); faq.classList.remove('section--soft');
     $('#inv-sesion').hidden = true;
     $('#inv-label').textContent = 'Inversión y condiciones';
     var hInv = $('#h-inversion'); hInv.classList.remove('h2-lineas', 'h2-lineas--fluida'); hInv.textContent = 'Condiciones de la cohorte de enero.';
@@ -1040,10 +1085,38 @@ const LANDING_CONFIG = {
     box.innerHTML = html; box.hidden = false;
   }
 
+  /* ── Guardar la clase en el calendario (confirmación de la fase «sesion») ── */
+  function enlacesCalendario() {
+    var utc = function (iso) { return new Date(iso).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); };
+    var ini = utc(C.sesion.inicioISO), fin = utc(C.sesion.finISO);
+    var titulo = 'Clase abierta · ' + C.sesion.nombre;
+    var detalle = C.sesion.medio + '. Te enviamos el enlace por WhatsApp. Trae tu caso: una iniciativa de IA que quieras mejorar, sin datos de tus clientes. Sin grabación.';
+    var caja = document.createElement('div'); caja.className = 'cal';
+    var t = document.createElement('p'); t.className = 'cal__t'; t.textContent = 'Guarda la fecha en tu calendario:'; caja.appendChild(t);
+    var g = document.createElement('a'); g.className = 'cal__btn'; g.target = '_blank'; g.rel = 'noopener';
+    g.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent(titulo) +
+      '&dates=' + ini + '/' + fin + '&details=' + encodeURIComponent(detalle) + '&location=' + encodeURIComponent('Google Meet') + '&ctz=America/Bogota';
+    g.textContent = 'Google Calendar';
+    g.addEventListener('click', function () { track('calendario_click', { destino: 'google' }); });
+    var esc = function (x) { return x.replace(/\\/g, '\\\\').replace(/([,;])/g, '\\$1'); };
+    var ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Digital Change Academy//Clase abierta//ES', 'CALSCALE:GREGORIAN', 'BEGIN:VEVENT',
+      'UID:clase-abierta-adn-ia-20261203@digitalchangeadvisors.com', 'DTSTAMP:' + utc(new Date().toISOString()),
+      'DTSTART:' + ini, 'DTEND:' + fin, 'SUMMARY:' + esc(titulo), 'DESCRIPTION:' + esc(detalle), 'LOCATION:Google Meet',
+      'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
+    var o = document.createElement('a'); o.className = 'cal__btn';
+    try { o.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar;charset=utf-8' })); }
+    catch (_) { o.href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics); }
+    o.download = 'clase-abierta-adn-ia.ics';
+    o.textContent = 'Outlook o Apple Calendar (.ics)';
+    o.addEventListener('click', function () { track('calendario_click', { destino: 'ics' }); });
+    var fila = document.createElement('div'); fila.className = 'cal__fila'; fila.appendChild(g); fila.appendChild(o); caja.appendChild(fila);
+    return caja;
+  }
+
   /* ── Formulario por perfil y fase ── */
   var form = $('#form');
   $$('[data-solo-perfil]').forEach(function (el) {
-    var visible = el.getAttribute('data-solo-perfil') === perfil && fase !== 'cerrada';
+    var visible = el.getAttribute('data-solo-perfil') === perfil && fase !== 'cerrada' && !(fase === 'sesion' && el.hasAttribute('data-oculto-sesion'));
     el.hidden = !visible;
     $$('input, select', el).forEach(function (c) { c.disabled = !visible; });
   });
@@ -1138,14 +1211,15 @@ const LANDING_CONFIG = {
         var s = document.createElement('strong');
         s.textContent = fase === 'cerrada'
           ? 'Gracias, ' + primerNombre + '. Te avisamos por WhatsApp cuando abra la próxima cohorte.'
-          : fase === 'sesion' ? 'Gracias, ' + primerNombre + '. Te escribimos por WhatsApp para confirmar tu cupo y enviarte el enlace de la sesión.'
+          : fase === 'sesion' ? 'Gracias, ' + primerNombre + '. Tu cupo en la clase está reservado. Te escribimos por WhatsApp para confirmarlo y enviarte el enlace de Google Meet.'
           : 'Gracias, ' + primerNombre + '. Te escribimos por WhatsApp en menos de 48 horas.';
         ok.appendChild(s);
         if (fase === 'sesion' && C.sesion.enlaceRegistro) {
           var pr = document.createElement('p'), a = document.createElement('a');
-          a.href = C.sesion.enlaceRegistro; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Completa aquí tu registro a la sesión del ' + C.sesion.fecha.toLowerCase();
+          a.href = C.sesion.enlaceRegistro; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Completa aquí tu registro a la clase del ' + C.sesion.fecha.toLowerCase();
           pr.appendChild(a); ok.appendChild(pr);
         }
+        if (fase === 'sesion') ok.appendChild(enlacesCalendario());
         $('#form-campos').hidden = true; ok.hidden = false; ok.focus();
         track('form_submit', { demo: !!res.demo });
       } else {
@@ -1181,6 +1255,9 @@ const LANDING_CONFIG = {
   $$('[data-cta]').forEach(function (a) { a.addEventListener('click', function () { track('cta_click', { bloque: a.getAttribute('data-bloque') }); }); });
   $$('[data-whatsapp]').forEach(function (a) { a.addEventListener('click', function () { track('whatsapp_click', { bloque: a.getAttribute('data-bloque') }); }); });
   $$('[data-evento]').forEach(function (a) { a.addEventListener('click', function () { track(a.getAttribute('data-evento')); }); });
+  $('#calendario').addEventListener('toggle', function (e) {
+    if (e.target.open) { $$('.reveal', e.target).forEach(function (el) { el.classList.add('is-in'); }); track('calendario_open'); }
+  });
   $$('.faq details').forEach(function (d) { d.addEventListener('toggle', function () { if (d.open) track('faq_open', { pregunta: d.querySelector('summary').textContent.trim() }); }); });
 
   var scroll75 = false;
