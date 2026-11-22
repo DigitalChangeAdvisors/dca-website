@@ -50,13 +50,14 @@
     },
     {
       "@type": "Event",
-      "name": "Sesión en vivo · Certificación Experto Cultura y Cambio ADN IA",
-      "description": "Sesión en vivo de presentación de la Certificación Experto Cultura y Cambio ADN IA, cohorte enero 2027.",
-      "startDate": "2026-12-03T18:30:00-05:00",
-      "endDate": "2026-12-03T20:00:00-05:00",
+      "name": "Clase abierta · Las cuatro barreras que frenan la IA en tus clientes",
+      "description": "Clase abierta en vivo para expertos en cultura y cambio: DICO y las cuatro barreras aplicadas a una iniciativa de IA. Al cierre se presenta la Certificación Experto Cultura y Cambio ADN IA, cohorte enero 2027. Encuentro online sincrónico en Google Meet, sin grabación.",
+      "startDate": "2026-12-03T17:30:00-05:00",
+      "endDate": "2026-12-03T19:00:00-05:00",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-      "location": { "@type": "VirtualLocation", "url": "https://digitalchangeadvisors.com/certificacion-adn-ia/" },
+      "location": { "@type": "VirtualLocation", "name": "Google Meet", "url": "https://digitalchangeadvisors.com/certificacion-adn-ia/" },
+      "isAccessibleForFree": true,
       "organizer": { "@id": "https://digitalchangeadvisors.com/#organization" },
       "performer": { "@type": "Person", "name": "César Lozano", "url": "https://digitalchangeadvisors.com/autor/cesar-lozano/" },
       "image": "https://digitalchangeadvisors.com/certificacion-adn-ia/assets/og-adn-ia.jpg",
@@ -299,9 +300,6 @@
   .resultados + .soporte { margin-top: 28px; }
   .obtienes__lista { margin: 12px 0 0; padding-left: 18px; font-size: 15.5px; }
   .obtienes__lista li { margin-top: 4px; }
-  .cierre__lista { margin: 14px 0 0; padding-left: 20px; }
-  .cierre__lista li { margin-top: 8px; }
-  .cierre__lista li::marker { color: var(--gold); }
 
   .obtienes-guia { display: grid; gap: 20px; margin-top: 48px; }
   .panel { border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; background: #fff; }
@@ -321,7 +319,27 @@
   @media (max-width: 420px) { .panel--media { flex-direction: column; } }
 
   /* ── Bloque 8 · Inversión ── */
-  .inversion__aviso { margin-top: 28px; padding: 24px 26px; border-left: 4px solid var(--gold); background: #fff; border-radius: 0 var(--radius) var(--radius) 0; font-size: 18px; }
+  /* Fase «sesion»: tarjeta de la clase abierta (objetivo + agenda | datos + obsequio + CTA) */
+  .clase { margin-top: 28px; display: grid; gap: 28px; padding: 28px 26px; border-left: 4px solid var(--gold); background: #fff; border-radius: 0 var(--radius) var(--radius) 0; }
+  .clase__objetivo { font-size: 19px; line-height: 1.55; }
+  .clase__k, .clase__datos dt { font-size: 12.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-ink); }
+  .clase__k { margin-top: 24px; }
+  .clase__agenda { margin: 10px 0 0; padding-left: 22px; }
+  .clase__agenda li { margin-top: 10px; }
+  .clase__agenda li::marker { color: var(--gold); font-weight: 700; }
+  .clase__datos { margin: 0; display: grid; gap: 12px; }
+  .clase__datos dd { margin: 2px 0 0; font-size: 17px; }
+  .clase__datos div:first-child dd { font-family: var(--serif); font-size: 22px; line-height: 1.25; }
+  .clase__obsequio { margin-top: 24px; padding: 16px 18px; background: var(--teal-soft); border-radius: 8px; font-size: 16px; }
+  .clase__caso { margin-top: 12px; padding: 0 18px; font-size: 16px; }
+  .clase__lado .btn { margin-top: 24px; width: 100%; }
+  .clase__nota { margin-top: 12px; font-size: 14px; color: var(--muted); }
+  /* En móvil el H2 de la clase baja de tamaño para que cada línea quepa en un renglón (pirámide L1 ≥ L2, sin la viuda «frenan») */
+  @media (max-width: 767px) { .h2-lineas--fluida { font-size: min(28px, 6.2vw); } }
+  @media (min-width: 900px) {
+    .clase { grid-template-columns: 1.4fr 1fr; gap: 40px; padding: 34px 36px; }
+    .clase__lado { border-left: 1px solid var(--border); padding-left: 36px; }
+  }
   .precio { margin-top: 32px; max-width: 620px; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 26px; box-shadow: 0 10px 30px rgba(30,42,56,0.06); }
   .precio__ref { font-size: 15px; color: var(--muted); }
   .precio__ref s { font-weight: 600; }
@@ -466,16 +484,16 @@
           Hablar por WhatsApp
         </a>
       </div>
-      <p class="hero__micro" id="hero-micro">Sesión en vivo de 90 minutos, en línea · Sin costo para expertos en cultura y cambio y profesionales de TI</p>
+      <p class="hero__micro" id="hero-micro">Clase abierta de 90 minutos en Google Meet · Sin costo para expertos en cultura y cambio y profesionales de TI</p>
       <div class="hero__aval">
         <div class="sello sello--hero" data-sello>
           <span class="sello__fb" aria-hidden="true">ADN IA<small>Experto Cultura y Cambio</small></span>
           <picture><source srcset="assets/sello-adn-ia-v2.webp" type="image/webp"><img src="assets/sello-adn-ia-v2.png" alt="Sello de la certificación Experto Cultura y Cambio ADN IA" width="192" height="192" decoding="async"></picture>
         </div>
         <div class="sesion-card" id="sesion-card">
-          <div class="sesion-card__k">Sesión en vivo</div>
+          <div class="sesion-card__k">Clase abierta en vivo</div>
           <div class="sesion-card__d" data-sesion-fecha>Jueves 3 de diciembre de 2026</div>
-          <div class="sesion-card__h" data-sesion-hora>6:30 a 8:00 p. m. (hora Bogotá)</div>
+          <div class="sesion-card__h" data-sesion-hora>5:30 a 7:00 p. m. (hora Bogotá)</div>
         </div>
       </div>
       </div>
@@ -708,9 +726,33 @@
      para que en fase «sesion» no exista ningún precio en la página (ni sin JS). -->
 <section class="section section--soft" id="inversion" aria-labelledby="h-inversion">
   <div class="wrap">
-    <span class="label">Inversión y condiciones</span>
-    <h2 id="h-inversion" class="reveal">Condiciones de la cohorte de enero.</h2>
-    <p class="inversion__aviso" id="inv-sesion">Las condiciones de lanzamiento se presentan en vivo el 3 de diciembre.</p>
+    <!-- Fase «sesion» (HTML por defecto): la clase abierta. En las demás fases el script
+         cambia etiqueta y H2 a «Inversión y condiciones» y oculta #inv-sesion. -->
+    <span class="label" id="inv-label">Clase abierta · En vivo</span>
+    <h2 id="h-inversion" class="reveal h2-lineas h2-lineas--fluida"><span class="line">Las cuatro barreras que frenan</span> <span class="line">la IA en tus clientes.</span></h2>
+    <div class="clase reveal" id="inv-sesion">
+      <div class="clase__cuerpo">
+        <p class="clase__objetivo">Sales sabiendo ubicar cuál de las cuatro barreras frena una iniciativa de IA de tu cliente y qué conversación abrir con el líder del proceso. Te sirve al día siguiente, para ayudar a tus clientes.</p>
+        <p class="clase__k">En 90 minutos</p>
+        <ol class="clase__agenda">
+          <li><strong>La brecha.</strong> Por qué la productividad individual con IA no llega al KPI.</li>
+          <li><strong>DICO en vivo.</strong> Las cuatro barreras aplicadas a un caso de práctica y al tuyo.</li>
+          <li><strong>El contraste.</strong> De operar la adopción proyecto a proyecto a habilitar al líder del proceso.</li>
+          <li><strong>Al cierre.</strong> La Certificación Experto Cultura y Cambio ADN IA.</li>
+        </ol>
+        <p class="clase__obsequio"><strong>Tu obsequio:</strong> el Lienzo de las cuatro barreras, para diagnosticar cualquier iniciativa de IA de tus clientes.</p>
+        <p class="clase__caso"><strong>Trae tu caso:</strong> una iniciativa de IA que quieras mejorar, sin datos de tus clientes.</p>
+      </div>
+      <div class="clase__lado">
+        <dl class="clase__datos">
+          <div><dt>Fecha</dt><dd data-sesion-fecha>Jueves 3 de diciembre de 2026</dd></div>
+          <div><dt>Hora</dt><dd data-sesion-hora>5:30 a 7:00 p. m. (hora Bogotá)</dd></div>
+          <div><dt>Medio</dt><dd data-sesion-medio>Encuentro online sincrónico en Google Meet</dd></div>
+        </dl>
+        <a class="btn btn--primary" href="#registro" data-cta data-bloque="clase_abierta">Reservar mi cupo en la sesión</a>
+        <p class="clase__nota">Sin costo para expertos en cultura y cambio y profesionales de TI. No habrá grabación: es un encuentro de trabajo en vivo, y ahí se presentan las condiciones de lanzamiento de la cohorte de enero.</p>
+      </div>
+    </div>
     <div id="inv-precios" hidden></div>
   </div>
 </section>
@@ -722,7 +764,7 @@
     <h2 id="h-faq">Lo que conviene aclarar antes de reservar tu cupo.</h2>
     <div class="faq">
       <details id="faq-1"><summary>¿Reservar mi cupo en la sesión me compromete a algo?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
-        <p>No. La sesión es sin costo y sirve para conocer la certificación. Inscribirte en la cohorte es una decisión aparte.</p></details>
+        <p>No. La clase abierta es sin costo y vale por sí sola: te llevas el diagnóstico de las cuatro barreras y, al cierre, conoces la certificación. Inscribirte en la cohorte es una decisión aparte.</p></details>
       <details><summary>¿Qué pasa si no se completa la cohorte?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
         <p>No se cobra nada o, si ya pagaste, devolvemos el 100&nbsp;%.</p></details>
       <details><summary>¿Necesito saber de IA?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
@@ -747,12 +789,7 @@
     <div>
       <span class="label">Tu siguiente paso</span>
       <h2 id="h-cierre"><span class="line">El líder del proceso ya existe en cada cliente.</span> <span class="line">Falta quien lo habilite, y puedes ser tú.</span></h2>
-      <p class="cierre__intro" id="cierre-intro">En la sesión en vivo del jueves 3 de diciembre de 2026 verás:</p>
-      <ul class="cierre__lista" id="cierre-lista">
-        <li>Por qué el retorno de la IA se pierde en la última milla humana.</li>
-        <li>DICO y las cuatro barreras que frenan la adopción.</li>
-        <li>Cómo funciona el sprint y las condiciones de lanzamiento de la cohorte.</li>
-      </ul>
+      <p class="cierre__intro" id="cierre-intro">Clase abierta «Las cuatro barreras que frenan la IA en tus clientes»: jueves 3 de diciembre de 2026, de 5:30 a 7:00 p. m. (hora Bogotá), en Google Meet.</p>
     </div>
 
     <div class="cierre__extra">
@@ -878,12 +915,12 @@
 const LANDING_CONFIG = {
   fase: "sesion", // "sesion" | "cohorte" | "confirmada" | "ultimo_llamado" | "cerrada"
   manosLevantadas: 0, // el contador se muestra solo si es >= 3
-  grabacionUrl: "",   // URL de inserción (embed) de la grabación; se muestra en fases de cohorte si no está vacía
+  grabacionUrl: "",   // DEJAR VACÍO: la página anuncia que la clase abierta no se graba (decisión 2026-11-22)
   whatsappNumero: "573108450530", // +57 310 845 0530
   // Backend: Apps Script «Academy · Motor Sprint ADN IA Consultores» (el mismo de /adn-ia-consultores),
   // receptor tipo «mano-levantada» → pestaña «Inscripciones». Ver materiales/certificacion-adn-ia/apps-script/README.md
   formularioEndpoint: "https://script.google.com/macros/s/AKfycbyCmsXsK5xCRPvSis1j7WDEghF6YX6-l3LLZf9mo1MSDBtLCyAUQqII6a83ynXFG26tOg/exec",
-  sesion: { fecha: "Jueves 3 de diciembre de 2026", hora: "6:30 a 8:00 p. m. (hora Bogotá)", enlaceRegistro: "" }, // PENDIENTE: enlaceRegistro de la sesión
+  sesion: { nombre: "Las cuatro barreras que frenan la IA en tus clientes", fecha: "Jueves 3 de diciembre de 2026", hora: "5:30 a 7:00 p. m. (hora Bogotá)", medio: "Encuentro online sincrónico en Google Meet", enlaceRegistro: "" }, // PENDIENTE: enlaceRegistro de la sesión
   apertura: "Miércoles 27 de enero de 2027",
   precios: {
     valorComercial: 497,
@@ -924,7 +961,7 @@ const LANDING_CONFIG = {
     cerrada:        ['Avisarme de la próxima cohorte', 'Avisarme']
   };
   var FORM = {
-    sesion:  { titulo: 'Reserva tu cupo en la sesión', intro: 'En la sesión en vivo del ' + C.sesion.fecha.toLowerCase() + ' verás:' },
+    sesion:  { titulo: 'Reserva tu cupo en la sesión', intro: 'Clase abierta «' + C.sesion.nombre + '»: ' + C.sesion.fecha.toLowerCase() + ', de ' + C.sesion.hora + ', en Google Meet.' },
     cohorte: { titulo: 'Levanta la mano para la cohorte de enero', intro: 'Levantar la mano no te obliga a pagar. Te llamamos para revisar contigo las condiciones; el pago se activa solo cuando la cohorte está confirmada.' },
     cerrada: { titulo: 'Avísame de la próxima cohorte', intro: 'La cohorte de enero ya cerró. Déjanos tus datos y te avisamos por WhatsApp cuando abra la próxima.' }
   };
@@ -944,12 +981,12 @@ const LANDING_CONFIG = {
   $$('[data-apertura]').forEach(function (el) { el.textContent = C.apertura.charAt(0).toLowerCase() + C.apertura.slice(1); });
   $$('[data-sesion-fecha]').forEach(function (el) { el.textContent = C.sesion.fecha; });
   $$('[data-sesion-hora]').forEach(function (el) { el.textContent = C.sesion.hora; });
+  $$('[data-sesion-medio]').forEach(function (el) { el.textContent = C.sesion.medio; });
   $('#sesion-card').hidden = fase !== 'sesion';
   $('#form-titulo').textContent = formTxt.titulo;
   $('#cierre-intro').textContent = formTxt.intro;
   /* Textos que solo valen para la fase «sesion»; el HTML trae esa fase por defecto */
   if (fase !== 'sesion') {
-    $('#cierre-lista').hidden = true;
     $$('[data-opc-sesion]').forEach(function (el) { el.hidden = true; });
     $('#hero-micro').textContent = '4 semanas · Presencial virtual · Apertura ' + C.apertura.charAt(0).toLowerCase() + C.apertura.slice(1) + ' · Cupos sujetos a cohorte mínima';
     $('#h-faq').textContent = fase === 'cerrada' ? 'Lo que conviene aclarar antes de dejar tus datos.' : 'Lo que conviene aclarar antes de levantar la mano.';
@@ -979,6 +1016,8 @@ const LANDING_CONFIG = {
     $('#inversion').hidden = true;
   } else if (fase !== 'sesion') {
     $('#inv-sesion').hidden = true;
+    $('#inv-label').textContent = 'Inversión y condiciones';
+    var hInv = $('#h-inversion'); hInv.classList.remove('h2-lineas', 'h2-lineas--fluida'); hInv.textContent = 'Condiciones de la cohorte de enero.';
     var p = C.precios, tabla = esDCA ? p.dca : p.noCertificado;
     var anticipadoCerrado = fase === 'ultimo_llamado';
     var box = $('#inv-precios');
