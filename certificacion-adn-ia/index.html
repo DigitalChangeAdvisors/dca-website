@@ -288,11 +288,18 @@
   .timeline__txt { color: var(--muted); font-size: 16px; }
   @media (min-width: 1024px) {
     .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .timeline--5 { grid-template-columns: repeat(5, 1fr); }
     .timeline li { padding: 38px 0 0; }
     .timeline li::before { left: 22px; right: -24px; top: 11px; bottom: auto; width: auto; height: 2px; }
     .timeline li::after { top: 3px; }
   }
   .soporte { margin-top: 20px; max-width: 760px; }
+  .resultados + .soporte { margin-top: 28px; }
+  .obtienes__lista { margin: 12px 0 0; padding-left: 18px; font-size: 15.5px; }
+  .obtienes__lista li { margin-top: 4px; }
+  .cierre__lista { margin: 14px 0 0; padding-left: 20px; }
+  .cierre__lista li { margin-top: 8px; }
+  .cierre__lista li::marker { color: var(--gold); }
 
   .obtienes-guia { display: grid; gap: 20px; margin-top: 48px; }
   .panel { border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; background: #fff; }
@@ -444,7 +451,7 @@
   </div>
   <div class="wrap hero__grid">
     <div>
-      <p class="chapeau">Tus clientes ya invirtieron en IA y sus equipos no la incorporan al trabajo diario. Esta certificación te lleva a rediseñar tus prácticas para habilitar al líder del proceso: a través de él, la adopción escala más rápido con impacto en su KPI.</p>
+      <p class="chapeau">Tus clientes ya invirtieron en IA y sus equipos no la incorporan al trabajo diario. Esta certificación te lleva a rediseñar tus prácticas para habilitar al líder del proceso: a través de él, la adopción llega a todo su equipo, con impacto en su KPI.</p>
       <div class="hero__accion">
       <div class="ctas">
         <a class="btn btn--primary" href="#registro" data-cta data-bloque="heroe">Reservar mi cupo en la sesión</a>
@@ -453,7 +460,7 @@
           Hablar por WhatsApp
         </a>
       </div>
-      <p class="hero__micro">4 semanas · Presencial virtual · Apertura <span data-apertura>miércoles 27 de enero de 2027</span> · Cupos sujetos a cohorte mínima</p>
+      <p class="hero__micro" id="hero-micro">Sesión en vivo de 90 minutos, en línea · Sin costo para expertos en cultura y cambio y profesionales de TI</p>
       <div class="hero__aval">
         <div class="sello sello--hero" data-sello>
           <span class="sello__fb" aria-hidden="true">ADN IA<small>Experto Cultura y Cambio</small></span>
@@ -531,6 +538,11 @@
       </thead>
       <tbody>
         <tr role="row">
+          <th scope="row" role="rowheader">Ante la IA que no rinde</th>
+          <td role="cell" class="paralelo__igual" data-col="Quien sigue igual">Propone más capacitación y comunicación</td>
+          <td role="cell" class="paralelo__adn" data-col="Experto ADN IA">Habilita la decisión de cortar, recuperar o esperar evidencia</td>
+        </tr>
+        <tr role="row">
           <th scope="row" role="rowheader">Dónde interviene</th>
           <td role="cell" class="paralelo__igual" data-col="Quien sigue igual">En cada persona, una a una</td>
           <td role="cell" class="paralelo__adn" data-col="Experto ADN IA">En el líder del proceso, dueño del&nbsp;KPI</td>
@@ -543,7 +555,7 @@
         <tr role="row">
           <th scope="row" role="rowheader">Cómo demuestra su trabajo</th>
           <td role="cell" class="paralelo__igual" data-col="Quien sigue igual">Satisfacción y asistencia</td>
-          <td role="cell" class="paralelo__adn" data-col="Experto ADN IA">Un caso con el KPI, ante la gerencia&nbsp;general</td>
+          <td role="cell" class="paralelo__adn" data-col="Experto ADN IA">Una conducta medida por capas, hasta el&nbsp;KPI</td>
         </tr>
         <tr role="row">
           <th scope="row" role="rowheader">Quién lo contrata</th>
@@ -565,25 +577,26 @@
 <section class="section section--platinum" aria-labelledby="h-llevas">
   <div class="wrap">
     <span class="label">Qué te llevas</span>
-    <h2 id="h-llevas" class="promesa reveal">Al certificarte, podrás acelerar la adopción de la IA en el flujo diario de trabajo de tus clientes, con impacto medible en el KPI que importa.</h2>
+    <h2 id="h-llevas" class="promesa reveal">Al certificarte, sabrás habilitar al líder que decide qué cortar y qué recuperar.</h2>
     <ul class="resultados">
       <li class="resultado reveal">
         <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="15" cy="15" r="9"/><path d="M22 22l8 8" stroke-linecap="round"/><path d="M11 15h8" stroke-linecap="round"/></svg>
-        <div><h3>Leer la brecha</h3><p>Leer la brecha humana que frena la IA de un cliente.</p></div>
+        <div><h3>Separar las señales</h3><p>Distingues qué síntomas vienen de la tecnología y cuáles de la adopción.</p></div>
       </li>
       <li class="resultado reveal">
         <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M14 22l8-8" stroke-linecap="round"/><path d="M16 11l2-2a5.5 5.5 0 0 1 8 8l-2 2" stroke-linecap="round"/><path d="M20 25l-2 2a5.5 5.5 0 0 1-8-8l2-2" stroke-linecap="round"/></svg>
-        <div><h3>Conectarla con el negocio</h3><p>Conectar esa brecha con un indicador de negocio.</p></div>
+        <div><h3>Diagnosticar con DICO</h3><p>Ubicas las cuatro barreras: lo que las personas creen, lo que el rol necesita poder hacer, lo que el líder decide y conduce, y lo que la cultura premia y tolera.</p></div>
       </li>
       <li class="resultado reveal">
         <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 28h24" stroke-linecap="round"/><path d="M9 23l6-6 5 4 8-10" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 11h5v5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div><h3>Diseñar la intervención</h3><p>Diseñar una intervención con impacto medible.</p></div>
+        <div><h3>Experimentar en tu flujo</h3><p>Rediseñas tu entregable estrella con la IA como validadora de lo que tú generas.</p></div>
       </li>
       <li class="resultado reveal">
         <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="6" y="7" width="24" height="16" rx="1.5"/><path d="M18 23v6M13 30h10" stroke-linecap="round"/><path d="M11 18l4-4 3 3 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div><h3>Presentar el caso</h3><p>Presentar el caso ante la gerencia general.</p></div>
+        <div><h3>Preparar la conversación</h3><p>Llevas al líder un Brief de una página: qué cortar, qué recuperar o qué esperar, con fecha.</p></div>
       </li>
     </ul>
+    <p class="soporte reveal">Y sales con tu Hoja de Ruta Evolutiva, que incluye tu oferta para cuando la IA no rinde. DICO (Diseño Inverso de Conducta Objetivo) es el marco de Digital Change Academy: parte de la conducta meta y va hacia atrás.</p>
   </div>
 </section>
 
@@ -591,22 +604,22 @@
 <section class="section section--soft" aria-labelledby="h-quien">
   <div class="wrap">
     <span class="label">Para quién es</span>
-    <h2 id="h-quien" class="reveal">Una certificación para quien ya tiene oficio y clientes.</h2>
+    <h2 id="h-quien" class="reveal">Una certificación para quien ya tiene oficio.</h2>
     <div class="quien">
       <div class="quien__col quien__col--si reveal">
         <h3>Es para ti si</h3>
         <ul>
-          <li><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>Acompañas procesos de cultura o cambio en empresas.</li>
-          <li><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>Tienes clientes que ya invirtieron en IA.</li>
-          <li><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>Quieres hablar con quien decide la inversión.</li>
+          <li><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>Acompañas procesos de cultura o cambio, o lideras desde TI iniciativas de IA en empresas.</li>
+          <li><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>Tus clientes ya invirtieron en IA y no ven el retorno.</li>
+          <li><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9.5l4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>Quieres pasar de operar la adopción a habilitar la decisión del líder.</li>
         </ul>
       </div>
       <div class="quien__col quien__col--no reveal">
         <h3>No es para ti si</h3>
         <ul>
-          <li><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14" stroke-linecap="round"/></svg>Buscas un curso de herramientas de IA.</li>
-          <li><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14" stroke-linecap="round"/></svg>No tienes acceso a clientes empresariales.</li>
-          <li><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14" stroke-linecap="round"/></svg>Esperas certificarte sin aplicar en un caso real.</li>
+          <li><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14" stroke-linecap="round"/></svg>Buscas dominar herramientas de IA.</li>
+          <li><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14" stroke-linecap="round"/></svg>Esperas certificarte sin experimentar ni presentar tu audición en vivo.</li>
+          <li><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14" stroke-linecap="round"/></svg>Quieres reemplazar tu modelo de cambio: aquí se actualiza, no se descarta.</li>
         </ul>
       </div>
     </div>
@@ -620,22 +633,23 @@
 <section class="section" aria-labelledby="h-como">
   <div class="wrap">
     <span class="label">Cómo funciona</span>
-    <h2 id="h-como" class="reveal">Un mes, un cliente real, cuatro experimentos.</h2>
+    <h2 id="h-como" class="reveal">Un mes, un caso de práctica, cuatro experimentos.</h2>
     <div class="datos reveal">
       <div class="dato"><strong>4</strong><span>semanas</span></div>
-      <div class="dato"><strong>4</strong><span>horas por semana</span></div>
+      <div class="dato"><strong>4</strong><span>lecciones</span></div>
       <div class="dato"><strong>4</strong><span>experimentos</span></div>
       <div class="dato"><strong>En vivo</strong><span>presencial virtual</span></div>
     </div>
 
-    <ol class="timeline">
-      <li class="reveal"><div class="timeline__sem">Semana 1</div><div class="timeline__exp">Experimento 1</div><div class="timeline__txt">Leer la brecha en tu cliente.</div></li>
-      <li class="reveal"><div class="timeline__sem">Semana 2</div><div class="timeline__exp">Experimento 2</div><div class="timeline__txt">Conectar la brecha con un indicador de negocio.</div></li>
-      <li class="reveal"><div class="timeline__sem">Semana 3</div><div class="timeline__exp">Experimento 3</div><div class="timeline__txt">Diseñar la intervención.</div></li>
-      <li class="reveal"><div class="timeline__sem">Semana 4</div><div class="timeline__exp">Experimento 4</div><div class="timeline__txt">Presentar el caso ante la gerencia general.</div></li>
+    <ol class="timeline timeline--5">
+      <li class="reveal"><div class="timeline__sem">Día 0</div><div class="timeline__exp">Fundamentación en vivo</div><div class="timeline__txt">120 minutos: el marco DICO y las cuatro barreras, una lección por cada una.</div></li>
+      <li class="reveal"><div class="timeline__sem">Semana 1</div><div class="timeline__exp">Experimentos 1 y 2</div><div class="timeline__txt">Lo que frena la conducta se escucha antes de proponerla. Tu entregable estrella, rediseñado.</div></li>
+      <li class="reveal"><div class="timeline__sem">Semana 2</div><div class="timeline__exp">Experimentos 3 y 4</div><div class="timeline__txt">Predicas con el ejemplo y preparas la conversación con el líder. Tu práctica actualizada y tu ruta.</div></li>
+      <li class="reveal"><div class="timeline__sem">Semana 3</div><div class="timeline__exp">Lectura y ensayo</div><div class="timeline__txt">Lectura guiada de la novela ReturnAI y tu ensayo.</div></li>
+      <li class="reveal"><div class="timeline__sem">Semana 4</div><div class="timeline__exp">Mentoring de cierre</div><div class="timeline__txt">120 minutos en vivo, con tu audición de certificación y el Análisis de Ruta Evolutiva.</div></li>
     </ol>
     <!-- Excepción aprobada por el propietario (2026-11-21): se nombra «MATCH» en esta página porque los certificados DCA conocen el concepto MATCH, no el Modelo ARIA. -->
-    <p class="soporte reveal">La certificación equivale a un sprint del modelo MATCH de DCA: lecciones breves para el marco, un experimento por semana sobre tu cliente real y una mentoría grupal de cierre. Modalidad presencial virtual, con sesiones sincrónicas en línea.</p>
+    <p class="soporte reveal">Trabajas sobre un caso de práctica que construyes tú: una iniciativa de IA ya invertida que no rinde, sin datos reales de clientes. Lo haces en pareja o trío con colegas de la cohorte, que actúan como tus pares críticos. La certificación equivale a un sprint del modelo MATCH de DCA, en modalidad presencial virtual con sesiones sincrónicas en línea.</p>
 
     <div class="obtienes-guia">
       <div class="panel panel--obtienes reveal">
@@ -646,6 +660,11 @@
         <div>
           <h3>Qué obtienes al aprobar</h3>
           <p>Certificación Experto Cultura y Cambio ADN IA, emitida por Digital Change Advisors.</p>
+          <ul class="obtienes__lista">
+            <li>Tu Hoja de Ruta Evolutiva, con tu oferta para cuando la IA no rinde.</li>
+            <li>Tu Brief para el líder y tu entregable estrella rediseñado.</li>
+            <li>La novela ReturnAI, para la lectura guiada de la semana 3.</li>
+          </ul>
           <!-- PENDIENTE: confirmar formato de evaluación (validación final para aprobar) -->
         </div>
       </div>
@@ -688,20 +707,22 @@
 <section class="section" aria-labelledby="h-faq">
   <div class="wrap narrow">
     <span class="label">Preguntas frecuentes</span>
-    <h2 id="h-faq">Lo que conviene aclarar antes de levantar la mano.</h2>
+    <h2 id="h-faq">Lo que conviene aclarar antes de reservar tu cupo.</h2>
     <div class="faq">
-      <details><summary>¿Levantar la mano me obliga a pagar?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
-        <p>No. El pago se activa solo cuando la cohorte de 5 está confirmada, y te contactamos personalmente para acordarlo.</p></details>
+      <details id="faq-1"><summary>¿Reservar mi cupo en la sesión me compromete a algo?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
+        <p>No. La sesión es sin costo y sirve para conocer la certificación. Inscribirte en la cohorte es una decisión aparte.</p></details>
       <details><summary>¿Qué pasa si no se completa la cohorte?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
         <p>No se cobra nada o, si ya pagaste, devolvemos el 100&nbsp;%.</p></details>
       <details><summary>¿Necesito saber de IA?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
-        <p>No necesitas saber programar ni configurar herramientas. Necesitas entender cómo se mueve el negocio de tus clientes; la certificación te da el método para conectar la brecha humana con el retorno de la IA.</p></details>
+        <p>No necesitas programar ni configurar herramientas. Usas la IA como validadora de lo que tú generas y, al menos una vez, demuestras tu trabajo sin ella.</p></details>
+      <details><summary>¿Necesito un cliente real o expongo datos de mis clientes?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
+        <p>No. Trabajas sobre un caso de práctica que construyes tú: una iniciativa de IA ya invertida que no rinde, sin datos reales de clientes.</p></details>
       <details><summary>¿En qué se diferencia de una certificación en gestión del cambio?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
-        <p>Aquella te prepara para acompañar procesos. Esta te habilita a demostrar retorno sobre la inversión en IA, que es lo que la gerencia general está dispuesta a pagar.</p></details>
+        <p>Aquella te prepara para operar la adopción persona a persona. Esta te habilita para que el líder del proceso la conduzca y decida qué cortar y qué recuperar, medido en el KPI. Tu modelo no se descarta: se actualizan tres supuestos, que el adoptante es racional, que el cambio llega a un estado final estable y que el equipo de cambio opera la adopción.</p></details>
       <details><summary>¿Qué podré ofrecer a mis clientes al certificarme?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
-        <p>Acelerar la adopción de la IA en el flujo diario de trabajo de sus equipos, con impacto medible en el KPI que importa.</p></details>
+        <p>Una oferta para cuando la IA no rinde: separar lo que falla por la tecnología de lo que falla por la adopción, diagnosticar las cuatro barreras y preparar con el líder la decisión de qué cortar y qué recuperar, con un plan de medición hasta el KPI.</p></details>
       <details><summary>¿Cuánto dura y cuánto tiempo exige?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
-        <p>4 semanas, con una dedicación de 4 horas por semana. Cada semana realizas un experimento aplicado sobre un cliente real, en modalidad presencial virtual con sesiones sincrónicas en línea.</p></details>
+        <p>Cuatro semanas. Día 0: fundamentación en vivo de 120 minutos. Semanas 1 y 2: cuatro experimentos de unas 2 horas cada uno, repartidas en cinco días. Semana 3: lectura guiada de ReturnAI (60 a 90 minutos) y un ensayo. Semana 4: mentoring de cierre en vivo de 120 minutos, con tu audición de certificación. Modalidad presencial virtual, con sesiones sincrónicas en línea.</p></details>
       <details><summary>¿Puedo pagar en moneda local?<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke-linecap="round"/></svg></summary>
         <p>Sí. Puedes pagar en pesos colombianos por transferencia a Bancolombia o con cualquier tarjeta de crédito mediante un enlace seguro de Stripe. Te enviamos los datos de pago personalmente cuando se confirma la cohorte.</p></details>
     </div>
@@ -714,7 +735,12 @@
     <div>
       <span class="label">Tu siguiente paso</span>
       <h2 id="h-cierre"><span class="line">El líder del proceso ya existe en cada cliente.</span> <span class="line">Falta quien lo habilite, y puedes ser tú.</span></h2>
-      <p class="cierre__intro" id="cierre-intro">En la sesión en vivo del jueves 3 de diciembre verás cómo cambia tu práctica cuando el foco pasa al líder del proceso, y conocerás las condiciones de lanzamiento de la cohorte.</p>
+      <p class="cierre__intro" id="cierre-intro">En la sesión en vivo del jueves 3 de diciembre de 2026 verás:</p>
+      <ul class="cierre__lista" id="cierre-lista">
+        <li>Por qué el retorno de la IA se pierde en la última milla humana.</li>
+        <li>DICO y las cuatro barreras que frenan la adopción.</li>
+        <li>Cómo funciona el sprint y las condiciones de lanzamiento de la cohorte.</li>
+      </ul>
     </div>
 
     <div class="cierre__extra">
@@ -764,7 +790,7 @@
         <!-- Perfil no certificado -->
         <div class="fila-2" data-solo-perfil="general">
           <div class="campo">
-            <label for="f-anios">Años de experiencia</label>
+            <label for="f-anios">Años de experiencia <span class="opc" data-opc-sesion>(opcional)</span></label>
             <select id="f-anios" name="anios_experiencia" aria-describedby="e-anios">
               <option value="">Elige</option>
               <option>Menos de 5</option>
@@ -775,7 +801,7 @@
             <p class="campo__error" id="e-anios" aria-live="polite"></p>
           </div>
           <div class="campo">
-            <label for="f-clientes">Tipo de clientes que atiendes</label>
+            <label for="f-clientes">Tipo de clientes que atiendes <span class="opc" data-opc-sesion>(opcional)</span></label>
             <select id="f-clientes" name="tipo_clientes" aria-describedby="e-clientes">
               <option value="">Elige</option>
               <option>Grandes empresas</option>
@@ -800,7 +826,7 @@
         <p class="campo__error" id="e-consent" aria-live="polite" style="margin-top:-8px;margin-bottom:14px"></p>
 
         <button class="btn btn--primary" type="submit" id="btn-enviar">Reservar mi cupo en la sesión</button>
-        <p class="form__nota">Te llamamos en menos de 48 horas para revisar contigo las condiciones.</p>
+        <p class="form__nota" id="form-nota">Te escribimos por WhatsApp para confirmar tu cupo y enviarte el enlace de la sesión.</p>
         <div class="form__error" id="form-error" role="alert" hidden></div>
       </div>
       <div class="form__ok" id="form-ok" tabindex="-1" role="status" hidden></div>
@@ -886,7 +912,7 @@ const LANDING_CONFIG = {
     cerrada:        ['Avisarme de la próxima cohorte', 'Avisarme']
   };
   var FORM = {
-    sesion:  { titulo: 'Reserva tu cupo en la sesión', intro: 'En la sesión en vivo del ' + C.sesion.fecha.toLowerCase() + ' verás cómo cambia tu práctica cuando el foco pasa al líder del proceso, y conocerás las condiciones de lanzamiento de la cohorte.' },
+    sesion:  { titulo: 'Reserva tu cupo en la sesión', intro: 'En la sesión en vivo del ' + C.sesion.fecha.toLowerCase() + ' verás:' },
     cohorte: { titulo: 'Levanta la mano para la cohorte de enero', intro: 'Levantar la mano no te obliga a pagar. Te llamamos para revisar contigo las condiciones; el pago se activa solo cuando la cohorte está confirmada.' },
     cerrada: { titulo: 'Avísame de la próxima cohorte', intro: 'La cohorte de enero ya cerró. Déjanos tus datos y te avisamos por WhatsApp cuando abra la próxima.' }
   };
@@ -909,6 +935,17 @@ const LANDING_CONFIG = {
   $('#sesion-card').hidden = fase !== 'sesion';
   $('#form-titulo').textContent = formTxt.titulo;
   $('#cierre-intro').textContent = formTxt.intro;
+  /* Textos que solo valen para la fase «sesion»; el HTML trae esa fase por defecto */
+  if (fase !== 'sesion') {
+    $('#cierre-lista').hidden = true;
+    $$('[data-opc-sesion]').forEach(function (el) { el.hidden = true; });
+    $('#hero-micro').textContent = '4 semanas · Presencial virtual · Apertura ' + C.apertura.charAt(0).toLowerCase() + C.apertura.slice(1) + ' · Cupos sujetos a cohorte mínima';
+    $('#h-faq').textContent = fase === 'cerrada' ? 'Lo que conviene aclarar antes de dejar tus datos.' : 'Lo que conviene aclarar antes de levantar la mano.';
+    var f1 = $('#faq-1');
+    f1.querySelector('summary').firstChild.textContent = '¿Levantar la mano me obliga a pagar?';
+    f1.querySelector('p').textContent = 'No. El pago se activa solo cuando la cohorte de 5 está confirmada, y te contactamos personalmente para acordarlo.';
+    $('#form-nota').textContent = fase === 'cerrada' ? 'Te avisamos por WhatsApp cuando abra la próxima cohorte.' : 'Te llamamos en menos de 48 horas para revisar contigo las condiciones.';
+  }
 
   /* ── Conservar ?perfil (y UTM) en enlaces internos ── */
   var conservar = new URLSearchParams();
@@ -970,8 +1007,8 @@ const LANDING_CONFIG = {
     },
     correo: function (v) { return !v.trim() || /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? '' : 'Revisa tu correo electrónico, o déjalo en blanco.'; },
     anio_certificacion_dca: function (v) { return v.trim() ? '' : 'Indica el año o el número de tu certificación DCA.'; },
-    anios_experiencia: function (v) { return v ? '' : 'Elige tus años de experiencia.'; },
-    tipo_clientes: function (v) { return v ? '' : 'Elige el tipo de clientes que atiendes.'; }
+    anios_experiencia: function (v) { return v || fase === 'sesion' ? '' : 'Elige tus años de experiencia.'; },
+    tipo_clientes: function (v) { return v || fase === 'sesion' ? '' : 'Elige el tipo de clientes que atiendes.'; }
   };
   var ERR_ID = { nombre: 'e-nombre', whatsapp: 'e-whatsapp', correo: 'e-correo', anio_certificacion_dca: 'e-anio', anios_experiencia: 'e-anios', tipo_clientes: 'e-clientes' };
 
@@ -1050,6 +1087,7 @@ const LANDING_CONFIG = {
         var s = document.createElement('strong');
         s.textContent = fase === 'cerrada'
           ? 'Gracias, ' + primerNombre + '. Te avisamos por WhatsApp cuando abra la próxima cohorte.'
+          : fase === 'sesion' ? 'Gracias, ' + primerNombre + '. Te escribimos por WhatsApp para confirmar tu cupo y enviarte el enlace de la sesión.'
           : 'Gracias, ' + primerNombre + '. Te escribimos por WhatsApp en menos de 48 horas.';
         ok.appendChild(s);
         if (fase === 'sesion' && C.sesion.enlaceRegistro) {
