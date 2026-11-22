@@ -1,0 +1,374 @@
+<!doctype html>
+<!-- Obsequio de la clase abierta «Las cuatro barreras que frenan la IA en tus clientes» (3 dic 2026).
+     Herramienta en línea de Digital Change Academy, con acceso hasta el 3 de marzo de 2027 (VENCE, en el script).
+     noindex y fuera del sitemap: se comparte solo por enlace. Retirar el archivo después de esa fecha
+     (ver website/CLAUDE.md, sección /certificacion-adn-ia/). -->
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Herramienta de Digital Change Academy para ubicar cuál de las cuatro barreras de DICO frena una iniciativa de IA y qué conversación abrir con el líder del proceso.">
+<link rel="canonical" href="https://digitalchangeadvisors.com/certificacion-adn-ia/lienzo/">
+<link rel="icon" href="/assets/favicon.png">
+<script>document.documentElement.className = 'js';</script>
+<title>Lienzo de las cuatro barreras · DICO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<style>
+  :root {
+    --teal: #2e8b76; --teal-dark: #267a67; --teal-ink: #1f6657; --teal-soft: rgba(46,139,118,.05);
+    --gold: #a48111; --carbon: #1e2a38; --terracotta: #c2593f; --platinum: #f3f3f3;
+    --muted: #5a6472; --border: #e3e5e8; --radius: 10px;
+    --serif: 'Marcellus', Georgia, serif; --sans: 'Montserrat', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: #fff; color: var(--carbon); font-family: var(--sans); font-size: 16px; line-height: 1.6; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+  @media (min-width: 768px) { .wrap { padding: 0 32px; } }
+  :focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+
+  header.top { border-bottom: 1px solid var(--border); }
+  header.top .wrap { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 14px; padding-bottom: 14px; flex-wrap: wrap; }
+  .marca { font-weight: 600; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--teal-ink); }
+  .acciones { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn { font: 600 14px/1 var(--sans); padding: 12px 16px; min-height: 44px; border-radius: 8px; border: 1px solid var(--teal-dark); background: var(--teal-dark); color: #fff; cursor: pointer; }
+  .btn:hover { background: var(--teal-ink); }
+  .btn--ghost { background: #fff; color: var(--teal-ink); }
+  .btn--ghost:hover { background: var(--teal-soft); }
+
+  .hero { padding: 48px 0 28px; }
+  .label { display: block; font-size: 12.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-ink); margin-bottom: 12px; }
+  h1 { font-family: var(--serif); font-weight: 400; font-size: min(44px, 6.9vw); line-height: 1.15; margin: 0; }
+  @media (min-width: 768px) { h1 { font-size: clamp(34px, 5vw, 44px); } }
+  h1 .line { display: block; }
+  .chapeau { font-weight: 300; font-size: 19px; margin: 18px 0 0; max-width: 720px; }
+  .como { margin-top: 22px; padding: 16px 20px; border-left: 4px solid var(--gold); background: var(--teal-soft); border-radius: 0 var(--radius) var(--radius) 0; font-size: 15.5px; }
+  .como ol { margin: 6px 0 0; padding-left: 20px; }
+
+  section.paso { padding: 34px 0; border-top: 1px solid var(--border); }
+  .paso__n { font-family: var(--serif); font-size: 15px; color: var(--gold); letter-spacing: .06em; }
+  h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 3.4vw, 30px); line-height: 1.2; margin: 4px 0 8px; }
+  .ayuda { color: var(--muted); font-size: 15px; margin: 0 0 18px; max-width: 720px; }
+
+  .campos { display: grid; gap: 16px; }
+  @media (min-width: 768px) { .campos--3 { grid-template-columns: repeat(3, 1fr); } }
+  label.campo { display: block; font-weight: 600; font-size: 14.5px; }
+  label.campo small { display: block; font-weight: 400; color: var(--muted); font-size: 13.5px; margin-top: 2px; }
+  input[type=text], textarea { width: 100%; margin-top: 6px; font: 400 16px/1.5 var(--sans); color: var(--carbon); border: 1px solid #c9cdd2; border-radius: 8px; padding: 11px 12px; background: #fff; }
+  textarea { min-height: 84px; resize: vertical; }
+  input[type=text]:focus, textarea:focus { border-color: var(--teal); outline: 2px solid rgba(46,139,118,.25); }
+  .check { display: flex; gap: 10px; align-items: flex-start; margin-top: 14px; font-size: 15px; cursor: pointer; }
+  .check input { width: 22px; height: 22px; margin: 1px 0 0; accent-color: var(--teal-dark); flex: none; }
+
+  .barreras { display: grid; gap: 18px; }
+  @media (min-width: 860px) { .barreras { grid-template-columns: 1fr 1fr; } }
+  .barrera { border: 1px solid var(--border); border-top: 4px solid var(--teal); border-radius: var(--radius); padding: 20px 20px 18px; background: #fff; display: flex; flex-direction: column; }
+  .barrera h3 { font-family: var(--serif); font-weight: 400; font-size: 22px; margin: 0; }
+  .barrera__def { font-size: 15px; color: var(--muted); margin: 4px 0 12px; }
+  .barrera__k { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--teal-ink); margin-top: 10px; }
+  .barrera ul { margin: 6px 0 0; padding-left: 18px; font-size: 15px; }
+  .barrera ul li { margin-top: 4px; }
+  .barrera ul.senales li::marker { color: var(--gold); }
+  .peso { margin-top: auto; padding-top: 16px; }
+  .peso fieldset { border: 0; padding: 0; margin: 0; }
+  .peso legend { font-weight: 600; font-size: 14.5px; padding: 0; }
+  .peso__escala { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-top: 8px; }
+  .peso__escala input { position: absolute; opacity: 0; pointer-events: none; }
+  .peso__escala label { display: flex; align-items: center; justify-content: center; min-height: 44px; border: 1px solid #c9cdd2; border-radius: 8px; font-weight: 600; cursor: pointer; }
+  .peso__escala input:checked + label { background: var(--teal-dark); border-color: var(--teal-dark); color: #fff; }
+  .peso__escala input:focus-visible + label { outline: 2px solid var(--teal); outline-offset: 2px; }
+  .peso__pie { display: flex; justify-content: space-between; font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+  .barrera textarea { min-height: 64px; }
+
+  .lectura { border: 1px solid var(--border); border-left: 4px solid var(--gold); border-radius: 0 var(--radius) var(--radius) 0; padding: 22px 24px; background: #fff; }
+  .lectura__vacio { color: var(--muted); }
+  .barras { display: grid; gap: 10px; margin: 4px 0 18px; }
+  .barra { display: grid; grid-template-columns: minmax(120px, 210px) 1fr 24px; gap: 10px; align-items: center; font-size: 14.5px; }
+  .barra__pista { height: 10px; border-radius: 5px; background: var(--platinum); overflow: hidden; }
+  .barra__valor { height: 100%; background: var(--teal); border-radius: 5px; }
+  .barra--top .barra__valor { background: var(--gold); }
+  .barra--top span:first-child { font-weight: 700; }
+  .pregunta { font-family: var(--serif); font-size: 22px; line-height: 1.3; margin: 8px 0 6px; }
+  .nota { font-size: 14px; color: var(--muted); }
+
+  footer { border-top: 1px solid var(--border); padding: 26px 0 40px; font-size: 13.5px; color: var(--muted); }
+  footer strong { color: var(--carbon); font-weight: 600; }
+
+  .skip { position: absolute; left: -9999px; top: 8px; background: #fff; padding: 10px 14px; border: 2px solid var(--teal); border-radius: 8px; z-index: 10; }
+  .skip:focus { left: 16px; }
+  .sinjs { margin: 16px 0 0; padding: 12px 16px; border-left: 4px solid var(--terracotta); background: #fff; font-size: 15px; }
+  .js .sinjs { display: none; }
+  .vigencia { margin-top: 10px; font-size: 14px; color: var(--muted); }
+  .vencido { padding: 64px 0 80px; max-width: 640px; }
+  .vencido p { font-size: 18px; }
+  footer a, .vencido a { color: var(--teal); text-decoration: underline; }
+  footer a:hover, .vencido a:hover { color: var(--teal-ink); }
+  @media print {
+    header.top .acciones, .como { display: none; }
+    body { font-size: 12.5px; }
+    .hero { padding: 12px 0 8px; }
+    section.paso { padding: 14px 0; break-inside: avoid; }
+    .barrera { break-inside: avoid; }
+    .barreras { grid-template-columns: 1fr 1fr; }
+    input[type=text], textarea { border-color: #999; }
+    .peso__escala label { min-height: 28px; }
+    @page { margin: 14mm; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al lienzo</a>
+
+<header class="top">
+  <div class="wrap">
+    <span class="marca">Digital Change Academy</span>
+    <div class="acciones">
+      <button type="button" class="btn btn--ghost" id="limpiar">Empezar de nuevo</button>
+      <button type="button" class="btn" id="imprimir">Guardar en PDF o imprimir</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="contenido">
+  <div class="hero">
+    <span class="label">DICO · Lienzo de diagnóstico</span>
+    <h1><span class="line">Lienzo de las cuatro barreras</span><span class="line">para una iniciativa de IA</span></h1>
+    <p class="chapeau">Una conducta no ocurre por cuatro causas posibles. Este lienzo te ayuda a ubicar cuál pesa más en la iniciativa de tu cliente y qué conversación abrir con el líder del proceso.</p>
+    <div class="como">
+      <strong>Cómo usarlo, en unos 20 minutos:</strong>
+      <ol>
+        <li>Describe la iniciativa y la conducta que esperas ver.</li>
+        <li>Recorre las cuatro barreras y dale a cada una un peso de 1 a 5.</li>
+        <li>Lee la conversación que te sugiere la barrera de mayor peso.</li>
+      </ol>
+      Lo que escribes se queda en este navegador: no se envía a ningún servidor. No uses nombres ni datos identificables de tus clientes.
+    </div>
+    <p class="vigencia">Herramienta disponible hasta el 3 de marzo de 2027. Guarda tu lienzo en PDF para conservarlo.</p>
+    <p class="sinjs">Para calcular los pesos y tu lectura, activa JavaScript en tu navegador. Sin él puedes leer el lienzo e imprimirlo.</p>
+  </div>
+
+  <!-- PASO 1 -->
+  <section class="paso" aria-labelledby="h-p1">
+    <span class="paso__n">Paso 1</span>
+    <h2 id="h-p1">La iniciativa</h2>
+    <p class="ayuda">Una iniciativa de IA ya invertida que no está dando lo esperado.</p>
+    <div class="campos campos--3">
+      <label class="campo">La iniciativa<small>Qué es y desde cuándo opera</small><input type="text" data-k="iniciativa"></label>
+      <label class="campo">El líder del proceso<small>El cargo, no el nombre</small><input type="text" data-k="lider"></label>
+      <label class="campo">El KPI que debería moverse<small>Uno solo</small><input type="text" data-k="kpi"></label>
+    </div>
+  </section>
+
+  <!-- PASO 2 -->
+  <section class="paso" aria-labelledby="h-p2">
+    <span class="paso__n">Paso 2</span>
+    <h2 id="h-p2">La conducta meta</h2>
+    <p class="ayuda">DICO empieza por el destino: la conducta exacta que, si ocurriera en el flujo diario, movería el KPI. Después se diseña hacia atrás.</p>
+    <label class="campo">¿Qué haría quién, cuándo y en qué momento del flujo diario?<small>Ejemplo: «El analista de crédito pide a la IA el borrador del concepto antes de revisar el expediente y deja registrada su corrección».</small><textarea data-k="conducta"></textarea></label>
+    <label class="check"><input type="checkbox" data-k="observable"> <span>Otra persona podría ver que ocurre y comprobarlo. Si no, todavía no es una conducta meta: hazla más concreta.</span></label>
+  </section>
+
+  <!-- PASO 3 -->
+  <section class="paso" aria-labelledby="h-p3">
+    <span class="paso__n">Paso 3</span>
+    <h2 id="h-p3">Las cuatro barreras</h2>
+    <p class="ayuda">Pesa cada barrera frente a tu conducta meta: 1 si casi no la frena, 5 si es la que más pesa. Las señales son pistas, no pruebas.</p>
+    <div class="barreras">
+
+      <article class="barrera" data-b="creencias">
+        <h3>Creencias</h3>
+        <p class="barrera__def">Lo que las personas creen y temen perder.</p>
+        <span class="barrera__k">Pregúntate</span>
+        <ul>
+          <li>¿Qué creen que pasa con su criterio o su rol si usan la IA?</li>
+          <li>¿Qué temen perder: reconocimiento, control, la identidad de su oficio?</li>
+          <li>¿Confían en el resultado de la IA, o en nada que no hayan hecho ellos?</li>
+        </ul>
+        <span class="barrera__k">Señales</span>
+        <ul class="senales">
+          <li>«La IA se equivoca» como argumento general, sin un caso concreto.</li>
+          <li>Uso a escondidas, o rehacer a mano todo lo que la IA entrega.</li>
+        </ul>
+        <div class="peso"><fieldset><legend>Peso de esta barrera</legend><div class="peso__escala" data-peso="creencias"></div><div class="peso__pie"><span>Casi no frena</span><span>La que más pesa</span></div></fieldset></div>
+        <label class="campo" style="margin-top:12px">Evidencia que tienes<textarea data-k="ev-creencias"></textarea></label>
+      </article>
+
+      <article class="barrera" data-b="capacidades">
+        <h3>Capacidades del rol</h3>
+        <p class="barrera__def">Lo que el rol necesita poder hacer para que la conducta ocurra.</p>
+        <span class="barrera__k">Pregúntate</span>
+        <ul>
+          <li>¿Saben qué encargarle a la IA y cómo verificar lo que entrega?</li>
+          <li>¿Tienen el acceso, los datos y el tiempo dentro del flujo de hoy?</li>
+          <li>¿El proceso incluye la IA, o es un paso extra encima del trabajo?</li>
+        </ul>
+        <span class="barrera__k">Señales</span>
+        <ul class="senales">
+          <li>Quieren usarla, pero «no les da el tiempo» o «no saben por dónde empezar».</li>
+          <li>Resultados muy distintos entre personas del mismo rol.</li>
+        </ul>
+        <div class="peso"><fieldset><legend>Peso de esta barrera</legend><div class="peso__escala" data-peso="capacidades"></div><div class="peso__pie"><span>Casi no frena</span><span>La que más pesa</span></div></fieldset></div>
+        <label class="campo" style="margin-top:12px">Evidencia que tienes<textarea data-k="ev-capacidades"></textarea></label>
+      </article>
+
+      <article class="barrera" data-b="lider">
+        <h3>Lo que el líder decide y conduce</h3>
+        <p class="barrera__def">Lo que el líder del proceso pide, revisa y decide.</p>
+        <span class="barrera__k">Pregúntate</span>
+        <ul>
+          <li>¿El líder dijo qué conducta espera, de quién y para cuándo?</li>
+          <li>¿La revisa en sus rituales de seguimiento, o solo pregunta por el uso?</li>
+          <li>¿Ha decidido, con evidencia, qué detener, qué recuperar o qué escalar?</li>
+        </ul>
+        <span class="barrera__k">Señales</span>
+        <ul class="senales">
+          <li>La iniciativa «es de Tecnología» o «es de Cultura», no del líder.</li>
+          <li>Se mide cuántos la usan, no qué cambió en el KPI.</li>
+        </ul>
+        <div class="peso"><fieldset><legend>Peso de esta barrera</legend><div class="peso__escala" data-peso="lider"></div><div class="peso__pie"><span>Casi no frena</span><span>La que más pesa</span></div></fieldset></div>
+        <label class="campo" style="margin-top:12px">Evidencia que tienes<textarea data-k="ev-lider"></textarea></label>
+      </article>
+
+      <article class="barrera" data-b="cultura">
+        <h3>Cultura vigente</h3>
+        <p class="barrera__def">Lo que la organización premia y tolera.</p>
+        <span class="barrera__k">Pregúntate</span>
+        <ul>
+          <li>¿Qué se premia: las horas y el esfuerzo visible, o el resultado?</li>
+          <li>¿Se tolera el error mientras se experimenta, o se castiga?</li>
+          <li>¿Qué le pasa a quien cuenta abiertamente cómo usa la IA?</li>
+        </ul>
+        <span class="barrera__k">Señales</span>
+        <ul class="senales">
+          <li>Nadie comparte cómo la usa, aunque muchos la usan.</li>
+          <li>El tiempo que libera la IA se llena con más del mismo trabajo.</li>
+        </ul>
+        <div class="peso"><fieldset><legend>Peso de esta barrera</legend><div class="peso__escala" data-peso="cultura"></div><div class="peso__pie"><span>Casi no frena</span><span>La que más pesa</span></div></fieldset></div>
+        <label class="campo" style="margin-top:12px">Evidencia que tienes<textarea data-k="ev-cultura"></textarea></label>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PASO 4 -->
+  <section class="paso" aria-labelledby="h-p4">
+    <span class="paso__n">Paso 4</span>
+    <h2 id="h-p4">Tu lectura y la conversación con el líder</h2>
+    <p class="ayuda">La barrera de mayor peso define por dónde empezar. No es un veredicto: es la hipótesis que vas a poner a prueba con evidencia.</p>
+    <div class="lectura" id="lectura" aria-live="polite">
+      <p class="lectura__vacio">Pesa las cuatro barreras en el paso 3 y aquí aparecerá tu lectura.</p>
+    </div>
+    <label class="campo" style="margin-top:18px">Tu primer movimiento<small>Un cambio pequeño en el flujo diario, cómo sabrás si funcionó y qué decidirás si se cumple, si se cumple a medias o si no se cumple.</small><textarea data-k="movimiento"></textarea></label>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>DICO · Digital Change Academy.</strong> Diseño Inverso de Conducta Objetivo: definir primero la conducta meta, diagnosticar las cuatro barreras, experimentar en el flujo diario y actualizar la práctica con la evidencia.<br>
+    Obsequio de la clase abierta «Las cuatro barreras que frenan la IA en tus clientes», 3 de diciembre de 2026.<br>
+    Para aplicar DICO con método en tu propia práctica: <a href="/certificacion-adn-ia/">Certificación Experto Cultura y Cambio ADN IA</a>.
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var CLAVE = 'dca-lienzo-cuatro-barreras-v1';
+  var VENCE = new Date('2027-03-04T00:00:00-05:00'); // acceso hasta el 3 de marzo de 2027 (hora Bogotá)
+  if (new Date() >= VENCE) {
+    var m = document.getElementById('contenido');
+    m.innerHTML = '<div class="vencido"><span class="label">DICO · Lienzo de diagnóstico</span>' +
+      '<h1>Esta herramienta ya no está disponible</h1>' +
+      '<p>El Lienzo de las cuatro barreras fue un obsequio de la clase abierta del 3 de diciembre de 2026, con acceso hasta el 3 de marzo de 2027.</p>' +
+      '<p>Si quieres aplicar DICO con método en tu práctica, conoce la <a href="/certificacion-adn-ia/">Certificación Experto Cultura y Cambio ADN IA</a>.</p></div>';
+    var acc = document.querySelector('.acciones'); if (acc) acc.style.display = 'none';
+    return;
+  }
+  var BARRERAS = {
+    creencias:   { nombre: 'Creencias', pregunta: '«¿Qué cree tu equipo que pierde si la usa, y quién se lo ha dicho en voz alta?»',
+                   por: 'Antes de proponer más explicación o capacitación, hay que escuchar qué creen y qué temen perder: es lo que frena la conducta.' },
+    capacidades: { nombre: 'Capacidades del rol', pregunta: '«¿Qué tendría que poder hacer tu equipo, dentro del flujo de hoy, para que esa conducta ocurra sin pedir tiempo extra?»',
+                   por: 'La intención existe, pero el rol no tiene cómo ejecutarla. El cambio está en el diseño del trabajo, no en el discurso.' },
+    lider:       { nombre: 'Lo que el líder decide y conduce', pregunta: '«¿Qué decisión tuya está pendiente: qué esperas de tu equipo, cuándo lo revisas y qué detienes si no ocurre?»',
+                   por: 'La adopción no tiene dueño en el día a día. Mientras el líder no la conduzca, ningún equipo de apoyo puede sostenerla.' },
+    cultura:     { nombre: 'Cultura vigente', pregunta: '«¿Qué premia hoy tu área: el esfuerzo visible o el resultado en el KPI?»',
+                   por: 'Lo que se premia y se tolera contradice la conducta que se espera. Sin cambiar esa señal, cualquier esfuerzo se diluye.' }
+  };
+  var estado = {};
+  try { estado = JSON.parse(localStorage.getItem(CLAVE)) || {}; } catch (_) { estado = {}; }
+  function guardar() { try { localStorage.setItem(CLAVE, JSON.stringify(estado)); } catch (_) {} }
+
+  // Escalas de peso 1–5
+  document.querySelectorAll('[data-peso]').forEach(function (cont) {
+    var b = cont.getAttribute('data-peso');
+    for (var i = 1; i <= 5; i++) {
+      var id = 'p-' + b + '-' + i;
+      var inp = document.createElement('input');
+      inp.type = 'radio'; inp.name = 'peso-' + b; inp.id = id; inp.value = i;
+      if (String(estado['peso-' + b]) === String(i)) inp.checked = true;
+      var lab = document.createElement('label'); lab.htmlFor = id; lab.textContent = i;
+      lab.setAttribute('aria-label', 'Peso ' + i + ' de 5');
+      inp.addEventListener('change', function (e) { estado[e.target.name] = Number(e.target.value); guardar(); leer(); });
+      cont.appendChild(inp); cont.appendChild(lab);
+    }
+  });
+
+  // Campos de texto y casilla
+  document.querySelectorAll('[data-k]').forEach(function (el) {
+    var k = el.getAttribute('data-k');
+    if (el.type === 'checkbox') {
+      el.checked = !!estado[k];
+      el.addEventListener('change', function () { estado[k] = el.checked; guardar(); });
+    } else {
+      if (estado[k]) el.value = estado[k];
+      el.addEventListener('input', function () { estado[k] = el.value; guardar(); });
+    }
+  });
+
+  function leer() {
+    var caja = document.getElementById('lectura');
+    var pesos = Object.keys(BARRERAS).map(function (b) { return { b: b, v: estado['peso-' + b] || 0 }; });
+    if (pesos.some(function (p) { return !p.v; })) {
+      caja.innerHTML = '<p class="lectura__vacio">Pesa las cuatro barreras en el paso 3 y aquí aparecerá tu lectura.</p>';
+      return;
+    }
+    var max = Math.max.apply(null, pesos.map(function (p) { return p.v; }));
+    var top = pesos.filter(function (p) { return p.v === max; });
+    var html = '<div class="barras">';
+    pesos.slice().sort(function (a, b) { return b.v - a.v; }).forEach(function (p) {
+      html += '<div class="barra' + (p.v === max ? ' barra--top' : '') + '"><span>' + BARRERAS[p.b].nombre + '</span>' +
+              '<span class="barra__pista"><span class="barra__valor" style="display:block;width:' + (p.v * 20) + '%"></span></span><span>' + p.v + '</span></div>';
+    });
+    html += '</div>';
+    if (top.length > 1) {
+      html += '<p><strong>Hay un empate en el peso más alto.</strong> Antes de hablar con el líder, busca una evidencia más que te permita elegir una sola barrera para empezar.</p>';
+    }
+    top.forEach(function (p) {
+      var d = BARRERAS[p.b];
+      html += '<span class="barrera__k">Barrera de mayor peso: ' + d.nombre + '</span>' +
+              '<p>' + d.por + '</p>' +
+              '<span class="barrera__k">Pregunta para abrir la conversación con el líder del proceso</span>' +
+              '<p class="pregunta">' + d.pregunta + '</p>';
+    });
+    if (max <= 2) html += '<p class="nota">Ninguna barrera pesa más de 2: revisa si la conducta meta es la correcta o si el freno está en la tecnología y no en la adopción.</p>';
+    if (!estado.observable) html += '<p class="nota">Tu conducta meta aún no está marcada como observable (paso 2). Precísala antes de llevar esta lectura al líder.</p>';
+    caja.innerHTML = html;
+  }
+  leer();
+
+  document.getElementById('imprimir').addEventListener('click', function () { window.print(); });
+  document.getElementById('limpiar').addEventListener('click', function () {
+    if (!confirm('¿Borrar todo lo que escribiste en este lienzo?')) return;
+    estado = {}; guardar();
+    document.querySelectorAll('[data-k]').forEach(function (el) { if (el.type === 'checkbox') el.checked = false; else el.value = ''; });
+    document.querySelectorAll('.peso__escala input').forEach(function (i) { i.checked = false; });
+    leer();
+  });
+})();
+</script>
+</body>
+</html>
