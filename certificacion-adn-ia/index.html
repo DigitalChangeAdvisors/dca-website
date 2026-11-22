@@ -243,8 +243,6 @@
   }
 
   /* ── Bloque 4 · Tesis ── */
-  .cita { margin: 0; padding: 0 0 0 24px; border-left: 4px solid var(--gold); font-family: var(--serif); font-size: clamp(24px, 4.2vw, 34px); line-height: 1.32; }
-  .tesis p.cuerpo { margin-top: 28px; max-width: 680px; }
   .enlace-flecha { display: inline-block; margin-top: 18px; font-weight: 600; padding: 10px 0; }
 
   /* ── Grabación ── */
@@ -304,6 +302,8 @@
   .autor picture, .autor img { width: 96px; height: 96px; border-radius: 50%; flex: none; background: var(--platinum); object-fit: cover; }
   .autor__cargo { font-size: 14.5px; color: var(--muted); margin-top: 2px; }
   .autor__cred { margin-top: 10px; font-size: 15.5px; }
+  .autor__enlaces { display: flex; flex-wrap: wrap; column-gap: 28px; margin-top: 4px; }
+  .autor__enlaces .enlace-flecha { margin-top: 6px; }
   @media (min-width: 900px) { .obtienes-guia { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 420px) { .panel--obtienes, .autor { flex-direction: column; } }
 
@@ -561,20 +561,8 @@
   </div>
 </section>
 
-<!-- ═══════════ BLOQUE 4 · LA TESIS RETURNAI ═══════════ -->
-<section class="section section--platinum tesis" aria-labelledby="h-tesis">
-  <div class="wrap narrow">
-    <span class="label" id="h-tesis">La tesis ReturnAI</span>
-    <blockquote class="cita reveal">
-      <p>Donde el retorno de la IA comienza en las personas, se acelera en los procesos y se mide en el KPI que importa.</p>
-    </blockquote>
-    <p class="cuerpo reveal">La novela ReturnAI narra cómo una empresa descubre que el retorno de su inversión en IA dependía de las personas, no de la tecnología. Esta certificación lleva esa tesis a tu práctica profesional.</p>
-    <a class="enlace-flecha" href="../novela-returnai/" data-interno data-evento="novela_click">Conoce la novela ReturnAI <span aria-hidden="true">&rarr;</span></a>
-  </div>
-</section>
-
 <!-- ═══════════ BLOQUE 5 · QUÉ TE LLEVAS ═══════════ -->
-<section class="section" aria-labelledby="h-llevas">
+<section class="section section--platinum" aria-labelledby="h-llevas">
   <div class="wrap">
     <span class="label">Qué te llevas</span>
     <h2 id="h-llevas" class="promesa reveal">Al certificarte, podrás acelerar la adopción de la IA en el flujo diario de trabajo de tus clientes, con impacto medible en el KPI que importa.</h2>
@@ -672,7 +660,11 @@
             <p><strong>César Lozano</strong></p>
             <p class="autor__cargo">Creador del Modelo ARIA · Aceleración del Retorno de las Inversiones en Inteligencia Artificial</p>
             <p class="autor__cred">30 años de trayectoria, 70 empresas intervenidas y cuatro olas tecnológicas acompañadas. Diez libros antes de ReturnAI.</p>
-            <a class="enlace-flecha" href="../autor/cesar-lozano/" data-interno data-evento="autor_click">Conoce al autor <span aria-hidden="true">&rarr;</span></a>
+            <p class="autor__cred">Autor de ReturnAI, la primera novela en español sobre liderazgo en la era de la IA: la historia de un líder como los que vas a habilitar.</p>
+            <p class="autor__enlaces">
+              <a class="enlace-flecha" href="../autor/cesar-lozano/" data-interno data-evento="autor_click" target="_blank" rel="noopener">Conoce al autor <span aria-hidden="true">&rarr;</span></a>
+              <a class="enlace-flecha" href="../novela-returnai/" data-interno data-evento="novela_click" target="_blank" rel="noopener">Conoce la novela ReturnAI <span aria-hidden="true">&rarr;</span></a>
+            </p>
           </div>
         </div>
       </div>
