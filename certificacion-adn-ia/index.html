@@ -230,9 +230,11 @@
     .paralelo th, .paralelo td { display: table-cell; vertical-align: middle; }
     .paralelo td::before { content: none; }
     .paralelo .paralelo__vacio { width: 26%; }
-    .paralelo thead th { padding: 16px 24px; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; text-align: left; }
-    .paralelo thead .paralelo__igual { background: var(--platinum); color: var(--muted); border-radius: 10px 0 0 0; }
-    .paralelo thead .paralelo__adn { background: var(--carbon); color: #fff; border-top: 4px solid var(--gold); border-radius: 0 10px 0 0; }
+    /* Encabezados: blanco sobre terracota (4,36:1) solo cumple AA como texto grande,
+       por eso 19px/700 en ambos (umbral WCAG de texto grande en negrita: 18,66px). */
+    .paralelo thead th { padding: 16px 24px; font-size: 19px; font-weight: 700; line-height: 1.3; text-align: left; color: #fff; }
+    .paralelo thead .paralelo__igual { background: var(--terracotta); border-radius: 10px 0 0 0; }
+    .paralelo thead .paralelo__adn { background: var(--carbon); border-radius: 0 10px 0 0; }
     .paralelo tbody tr, .paralelo tbody tr:first-child { padding: 0; border: 0; }
     .paralelo tbody th { margin: 0; padding: 18px 20px 18px 0; border-top: 1px solid var(--border); }
     .paralelo tbody .paralelo__igual, .paralelo tbody .paralelo__adn { padding: 18px 24px; border-radius: 0; border: 0; border-top: 1px solid var(--border); }
